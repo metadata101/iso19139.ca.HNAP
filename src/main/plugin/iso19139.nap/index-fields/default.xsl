@@ -8,7 +8,7 @@
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
-  <xsl:include href="convert/functions.xsl"/>
+  <xsl:include href="../convert/functions.xsl"/>
   <xsl:include href="../../../xsl/utils-fn.xsl"/>
 
   <!-- This file defines what parts of the metadata are indexed by Lucene

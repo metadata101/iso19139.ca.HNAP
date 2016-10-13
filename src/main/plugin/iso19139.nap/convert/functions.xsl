@@ -22,6 +22,34 @@
 ~ Rome - Italy. email: geonetwork@osgeo.org
 -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                xmlns:gco="http://www.isotc211.org/2005/gco" version="2.0">
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
+
+  <xsl:variable name="defaultLang">eng</xsl:variable>
+
+  <xsl:template name="langId19139">
+    <xsl:variable name="tmp">
+      <xsl:choose>
+        <xsl:when test="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString|
+                                /*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue">
+          <xsl:value-of select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString|
+                                /*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue"/>
+        </xsl:when>
+        <xsl:otherwise><xsl:value-of select="$defaultLang"/></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="tmp2">
+      <xsl:value-of select="normalize-space(string(replace($tmp, '; CAN', '')))"></xsl:value-of>
+    </xsl:variable>
+
+    <xsl:choose>
+      <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="$defaultLang"/></xsl:when>
+      <xsl:otherwise><xsl:value-of select="$tmp2"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 </xsl:stylesheet>
