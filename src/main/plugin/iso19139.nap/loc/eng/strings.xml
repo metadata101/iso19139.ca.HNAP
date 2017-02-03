@@ -13,7 +13,16 @@
   <constraintInfo>Access constraint information</constraintInfo>
   <xml_iso19139>Download the dataset record as xml</xml_iso19139>
   <xml_iso19139Tooai_dc>Save this metadata as an OAI Dublin Core XML file</xml_iso19139Tooai_dc>
-  
+
+  <!-- View and tabs -->
+  <advanced>Full</advanced>
+  <default>Simple</default>
+  <simple>Simple</simple>
+  <inspire>INSPIRE</inspire>
+  <inspire_sds>SDS</inspire_sds>
+  <nap-default>NAP default</nap-default>
+  <xml>XML</xml>
+
   <GeographicExtent>Geographic Extent</GeographicExtent>
   <GeographicScope>Geographic Scope</GeographicScope>
   <Timeperiod>Time Period</Timeperiod>
