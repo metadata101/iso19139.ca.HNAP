@@ -17,10 +17,10 @@
 	<xsl:include href="../iso19139/convert/functions.xsl"/>
 
   <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
-  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'))" />
+  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
 
   <xsl:variable name="schemaTranslationsDir" select="/root/env/schemaTranslationsDir" />
-  <xsl:variable name="codelistFile" select="document(concat('file:///', $schemaTranslationsDir, '/codelists.xml'))"/>
+  <xsl:variable name="codelistFile" select="document(concat('file:///', replace(concat($schemaTranslationsDir, '/codelists.xml'), '\\', '/')))"/>
 
   <xsl:variable name="lang" select="/root/env/lang" />
 
@@ -41,12 +41,6 @@
 	<!-- ================================================================= -->
 
 	<xsl:template match="gmd:MD_Metadata">
-    <xsl:variable name="testFile" select="document(concat('file:///', $schemaTranslationsDir, '/codelists.xml'))"/>
-    <xsl:message>
-      ====  gmd:Metadata ====
-      codelist <xsl:copy-of select="$testFile/codelists"/>
-      filelist <xsl:value-of select="$codelistFile"/>
-    </xsl:message>
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
 
@@ -791,13 +785,6 @@
   <xsl:template match="gmd:MD_ScopeCode">
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ScopeCode']/entry[code = $currentCodeValue]/value" />
-    <xsl:message>
-      === gmd:MD_ScopeCode ===
-      currentCodeValue: <xsl:value-of select="$currentCodeValue"/>
-      file: <xsl:value-of select="$codelistFile"/>
-      value <xsl:value-of select="$value"/>
-    </xsl:message>
-
       <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
                         codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
