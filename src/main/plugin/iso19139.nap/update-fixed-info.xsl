@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
 						xmlns:srv="http://www.isotc211.org/2005/srv"
-						xmlns:gmx="http://www.isotc211.org/2005/gmx"						
+						xmlns:gmx="http://www.isotc211.org/2005/gmx"
 						xmlns:gco="http://www.isotc211.org/2005/gco"
 						xmlns:gmd="http://www.isotc211.org/2005/gmd"
                         xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -19,10 +19,11 @@
   <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
   <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'))" />
 
-  <xsl:variable name="codelistDir" select="/root/env/codelistDir" />
-  <xsl:variable name="codelistFile" select="document(concat('file:///', $codelistDir, '/codelists.xml'))"/>
+  <xsl:variable name="schemaTranslationsDir" select="/root/env/schemaTranslationsDir" />
+  <xsl:variable name="codelistFile" select="document(concat('file:///', $schemaTranslationsDir, '/codelists.xml'))"/>
 
   <xsl:variable name="lang" select="/root/env/lang" />
+
 
   <xsl:variable name="localeForTranslations">
     <xsl:choose>
@@ -40,22 +41,28 @@
 	<!-- ================================================================= -->
 
 	<xsl:template match="gmd:MD_Metadata">
+    <xsl:variable name="testFile" select="document(concat('file:///', $schemaTranslationsDir, '/codelists.xml'))"/>
+    <xsl:message>
+      ====  gmd:Metadata ====
+      codelist <xsl:copy-of select="$testFile/codelists"/>
+      filelist <xsl:value-of select="$codelistFile"/>
+    </xsl:message>
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
-			
+
 			<gmd:fileIdentifier>
 				<gco:CharacterString>
 					<xsl:value-of select="/root/env/uuid"/>
 				</gco:CharacterString>
 			</gmd:fileIdentifier>
-			
+
 			<xsl:apply-templates select="gmd:language"/>
-			
+
 			<!-- fixed to uft8 -->
 			<gmd:characterSet>
 				<gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
 			</gmd:characterSet>
-			
+
 			<xsl:choose>
 				<xsl:when test="/root/env/parentUuid!=''">
 					<gmd:parentIdentifier>
@@ -96,7 +103,7 @@
 	</xsl:template>
 
 	<!-- ================================================================= -->
-	
+
 	<!-- Only set metadataStandardName and metadataStandardVersion
 	if not set. -->
 	<xsl:template match="gmd:metadataStandardName[@gco:nilReason='missing' or gco:CharacterString='']" priority="10">
@@ -110,7 +117,7 @@
         </gmd:PT_FreeText>
 		</xsl:copy>
 	</xsl:template>
-	
+
 	<xsl:template match="gmd:metadataStandardVersion[@gco:nilReason='missing' or gco:CharacterString='']" priority="10">
 		<xsl:copy>
 			<gco:CharacterString>CAN/CGSB-171.100-2009</gco:CharacterString>
@@ -118,7 +125,7 @@
 	</xsl:template>
 
 	<!-- ================================================================= -->
-	
+
 	<xsl:template match="@gml:id">
 		<xsl:choose>
 			<xsl:when test="normalize-space(.)=''">
@@ -133,7 +140,7 @@
 	</xsl:template>
 
 	<!-- ==================================================================== -->
-	<!-- Fix srsName attribute generate CRS:84 (EPSG:4326 with long/lat 
+	<!-- Fix srsName attribute generate CRS:84 (EPSG:4326 with long/lat
 	     ordering) by default -->
 
 	<xsl:template match="@srsName">
@@ -148,7 +155,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-  
+
   <!-- Add required gml attributes if missing -->
   <xsl:template match="gml:Polygon[not(@gml:id) and not(@srsName)]">
     <xsl:copy>
@@ -162,7 +169,7 @@
       <xsl:copy-of select="*"/>
     </xsl:copy>
   </xsl:template>
-  
+
 	<!-- ================================================================= -->
 
   <xsl:template match="*[gco:CharacterString]">
@@ -213,8 +220,8 @@
 			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
 		</gmd:LanguageCode>
 	</xsl:template>
-	
-	
+
+
 	<!--<xsl:template match="gmd:*[@codeListValue]">
 		<xsl:copy>
 			<xsl:apply-templates select="@*"/>
@@ -368,7 +375,7 @@
 
 	<!-- ================================================================= -->
 
-	<!-- Do not allow to expand operatesOn sub-elements 
+	<!-- Do not allow to expand operatesOn sub-elements
 		and constrain users to use uuidref attribute to link
 		service metadata to datasets. This will avoid to have
 		error on XSD validation. -->
@@ -784,6 +791,12 @@
   <xsl:template match="gmd:MD_ScopeCode">
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ScopeCode']/entry[code = $currentCodeValue]/value" />
+    <xsl:message>
+      === gmd:MD_ScopeCode ===
+      currentCodeValue: <xsl:value-of select="$currentCodeValue"/>
+      file: <xsl:value-of select="$codelistFile"/>
+      value <xsl:value-of select="$value"/>
+    </xsl:message>
 
       <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
                         codeListValue="{$currentCodeValue}">
@@ -1374,7 +1387,7 @@
 
   <!-- ================================================================= -->
 	<!-- copy everything else as is -->
-	
+
 	<xsl:template match="@*|node()">
 	    <xsl:copy>
 	        <xsl:apply-templates select="@*|node()"/>
