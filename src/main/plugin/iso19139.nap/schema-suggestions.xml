@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<fields>	
+<fields>
   <field name="gmd:contactInstructions">
     <suggest name="gco:CharacterString"/>
     <suggest name="gmx:FileName"/>
   </field>
-  
+
 	<field name="gmd:otherCitationDetails">
 		<suggest name="gco:CharacterString"/>
 		<suggest name="gmx:FileName"/>
 	</field>
-	
+
 	<!--<field name="gmd:language">
 		<suggest name="gco:CharacterString"/>
 		<suggest name="gmd:LanguageCode"/>
 	</field>-->
-	
+
 	<field name="gmx:FileName">
 		<suggest name="src"/>
-	</field> 
-	
+	</field>
+
 	<!-- Service -->
 	<field name="srv:coupledResource">
 		<suggest name="srv:SV_CoupledResource"/>
 	</field>
-	
+
 	<field name="srv:parameters">
 		<suggest name="srv:SV_Parameter"/>
 	</field>
-	
+
 	<field name="srv:direction">
 		<suggest name="srv:SV_ParameterDirection"/>
 	</field>
@@ -42,7 +42,7 @@
 		<suggest name="gmd:name"/>
 		<suggest name="gmd:description"/>
 	</field>
-	
+
 	<!-- Add a distribution format / INSPIRE requirement
 	<field name="gmd:distributionInfo">
 		<suggest name="gmd:MD_Distribution"/>
@@ -86,19 +86,19 @@
 		<suggest name="gmd:positionName"/>
 		<suggest name="gmd:contactInfo"/>
 	</field>
-	
+
 	<field name="gmd:CI_Contact">
 		<suggest name="gmd:phone"/>
 		<suggest name="gmd:address"/>
 		<suggest name="gmd:onlineResource" />
 		<suggest name="gmd:hoursOfService" />
 	</field>
-	
+
 	<field name="gmd:CI_Telephone">
 		<suggest name="gmd:voice"/>
 		<suggest name="gmd:facsimile"/>
 	</field>
-	
+
 	<field name="gmd:CI_Address">
 		<suggest name="gmd:deliveryPoint"/>
 		<suggest name="gmd:city"/>
@@ -112,18 +112,22 @@
         <suggest name="gmd:date"/>
     </field>
 
-	<!-- INSPIRE Suggestion for contact suggest 
+    <field name="gmd:date">
+        <suggest name="gco:Date"/>
+    </field>
+
+	<!-- INSPIRE Suggestion for contact suggest
 		organisation name and email address as defined in metadata IR.
 		ie. less fields than in GeoNetwork default behaviour.
 	<field name="gmd:CI_ResponsibleParty">
 		<suggest name="gmd:organisationName"/>
 		<suggest name="gmd:contactInfo"/>
 	</field>
-	
+
 	<field name="gmd:CI_Contact">
 		<suggest name="gmd:address"/>
 	</field>
-	
+
 	<field name="gmd:CI_Address">
 		<suggest name="gmd:electronicMailAddress"/>
 	</field>-->
@@ -137,7 +141,7 @@
 		<suggest name="gmd:type"/>
 		<!--<suggest name="gmd:thesaurusName"/>-->
 	</field>
-	
+
 	<field name="gmd:EX_Extent">
 		<suggest name="gmd:temporalElement"/>
 		<suggest name="gmd:geographicElement"/>
@@ -147,23 +151,23 @@
 	<field name="gmd:EX_TemporalExtent">
 		<suggest name="gmd:extent"/>
 	</field>
-	
+
 	<field name="gmd:polygon">
 		<suggest name="gml:Polygon"/>
 	</field>
-	
+
 	<field name="gmd:extent">
 		<suggest name="gmd:EX_Extent"/>
 	</field>
-	
+
 	<field name="gml:TimePeriod">
 		<suggest name="gml:beginPosition"/>
-		<suggest name="gml:endPosition"/>	
+		<suggest name="gml:endPosition"/>
 	</field>
-	
+
 	<field name="gmd:EX_GeographicBoundingBox">
 		<suggest name="gmd:westBoundLongitude"/>
-		<suggest name="gmd:eastBoundLongitude"/>	
+		<suggest name="gmd:eastBoundLongitude"/>
 		<suggest name="gmd:southBoundLatitude"/>
 		<suggest name="gmd:northBoundLatitude"/>
 	</field>
@@ -203,11 +207,11 @@
 	<field name="gmd:source">
 		<suggest name="uuidref"/>
 	</field>
-	
+
 	<field name="gmd:featureCatalogueCitation">
 		<suggest name="uuidref"/>
 	</field>
-	
+
 	<field name="gml:Polygon">
 		<suggest name="srsName"/>
 	</field>
@@ -220,7 +224,7 @@
   <field name="gmd:MD_Constraints">
     <suggest name="gmd:useLimitation"/>
   </field>
-  
+
   <field name="gmd:MD_LegalConstraints">
     <suggest name="gmd:useLimitation"/>
     <suggest name="gmd:accessConstraints"/>
