@@ -36,6 +36,10 @@
     <xsl:call-template name="get-iso19139-is-service" />
   </xsl:template>
 
+  <xsl:template name="get-iso19139.nap-title">
+    <xsl:call-template name="get-iso19139-title" />
+  </xsl:template>
+
   <xsl:template name="get-iso19139.nap-extents-as-json">
     <xsl:call-template name="get-iso19139-extents-as-json" />
   </xsl:template>

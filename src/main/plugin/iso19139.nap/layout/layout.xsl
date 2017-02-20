@@ -34,6 +34,7 @@
                 version="2.0"
                 exclude-result-prefixes="#all">
 
+  <xsl:include href="layout-custom-fields.xsl"/>
   <xsl:include href="utility-tpl.xsl"/>
 
   <!-- Visit all XML tree recursively -->
@@ -47,21 +48,6 @@
     </xsl:apply-templates>
   </xsl:template>
 
-  <!-- Readonly elements -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier|gmd:dateStamp">
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels)/label"/>
-      <xsl:with-param name="value" select="*"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '')"/>
-      <xsl:with-param name="name" select="''"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="gn:element"/>
-      <xsl:with-param name="isDisabled" select="true()"/>
-    </xsl:call-template>
-  </xsl:template>
 
   <!-- Codelist - delegate to schema codelists -->
   <xsl:template mode="mode-iso19139" priority="2005" match="*[*/@codeList]">
@@ -76,7 +62,7 @@
 
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
-                      select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
+                      select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
       <xsl:with-param name="value" select="*/@codeListValue"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="xpath" select="$xpath"/>
@@ -92,5 +78,6 @@
     </xsl:call-template>
 
   </xsl:template>
+
 
 </xsl:stylesheet>

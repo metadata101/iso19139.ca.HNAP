@@ -32,7 +32,7 @@
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:srv="http://www.isotc211.org/2005/srv"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:gml="http://www.opengis.net/gml"
+                xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn="http://www.fao.org/geonetwork"
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
@@ -42,26 +42,36 @@
                 extension-element-prefixes="saxon"
                 exclude-result-prefixes="#all">
 
-
-  <xsl:import href="../../iso19139/layout/evaluate.xsl"/>
-
   <!-- Evaluate an expression. This is schema dependant in order to properly
-        set namespaces required for evaluate.
+      set namespaces required for evaluate.
 
-    "The static context for the expression includes all the in-scope namespaces,
-    types, and functions from the calling stylesheet or query"
-    http://saxonica.com/documentation9.4-demo/html/extensions/functions/evaluate.html
+  "The static context for the expression includes all the in-scope namespaces,
+  types, and functions from the calling stylesheet or query"
+  http://saxonica.com/documentation9.4-demo/html/extensions/functions/evaluate.html
 
-       A node returned by evaluate will lost its context (ancestors).
-    -->
+     A node returned by evaluate will lost its context (ancestors).
+  -->
   <xsl:template name="evaluate-iso19139.nap">
     <xsl:param name="base" as="node()"/>
     <xsl:param name="in"/>
+    <!-- <xsl:message>in xml <xsl:copy-of select="$base"></xsl:copy-of></xsl:message>
+     <xsl:message>search for <xsl:copy-of select="$in"></xsl:copy-of></xsl:message>-->
+    <xsl:variable name="nodeOrAttribute" select="saxon:evaluate(concat('$p1', $in), $base)"/>
 
-    <xsl:call-template name="evaluate-iso19139">
-      <xsl:with-param name="base" select="$base"/>
-      <xsl:with-param name="in" select="$in"/>
-    </xsl:call-template>
+    <xsl:choose>
+      <xsl:when test="$nodeOrAttribute instance of text()+">
+        <xsl:value-of select="$nodeOrAttribute"/>
+      </xsl:when>
+      <xsl:when test="$nodeOrAttribute instance of element()+">
+        <xsl:copy-of select="$nodeOrAttribute"/>
+      </xsl:when>
+      <xsl:when test="$nodeOrAttribute instance of attribute()+">
+        <xsl:value-of select="$nodeOrAttribute"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$nodeOrAttribute"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Evaluate XPath returning a boolean value. -->
@@ -69,10 +79,6 @@
     <xsl:param name="base" as="node()"/>
     <xsl:param name="in"/>
 
-    <xsl:call-template name="evaluate-iso19139-boolean">
-      <xsl:with-param name="base" select="$base"/>
-      <xsl:with-param name="in" select="$in"/>
-    </xsl:call-template>
+    <xsl:value-of select="saxon:evaluate(concat('$p1', $in), $base)"/>
   </xsl:template>
-
 </xsl:stylesheet>
