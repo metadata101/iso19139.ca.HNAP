@@ -77,6 +77,8 @@
     <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
 
 
+    <for name="gmd:organisationName" use="data-gn-organisation-entry-selector-ec"/>
+
     <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
         data-template-add-action="true"
@@ -195,6 +197,7 @@
     <expanded>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
+      <name>gmd:organisationName</name>
     </expanded>
     <!-- All fields in ISO could be multilingual.
     Define element to exclude.
