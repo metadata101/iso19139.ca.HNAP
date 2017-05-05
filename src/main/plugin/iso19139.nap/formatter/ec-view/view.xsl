@@ -28,10 +28,12 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
+                xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:saxon="http://saxon.sf.net/"
                 version="2.0"
                 extension-element-prefixes="saxon"
@@ -341,7 +343,6 @@
         <!-- Time period -->
         <xsl:if test="/root/gmd:MD_Metadata//gmd:temporalElement">
           <xsl:for-each select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
-
             <br/><br/><span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
             <xsl:value-of select="$schemaStrings/from"/>: <span itemprop="temporal"><xsl:value-of select="gml:beginPosition"/></span> <br/>
             <xsl:value-of select="$schemaStrings/to"/>:  <span itemprop="temporal"><xsl:value-of select="gml:endPosition"/></span>
@@ -350,7 +351,296 @@
       </div>
     </xsl:for-each>
 
-    <script>$( ".wb-geomap" ).trigger( "wb-init.wb-geomap" );</script>
+    <script type="text/javascript">$( ".wb-geomap" ).trigger( "wb-init.wb-geomap" );</script>
+
+
+    <div style="clear:left">&#160;</div>
+
+    <xsl:variable name="lang">
+      <xsl:choose>
+        <xsl:when test="/root/lang='fra'">
+          <xsl:text>fre</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>eng</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="isoLang">
+      <xsl:choose>
+        <xsl:when test="$lang='fra'">
+          <xsl:text>urn:xml:lang:fra-CAN</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>urn:xml:lang:eng-CAN</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="langId">
+      <xsl:call-template name="getLangId">
+        <xsl:with-param name="langGui" select="$lang" />
+        <xsl:with-param name="md"
+                        select="ancestor-or-self::*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']" />
+      </xsl:call-template>
+    </xsl:variable>
+
+    <!-- Resources -->
+    <!-- TODO retrieve the webServiceTypes -->
+    <xsl:variable name="webMapServicesProtocols" select="/root/gui/webServiceTypes" />
+    <xsl:variable name="mapResourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang]/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
+    <xsl:variable name="resourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine)"/>
+    <xsl:variable name="mapResourcesTotalCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
+
+    <xsl:if test="$mapResourcesCount > 0">
+      <!-- MAP RESOURCES -->
+      <h3><xsl:value-of select="$schemaStrings/MapResources"/></h3>
+
+      <xsl:call-template name="map-resources">
+        <xsl:with-param name="langId" select="$langId" />
+        <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
+        <xsl:with-param name="isoLang" select="$isoLang" />
+      </xsl:call-template>
+
+    </xsl:if>
+
+    <!-- Data resources -->
+    <xsl:if test="($resourcesCount - $mapResourcesTotalCount) > 0">
+      <h3><xsl:value-of select="$schemaStrings/Dataresources"/></h3>
+      <!-- TODO return geonet:info/files inside the metadata element -->
+      <xsl:variable name="resourceFiles" select="/root/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/geonet:info/files" />
+
+      <!-- first create a hidden window, below in this file are some hyperlink-create templates, some of them,
+          like the download link, use the content in this div for a details-window -->
+      <xsl:call-template name="data-resources">
+        <xsl:with-param name="langId" select="$langId" />
+        <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
+      </xsl:call-template>
+    </xsl:if>
+
+    <!-- this template is in /envcan/metadata.xsl, and includes a title, if any relations -->
+    <xsl:call-template name="parentCollection">
+      <!-- TODO retrieve the parent metadata -->
+      <xsl:with-param name="resources" select="/root/gui/relation/parent/response/*[geonet:info]"/>
+      <xsl:with-param name="theme" select="geonet:info/Theme"/>
+      <xsl:with-param name="subtheme" select="geonet:info/Subtheme"/>
+      <xsl:with-param name="schema" select="geonet:info/schema"/>
+    </xsl:call-template>
+
+    <xsl:call-template name="relatedDatasets">
+    <!-- TODO retrieve the children metadata -->
+      <xsl:with-param name="resources" select="/root/gui/relation/children/response/*[geonet:info]|/root/gui/relation/services/response/*[geonet:info]|/root/gui/relation/related/response/*[geonet:info]"/>
+    </xsl:call-template>
+
+
+  </xsl:template>
+
+
+  <xsl:template name="map-resources">
+    <xsl:param name="langId" />
+    <!-- TODO receive the right webMapServicesProtocols -->
+    <xsl:param name="webMapServicesProtocols" />
+    <xsl:param name="isoLang" />
+
+    <div><h3>Map resources section (DELETE ME)</h3></div>
+    <xsl:message>=== map-resources ===</xsl:message>
+
+    <!-- TODO retrieve the isolanguages from the service -->
+    <!--<xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />-->
+
+    <!--<xsl:variable name="lang">-->
+      <!--<xsl:choose>-->
+        <!--<xsl:when test="/root/lang='fra'">-->
+          <!--<xsl:text>fre</xsl:text>-->
+        <!--</xsl:when>-->
+        <!--<xsl:otherwise>-->
+          <!--<xsl:text>eng</xsl:text>-->
+        <!--</xsl:otherwise>-->
+      <!--</xsl:choose>-->
+    <!--</xsl:variable>-->
+
+    <!--<xsl:variable name="map_url">-->
+      <!--<xsl:choose>-->
+        <!--<xsl:when test="$lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>-->
+        <!--<xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>-->
+      <!--</xsl:choose>-->
+    <!--</xsl:variable>-->
+
+    <!--&lt;!&ndash; MAP RESOURCES &ndash;&gt;-->
+    <!--<xsl:variable name="esriRestValue">esri rest: map service</xsl:variable>-->
+    <!--<xsl:variable name="hasRESTService" select="count(/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$esriRestValue]) &gt; 0"/>-->
+
+    <!--<xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]"-->
+                        <!--group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">-->
+
+      <!--<xsl:variable name="descriptionValue">-->
+        <!--<xsl:for-each select="gmd:description">-->
+          <!--<xsl:call-template name="localised">-->
+            <!--<xsl:with-param name="langId" select="$langId"/>-->
+          <!--</xsl:call-template>-->
+        <!--</xsl:for-each>-->
+      <!--</xsl:variable>-->
+
+      <!--<h4><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></h4>-->
+
+      <!--<table class="wb-tables table table-striped table-hover" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">-->
+        <!--<xsl:attribute name="data-wb-tables">'{ "ordering" : false }</xsl:attribute>-->
+
+        <!--<thead style="display: none">-->
+          <!--<th style="width: 65%"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Name" /></th>-->
+          <!--<th style="width: 35%"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Link" /></th>-->
+        <!--</thead>-->
+        <!--&lt;!&ndash;<xsl:for-each select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource|/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[not(string(@xlink:role))]/gmd:CI_OnlineResource">&ndash;&gt;-->
+        <!--<xsl:for-each select="current-group()">-->
+          <!--<xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />-->
+          <!--<xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />-->
+
+          <!--<xsl:variable name="nameValue">-->
+            <!--<xsl:for-each select="gmd:name">-->
+              <!--<xsl:call-template name="localised">-->
+                <!--<xsl:with-param name="langId" select="$langId"/>-->
+              <!--</xsl:call-template>-->
+            <!--</xsl:for-each>-->
+          <!--</xsl:variable>-->
+
+          <!--<xsl:variable name="descriptionValue">-->
+            <!--<xsl:for-each select="gmd:description">-->
+              <!--<xsl:call-template name="localised">-->
+                <!--<xsl:with-param name="langId" select="$langId"/>-->
+              <!--</xsl:call-template>-->
+            <!--</xsl:for-each>-->
+          <!--</xsl:variable>-->
+
+          <!--<xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />-->
+
+          <!--<tr>-->
+            <!--<td style="width: 65%"><span class="ec-word-wrap"><xsl:value-of select="$nameValue" />-->
+              <!--(<xsl:choose>-->
+                <!--<xsl:when test="../@xlink:role = 'urn:xml:lang:fra-CAN'"><xsl:value-of select="/root/gui/strings/french" /></xsl:when>-->
+                <!--<xsl:otherwise><xsl:value-of select="/root/gui/strings/english" /></xsl:otherwise>-->
+              <!--</xsl:choose>)</span></td>-->
+            <!--<td style="width: 35%">-->
+              <!--&lt;!&ndash; Access data button &ndash;&gt;-->
+              <!--<div style="min-height:35px; margin-left: 5px" class="pull-right">-->
+                <!--<a class="btn btn-default btn-sm" href="{$urlValue}">-->
+                  <!--<xsl:value-of select="tokenize($descriptionValue, ';')[2]" />-->
+                <!--</a>-->
+              <!--</div>-->
+
+              <!--&lt;!&ndash; Add view map buttons next to the RCS registered services, condition /root/gmd:MD_Metadata/geonet:info/rcs_priority_registered = '-1' maintained for legacy records &ndash;&gt;-->
+              <!--<xsl:if test="/root/gui/env/publication/mapviewer/mapviewerenabled = 'true' and (/root/gmd:MD_Metadata/geonet:info/disabledMapServices = 'false' or not(/root/gmd:MD_Metadata/geonet:info/disabledMapServices)) and-->
+                      <!--(((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered)) or-->
+                       <!--((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">-->
+                <!--<xsl:variable name="sq">'</xsl:variable>-->
+                <!--<xsl:variable name="tsq">\\'</xsl:variable>-->
+                <!--<xsl:variable name="titleMap"><xsl:apply-templates select="/root/*/geonet:info/uuid" mode="getMetadataTitle" /></xsl:variable>-->
+                <!--<xsl:variable name="titleMapEscaped" select="replace($titleMap, $sq, $tsq)" />-->
+
+                <!--<xsl:variable name="maxPreviewLayers" select="/root/gui/env/publication/mapviewer/maxlayersmappreview" />-->
+                <!--<xsl:variable name="mapPreviewLayersMsg" select="replace(/root/gui/strings/maxpreviewlayers, '%1', $maxPreviewLayers)" />-->
+                <!--<xsl:variable name="mapPreviewLayersTitle" select="/root/gui/strings/map-preview/dialogtitle" />-->
+                <!--<xsl:variable name="mapPreviewLayersLayerAdd" select="/root/gui/strings/map-preview/dialoglayeradded" />-->
+                <!--<xsl:variable name="mapPreviewLayersLayerExists" select="/root/gui/strings/map-preview/dialoglayerexists" />-->
+
+
+                <!--<xsl:variable name="vm-smallkey">-->
+                  <!--<xsl:choose>-->
+                    <!--<xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:when>-->
+                    <!--<xsl:otherwise><xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:otherwise>-->
+                  <!--</xsl:choose>-->
+                <!--</xsl:variable>-->
+
+                <!--&lt;!&ndash; Add to map preview &ndash;&gt;-->
+
+                <!--<div style="min-height:35px" class="pull-right">-->
+                  <!--<a class="btn btn-default btn-sm" href="#">-->
+                    <!--<xsl:attribute name="onclick">mappreview.addLayer('<xsl:value-of select="$urlValue" />','<xsl:value-of select="$titleMapEscaped" />','<xsl:value-of select="replace($nameValue, $sq, $tsq)" />',-->
+                      <!--'<xsl:value-of select="replace($descriptionValue, $sq, $tsq)" />','<xsl:value-of select="normalize-space(gmd:protocol)" />',-->
+                      <!--'<xsl:value-of select="normalize-space($vm-smallkey)" />', '<xsl:value-of select="$maxPreviewLayers" />',-->
+                      <!--'<xsl:value-of select="$mapPreviewLayersMsg" />',-->
+                      <!--'<xsl:value-of select="$mapPreviewLayersTitle" />', '<xsl:value-of select="$mapPreviewLayersLayerAdd" />',-->
+                      <!--'<xsl:value-of select="$mapPreviewLayersLayerExists" />'); return false;</xsl:attribute>-->
+                    <!--<xsl:value-of select="/root/gui/strings/map_page/add2mapPreview"/>-->
+                  <!--</a>-->
+                <!--</div>-->
+
+              <!--</xsl:if>-->
+
+              <!--<div style="clear:both;" />-->
+            <!--</td>-->
+          <!--</tr>-->
+
+        <!--</xsl:for-each>-->
+
+
+      <!--</table>-->
+    <!--</xsl:for-each-group>-->
+
+  </xsl:template>
+
+  <xsl:template name="data-resources">
+    <xsl:param name="langId" />
+    <xsl:param name="webMapServicesProtocols" />
+
+    <!-- TODO retrieve the isolanguages from the service -->
+    <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
+
+
+    <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[not(lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name)]"
+                        group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">
+
+      <xsl:variable name="descriptionValue">
+        <xsl:for-each select="gmd:description">
+          <xsl:call-template name="localised">
+            <xsl:with-param name="langId" select="$langId"/>
+          </xsl:call-template>
+        </xsl:for-each>
+      </xsl:variable>
+
+      <h4><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></h4>
+
+      <table class="wb-tables table table-striped table-hover" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+        <xsl:attribute name="data-wb-tables">'{ "ordering" : false }</xsl:attribute>
+
+        <thead style="display: none">
+          <th style="width: 75%"><xsl:value-of select="/root/schemas/iso19139.nap/strings/Dataresources_Name" /></th>
+          <th style="width: 25%"><xsl:value-of select="/root/schemas/iso19139.nap/strings/Dataresources_Link" /></th>
+        </thead>
+
+        <xsl:for-each select="current-group()">
+          <xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />
+
+          <xsl:variable name="nameValue">
+            <xsl:for-each select="gmd:name">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <xsl:variable name="descriptionValue">
+            <xsl:for-each select="gmd:description">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <tr>
+            <td style="width: 75%"><span class="ec-word-wrap"><xsl:value-of select="$nameValue" /></span></td>
+            <td style="width: 25%">
+
+              <a class="btn btn-default btn-sm pull-right" target="_blank" href="{$urlValue}">
+                <xsl:attribute name="onclick">logExternalDownload('<xsl:value-of select="/root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString" />','<xsl:value-of select="$urlValue" />');</xsl:attribute>
+
+                <xsl:value-of select="tokenize($descriptionValue, ';')[2]" />
+              </a>
+            </td>
+          </tr>
+        </xsl:for-each>
+      </table>
+    </xsl:for-each-group>
   </xsl:template>
 
 

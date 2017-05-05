@@ -11,10 +11,135 @@
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
+                xmlns:geonet="http://www.fao.org/geonetwork"
+                xmlns:exslt="http://exslt.org/common"
                 xmlns:saxon="http://saxon.sf.net/"
                 version="2.0"
                 extension-element-prefixes="saxon"
                 exclude-result-prefixes="#all">
+
+  <xsl:template name="getUserLang">
+    <xsl:choose>
+      <xsl:when test="/root/lang='fra'">
+        <xsl:text>fre</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>eng</xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="parentCollection">
+    <xsl:param name="schema"/>
+    <xsl:param name="resources"/>
+    <xsl:param name="theme"/>
+    <xsl:param name="subtheme"/>
+
+    <xsl:if test="count($resources/*) &gt; 0">
+      <h3><xsl:value-of select="/root/schemas/iso19139.nap/strings/ParentCollection"/></h3>
+      <xsl:for-each select="$resources">
+        <!-- Sort first datasets -->
+        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+
+        <div class="relatedDatasets" id="rlds{position()}">
+          <!-- hide records over 5, to make visible with more button -->
+          <xsl:if test="position() &gt; 5"><xsl:attribute name="style" select="'display:none'"/></xsl:if>
+          <div style="float:left"> <!-- todo: check here the schema for icon to display -->
+            <img class="icon" align="bottom">
+              <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
+              <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
+              <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+            </img>
+            <!-- Response for related resources is different depending on the relation:
+                * Child relation return a brief representation of metadata
+                * Parent reprentation (and others) return the raw metadata
+            -->
+
+
+            <xsl:variable name="md">
+              <xsl:apply-templates mode="brief" select="."/>
+            </xsl:variable>
+            <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
+            <!--<xsl:value-of select="$metadata/title" />-->
+            <xsl:variable name="classificationFilter">
+              <xsl:choose>
+                <xsl:when test="$schema = 'iso19139.napec'">_classificationTheme=<xsl:value-of select="$theme" />&amp;_classificationSubtheme=<xsl:value-of select="$subtheme" />&amp;</xsl:when>
+                <xsl:otherwise></xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+            &#160;<a href="search?_schema={$schema}&amp;{$classificationFilter}parentUuid={$metadata/geonet:info/uuid}" title="Search metadata in the collection {$metadata/title}"><xsl:value-of select="$metadata/title" /></a>
+
+          </div>
+          <div style="float:right">
+            <a class="btn btn-default btn-sm" href="metadata/{/root/lang}/{geonet:info/uuid}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/View"/></a>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+      </xsl:for-each>
+
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="relatedDatasets">
+    <xsl:param name="schema"/>
+    <xsl:param name="resources"/>
+
+    <xsl:if test="count($resources/*) &gt; 0">
+      <h3><xsl:value-of select="/root/schemas/iso19139.nap/strings/Relateddata"/> (<xsl:value-of select="count($resources)" />)</h3>
+      <xsl:for-each select="$resources">
+        <!-- Sort first datasets -->
+        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+
+        <div class="relatedDatasets" id="rlds{position()}">
+          <!-- hide records over 5, to make visible with more button -->
+          <xsl:if test="position() &gt; 5"><xsl:attribute name="style" select="'display:none'"/></xsl:if>
+          <div style="float:left"> <!-- todo: check here the schema for icon to display -->
+            <img class="icon" align="bottom">
+              <xsl:choose>
+                <xsl:when test="geonet:info/schema='sensorML'">
+                  <xsl:attribute name="src" select="concat(/root/gui/url,'/images/monsite.png')" />
+                  <xsl:attribute name="alt" select="concat('Monitoring Site:&#160;',title)" />
+                  <xsl:attribute name="title" select="concat('Monitoring Site:&#160;',title)" />
+                </xsl:when>
+                <!-- <xsl:when test=""></xsl:when> todo hierarchy level -> test if service -->
+                <xsl:otherwise>
+                  <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
+                  <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
+                  <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+                </xsl:otherwise>
+              </xsl:choose>
+            </img>
+            <!-- Response for related resources is different depending on the relation:
+                * Child relation return a brief representation of metadata
+                * Parent reprentation (and others) return the raw metadata
+            -->
+            <xsl:choose>
+              <xsl:when test="name() != 'metadata'">
+                <xsl:variable name="md">
+                  <xsl:apply-templates mode="brief" select="."/>
+                </xsl:variable>
+                <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
+                <xsl:value-of select="$metadata/title" />
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="title" />
+              </xsl:otherwise>
+            </xsl:choose>
+
+          </div>
+          <div style="float:right">
+            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/gui/language}/{geonet:info/uuid}"><xsl:value-of select="/root/gui/strings/View"/></a>
+          </div>
+          <div style="clear:both"></div>
+        </div>
+      </xsl:for-each>
+
+      <xsl:if test="count($resources) &gt; 5">
+        <a href="javascript:void(jQuery.each(jQuery('.relatedDatasets'),function(){{this.style.display='block'}}))" onclick="this.style.display='none'">
+          <xsl:value-of select="concat((count($resources)-5),' ',/root/schemas/iso19139.nap/strings/more,'...')" /></a>
+      </xsl:if>
+    </xsl:if>
+  </xsl:template>
 
   <!-- Create a div with class name set to extentViewer in
         order to generate a new map.  -->

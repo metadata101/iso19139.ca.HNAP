@@ -166,6 +166,9 @@
   <identification_explained>Utilisez ces paramètres pour trouver des ensembles de données par métadonnées générales</identification_explained>
   <tagcloud_explained>Nuage de mots clés. Cliquez sur un mot clé ou tapez les mots clés dans l'encadré ci-dessus (séparés par une virgule).</tagcloud_explained>
   <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
+  <Relateddata>Ressources connexes</Relateddata>
+  <View>Voir</View>
+  <more>Plus</more>
 
   <updateExtent>Update geographic extent</updateExtent>
 
@@ -174,5 +177,5 @@
   <MetadataContact>Point de contact pour les métadonnées</MetadataContact>
   <DataContact>Point de contact pour les données</DataContact>
   <DataPointContact>Point de contact pour les données</DataPointContact>
-  <!-- strings for metadata-detail header -->
+  <ParentCollection>Ensemble apparenté</ParentCollection>
 </strings>
