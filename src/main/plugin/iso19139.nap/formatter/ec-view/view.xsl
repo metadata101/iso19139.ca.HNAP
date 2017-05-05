@@ -50,12 +50,15 @@
   <!-- TODO: schema is not part of the XML -->
   <xsl:variable name="schema"
                 select="/root/info/record/datainfo/schemaid"/>
+
   <xsl:variable name="metadataId"
                 select="/root/info/record/id"/>
 
   <xsl:variable name="language"
                 select="/root/lang/text()"/>
 
+  <xsl:variable name="nodeUrl"
+                select="/root/gui/nodeUrl"/>
 
   <xsl:template match="/">
     <xsl:apply-templates select="/root/gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"/>
@@ -380,9 +383,10 @@
     <!-- side bar-->
     <div class="col-md-4 row-end ec-md-detail mrgn-tp-sm">
       <!-- as defined in md-show -->
-      <!--<xsl:call-template name="md-sidebar-title">
+      <xsl:call-template name="md-sidebar-title">
         <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
-      </xsl:call-template>-->
+        <xsl:with-param name="info" select="/root/info/record"/>
+      </xsl:call-template>
 
       <xsl:if test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString!=''">
 
@@ -533,4 +537,127 @@
      </div>
   </xsl:template>
 
+  <xsl:template name="md-sidebar-title">
+    <xsl:param name="metadata"/>
+    <xsl:param name="info"/>
+    <!-- export icons -->
+    <div style="float:right" class="mrgn-bttm-sm">
+      <xsl:call-template name="showMetadataExportIcons">
+        <xsl:with-param name="info" select="$info" />
+      </xsl:call-template>
+    </div>
+    <div style="clear:both"/>
+
+
+    <xsl:call-template name="showPanel">
+      <xsl:with-param name="title">
+        <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
+
+        <xsl:choose>
+
+          <!-- no published copy available, always draft (or retired/rejected) -->
+          <xsl:when test="not ($info/publishedCopy='true')">
+            <xsl:value-of select="/root/gui/strings/*[name()=$info/statusName]"/>
+          </xsl:when>
+
+          <!-- when viewing draft of a published copy -->
+          <xsl:when test="$info/workspace='true'">
+            <xsl:value-of select="/root/gui/strings/*[name()=$info/statusName]"/> &#160;
+            (<a href="{/root/gui/url}/metadata/{/root/gui/language}/{$info/uuid}" style="color:white" title="{/root/gui/strings/view_published}">
+            <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/published"/></a>)
+          </xsl:when>
+
+          <!-- if viewing puslished copy, status is draft, if a draft is available, but should show status published here, with option to visit draft, if you have right to view draft (=edit?) -->
+          <xsl:when test="($info/status!='2') and ($info/edit='true')">
+            <xsl:value-of select="/root/gui/strings/published"/> &#160;
+            (<a href="{/root/gui/url}/metadata/{/root/gui/language}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
+            <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/draft"/></a>)
+          </xsl:when>
+
+          <!-- else this is a published record without draft (status approved, display as 'published') -->
+          <xsl:otherwise>
+            <xsl:value-of select="/root/gui/strings/published"/>
+          </xsl:otherwise>
+
+        </xsl:choose>
+      </xsl:with-param>
+
+      <xsl:with-param name="content">
+        <table style="border:none">
+          <tbody>
+            <tr valign="top">
+              <td><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Publishedto"/>:</td>
+              <td><xsl:value-of select="$info/publishedto"/></td>
+            </tr>
+            <tr valign="top">
+              <td><!-- Owner -->
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/owner"/>:
+              </td>
+              <td>
+                <xsl:value-of select="$info/ownername"/>
+              </td>
+            </tr>
+            <xsl:if test="$info/isLocked = 'y' and $info/workspace= 'true'">
+              <tr valign="top">
+                <td>
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/lastChangedBy"/>:
+                </td>
+                <td>
+                  <xsl:value-of select="$info/lockername"/>
+                </td>
+              </tr>
+            </xsl:if>
+
+            <tr valign="top">
+              <td>
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/changeDate"/>:
+              </td>
+              <td>
+                <xsl:value-of select="$info/datainfo/changedate"/>
+              </td>
+            </tr>
+
+
+            <tr valign="top">
+              <td><!-- Data Openness Rating -->
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/rating"/>:
+              </td>
+              <td class="stars">
+                <xsl:variable name="dataOpennessRating" select="'2'" />
+                <xsl:choose>
+                  <xsl:when test="not($info/dataOpennessRating) or $info/dataOpennessRating = 0">
+                    <xsl:call-template name="ratingStars">
+                      <xsl:with-param name="fill" select="false()" />
+                      <xsl:with-param name="count" select="5" />
+                    </xsl:call-template>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:call-template name="ratingStars">
+                      <xsl:with-param name="fill" select="true()" />
+                      <xsl:with-param name="count" select="$info/dataOpennessRating" />
+                    </xsl:call-template>
+                    <xsl:call-template name="ratingStars">
+                      <xsl:with-param name="fill" select="false()" />
+                      <xsl:with-param name="count" select="5 - $info/dataOpennessRating" />
+                    </xsl:call-template>
+                  </xsl:otherwise>
+                </xsl:choose>
+
+              </td>
+            </tr>
+
+            <!--<tr>
+              <td>
+                <div  role="menubar">
+                  <xsl:call-template name="buttons">
+                    <xsl:with-param name="metadata" select="$metadata"/>
+                  </xsl:call-template>
+                </div>
+              </td>
+            </tr>-->
+          </tbody>
+        </table>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
 </xsl:stylesheet>

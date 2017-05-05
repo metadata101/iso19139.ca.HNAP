@@ -174,5 +174,11 @@
   <MetadataContact>Point de contact pour les métadonnées</MetadataContact>
   <DataContact>Point de contact pour les données</DataContact>
   <DataPointContact>Point de contact pour les données</DataPointContact>
-  <!-- strings for metadata-detail header -->
+
+  <Status>Statut</Status>
+  <Publishedto>Published à</Publishedto>
+  <owner>Auteur</owner>
+  <lastChangedBy>Dernier changement effectué par</lastChangedBy>
+  <changeDate>Date de mise à jour des métadonnées</changeDate>
+  <rating>Openness rating</rating>
 </strings>

@@ -115,6 +115,60 @@
     </div>
   </xsl:template>
 
+  <!-- show metadata export icons eg. in search results or metadata viewer -->
+  <xsl:template name="showMetadataExportIcons">
+    <xsl:param name="info" />
+
+    <xsl:variable name="muuid" select="$info/uuid"/>
+    <xsl:variable name="workspace" select="string($info/workspace)"/>
+
+    <!-- add xml link -->
+    <!--<xsl:variable name="mdDownloadLink">
+      <xsl:choose>
+        <xsl:when test="/root/gui/env/platform/appMode = 'fgp'">xml.metadata.download</xsl:when>
+        <xsl:otherwise>xml.metadata.get</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>-->
+
+    <!--<xsl:variable name="xmlUrl" select="concat($url,'/', normalize-space($mdDownloadLink), '?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
+    <xsl:variable name="xmlUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xml')"/>
+    <a href="{$xmlUrl}" title="{/root/gui/strings/downloadas} XML" class="btn btn-default btn-md mrgn-rght-sm" target="_blank">
+      <xsl:if test="/root/gui/env/platform/appMode != 'fgp'">
+        <xsl:attribute name="target">_blank</xsl:attribute>
+      </xsl:if>
+
+      <img src="{/root/gui/url}/images/xml.png" alt="{/root/gui/strings/downloadas} XML" title="{/root/gui/strings/downloadas} XML" />
+    </a>
+
+    <!-- add pdf link -->
+    <!--<xsl:variable name="pdfUrl" select="concat($url,'/rest.pdf?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
+    <xsl:variable name="pdfUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xsl-view?root=div&amp;output=pdf')"/>
+    <a href="{$pdfUrl}" title="{/root/gui/strings/downloadas} PDF" class="btn btn-default btn-md" target="_blank">
+      <img src="{/root/gui/url}/images/pdf_small.gif" alt="{/root/gui/strings/downloadas} PDF" title="{/root/gui/strings/downloadas} PDF" />
+    </a>
+  </xsl:template>
+
+  <xsl:template name="ratingStars">
+    <xsl:param name="fill" select="false()"/>
+    <xsl:param name="count" select="1"/>
+
+    <xsl:if test="$count > 0">
+      <span>
+        <xsl:attribute name="class">
+          <xsl:choose>
+            <xsl:when test="$fill = true()">fa fa-star fa-fw</xsl:when>
+            <xsl:otherwise>fa fa-star-o fa-fw</xsl:otherwise>
+          </xsl:choose>
+
+        </xsl:attribute>
+      </span>
+      <xsl:call-template name="ratingStars">
+        <xsl:with-param name="fill" select="$fill"/>
+        <xsl:with-param name="count" select="$count - 1"/>
+      </xsl:call-template>
+    </xsl:if>
+
+  </xsl:template>
 
   <!-- Most of the elements are ... -->
   <xsl:template mode="render-field"
