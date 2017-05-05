@@ -98,4 +98,159 @@
     </xsl:choose>
   </xsl:template>
 
+
+  <xsl:template name="showPanel">
+    <xsl:param name="title" select="''" />
+    <xsl:param name="content" />
+    <xsl:param name="style" select="''" /> <!-- can be '', success, info, warning, danger-->
+    <div class="list-group">
+      <xsl:if test="$title!=''">
+        <xsl:variable name="titlestyle"><xsl:choose>
+          <xsl:when test="$style=''">active</xsl:when>
+          <xsl:otherwise>list-group-item-<xsl:value-of select="$style"/></xsl:otherwise>
+        </xsl:choose></xsl:variable>
+        <div class="list-group-item {$titlestyle}"><xsl:copy-of select="$title"/></div>
+      </xsl:if>
+      <div class="list-group-item"><xsl:copy-of select="$content"/></div>
+    </div>
+  </xsl:template>
+
+
+  <!-- Most of the elements are ... -->
+  <xsl:template mode="render-field"
+                match="*[gco:CharacterString|gco:Integer|gco:Decimal|
+       gco:Boolean|gco:Real|gco:Measure|gco:Length|gco:Distance|
+       gco:Angle|gmx:FileName|
+       gco:Scale|gco:Record|gco:RecordType|gmx:MimeFileType|gmd:URL|
+       gco:LocalName|gmd:PT_FreeText|gml:beginPosition|gml:endPosition|
+       gco:Date|gco:DateTime|*/@codeListValue]"
+                priority="50">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:choose>
+          <xsl:when test="*/@codeListValue">
+            <xsl:apply-templates mode="render-value" select="*/@codeListValue"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates mode="render-value" select="*"/>
+          </xsl:otherwise>
+        </xsl:choose>
+
+        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+      </dd>
+    </dl>
+  </xsl:template>
+
+
+  <xsl:template mode="render-field"
+                match="*[gmd:PT_FreeText]"
+                priority="100">
+
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:apply-templates mode="localised" select=".">
+          <xsl:with-param name="langId" select="$language" />
+        </xsl:apply-templates>
+
+        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+      </dd>
+    </dl>
+
+  </xsl:template>
+
+  <!-- Traverse the tree -->
+  <xsl:template mode="render-field"
+                match="*">
+    <xsl:apply-templates mode="render-field"/>
+  </xsl:template>
+
+  <!-- ########################## -->
+  <!-- Render values for text ... -->
+  <xsl:template mode="render-value"
+                match="gco:CharacterString|gco:Integer|gco:Decimal|
+       gco:Boolean|gco:Real|gco:Measure|gco:Length|gco:Distance|gco:Angle|gmx:FileName|
+       gco:Scale|gco:Record|gco:RecordType|gmx:MimeFileType|gmd:URL|
+       gco:LocalName|gml:beginPosition|gml:endPosition">
+
+    <xsl:choose>
+      <xsl:when test="contains(., 'http')">
+        <!-- Replace hyperlink in text by an hyperlink -->
+        <xsl:variable name="textWithLinks"
+                      select="replace(., '([a-z][\w-]+:/{1,3}[^\s()&gt;&lt;]+[^\s`!()\[\]{};:'&apos;&quot;.,&gt;&lt;?«»“”‘’])',
+                                    '&lt;a href=''$1''&gt;$1&lt;/a&gt;')"/>
+
+        <xsl:if test="$textWithLinks != ''">
+          <xsl:copy-of select="saxon:parse(
+                          concat('&lt;p&gt;',
+                          replace($textWithLinks, '&amp;', '&amp;amp;'),
+                          '&lt;/p&gt;'))"/>
+        </xsl:if>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="normalize-space(.)"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
+  <!-- ... Codelists -->
+  <xsl:template mode="render-value"
+                match="@codeListValue" priority="2">
+
+    <xsl:variable name="id" select="."/>
+    <xsl:variable name="codelistTranslation"
+                  select="tr:codelist-value-label(
+                            tr:create($schema),
+                            parent::node()/local-name(), $id)"/>
+    <xsl:choose>
+      <xsl:when test="$codelistTranslation != ''">
+
+        <xsl:variable name="codelistDesc"
+                      select="tr:codelist-value-desc(
+                            tr:create($schema),
+                            parent::node()/local-name(), $id)"/>
+        <span title="{$codelistDesc}">
+          <xsl:value-of select="$codelistTranslation"/>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$id"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template mode="render-value"
+                match="gmd:PT_FreeText">
+    <xsl:message>M: <xsl:value-of select="name(..)" /></xsl:message>
+    <hr/>
+    <xsl:apply-templates mode="localised" select="../node()">
+      <xsl:with-param name="langId" select="$language"/>
+    </xsl:apply-templates>
+    <hr/>
+  </xsl:template>
+
+  <!-- ... URL -->
+  <xsl:template mode="render-value"
+                match="gmd:URL">
+    <a href="{.}">
+      <xsl:value-of select="."/>
+    </a>
+  </xsl:template>
+
+  <xsl:template mode="render-value"
+                match="@*" />
 </xsl:stylesheet>

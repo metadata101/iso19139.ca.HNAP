@@ -43,6 +43,19 @@
   <xsl:import href="../../present/metadata-utils.xsl" />
   <xsl:import href="ec-nap-metadata-utils.xsl" />
 
+  <!-- Load the editor configuration to be able
+     to render the different views -->
+
+
+  <!-- TODO: schema is not part of the XML -->
+  <xsl:variable name="schema"
+                select="/root/info/record/datainfo/schemaid"/>
+  <xsl:variable name="metadataId"
+                select="/root/info/record/id"/>
+
+  <xsl:variable name="language"
+                select="/root/lang/text()"/>
+
 
   <xsl:template match="/">
     <xsl:apply-templates select="/root/gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"/>
@@ -64,7 +77,41 @@
         <xsl:with-param name="edit" select="$edit" />
         <xsl:with-param name="langForMetadata" select="$langForMetadata" />
       </xsl:call-template>
+
+      <div style="clear:both" />
+      <h3><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Additionalinformation"/></h3>
+
+      <xsl:call-template name="showPanel">
+
+        <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:identificationInfo']/label"/>
+        <xsl:with-param name="content">
+          <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+            <tbody>
+              <xsl:apply-templates mode="render-field" select="gmd:identificationInfo/*/gmd:citation/*/*[name() != 'gmd:title' and name() != 'gmd:citedResponsibleParty']" />
+
+              <xsl:apply-templates mode="render-field"  select="gmd:identificationInfo/*/*[name() != 'gmd:citation' and
+                name() != 'gmd:abstract' and name() != 'gmd:pointOfContact' and name() != 'gmd:descriptiveKeywords' and
+                name() != 'gmd:extent' and name() != 'gmd:graphicOverview' and name() != 'gmd:topicCategory']" />
+            </tbody>
+          </table>
+        </xsl:with-param>
+      </xsl:call-template>
+
+      <xsl:if test="gmd:contentInfo/*">
+        <xsl:call-template name="showPanel">
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:contentInfo']/label"/>
+          <xsl:with-param name="content">
+            <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+              <tbody>
+                <xsl:apply-templates mode="render-field" select="gmd:contentInfo/*" />
+              </tbody>
+            </table>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:if>
+
     </div>
+
   </xsl:template>
 
   <xsl:template name="common-detailview-fields">
@@ -145,9 +192,6 @@
         </xsl:if>
         <!-- Time period -->
         <xsl:if test="/root/gmd:MD_Metadata//gmd:temporalElement">
-          <xsl:message>=== time period ===
-          <xsl:copy-of select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod"/>
-          </xsl:message>
           <xsl:for-each select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
 
             <br/><br/><span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
@@ -181,7 +225,5 @@
 
     <span><xsl:value-of select="$thesaurusVal" /></span>
   </xsl:template>
-
-
 
 </xsl:stylesheet>
