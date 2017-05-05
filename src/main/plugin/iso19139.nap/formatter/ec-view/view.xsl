@@ -28,6 +28,7 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:gml="http://www.opengis.net/gml"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
@@ -71,9 +72,6 @@
     <xsl:param name="edit" />
     <xsl:param name="langForMetadata" />
 
-    <xsl:message>
-      === common-detailview-fields ===
-    </xsl:message>
     <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
 
     <!-- md title -->
@@ -141,17 +139,19 @@
             <xsl:if test="position()!=1">,&#160;</xsl:if>
             <xsl:apply-templates mode="ecGeographicScope" select=".">
               <xsl:with-param name="schema" select="$schema"/>
-              <xsl:with-param name="edit" select="$edit"/>
             </xsl:apply-templates>
           </xsl:for-each>
         </xsl:if>
         <!-- Time period -->
         <xsl:if test="/root/gmd:MD_Metadata//gmd:temporalElement">
+          <xsl:message>=== time period ===
+          <xsl:copy-of select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod"/>
+          </xsl:message>
           <xsl:for-each select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
 
             <br/><br/><span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
             <xsl:value-of select="$schemaStrings/from"/>: <span itemprop="temporal"><xsl:value-of select="gml:beginPosition"/></span> <br/>
-            <xsl:value-of select="$schemaStrings/strings/to"/>:  <span itemprop="temporal"><xsl:value-of select="gml:endPosition"/></span>
+            <xsl:value-of select="$schemaStrings/to"/>:  <span itemprop="temporal"><xsl:value-of select="gml:endPosition"/></span>
           </xsl:for-each>
         </xsl:if>
       </div>
@@ -161,6 +161,26 @@
 
   </xsl:template>
 
+
+
+  <xsl:template mode="ecGeographicScope" match="*">
+    <xsl:param name="schema" />
+    <xsl:param name="langId" />
+
+    <xsl:variable name="thesaurusVal">
+      <xsl:call-template name="localised">
+        <xsl:with-param name="langId" select="$langId" />
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="lang">
+      <xsl:call-template name="toIso2LangCode">
+        <xsl:with-param name="iso3code" select="/root/lang"/>
+      </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
+
+    <span><xsl:value-of select="$thesaurusVal" /></span>
+  </xsl:template>
 
 
 

@@ -174,4 +174,7 @@
   <identification_explained>Use these parameters to find datasets by general metadata</identification_explained>
   <when_explained>Use these parameters to find datasets within a certain period</when_explained>
   <recordType_explained>Use these parameters to filter the metadata type to search</recordType_explained>
+
+  <updateExtent>Update geographic extent</updateExtent>
+
 </strings>
