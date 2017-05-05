@@ -157,4 +157,13 @@
   <ne>NE</ne>
 
   <resources>Ressources (Utilisez la vue par défaut pour les ressources édition)</resources>
+  <dataset>Ensemble de données</dataset>
+  <datasets>Ensembles de données</datasets>
+  <description>Résumé</description>
+  <when_explained>Utilisez ces paramètres pour trouver des ensembles de données par période</when_explained>
+  <where_explained>Utilisez ces paramètres pour trouver des ensembles de données par secteur</where_explained>
+  <what_explained>Utilisez ces paramètres pour trouver des ensembles de données par sujet</what_explained>
+  <identification_explained>Utilisez ces paramètres pour trouver des ensembles de données par métadonnées générales</identification_explained>
+  <tagcloud_explained>Nuage de mots clés. Cliquez sur un mot clé ou tapez les mots clés dans l'encadré ci-dessus (séparés par une virgule).</tagcloud_explained>
+  <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
 </strings>

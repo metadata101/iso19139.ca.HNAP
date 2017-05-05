@@ -165,4 +165,13 @@
   <ne>NE</ne>
 
   <resources>Resources (Use the Basic view for resources editing)</resources>
+  <dataset>Dataset</dataset>
+  <datasets>Datasets</datasets>
+  <description>Description</description>
+  <when_explained>Use these parameters to find datasets within a certain period</when_explained>
+  <where_explained>Use these parameters to find datasets within area</where_explained>
+  <what_explained>Use these parameters to find datasets on a certain subject</what_explained>
+  <identification_explained>Use these parameters to find datasets by general metadata</identification_explained>
+  <when_explained>Use these parameters to find datasets within a certain period</when_explained>
+  <recordType_explained>Use these parameters to filter the metadata type to search</recordType_explained>
 </strings>
