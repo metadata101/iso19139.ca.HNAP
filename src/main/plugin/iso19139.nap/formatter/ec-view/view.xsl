@@ -96,6 +96,7 @@
     </pre>
     <br/><br/>
 
+
     <xsl:for-each select="/root/gmd:MD_Metadata//gmd:extent//gmd:EX_GeographicBoundingBox|/root/gmd:MD_Metadata//srv:extent//gmd:EX_GeographicBoundingBox">
       <xsl:variable name="minx" select="gmd:westBoundLongitude/gco:Decimal"/>
       <xsl:variable name="miny" select="gmd:southBoundLatitude/gco:Decimal"/>
@@ -157,8 +158,7 @@
       </div>
     </xsl:for-each>
 
-
-
+    <script>$( ".wb-geomap" ).trigger( "wb-init.wb-geomap" );</script>
   </xsl:template>
 
 
