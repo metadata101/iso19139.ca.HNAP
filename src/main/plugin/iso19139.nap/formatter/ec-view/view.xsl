@@ -71,47 +71,195 @@
         <xsl:with-param name="uiLang" select="/root/lang" />
       </xsl:call-template>
     </xsl:variable>
-    <div class="col-md-8 ec-md-detail" itemscope="" itemtype="http://schema.org/Dataset">
-      <xsl:call-template name="common-detailview-fields">
-        <xsl:with-param name="schema" select="$schema" />
-        <xsl:with-param name="edit" select="$edit" />
-        <xsl:with-param name="langForMetadata" select="$langForMetadata" />
-      </xsl:call-template>
+    <div>
+      <div class="col-md-8 ec-md-detail" itemscope="" itemtype="http://schema.org/Dataset">
+        <xsl:call-template name="common-detailview-fields">
+          <xsl:with-param name="schema" select="$schema" />
+          <xsl:with-param name="edit" select="$edit" />
+          <xsl:with-param name="langForMetadata" select="$langForMetadata" />
+        </xsl:call-template>
 
-      <div style="clear:both" />
-      <h3><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Additionalinformation"/></h3>
+        <div style="clear:both" />
+        <h3><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Additionalinformation"/></h3>
 
-      <xsl:call-template name="showPanel">
-
-        <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:identificationInfo']/label"/>
-        <xsl:with-param name="content">
-          <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
-            <tbody>
-              <xsl:apply-templates mode="render-field" select="gmd:identificationInfo/*/gmd:citation/*/*[name() != 'gmd:title' and name() != 'gmd:citedResponsibleParty']" />
-
-              <xsl:apply-templates mode="render-field"  select="gmd:identificationInfo/*/*[name() != 'gmd:citation' and
-                name() != 'gmd:abstract' and name() != 'gmd:pointOfContact' and name() != 'gmd:descriptiveKeywords' and
-                name() != 'gmd:extent' and name() != 'gmd:graphicOverview' and name() != 'gmd:topicCategory']" />
-            </tbody>
-          </table>
-        </xsl:with-param>
-      </xsl:call-template>
-
-      <xsl:if test="gmd:contentInfo/*">
         <xsl:call-template name="showPanel">
-          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:contentInfo']/label"/>
+
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:identificationInfo']/label"/>
           <xsl:with-param name="content">
             <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
               <tbody>
-                <xsl:apply-templates mode="render-field" select="gmd:contentInfo/*" />
+                <xsl:apply-templates mode="render-field" select="gmd:identificationInfo/*/gmd:citation/*/*[name() != 'gmd:title' and name() != 'gmd:citedResponsibleParty']" />
+
+                <xsl:apply-templates mode="render-field"  select="gmd:identificationInfo/*/*[name() != 'gmd:citation' and
+                  name() != 'gmd:abstract' and name() != 'gmd:pointOfContact' and name() != 'gmd:descriptiveKeywords' and
+                  name() != 'gmd:extent' and name() != 'gmd:graphicOverview' and name() != 'gmd:topicCategory']" />
               </tbody>
             </table>
           </xsl:with-param>
         </xsl:call-template>
-      </xsl:if>
+
+        <xsl:if test="gmd:contentInfo/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:contentInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:contentInfo/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:distributionInfo/*/*[name() = 'gmd:distributionFormat']">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:distributionInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:distributionInfo/*/*[name() = 'gmd:distributionFormat']" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:dataQualityInfo/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:dataQualityInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:dataQualityInfo/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:portrayalCatalogueInfo/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:portrayalCatalogueInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:portrayalCatalogueInfo/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:metadataConstraints/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:metadataConstraints']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:metadataConstraints/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:applicationSchemaInfo/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:applicationSchemaInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:applicationSchemaInfo/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:if test="gmd:metadataMaintenance/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/labels/element[@name='gmd:metadataMaintenance']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:metadataMaintenance/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+
+        <xsl:call-template name="showPanel">
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Metadatarecord"/>
+          <xsl:with-param name="content">
+
+            <table>
+              <tbody>
+                <xsl:apply-templates mode="render-field" select="gmd:fileIdentifier" />
+
+                <!-- dataseturi -->
+                <xsl:apply-templates mode="render-field" select="gmd:dataSetURI" />
+
+
+                <!-- Hierarchy level -->
+                <xsl:apply-templates mode="render-field" select="gmd:hierarchyLevel" />
+
+                <xsl:apply-templates  mode="render-field" select="gmd:hierarchyLevelName" />
+
+                <!-- Datestamp -->
+                <xsl:apply-templates mode="render-field" select="gmd:dateStamp" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:language" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:characterSet" />
+
+                <!-- metadataStandardName -->
+                <xsl:apply-templates mode="render-field" select="gmd:metadataStandardName" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:metadataStandardVersion" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:dataSetURI" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:locale" />
+
+                <!-- ReferenceSystemInfo -->
+                <xsl:apply-templates mode="render-field" select="gmd:referenceSystemInfo" />
+
+                <!-- spatialRepresentationInfo -->
+                <xsl:apply-templates mode="render-field" select="gmd:spatialRepresentationInfo" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:series" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:describes" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:propertyType" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:featureType" />
+
+                <xsl:apply-templates mode="render-field" select="gmd:featureAttribute" />
+
+              </tbody>
+            </table>
+          </xsl:with-param>
+        </xsl:call-template>
+
+        <xsl:if test="gmd:metadataExtensionInfo/*">
+          <xsl:call-template name="showPanel">
+            <xsl:with-param name="title"   select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataExtensionInfo']/label"/>
+            <xsl:with-param name="content">
+              <table class="sidebar2" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+                <tbody>
+                  <xsl:apply-templates mode="render-field" select="gmd:metadataExtensionInfo/*" />
+                </tbody>
+              </table>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+      </div>
+
+      <xsl:call-template name="sidebar-panel" />
 
     </div>
-
   </xsl:template>
 
   <xsl:template name="common-detailview-fields">
@@ -224,6 +372,165 @@
     <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
 
     <span><xsl:value-of select="$thesaurusVal" /></span>
+  </xsl:template>
+
+
+  <xsl:template name="sidebar-panel">
+
+    <!-- side bar-->
+    <div class="col-md-4 row-end ec-md-detail mrgn-tp-sm">
+      <!-- as defined in md-show -->
+      <!--<xsl:call-template name="md-sidebar-title">
+        <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
+      </xsl:call-template>-->
+
+      <xsl:if test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString!=''">
+
+        <xsl:variable name="langId" select="$language" />
+
+        <xsl:variable name="thumbnailName">
+          <xsl:choose>
+            <xsl:when test="$langId != 'eng'"><xsl:value-of select="concat('thumbnail_', $langId)" /></xsl:when>
+            <xsl:otherwise><xsl:value-of select="'thumbnail'" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:variable name="largeThumbnailName">
+          <xsl:choose>
+            <xsl:when test="$langId != 'eng'"><xsl:value-of select="concat('large_thumbnail_', $langId)" /></xsl:when>
+            <xsl:otherwise><xsl:value-of select="'large_thumbnail'" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:variable name="thumbnailNameOtherLang">
+          <xsl:choose>
+            <xsl:when test="$langId != 'fre'"><xsl:value-of select="'thumbnail_fre'" /></xsl:when>
+            <xsl:otherwise><xsl:value-of select="'thumbnail'" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:variable name="largeThumbnailNameOtherLang">
+          <xsl:choose>
+            <xsl:when test="$langId != 'fre'"><xsl:value-of select="'large_thumbnail_fre'" /></xsl:when>
+            <xsl:otherwise><xsl:value-of select="'large_thumbnail'" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:variable name="fileName">
+          <xsl:choose>
+
+            <!-- large thumbnail -->
+            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $largeThumbnailName and
+                            //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$largeThumbnailName]/gmd:fileName/gco:CharacterString!=''">
+              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $largeThumbnailName]/gmd:fileName/gco:CharacterString"/>
+            </xsl:when>
+            <!-- small thumbnail -->
+            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $thumbnailName and
+                            //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$thumbnailName]/gmd:fileName/gco:CharacterString!=''">
+              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $thumbnailName]/gmd:fileName/gco:CharacterString"/>
+            </xsl:when>
+            <!-- large thumbnail other language -->
+            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $largeThumbnailNameOtherLang and
+                              //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$largeThumbnailNameOtherLang]/gmd:fileName/gco:CharacterString!=''">
+              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $largeThumbnailNameOtherLang]/gmd:fileName/gco:CharacterString"/>
+            </xsl:when>
+            <!-- small thumbnail other language -->
+            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $thumbnailNameOtherLang and
+                              //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$thumbnailNameOtherLang]/gmd:fileName/gco:CharacterString!=''">
+              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $thumbnailNameOtherLang]/gmd:fileName/gco:CharacterString"/>
+            </xsl:when>
+            <!-- any thumbnail -->
+            <xsl:otherwise>
+              <xsl:value-of
+                select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[
+                                  not(gmd:fileDescription/gco:CharacterString = 'thumbnail') and
+                                   not(gmd:fileDescription/gco:CharacterString = 'thumbnail_fre') and
+                                    not(gmd:fileDescription/gco:CharacterString = 'large_thumbnail') and
+                                     not(gmd:fileDescription/gco:CharacterString = 'large_thumbnail_fre')][1]/gmd:fileName/gco:CharacterString"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:if test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString=$fileName">
+          <xsl:call-template name="showPanel">
+
+            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Thumbnail"/>
+
+            <xsl:with-param name="content">
+              <xsl:choose>
+                <xsl:when test="starts-with($fileName, 'http')">
+                  <img class="ec-thumbnail" src="{$fileName}" itemprop="image" alt="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" title="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" />
+                </xsl:when>
+                <xsl:otherwise>
+                  <img class="ec-thumbnail" src="{concat(/root/gui/url,'/srv/eng/resources.get?uuid=', /root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')}" itemprop="image" alt="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" title="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" />
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:with-param>
+          </xsl:call-template>
+        </xsl:if>
+      </xsl:if>
+
+      <xsl:for-each select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:pointOfContact/gmd:CI_ResponsibleParty">
+
+        <xsl:call-template name="showPanel">
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Contact"/>
+          <xsl:with-param name="content">
+            <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+              <tbody>
+                <xsl:apply-templates mode="render-field" select="." />
+              </tbody>
+            </table></xsl:with-param>
+        </xsl:call-template>
+
+      </xsl:for-each>
+
+
+      <xsl:for-each select="/root/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty">
+        <xsl:call-template name="showPanel">
+
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/MetadataContact"/>
+          <xsl:with-param name="content">
+            <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+              <tbody>
+                <xsl:apply-templates mode="render-field" select="." />
+              </tbody>
+            </table>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:for-each>
+
+      <xsl:for-each select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty">
+        <xsl:call-template name="showPanel">
+
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/DataContact"/>
+          <xsl:with-param name="content">
+            <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+              <tbody>
+                <xsl:apply-templates mode="render-field" select=".">
+                  <xsl:with-param name="schema" select="$schema"/>
+                  <xsl:with-param name="edit" select="false"/>
+                </xsl:apply-templates>
+              </tbody>
+            </table>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:for-each>
+
+      <xsl:for-each select="/root/gmd:MD_Metadata//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty">
+        <xsl:call-template name="showPanel">
+
+          <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/DistributorContact"/>
+          <xsl:with-param name="content">
+            <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+              <tbody>
+                <xsl:apply-templates mode="render-field" select="." />
+              </tbody>
+            </table>
+          </xsl:with-param>
+        </xsl:call-template>
+      </xsl:for-each>
+
+     </div>
   </xsl:template>
 
 </xsl:stylesheet>

@@ -172,6 +172,30 @@
 
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="gmd:date[gmd:CI_Date]"
+                priority="100">
+
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:apply-templates mode="render-value" select="gmd:CI_Date/gmd:date"/>
+        <xsl:if test="string(gmd:CI_Date/gmd:dateType/*/@codeListValue)" >
+        (<xsl:apply-templates mode="render-value" select="gmd:CI_Date/gmd:dateType/*/@codeListValue"/>)
+        </xsl:if>
+
+        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+      </dd>
+    </dl>
+
+  </xsl:template>
+
   <!-- Traverse the tree -->
   <xsl:template mode="render-field"
                 match="*">
@@ -235,12 +259,9 @@
 
   <xsl:template mode="render-value"
                 match="gmd:PT_FreeText">
-    <xsl:message>M: <xsl:value-of select="name(..)" /></xsl:message>
-    <hr/>
     <xsl:apply-templates mode="localised" select="../node()">
       <xsl:with-param name="langId" select="$language"/>
     </xsl:apply-templates>
-    <hr/>
   </xsl:template>
 
   <!-- ... URL -->

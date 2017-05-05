@@ -177,4 +177,9 @@
 
   <updateExtent>Update geographic extent</updateExtent>
 
+  <Contact>Contact</Contact>
+  <DistributorContact>Distributor Contact</DistributorContact>
+  <MetadataContact>Metadata Contact</MetadataContact>
+  <DataContact>Data Contact</DataContact>
+  <DataPointContact>Data Point of Contact</DataPointContact>
 </strings>
