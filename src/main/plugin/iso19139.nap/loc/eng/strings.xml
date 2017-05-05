@@ -185,5 +185,12 @@
   <MetadataContact>Metadata Contact</MetadataContact>
   <DataContact>Data Contact</DataContact>
   <DataPointContact>Data Point of Contact</DataPointContact>
+
+  <Status>Status</Status>
+  <Publishedto>Published to</Publishedto>
+  <owner>Owner</owner>
+  <lastChangedBy>Last change made by</lastChangedBy>
+  <changeDate>Metadata change date</changeDate>
+  <rating>Openness rating</rating>
   <ParentCollection>Parent Collection</ParentCollection>
 </strings>
