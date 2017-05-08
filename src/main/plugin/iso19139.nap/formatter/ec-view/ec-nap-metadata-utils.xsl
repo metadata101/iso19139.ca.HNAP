@@ -377,7 +377,7 @@
 
   <!-- Block elements -->
   <xsl:template mode="render-field"
-                match="gmd:referenceSystemInfo|gmd:distributionFormat"
+                match="gmd:resourceConstraints|gmd:referenceSystemInfo|gmd:distributionFormat"
                 priority="100">
 
     <xsl:param name="fieldName" select="''" as="xs:string"/>
