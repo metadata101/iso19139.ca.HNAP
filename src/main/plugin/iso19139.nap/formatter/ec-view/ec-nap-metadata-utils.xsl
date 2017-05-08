@@ -342,7 +342,7 @@
       </dt>
       <dd>
         <xsl:apply-templates mode="localised" select=".">
-          <xsl:with-param name="langId" select="$language" />
+          <xsl:with-param name="langId" select="$langForMetadata" />
         </xsl:apply-templates>
 
         <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
@@ -439,7 +439,7 @@
   <xsl:template mode="render-value"
                 match="gmd:PT_FreeText">
     <xsl:apply-templates mode="localised" select="../node()">
-      <xsl:with-param name="langId" select="$language"/>
+      <xsl:with-param name="langId" select="$langForMetadata"/>
     </xsl:apply-templates>
   </xsl:template>
 

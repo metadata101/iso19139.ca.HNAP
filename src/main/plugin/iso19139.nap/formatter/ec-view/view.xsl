@@ -59,6 +59,12 @@
   <xsl:variable name="language"
                 select="/root/lang/text()"/>
 
+  <xsl:variable name="langForMetadata">
+    <xsl:call-template name="getLangForMetadata">
+      <xsl:with-param name="uiLang" select="$language" />
+    </xsl:call-template>
+  </xsl:variable>
+
   <xsl:variable name="nodeUrl"
                 select="/root/gui/nodeUrl"/>
 
@@ -71,11 +77,7 @@
     <xsl:variable name="schema" select="/root/info/record/datainfo/schemaid"/>
     <xsl:variable name="edit" select="boolean('false')"/>
 
-    <xsl:variable name="langForMetadata">
-      <xsl:call-template name="getLangForMetadata">
-        <xsl:with-param name="uiLang" select="/root/lang" />
-      </xsl:call-template>
-    </xsl:variable>
+
     <div>
       <div class="col-md-8 ec-md-detail" itemscope="" itemtype="http://schema.org/Dataset">
         <xsl:call-template name="common-detailview-fields">
