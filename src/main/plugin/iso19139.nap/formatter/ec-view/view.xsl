@@ -79,6 +79,12 @@
 
 
     <div>
+      <style>
+        dl dd dl {
+        margin-left: 20px;
+        }
+      </style>
+
       <div class="col-md-8 ec-md-detail" itemscope="" itemtype="http://schema.org/Dataset">
         <xsl:call-template name="common-detailview-fields">
           <xsl:with-param name="schema" select="$schema" />
@@ -226,8 +232,6 @@
                 <xsl:apply-templates mode="render-field" select="gmd:metadataStandardVersion" />
 
                 <xsl:apply-templates mode="render-field" select="gmd:dataSetURI" />
-
-                <xsl:apply-templates mode="render-field" select="gmd:locale" />
 
                 <!-- ReferenceSystemInfo -->
                 <xsl:apply-templates mode="render-field" select="gmd:referenceSystemInfo" />

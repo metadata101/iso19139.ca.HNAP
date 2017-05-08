@@ -375,6 +375,80 @@
 
   </xsl:template>
 
+  <!-- Block elements -->
+  <xsl:template mode="render-field"
+                match="gmd:referenceSystemInfo|gmd:distributionFormat"
+                priority="100">
+
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:apply-templates mode="render-field" select="*"/>
+      </dd>
+    </dl>
+
+  </xsl:template>
+
+
+  <xsl:template mode="render-field"
+                match="gmd:language"
+                priority="100">
+
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:variable name="text">
+          <xsl:choose>
+            <xsl:when test="starts-with(gco:CharacterString, 'eng')">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/english"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/french"/>
+            </xsl:otherwise>
+          </xsl:choose>
+
+
+
+          <!-- In view mode display other languages from gmd:locale of gmd:MD_Metadata element -->
+          <xsl:if test="../gmd:locale or ../../gmd:locale">
+            <xsl:text> (</xsl:text><xsl:value-of select="string(/root/schemas/*[name()=$schema]/labels/element[@name='gmd:locale' and not(@context)]/label)"/>
+            <xsl:text>:</xsl:text>
+            <xsl:for-each select="../gmd:locale|../../gmd:locale">
+              <xsl:variable name="c" select="gmd:PT_Locale/gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
+              <xsl:choose>
+                <xsl:when test="starts-with($c, 'eng')">
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/english"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/french"/>
+                </xsl:otherwise>
+              </xsl:choose>
+
+              <xsl:if test="position()!=last()">, </xsl:if>
+            </xsl:for-each><xsl:text>)</xsl:text>
+          </xsl:if>
+        </xsl:variable>
+
+        <xsl:value-of select="$text" />
+
+        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+      </dd>
+    </dl>
+
+  </xsl:template>
+
   <!-- Traverse the tree -->
   <xsl:template mode="render-field"
                 match="*">
