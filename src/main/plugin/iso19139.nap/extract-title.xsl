@@ -22,6 +22,37 @@
   ~ Rome - Italy. email: geonetwork@osgeo.org
   -->
 
-<xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-  <xsl:import href="../iso19139/extract-title.xsl"/>
+<xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+                  xmlns:gco="http://www.isotc211.org/2005/gco"
+                  xmlns:gmd="http://www.isotc211.org/2005/gmd">
+
+  <!-- UI Language -->
+  <xsl:param name="language" />
+
+  <xsl:variable name="mdLanguage">
+    <xsl:choose>
+      <xsl:when test="$language='fre'">fra</xsl:when>
+      <xsl:otherwise>eng</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:template match="gmd:MD_Metadata">
+    <xsl:choose>
+      <xsl:when test="starts-with(gmd:language/gco:CharacterString, $mdLanguage)">
+        <title><xsl:value-of select="gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title/gco:CharacterString"/></title>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:variable name="locale">
+          <xsl:choose>
+            <xsl:when test="$language='fre'">#fra</xsl:when>
+            <xsl:otherwise>#eng</xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <title><xsl:value-of select="gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$locale]"/></title>
+      </xsl:otherwise>
+    </xsl:choose>
+
+  </xsl:template>
+
 </xsl:stylesheet>
