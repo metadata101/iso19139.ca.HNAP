@@ -257,7 +257,7 @@
 
     <!--<xsl:variable name="xmlUrl" select="concat($url,'/', normalize-space($mdDownloadLink), '?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
     <xsl:variable name="xmlUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xml')"/>
-    <a href="{$xmlUrl}" title="{/root/gui/strings/downloadas} XML" class="btn btn-default btn-md mrgn-rght-sm" target="_blank">
+    <a href="#" onclick="downloadXml('{$xmlUrl}', '{$muuid}'); return false;" title="{/root/gui/strings/downloadas} XML" class="btn btn-default btn-md mrgn-rght-sm">
       <xsl:if test="/root/gui/env/platform/appMode != 'fgp'">
         <xsl:attribute name="target">_blank</xsl:attribute>
       </xsl:if>
