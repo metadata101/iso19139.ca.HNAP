@@ -55,6 +55,7 @@
   <Dataresources_Format>Format</Dataresources_Format>
   <Dataresources_Link>Link</Dataresources_Link>
   <Dataresources_Lang>Language</Dataresources_Lang>
+  <Dataresources_Type>Resource Type</Dataresources_Type>
 
   <Additionalmetadata_Type>Metadata type</Additionalmetadata_Type>
   <Additionalmetadata_Url>File/URL</Additionalmetadata_Url>
@@ -193,4 +194,7 @@
   <changeDate>Metadata change date</changeDate>
   <rating>Openness rating</rating>
   <ParentCollection>Parent Collection</ParentCollection>
+
+  <display-thumbnails-header>Thumbnails</display-thumbnails-header>
+  <display-overviews-header>Extent</display-overviews-header>
 </strings>

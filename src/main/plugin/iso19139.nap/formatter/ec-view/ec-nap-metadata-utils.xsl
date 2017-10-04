@@ -4,6 +4,7 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:gml="http://www.opengis.net/gml"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -144,86 +145,6 @@
   <!-- Create a div with class name set to extentViewer in
         order to generate a new map.  -->
 
-  <xsl:template name="showMap">
-    <xsl:param name="edit" />
-    <xsl:param name="coords"/>
-    <!-- Indicate which drawing mode is used (ie. bbox or polygon) -->
-    <xsl:param name="mode"/>
-
-    <xsl:param name="crs" select="'4326'" />
-    <xsl:param name="bbox"/>
-    <xsl:param name="targetPolygon"/>
-    <xsl:param name="watchedBbox"/>
-    <xsl:param name="eltRef"/>
-    <xsl:param name="width" select="/root/gui/config/map/metadata/width" />
-    <xsl:param name="height" select="/root/gui/config/map/metadata/height" />
-    <xsl:param name="schema" select ="''" />
-
-    <xsl:choose>
-      <xsl:when test="$edit=true()">
-        <div id="map{$eltRef}" class="wb-geomap aoi" style="width:600px;height:780px;min-width:600px;min-height:780px"
-             data-wb-geomap='{{
-					"aoi": {{ "toggle": false, "extent": "{$bbox}" }}
-					 }}'>
-          <div class="wb-geomap-map" ></div>
-          <input type="hidden" id="_{fn:tokenize($watchedBbox,'(,)')[1]}" class="w" name="_{fn:tokenize($watchedBbox,'(,)')[1]}" value="{fn:tokenize($bbox,'(,)')[1]}"/>
-          <input type="hidden" id="_{fn:tokenize($watchedBbox,'(,)')[2]}" class="s" name="_{fn:tokenize($watchedBbox,'(,)')[2]}" value="{fn:tokenize($bbox,'(,)')[2]}"/>
-          <input type="hidden" id="_{fn:tokenize($watchedBbox,'(,)')[4]}" class="e" name="_{fn:tokenize($watchedBbox,'(,)')[3]}" value="{fn:tokenize($bbox,'(,)')[3]}"/>
-          <input type="hidden" id="_{fn:tokenize($watchedBbox,'(,)')[3]}" class="n" name="_{fn:tokenize($watchedBbox,'(,)')[4]}" value="{fn:tokenize($bbox,'(,)')[4]}"/>
-        </div>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:choose>
-          <xsl:when test="$schema = 'sensorML'">
-            <xsl:variable name="tmpCrs">
-              <xsl:for-each select="/root/gui/rdf:ecSensorRefSystem/rdf:Description">
-                <xsl:if test="./ns2:prefLabel[@xml:lang=fn:substring(/root/gui/language,1,2)] = $crs">
-                  <xsl:value-of select="substring-after(substring-after(@rdf:about,'#'),':')"/>
-                </xsl:if>
-              </xsl:for-each>
-            </xsl:variable>
-
-            <xsl:variable name="finalCrs">
-              <xsl:choose>
-                <xsl:when test="$tmpCrs!=''">
-                  <xsl:value-of select="$tmpCrs"/>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>4326</xsl:text>
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <div id="AIOMap{$eltRef}" class="wb-geomap position" data-wb-geomap='{{ "tables": [ {{ "id": "aoi{$eltRef}" }} ],
-                    "layersFile": "{/root/gui/url}/scripts/envcan/script/config-map-{$finalCrs}.js" }}'>
-              <div class="wb-geomap-map" style="width:100%px;height:{$height};min-width:350px;min-height:{$height}"></div>
-              <table id="aoi{$eltRef}" aria-label="Area of interest" style="display:none">
-                <tr data-geometry="{$coords}" data-type="wkt"></tr>
-              </table>
-            </div>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:variable name="finalCrs">
-              <xsl:choose>
-                <xsl:when test="$crs!=''"><xsl:value-of select="$crs"/></xsl:when>
-                <xsl:otherwise>4326</xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <div id="AIOMap{$eltRef}" class="wb-geomap" data-wb-geomap='{{ "tables": [ {{ "id": "aoi{$eltRef}" }} ]
-                     }}'>
-              <div class="wb-geomap-map" style="width:100%px;height:{$height};min-width:350px;min-height:{$height}"></div>
-              <table id="aoi{$eltRef}" aria-label="Area of interest" style="display:none">
-                <tr data-geometry="{$coords}" data-type="bbox"></tr>
-              </table>
-            </div>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-
   <xsl:template name="showPanel">
     <xsl:param name="title" select="''" />
     <xsl:param name="content" />
@@ -239,6 +160,7 @@
       <div class="list-group-item"><xsl:copy-of select="$content"/></div>
     </div>
   </xsl:template>
+
 
   <!-- show metadata export icons eg. in search results or metadata viewer -->
   <xsl:template name="showMetadataExportIcons">
@@ -273,6 +195,7 @@
     </a>
   </xsl:template>
 
+
   <xsl:template name="ratingStars">
     <xsl:param name="fill" select="false()"/>
     <xsl:param name="count" select="1"/>
@@ -293,6 +216,138 @@
       </xsl:call-template>
     </xsl:if>
 
+  </xsl:template>
+
+
+  <!-- Template to display the Add Map Cart button in metadata detail page -->
+  <xsl:template match="*" mode="showAddMapCart" priority="100">
+    <xsl:variable name="isoLang">
+      <xsl:choose>
+        <xsl:when test="/root/lang='eng'">
+          <xsl:text>urn:xml:lang:eng-CAN</xsl:text>
+        </xsl:when>
+        <xsl:when test="/root/lang='fre'">
+          <xsl:text>urn:xml:lang:fra-CAN</xsl:text>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:variable>
+
+
+    <xsl:variable name="langId">
+      <xsl:call-template name="getLangId">
+        <xsl:with-param name="langGui" select="/root/lang" />
+        <xsl:with-param name="md"
+                        select="ancestor-or-self::*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']" />
+      </xsl:call-template>
+    </xsl:variable>
+
+    <xsl:variable name="langId2" select="substring($langId, 2)" />
+
+    <!-- Resources -->
+    <xsl:variable name="webMapServicesProtocols" select="/root/gui/webServiceTypes" />
+
+    <xsl:variable name="mapResourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang]/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
+    <xsl:variable name="resourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine)"/>
+    <xsl:variable name="mapResourcesTotalCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
+
+    <xsl:if test="$mapResourcesCount > 0">
+      <xsl:variable name="esriRestValue">esri rest: map service</xsl:variable>
+      <xsl:variable name="hasRESTService" select="count(/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$esriRestValue]) &gt; 0"/>
+
+      <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/
+                                    gmd:MD_DigitalTransferOptions/gmd:onLine/
+                                    gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]"
+                          group-by="lower-case(normalize-space(gmd:protocol/gco:CharacterString))">
+
+        <xsl:message>position: <xsl:value-of select="position()" /></xsl:message>
+
+        <xsl:for-each select="current-group()">
+          <xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />
+
+          <xsl:if test="position() = 1">
+            <xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />
+
+            <xsl:variable name="nameValue">
+              <xsl:for-each select="gmd:name">
+                <xsl:call-template name="localised">
+                  <xsl:with-param name="langId" select="$langId"/>
+                </xsl:call-template>
+              </xsl:for-each>
+            </xsl:variable>
+
+            <xsl:variable name="descriptionValue">
+              <xsl:for-each select="gmd:description">
+                <xsl:call-template name="localised">
+                  <xsl:with-param name="langId" select="$langId"/>
+                </xsl:call-template>
+              </xsl:for-each>
+            </xsl:variable>
+
+
+
+            <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
+
+            <!-- TODO: Update condition -->
+            <!--<xsl:if test="(/root/gmd:MD_Metadata/geonet:info/disabledMapServices = 'false' or not(/root/gmd:MD_Metadata/geonet:info/disabledMapServices)) and
+                          (((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered)) or
+                           ((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
+                           (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">-->
+            <xsl:if test="((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
+                         (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))">
+
+              <xsl:variable name="sq">'</xsl:variable>
+              <xsl:variable name="tsq">\\'</xsl:variable>
+              <xsl:variable name="titleMap"><xsl:apply-templates select="/root/*/geonet:info/uuid" mode="getMetadataTitle" /></xsl:variable>
+              <xsl:variable name="titleMapEscaped" select="replace($titleMap, $sq, $tsq)" />
+
+              <!-- TODO: Update string -->
+              <!--<xsl:variable name="maxPreviewLayers" select="/root/gui/env/publication/mapviewer/maxlayersmappreview" />-->
+              <xsl:variable name="maxPreviewLayers" select="'Preview %1 layers'" />
+              <xsl:variable name="mapPreviewLayersMsg" select="replace(/root/gui/strings/maxpreviewlayers, '%1', $maxPreviewLayers)" />
+              <xsl:variable name="mapPreviewLayersTitle" select="/root/gui/strings/map-preview/dialogtitle" />
+              <xsl:variable name="mapPreviewLayersLayerAdd" select="/root/gui/strings/map-preview/dialoglayeradded" />
+              <xsl:variable name="mapPreviewLayersLayerExists" select="/root/gui/strings/map-preview/dialoglayerexists" />
+
+
+              <xsl:variable name="vm-smallkey">
+                <xsl:choose>
+                  <xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+
+              <xsl:variable name="map_url">
+                <xsl:choose>
+                  <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:variable name="newwindow">
+                <xsl:choose>
+                  <xsl:when test="/root/gui/env/platform/appMode = 'fgp'">false</xsl:when>
+                  <xsl:otherwise>true</xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+
+              <!-- Add to map preview -->
+              <a class="btn btn-default btn-sm mrgn-rght-sm" href="#" title="{/root/gui/strings/map_page/add2mapPreview_tooltip}">
+                <xsl:attribute name="onclick">mappreview.addLayer('<xsl:value-of select="$urlValue" />','<xsl:value-of select="$titleMapEscaped" />','<xsl:value-of select="replace($nameValue, $sq, $tsq)" />',
+                  '<xsl:value-of select="replace($descriptionValue, $sq, $tsq)" />','<xsl:value-of select="normalize-space(gmd:protocol)" />',
+                  '<xsl:value-of select="normalize-space($vm-smallkey)" />', '<xsl:value-of select="$maxPreviewLayers" />',
+                  '<xsl:value-of select="$mapPreviewLayersMsg" />',
+                  '<xsl:value-of select="$mapPreviewLayersTitle" />', '<xsl:value-of select="$mapPreviewLayersLayerAdd" />',
+                  '<xsl:value-of select="$mapPreviewLayersLayerExists" />'); return false;</xsl:attribute>
+                <xsl:value-of select="/root/gui/strings/map_page/add2mapPreview"/>
+              </a>
+              &#160;
+              <a href="#" onclick="map.view('{$map_url}', '{normalize-space($vm-smallkey)}', {$newwindow})" title="{/root/gui/strings/map_page/viewdatasetmap_tooltip}" class="btn btn-default envcan-icon"><span class="fa fa-globe fa-1-5x"></span>&#160;<span><xsl:value-of
+                select="/root/gui/strings/map_page/viewdatasetmap" /></span></a>
+
+            </xsl:if>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:for-each-group>
+    </xsl:if>
   </xsl:template>
 
   <!-- Most of the elements are ... -->
@@ -527,4 +582,118 @@
 
   <xsl:template mode="render-value"
                 match="@*" />
+
+
+  <xsl:template name="thumbnail">
+    <xsl:param name="metadata"/>
+    <xsl:param name="id"/>
+    <xsl:param name="size">180</xsl:param>
+
+    <xsl:variable name="langId" select="/root/gui/language" />
+
+    <xsl:variable name="otherLangId">
+      <xsl:choose>
+        <xsl:when test="$langId = 'fre'">eng</xsl:when>
+        <xsl:when test="$langId = 'eng'">fre</xsl:when>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="im">
+      <xsl:for-each select="$metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic">
+        <xsl:variable name="fileName"  select="gmd:fileName/gco:CharacterString"/>
+        <xsl:if test="$fileName != ''">
+          <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
+
+          <xsl:choose>
+            <!-- the thumbnail is an url -->
+            <xsl:when test="contains($fileName ,'://')">
+              <image type="unknown"><xsl:value-of select="$fileName"/></image>
+            </xsl:when>
+            <xsl:otherwise>
+              <image type="thumbnail">
+                <xsl:attribute name="lang">
+                  <xsl:choose>
+                    <xsl:when test="ends-with($fileDescr, '_fre')">fre</xsl:when>
+                    <xsl:otherwise>eng</xsl:otherwise>
+                  </xsl:choose>
+                </xsl:attribute>
+                <xsl:value-of select="concat(/root/gui/locService,'/resources.get?id=',$id,'&amp;fname=',$fileName,'&amp;access=public')"/>
+              </image>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:variable name="images" select="exslt:node-set($im)"/>
+
+    <xsl:choose>
+      <!-- small thumbnail -->
+      <xsl:when test="$images/image[@type='thumbnail' and @lang=$langId]">
+
+        <xsl:choose>
+
+          <!-- large thumbnail link -->
+          <xsl:when test="$images/image[@type='overview']">
+            <a href="javascript:popWindow('{$images/image[@type='overview']}')">
+              <img class="full-width" src="{$images/image[@type='thumbnail']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            </a>
+          </xsl:when>
+
+          <!-- no large thumbnail -->
+          <xsl:otherwise>
+            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$langId]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+          </xsl:otherwise>
+        </xsl:choose>
+
+      </xsl:when>
+
+      <!-- small thumbnail other lang -->
+      <xsl:when test="$images/image[@type='thumbnail' and @lang=$otherLangId]">
+
+        <xsl:choose>
+
+          <!-- large thumbnail link -->
+          <xsl:when test="$images/image[@type='overview']">
+            <a href="javascript:popWindow('{$images/image[@type='overview']}')">
+              <img class="full-width" src="{$images/image[@type='thumbnail']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            </a>
+          </xsl:when>
+
+          <!-- no large thumbnail -->
+          <xsl:otherwise>
+            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$otherLangId]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+          </xsl:otherwise>
+        </xsl:choose>
+
+      </xsl:when>
+
+      <!-- unknown thumbnail (usually a url so limit size) -->
+      <xsl:when test="$images/image[@type='unknown']">
+        <img class="full-width" src="{$images/image[@type='unknown']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'">
+          <xsl:if test="string($size)">
+            <xsl:attribute name="width"><xsl:value-of select="$size" /></xsl:attribute>
+            <xsl:attribute name="height"><xsl:value-of select="$size" /></xsl:attribute>
+          </xsl:if>
+        </img>
+      </xsl:when>
+
+      <!-- papermaps thumbnail -->
+      <!-- FIXME
+            <xsl:when test="/root/gui/paperMap and string(dataIdInfo/idCitation/presForm/PresFormCd/@value)='mapHardcopy'">
+                <a href="PAPERMAPS-URL">
+                    <img src="{/root/gui/paperMap}" alt="{/root/gui/strings/paper}" title="{/root/gui/strings/paper}"/>
+                </a>
+            </xsl:when>
+            -->
+
+      <!-- no thumbnail -->
+      <xsl:otherwise>
+        <!-- then don't show! <img src="{/root/gui/locUrl}/images/nopreview.gif" alt="{/root/gui/strings/thumbnail}"/> -->
+        <img class="full-width" src="{/root/gui/url}/images/nopreview.png" alt="{/root/gui/strings/thumbnail}"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <br/>
+  </xsl:template>
+
 </xsl:stylesheet>

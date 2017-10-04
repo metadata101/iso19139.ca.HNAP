@@ -34,6 +34,7 @@
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
                 xmlns:gn-fn-render="http://geonetwork-opensource.org/xsl/functions/render"
                 xmlns:geonet="http://www.fao.org/geonetwork"
+                xmlns:exslt="http://exslt.org/common"
                 xmlns:saxon="http://saxon.sf.net/"
                 version="2.0"
                 extension-element-prefixes="saxon"
@@ -277,13 +278,15 @@
     <!-- md title -->
     <h1 id="wb-cont" style="border-bottom:none" itemprop="name">
       <!-- as defined in md-show -->
-      <img src="{/root/gui/url}/images/dataset.png" class="ds-icon-lg" alt="{$schemaStrings/dataset}: {/root/gmd:MD_Metadata//gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale)='/root/gui/lang']}" />
+      <img src="{/root/gui/url}/images/dataset.png" class="ds-icon-lg" alt="{$schemaStrings/dataset}: {/root/gmd:MD_Metadata//gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale)='/root/lang']}" />
       <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title">
         <xsl:call-template name="localised">
           <xsl:with-param name="langId" select="$langForMetadata" />
         </xsl:call-template>
       </xsl:for-each>
     </h1>
+
+    <xsl:apply-templates select="." mode="showAddMapCart" />
 
     <!-- abstract -->
     <h3><xsl:value-of select="$schemaStrings/description"/></h3>
@@ -297,64 +300,41 @@
     <br/><br/>
 
 
-    <xsl:for-each select="/root/gmd:MD_Metadata//gmd:extent//gmd:EX_GeographicBoundingBox|/root/gmd:MD_Metadata//srv:extent//gmd:EX_GeographicBoundingBox">
-      <xsl:variable name="minx" select="gmd:westBoundLongitude/gco:Decimal"/>
-      <xsl:variable name="miny" select="gmd:southBoundLatitude/gco:Decimal"/>
-      <xsl:variable name="maxx" select="gmd:eastBoundLongitude/gco:Decimal"/>
-      <xsl:variable name="maxy" select="gmd:northBoundLatitude/gco:Decimal"/>
-      <xsl:variable name="hasGeometry" select="($minx!='' and $miny!='' and $maxx!='' and $maxy!='' and (number($maxx)+number($minx)+number($maxy)+number($miny))!=0)"/>
-      <xsl:variable name="geom" select="concat('POLYGON((', $minx, ' ', $miny,',',$maxx,' ',$miny,',',$maxx,' ',$maxy,',',$minx,' ',$maxy,',',$minx,' ',$miny, '))')"/>
+    <div class="row mrgn-tp-md">
+      <!-- Spatial extent -->
+      <div class="col-md-6">
+        <xsl:for-each select="/root/gmd:MD_Metadata//gmd:extent//gmd:EX_GeographicBoundingBox|/root/gmd:MD_Metadata//srv:extent//gmd:EX_GeographicBoundingBox">
+          <xsl:variable name="minx" select="gmd:westBoundLongitude/gco:Decimal"/>
+          <xsl:variable name="miny" select="gmd:southBoundLatitude/gco:Decimal"/>
+          <xsl:variable name="maxx" select="gmd:eastBoundLongitude/gco:Decimal"/>
+          <xsl:variable name="maxy" select="gmd:northBoundLatitude/gco:Decimal"/>
+          <xsl:variable name="hasGeometry" select="($minx!='' and $miny!='' and $maxx!='' and $maxy!='' and (number($maxx)+number($minx)+number($maxy)+number($miny))!=0)"/>
+          <xsl:variable name="geom" select="concat('POLYGON((', $minx, ' ', $miny,',',$maxx,' ',$miny,',',$maxx,' ',$maxy,',',$minx,' ',$maxy,',',$minx,' ',$miny, '))')"/>
 
-      <xsl:if test="$hasGeometry">
-        <div style="float:left;margin-right:10px;" role="map" aria-label="{$schemaStrings/where_explained}">
-          <xsl:call-template name="showMap">
-            <xsl:with-param name="edit" select="false" />
-            <xsl:with-param name="mode" select="'bbox'" />
-            <xsl:with-param name="coords" select="concat($minx,',',$miny,',',$maxx,',',$maxy)"/>
-            <xsl:with-param name="targetPolygon" select="$geom"/>
-            <xsl:with-param name="watchedBbox" select="'x1,y1,x2,y2'"/>
-            <xsl:with-param name="eltRef" select="'EX_GeographicBoundingBox'"/>
-            <xsl:with-param name="width" select="400"/>
-            <xsl:with-param name="height" select="250"/>
-            <xsl:with-param name="schema" select="$schema" />
-          </xsl:call-template>
-        </div>
-      </xsl:if>
+          <xsl:if test="$hasGeometry">
+            <span class="bold"><xsl:value-of select="$schemaStrings/GeographicExtent"/></span><br/>
+            <span itemprop="spatial">
+              <xsl:value-of select="$schemaStrings/sw"/>: <xsl:value-of select="concat(format-number(gmd:westBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:southBoundLatitude/gco:Decimal,'#.##'))"/> <br/>
+              <xsl:value-of select="$schemaStrings/ne"/>: <xsl:value-of select="concat(format-number(gmd:eastBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:northBoundLatitude/gco:Decimal,'#.##'))"/>
+            </span>
+          </xsl:if>
+        </xsl:for-each>
+      </div>
 
-
-
-      <div style="float:left;text-align:left;width:200px">
-
-        <xsl:if test="$hasGeometry">
-          <span class="bold"><xsl:value-of select="$schemaStrings/GeographicExtent"/></span><br/>
-          <span itemprop="spatial">
-            <xsl:value-of select="$schemaStrings/sw"/>: <xsl:value-of select="concat(format-number(gmd:westBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:southBoundLatitude/gco:Decimal,'#.##'))"/> <br/>
-            <xsl:value-of select="$schemaStrings/ne"/>: <xsl:value-of select="concat(format-number(gmd:eastBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:northBoundLatitude/gco:Decimal,'#.##'))"/>
-          </span>
-        </xsl:if>
-
-        <!-- GeographicScope -->
-        <xsl:if test="/root/gmd:MD_Metadata//gmd:keyword[../gmd:thesaurusName/gmd:CI_Citation/@id = 'local.place.EC_Geographic_Scope']">
-          <br/><br/><span class="bold"><xsl:value-of select="$schemaStrings/GeographicScope"/></span><br/>
-          <xsl:for-each select="/root/gmd:MD_Metadata//gmd:keyword[../gmd:thesaurusName/gmd:CI_Citation/@id = 'local.place.EC_Geographic_Scope']">
-            <xsl:if test="position()!=1">,&#160;</xsl:if>
-            <xsl:apply-templates mode="ecGeographicScope" select=".">
-              <xsl:with-param name="schema" select="$schema"/>
-            </xsl:apply-templates>
-          </xsl:for-each>
-        </xsl:if>
-        <!-- Time period -->
-        <xsl:if test="/root/gmd:MD_Metadata//gmd:temporalElement">
+      <!-- Time period -->
+      <xsl:if test="/root/gmd:MD_Metadata//gmd:temporalElement">
+        <div class="col-md-6">
           <xsl:for-each select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
-            <br/><br/><span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
+            <xsl:if test="position() > 1"><br/><br/></xsl:if>
+            <span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
             <xsl:value-of select="$schemaStrings/from"/>: <span itemprop="temporal"><xsl:value-of select="gml:beginPosition"/></span> <br/>
             <xsl:value-of select="$schemaStrings/to"/>:  <span itemprop="temporal"><xsl:value-of select="gml:endPosition"/></span>
           </xsl:for-each>
-        </xsl:if>
-      </div>
-    </xsl:for-each>
+        </div>
+      </xsl:if>
+    </div>
 
-    <script type="text/javascript">$( ".wb-geomap" ).trigger( "wb-init.wb-geomap" );</script>
+    <!--<script type="text/javascript">$( ".wb-geomap" ).trigger( "wb-init.wb-geomap" );</script>-->
 
 
     <div style="clear:left">&#160;</div>
@@ -392,33 +372,15 @@
     <!-- Resources -->
     <!-- TODO retrieve the webServiceTypes -->
     <xsl:variable name="webMapServicesProtocols" select="/root/gui/webServiceTypes" />
-    <xsl:variable name="mapResourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang]/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
     <xsl:variable name="resourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine)"/>
-    <xsl:variable name="mapResourcesTotalCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
 
-    <xsl:if test="$mapResourcesCount > 0">
-      <!-- MAP RESOURCES -->
-      <h3><xsl:value-of select="$schemaStrings/MapResources"/></h3>
+    <xsl:if test="$resourcesCount > 0">
+      <h3><xsl:value-of select="$schemaStrings/Dataresources"/></h3>
 
-      <xsl:call-template name="map-resources">
+      <xsl:call-template name="md-resources">
         <xsl:with-param name="langId" select="$langId" />
         <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
         <xsl:with-param name="isoLang" select="$isoLang" />
-      </xsl:call-template>
-
-    </xsl:if>
-
-    <!-- Data resources -->
-    <xsl:if test="($resourcesCount - $mapResourcesTotalCount) > 0">
-      <h3><xsl:value-of select="$schemaStrings/Dataresources"/></h3>
-      <!-- TODO return geonet:info/files inside the metadata element -->
-      <xsl:variable name="resourceFiles" select="/root/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/geonet:info/files" />
-
-      <!-- first create a hidden window, below in this file are some hyperlink-create templates, some of them,
-          like the download link, use the content in this div for a details-window -->
-      <xsl:call-template name="data-resources">
-        <xsl:with-param name="langId" select="$langId" />
-        <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
       </xsl:call-template>
     </xsl:if>
 
@@ -436,238 +398,14 @@
       <xsl:with-param name="resources" select="/root/gui/relation/children/response/*[geonet:info]|/root/gui/relation/services/response/*[geonet:info]|/root/gui/relation/related/response/*[geonet:info]"/>
     </xsl:call-template>
 
-
   </xsl:template>
 
 
-  <xsl:template name="map-resources">
-    <xsl:param name="langId" />
-    <!-- TODO receive the right webMapServicesProtocols -->
-    <xsl:param name="webMapServicesProtocols" />
-    <xsl:param name="isoLang" />
+  <!--
+      Template: sidebar-panel
 
-    <div><h3>Map resources section (DELETE ME)</h3></div>
-    <xsl:message>=== map-resources ===</xsl:message>
-
-    <!-- TODO retrieve the isolanguages from the service -->
-    <!--<xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />-->
-
-    <!--<xsl:variable name="lang">-->
-      <!--<xsl:choose>-->
-        <!--<xsl:when test="/root/lang='fra'">-->
-          <!--<xsl:text>fre</xsl:text>-->
-        <!--</xsl:when>-->
-        <!--<xsl:otherwise>-->
-          <!--<xsl:text>eng</xsl:text>-->
-        <!--</xsl:otherwise>-->
-      <!--</xsl:choose>-->
-    <!--</xsl:variable>-->
-
-    <!--<xsl:variable name="map_url">-->
-      <!--<xsl:choose>-->
-        <!--<xsl:when test="$lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>-->
-        <!--<xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>-->
-      <!--</xsl:choose>-->
-    <!--</xsl:variable>-->
-
-    <!--&lt;!&ndash; MAP RESOURCES &ndash;&gt;-->
-    <!--<xsl:variable name="esriRestValue">esri rest: map service</xsl:variable>-->
-    <!--<xsl:variable name="hasRESTService" select="count(/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$esriRestValue]) &gt; 0"/>-->
-
-    <!--<xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]"-->
-                        <!--group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">-->
-
-      <!--<xsl:variable name="descriptionValue">-->
-        <!--<xsl:for-each select="gmd:description">-->
-          <!--<xsl:call-template name="localised">-->
-            <!--<xsl:with-param name="langId" select="$langId"/>-->
-          <!--</xsl:call-template>-->
-        <!--</xsl:for-each>-->
-      <!--</xsl:variable>-->
-
-      <!--<h4><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></h4>-->
-
-      <!--<table class="wb-tables table table-striped table-hover" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">-->
-        <!--<xsl:attribute name="data-wb-tables">'{ "ordering" : false }</xsl:attribute>-->
-
-        <!--<thead style="display: none">-->
-          <!--<th style="width: 65%"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Name" /></th>-->
-          <!--<th style="width: 35%"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Link" /></th>-->
-        <!--</thead>-->
-        <!--&lt;!&ndash;<xsl:for-each select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource|/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[not(string(@xlink:role))]/gmd:CI_OnlineResource">&ndash;&gt;-->
-        <!--<xsl:for-each select="current-group()">-->
-          <!--<xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />-->
-          <!--<xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />-->
-
-          <!--<xsl:variable name="nameValue">-->
-            <!--<xsl:for-each select="gmd:name">-->
-              <!--<xsl:call-template name="localised">-->
-                <!--<xsl:with-param name="langId" select="$langId"/>-->
-              <!--</xsl:call-template>-->
-            <!--</xsl:for-each>-->
-          <!--</xsl:variable>-->
-
-          <!--<xsl:variable name="descriptionValue">-->
-            <!--<xsl:for-each select="gmd:description">-->
-              <!--<xsl:call-template name="localised">-->
-                <!--<xsl:with-param name="langId" select="$langId"/>-->
-              <!--</xsl:call-template>-->
-            <!--</xsl:for-each>-->
-          <!--</xsl:variable>-->
-
-          <!--<xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />-->
-
-          <!--<tr>-->
-            <!--<td style="width: 65%"><span class="ec-word-wrap"><xsl:value-of select="$nameValue" />-->
-              <!--(<xsl:choose>-->
-                <!--<xsl:when test="../@xlink:role = 'urn:xml:lang:fra-CAN'"><xsl:value-of select="/root/gui/strings/french" /></xsl:when>-->
-                <!--<xsl:otherwise><xsl:value-of select="/root/gui/strings/english" /></xsl:otherwise>-->
-              <!--</xsl:choose>)</span></td>-->
-            <!--<td style="width: 35%">-->
-              <!--&lt;!&ndash; Access data button &ndash;&gt;-->
-              <!--<div style="min-height:35px; margin-left: 5px" class="pull-right">-->
-                <!--<a class="btn btn-default btn-sm" href="{$urlValue}">-->
-                  <!--<xsl:value-of select="tokenize($descriptionValue, ';')[2]" />-->
-                <!--</a>-->
-              <!--</div>-->
-
-              <!--&lt;!&ndash; Add view map buttons next to the RCS registered services, condition /root/gmd:MD_Metadata/geonet:info/rcs_priority_registered = '-1' maintained for legacy records &ndash;&gt;-->
-              <!--<xsl:if test="/root/gui/env/publication/mapviewer/mapviewerenabled = 'true' and (/root/gmd:MD_Metadata/geonet:info/disabledMapServices = 'false' or not(/root/gmd:MD_Metadata/geonet:info/disabledMapServices)) and-->
-                      <!--(((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered)) or-->
-                       <!--((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">-->
-                <!--<xsl:variable name="sq">'</xsl:variable>-->
-                <!--<xsl:variable name="tsq">\\'</xsl:variable>-->
-                <!--<xsl:variable name="titleMap"><xsl:apply-templates select="/root/*/geonet:info/uuid" mode="getMetadataTitle" /></xsl:variable>-->
-                <!--<xsl:variable name="titleMapEscaped" select="replace($titleMap, $sq, $tsq)" />-->
-
-                <!--<xsl:variable name="maxPreviewLayers" select="/root/gui/env/publication/mapviewer/maxlayersmappreview" />-->
-                <!--<xsl:variable name="mapPreviewLayersMsg" select="replace(/root/gui/strings/maxpreviewlayers, '%1', $maxPreviewLayers)" />-->
-                <!--<xsl:variable name="mapPreviewLayersTitle" select="/root/gui/strings/map-preview/dialogtitle" />-->
-                <!--<xsl:variable name="mapPreviewLayersLayerAdd" select="/root/gui/strings/map-preview/dialoglayeradded" />-->
-                <!--<xsl:variable name="mapPreviewLayersLayerExists" select="/root/gui/strings/map-preview/dialoglayerexists" />-->
-
-
-                <!--<xsl:variable name="vm-smallkey">-->
-                  <!--<xsl:choose>-->
-                    <!--<xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:when>-->
-                    <!--<xsl:otherwise><xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:otherwise>-->
-                  <!--</xsl:choose>-->
-                <!--</xsl:variable>-->
-
-                <!--&lt;!&ndash; Add to map preview &ndash;&gt;-->
-
-                <!--<div style="min-height:35px" class="pull-right">-->
-                  <!--<a class="btn btn-default btn-sm" href="#">-->
-                    <!--<xsl:attribute name="onclick">mappreview.addLayer('<xsl:value-of select="$urlValue" />','<xsl:value-of select="$titleMapEscaped" />','<xsl:value-of select="replace($nameValue, $sq, $tsq)" />',-->
-                      <!--'<xsl:value-of select="replace($descriptionValue, $sq, $tsq)" />','<xsl:value-of select="normalize-space(gmd:protocol)" />',-->
-                      <!--'<xsl:value-of select="normalize-space($vm-smallkey)" />', '<xsl:value-of select="$maxPreviewLayers" />',-->
-                      <!--'<xsl:value-of select="$mapPreviewLayersMsg" />',-->
-                      <!--'<xsl:value-of select="$mapPreviewLayersTitle" />', '<xsl:value-of select="$mapPreviewLayersLayerAdd" />',-->
-                      <!--'<xsl:value-of select="$mapPreviewLayersLayerExists" />'); return false;</xsl:attribute>-->
-                    <!--<xsl:value-of select="/root/gui/strings/map_page/add2mapPreview"/>-->
-                  <!--</a>-->
-                <!--</div>-->
-
-              <!--</xsl:if>-->
-
-              <!--<div style="clear:both;" />-->
-            <!--</td>-->
-          <!--</tr>-->
-
-        <!--</xsl:for-each>-->
-
-
-      <!--</table>-->
-    <!--</xsl:for-each-group>-->
-
-  </xsl:template>
-
-  <xsl:template name="data-resources">
-    <xsl:param name="langId" />
-    <xsl:param name="webMapServicesProtocols" />
-
-    <!-- TODO retrieve the isolanguages from the service -->
-    <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
-
-
-    <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[not(lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name)]"
-                        group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">
-
-      <xsl:variable name="descriptionValue">
-        <xsl:for-each select="gmd:description">
-          <xsl:call-template name="localised">
-            <xsl:with-param name="langId" select="$langId"/>
-          </xsl:call-template>
-        </xsl:for-each>
-      </xsl:variable>
-
-      <h4><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></h4>
-
-      <table class="wb-tables table table-striped table-hover" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
-        <xsl:attribute name="data-wb-tables">'{ "ordering" : false }</xsl:attribute>
-
-        <thead style="display: none">
-          <th style="width: 75%"><xsl:value-of select="/root/schemas/iso19139.nap/strings/Dataresources_Name" /></th>
-          <th style="width: 25%"><xsl:value-of select="/root/schemas/iso19139.nap/strings/Dataresources_Link" /></th>
-        </thead>
-
-        <xsl:for-each select="current-group()">
-          <xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />
-
-          <xsl:variable name="nameValue">
-            <xsl:for-each select="gmd:name">
-              <xsl:call-template name="localised">
-                <xsl:with-param name="langId" select="$langId"/>
-              </xsl:call-template>
-            </xsl:for-each>
-          </xsl:variable>
-
-          <xsl:variable name="descriptionValue">
-            <xsl:for-each select="gmd:description">
-              <xsl:call-template name="localised">
-                <xsl:with-param name="langId" select="$langId"/>
-              </xsl:call-template>
-            </xsl:for-each>
-          </xsl:variable>
-
-          <tr>
-            <td style="width: 75%"><span class="ec-word-wrap"><xsl:value-of select="$nameValue" /></span></td>
-            <td style="width: 25%">
-
-              <a class="btn btn-default btn-sm pull-right" target="_blank" href="{$urlValue}">
-                <xsl:attribute name="onclick">logExternalDownload('<xsl:value-of select="/root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString" />','<xsl:value-of select="$urlValue" />');</xsl:attribute>
-
-                <xsl:value-of select="tokenize($descriptionValue, ';')[2]" />
-              </a>
-            </td>
-          </tr>
-        </xsl:for-each>
-      </table>
-    </xsl:for-each-group>
-  </xsl:template>
-
-
-
-  <xsl:template mode="ecGeographicScope" match="*">
-    <xsl:param name="schema" />
-    <xsl:param name="langId" />
-
-    <xsl:variable name="thesaurusVal">
-      <xsl:call-template name="localised">
-        <xsl:with-param name="langId" select="$langId" />
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="lang">
-      <xsl:call-template name="toIso2LangCode">
-        <xsl:with-param name="iso3code" select="/root/lang"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
-
-    <span><xsl:value-of select="$thesaurusVal" /></span>
-  </xsl:template>
-
-
+      Description: Displays the side bar panel.
+  -->
   <xsl:template name="sidebar-panel">
 
     <!-- side bar-->
@@ -678,91 +416,48 @@
         <xsl:with-param name="info" select="/root/info/record"/>
       </xsl:call-template>
 
-      <xsl:if test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString!=''">
+      <!-- Thumbnail/map -->
+      <div class="wb-tabs ignore-session">
+        <div class="tabpanels">
+          <details id="details-thumbnail-{/root/info/record/id}">
+            <summary><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/display-thumbnails-header" /></summary>
+            <xsl:call-template name="thumbnail">
+              <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
+              <xsl:with-param name="id" select="/root/info/record/id"/>
+              <xsl:with-param name="size" select="''" />
+            </xsl:call-template>
+          </details>
+          <details id="details-overview-{/root/info/record/id}">
+            <summary><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/display-overviews-header" /></summary>
 
-        <xsl:variable name="langId" select="$language" />
+            <xsl:variable name="metadataTitle">
+              <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title">
+                <xsl:call-template name="localised">
+                  <xsl:with-param name="langId" select="$langForMetadata" />
+                </xsl:call-template>
+              </xsl:for-each>
+            </xsl:variable>
 
-        <xsl:variable name="thumbnailName">
-          <xsl:choose>
-            <xsl:when test="$langId != 'eng'"><xsl:value-of select="concat('thumbnail_', $langId)" /></xsl:when>
-            <xsl:otherwise><xsl:value-of select="'thumbnail'" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+            <xsl:for-each select="/root/gmd:MD_Metadata//gmd:extent//gmd:EX_GeographicBoundingBox[1]|/root/gmd:MD_Metadata//srv:extent//gmd:EX_GeographicBoundingBox[1]">
+              <xsl:variable name="minx" select="gmd:westBoundLongitude/gco:Decimal"/>
+              <xsl:variable name="miny" select="gmd:southBoundLatitude/gco:Decimal"/>
+              <xsl:variable name="maxx" select="gmd:eastBoundLongitude/gco:Decimal"/>
+              <xsl:variable name="maxy" select="gmd:northBoundLatitude/gco:Decimal"/>
+              <xsl:variable name="hasGeometry" select="($minx!='' and $miny!='' and $maxx!='' and $maxy!='' and (number($maxx)+number($minx)+number($maxy)+number($miny))!=0)"/>
+              <xsl:variable name="geom" select="concat('POLYGON((', $minx, ' ', $miny,',',$maxx,' ',$miny,',',$maxx,' ',$maxy,',',$minx,' ',$maxy,',',$minx,' ',$miny, '))')"/>
 
-        <xsl:variable name="largeThumbnailName">
-          <xsl:choose>
-            <xsl:when test="$langId != 'eng'"><xsl:value-of select="concat('large_thumbnail_', $langId)" /></xsl:when>
-            <xsl:otherwise><xsl:value-of select="'large_thumbnail'" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+              <img src="{/root/gui/url}/srv/eng/region.getmap.png?mapsrs=EPSG:3978&amp;geom={$geom}&amp;geomsrs=EPSG:4326&amp;background=geogratis-fgp&amp;width=380&amp;square=true&amp;densifybbox=true"
+                   alt="{$metadataTitle}" title="{$metadataTitle}" class="full-width" />
+            </xsl:for-each>
+          </details>
 
-        <xsl:variable name="thumbnailNameOtherLang">
-          <xsl:choose>
-            <xsl:when test="$langId != 'fre'"><xsl:value-of select="'thumbnail_fre'" /></xsl:when>
-            <xsl:otherwise><xsl:value-of select="'thumbnail'" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+        </div>
 
-        <xsl:variable name="largeThumbnailNameOtherLang">
-          <xsl:choose>
-            <xsl:when test="$langId != 'fre'"><xsl:value-of select="'large_thumbnail_fre'" /></xsl:when>
-            <xsl:otherwise><xsl:value-of select="'large_thumbnail'" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+      </div>
 
-        <xsl:variable name="fileName">
-          <xsl:choose>
-
-            <!-- large thumbnail -->
-            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $largeThumbnailName and
-                            //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$largeThumbnailName]/gmd:fileName/gco:CharacterString!=''">
-              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $largeThumbnailName]/gmd:fileName/gco:CharacterString"/>
-            </xsl:when>
-            <!-- small thumbnail -->
-            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $thumbnailName and
-                            //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$thumbnailName]/gmd:fileName/gco:CharacterString!=''">
-              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $thumbnailName]/gmd:fileName/gco:CharacterString"/>
-            </xsl:when>
-            <!-- large thumbnail other language -->
-            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $largeThumbnailNameOtherLang and
-                              //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$largeThumbnailNameOtherLang]/gmd:fileName/gco:CharacterString!=''">
-              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $largeThumbnailNameOtherLang]/gmd:fileName/gco:CharacterString"/>
-            </xsl:when>
-            <!-- small thumbnail other language -->
-            <xsl:when test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription/gco:CharacterString = $thumbnailNameOtherLang and
-                              //gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString=$thumbnailNameOtherLang]/gmd:fileName/gco:CharacterString!=''">
-              <xsl:value-of select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[gmd:fileDescription/gco:CharacterString = $thumbnailNameOtherLang]/gmd:fileName/gco:CharacterString"/>
-            </xsl:when>
-            <!-- any thumbnail -->
-            <xsl:otherwise>
-              <xsl:value-of
-                select="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic[
-                                  not(gmd:fileDescription/gco:CharacterString = 'thumbnail') and
-                                   not(gmd:fileDescription/gco:CharacterString = 'thumbnail_fre') and
-                                    not(gmd:fileDescription/gco:CharacterString = 'large_thumbnail') and
-                                     not(gmd:fileDescription/gco:CharacterString = 'large_thumbnail_fre')][1]/gmd:fileName/gco:CharacterString"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-
-        <xsl:if test="/root/gmd:MD_Metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString=$fileName">
-          <xsl:call-template name="showPanel">
-
-            <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Thumbnail"/>
-
-            <xsl:with-param name="content">
-              <xsl:choose>
-                <xsl:when test="starts-with($fileName, 'http')">
-                  <img class="ec-thumbnail" src="{$fileName}" itemprop="image" alt="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" title="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" />
-                </xsl:when>
-                <xsl:otherwise>
-                  <img class="ec-thumbnail" src="{concat(/root/gui/url,'/srv/eng/resources.get?uuid=', /root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')}" itemprop="image" alt="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" title="{/root/gui/schemas/iso19139.nap/strings/Thumbnail}" />
-                </xsl:otherwise>
-              </xsl:choose>
-            </xsl:with-param>
-          </xsl:call-template>
-        </xsl:if>
-      </xsl:if>
+      <script>
+        jQuery( ".wb-tabs" ).trigger( "wb-init.wb-tabs" );
+      </script>
 
       <xsl:for-each select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:pointOfContact/gmd:CI_ResponsibleParty">
 
@@ -853,14 +548,14 @@
           <!-- when viewing draft of a published copy -->
           <xsl:when test="$info/workspace='true'">
             <xsl:value-of select="/root/gui/strings/*[name()=$info/statusName]"/> &#160;
-            (<a href="{/root/gui/url}/metadata/{/root/gui/language}/{$info/uuid}" style="color:white" title="{/root/gui/strings/view_published}">
+            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/gui/strings/view_published}">
             <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/published"/></a>)
           </xsl:when>
 
           <!-- if viewing puslished copy, status is draft, if a draft is available, but should show status published here, with option to visit draft, if you have right to view draft (=edit?) -->
           <xsl:when test="($info/status!='2') and ($info/edit='true')">
             <xsl:value-of select="/root/gui/strings/published"/> &#160;
-            (<a href="{/root/gui/url}/metadata/{/root/gui/language}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
+            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
             <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/draft"/></a>)
           </xsl:when>
 
@@ -950,4 +645,150 @@
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
+
+
+  <!--
+      Template: md-resources
+
+      Description: Display metadata resources.
+  -->
+  <xsl:template name="md-resources">
+    <xsl:param name="langId" />
+    <xsl:param name="webMapServicesProtocols" />
+    <xsl:param name="isoLang" />
+
+    <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
+
+    <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
+
+    <xsl:variable name="map_url">
+      <xsl:choose>
+        <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
+        <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+
+    <table class="wb-tables table table-striped table-hover table-bordered" role="grid">
+      <xsl:attribute name="data-wb-tables">{"bPaginate": false, "searching":false, "info":false}</xsl:attribute>
+      <thead>
+        <th style="width: 45%"><xsl:value-of select="$schemaStrings/Dataresources_Name" /></th>
+        <th style="width: 20%"><xsl:value-of select="$schemaStrings/Dataresources_Type" /></th>
+        <th style="width: 10%"><xsl:value-of select="$schemaStrings/Dataresources_Lang" /></th>
+        <th style="width: 20%; text-align:right"><xsl:value-of select="$schemaStrings/Dataresources_Format" /></th>
+      </thead>
+
+      <!-- Map resources managed by RCS-->
+      <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]"
+                          group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">
+
+
+        <xsl:for-each select="current-group()">
+          <xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />
+          <xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />
+
+          <xsl:variable name="nameValue">
+            <xsl:for-each select="gmd:name">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <xsl:variable name="descriptionValue">
+            <xsl:for-each select="gmd:description">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
+
+          <xsl:variable name="formatValue" select="tokenize($descriptionValue, ';')[2]" />
+
+          <tr>
+            <td><xsl:value-of select="$nameValue" /></td>
+            <td><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></td>
+            <td>
+              <xsl:variable name="langResource" select="tokenize($descriptionValue, ';')[3]" />
+              <xsl:for-each select="tokenize($langResource, ',')">
+                <xsl:variable name="v" select="." />
+                <xsl:value-of select="$isoLanguages/record[code=$v]/label/*[name()=/root/lang]" /><xsl:if test="position() != last()">,</xsl:if>
+              </xsl:for-each>
+            </td>
+            <td>
+              <div style="min-height:35px; margin-left: 5px" class="pull-right">
+                <a class="btn btn-default btn-sm" href="{$urlValue}"
+                   title="{concat(/root/gui/strings/View, ' ', $formatValue, ' ', lower-case(/root/gui/schemas/iso19139.nap/strings/Dataresources_Format), ':&#160;', $nameValue )}">
+                  <xsl:value-of select="$formatValue" />
+                </a>
+              </div>
+            </td>
+          </tr>
+
+        </xsl:for-each>
+
+      </xsl:for-each-group>
+
+
+      <!-- Other resources -->
+      <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[not(lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name)]"
+                          group-by="tokenize(gmd:description/gco:CharacterString, ';')[1]">
+
+
+        <xsl:for-each select="current-group()">
+          <xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />
+          <xsl:variable name="urlValue" select="normalize-space(gmd:linkage/gmd:URL)" />
+
+          <xsl:variable name="nameValue">
+            <xsl:for-each select="gmd:name">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <xsl:variable name="descriptionValue">
+            <xsl:for-each select="gmd:description">
+              <xsl:call-template name="localised">
+                <xsl:with-param name="langId" select="$langId"/>
+              </xsl:call-template>
+            </xsl:for-each>
+          </xsl:variable>
+
+          <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
+
+          <xsl:variable name="formatValue" select="tokenize($descriptionValue, ';')[2]" />
+
+          <tr>
+            <td><xsl:value-of select="$nameValue" /></td>
+            <td><xsl:value-of select="tokenize($descriptionValue, ';')[1]"/></td>
+            <td>
+              <xsl:variable name="langResource" select="tokenize($descriptionValue, ';')[3]" />
+              <xsl:for-each select="tokenize($langResource, ',')">
+                <xsl:variable name="v" select="." />
+                <xsl:value-of select="$isoLanguages/record[code=$v]/label/*[name()=/root/lang]" /><xsl:if test="position() != last()">,</xsl:if>
+              </xsl:for-each>
+
+            </td>
+            <td>
+
+              <div style="min-height:35px; margin-left: 5px" class="pull-right">
+                <a class="btn btn-default btn-sm pull-right" target="_blank" href="{$urlValue}"
+                   title="{concat(/root/gui/strings/View, ' ', $formatValue, ' ', lower-case(/root/gui/schemas/iso19139.nap/strings/Dataresources_Format), ':&#160;', $nameValue )}">
+                  <xsl:attribute name="onclick">logExternalDownload('<xsl:value-of select="/root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString" />','<xsl:value-of select="$urlValue" />');</xsl:attribute>
+
+                  <xsl:value-of select="$formatValue" />
+                </a>
+              </div>
+            </td>
+          </tr>
+
+        </xsl:for-each>
+
+      </xsl:for-each-group>
+    </table>
+  </xsl:template>
+
 </xsl:stylesheet>

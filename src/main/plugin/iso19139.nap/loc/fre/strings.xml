@@ -46,6 +46,7 @@
   <Dataresources_Format>Format</Dataresources_Format>
   <Dataresources_Link>Link</Dataresources_Link>
   <Dataresources_Lang>Langue</Dataresources_Lang>
+  <Dataresources_Type>Type de ressource</Dataresources_Type>
 
   <Additionalmetadata_Type>Type de métadonnées</Additionalmetadata_Type>
   <Additionalmetadata_Url>Fichier/Adresse URL</Additionalmetadata_Url>
@@ -185,4 +186,7 @@
   <changeDate>Date de mise à jour des métadonnées</changeDate>
   <rating>Openness rating</rating>
   <ParentCollection>Ensemble apparenté</ParentCollection>
+
+  <display-thumbnails-header>Vignette</display-thumbnails-header>
+  <display-overviews-header>Étendue</display-overviews-header>
 </strings>
