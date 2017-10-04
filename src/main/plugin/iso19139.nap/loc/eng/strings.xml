@@ -197,4 +197,8 @@
 
   <display-thumbnails-header>Thumbnails</display-thumbnails-header>
   <display-overviews-header>Extent</display-overviews-header>
+
+  <temporalRangeSection>Temporal Extent</temporalRangeSection>
+  <beginPosition>Begin Date</beginPosition>
+  <endPosition>End Date</endPosition>
 </strings>

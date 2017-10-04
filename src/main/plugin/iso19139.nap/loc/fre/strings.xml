@@ -189,4 +189,8 @@
 
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
+
+  <temporalRangeSection>Temporal Extent</temporalRangeSection>
+  <beginPosition>Begin Date</beginPosition>
+  <endPosition>End Date</endPosition>
 </strings>

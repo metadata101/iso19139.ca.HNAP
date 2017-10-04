@@ -9,7 +9,12 @@
                 xmlns:gn-fn-core="http://geonetwork-opensource.org/xsl/functions/core"
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
                 xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
+
+  <xsl:variable name="thesauriDir" select="/root/gui/thesaurusDir" />
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
 
 
   <!-- Hide thesaurus name -->
@@ -22,8 +27,6 @@
   <xsl:template mode="mode-iso19139" match="gml:beginPosition[$schema='iso19139.nap']|gml:endPosition[$schema='iso19139.nap']|gml:timePosition[$schema='iso19139.nap']"
                 priority="2000">
 
-
-    <xsl:message>BEGIN POSITION HNAP</xsl:message>
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="value" select="normalize-space(text())"/>
 
@@ -194,4 +197,42 @@
     </xsl:call-template>
 
   </xsl:template>
+
+  <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name" priority="2005">
+    <xsl:param name="schema" select="$schema" required="no"/>
+    <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="codelists" select="$codelists" required="no"/>
+    <xsl:param name="overrideLabel" select="''" required="no"/>
+
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+    <xsl:variable name="elementName" select="name()"/>
+
+    <xsl:variable name="listOfValues">
+      <entries>
+        <xsl:for-each select="$resourceFormatsTh/rdf:RDF/rdf:Description">
+          <entry>
+            <code><xsl:value-of select="ns2:prefLabel[@xml:lang='en']" /></code>
+            <label> <xsl:value-of select="ns2:prefLabel[@xml:lang='en']" /></label>
+          </entry>
+        </xsl:for-each>
+      </entries>
+    </xsl:variable>
+
+    <xsl:call-template name="render-element">
+      <xsl:with-param name="label"
+                      select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+      <xsl:with-param name="value" select="gco:CharacterString"/>
+      <xsl:with-param name="cls" select="local-name()"/>
+      <xsl:with-param name="xpath" select="$xpath"/>
+      <xsl:with-param name="type" select="'select'"/>
+      <xsl:with-param name="name"
+                      select="*/gn:element/@ref"/>
+      <xsl:with-param name="editInfo" select="*/gn:element"/>
+      <xsl:with-param name="parentEditInfo" select="gn:element"/>
+      <xsl:with-param name="listOfValues"
+                      select="$listOfValues/entries"/>
+    </xsl:call-template>
+  </xsl:template>
+
 </xsl:stylesheet>

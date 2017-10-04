@@ -265,6 +265,8 @@
       <name>srv:serviceTypeVersion</name>
       <name>srv:operationName</name>
       <name>srv:identifier</name>
+      <name>gmd:individualName</name>
+      <name>gmd:name</name>
     </exclude>
   </multilingualFields>
 
@@ -277,7 +279,24 @@
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
           <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
           <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel"/>
-          <field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact" in="/gmd:MD_Metadata"/>
+          <section name="gmd:contact">
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:individualName"  or="individualName"  in="/gmd:MD_Metadata/gmd:contact/*" />
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:organisationName"  or="organisationName" in="/gmd:MD_Metadata/gmd:contact/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:positionName"  or="positionName" in="/gmd:MD_Metadata/gmd:contact/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*/gmd:voice"  or="voice" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*/gmd:facsimile"  or="facsimile" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*"/>
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint"  or="deliveryPoint" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:city"  or="city" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea"  or="administrativeArea" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:postalCode"  or="postalCode" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:country"  or="country" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress"  or="electronicMailAddress" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:role"  or="role" in="/gmd:MD_Metadata/gmd:contact/*"/>
+
+          </section>
         </section>
 
         <section name="gmd:MD_DataIdentification">
@@ -316,7 +335,6 @@
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                  or="topicCategory"/>
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:resourceMaintenance"/>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
@@ -415,14 +433,12 @@
 
         <section name="gmd:MD_Distribution">
           <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
-                 in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
-                 or="distributionFormat"/>
+          in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+          or="distributionFormat"/>
 
-          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor"/>
-
-          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution//gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine"
+          <!--<field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution//gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine"
                   in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution//gmd:transferOptions/gmd:MD_DigitalTransferOptions"
-                  or="onLine"/>
+                  or="onLine"/>-->
         </section>
 
       </tab>

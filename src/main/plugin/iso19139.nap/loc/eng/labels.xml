@@ -7,7 +7,7 @@
  xmlns:gml="http://www.opengis.net/gml/3.2"
  xmlns:gts="http://www.isotc211.org/2005/gts"
  xmlns:gmx="http://www.isotc211.org/2005/gmx">
-        
+
     <element name="gmd:MD_ScopeCode">
         <label>Scope code</label>
         <description>Class of information to which the referencing entity applies</description>
@@ -402,7 +402,7 @@
         <label>Scope description</label>
         <description>Description of the class of information covered by the
             information</description>
-        <condition>Either attributes, features, featureInstances, attributeInstnaces, dataset or other must be provided</condition>    
+        <condition>Either attributes, features, featureInstances, attributeInstnaces, dataset or other must be provided</condition>
     </element>
     <element name="gmd:MD_SecurityConstraints" id="73.0">
         <label>Security constraints</label>
@@ -654,7 +654,7 @@
         <description>Common title with holdings note. NOTE title identifies elements of a series
             collectively, combined with information about what volumes are available at the source
             cited</description>
-        <help>This field is used to name the Basic Geodata as defined in the GeoIV Annex I, as it is possible that there are more than 1 "physical" datasets assigned to 1 legal entry. E.g.: Entry no. 47 "Geophysikalisches Kartenwerk" consists of 3 datasets "Geophysikalische Karten 1:500000", "Geophysikalische Spezialkarten" and "Gravimetrischer Atlas 1:100000"</help>    
+        <help>This field is used to name the Basic Geodata as defined in the GeoIV Annex I, as it is possible that there are more than 1 "physical" datasets assigned to 1 legal entry. E.g.: Entry no. 47 "Geophysikalisches Kartenwerk" consists of 3 datasets "Geophysikalische Karten 1:500000", "Geophysikalische Spezialkarten" and "Gravimetrischer Atlas 1:100000"</help>
     </element>
     <element name="gmd:complianceCode" id="234.0">
         <label>Compliance code</label>
@@ -837,7 +837,7 @@
 		<option value="500000">1:500´000</option>
 		<option value="1000000">1:1´000´000</option>
     </helper>
-        
+
     </element>
     <element name="gmd:density" id="293.0">
         <label>Density</label>
@@ -927,7 +927,7 @@
             <option value="1" title="m">1 m</option>
             <option value="30" title="m">30 m</option>
             <option value="100" title="m">100 m</option>
-        </helper>  
+        </helper>
     </element>
     <element name="gmd:distributionFormat" id="271.0">
         <label>Distribution format</label>
@@ -997,6 +997,7 @@
     <element name="gmd:electronicMailAddress" id="386.0">
         <label>Electronic Mail Address</label>
         <description>Address of the electronic mailbox of the responsible organization or individual</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:environmentDescription" id="44.0">
         <label>Environment description</label>
@@ -1239,7 +1240,6 @@
     <element name="gmd:individualName" id="375.0">
         <label>Individual Name</label>
         <description>Name of the responsible person – surname, given name, title, separated by a delimiter</description>
-        <condition>mandatory</condition>
         <_condition>Conditional / organisationName and positionName not documented?</_condition>
     </element>
     <element name="gmd:initiativeType" id="66.5">
@@ -1263,7 +1263,7 @@
         <label>Language</label>
         <description>Language(s) used within the dataset</description>
         <help>language(s) used within the dataset</help>
-        <_condition>Mandatory</_condition>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:language" context="gmd:MD_FeatureCatalogueDescription" id="235.0">
         <label>Language</label>
@@ -1918,6 +1918,7 @@
     <element name="gmd:spatialRepresentationType" id="37.0">
         <label>Spatial representation type</label>
         <description>Method used to spatially represent geographic information</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:spatialResolution" id="38.0">
         <label>Spatial resolution</label>
@@ -1951,6 +1952,7 @@
     <element name="gmd:status" id="28.0">
         <label>Status</label>
         <description>Select the status of the dataset from the list. i.e.. If your dataset is not yet complete, select 'Planned'.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:supplementalInformation" id="46.0">
         <label>Supplemental Information</label>
@@ -1990,6 +1992,7 @@
     <element name="gmd:MD_TopicCategoryCode">
         <label>Topic category</label>
         <description>Please select the most appropriate category from the list provided. These categories help to group datasets for easier discovery. This element is repeatable; select all category codes that apply to the dataset</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:topologyLevel" id="177.0">
         <label>Topology level</label>
@@ -2222,7 +2225,7 @@
     <element name="gml:begin">
         <label>Begin</label>
         <description/>
-    </element>    
+    </element>
     <element name="gml:end">
         <label>End</label>
         <description/>
@@ -2230,7 +2233,7 @@
     <element name="gml:duration">
         <label>Duration</label>
     	<description>Conforms to the ISO 8601 syntax for temporal length as implemented by the XML Schema duration type.</description>
-    </element>    
+    </element>
     <element name="gml:timeInterval">
         <label>Time interval</label>
     	<description>conforms to ISO 11404 which is based on floating point values for temporal length.
@@ -2290,7 +2293,7 @@
         <label>Identifier</label>
         <description>Unique identifier</description>
     </element>
-    
+
     <element name="gml:id" id="191.0" context="gmd:MD_CRS">
         <label>Ellipsoid</label>
         <description>Identity of the ellipsoid used</description>
@@ -2324,8 +2327,8 @@
 		<label>Factor</label>
 		<description></description>
 	</element>
-	
-	
+
+
 
     <element name="srv:SV_ServiceIdentification">
         <label>Service Identification (19119)</label>
@@ -2682,9 +2685,9 @@
         <label>Period duration</label>
         <description>
             The duration data type is used to specify a time interval.
-            
+
             The time interval is specified in the following form "PnYnMnDTnHnMnS" where:
-            
+
             * P indicates the period (required)
             * nY indicates the number of years
             * nM indicates the number of months
@@ -2692,7 +2695,7 @@
             * T indicates the start of a time section (required if you are going to specify hours, minutes, or seconds)
             * nH indicates the number of hours
             * nM indicates the number of minutes
-            * nS indicates the number of seconds            
+            * nS indicates the number of seconds
         </description>
     </element>
     <element name="gco:CharacterString">
