@@ -198,6 +198,7 @@
 
   </xsl:template>
 
+  <!-- Distribution format: Show list of allowed formats -->
   <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name" priority="2005">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
@@ -232,6 +233,53 @@
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="listOfValues"
                       select="$listOfValues/entries"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template mode="mode-iso19139" match="gmd:EX_GeographicBoundingBox" priority="2005">
+    <xsl:param name="schema" select="$schema" required="no"/>
+    <xsl:param name="labels" select="$labels" required="no"/>
+
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+
+    <xsl:call-template name="render-boxed-element">
+      <xsl:with-param name="label"
+                      select="$labelConfig/label"/>
+      <xsl:with-param name="editInfo" select="../gn:element"/>
+      <xsl:with-param name="cls" select="local-name()"/>
+      <xsl:with-param name="subTreeSnippet">
+
+        <xsl:variable name="identifier"
+                      select="../following-sibling::gmd:geographicElement[1]/gmd:EX_GeographicDescription/
+                                  gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code/(gmx:Anchor|gco:CharacterString)"/>
+        <xsl:variable name="description"
+                      select="../preceding-sibling::gmd:description/gco:CharacterString"/>
+        <div gn-draw-bbox-wet=""
+             data-hleft="{gmd:westBoundLongitude/gco:Decimal}"
+             data-hright="{gmd:eastBoundLongitude/gco:Decimal}"
+             data-hbottom="{gmd:southBoundLatitude/gco:Decimal}"
+             data-htop="{gmd:northBoundLatitude/gco:Decimal}"
+             data-hleft-ref="_{gmd:westBoundLongitude/gco:Decimal/gn:element/@ref}"
+             data-hright-ref="_{gmd:eastBoundLongitude/gco:Decimal/gn:element/@ref}"
+             data-hbottom-ref="_{gmd:southBoundLatitude/gco:Decimal/gn:element/@ref}"
+             data-htop-ref="_{gmd:northBoundLatitude/gco:Decimal/gn:element/@ref}"
+             data-lang="lang">
+          <xsl:if test="$identifier and $isFlatMode">
+            <xsl:attribute name="data-identifier"
+                           select="$identifier"/>
+            <xsl:attribute name="data-identifier-ref"
+                           select="concat('_', $identifier/gn:element/@ref)"/>
+          </xsl:if>
+          <xsl:if test="$description and $isFlatMode and not($metadataIsMultilingual)">
+            <xsl:attribute name="data-description"
+                           select="$description"/>
+            <xsl:attribute name="data-description-ref"
+                           select="concat('_', $description/gn:element/@ref)"/>
+          </xsl:if>
+        </div>
+      </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
