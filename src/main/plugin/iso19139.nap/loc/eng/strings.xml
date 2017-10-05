@@ -201,4 +201,11 @@
   <temporalRangeSection>Temporal Extent</temporalRangeSection>
   <beginPosition>Begin Date</beginPosition>
   <endPosition>End Date</endPosition>
+
+  <contact>Contact</contact>
+  <individualName>Individual Name</individualName>
+  <organisationName>Organisation Name</organisationName>
+
+  <distributionFormats>Distribution Formats</distributionFormats>
+  <distributionResources>Resources</distributionResources>
 </strings>

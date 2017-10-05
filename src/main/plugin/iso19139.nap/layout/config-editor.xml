@@ -188,6 +188,7 @@
     <name>gml:verticalDatum</name>
     <name>gmd:identifier</name>
     <name>gmd:distributionFormat</name>
+    <name>gmd:distributorContact</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -279,7 +280,10 @@
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
           <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
           <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel"/>
-          <section name="gmd:contact">
+          <field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />
+
+        </section>
+          <!--<section name="gmd:contact">
             <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:individualName"  or="individualName"  in="/gmd:MD_Metadata/gmd:contact/*" />
 
             <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:organisationName"  or="organisationName" in="/gmd:MD_Metadata/gmd:contact/*"/>
@@ -296,8 +300,8 @@
 
             <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:role"  or="role" in="/gmd:MD_Metadata/gmd:contact/*"/>
 
-          </section>
-        </section>
+          </section>-->
+
 
         <section name="gmd:MD_DataIdentification">
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
@@ -432,13 +436,20 @@
         </section>
 
         <section name="gmd:MD_Distribution">
-          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
-          in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
-          or="distributionFormat"/>
+          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact"
+                 in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor"
+                 or="distributorContact"/>
 
-          <!--<field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution//gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine"
-                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution//gmd:transferOptions/gmd:MD_DigitalTransferOptions"
-                  or="onLine"/>-->
+          <section name="distributionFormats">
+            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
+            in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+            or="distributionFormat"/>
+          </section>
+
+          <section name="distributionResources">
+            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />
+          </section>
+
         </section>
 
       </tab>
