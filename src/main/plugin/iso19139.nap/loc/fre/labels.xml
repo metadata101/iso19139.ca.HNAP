@@ -2798,6 +2798,11 @@
     <label>Protocole</label>
     <description>Sélectionner le bon protocole de la liste déroulante. Si l'ensemble de données est disponible en ligne, sélectionner « Adresse Web (URL) ».</description>
     <help>Protocole de connexion utilisé, par exemple FTP.</help>
+    <helper sort="true">
+      <option value="HTTP">HTTP</option>
+      <option value="HTTPS">HTTPS</option>
+      <option value="FTP">FTP</option>
+    </helper>
     <condition/>
 
   </element>
