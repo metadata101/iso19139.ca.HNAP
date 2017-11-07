@@ -827,7 +827,7 @@
     <label>Contraintes d'accès</label>
     <description>Cet élément permet d'indiquer toute restriction ou limitation supplémentaire ou particulière existante quant à l'accès à la ressource, outre celles couvertes par les restrictions ministérielles existantes.</description>
     <help>Restrictions d'accès relatives à la garantie de la propriété privée ou intellectuelle et restrictions de toutes natures visant à la conservation de la ressource ou des métadonnées. Elles peuvent être sélectionnées parmi les éléments suivants : droit d'auteur, brevet, brevet en voie de délivrance, marque, licence, propriété intellectuelle, diffusion limitée, autres restrictions.</help>
-    <condition/>
+    <condition>mandatory</condition>
 
   </element>
   <!--<element name="gmd:address" id="525.0" context="gmd:CI_ResponsibleParty">
@@ -1077,7 +1077,7 @@
     <label>Code</label>
     <description>Valeur alphanumérique pour l'identification d'une occurrence dans le domaine de valeurs</description>
     <help>Code alphanumérique de l'identifiant. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>
-    <condition>Obligatoire</condition>
+    <condition>mandatory</condition>
     <helper rel="gmd:codeSpace">
       <option title="http://www.epsg-registry.org" value="EPSG:3978">EPSG:3978 Lambert Conic Conformal (Nad83)</option>
       <option title="http://www.epsg-registry.org" value="EPSG:3979">EPSG:3979 Lambert Conic Conformal (CSRS)</option>
@@ -3343,7 +3343,7 @@
     <label>Contraintes d'utilisation</label>
     <description>Cet élément permet d'indiquer toute restriction ou limitation supplémentaire ou particulière existante quant à l'utilisation de la ressource, outre celles couvertes par les restrictions ministérielles existantes.</description>
     <help>Restrictions d'utilisation à fondement juridique destinées à garantir la sphère privée, la propriété intellectuelle ou d'autres domaines similaires tels que les conditions d'octroi de licence. Elles peuvent être sélectionnées parmi les éléments suivants : droit d'auteur, brevet, brevet en voie de délivrance, marque, licence, propriété intellectuelle, diffusion limitée, autres restrictions.</help>
-    <condition/>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:useLimitation" id="68.0">
     <label>Limitation d'utilisation</label>
@@ -3383,7 +3383,8 @@
     <li>L’adresse où il est établi, son adresse de courrier électronique, ainsi que des coordonnées téléphoniques permettant d’entrer effectivement en contact avec lui”.</li>
     <ul>
     ]]></help>
-    <condition/>
+    <condition>mandatory</condition>
+
     <!--<helper>
       <option value="Aucune condition ne s’applique">Aucune condition ne s’applique</option>
       <option value="Conditions inconnues">Conditions inconnues</option>

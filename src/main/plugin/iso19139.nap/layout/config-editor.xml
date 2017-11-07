@@ -268,6 +268,7 @@
       <name>srv:identifier</name>
       <name>gmd:individualName</name>
       <name>gmd:name</name>
+      <name>gmd:code</name>
     </exclude>
   </multilingualFields>
 
@@ -365,6 +366,7 @@
                 <key label="beginPosition"
                      xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition"
                      use="gn-date-picker"
+                     required="true"
                      tooltip="gmd:extent|gmd:EX_TemporalExtent">
                   <directiveAttributes data-tag-name="gml:beginPosition"/>
                 </key>
@@ -446,9 +448,9 @@
             or="distributionFormat"/>
           </section>
 
-          <section name="distributionResources">
+          <!--<section name="distributionResources">
             <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />
-          </section>
+          </section>-->
 
         </section>
 

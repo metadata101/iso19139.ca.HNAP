@@ -126,14 +126,14 @@
         <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada') or starts-with(lower-case($organisationName), 'gouvernement du canada')" />
         <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
+        <sch:assert test="not(string($organisationName)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
                 )">$loc/strings/EC1GovFrench</sch:assert>
 
         <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']" />
         <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada')" />
         <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
+        <sch:assert test="not(string($organisationNameOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
                 )">$loc/strings/EC1GovEnglish</sch:assert>
 
       </sch:rule>
@@ -182,14 +182,14 @@
         <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada') or starts-with(lower-case($organisationName), 'gouvernement du canada')" />
         <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
+        <sch:assert test="not(string($organisationName)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
                 )">$loc/strings/EC37GovFrench</sch:assert>
 
         <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']" />
         <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada')" />
         <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
+        <sch:assert test="not(string($organisationNameOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
                 )">$loc/strings/EC37GovEnglish</sch:assert>
 
       </sch:rule>
@@ -261,14 +261,14 @@
         <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada') or starts-with(lower-case($organisationName), 'gouvernement du canada')" />
         <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
+        <sch:assert test="not(string($organisationName)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleName]))
                 )">$loc/strings/EC26GovFrench</sch:assert>
 
         <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']" />
         <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada')" />
         <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
 
-        <sch:assert test="($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
+        <sch:assert test="not(string($organisationNameOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])) = $titleNameOtherLang]))
                 )">$loc/strings/EC26GovEnglish</sch:assert>
 
       </sch:rule>
@@ -833,13 +833,13 @@
 
         <!-- Contact - Organization name -->
         <sch:rule context="//gmd:contact/*/gmd:organisationName">
-            <sch:let name="missing" value="not(string(gco:CharacterString)) 
+            <sch:let name="missing" value="not(string(gco:CharacterString))
                 or (@gco:nilReason)" />
-            
+
             <sch:assert
                 test="not($missing)"
                 >$loc/strings/EC1French</sch:assert>
-        
+
         </sch:rule>
 
       <!-- Cited Responsible Contact -  Electronic mail address -->

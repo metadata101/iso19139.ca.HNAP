@@ -457,6 +457,7 @@
     <element name="gmd:accessConstraints" id="70.0">
         <label>Access Constraints</label>
         <description>This element allows you to indicate any additional or special restrictions or limitations that may exist on accessing the resource, outside of those which are covered by existing departmental restrictions.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:address" id="525.0" context="gmd:CI_ResponsibleParty">
         <label>Address</label>
@@ -2076,11 +2077,13 @@
     <element name="gmd:useConstraints" id="71.0">
         <label>Use Constraints</label>
         <description>This element allows you to indicate any additional or special restrictions or limitations that may exist on use of the resource, outside of those which are covered by existing departmental restrictions.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:useLimitation" id="68.0">
         <label>Use Limitation</label>
         <description>Limitation affecting the fitness for use of the resource. Example, _not to be
             used for navigation_</description>
+      <condition>mandatory</condition>
     </element>
     <element name="gmd:userContactInfo" id="66.0">
         <label>User contact info</label>
@@ -2148,7 +2151,6 @@
     <element name="gmd:version" context="gmd:MD_Format" id="286.0">
         <label>File Format Version</label>
         <description>Enter the version of the data transfer format(s). For a list of possible versions, see the 'suggestions' menu. If the version is unknown, enter "unknown"</description>
-        <condition>mandatory</condition>
     </element>
     <element name="gmd:verticalElement" id="338.0">
         <label>Vertical element</label>
