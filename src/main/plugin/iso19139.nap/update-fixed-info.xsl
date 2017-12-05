@@ -808,7 +808,7 @@
     <xsl:variable name="currentCodeValue" select="gmd:MD_SpatialRepresentationTypeCode/@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_SpatialRepresentationTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <!--<xsl:message>gmd:spatialRepresentationType</xsl:message>
+   <!--<xsl:message>gmd:spatialRepresentationType <xsl:value-of select="$schemaTranslationsDir" /> - <xsl:value-of select="$thesauriDir" /></xsl:message>
     <xsl:message>gmd:spatialRepresentationType (currentCodeValue): <xsl:value-of select="$currentCodeValue" /></xsl:message>
     <xsl:message>gmd:spatialRepresentationType (value): <xsl:value-of select="$value" /></xsl:message>-->
 

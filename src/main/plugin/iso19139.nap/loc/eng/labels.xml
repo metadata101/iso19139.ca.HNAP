@@ -1296,7 +1296,7 @@
         <label>Linkage</label>
         <description>Location (address) for on-line access using a Uniform Resource Locator address
             or similar addressing scheme such as http://www.statkart.no/isotc211</description>
-        <condition>mandatory</condition>
+        <!--<condition>mandatory</condition>-->
     </element>
     <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
         <label>Maintenance and Update Frequency</label>
