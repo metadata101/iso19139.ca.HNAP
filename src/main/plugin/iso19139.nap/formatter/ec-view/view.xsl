@@ -411,10 +411,12 @@
     <!-- side bar-->
     <div class="col-md-4 row-end ec-md-detail mrgn-tp-sm">
       <!-- as defined in md-show -->
-      <xsl:call-template name="md-sidebar-title">
-        <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
-        <xsl:with-param name="info" select="/root/info/record"/>
-      </xsl:call-template>
+      <xsl:if test="/root/gui/session/userId != ''">
+        <xsl:call-template name="md-sidebar-title">
+          <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
+          <xsl:with-param name="info" select="/root/info/record"/>
+        </xsl:call-template>
+      </xsl:if>
 
       <!-- Thumbnail/map -->
       <div class="wb-tabs ignore-session">
@@ -538,30 +540,62 @@
       <xsl:with-param name="title">
         <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
 
+        <xsl:message>
+        Status val:<xsl:value-of select="$info/status" />--- <xsl:value-of select="$info/edit" /> --- <xsl:value-of select="$info/publishedCopy" />  --- <xsl:value-of select="$info/draft" /> ---
+        </xsl:message>
+
         <xsl:choose>
+          <xsl:when test="$info/status='4'">
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
+
+            <xsl:if test="$info/publishedCopy='true' and $info/workspace='false'">
+              (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
+            </xsl:if>
+
+            <xsl:if test="$info/publishedCopy='true' and $info/workspace='true'">
+              (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?draft=n" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
+            </xsl:if>
+          </xsl:when>
+
 
           <!-- no published copy available, always draft (or retired/rejected) -->
           <xsl:when test="not ($info/publishedCopy='true')">
-            <xsl:value-of select="/root/gui/strings/*[name()=$info/statusName]"/>
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
           </xsl:when>
 
           <!-- when viewing draft of a published copy -->
           <xsl:when test="$info/workspace='true'">
-            <xsl:value-of select="/root/gui/strings/*[name()=$info/statusName]"/> &#160;
-            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/gui/strings/view_published}">
-            <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/published"/></a>)
+            <xsl:choose>
+              <xsl:when test="$info/publishedCopy='true'">
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/approved_local"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
+              </xsl:otherwise>
+            </xsl:choose>
+            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?view=published" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
           </xsl:when>
 
           <!-- if viewing puslished copy, status is draft, if a draft is available, but should show status published here, with option to visit draft, if you have right to view draft (=edit?) -->
-          <xsl:when test="($info/status!='2') and ($info/edit='true')">
-            <xsl:value-of select="/root/gui/strings/published"/> &#160;
+          <!--<xsl:when test="($info/status!='2') and ($info/edit='true')">
+            CCCC:<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
             (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
             <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/draft"/></a>)
+          </xsl:when>-->
+
+          <!-- View published copy and allowed to see the draft -->
+          <xsl:when test="($info/status='2') and ($info/edit='true') and ($info/workspace='false')  and ($info/hasDraft='true')">
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
+            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
           </xsl:when>
 
           <!-- else this is a published record without draft (status approved, display as 'published') -->
           <xsl:otherwise>
-            <xsl:value-of select="/root/gui/strings/published"/>
+            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/>
           </xsl:otherwise>
 
         </xsl:choose>
