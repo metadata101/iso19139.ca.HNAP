@@ -1,0 +1,167 @@
+<xs:schema targetNamespace="http://www.ec.gc.ca/data_donnees/standards/schemas/napec" elementFormDefault="qualified" version="0.1"
+            xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
+	    	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   	xmlns:xlink="http://www.w3.org/1999/xlink" 
+			xmlns:gco="http://www.isotc211.org/2005/gco" 
+			xmlns:gmd="http://www.isotc211.org/2005/gmd"
+			xmlns:srv="http://www.isotc211.org/2005/srv">
+
+	<!-- ================================= Annotation ================================ -->
+	<xs:annotation>
+		<xs:documentation>
+			This file contains extensions of the ISO19139 NAP gmd schema for Environment and Climate Change Canada
+			metadata profile.
+
+			History:
+
+			Jose García, May 2012 
+			Initial version
+
+		</xs:documentation>
+	</xs:annotation>
+
+	<!-- ================================== Imports ================================== -->
+	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../srv/srv.xsd"/>
+
+    <!-- ====================================================================== -->
+
+    <!-- ====================================================================== -->
+	<!-- Add elements to MD_DataIdentification 									-->
+	<!-- ====================================================================== -->
+    <xs:element name="MD_DataIdentification" type="napec:MD_DataIdentification_Type" substitutionGroup="gmd:AbstractMD_Identification"/>
+
+    <xs:complexType name="MD_DataIdentification_Type">
+        <xs:complexContent>
+            <xs:extension base="gmd:MD_DataIdentification_Type">
+                <xs:sequence>
+                    <xs:element name="EC_CorporateInfo" type="napec:EC_CorporateInfo_Type" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+                <xs:attribute ref="gco:isoType" use="required" fixed="gmd:MD_DataIdentification"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+  
+    <xs:complexType name="MD_DataIdentification_PropertyType">
+        <xs:sequence>
+            <xs:element ref="napec:MD_DataIdentification" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="gco:ObjectReference"/>
+        <xs:attribute ref="gco:nilReason"/>
+    </xs:complexType>
+
+  <!-- ====================================================================== -->
+  <!-- Add elements to SV_ServiceIdentification 									-->
+  <!-- ====================================================================== -->
+  <xs:element name="SV_ServiceIdentification" type="napec:SV_ServiceIdentification_Type" substitutionGroup="gmd:AbstractMD_Identification"/>
+
+  <xs:complexType name="SV_ServiceIdentification_Type">
+    <xs:complexContent>
+      <xs:extension base="srv:SV_ServiceIdentification_Type">
+        <xs:sequence>
+          <xs:element name="EC_CorporateInfo" type="napec:EC_CorporateInfo_Type" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute ref="gco:isoType" use="required" fixed="srv:SV_ServiceIdentification"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SV_ServiceIdentification_PropertyType">
+    <xs:sequence>
+      <xs:element ref="napec:SV_ServiceIdentification" minOccurs="1"/>
+    </xs:sequence>
+    <xs:attributeGroup ref="gco:ObjectReference"/>
+    <xs:attribute ref="gco:nilReason"/>
+  </xs:complexType>
+
+
+    <!-- ====================================================================== -->
+	<!-- EC_CorporateInfo_Type					 								-->
+	<!-- ====================================================================== -->
+
+	<xs:complexType name="EC_CorporateInfo_Type">
+		<xs:annotation>
+			<xs:documentation>Elements for ECCC</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="gco:AbstractObject_Type">
+				<xs:sequence>
+					<xs:element name="EC_Branch" minOccurs="1" maxOccurs="unbounded" type="napec:EC_Branch_TypeCode_PropertyType"/>
+					<xs:element name="EC_Directorate" minOccurs="1" maxOccurs="unbounded" type="napec:EC_Directorate_TypeCode_PropertyType"/>
+
+					<xs:element name="EC_Project" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>	
+					
+					<xs:element name="GC_Security_Classification" type="napec:GC_Security_Classification_TypeCode_PropertyType" minOccurs="1" maxOccurs="1"/>	
+				
+					<xs:element name="EC_Program" type="napec:EC_Program_TypeCode_PropertyType" minOccurs="0" maxOccurs="unbounded"/>	
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<!-- <xs:complexType name="EC_DataAccountabilityDomain_Type">
+		<xs:annotation>
+			<xs:documentation>Elements for EC</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="gco:AbstractObject_Type">
+				<xs:sequence>	
+
+					<xs:element name="EC_Program" type="napec:EC_Program_TypeCode_PropertyType" minOccurs="0"/>	
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType> -->
+
+	<!-- ====================================================================== -->
+	<!-- EC_Branch_TypeCode					 									-->
+	<!-- ====================================================================== -->
+	<xs:element name="EC_Branch_TypeCode" type="gco:CodeListValue_Type"/>
+
+	<xs:complexType name="EC_Branch_TypeCode_PropertyType">
+		<xs:sequence minOccurs="0">
+		  <xs:element ref="napec:EC_Branch_TypeCode"/>
+		</xs:sequence>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+
+
+	<!-- ====================================================================== -->
+	<!-- EC_Directorate_TypeCode					 							-->
+	<!-- ====================================================================== -->
+	<xs:element name="EC_Directorate_TypeCode" type="gco:CodeListValue_Type"/>
+
+	<xs:complexType name="EC_Directorate_TypeCode_PropertyType">
+		<xs:sequence minOccurs="0">
+		  <xs:element ref="napec:EC_Directorate_TypeCode"/>
+		</xs:sequence>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+
+	<!-- ====================================================================== -->
+	<!-- EC_Program_TypeCode_PropertyType			 							-->
+	<!-- ====================================================================== -->
+	<xs:element name="EC_Program_TypeCode" type="gco:CodeListValue_Type"/>
+
+	<xs:complexType name="EC_Program_TypeCode_PropertyType">
+		<xs:sequence minOccurs="0">
+		  <xs:element ref="napec:EC_Program_TypeCode"/>
+		</xs:sequence>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+	
+	<!-- ====================================================================== -->
+	<!-- GC_Security_Classification					 							-->
+	<!-- ====================================================================== -->
+	<xs:element name="GC_Security_Classification_TypeCode" type="gco:CodeListValue_Type"/>
+
+	<xs:complexType name="GC_Security_Classification_TypeCode_PropertyType">
+		<xs:sequence minOccurs="0">
+		  <xs:element ref="napec:GC_Security_Classification_TypeCode"/>
+		</xs:sequence>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+
+</xs:schema>
