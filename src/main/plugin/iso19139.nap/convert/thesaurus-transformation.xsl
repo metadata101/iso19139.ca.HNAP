@@ -175,7 +175,7 @@
       </xsl:if>
 
       <xsl:copy-of
-        select="geonet:add-thesaurus-info($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly))"/>
+        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $listOfLanguage[1])"/>
     </gmd:MD_Keywords>
   </xsl:template>
 
