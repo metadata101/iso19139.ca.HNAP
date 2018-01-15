@@ -66,7 +66,7 @@
           <xsl:attribute name="xlink:show">replace</xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:call-template name="to-md-keywords-nap">
+          <xsl:call-template name="to-md-keywords-napec">
             <xsl:with-param name="withAnchor" select="$withAnchor"/>
             <xsl:with-param name="withThesaurusAnchor" select="$withThesaurusAnchor"/>
             <xsl:with-param name="listOfLanguage" select="$listOfLanguage"/>
@@ -84,7 +84,7 @@
     <xsl:param name="withAnchor"/>
     <xsl:param name="withThesaurusAnchor"/>
 
-    <xsl:call-template name="to-md-keywords-nap">
+    <xsl:call-template name="to-md-keywords-napec">
       <xsl:with-param name="withAnchor" select="$withAnchor"/>
       <xsl:with-param name="withThesaurusAnchor" select="$withThesaurusAnchor"/>
       <xsl:with-param name="listOfLanguage" select="$listOfLanguage"/>
@@ -92,7 +92,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template name="to-md-keywords-nap">
+  <xsl:template name="to-md-keywords-napec">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
@@ -175,7 +175,7 @@
       </xsl:if>
 
       <xsl:copy-of
-        select="geonet:add-thesaurus-info($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly))"/>
+        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $listOfLanguage[1])"/>
     </gmd:MD_Keywords>
   </xsl:template>
 
