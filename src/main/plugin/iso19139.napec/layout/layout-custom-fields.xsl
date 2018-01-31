@@ -381,7 +381,7 @@
                 match="gmd:descriptiveKeywords[contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Waf')]" />
 
 
-  <xsl:template mode="mode-iso19139" priority="5"
+  <xsl:template mode="mode-iso19139" priority="5000"
                 match="gmd:descriptiveKeywords">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
@@ -403,6 +403,9 @@
 
     <xsl:variable name="thesaurusTitle">
       <xsl:choose>
+        <xsl:when test="contains($thesaurusTitleEl/gco:CharacterString, 'EC_')">
+          <xsl:value-of select="/root/gui/schemas/iso19139.napec/strings/*[name() = $thesaurusTitleEl/gco:CharacterString]" />
+        </xsl:when>
         <xsl:when test="normalize-space($thesaurusTitleEl/gco:CharacterString) != ''">
           <xsl:value-of select="if ($overrideLabel != '')
               then $overrideLabel
@@ -455,8 +458,16 @@
                           else $listOfThesaurus/thesaurus[title=$thesaurusTitle]"/>
 
     <xsl:choose>
+      <!-- Don't box EC thesaurus in Information Classification section -->
+      <xsl:when test="contains($thesaurusTitleEl/gco:CharacterString, 'EC_')">
+        <xsl:message>descriptiveKeywords fieldset=false 1</xsl:message>
+
+        <xsl:apply-templates mode="mode-iso19139" select="*">
+          <xsl:with-param name="schema" select="$schema"/>
+          <xsl:with-param name="labels" select="$labels"/>
+        </xsl:apply-templates>
+      </xsl:when>
       <xsl:when test="$thesaurusConfig/@fieldset = 'false'">
-        <xsl:message>descriptiveKeywords fieldset=false</xsl:message>
 
         <xsl:apply-templates mode="mode-iso19139" select="*">
           <xsl:with-param name="schema" select="$schema"/>
@@ -498,12 +509,14 @@
     <xsl:variable name="thesaurusTitle"
                   select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
 
+    <!--<xsl:message>THESAURUS TITLE C:<xsl:copy-of select="/root/gui/schemas/iso19139.napec" /></xsl:message>-->
     <xsl:variable name="thesaurusTitle2">
       <xsl:choose>
         <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
                   (gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada')">
           <xsl:value-of  select="'local.theme.EC_Core_Subject'"/>
         </xsl:when>
+
         <xsl:otherwise>
           <xsl:value-of  select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
         </xsl:otherwise>
@@ -521,6 +534,8 @@
                   as="element()?"
                   select="if ($thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')])
                           then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
+                          else if ($listOfThesaurus/thesaurus[title=$thesaurusIdentifier])
+                          then $listOfThesaurus/thesaurus[title=$thesaurusIdentifier]
                           else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle])
                           then $listOfThesaurus/thesaurus[title=$thesaurusTitle2]
                           else $listOfThesaurus/thesaurus[key=$thesaurusTitle2]"/>
@@ -618,10 +633,29 @@
 
         <xsl:variable name="allLanguages"
                       select="concat($metadataLanguage, ',', $metadataOtherLanguages)"></xsl:variable>
+
+        <xsl:variable name="thesaurusTitleToDisplay">
+          <xsl:choose>
+            <xsl:when test="contains($thesaurusIdentifier, 'EC_')">
+              <xsl:value-of select="/root/gui/schemas/iso19139.napec/strings/*[name() = $thesaurusIdentifier]" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$thesaurusTitle" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:message>
+          $thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" />
+          $thesaurusTitleToDisplay: <xsl:value-of select="thesaurusTitleToDisplay" />
+
+        </xsl:message>
+
+        <!-- $thesaurusIdentifier add label for keywords in Information Classification panel -->
         <div data-gn-keyword-selector="{$widgetMode}"
              data-metadata-id="{$metadataId}"
              data-element-ref="{concat('_X', ../gn:element/@ref, '_replace')}"
-             data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false') then $thesaurusTitle else ''}"
+             data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false' or contains($thesaurusIdentifier, 'EC_')) then $thesaurusTitleToDisplay else ''}"
              data-thesaurus-key="{$thesaurusKey}"
              data-keywords="{$keywords}"
              data-transformations="{$transformations}"
@@ -631,14 +665,15 @@
              data-textgroup-only="false">
         </div>
 
-        <xsl:variable name="isTypePlace"
+        <!-- TODO: To check for ECCC -->
+        <!--<xsl:variable name="isTypePlace"
                       select="count(gmd:type/gmd:MD_KeywordTypeCode[@codeListValue='place']) > 0"/>
         <xsl:if test="$isTypePlace">
           <xsl:call-template name="render-batch-process-button">
             <xsl:with-param name="process-name" select="'add-extent-from-geokeywords'"/>
             <xsl:with-param name="process-params">{"replace": true}</xsl:with-param>
           </xsl:call-template>
-        </xsl:if>
+        </xsl:if>-->
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates mode="mode-iso19139" select="*"/>

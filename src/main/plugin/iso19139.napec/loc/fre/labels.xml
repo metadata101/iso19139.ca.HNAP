@@ -2073,7 +2073,7 @@
     <label>Nom de la personne</label>
     <description>Nom de la personne responsable. Prénom, nom et titre sont séparés par un signe de délimitation</description>
     <help>Nom de la personne responsable. Des séparateurs (virgules) figurent entre le prénom, le nom et le titre.</help>
-    <condition>Condition</condition>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:initiativeType" id="66.5">
     <label>Type d'initiative</label>
@@ -2759,7 +2759,7 @@
     <label>Position</label>
     <description>Rôle ou position de la personne responsable</description>
     <help>Fonction ou position de la personne responsable.</help>
-    <condition>Condition</condition>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:postalCode" id="384.0">
     <label>Code postal</label>

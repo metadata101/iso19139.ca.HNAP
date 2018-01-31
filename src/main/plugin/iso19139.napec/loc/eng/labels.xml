@@ -1243,6 +1243,7 @@
         <label>Individual Name</label>
         <description>Name of the responsible person – surname, given name, title, separated by a delimiter</description>
         <_condition>Conditional / organisationName and positionName not documented?</_condition>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:initiativeType" id="66.5">
         <label>Initiative Type</label>
@@ -1717,7 +1718,7 @@
     <element name="gmd:positionName" id="377.0">
         <label>Position Name</label>
         <description>Role or position of the responsible person</description>
-        <condition>conditional</condition>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:postalCode" id="384.0">
         <label>Postal Code / ZIP Code</label>

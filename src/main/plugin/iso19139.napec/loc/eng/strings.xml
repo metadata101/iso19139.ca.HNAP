@@ -220,4 +220,8 @@
   <view_draft>View draft version</view_draft>
   <draft>Draft</draft>
 
+  <local.theme.EC_Information_Category>Information Category</local.theme.EC_Information_Category>
+  <local.theme.EC_Content_Scope>Content Scope</local.theme.EC_Content_Scope>
+  <local.place.EC_Geographic_Scope>Geographic Scope</local.place.EC_Geographic_Scope>
+  <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
 </strings>

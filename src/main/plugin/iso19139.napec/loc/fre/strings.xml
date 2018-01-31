@@ -207,4 +207,9 @@
   <view_published>View published version</view_published>
   <view_draft>View draft version</view_draft>
   <draft>Draft</draft>
+
+  <theme.EC_Information_Category.rdf>Information Category</theme.EC_Information_Category.rdf>
+  <theme.EC_Content_Scope.rdf>Content Scope</theme.EC_Content_Scope.rdf>
+  <place.EC_Geographic_Scope.rdf>Geographic Scope</place.EC_Geographic_Scope.rdf>
+  <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
 </strings>

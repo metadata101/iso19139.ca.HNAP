@@ -294,7 +294,7 @@
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
           <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
           <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel"/>
-          <field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />
+          <!--<field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />-->
 
         </section>
           <!--<section name="gmd:contact">
@@ -343,13 +343,17 @@
           </action>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:abstract"/>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:status"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                  or="status"/>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:language"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                  or="language"/>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet"/>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:topicCategory"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                  or="topicCategory"/>
@@ -365,12 +369,34 @@
                  or="citedResponsibleParty"/>
 
           <section name="gmd:MD_Keywords">
+
+            <!-- Free text keywords -->
+            <field
+              xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/
+              gmd:descriptiveKeywords[not(gmd:MD_Keywords/gmd:thesaurusName)]" />
+
+            <action type="add" name="descriptiveKeywords" or="descriptiveKeywords" btnLabel="addFreeTextKeywords"
+                    in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification">
+              <template>
+                <snippet>
+                  <gmd:descriptiveKeywords>
+                    <gmd:MD_Keywords>
+                      <gmd:keyword>
+                        <gco:CharacterString/>
+                      </gmd:keyword>
+                      <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+                      </gmd:type>
+                    </gmd:MD_Keywords>
+                  </gmd:descriptiveKeywords>
+                </snippet>
+              </template>
+            </action>
+
             <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:descriptiveKeywords
-                             [not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')) and
+                             [gmd:MD_Keywords/gmd:thesaurusName and not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')) and
                              not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')) and
-                             not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope'))]"
-                   in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
-                   or="descriptiveKeywords"/>
+                             not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope'))]" />
           </section>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceConstraints"
@@ -446,7 +472,7 @@
             </template>
           </field>
 
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement"/>
 
         </section>
 
@@ -497,21 +523,10 @@
                  or="referenceSystemInfo"/>
         </section>
 
-        <section name="gmd:MD_Distribution">
-          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact"
-                 in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor"
-                 or="distributorContact"/>
-
-          <section name="distributionFormats">
-            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
-            in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
-            or="distributionFormat"/>
-          </section>
-
-          <!--<section name="distributionResources">
-            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />
-          </section>-->
-
+        <section name="distributionFormats">
+          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
+                 in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+                 or="distributionFormat"/>
         </section>
 
       </tab>
