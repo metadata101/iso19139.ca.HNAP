@@ -190,6 +190,7 @@
     <name>gmd:identifier</name>
     <name>gmd:distributionFormat</name>
     <name>gmd:distributorContact</name>
+    <name>gmd:referenceSystemInfo</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -294,6 +295,7 @@
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
           <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
           <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel"/>
+          <field xpath="/gmd:MD_Metadata/gmd:dataSetURI"/>
           <!--<field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />-->
 
         </section>
@@ -317,12 +319,15 @@
           </section>-->
 
 
+        <!-- Identification Info -->
         <section name="gmd:MD_DataIdentification">
+          <!-- Title -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title"/>
 
+          <!-- Dates -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
               gmd:date"/>
-          <action type="add" name="date" or="date"
+          <action type="add" name="date" or="date" btnLabel="addDate"
                   in="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation">
             <template>
               <snippet>
@@ -342,32 +347,60 @@
             </template>
           </action>
 
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:abstract"/>
+          <!-- Abstract -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:abstract" del=""/>
 
+          <!-- Status -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:status"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
-                 or="status"/>
+                 or="status" />
 
+          <!-- Language -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:language"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                  or="language"/>
 
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet"/>
+          <!-- Characterset -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet" />
 
+          <!-- Only show action if no gmd:characterSet is present -->
+          <action type="add" name="characterSet" or="characterSet" btnLabel="addCharacterSet"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                  if="count(gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet) = 0">
+              <template>
+                <snippet>
+                  <gmd:characterSet>
+                    <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+                                             codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+                  </gmd:characterSet>
+                </snippet>
+              </template>
+          </action>
+
+          <!-- Topic Category -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:topicCategory"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                  or="topicCategory"/>
 
+          <!-- Supplemental Info -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:supplementalInformation"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                 or="supplementalInformation" />
+
+          <!-- Maintenance and update frequency -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation"
                  or="maintenanceAndUpdateFrequency"/>
 
+          <!-- Spatial representation type -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
+          <!-- Cited responsible party -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty "
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation"
                  or="citedResponsibleParty"/>
 
+          <!-- Keywords -->
           <section name="gmd:MD_Keywords">
 
             <!-- Free text keywords -->
@@ -393,136 +426,131 @@
               </template>
             </action>
 
+            <!-- Keywords from thesaurus (except special ones from ECCC -->
             <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:descriptiveKeywords
                              [gmd:MD_Keywords/gmd:thesaurusName and not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')) and
                              not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')) and
                              not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope'))]" />
           </section>
 
+          <!-- Resource constraints -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceConstraints"
                    in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
                    or="resourceConstraints"/>
 
-          <field name="temporalRangeSection" templateModeOnly="true"
-                 xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
-                 if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification) > 0">
-            <template>
-              <values>
-                <!-- -Need a * for gml:TimePeriodTypeCHOICE_ELEMENT2 added by editor enumerated tree -->
-                <key label="beginPosition"
-                     xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition"
-                     use="gn-date-picker"
-                     required="true"
-                     tooltip="gmd:extent|gmd:EX_TemporalExtent">
-                  <directiveAttributes data-tag-name="gml:beginPosition"/>
-                </key>
-                <key label="endPosition"
-                     xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:endPosition"
-                     use="gn-date-picker"
-                     tooltip="gmd:extent|gmd:EX_TemporalExtent"
-                >
-                  <directiveAttributes
-                          data-tag-name="gml:endPosition" />
-                </key>
-              </values>
-              <snippet>
-                <gmd:temporalElement>
-                  <gmd:EX_TemporalExtent>
-                    <gmd:extent>
-                      <gml:TimePeriod gml:id="">
-                        {{beginPosition}}
-                        {{endPosition}}
-                      </gml:TimePeriod>
-                    </gmd:extent>
-                  </gmd:EX_TemporalExtent>
-                </gmd:temporalElement>
-              </snippet>
-            </template>
-          </field>
-
-          <field name="temporalRangeSection" templateModeOnly="true"
-                 xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
-                 if="count(gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification) > 0">
-            <template>
-              <values>
-                <key label="beginPosition"
-                     xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition"
-                     use="gn-date-picker"
-                     tooltip="gmd:extent|gmd:EX_TemporalExtent"/>
-                <key label="endPosition"
-                     xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:endPosition"
-                     use="gn-date-picker"
-                     tooltip="gmd:extent|gmd:EX_TemporalExtent"
-                />
-              </values>
-              <snippet>
-                <gmd:temporalElement>
-                  <gmd:EX_TemporalExtent>
-                    <gmd:extent>
-                      <gml:TimePeriod gml:id="">
-                        <gml:beginPosition>{{beginPosition}}</gml:beginPosition>
-                        <gml:endPosition>
+          <!-- Temporal extent -->
+          <section name="temporalRangeSection">
+            <field name="temporalRangeSection" templateModeOnly="true"
+                   xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement">
+              <template>
+                <values>
+                  <!-- -Need a * for gml:TimePeriodTypeCHOICE_ELEMENT2 added by editor enumerated tree -->
+                  <key label="beginPosition"
+                       xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition"
+                       use="gn-date-picker"
+                       required="true"
+                       tooltip="gmd:extent|gmd:EX_TemporalExtent">
+                    <directiveAttributes data-tag-name="gml:beginPosition"/>
+                  </key>
+                  <key label="endPosition"
+                       xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:endPosition"
+                       use="gn-date-picker"
+                       tooltip="gmd:extent|gmd:EX_TemporalExtent"
+                  >
+                    <directiveAttributes
+                            data-tag-name="gml:endPosition" />
+                  </key>
+                </values>
+                <snippet>
+                  <gmd:temporalElement>
+                    <gmd:EX_TemporalExtent>
+                      <gmd:extent>
+                        <gml:TimePeriod gml:id="">
+                          {{beginPosition}}
                           {{endPosition}}
-                        </gml:endPosition>
-                      </gml:TimePeriod>
-                    </gmd:extent>
-                  </gmd:EX_TemporalExtent>
-                </gmd:temporalElement>
-              </snippet>
-            </template>
-          </field>
+                        </gml:TimePeriod>
+                      </gmd:extent>
+                    </gmd:EX_TemporalExtent>
+                  </gmd:temporalElement>
+                </snippet>
+              </template>
+            </field>
+          </section>
 
+          <!-- Geographical extent -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement"/>
 
         </section>
 
+        <!-- ECCC corporate info -->
         <section name="napec:EC_CorporateInfo">
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Branch"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
-                 or="napec:EC_Branch" />
+                 or="EC_Branch" del="." />
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Directorate"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
-                 or="napec:EC_Directorate" />
+                 or="EC_Directorate" del="." />
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Project"
-                 in="/gmd:MD_Metadata/napec:MD_DataIdentification/napec:EC_CorporateInfo"
-                 or="napec:EC_Project" />
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="EC_Project" />
         </section>
 
+        <!-- ECCC information classification -->
         <section name="napec:informationClassification">
-          <field
+          <!-- Information classification -->
+          <field name="informationCategory"
             xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
             gmd:descriptiveKeywords
             [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')]"/>
 
+          <!-- Geographic scope -->
           <field
             xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
             gmd:descriptiveKeywords
             [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')]"/>
 
-
+          <!-- Content scope -->
           <field
             xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
             gmd:descriptiveKeywords
             [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope')]"/>
 
-
+          <!--- ECCC program -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Program"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
                  or="napec:EC_Program" />
 
+          <action btnLabel="addECProgram" type="add"
+                  name="napec:EC_Program"
+                  or="EC_Program"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo">
+            <template>
+              <snippet>
+                <napec:EC_Program>
+                  <napec:EC_Program_TypeCode codeListValue=""
+                                             codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#EC_Program"/>
+                </napec:EC_Program>
+              </snippet>
+            </template>
+
+          </action>
+
+          <!-- ECCC Security classification -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:GC_Security_Classification"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
                  or="napec:GC_Security_Classification" />
         </section>
 
+        <!-- Reference system info -->
         <section name="gmd:referenceSystemInfo">
           <field xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
                  in="/gmd:MD_Metadata"
                  or="referenceSystemInfo"/>
         </section>
 
+        <!-- Distribution formats -->
         <section name="distributionFormats">
           <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"

@@ -212,4 +212,8 @@
   <theme.EC_Content_Scope.rdf>Content Scope</theme.EC_Content_Scope.rdf>
   <place.EC_Geographic_Scope.rdf>Geographic Scope</place.EC_Geographic_Scope.rdf>
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
+  <addDate>Add date</addDate>
+  <addCharacterSet>Add character set</addCharacterSet>
+  <addECProject>Add project</addECProject>
+  <addECProgram>Add program (PAA)</addECProgram>
 </strings>

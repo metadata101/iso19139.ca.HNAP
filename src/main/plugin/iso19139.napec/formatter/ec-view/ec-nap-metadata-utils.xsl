@@ -39,9 +39,10 @@
 
     <xsl:if test="count($resources/*) &gt; 0">
       <h3><xsl:value-of select="/root/schemas/iso19139.napec/strings/ParentCollection"/></h3>
+      <xsl:variable name="guiLang" select="/root/lang" />
       <xsl:for-each select="$resources">
         <!-- Sort first datasets -->
-        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+        <xsl:sort select="normalize-space(title/value[@lang=$guiLang])"/>
 
         <div class="relatedDatasets" id="rlds{position()}">
           <!-- hide records over 5, to make visible with more button -->
@@ -49,31 +50,25 @@
           <div style="float:left"> <!-- todo: check here the schema for icon to display -->
             <img class="icon" align="bottom">
               <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
-              <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
-              <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+              <xsl:attribute name="alt" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
+              <xsl:attribute name="title" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
             </img>
             <!-- Response for related resources is different depending on the relation:
                 * Child relation return a brief representation of metadata
                 * Parent reprentation (and others) return the raw metadata
             -->
 
-
-            <xsl:variable name="md">
-              <xsl:apply-templates mode="brief" select="."/>
-            </xsl:variable>
-            <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
-            <!--<xsl:value-of select="$metadata/title" />-->
             <xsl:variable name="classificationFilter">
               <xsl:choose>
                 <xsl:when test="$schema = 'iso19139.napec'">_classificationTheme=<xsl:value-of select="$theme" />&amp;_classificationSubtheme=<xsl:value-of select="$subtheme" />&amp;</xsl:when>
                 <xsl:otherwise></xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
-            &#160;<a href="search?_schema={$schema}&amp;{$classificationFilter}parentUuid={$metadata/geonet:info/uuid}" title="Search metadata in the collection {$metadata/title}"><xsl:value-of select="$metadata/title" /></a>
+            &#160;<a href="{/root/gui/url}/search/{/root/lang}?_schema={$schema}&amp;{$classificationFilter}parentUuid={id}" title="Search metadata in the collection {normalize-space(title/value[@lang=$guiLang])}"><xsl:value-of select="normalize-space(title/value[@lang=$guiLang])" /></a>
 
           </div>
           <div style="float:right">
-            <a class="btn btn-default btn-sm" href="metadata/{/root/lang}/{geonet:info/uuid}"><xsl:value-of select="/root/schemas/iso19139.napec/strings/View"/></a>
+            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="/root/schemas/iso19139.napec/strings/View"/></a>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -88,9 +83,10 @@
 
     <xsl:if test="count($resources/*) &gt; 0">
       <h3><xsl:value-of select="/root/schemas/iso19139.napec/strings/Relateddata"/> (<xsl:value-of select="count($resources)" />)</h3>
+      <xsl:variable name="guiLang" select="/root/lang" />
       <xsl:for-each select="$resources">
         <!-- Sort first datasets -->
-        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+        <xsl:sort select="normalize-space(title/value[@lang=$guiLang])"/>
 
         <div class="relatedDatasets" id="rlds{position()}">
           <!-- hide records over 5, to make visible with more button -->
@@ -106,8 +102,8 @@
                 <!-- <xsl:when test=""></xsl:when> todo hierarchy level -> test if service -->
                 <xsl:otherwise>
                   <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
-                  <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
-                  <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+                  <xsl:attribute name="alt" select="concat('Dataset&#160;:',title/value[@lang=$guiLang])" />
+                  <xsl:attribute name="title" select="concat('Dataset&#160;:',title/value[@lang=$guiLang])" />
                 </xsl:otherwise>
               </xsl:choose>
             </img>
@@ -115,22 +111,10 @@
                 * Child relation return a brief representation of metadata
                 * Parent reprentation (and others) return the raw metadata
             -->
-            <xsl:choose>
-              <xsl:when test="name() != 'metadata'">
-                <xsl:variable name="md">
-                  <xsl:apply-templates mode="brief" select="."/>
-                </xsl:variable>
-                <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
-                <xsl:value-of select="$metadata/title" />
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="title" />
-              </xsl:otherwise>
-            </xsl:choose>
-
+            <xsl:value-of select="normalize-space(title/value[@lang=$guiLang])" />
           </div>
           <div style="float:right">
-            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/gui/language}/{geonet:info/uuid}"><xsl:value-of select="/root/gui/strings/View"/></a>
+            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="//root/schemas/iso19139.napec/strings/View"/></a>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -508,6 +492,8 @@
   <xsl:template mode="render-field"
                 match="gmd:topicCategory[1]"
                 priority="3005">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
       <dl>
         <dt>
           <xsl:value-of select="if ($fieldName)
@@ -515,10 +501,13 @@
                                 else tr:node-label(tr:create($schema), name(), null)"/>
         </dt>
         <dd>
-          <xsl:for-each select="../gmd:topicCategory">
-            <xsl:call-template name="localised">
-              <xsl:with-param name="langId" select="$langForMetadata" />
-            </xsl:call-template>
+          <xsl:for-each select="../gmd:topicCategory/gmd:MD_TopicCategoryCode">
+            <xsl:variable name="codelistTranslation"
+                          select="tr:codelist-value-label(
+                            tr:create($schema),
+                           local-name(), .)"/>
+            <xsl:value-of select="$codelistTranslation" />
+            <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
           </xsl:for-each>
         </dd>
       </dl>
@@ -532,7 +521,7 @@
                 match="gmd:descriptiveKeywords[gmd:MD_Keywords/@id='classification-theme']"
                 priority="3005">
 
-    <xsl:variable name="mdTheme" select="/root/gmd:MD_Metadata/geonet:info/Theme" />
+    <xsl:variable name="mdTheme" select="/root/info/record/classificationinfo/theme" />
 
     <dl>
       <dt>
@@ -540,7 +529,7 @@
       </dt>
       <dd>
         <a style="text-decoration:underline;"
-           href="{/root/gui/locService}/rest.search?_schema=iso19139.napec&amp;_classificationTheme={$mdTheme}"
+           href="{/root/gui/url}/search/{/root/lang}?_schema=iso19139.napec&amp;_classificationTheme={$mdTheme}"
            title="Search metadata with the theme {$mdTheme}">
 
           <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[@id='classification-theme']/gmd:keyword">
@@ -557,8 +546,8 @@
                 match="gmd:descriptiveKeywords[gmd:MD_Keywords/@id='classification-subtheme']"
                 priority="3005">
 
-    <xsl:variable name="mdTheme" select="/root/gmd:MD_Metadata/geonet:info/Theme" />
-    <xsl:variable name="mdSubtheme" select="/root/gmd:MD_Metadata/geonet:info/Subtheme" />
+    <xsl:variable name="mdTheme" select="/root/info/record/classificationinfo/theme" />
+    <xsl:variable name="mdSubtheme" select="/root/info/record/classificationinfo/subtheme" />
 
     <dl>
       <dt>
@@ -566,7 +555,7 @@
       </dt>
       <dd>
         <a style="text-decoration:underline;"
-           href="{/root/gui/locService}/rest.search?_schema=iso19139.napec&amp;_classificationTheme={$mdTheme}&amp;_classificationSubtheme={$mdSubtheme}"
+           href="{/root/gui/url}/search/{/root/lang}?_schema=iso19139.napec&amp;_classificationTheme={$mdTheme}&amp;_classificationSubtheme={$mdSubtheme}"
            title="Search metadata with the subtheme {$mdSubtheme} in the theme {$mdTheme}">
 
           <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[@id='classification-subtheme']/gmd:keyword">
@@ -656,6 +645,7 @@
                 match="@codeListValue" priority="2">
 
     <xsl:variable name="id" select="."/>
+
     <xsl:variable name="codelistTranslation"
                   select="tr:codelist-value-label(
                             tr:create($schema),

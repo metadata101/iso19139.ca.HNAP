@@ -456,7 +456,7 @@
         <condition>mandatory</condition>
     </element>
     <element name="gmd:accessConstraints" id="70.0">
-        <label>Access Constraints</label>
+        <label>Legal Access Constraints</label>
         <description>This element allows you to indicate any additional or special restrictions or limitations that may exist on accessing the resource, outside of those which are covered by existing departmental restrictions.</description>
         <condition>mandatory</condition>
     </element>
@@ -936,6 +936,7 @@
         <condition>mandatory</condition>
         <description>Provides a description of the format of the data to be
             distributed</description>
+      <btnLabel>Add distribution format</btnLabel>
     </element>
     <element name="gmd:distributionInfo" id="17.0">
         <description>Provides information about the distributor of and options for obtaining the
@@ -1183,6 +1184,7 @@
     <element name="gmd:hierarchyLevel" id="6.0">
         <label>Hierarchy Level</label>
         <description>Select the level to which the metadata applies. The default for this fields is 'Dataset'. If you are creating metadata to describe a serie of datasets with a parent/child relationship, 'Series' is the most appropriate level.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:hierarchyLevelName" id="7.0">
         <label>Hierarchy level name</label>
@@ -1256,14 +1258,17 @@
     <element name="gmd:keyword" id="53.0">
         <label>Keyword</label>
         <description>Commonly used word(s), or formalized word(s) or phrase(s) used to describe the subject of the resource.  Keywords are a repeatable element; enter as many keywords as possible to describe the data, as this will help the data be discovered.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:language" context="gmd:MD_Metadata" id="3.0">
         <label>Metadata language</label>
+        <btnLabel>Add language</btnLabel>
         <description>Select the language used to create the metadata</description>
         <condition>conditional</condition>
     </element>
-    <element name="gmd:language" context="gmd:MD_DataIdentification" id="39.0">
+    <element name="gmd:language" context="napec:MD_DataIdentification" id="39.0">
         <label>Language</label>
+        <btnLabel>Add language</btnLabel>
         <description>Language(s) used within the dataset</description>
         <help>language(s) used within the dataset</help>
         <condition>mandatory</condition>
@@ -1781,6 +1786,7 @@
         <label>Reference System Information</label>
         <description>Description of the spatial and temporal reference systems used in the
             dataset</description>
+        <btnLabel>Add Reference System Information</btnLabel>
     </element>
     <element name="gmd:report" id="80.0">
         <label>Report</label>
@@ -1959,6 +1965,7 @@
     </element>
     <element name="gmd:status" id="28.0">
         <label>Status</label>
+        <btnLabel>Add status</btnLabel>
         <description>Select the status of the dataset from the list. i.e.. If your dataset is not yet complete, select 'Planned'.</description>
         <condition>mandatory</condition>
     </element>
@@ -1994,6 +2001,7 @@
     </element>
     <element name="gmd:topicCategory" id="41.0">
         <label>Topic category</label>
+        <btnLabel>Add topic category</btnLabel>
         <description>Please select the most appropriate category from the list provided. These categories help to group datasets for easier discovery. This element is repeatable; select all category codes that apply to the dataset</description>
         <condition>mandatory</condition>
     </element>
@@ -2077,7 +2085,7 @@
             series (YYYY-MM-DDThh:mm:ss)</description>
     </element>
     <element name="gmd:useConstraints" id="71.0">
-        <label>Use Constraints</label>
+        <label>Legal Use Constraints</label>
         <description>This element allows you to indicate any additional or special restrictions or limitations that may exist on use of the resource, outside of those which are covered by existing departmental restrictions.</description>
         <condition>mandatory</condition>
     </element>
@@ -2743,6 +2751,7 @@
     <label>Branch</label>
     <description>Name of the branch that is associated with making the dataset available</description>
     <condition>mandatory</condition>
+    <btnLabel>Add branch</btnLabel>
   </element>
 
   <element name="napec:EC_Branch_TypeCode">
@@ -2754,6 +2763,7 @@
     <label>Directorate</label>
     <description>Name of the directorate associated with making the dataset available</description>
     <condition>mandatory</condition>
+    <btnLabel>Add directorate</btnLabel>
   </element>
 
   <element name="napec:EC_Directorate_TypeCode">
@@ -2774,6 +2784,7 @@
   <element name="napec:EC_Project">
     <label>Project</label>
     <description>If the dataset is associated with a specific departmental project, please include the project name</description>
+    <btnLabel>Add project</btnLabel>
   </element>
 
   <element name="napec:GC_Security_Classification">

@@ -30,7 +30,7 @@
   <!-- ===================================================================== -->
   <!-- gml:TimePeriod (format = %Y-%m-%dThh:mm:ss) -->
   <!-- ===================================================================== -->
-  <xsl:template mode="mode-iso19139" match="gml:beginPosition[$schema='iso19139.nap']|gml:endPosition[$schema='iso19139.nap']|gml:timePosition[$schema='iso19139.nap']"
+  <xsl:template mode="mode-iso19139" match="gml:beginPosition[$schema='iso19139.napec']|gml:endPosition[$schema='iso19139.napec']|gml:timePosition[$schema='iso19139.napec']"
                 priority="2000">
 
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
@@ -127,7 +127,7 @@
             <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
                    lang="{@id}"></value>
 
-            <xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>
+            <!--<xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>-->
 
           </xsl:if>
         </xsl:for-each>
@@ -357,8 +357,8 @@
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
 
-    <xsl:message>gmd:linkage ref: <xsl:copy-of select="*/gn:element" /></xsl:message>
-    <xsl:message>gmd:linkage $xpath: <xsl:value-of select="$xpath" /></xsl:message>
+    <!--<xsl:message>gmd:linkage ref: <xsl:copy-of select="*/gn:element" /></xsl:message>
+    <xsl:message>gmd:linkage $xpath: <xsl:value-of select="$xpath" /></xsl:message>-->
 
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
@@ -392,7 +392,7 @@
     <xsl:variable name="thesaurusTitleEl"
                   select="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title"/>
 
-    <xsl:message>descriptiveKeywords title: <xsl:value-of select="$thesaurusTitleEl/gco:CharacterString" /></xsl:message>
+    <!--<xsl:message>descriptiveKeywords title: <xsl:value-of select="$thesaurusTitleEl/gco:CharacterString" /></xsl:message>-->
 
     <!--Add all Thesaurus as first block of keywords-->
     <xsl:if test="name(preceding-sibling::*[1]) != name()">
@@ -460,7 +460,7 @@
     <xsl:choose>
       <!-- Don't box EC thesaurus in Information Classification section -->
       <xsl:when test="contains($thesaurusTitleEl/gco:CharacterString, 'EC_')">
-        <xsl:message>descriptiveKeywords fieldset=false 1</xsl:message>
+        <!--<xsl:message>descriptiveKeywords fieldset=false 1</xsl:message>-->
 
         <xsl:apply-templates mode="mode-iso19139" select="*">
           <xsl:with-param name="schema" select="$schema"/>
@@ -475,7 +475,7 @@
         </xsl:apply-templates>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:message>descriptiveKeywords fieldset!=false</xsl:message>
+        <!--<xsl:message>descriptiveKeywords fieldset!=false</xsl:message>-->
 
         <xsl:call-template name="render-boxed-element">
           <xsl:with-param name="label"
@@ -528,7 +528,7 @@
     <xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>
     <xsl:message>thesaurusIdentifier substring: <xsl:value-of select="substring-after($thesaurusIdentifier, 'local.')" /></xsl:message>-->
 
-    <xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>
+    <!--<xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>-->
 
     <xsl:variable name="thesaurusConfig"
                   as="element()?"
@@ -589,11 +589,12 @@
                   else gmd:keyword/*[1]/replace(text(), ',', ',,'), ',')"/>
 
         <!-- Define the list of transformation mode available. -->
-        <xsl:variable name="transformations"
+        <!--<xsl:variable name="transformations"
                       as="xs:string"
                       select="if ($thesaurusConfig/@transformations != '')
                               then $thesaurusConfig/@transformations
-                              else 'to-iso19139-keyword,to-iso19139-keyword-with-anchor,to-iso19139-keyword-as-xlink'"/>
+                              else 'to-iso19139-keyword,to-iso19139-keyword-with-anchor,to-iso19139-keyword-as-xlink'"/>-->
+        <xsl:variable name="transformations" select="''" />
 
         <!-- Get current transformation mode based on XML fragment analysis -->
         <xsl:variable name="transformation"
@@ -645,11 +646,20 @@
           </xsl:choose>
         </xsl:variable>
 
-        <xsl:message>
+        <!--<xsl:message>
           $thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" />
           $thesaurusTitleToDisplay: <xsl:value-of select="thesaurusTitleToDisplay" />
 
-        </xsl:message>
+        </xsl:message>-->
+
+        <xsl:variable name="isMandatory">
+          <xsl:choose>
+            <xsl:when test="contains($thesaurusIdentifier, 'EC_Information_Category') or
+                            contains($thesaurusIdentifier, 'EC_Geographic_Scope') or
+                            contains($thesaurusIdentifier, 'EC_Core_Subject')">true</xsl:when>
+            <xsl:otherwise>false</xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
 
         <!-- $thesaurusIdentifier add label for keywords in Information Classification panel -->
         <div data-gn-keyword-selector="{$widgetMode}"
@@ -657,6 +667,7 @@
              data-element-ref="{concat('_X', ../gn:element/@ref, '_replace')}"
              data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false' or contains($thesaurusIdentifier, 'EC_')) then $thesaurusTitleToDisplay else ''}"
              data-thesaurus-key="{$thesaurusKey}"
+             data-mandatory="{$isMandatory}"
              data-keywords="{$keywords}"
              data-transformations="{$transformations}"
              data-current-transformation="{$transformation}"

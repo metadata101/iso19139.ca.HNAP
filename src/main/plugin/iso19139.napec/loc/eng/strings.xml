@@ -224,4 +224,8 @@
   <local.theme.EC_Content_Scope>Content Scope</local.theme.EC_Content_Scope>
   <local.place.EC_Geographic_Scope>Geographic Scope</local.place.EC_Geographic_Scope>
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
+  <addDate>Add date</addDate>
+  <addCharacterSet>Add character set</addCharacterSet>
+  <addECProject>Add project</addECProject>
+  <addECProgram>Add program (PAA)</addECProgram>
 </strings>

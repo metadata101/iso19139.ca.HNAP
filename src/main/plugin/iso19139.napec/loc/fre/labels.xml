@@ -973,7 +973,7 @@
     <help>Nom complet du code de caractères normalisé utilisé pour le fichier de métadonnées. Le paramètre par défaut est "utf8". Les fichiers de texte contiennent normalement des valeurs d'octets représentant un sous-ensemble de valeurs de caractères via un codage (8859_1, ISO Latin-1), un format de transfert (Unicode-Transfer-Format UTF8) ou tout autre moyen.</help>
     <condition>Par défaut UTF-8</condition>
   </element>
-  <element name="gmd:characterSet" id="40.0" context="gmd:MD_DataIdentification">
+  <element name="gmd:characterSet" id="40.0" context="napec:MD_DataIdentification">
     <label>Jeu de caractère</label>
     <description>Nom entier du standard de code de caractères utilisé pour le jeu de données</description>
     <help>Nom complet du code de caractères normalisé utilisé pour le fichier de métadonnées. Le paramètre par défaut est "utf8". Les fichiers de texte contiennent normalement des valeurs d'octets représentant un sous-ensemble de valeurs de caractères via un codage (8859_1, ISO Latin-1), un format de transfert (Unicode-Transfer-Format UTF8) ou tout autre moyen.</help>
@@ -1965,7 +1965,7 @@
     <label>Type de ressource</label>
     <description>Sélectionner le champ de la liste auquel s'appliquent les métadonnées. La valeur par défaut est « Jeu de données ». Si les métadonnées servent à décrire une série d’ensembles de données dans une relation parent/enfant, « Série » est la valeur la plus appropriée.</description>
     <help>Domaine auquel les métadonnées se rapportent. La catégorie d'informations à laquelle l'entité se réfère peut être indiquée dans la liste des codes (exemple : attributs, objets géométriques, jeu de données, etc.). "Jeu de données" est le paramètre par défaut.</help>
-    <condition>Par défaut: "jeu de données"</condition>
+    <condition>mandatory</condition>
     <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
     Cet élément de métadonnées renseigne le type de ressource décrit par la métadonnée.
     Seuls trois types de ressources sont dans le champ de la directive INSPIRE :
@@ -2093,11 +2093,11 @@
     <label>Mot Clé</label>
     <description>Mots ou formulations courants ou formalisés pour décrire l'objet de la ressource. Pour sélectionner un élément d'une liste préétablie de mots-clés, sélectionner le thésaurus ci-dessous. Les mots-clés sont des éléments renouvelables; sélectionner autant de mots-clés que nécessaire pour décrire les données.</description>
     <help>Mots clés du jeu de données par l'intermédiaire desquels il peut être caractérisé et défini. Ces termes sont également utilisés en tant qu''arguments de recherche. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>
-    <condition/>
-
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:language" id="3.0" context="gmd:MD_Metadata">
     <label>Langue</label>
+    <btnLabel>Ajouter langue</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
     <help>La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>
 
@@ -2117,8 +2117,9 @@
 
     <condition>Obligatoire</condition>
   </element>
-  <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
+  <element name="gmd:language" id="39.0" context="napec:MD_DataIdentification">
     <label>Langue</label>
+    <btnLabel>Ajouter langue</btnLabel>
     <description>Langue utilisée pour le jeu de données</description>
     <help>Langue utilisée pour la documentation des données. La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>
     <condition>mandatory</condition>
@@ -2847,7 +2848,7 @@
     <description>Description des références spatiale et temporelle utilisées dans le jeu de données</description>
     <help>Description des systèmes de référence spatiale et temporelle utilisés dans le jeu de données. Ces informations sont gérées dans la classe MD_ReferenceSystem.</help>
     <condition/>
-
+    <btnLabel>Ajouter information sur le système de référence</btnLabel>
   </element>
   <element name="gmd:report" id="80.0">
     <label>Qualité quantitative</label>
@@ -3164,6 +3165,7 @@
   </element>
   <element name="gmd:status" id="28.0">
     <label>Etat</label>
+    <btnLabel>Ajouter état</btnLabel>
     <description>Sélectionner le statut de l'ensemble de données dans la liste. C'est-à-dire, si l'ensemble de données est incomplet, sélectionner « Planifié ».</description>
     <help>Etat de traitement du jeu de données. Sélection de l'une des options suivantes : complet, archive historique, obsolète, en cours, en projet, nécessaire, à l'étude.</help>
     <condition>mandatory</condition>
@@ -3223,6 +3225,7 @@
   </element>
   <element name="gmd:topicCategory" id="41.0">
     <label>Catégorie thématique</label>
+    <btnLabel>Ajouter catégorie thématique</btnLabel>
     <description>Sélectionner la catégorie appropriée dans la liste fournie. Ces catégories permettent de regrouper des ensembles de données pour une meilleure découverte. Cet élément est renouvelable; sélectionner tous les codes de catégorie qui s'appliquent à l'ensemble de données.</description>
     <help>Thème principal (ou thèmes principaux) du jeu de données.
       Ce thème ou groupe de thèmes permet de trouver un jeu de données.
@@ -4228,6 +4231,7 @@
     <label>Direction générale</label>
     <description>Nom de la direction générale associée à l'accessibilité de l'ensemble de données.</description>
     <condition>mandatory</condition>
+    <btnLabel>Ajouter direction générale</btnLabel>
   </element>
 
   <element name="napec:EC_Branch_TypeCode">
@@ -4239,6 +4243,7 @@
     <label>Direction</label>
     <description>Nom de la direction associée à l'accessibilité de l'ensemble de données.</description>
     <condition>mandatory</condition>
+    <btnLabel>Ajouter direction</btnLabel>
   </element>
 
   <element name="napec:EC_Directorate_TypeCode">
@@ -4264,6 +4269,7 @@
   <element name="napec:EC_Project">
     <label>Titre de projet</label>
     <description>Si l'ensemble de données est associé à un projet ministériel particulier, veuillez indiquer le nom du projet.</description>
+    <btnLabel>Ajouter titre de projet</btnLabel>
   </element>
 
   <element name="napec:GC_Security_Classification">

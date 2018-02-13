@@ -6,6 +6,9 @@
                 xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
   <xsl:include href="../convert/functions.xsl"/>
@@ -33,7 +36,7 @@
   <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
 
   <!-- If identification creation, publication and revision date
-    should be indexed as a temporal extent information (eg. in INSPIRE 
+    should be indexed as a temporal extent information (eg. in INSPIRE
     metadata implementing rules, those elements are defined as part
     of the description of the temporal extent). -->
   <xsl:variable name="useDateAsTemporalExtent" select="false()"/>
@@ -186,6 +189,56 @@
 
       <xsl:for-each select="//gmd:MD_Keywords">
 
+        <xsl:choose>
+          <xsl:when test="contains(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Data_Usage_Scope')">
+            <xsl:for-each select="gmd:keyword/gco:CharacterString">
+              <Field name="ecDataUsageScope" string="{string(.)}" store="true" index="true"/>
+            </xsl:for-each>
+          </xsl:when>
+
+          <xsl:when test="contains(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')">
+            <xsl:message><xsl:value-of select="concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Information_Category.rdf')" /></xsl:message>
+
+            <xsl:variable name="ecInformationCategory" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Information_Category.rdf'))" />
+
+            <xsl:for-each select="gmd:keyword/gco:CharacterString[not(../gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale='#eng')]|gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']">
+              <xsl:variable name="currentValue" select="." />
+
+              <xsl:variable name="valueEnglish" select="$ecInformationCategory//rdf:Description[ns2:prefLabel[@xml:lang='en'] = $currentValue]" />
+
+              <xsl:variable name="infoCategoryKey">
+                <xsl:choose>
+                  <xsl:when test="string($valueEnglish)"><xsl:value-of select="$ecInformationCategory//rdf:Description[ns2:prefLabel[@xml:lang='en'] = $currentValue]/@rdf:about" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="$ecInformationCategory//rdf:Description[ns2:prefLabel[@xml:lang='fr'] = $currentValue]/@rdf:about" /></xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+
+              <xsl:message>INFOCATEGORY ====> <xsl:value-of select="$infoCategoryKey" /></xsl:message>
+              <Field name="_infocategory" string="{string($infoCategoryKey)}" store="true" index="true" token="false"/>
+
+            </xsl:for-each>
+
+            <xsl:for-each select="gmd:keyword/gco:CharacterString">
+              <Field name="ecInformationCategory" string="{string(.)}" store="true" index="true"/>
+              <Field name="ecInformationCategoryDataset" string="{string(.)}" store="true" index="true" token="false"/>
+
+
+            </xsl:for-each>
+          </xsl:when>
+
+          <xsl:when test="contains(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope')">
+            <xsl:for-each select="gmd:keyword/gco:CharacterString">
+              <Field name="ecContentScope" string="{string(.)}" store="true" index="true"/>
+            </xsl:for-each>
+          </xsl:when>
+
+          <xsl:when test="contains(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')">
+            <xsl:for-each select="gmd:keyword/gco:CharacterString">
+              <Field name="ecGeographicScope" string="{string(.)}" store="true" index="true"/>
+            </xsl:for-each>
+          </xsl:when>
+        </xsl:choose>
+
         <xsl:for-each
                 select="gmd:keyword/gco:CharacterString|gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
           <xsl:variable name="keywordLower" select="lower-case(.)"/>
@@ -284,6 +337,7 @@
         <xsl:if test="starts-with(lower-case(gco:CharacterString), 'government of canada') or starts-with(lower-case(gco:CharacterString), 'gouvernement du canada')">
           <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
+          <xsl:message>ORGNAME ====> <xsl:value-of select="$mainLang" /> - <xsl:value-of select="string(normalize-space(tokenize(gco:CharacterString, ';')[2]))" /> </xsl:message>
           <Field name="orgNameCanada_{$mainLang}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
@@ -457,7 +511,7 @@
         <xsl:if test="starts-with($protocol,'OGC:WMS-') and contains($protocol,'-get-map') and string($linkage)!='' and string($title)!=''">
           <!-- FIXME : relative path -->
           <Field name="link" string="{concat($title, '|', $desc, '|',
-						'../../srv/en/google.kml?uuid=', /gmd:MD_Metadata/gmd:fileIdentifier/gco:CharacterString, '&amp;layers=', $title, 
+						'../../srv/en/google.kml?uuid=', /gmd:MD_Metadata/gmd:fileIdentifier/gco:CharacterString, '&amp;layers=', $title,
 						'|application/vnd.google-earth.kml+xml|application/vnd.google-earth.kml+xml')}" store="true" index="false"/>
         </xsl:if>
 
@@ -694,9 +748,9 @@
     <xsl:choose>
       <!-- annex i -->
       <xsl:when test="$englishKeyword='coordinate reference systems' or $englishKeyword='geographical grid systems'
-			            or $englishKeyword='geographical names' or $englishKeyword='administrative units' 
-			            or $englishKeyword='addresses' or $englishKeyword='cadastral parcels' 
-			            or $englishKeyword='transport networks' or $englishKeyword='hydrography' 
+			            or $englishKeyword='geographical names' or $englishKeyword='administrative units'
+			            or $englishKeyword='addresses' or $englishKeyword='cadastral parcels'
+			            or $englishKeyword='transport networks' or $englishKeyword='hydrography'
 			            or $englishKeyword='protected sites'">
         <xsl:text>i</xsl:text>
       </xsl:when>
@@ -707,15 +761,15 @@
       </xsl:when>
       <!-- annex iii -->
       <xsl:when test="$englishKeyword='statistical units' or $englishKeyword='buildings'
-			            or $englishKeyword='soil' or $englishKeyword='land use' 
-			            or $englishKeyword='human health and safety' or $englishKeyword='utility and government services' 
-			            or $englishKeyword='environmental monitoring facilities' or $englishKeyword='production and industrial facilities' 
-			            or $englishKeyword='agricultural and aquaculture facilities' or $englishKeyword='population distribution - demography' 
-			            or $englishKeyword='area management/restriction/regulation zones and reporting units' 
-			            or $englishKeyword='natural risk zones' or $englishKeyword='atmospheric conditions' 
-			            or $englishKeyword='meteorological geographical features' or $englishKeyword='oceanographic geographical features' 
-			            or $englishKeyword='sea regions' or $englishKeyword='bio-geographical regions' 
-			            or $englishKeyword='habitats and biotopes' or $englishKeyword='species distribution' 
+			            or $englishKeyword='soil' or $englishKeyword='land use'
+			            or $englishKeyword='human health and safety' or $englishKeyword='utility and government services'
+			            or $englishKeyword='environmental monitoring facilities' or $englishKeyword='production and industrial facilities'
+			            or $englishKeyword='agricultural and aquaculture facilities' or $englishKeyword='population distribution - demography'
+			            or $englishKeyword='area management/restriction/regulation zones and reporting units'
+			            or $englishKeyword='natural risk zones' or $englishKeyword='atmospheric conditions'
+			            or $englishKeyword='meteorological geographical features' or $englishKeyword='oceanographic geographical features'
+			            or $englishKeyword='sea regions' or $englishKeyword='bio-geographical regions'
+			            or $englishKeyword='habitats and biotopes' or $englishKeyword='species distribution'
 			            or $englishKeyword='energy resources' or $englishKeyword='mineral resources'">
         <xsl:text>iii</xsl:text>
       </xsl:when>
