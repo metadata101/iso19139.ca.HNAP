@@ -62,13 +62,7 @@
             </xsl:variable>
             <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
             <!--<xsl:value-of select="$metadata/title" />-->
-            <xsl:variable name="classificationFilter">
-              <xsl:choose>
-                <xsl:when test="$schema = 'iso19139.napec'">_classificationTheme=<xsl:value-of select="$theme" />&amp;_classificationSubtheme=<xsl:value-of select="$subtheme" />&amp;</xsl:when>
-                <xsl:otherwise></xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-            &#160;<a href="search?_schema={$schema}&amp;{$classificationFilter}parentUuid={$metadata/geonet:info/uuid}" title="Search metadata in the collection {$metadata/title}"><xsl:value-of select="$metadata/title" /></a>
+            &#160;<a href="search?_schema={$schema}&amp;parentUuid={$metadata/geonet:info/uuid}" title="Search metadata in the collection {$metadata/title}"><xsl:value-of select="$metadata/title" /></a>
 
           </div>
           <div style="float:right">

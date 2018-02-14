@@ -10,13 +10,12 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:exslt="http://exslt.org/common"
-                xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                exclude-result-prefixes="gmx xsi gmd gco gml gts srv xlink exslt geonet napec rdf ns2 rdfs skos svrl">
+                exclude-result-prefixes="gmx xsi gmd gco gml gts srv xlink exslt geonet rdf ns2 rdfs skos svrl">
 
   <!-- ===================================================================== -->
   <!-- === iso19139.nap brief formatting 							   === -->

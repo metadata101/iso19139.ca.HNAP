@@ -276,6 +276,18 @@
   <!-- View configuration -->
   <views>
     <view name="default">
+      <topPanel>
+        <directive data-gn-validation-report=""/>
+      </topPanel>
+
+      <topPanel2>
+        <directive data-gn-classification-canada=""/>
+      </topPanel2>
+
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+      </sidePanel>
+
       <tab id="default" default="true" mode="flat">
         <section name="gmd:MD_Metadata">
           <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
@@ -376,7 +388,7 @@
               </template>
             </action>
 
-            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:descriptiveKeywords
+            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords
                              [gmd:MD_Keywords/gmd:thesaurusName]" />
 
           </section>
