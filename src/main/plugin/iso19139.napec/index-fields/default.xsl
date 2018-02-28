@@ -213,8 +213,29 @@
                 </xsl:choose>
               </xsl:variable>
 
-              <xsl:message>INFOCATEGORY ====> <xsl:value-of select="$infoCategoryKey" /></xsl:message>
+
+              <!--<xsl:message>INFOCATEGORY ====> <xsl:value-of select="$infoCategoryKey" /></xsl:message>-->
               <Field name="_infocategory" string="{string($infoCategoryKey)}" store="true" index="true" token="false"/>
+
+              <xsl:variable name="infoCategoryKeyAux" select="replace($infoCategoryKey, 'http://geonetwork-opensource.org/EC/informationcategory#', '')" />
+
+              <xsl:choose>
+                <xsl:when test="$infoCategoryKeyAux = 'air' or $infoCategoryKeyAux = 'airquality'">
+                  <Field name="_infocategoryDataset" string="air" store="true" index="true" token="false"/>
+                </xsl:when>
+                <xsl:when test="$infoCategoryKeyAux = 'water' or $infoCategoryKeyAux = 'waterquantity'  or $infoCategoryKeyAux = 'waterquality'">
+                  <Field name="_infocategoryDataset" string="water" store="true" index="true" token="false"/>
+                </xsl:when>
+                <xsl:when test="$infoCategoryKeyAux = 'weatherclimate' or $infoCategoryKeyAux = 'weatherclimatemonitoring' or $infoCategoryKeyAux = 'weatherclimateresearch'">
+                  <Field name="_infocategoryDataset" string="weatherclimate" store="true" index="true" token="false"/>
+                </xsl:when>
+                <xsl:when test="$infoCategoryKeyAux = 'naturebiodiversity' or $infoCategoryKeyAux = 'naturebiodiversitycontaminants' or $infoCategoryKeyAux = 'naturebiodiversityhabitat'">
+                  <Field name="_infocategoryDataset" string="naturebiodiversity" store="true" index="true" token="false"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <Field name="_infocategoryDataset" string="{$infoCategoryKeyAux}" store="true" index="true" token="false"/>
+                </xsl:otherwise>
+              </xsl:choose>
 
             </xsl:for-each>
 
@@ -337,7 +358,7 @@
         <xsl:if test="starts-with(lower-case(gco:CharacterString), 'government of canada') or starts-with(lower-case(gco:CharacterString), 'gouvernement du canada')">
           <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
-          <xsl:message>ORGNAME ====> <xsl:value-of select="$mainLang" /> - <xsl:value-of select="string(normalize-space(tokenize(gco:CharacterString, ';')[2]))" /> </xsl:message>
+          <!--<xsl:message>ORGNAME ====> <xsl:value-of select="$mainLang" /> - <xsl:value-of select="string(normalize-space(tokenize(gco:CharacterString, ';')[2]))" /> </xsl:message>-->
           <Field name="orgNameCanada_{$mainLang}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
