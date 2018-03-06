@@ -2,7 +2,7 @@
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" queryBinding="xslt2">
 
-    <sch:title xmlns="http://www.w3.org/2001/XMLSchema">Schematron validation / GeoNetwork recommendations</sch:title>
+    <sch:title xmlns="http://www.w3.org/2001/XMLSchema">NAPEC validation rules for internal publication</sch:title>
     <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
     <sch:ns prefix="srv" uri="http://www.isotc211.org/2005/srv"/>
@@ -196,7 +196,7 @@
     <sch:pattern>
         <sch:title>$loc/strings/EC11</sch:title>
 
-        <sch:rule context="//gmd:identificationInfo/*/gmd:spatialRepresentationType
+        <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType
                    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:spatialRepresentationType
                    |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:spatialRepresentationType">
 
@@ -218,7 +218,7 @@
 
                    <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode))
                       " />
-            
+
             <sch:assert
                 test="not($missing)"
                        >$loc/strings/EC12</sch:assert>
@@ -787,8 +787,8 @@
       <sch:title>$loc/strings/EC35</sch:title>
 
       <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:MD_DataIdentification
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/srv:SV_ServiceIdentification">
+            |//*[@gco:isoType='gmd:MD_DataIdentification']
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
       <sch:let name="missing" value="not(gmd:spatialRepresentationType)
                           " />
