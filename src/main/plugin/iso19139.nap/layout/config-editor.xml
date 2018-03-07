@@ -275,7 +275,7 @@
 
   <!-- View configuration -->
   <views>
-    <view name="default">
+    <view name="default" displayTooltips="true" displayTooltipsMode="icon">
       <topPanel>
         <directive data-gn-validation-report=""/>
       </topPanel>
