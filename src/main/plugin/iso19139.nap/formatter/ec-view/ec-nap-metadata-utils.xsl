@@ -174,10 +174,6 @@
     <!--<xsl:variable name="xmlUrl" select="concat($url,'/', normalize-space($mdDownloadLink), '?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
     <xsl:variable name="xmlUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xml')"/>
     <a href="#" onclick="downloadXml('{$xmlUrl}', '{$muuid}'); return false;" title="{/root/gui/strings/downloadas} XML" class="btn btn-default btn-md mrgn-rght-sm">
-      <xsl:if test="/root/gui/env/platform/appMode != 'fgp'">
-        <xsl:attribute name="target">_blank</xsl:attribute>
-      </xsl:if>
-
       <img src="{/root/gui/url}/images/xml.png" alt="{/root/gui/strings/downloadas} XML" title="{/root/gui/strings/downloadas} XML" />
     </a>
 
@@ -316,12 +312,7 @@
                   <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
-              <xsl:variable name="newwindow">
-                <xsl:choose>
-                  <xsl:when test="/root/gui/env/platform/appMode = 'fgp'">false</xsl:when>
-                  <xsl:otherwise>true</xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
+              <xsl:variable name="newwindow" select="/root/gui/env/publication/mapviewer/openinnewwindow" />
 
               <!-- Add to map preview -->
               <a class="btn btn-default btn-sm mrgn-rght-sm" href="#" title="{/root/gui/strings/map_page/add2mapPreview_tooltip}">
