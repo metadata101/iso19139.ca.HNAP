@@ -45,7 +45,7 @@
   -->
 
   <xsl:import href="../../present/metadata-utils.xsl" />
-  <xsl:import href="ec-nap-metadata-utils.xsl" />
+  <xsl:import href="ec-napec-metadata-utils.xsl" />
 
   <!-- Load the editor configuration to be able
      to render the different views -->
@@ -576,15 +576,11 @@
       <xsl:with-param name="title">
         <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
 
-        <xsl:message>
-        Status val:<xsl:value-of select="$info/status" />--- <xsl:value-of select="$info/edit" /> --- <xsl:value-of select="$info/publishedCopy" />  --- <xsl:value-of select="$info/draft" /> ---
-        </xsl:message>
-
         <xsl:choose>
           <xsl:when test="$info/status='4'">
             <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
 
-            <xsl:if test="$info/publishedCopy='true' and $info/workspace='false'">
+            <xsl:if test="$info/publishedCopy='true' and $info/workspace='false' and $info/hasDraft = 'true'">
               (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
               <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
             </xsl:if>
