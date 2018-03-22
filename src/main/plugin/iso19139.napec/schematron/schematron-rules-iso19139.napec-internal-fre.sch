@@ -561,8 +561,8 @@
         </sch:rule>
 
       <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:MD_DataIdentification
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/srv:SV_ServiceIdentification">
+            |//*[@gco:isoType='gmd:MD_DataIdentification']
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
 
         <sch:let name="missing" value="not(gmd:spatialRepresentationType)" />

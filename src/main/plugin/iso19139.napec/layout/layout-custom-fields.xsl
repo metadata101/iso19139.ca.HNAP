@@ -665,6 +665,7 @@
         <div data-gn-keyword-selector="{$widgetMode}"
              data-metadata-id="{$metadataId}"
              data-element-ref="{concat('_X', ../gn:element/@ref, '_replace')}"
+             data-parent-element-ref="{gmd:keyword[1]/gn:element/@ref}"
              data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false' or contains($thesaurusIdentifier, 'EC_')) then $thesaurusTitleToDisplay else ''}"
              data-thesaurus-key="{$thesaurusKey}"
              data-mandatory="{$isMandatory}"
