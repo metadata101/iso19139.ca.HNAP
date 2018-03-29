@@ -31,7 +31,7 @@
   <EC32>Une valeur est nécessaire pour: Résumé</EC32>
   <EC35>Une valeur est nécessaire pour: Mot Clé</EC35>
   <ECTitle>Une valeur est nécessaire pour: Titre</ECTitle>
-  <ECDatasetLanguage>Value is required for Language</ECDatasetLanguage>
+  <ECDatasetLanguage>Une valeur est nécessaire pour: Langue</ECDatasetLanguage>
 
   <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
   <MaintenanceFrequency>Une valeur est nécessaire pour: Fréquence de mise à jour</MaintenanceFrequency>
