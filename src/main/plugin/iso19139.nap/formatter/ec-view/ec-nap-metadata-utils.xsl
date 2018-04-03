@@ -301,18 +301,18 @@
 
               <xsl:variable name="vm-smallkey">
                 <xsl:choose>
-                  <xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/info/record/uuid)" /></xsl:when>
-                  <xsl:otherwise><xsl:value-of select="normalize-space(/root/*/info/record/uuid)" /></xsl:otherwise>
+                  <xsl:when test="/root/info/record/workspace = 'true' or /root/info/record/status = '1'">draft-<xsl:value-of select="normalize-space(/root/info/record/uuid)" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="normalize-space(/root/info/record/uuid)" /></xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
 
               <xsl:variable name="map_url">
                 <xsl:choose>
-                  <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
-                  <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
+                  <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/systemConfig/settings/system/publication/mapviewer/viewonmap_fre" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="/root/gui/systemConfig/settings/system/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
-              <xsl:variable name="newwindow" select="/root/gui/env/publication/mapviewer/openinnewwindow" />
+              <xsl:variable name="newwindow" select="/root/gui/systemConfig/settings/system/publication/mapviewer/openinnewwindow" />
 
               <!-- Add to map preview -->
               <a class="btn btn-default btn-sm mrgn-rght-sm" href="#" title="{/root/gui/strings/map_page/add2mapPreview_tooltip}">
