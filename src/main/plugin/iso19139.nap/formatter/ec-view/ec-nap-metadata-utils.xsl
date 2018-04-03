@@ -301,8 +301,8 @@
 
               <xsl:variable name="vm-smallkey">
                 <xsl:choose>
-                  <xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:when>
-                  <xsl:otherwise><xsl:value-of select="normalize-space(/root/*/geonet:info/smallkey)" /></xsl:otherwise>
+                  <xsl:when test="/root/*/geonet:info/workspace = 'true' or /root/*/geonet:info/status = '1'">draft-<xsl:value-of select="normalize-space(/root/*/info/record/uuid)" /></xsl:when>
+                  <xsl:otherwise><xsl:value-of select="normalize-space(/root/*/info/record/uuid)" /></xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
 

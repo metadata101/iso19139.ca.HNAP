@@ -87,6 +87,10 @@
           <xsl:with-param name="langForMetadata" select="$langForMetadata" />
         </xsl:call-template>
 
+        <script>
+          jQuery( ".wb-tables" ).trigger( "wb-init.wb-tables" );
+        </script>
+
         <div style="clear:both" />
         <h3><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Additionalinformation"/></h3>
 
