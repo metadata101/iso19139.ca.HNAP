@@ -264,9 +264,17 @@
         </xsl:if>
       </div>
 
+      <script>
+        jQuery( ".wb-tables" ).trigger( "wb-init.wb-tables" );
+      </script>
+
       <xsl:call-template name="sidebar-panel" />
 
+
     </div>
+
+
+
   </xsl:template>
 
   <xsl:template name="common-detailview-fields">
@@ -371,14 +379,26 @@
     </xsl:variable>
 
     <!-- Resources -->
-    <!-- TODO retrieve the webServiceTypes -->
     <xsl:variable name="webMapServicesProtocols" select="/root/gui/webServiceTypes" />
+    <xsl:variable name="mapResourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name])"/>
     <xsl:variable name="resourcesCount" select="count( /root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine)"/>
 
-    <xsl:if test="$resourcesCount > 0">
+    <xsl:if test="$mapResourcesCount > 0">
+
+      <h3><xsl:value-of select="$schemaStrings/MapResources"/></h3>
+
+      <xsl:call-template name="map-resources">
+        <xsl:with-param name="langId" select="$langId" />
+        <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
+        <xsl:with-param name="isoLang" select="$isoLang" />
+      </xsl:call-template>
+    </xsl:if>
+
+    <xsl:if test="$resourcesCount - $mapResourcesCount > 0">
+
       <h3><xsl:value-of select="$schemaStrings/Dataresources"/></h3>
 
-      <xsl:call-template name="md-resources">
+      <xsl:call-template name="data-resources">
         <xsl:with-param name="langId" select="$langId" />
         <xsl:with-param name="webMapServicesProtocols" select="$webMapServicesProtocols" />
         <xsl:with-param name="isoLang" select="$isoLang" />
@@ -461,7 +481,6 @@
       <script>
         jQuery( ".wb-tabs" ).trigger( "wb-init.wb-tabs" );
       </script>
-
 
       <xsl:call-template name="showPanel">
         <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Dataclassification"/>
@@ -714,11 +733,11 @@
 
 
   <!--
-      Template: md-resources
+    Template: map-resources
 
-      Description: Display metadata resources.
+    Description: Display metadata map resources.
   -->
-  <xsl:template name="md-resources">
+  <xsl:template name="map-resources">
     <xsl:param name="langId" />
     <xsl:param name="webMapServicesProtocols" />
     <xsl:param name="isoLang" />
@@ -796,7 +815,40 @@
         </xsl:for-each>
 
       </xsl:for-each-group>
+      </table>
+  </xsl:template>
 
+
+  <!--
+      Template: data-resources
+
+      Description: Display metadata resources.
+  -->
+  <xsl:template name="data-resources">
+    <xsl:param name="langId" />
+    <xsl:param name="webMapServicesProtocols" />
+    <xsl:param name="isoLang" />
+
+    <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
+
+    <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
+
+    <xsl:variable name="map_url">
+      <xsl:choose>
+        <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
+        <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+
+    <table class="wb-tables table table-striped table-hover table-bordered" role="grid">
+      <xsl:attribute name="data-wb-tables">{"bPaginate": false, "searching":false, "info":false}</xsl:attribute>
+      <thead>
+        <th style="width: 45%"><xsl:value-of select="$schemaStrings/Dataresources_Name" /></th>
+        <th style="width: 20%"><xsl:value-of select="$schemaStrings/Dataresources_Type" /></th>
+        <th style="width: 10%"><xsl:value-of select="$schemaStrings/Dataresources_Lang" /></th>
+        <th style="width: 20%; text-align:right"><xsl:value-of select="$schemaStrings/Dataresources_Format" /></th>
+      </thead>
 
       <!-- Other resources -->
       <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[not(lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name)]"
