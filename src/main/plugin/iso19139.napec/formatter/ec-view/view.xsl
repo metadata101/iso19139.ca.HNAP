@@ -695,7 +695,7 @@
               <td class="stars">
                 <xsl:variable name="dataOpennessRating" select="'2'" />
                 <xsl:choose>
-                  <xsl:when test="not($info/dataOpennessRating) or $info/dataOpennessRating = 0">
+                  <xsl:when test="not($info/datainfo/dataopennessrating) or $info/datainfo/dataopennessrating = 0">
                     <xsl:call-template name="ratingStars">
                       <xsl:with-param name="fill" select="false()" />
                       <xsl:with-param name="count" select="5" />
@@ -704,11 +704,11 @@
                   <xsl:otherwise>
                     <xsl:call-template name="ratingStars">
                       <xsl:with-param name="fill" select="true()" />
-                      <xsl:with-param name="count" select="$info/dataOpennessRating" />
+                      <xsl:with-param name="count" select="$info/datainfo/dataopennessrating" />
                     </xsl:call-template>
                     <xsl:call-template name="ratingStars">
                       <xsl:with-param name="fill" select="false()" />
-                      <xsl:with-param name="count" select="5 - $info/dataOpennessRating" />
+                      <xsl:with-param name="count" select="5 - $info/datainfo/dataopennessrating" />
                     </xsl:call-template>
                   </xsl:otherwise>
                 </xsl:choose>
