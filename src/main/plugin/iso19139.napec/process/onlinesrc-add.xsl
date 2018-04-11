@@ -391,9 +391,9 @@ Insert is made in first transferOptions found.
                     <xsl:when test="contains($applicationProfile, '#')">
                       <xsl:for-each select="tokenize($applicationProfile, $separator)">
                         <xsl:variable name="nameLang"
-                                      select="substring-before(., '#')"></xsl:variable>
+                                      select="substring-before(., '#')"/>
                         <xsl:variable name="nameValue"
-                                      select="substring-after(., '#')"></xsl:variable>
+                                      select="substring-after(., '#')"/>
                         <xsl:if
                           test="$useOnlyPTFreeText = 'false' and $nameLang = $mainLang">
                           <gco:CharacterString>
@@ -405,9 +405,9 @@ Insert is made in first transferOptions found.
                       <gmd:PT_FreeText>
                         <xsl:for-each select="tokenize($applicationProfile, $separator)">
                           <xsl:variable name="nameLang"
-                                        select="substring-before(., '#')"></xsl:variable>
+                                        select="substring-before(., '#')"/>
                           <xsl:variable name="nameValue"
-                                        select="substring-after(., '#')"></xsl:variable>
+                                        select="substring-after(., '#')"/>
 
                           <xsl:if
                             test="$useOnlyPTFreeText = 'true' or $nameLang != $mainLang">
@@ -442,9 +442,9 @@ Insert is made in first transferOptions found.
                       <xsl:for-each select="tokenize($name, $separator)">
 
                         <xsl:variable name="nameLang"
-                                      select="substring-before(., '#')"></xsl:variable>
+                                      select="substring-before(., '#')"/>
                         <xsl:variable name="nameValue"
-                                      select="substring-after(., '#')"></xsl:variable>
+                                      select="substring-after(., '#')"/>
 
                         <xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
                         <xsl:message>ML: <xsl:value-of select="$mainLang" /></xsl:message>
@@ -463,9 +463,9 @@ Insert is made in first transferOptions found.
                       <gmd:PT_FreeText>
                         <xsl:for-each select="tokenize($name, $separator)">
                           <xsl:variable name="nameLang"
-                                        select="substring-before(., '#')"></xsl:variable>
+                                        select="substring-before(., '#')"/>
                           <xsl:variable name="nameValue"
-                                        select="substring-after(., '#')"></xsl:variable>
+                                        select="substring-after(., '#')"/>
 
                           <xsl:if
                             test="$useOnlyPTFreeText = 'true' or $nameLang != $mainLang">
@@ -497,9 +497,9 @@ Insert is made in first transferOptions found.
                     <xsl:when test="contains($desc, '#')">
                       <xsl:for-each select="tokenize($desc, $separator)">
                         <xsl:variable name="descLang"
-                                      select="substring-before(., '#')"></xsl:variable>
+                                      select="substring-before(., '#')"/>
                         <xsl:variable name="descValue"
-                                      select="substring-after(., '#')"></xsl:variable>
+                                      select="substring-after(., '#')"/>
                         <xsl:if
                           test="$useOnlyPTFreeText = 'false' and $descLang = $mainLang">
                           <gco:CharacterString>
@@ -511,9 +511,9 @@ Insert is made in first transferOptions found.
                       <gmd:PT_FreeText>
                         <xsl:for-each select="tokenize($desc, $separator)">
                           <xsl:variable name="descLang"
-                                        select="substring-before(., '#')"></xsl:variable>
+                                        select="substring-before(., '#')"/>
                           <xsl:variable name="descValue"
-                                        select="substring-after(., '#')"></xsl:variable>
+                                        select="substring-after(., '#')"/>
                           <xsl:if
                             test="$useOnlyPTFreeText = 'true' or $descLang != $mainLang">
                             <gmd:textGroup>
@@ -536,11 +536,22 @@ Insert is made in first transferOptions found.
               </xsl:if>
 
               <xsl:if test="$function != ''">
-                <gmd:function>
-                  <gmd:CI_OnLineFunctionCode
-                    codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
-                    codeListValue="{$function}"/>
-                </gmd:function>
+                <xsl:choose>
+                  <xsl:when test="$function = 'RI_376'">
+                    <gmd:function>
+                      <gmd:CI_OnLineFunctionCode
+                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                        codeListValue="{$function}">information; information</gmd:CI_OnLineFunctionCode>
+                    </gmd:function>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <gmd:function>
+                      <gmd:CI_OnLineFunctionCode
+                        codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                        codeListValue="{$function}"/>
+                    </gmd:function>
+                  </xsl:otherwise>
+                </xsl:choose>
               </xsl:if>
             </gmd:CI_OnlineResource>
           </gmd:onLine>
