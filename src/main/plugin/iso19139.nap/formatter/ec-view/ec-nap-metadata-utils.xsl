@@ -282,8 +282,9 @@
                           (((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered)) or
                            ((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
                            (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">-->
-            <xsl:if test="((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
-                         (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))">
+            <xsl:if test="(/root/info/record/disabledMapServices = 'false' or not(/root/info/record/disabledMapServices)) and
+                          ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
+                           (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))">
 
               <xsl:variable name="sq">'</xsl:variable>
               <xsl:variable name="tsq">\\'</xsl:variable>
