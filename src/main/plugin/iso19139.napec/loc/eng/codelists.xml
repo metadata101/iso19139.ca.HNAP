@@ -2109,6 +2109,12 @@
 			<label>Video</label>
 			<description>Scene from a video recording</description>
 		</entry>
+    <entry>
+      <code>RI_641</code>
+      <value>none; none</value>
+      <label>None</label>
+      <description>None</description>
+    </entry>
 		<!-- ISO PROFIL CHE ONLY
 		<entry>
 			<code>paperMap</code>

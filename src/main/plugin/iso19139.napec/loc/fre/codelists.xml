@@ -2030,6 +2030,12 @@
 			<label>Vidéo</label>
 			<description>Enregistrement vidéo</description>
 		</entry>
+    <entry>
+      <code>RI_641</code>
+      <value>none; none</value>
+      <label>Aucun</label>
+      <description>Aucun</description>
+    </entry>
 		<!-- ISO PROFIL CHE ONLY
 		<entry>
 			<code>paperMap</code>
