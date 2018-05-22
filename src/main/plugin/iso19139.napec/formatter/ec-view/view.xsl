@@ -432,12 +432,11 @@
     <!-- side bar-->
     <div class="col-md-4 row-end ec-md-detail mrgn-tp-sm">
       <!-- as defined in md-show -->
-      <xsl:if test="/root/gui/session/userId != ''">
-        <xsl:call-template name="md-sidebar-title">
-          <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
-          <xsl:with-param name="info" select="/root/info/record"/>
-        </xsl:call-template>
-      </xsl:if>
+
+      <xsl:call-template name="md-sidebar-title">
+        <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
+        <xsl:with-param name="info" select="/root/info/record"/>
+      </xsl:call-template>
 
       <!-- Thumbnail/map -->
       <div class="wb-tabs ignore-session">
@@ -590,8 +589,8 @@
     </div>
     <div style="clear:both"/>
 
-
-    <xsl:call-template name="showPanel">
+    <xsl:if test="/root/gui/session/userId != ''">
+      <xsl:call-template name="showPanel">
       <xsl:with-param name="title">
         <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
 
@@ -729,6 +728,7 @@
         </table>
       </xsl:with-param>
     </xsl:call-template>
+    </xsl:if>
   </xsl:template>
 
 
@@ -832,14 +832,6 @@
     <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
 
     <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
-
-    <xsl:variable name="map_url">
-      <xsl:choose>
-        <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
-        <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
 
     <table class="wb-tables table table-striped table-hover table-bordered" role="grid">
       <xsl:attribute name="data-wb-tables">{"bPaginate": false, "searching":false, "info":false}</xsl:attribute>
