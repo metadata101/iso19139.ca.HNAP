@@ -932,6 +932,7 @@
     </element>
     <element name="gmd:distributionFormat" id="271.0">
         <label>Distribution format</label>
+        <btnLabel>Add Distribution format</btnLabel>
         <condition>mandatory</condition>
         <description>Provides a description of the format of the data to be
             distributed</description>
@@ -1182,6 +1183,7 @@
     <element name="gmd:hierarchyLevel" id="6.0">
         <label>Hierarchy Level</label>
         <description>Select the level to which the metadata applies. The default for this fields is 'Dataset'. If you are creating metadata to describe a serie of datasets with a parent/child relationship, 'Series' is the most appropriate level.</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:hierarchyLevelName" id="7.0">
         <label>Hierarchy level name</label>
@@ -1257,11 +1259,13 @@
     </element>
     <element name="gmd:language" context="gmd:MD_Metadata" id="3.0">
         <label>Metadata language</label>
+        <btnLabel>Add language</btnLabel>
         <description>Select the language used to create the metadata</description>
         <condition>conditional</condition>
     </element>
     <element name="gmd:language" context="gmd:MD_DataIdentification" id="39.0">
         <label>Language</label>
+        <btnLabel>Add language</btnLabel>
         <description>Language(s) used within the dataset</description>
         <help>language(s) used within the dataset</help>
         <condition>mandatory</condition>
@@ -1777,6 +1781,7 @@
     </element>
     <element name="gmd:referenceSystemInfo" id="13.0">
         <label>Reference System Information</label>
+        <btnLabel>Add Reference System Information</btnLabel>
         <description>Description of the spatial and temporal reference systems used in the
             dataset</description>
     </element>
@@ -1957,6 +1962,7 @@
     </element>
     <element name="gmd:status" id="28.0">
         <label>Status</label>
+        <btnLabel>Add status</btnLabel>
         <description>Select the status of the dataset from the list. i.e.. If your dataset is not yet complete, select 'Planned'.</description>
         <condition>mandatory</condition>
     </element>
@@ -1992,6 +1998,7 @@
     </element>
     <element name="gmd:topicCategory" id="41.0">
         <label>Topic category</label>
+        <btnLabel>Add topic category</btnLabel>
         <description>Please select the most appropriate category from the list provided. These categories help to group datasets for easier discovery. This element is repeatable; select all category codes that apply to the dataset</description>
         <condition>mandatory</condition>
     </element>

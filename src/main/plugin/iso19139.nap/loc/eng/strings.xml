@@ -220,4 +220,8 @@
   <view_draft>View draft version</view_draft>
   <draft>Draft</draft>
 
+  <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
+  <addDate>Add date</addDate>
+  <addCharacterSet>Add character set</addCharacterSet>
+  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
 </strings>

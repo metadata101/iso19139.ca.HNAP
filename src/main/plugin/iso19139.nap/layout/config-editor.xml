@@ -189,6 +189,7 @@
     <name>gmd:identifier</name>
     <name>gmd:distributionFormat</name>
     <name>gmd:distributorContact</name>
+    <name>gmd:referenceSystemInfo</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -471,22 +472,24 @@
         </section>
 
 
-        <section name="gmd:referenceSystemInfo">
+        <section name="referenceSystemInfo">
           <field xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
                  in="/gmd:MD_Metadata"
                  or="referenceSystemInfo"/>
         </section>
 
         <section name="gmd:MD_Distribution">
+          <section name="distributionFormats">
+            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
+                   in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+                   or="distributionFormat"/>
+          </section>
+
+
           <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact"
                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor"
                  or="distributorContact"/>
 
-          <section name="distributionFormats">
-            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
-            in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
-            or="distributionFormat"/>
-          </section>
 
           <!--<section name="distributionResources">
             <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />

@@ -16,6 +16,12 @@
     <EC22>Value is required for distribution format - File version</EC22>
     <EC23>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</EC23>
     <EC26>Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26>
+    <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
+    <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+    <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+    <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+    <EC38GovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovEnglish>
+    <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
 
     <EC27>Supplemental Information should be empty or filled in both languages</EC27>
     <EC28>Project should be empty or filled in both languages</EC28>
@@ -27,8 +33,12 @@
     <EC33>Title is required in both languages</EC33>
     <EC34>Electronic mail address is required in both languages</EC34>
 
-    <EC35>Une valeur est nécessaire pour: Type de représentation spatiale</EC35>
+    <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
     <EC36>Mot Clé est requise dans les deux langues</EC36>
+
+    <HierarchyLevel>Value is required for HierarchyLevel</HierarchyLevel>
+    <MaintenanceFrequency>Value is required for Maintenance and update frequency</MaintenanceFrequency>
+
 
     <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
     <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
@@ -51,4 +61,18 @@
     <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
     <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
     <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+
+    <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
+    <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
+    <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
+    <InvalidContactRole>Contact role code is not valid</InvalidContactRole>
+    <InvalidCitedResponsibleRole>Cited responsible role is not valid</InvalidCitedResponsibleRole>
+    <InvalidDistributorRole>Distributor role code is not valid</InvalidDistributorRole>
+    <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
+    <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
+    <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
+    <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
+
+    <MissingDate>Value is required for Date</MissingDate>
+    <BeginDate>Value is required for Begin Date</BeginDate>
 </strings>

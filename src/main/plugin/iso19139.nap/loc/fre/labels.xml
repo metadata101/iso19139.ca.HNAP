@@ -1580,6 +1580,7 @@
 
   <element name="gmd:distributionFormat" id="271.0">
     <label>Format de distribution</label>
+    <btnLabel>Add Distribution format</btnLabel>
     <description>Description du format de distribution</description>
     <help>Ces informations sont gérées dans la classe MD_Format.</help>
     <condition/>
@@ -1964,7 +1965,7 @@
     <label>Type de ressource</label>
     <description>Sélectionner le champ de la liste auquel s'appliquent les métadonnées. La valeur par défaut est « Jeu de données ». Si les métadonnées servent à décrire une série d’ensembles de données dans une relation parent/enfant, « Série » est la valeur la plus appropriée.</description>
     <help>Domaine auquel les métadonnées se rapportent. La catégorie d'informations à laquelle l'entité se réfère peut être indiquée dans la liste des codes (exemple : attributs, objets géométriques, jeu de données, etc.). "Jeu de données" est le paramètre par défaut.</help>
-    <condition>Par défaut: "jeu de données"</condition>
+    <condition>mandatory</condition>
     <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
     Cet élément de métadonnées renseigne le type de ressource décrit par la métadonnée.
     Seuls trois types de ressources sont dans le champ de la directive INSPIRE :
@@ -2097,6 +2098,7 @@
   </element>
   <element name="gmd:language" id="3.0" context="gmd:MD_Metadata">
     <label>Langue</label>
+    <btnLabel>Add language</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
     <help>La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>
 
@@ -2118,6 +2120,7 @@
   </element>
   <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
     <label>Langue</label>
+    <btnLabel>Add language</btnLabel>
     <description>Langue utilisée pour le jeu de données</description>
     <help>Langue utilisée pour la documentation des données. La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>
     <condition>mandatory</condition>
@@ -2843,6 +2846,7 @@
   </element>
   <element name="gmd:referenceSystemInfo" id="13.0">
     <label>Information sur le système de référence</label>
+    <btnLabel>Add Reference System Information</btnLabel>
     <description>Description des références spatiale et temporelle utilisées dans le jeu de données</description>
     <help>Description des systèmes de référence spatiale et temporelle utilisés dans le jeu de données. Ces informations sont gérées dans la classe MD_ReferenceSystem.</help>
     <condition/>
@@ -3163,6 +3167,7 @@
   </element>
   <element name="gmd:status" id="28.0">
     <label>Etat</label>
+    <btnLabel>Add status</btnLabel>
     <description>Sélectionner le statut de l'ensemble de données dans la liste. C'est-à-dire, si l'ensemble de données est incomplet, sélectionner « Planifié ».</description>
     <help>Etat de traitement du jeu de données. Sélection de l'une des options suivantes : complet, archive historique, obsolète, en cours, en projet, nécessaire, à l'étude.</help>
     <condition>mandatory</condition>
@@ -3222,6 +3227,7 @@
   </element>
   <element name="gmd:topicCategory" id="41.0">
     <label>Catégorie thématique</label>
+    <btnLabel>Add topic category</btnLabel>
     <description>Sélectionner la catégorie appropriée dans la liste fournie. Ces catégories permettent de regrouper des ensembles de données pour une meilleure découverte. Cet élément est renouvelable; sélectionner tous les codes de catégorie qui s'appliquent à l'ensemble de données.</description>
     <help>Thème principal (ou thèmes principaux) du jeu de données.
       Ce thème ou groupe de thèmes permet de trouver un jeu de données.
