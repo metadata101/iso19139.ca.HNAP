@@ -282,7 +282,6 @@
     <!-- md title -->
     <h1 id="wb-cont" style="border-bottom:none" itemprop="name">
       <!-- as defined in md-show -->
-      <img src="{/root/gui/url}/images/dataset.png" class="ds-icon-lg" alt="{$schemaStrings/dataset}: {/root/gmd:MD_Metadata//gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale)='/root/lang']}" />
       <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title">
         <xsl:call-template name="localised">
           <xsl:with-param name="langId" select="$langForMetadata" />
@@ -415,12 +414,11 @@
     <!-- side bar-->
     <div class="col-md-4 row-end ec-md-detail mrgn-tp-sm">
       <!-- as defined in md-show -->
-      <xsl:if test="/root/gui/session/userId != ''">
+
         <xsl:call-template name="md-sidebar-title">
           <xsl:with-param name="metadata" select="/root/gmd:MD_Metadata"/>
           <xsl:with-param name="info" select="/root/info/record"/>
         </xsl:call-template>
-      </xsl:if>
 
       <!-- Thumbnail/map -->
       <div class="wb-tabs ignore-session">
@@ -539,150 +537,151 @@
     </div>
     <div style="clear:both"/>
 
+    <xsl:if test="/root/gui/session/userId != ''">
+      <xsl:call-template name="showPanel">
+        <xsl:with-param name="title">
+          <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
 
-    <xsl:call-template name="showPanel">
-      <xsl:with-param name="title">
-        <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
+          <xsl:message>
+          Status val:<xsl:value-of select="$info/status" />--- <xsl:value-of select="$info/edit" /> --- <xsl:value-of select="$info/publishedCopy" />  --- <xsl:value-of select="$info/draft" /> ---
+          </xsl:message>
 
-        <xsl:message>
-        Status val:<xsl:value-of select="$info/status" />--- <xsl:value-of select="$info/edit" /> --- <xsl:value-of select="$info/publishedCopy" />  --- <xsl:value-of select="$info/draft" /> ---
-        </xsl:message>
+          <xsl:choose>
+            <xsl:when test="$info/status='4'">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
 
-        <xsl:choose>
-          <xsl:when test="$info/status='4'">
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
+              <xsl:if test="$info/publishedCopy='true' and $info/workspace='false'">
+                (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
+              </xsl:if>
 
-            <xsl:if test="$info/publishedCopy='true' and $info/workspace='false'">
+              <xsl:if test="$info/publishedCopy='true' and $info/workspace='true'">
+                (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?draft=n" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
+                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
+              </xsl:if>
+            </xsl:when>
+
+
+            <!-- no published copy available, always draft (or retired/rejected) -->
+            <xsl:when test="not ($info/publishedCopy='true')">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
+            </xsl:when>
+
+            <!-- when viewing draft of a published copy -->
+            <xsl:when test="$info/workspace='true'">
+              <xsl:choose>
+                <xsl:when test="$info/publishedCopy='true'">
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/approved_local"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
+                </xsl:otherwise>
+              </xsl:choose>
+              (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?view=published" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
+            </xsl:when>
+
+            <!-- if viewing puslished copy, status is draft, if a draft is available, but should show status published here, with option to visit draft, if you have right to view draft (=edit?) -->
+            <!--<xsl:when test="($info/status!='2') and ($info/edit='true')">
+              CCCC:<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
+              (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
+              <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/draft"/></a>)
+            </xsl:when>-->
+
+            <!-- View published copy and allowed to see the draft -->
+            <xsl:when test="($info/status='2') and ($info/edit='true') and ($info/workspace='false')  and ($info/hasDraft='true')">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
               (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
               <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
-            </xsl:if>
+            </xsl:when>
 
-            <xsl:if test="$info/publishedCopy='true' and $info/workspace='true'">
-              (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?draft=n" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
-              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
-            </xsl:if>
-          </xsl:when>
+            <!-- else this is a published record without draft (status approved, display as 'published') -->
+            <xsl:otherwise>
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/>
+            </xsl:otherwise>
 
+          </xsl:choose>
+        </xsl:with-param>
 
-          <!-- no published copy available, always draft (or retired/rejected) -->
-          <xsl:when test="not ($info/publishedCopy='true')">
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
-          </xsl:when>
-
-          <!-- when viewing draft of a published copy -->
-          <xsl:when test="$info/workspace='true'">
-            <xsl:choose>
-              <xsl:when test="$info/publishedCopy='true'">
-                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/approved_local"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>
-              </xsl:otherwise>
-            </xsl:choose>
-            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?view=published" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_published}">
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/></a>)
-          </xsl:when>
-
-          <!-- if viewing puslished copy, status is draft, if a draft is available, but should show status published here, with option to visit draft, if you have right to view draft (=edit?) -->
-          <!--<xsl:when test="($info/status!='2') and ($info/edit='true')">
-            CCCC:<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
-            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}?fromWorkspace=true" style="color:white" title="{/root/gui/strings/view_draft}">
-            <xsl:value-of select="/root/gui/strings/view"/>&#160;<xsl:value-of select="/root/gui/strings/draft"/></a>)
-          </xsl:when>-->
-
-          <!-- View published copy and allowed to see the draft -->
-          <xsl:when test="($info/status='2') and ($info/edit='true') and ($info/workspace='false')  and ($info/hasDraft='true')">
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/> &#160;
-            (<a href="{/root/gui/url}/metadata/{/root/lang}/{$info/uuid}" style="color:white" title="{/root/schemas/*[name()=$schema]/strings/view_draft}">
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/view"/>&#160;<xsl:value-of select="/root/schemas/*[name()=$schema]/strings/draft"/></a>)
-          </xsl:when>
-
-          <!-- else this is a published record without draft (status approved, display as 'published') -->
-          <xsl:otherwise>
-            <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/published"/>
-          </xsl:otherwise>
-
-        </xsl:choose>
-      </xsl:with-param>
-
-      <xsl:with-param name="content">
-        <table style="border:none">
-          <tbody>
-            <tr valign="top">
-              <td><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Publishedto"/>:</td>
-              <td><xsl:value-of select="$info/publishedto"/></td>
-            </tr>
-            <tr valign="top">
-              <td><!-- Owner -->
-                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/owner"/>:
-              </td>
-              <td>
-                <xsl:value-of select="$info/ownername"/>
-              </td>
-            </tr>
-            <xsl:if test="$info/isLocked = 'y' and $info/workspace= 'true'">
+        <xsl:with-param name="content">
+          <table style="border:none">
+            <tbody>
               <tr valign="top">
-                <td>
-                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/lastChangedBy"/>:
+                <td><xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Publishedto"/>:</td>
+                <td><xsl:value-of select="$info/publishedto"/></td>
+              </tr>
+              <tr valign="top">
+                <td><!-- Owner -->
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/owner"/>:
                 </td>
                 <td>
-                  <xsl:value-of select="$info/lockername"/>
+                  <xsl:value-of select="$info/ownername"/>
                 </td>
               </tr>
-            </xsl:if>
+              <xsl:if test="$info/isLocked = 'y' and $info/workspace= 'true'">
+                <tr valign="top">
+                  <td>
+                    <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/lastChangedBy"/>:
+                  </td>
+                  <td>
+                    <xsl:value-of select="$info/lockername"/>
+                  </td>
+                </tr>
+              </xsl:if>
 
-            <tr valign="top">
-              <td>
-                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/changeDate"/>:
-              </td>
-              <td>
-                <xsl:value-of select="$info/datainfo/changedate"/>
-              </td>
-            </tr>
+              <tr valign="top">
+                <td>
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/changeDate"/>:
+                </td>
+                <td>
+                  <xsl:value-of select="$info/datainfo/changedate"/>
+                </td>
+              </tr>
 
-            <!-- Data Openness Rating -->
+              <!-- Data Openness Rating -->
 
-            <!--<tr valign="top">
-              <td>
-                <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/rating"/>:
-              </td>
-              <td class="stars">
-                <xsl:variable name="dataOpennessRating" select="'2'" />
-                <xsl:choose>
-                  <xsl:when test="not($info/datainfo/dataopennessrating ) or $info/datainfo/dataopennessrating = 0">
-                    <xsl:call-template name="ratingStars">
-                      <xsl:with-param name="fill" select="false()" />
-                      <xsl:with-param name="count" select="5" />
+              <!--<tr valign="top">
+                <td>
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/rating"/>:
+                </td>
+                <td class="stars">
+                  <xsl:variable name="dataOpennessRating" select="'2'" />
+                  <xsl:choose>
+                    <xsl:when test="not($info/datainfo/dataopennessrating ) or $info/datainfo/dataopennessrating = 0">
+                      <xsl:call-template name="ratingStars">
+                        <xsl:with-param name="fill" select="false()" />
+                        <xsl:with-param name="count" select="5" />
+                      </xsl:call-template>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:call-template name="ratingStars">
+                        <xsl:with-param name="fill" select="true()" />
+                        <xsl:with-param name="count" select="$info/datainfo/dataopennessrating " />
+                      </xsl:call-template>
+                      <xsl:call-template name="ratingStars">
+                        <xsl:with-param name="fill" select="false()" />
+                        <xsl:with-param name="count" select="5 - $info/datainfo/dataopennessrating " />
+                      </xsl:call-template>
+                    </xsl:otherwise>
+                  </xsl:choose>
+
+                </td>
+              </tr>-->
+
+              <!--<tr>
+                <td>
+                  <div  role="menubar">
+                    <xsl:call-template name="buttons">
+                      <xsl:with-param name="metadata" select="$metadata"/>
                     </xsl:call-template>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:call-template name="ratingStars">
-                      <xsl:with-param name="fill" select="true()" />
-                      <xsl:with-param name="count" select="$info/datainfo/dataopennessrating " />
-                    </xsl:call-template>
-                    <xsl:call-template name="ratingStars">
-                      <xsl:with-param name="fill" select="false()" />
-                      <xsl:with-param name="count" select="5 - $info/datainfo/dataopennessrating " />
-                    </xsl:call-template>
-                  </xsl:otherwise>
-                </xsl:choose>
-
-              </td>
-            </tr>-->
-
-            <!--<tr>
-              <td>
-                <div  role="menubar">
-                  <xsl:call-template name="buttons">
-                    <xsl:with-param name="metadata" select="$metadata"/>
-                  </xsl:call-template>
-                </div>
-              </td>
-            </tr>-->
-          </tbody>
-        </table>
-      </xsl:with-param>
-    </xsl:call-template>
+                  </div>
+                </td>
+              </tr>-->
+            </tbody>
+          </table>
+        </xsl:with-param>
+      </xsl:call-template>
+    </xsl:if>
   </xsl:template>
 
 
@@ -699,14 +698,6 @@
     <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
 
     <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
-
-    <xsl:variable name="map_url">
-      <xsl:choose>
-        <xsl:when test="/root/lang = 'fre'"><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_fre" /></xsl:when>
-        <xsl:otherwise><xsl:value-of select="/root/gui/env/publication/mapviewer/viewonmap_eng" /></xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
 
     <table class="wb-tables table table-striped table-hover table-bordered" role="grid">
       <xsl:attribute name="data-wb-tables">{"bPaginate": false, "searching":false, "info":false}</xsl:attribute>
