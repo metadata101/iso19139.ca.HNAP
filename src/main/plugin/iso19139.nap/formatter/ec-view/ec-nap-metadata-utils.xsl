@@ -490,6 +490,71 @@
 
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="gmd:topicCategory[1]"
+                priority="3005">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:for-each select="../gmd:topicCategory/gmd:MD_TopicCategoryCode">
+          <xsl:variable name="codelistTranslation"
+                        select="tr:codelist-value-label(
+                            tr:create($schema),
+                           local-name(), .)"/>
+          <xsl:value-of select="$codelistTranslation" />
+          <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
+        </xsl:for-each>
+      </dd>
+    </dl>
+  </xsl:template>
+
+  <xsl:template mode="render-field"
+                match="gmd:descriptiveKeywords"
+                priority="2090"></xsl:template>
+
+  <xsl:template mode="render-field"
+                match="gmd:descriptiveKeywords[string(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)]"
+                priority="3000">
+
+
+    <xsl:variable name="thesaurusId" select="*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString" />
+
+    <xsl:message><xsl:value-of select="$thesaurusId" /></xsl:message>
+    <dl>
+      <dt>
+        <xsl:value-of select="tr:node-label(tr:create($schema), $thesaurusId, null)"/>
+      </dt>
+      <dd>
+        <xsl:variable name="infoCatList">
+          <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
+            <xsl:call-template name="localised">
+              <xsl:with-param name="langId" select="$langForMetadata" />
+            </xsl:call-template>
+            <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
+          </xsl:for-each>
+        </xsl:variable>
+
+        <xsl:variable name="infoCatListNorm" select="normalize-space($infoCatList)" />
+        <xsl:if test="string($infoCatListNorm)">
+          <xsl:choose>
+            <xsl:when test="ends-with($infoCatListNorm, ',')">
+              <xsl:value-of select="substring($infoCatListNorm, 1, string-length($infoCatListNorm) - 1)" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$infoCatListNorm" />
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:if>
+      </dd>
+    </dl>
+  </xsl:template>
+
   <!-- Traverse the tree -->
   <xsl:template mode="render-field"
                 match="*">

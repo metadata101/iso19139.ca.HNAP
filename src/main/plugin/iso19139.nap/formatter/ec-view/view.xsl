@@ -463,6 +463,22 @@
         jQuery( ".wb-tabs" ).trigger( "wb-init.wb-tabs" );
       </script>
 
+      <xsl:call-template name="showPanel">
+        <xsl:with-param name="title"   select="/root/schemas/*[name()=$schema]/strings/Dataclassification"/>
+        <xsl:with-param name="content">
+          <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
+            <tbody>
+              <xsl:apply-templates mode="render-field" select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:descriptiveKeywords[contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Government of Canada Core Subject Thesaurus') or
+                contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Thésaurus des sujets de base du gouvernement du Canada')]" />
+
+
+              <xsl:apply-templates mode="render-field" select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:topicCategory" />
+
+              </tbody>
+          </table></xsl:with-param>
+      </xsl:call-template>
+
+
       <xsl:for-each select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:pointOfContact/gmd:CI_ResponsibleParty">
 
         <xsl:call-template name="showPanel">
