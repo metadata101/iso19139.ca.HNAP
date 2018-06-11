@@ -36,13 +36,13 @@
 
   <xsl:include href="utility-tpl.xsl"/>
 
-  <xsl:template name="iso19139.napBrief">
+  <xsl:template name="iso19139.napecBrief">
     <metadata>
       <xsl:call-template name="iso19139-brief"/>
     </metadata>
   </xsl:template>
 
-  <xsl:template name="iso19139.nap-brief">
+  <xsl:template name="iso19139.napec-brief">
     <xsl:call-template name="iso19139-brief"/>
   </xsl:template>
 </xsl:stylesheet>

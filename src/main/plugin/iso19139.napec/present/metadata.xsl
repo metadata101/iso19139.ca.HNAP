@@ -23,7 +23,7 @@
   <xsl:include href="iso19139.nap-readonly.xsl"/>
 
   <!-- main template - the way into processing iso19139.nap -->
-  <xsl:template name="metadata-iso19139.nap">
+  <xsl:template name="metadata-iso19139.napec">
     <xsl:param name="schema"/>
     <xsl:param name="edit" select="false()"/>
     <xsl:param name="embedded"/>
@@ -225,7 +225,7 @@
                         </xsl:call-template>
                     </xsl:otherwise>
                 </xsl:choose>-->
-        <xsl:call-template name="iso19139.napFullView">
+        <xsl:call-template name="iso19139.napecFullView">
           <xsl:with-param name="schema" select="$schema"/>
           <xsl:with-param name="edit"   select="$edit"/>
         </xsl:call-template>
@@ -241,7 +241,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template name="getTooltipTitle-iso19139.nap">
+  <xsl:template name="getTooltipTitle-iso19139.napec">
     <xsl:param name="name" />
     <xsl:param name="schema"/>
 
@@ -269,7 +269,7 @@
   <!-- ============================================================================= -->
   <!-- iso19139 complete tab template	-->
   <!-- ============================================================================= -->
-  <xsl:template name="iso19139.napCompleteTab">
+  <xsl:template name="iso19139.napecCompleteTab">
     <xsl:param name="tabLink"/>
     <xsl:param name="schema"/>
 
@@ -302,7 +302,7 @@
   <!-- =================================================================== -->
   <!-- === Javascript used by functions in this presentation XSLT          -->
   <!-- =================================================================== -->
-  <xsl:template name="iso19139.nap-javascript"/>
+  <xsl:template name="iso19139.napec-javascript"/>
 
 
   <!-- ================================================================== -->

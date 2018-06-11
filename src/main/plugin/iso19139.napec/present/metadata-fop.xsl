@@ -20,7 +20,7 @@
                 version="2.0">
 
   <!-- Redirect to iso19139 default layout -->
-  <xsl:template name="metadata-fop-iso19139.nap">
+  <xsl:template name="metadata-fop-iso19139.napec">
     <xsl:param name="schema"/>
 
     <xsl:variable name="isoLang">

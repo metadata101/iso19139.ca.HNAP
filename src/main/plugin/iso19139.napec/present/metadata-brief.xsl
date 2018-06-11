@@ -21,7 +21,7 @@
   <!-- ===================================================================== -->
   <!-- === iso19139.nap brief formatting 							   === -->
   <!-- ===================================================================== -->
-  <xsl:template name="iso19139.napBrief">
+  <xsl:template name="iso19139.napecBrief">
     <metadata>
       <xsl:choose>
         <xsl:when test="geonet:info/isTemplate='s'">
@@ -32,14 +32,14 @@
           <!-- call iso19139 brief -->
           <xsl:call-template name="iso19139-brief"/>
           <!-- now brief elements for nap specific elements -->
-          <xsl:call-template name="iso19139.nap-brief"/>
+          <xsl:call-template name="iso19139.napec-brief"/>
         </xsl:otherwise>
       </xsl:choose>
     </metadata>
   </xsl:template>
 
   <!-- nap extensions in gmd:MD_Metadata need to be added to brief template -->
-  <xsl:template name="iso19139.nap-brief">
+  <xsl:template name="iso19139.napec-brief">
     <xsl:variable name="info" select="geonet:info"/>
     <xsl:variable name="id" select="$info/id"/>
     <xsl:variable name="uuid" select="$info/uuid"/>
