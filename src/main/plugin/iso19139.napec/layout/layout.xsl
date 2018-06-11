@@ -43,8 +43,6 @@
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
-    <xsl:message>NAPEC ----- <xsl:value-of select="name()" /></xsl:message>
-
     <xsl:apply-templates mode="mode-iso19139" select=".">
       <xsl:with-param name="schema" select="$schema"/>
       <xsl:with-param name="labels" select="$labels"/>
@@ -56,8 +54,6 @@
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="refToDelete" required="no"/>
-
-    <xsl:message>NAPEC 2 ----- <xsl:value-of select="name()" /></xsl:message>
 
     <xsl:apply-templates mode="mode-iso19139" select="*|@*">
       <xsl:with-param name="schema" select="$schema"/>
@@ -99,7 +95,7 @@
 
   <!-- Use code previous to https://github.com/geonetwork/core-geonetwork/commit/30133214c723d04a20b50f2650fcfc12bea475c9 -->
   <!-- Render simple element which usually match a form field -->
-  <xsl:template mode="mode-iso19139" priority="200"
+  <xsl:template mode="mode-iso19139" priority="1000"
                 match="*[gco:CharacterString|gco:Integer|gco:Decimal|
        gco:Boolean|gco:Real|gco:Measure|gco:Length|gco:Distance|gco:Angle|gmx:FileName|
        gco:Scale|gco:Record|gco:RecordType|gmx:MimeFileType|gmd:URL|gco:LocalName|gmd:PT_FreeText]">

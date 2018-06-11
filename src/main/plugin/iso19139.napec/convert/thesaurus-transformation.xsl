@@ -38,7 +38,7 @@
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
   <!-- Override template -->
-  <xsl:template mode="to-iso19139-keyword" match="*[not(/root/request/skipdescriptivekeywords)]">
+  <xsl:template mode="to-iso19139-keyword" match="*[not(/root/request/skipdescriptivekeywords)]" priority="100">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
@@ -78,7 +78,7 @@
   </xsl:template>
 
   <!-- Override template -->
-  <xsl:template mode="to-iso19139-keyword" match="*[/root/request/skipdescriptivekeywords]">
+  <xsl:template mode="to-iso19139-keyword" match="*[/root/request/skipdescriptivekeywords]" priority="100">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
