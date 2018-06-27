@@ -4,6 +4,7 @@
                   xmlns:gco="http://www.isotc211.org/2005/gco"
                   xmlns:gmd="http://www.isotc211.org/2005/gmd"
                   xmlns:srv="http://www.isotc211.org/2005/srv"
+                  xmlns:java="java:org.fao.geonet.util.XslUtil"
                   xmlns:gml="http://www.opengis.net/gml/3.2">
 
     <xsl:param name="language" />
@@ -26,7 +27,7 @@
 
         <hierarchy_level><xsl:value-of select="gmd:hierarchyLevel/gmd:MD_ScopeCode"/></hierarchy_level>
         <status><xsl:value-of select="lower-case(tokenize(gmd:identificationInfo/*/gmd:status/gmd:MD_ProgressCode, ';')[1])"/></status>
-        
+
         <spatial_representation_type>
         <xsl:for-each select="gmd:identificationInfo/*/gmd:spatialRepresentationType">
           <xsl:if test="tokenize(gmd:MD_SpatialRepresentationTypeCode, ';')[1] != 'none'">
@@ -71,7 +72,7 @@
         </subject>
 
 
-        <reference_system_information><xsl:value-of select="concat(gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString, 
+        <reference_system_information><xsl:value-of select="concat(gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString,
           ',', gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:codeSpace/gco:CharacterString,
           ',', gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:version/gco:CharacterString)" /></reference_system_information>
 
@@ -124,7 +125,7 @@
 
         <topic_category>
           <xsl:for-each select="gmd:identificationInfo/*/gmd:topicCategory">
-            <value><xsl:value-of select="gmd:MD_TopicCategoryCode" /></value>
+            <value><xsl:value-of select="java:calculateCkanTopicCategoryValue(gmd:MD_TopicCategoryCode)" /></value>
           </xsl:for-each>
         </topic_category>
 
@@ -176,7 +177,7 @@
         <attribution_fre>Contient des informations autoris\u00e9es sous la Licence du gouvernement ouvert- Canada</attribution_fre>
 
 
-      
+
         <xsl:for-each select="//gmd:extent//gmd:EX_GeographicBoundingBox|//srv:extent//gmd:EX_GeographicBoundingBox">
           <xsl:variable name="minx" select="gmd:westBoundLongitude/gco:Decimal"/>
           <xsl:variable name="miny" select="gmd:southBoundLatitude/gco:Decimal"/>
@@ -240,7 +241,7 @@
             </contact>
           </xsl:for-each>
         </contacts>
-        
+
         <distributors>
         <xsl:for-each select="gmd:distributionInfo/*/gmd:distributor/*/gmd:distributorContact">
           <distributor>
@@ -291,7 +292,7 @@
           </distributor>
         </xsl:for-each>
         </distributors>
-        
+
         <resources>
           <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine">
             <resource>
