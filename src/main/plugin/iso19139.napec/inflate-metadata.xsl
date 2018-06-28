@@ -432,6 +432,25 @@
   </xsl:template>
 
   <!-- ================================================================= -->
+
+  <xsl:template match="gmd:organisationName[not(gmd:PT_FreeText)]">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:if test="not(@xsi:type)">
+        <xsl:attribute name="xsi:type">gmd:PT_FreeText_PropertyType</xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="*" />
+      <gmd:PT_FreeText>
+        <gmd:textGroup>
+          <gmd:LocalisedCharacterString locale="#{$altLang}">
+          </gmd:LocalisedCharacterString>
+        </gmd:textGroup>
+      </gmd:PT_FreeText>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- ================================================================= -->
+
   <!-- copy everything else as is -->
 
   <xsl:template match="@*|node()">
