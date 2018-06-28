@@ -10,7 +10,7 @@
   <xsl:variable name="mdLang" select="/root/gmd:MD_Metadata/gmd:language/gco:CharacterString" />
 
   <!-- ================================================================= -->
-	
+
 	<xsl:template match="/root">
 		 <xsl:apply-templates select="gmd:MD_Metadata"/>
 	</xsl:template>
@@ -90,8 +90,10 @@
 
   <!-- ================================================================= -->
 
-  <xsl:template match="gmd:descriptiveKeywords[gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/@id='local.theme.EC_Waf']" />
-  <xsl:template match="gmd:descriptiveKeywords[gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='local.theme.EC_Waf']" />
+  <xsl:template match="gmd:descriptiveKeywords[gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/@id='local.theme.EC_Waf' or
+                                               gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/@id='theme.EC_Waf']" />
+  <xsl:template match="gmd:descriptiveKeywords[gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='local.theme.EC_Waf' or
+                                               gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='theme.EC_Waf']" />
 
   <!-- ================================================================= -->
 
@@ -281,17 +283,17 @@
     <gmd:thesaurusName>
       <gmd:CI_Citation>
         <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-          <gco:CharacterString>local.theme.EC_Waf</gco:CharacterString>
+          <gco:CharacterString>theme.EC_Waf</gco:CharacterString>
           <gmd:PT_FreeText>
             <gmd:textGroup>
               <xsl:choose>
                 <!-- Metadata main language is french -->
                 <xsl:when test="starts-with($mdLang, 'fra')">
-                  <gmd:LocalisedCharacterString locale="#eng">local.theme.EC_Waf</gmd:LocalisedCharacterString>
+                  <gmd:LocalisedCharacterString locale="#eng">theme.EC_Waf</gmd:LocalisedCharacterString>
 
                 </xsl:when>
                 <xsl:otherwise>
-                  <gmd:LocalisedCharacterString locale="#fra">local.theme.EC_Waf</gmd:LocalisedCharacterString>
+                  <gmd:LocalisedCharacterString locale="#fra">theme.EC_Waf</gmd:LocalisedCharacterString>
                 </xsl:otherwise>
               </xsl:choose>
             </gmd:textGroup>
@@ -353,7 +355,7 @@
 
 
   <!-- ================================================================= -->
-	
+
 	<xsl:template match="@*|node()">
 		 <xsl:copy>
 			  <xsl:apply-templates select="@*|node()"/>
