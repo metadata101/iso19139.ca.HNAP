@@ -28,6 +28,7 @@
 	<name>iso19139.nap</name>
 	<id>3693b080-4f89-11e4-916c-0800200c9a66</id>
 	<version>1.0</version>
+  <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<depends>iso19139</depends>
 	<schemaLocation>http://www.isotc211.org/2005/gmd http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-cgsb-171.100-2009-a/gmd/gmd.xsd http://www.isotc211.org/2005/srv http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-cgsb-171.100-2009-a/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-cgsb-171.100-2009-a/napm/napm.xsd</schemaLocation>
 
