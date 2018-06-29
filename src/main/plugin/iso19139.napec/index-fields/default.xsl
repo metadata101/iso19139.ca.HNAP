@@ -197,8 +197,6 @@
           </xsl:when>
 
           <xsl:when test="contains(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')">
-            <xsl:message><xsl:value-of select="concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Information_Category.rdf')" /></xsl:message>
-
             <xsl:variable name="ecInformationCategory" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Information_Category.rdf'))" />
 
             <xsl:for-each select="gmd:keyword/gco:CharacterString[not(../gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale='#eng')]|gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']">
