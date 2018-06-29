@@ -558,10 +558,6 @@
         <xsl:with-param name="title">
           <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/Status"/>:
 
-          <xsl:message>
-          Status val:<xsl:value-of select="$info/status" />--- <xsl:value-of select="$info/edit" /> --- <xsl:value-of select="$info/publishedCopy" />  --- <xsl:value-of select="$info/draft" /> ---
-          </xsl:message>
-
           <xsl:choose>
             <xsl:when test="$info/status='4'">
               <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/*[name()=$info/statusName]"/>

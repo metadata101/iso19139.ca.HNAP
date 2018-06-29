@@ -249,8 +249,6 @@
                                     gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]"
                           group-by="lower-case(normalize-space(gmd:protocol/gco:CharacterString))">
 
-        <xsl:message>position: <xsl:value-of select="position()" /></xsl:message>
-
         <xsl:for-each select="current-group()">
           <xsl:sort select="gmd:protocol/gco:CharacterString" order="descending" />
 
@@ -525,7 +523,6 @@
 
     <xsl:variable name="thesaurusId" select="*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString" />
 
-    <xsl:message><xsl:value-of select="$thesaurusId" /></xsl:message>
     <dl>
       <dt>
         <xsl:value-of select="tr:node-label(tr:create($schema), $thesaurusId, null)"/>

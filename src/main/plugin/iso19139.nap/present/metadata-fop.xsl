@@ -127,8 +127,6 @@
           </xsl:if>
 
 
-          <xsl:message>PDF: <xsl:value-of select="/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox" /> </xsl:message>
-          <xsl:message>PDF: <xsl:value-of select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent" /> </xsl:message>
           <xsl:if test="/root/gmd:MD_Metadata/gmd:identificationInfo//gmd:extent/gmd:EX_Extent/gmd:temporalElement">
             <fo:table width="100%" table-layout="fixed">
               <fo:table-column column-width="5cm"/>
