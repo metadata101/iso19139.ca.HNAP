@@ -190,6 +190,10 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template
+    match="gmd:topicCategory[not(gmd:MD_TopicCategoryCode)]"
+    priority="10" />
+
   <xsl:template match="gmd:topicCategory">
     <xsl:copy>
       <xsl:apply-templates select="@*[not(name()='gco:nilReason')]"/>

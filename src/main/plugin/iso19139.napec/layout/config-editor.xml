@@ -298,6 +298,8 @@
           <field xpath="/gmd:MD_Metadata/gmd:dataSetURI"/>
           <!--<field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />-->
 
+
+
         </section>
           <!--<section name="gmd:contact">
             <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:individualName"  or="individualName"  in="/gmd:MD_Metadata/gmd:contact/*" />
@@ -378,9 +380,7 @@
           </action>
 
           <!-- Topic Category -->
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:topicCategory"
-                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
-                 or="topicCategory"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:topicCategory" />
 
           <!-- Supplemental Info -->
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:supplementalInformation"
@@ -396,7 +396,7 @@
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
           <!-- Cited responsible party -->
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty "
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation"
                  or="citedResponsibleParty"/>
 

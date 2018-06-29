@@ -28,6 +28,7 @@
 	<name>iso19139.napec</name>
   <id>ab6f3bc0-dde4-11df-8626-001c2346de4c</id>
 	<version>1.0</version>
+  <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<depends>iso19139</depends>
   <schemaLocation>http://www.ec.gc.ca/data_donnees/standards/schemas/napec http://www.ec.gc.ca/data_donnees/standards/schemas/napec/schema.xsd</schemaLocation>
 
