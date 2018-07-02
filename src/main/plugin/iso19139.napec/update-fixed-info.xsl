@@ -1848,6 +1848,29 @@
     </xsl:copy>
   </xsl:template>
 
+
+  <xsl:template match="gml:TimePeriod[gml:beginPosition]" priority="100">
+    <xsl:copy>
+      <xsl:choose>
+        <xsl:when test="not(string(@gml:id))">
+          <xsl:copy-of select="@*[not(name()='gml:id')]"/>
+          <xsl:attribute name="gml:id" select="generate-id()" />
+
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="@*"/>
+        </xsl:otherwise>
+      </xsl:choose>
+
+      <xsl:apply-templates select="gml:beginPosition" />
+      <xsl:apply-templates select="gml:endPosition" />
+
+      <xsl:if test="not(gml:endPosition)">
+        <gml:endPosition />
+      </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- ================================================================= -->
 	<!-- copy everything else as is -->
 
