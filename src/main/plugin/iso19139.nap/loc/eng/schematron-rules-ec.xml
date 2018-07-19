@@ -49,4 +49,7 @@
     <!--<EC22>Value for temporal extent - end date should be higher than start date</EC22>-->
     <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
     <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+
+
+    <Status>Value is required for status</Status>
 </strings>

@@ -269,8 +269,9 @@
     </sch:rule>
   </sch:pattern>
 
+
   <sch:pattern>
-    <sch:title>$loc/strings/InvalidContactRole</sch:title>
+    <sch:title>$loc/strings/MissingContactRole</sch:title>
     <sch:rule context="//gmd:contact/*/gmd:role">
 
       <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
@@ -278,12 +279,28 @@
       <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
                  or (@gco:nilReason)" />
 
+      <sch:assert
+        test="not($missing)"
+        >$loc/strings/MissingContactRole</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
+
+  <sch:pattern>
+    <sch:title>$loc/strings/InvalidContactRole</sch:title>
+    <sch:rule context="//gmd:contact/*/gmd:role">
+
+      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
+        or (@gco:nilReason)" />
+
       <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
       <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />
 
       <sch:assert
         test="$isValid or $missing"
-      >$loc/strings/InvalidContactRole</sch:assert>
+        >$loc/strings/InvalidContactRole</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -421,18 +438,19 @@
 
   <!-- Role -->
   <sch:pattern>
-    <sch:title>$loc/strings/CitedResponsiblePartyRole</sch:title>
-
+    <sch:title>$loc/strings/MissingCitedResponsibleRole</sch:title>
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
-              |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
-              |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role">
+      |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
+      |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role">
+
+      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
 
       <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
-                  or (@gco:nilReason)" />
+        or (@gco:nilReason)" />
 
       <sch:assert
         test="not($missing)"
-      >$loc/strings/CitedResponsiblePartyRole</sch:assert>
+        >$loc/strings/MissingCitedResponsibleRole</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -922,6 +940,44 @@
     </sch:rule>
   </sch:pattern>
 
+  <sch:pattern>
+    <sch:title>$loc/strings/MissingDistributorRole</sch:title>
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
+
+      <xsl:message>InvalidDistributorRole check</xsl:message>
+      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
+        or (@gco:nilReason)" />
+
+      <sch:assert
+        test="not($missing)"
+        >$loc/strings/MissingDistributorRole</sch:assert>
+
+
+
+    </sch:rule>
+  </sch:pattern>
+
+  <sch:pattern>
+    <sch:title>$loc/strings/InvalidDistributorRole</sch:title>
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
+
+      <xsl:message>InvalidDistributorRole check</xsl:message>
+      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
+                 or (@gco:nilReason)" />
+
+      <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
+      <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidDistributorRole</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
 
   <sch:pattern>
     <sch:title>$loc/strings/EC23</sch:title>

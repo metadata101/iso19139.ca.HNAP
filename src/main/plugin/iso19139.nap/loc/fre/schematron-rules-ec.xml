@@ -46,4 +46,6 @@
     <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
     <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
     <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+
+    <Status>Une valeur est nécessaire pour: Etat</Status>
 </strings>
