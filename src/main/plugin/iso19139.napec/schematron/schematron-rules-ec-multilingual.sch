@@ -312,6 +312,21 @@
   </sch:pattern>
 
   <sch:pattern>
+    <sch:title>$loc/strings/MissingContactRole</sch:title>
+    <sch:rule context="//gmd:contact/*/gmd:role">
+
+      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
+                 or (@gco:nilReason)" />
+
+      <sch:assert
+        test="not($missing)"
+      >$loc/strings/MissingContactRole</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
+
+
+  <sch:pattern>
     <sch:title>$loc/strings/InvalidContactRole</sch:title>
     <sch:rule context="//gmd:contact/*/gmd:role">
 
@@ -483,7 +498,7 @@
 
   <!-- Role -->
   <sch:pattern>
-    <sch:title>$loc/strings/CitedResponsiblePartyRole</sch:title>
+    <sch:title>$loc/strings/MissingCitedResponsibleRol</sch:title>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
               |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
@@ -494,7 +509,7 @@
 
       <sch:assert
         test="not($missing)"
-      >$loc/strings/CitedResponsiblePartyRole</sch:assert>
+      >$loc/strings/MissingCitedResponsibleRol</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -960,6 +975,24 @@
 
     </sch:rule>
   </sch:pattern>
+
+
+  <!-- Distributor role -->
+  <sch:pattern>
+    <sch:title>$loc/strings/MissingDistributorRole</sch:title>
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
+
+      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
+                 or (@gco:nilReason)" />
+
+
+      <sch:assert
+        test="not($missing)"
+      >$loc/strings/MissingDistributorRole</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
+
 
   <sch:pattern>
     <sch:title>$loc/strings/InvalidDistributorRole</sch:title>

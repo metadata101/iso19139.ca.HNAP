@@ -73,7 +73,10 @@
   <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
 
-  <CitedResponsiblePartyRole>Value is required for Cited responsible party - Role</CitedResponsiblePartyRole>
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+
 
   <Branch>Value is required for Branch</Branch>
   <Directorate>Value is required for Directorate</Directorate>

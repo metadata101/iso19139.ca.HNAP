@@ -75,7 +75,9 @@
   <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
 
-  <CitedResponsiblePartyRole>Une valeur est nécessaire pour le rôle responsable cité</CitedResponsiblePartyRole>
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
   <Branch>Une valeur est nécessaire pour: Data classification - Direction générale</Branch>
   <Directorate>Une valeur est nécessaire pour: Data classification - Direction</Directorate>
