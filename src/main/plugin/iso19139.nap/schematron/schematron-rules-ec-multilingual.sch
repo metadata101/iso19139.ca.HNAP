@@ -148,9 +148,9 @@
     </sch:rule>
   </sch:pattern>
 
-  <!-- Contact -->
+  <!-- Contact - Organisation Name -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC1</sch:title>
+    <sch:title>$loc/strings/ContactOrganisationName</sch:title>
 
     <sch:rule context="//gmd:contact/*/gmd:organisationName">
 
@@ -162,7 +162,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-        >$loc/strings/EC1</sch:assert>
+        >$loc/strings/ContactOrganisationName</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -210,16 +210,35 @@
     </sch:rule>
   </sch:pattern>
 
-    <sch:pattern>
-      <sch:title>$loc/strings/ECCountry</sch:title>
+  <!-- Contact - Position name -->
+  <sch:pattern>
+    <sch:title>$loc/strings/ContactPositionName</sch:title>
 
-       <sch:rule context="//gmd:contact//gmd:country">
-        <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'))"/>
+    <sch:rule context="//gmd:contact/*/gmd:positionName">
 
-        <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
-        <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)" />
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
 
-         <sch:assert test="(not($countryName) or
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+        >$loc/strings/ContactPositionName</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Contact - Country -->
+  <sch:pattern>
+    <sch:title>$loc/strings/ECCountry</sch:title>
+
+    <sch:rule context="//gmd:contact//gmd:country">
+      <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'))"/>
+
+      <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
+      <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)" />
+
+      <sch:assert test="(not($countryName) or
            ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryName]) or
            string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryName]))))
 
@@ -231,28 +250,45 @@
                        ))">$loc/strings/ECCountry</sch:assert>
 
 
-      </sch:rule>
-    </sch:pattern>
+    </sch:rule>
+  </sch:pattern>
 
+  <!-- Contact - Delivery point -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC3</sch:title>
+    <sch:title>$loc/strings/ContactDeliveryPoint</sch:title>
 
-    <sch:rule context="//gmd:contact/*/gmd:positionName">
+    <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
-                or (@gco:nilReason)" />
+                " />
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
 
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-        >$loc/strings/EC3</sch:assert>
-
+      >$loc/strings/ContactDeliveryPoint</sch:assert>
     </sch:rule>
   </sch:pattern>
 
+  <!-- Contact - Phone -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC34</sch:title>
+    <sch:title>$loc/strings/ContactPhone</sch:title>
+    <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+              " />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/ContactPhone</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Contact - Electronic Mail -->
+  <sch:pattern>
+    <sch:title>$loc/strings/ContactElectronicMail</sch:title>
 
     <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
 
@@ -264,12 +300,28 @@
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
-        >$loc/strings/EC34</sch:assert>
+        >$loc/strings/ContactElectronicMail</sch:assert>
 
     </sch:rule>
   </sch:pattern>
 
+  <!-- Contact - Hours of service -->
+  <sch:pattern>
+    <sch:title>$loc/strings/ContactHoursOfService</sch:title>
 
+    <sch:rule context="//gmd:contact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                " />
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/ContactHoursOfService</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Contact - Role -->
   <sch:pattern>
     <sch:title>$loc/strings/MissingContactRole</sch:title>
     <sch:rule context="//gmd:contact/*/gmd:role">
@@ -305,9 +357,9 @@
     </sch:rule>
   </sch:pattern>
 
-  <!-- Cited responsible party -->
+  <!-- Cited responsible party  - Organisation Name -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC1</sch:title>
+    <sch:title>$loc/strings/CitedResponsiblePartyOrganisationName</sch:title>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName
@@ -321,7 +373,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-        >$loc/strings/EC1</sch:assert>
+        >$loc/strings/CitedResponsiblePartyOrganisationName</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -372,8 +424,8 @@
     </sch:rule>
   </sch:pattern>
 
-
-    <sch:pattern>
+  <!-- Cited responsible party  - Country  -->
+  <sch:pattern>
       <sch:title>$loc/strings/ECCountry</sch:title>
 
       <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
@@ -397,8 +449,9 @@
       </sch:rule>
     </sch:pattern>
 
+  <!-- Cited Responsible Party - Position name -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC3</sch:title>
+    <sch:title>$loc/strings/CitedResponsiblePartyPositionName</sch:title>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
@@ -411,13 +464,52 @@
 
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-        >$loc/strings/EC3</sch:assert>
+        >$loc/strings/CitedResponsiblePartyPositionName</sch:assert>
 
     </sch:rule>
   </sch:pattern>
 
+  <!-- Cited Responsible Party - Phone -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC34</sch:title>
+    <sch:title>$loc/strings/CitedResponsiblePartyPhone</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice
+              |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice
+              |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                " />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/CitedResponsiblePartyPhone</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Cited Responsible Party - Delivery point -->
+  <sch:pattern>
+    <sch:title>$loc/strings/CitedResponsiblePartyDeliveryPoint</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint
+            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact//gmd:address/gmd:CI_Address/gmd:deliveryPoint
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact//gmd:address/gmd:CI_Address/gmd:deliveryPoint">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                " />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/CitedResponsiblePartyDeliveryPoint</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Cited Responsible Party - Electronic Mail -->
+  <sch:pattern>
+    <sch:title>$loc/strings/CitedResponsiblePartyElectronicMail</sch:title>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress
                       |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress
@@ -431,12 +523,30 @@
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
-        >$loc/strings/EC34</sch:assert>
+        >$loc/strings/CitedResponsiblePartyElectronicMail</sch:assert>
 
     </sch:rule>
   </sch:pattern>
 
-  <!-- Role -->
+  <!-- Cited Responsible Party - Hours of service -->
+  <sch:pattern>
+    <sch:title>$loc/strings/CitedResponsiblePartyHoursOfService</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
+            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                " />
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/CitedResponsiblePartyHoursOfService</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Cited Responsible Party -  Role -->
   <sch:pattern>
     <sch:title>$loc/strings/MissingCitedResponsibleRole</sch:title>
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
@@ -476,6 +586,7 @@
     </sch:rule>
   </sch:pattern>
 
+  <!-- Topic Category -->
   <sch:pattern>
     <sch:title>$loc/strings/EC10</sch:title>
 
@@ -492,6 +603,7 @@
     </sch:rule>
   </sch:pattern>
 
+  <!-- Spatial Representation Type -->
   <sch:pattern>
     <sch:title>$loc/strings/SpatialRepresentation</sch:title>
 
@@ -508,6 +620,26 @@
     </sch:rule>
   </sch:pattern>
 
+  <sch:pattern>
+    <sch:title>$loc/strings/InvalidSpatialRepresentationType</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType
+                         |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:spatialRepresentationType
+                         |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:spatialRepresentationType">
+
+      <sch:let name="spatialRepresentationTypeCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="missing" value="not(string(gmd:MD_SpatialRepresentationTypeCode/@codeListValue))
+                 or (@gco:nilReason)" />
+
+      <sch:let name="value" value="gmd:MD_SpatialRepresentationTypeCode/@codeListValue" />
+      <sch:let name="isValid" value="count($spatialRepresentationTypeCodelist/codelists/codelist[@name='gmd:MD_SpatialRepresentationTypeCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidSpatialRepresentationType</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 
   <!-- Creation/revision dates -->
   <sch:pattern>
@@ -567,6 +699,7 @@
     </sch:rule>
   </sch:pattern>
 
+  <!-- Keywords -->
   <sch:pattern>
     <sch:title>$loc/strings/EC36</sch:title>
 
@@ -583,7 +716,7 @@
     </sch:rule>
   </sch:pattern>
 
-
+  <!-- Constraints -->
   <sch:pattern>
     <sch:title>$loc/strings/EC8</sch:title>
 
@@ -605,7 +738,6 @@
 
     </sch:rule>
   </sch:pattern>
-
 
   <sch:pattern>
     <sch:title>$loc/strings/EC11</sch:title>
@@ -669,6 +801,34 @@
   </sch:pattern>
 
   <sch:pattern>
+    <sch:title>$loc/strings/BeginPositionFormat</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition
+      |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition
+      |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition">
+
+      <sch:let name="beginPosition" value="." />
+
+      <sch:assert test="geonet:verifyDateFormat($beginPosition) &gt; 0">$loc/strings/BeginPositionFormat</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Xpaths include gml:TimePeriodTypeCHOICE_ELEMENT, added in editor -->
+  <sch:pattern>
+    <sch:title>$loc/strings/BeginPositionFormat</sch:title>
+
+    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition
+      |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition
+      |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition">
+
+      <sch:let name="beginPosition" value="." />
+
+      <sch:assert test="geonet:verifyDateFormat($beginPosition) &gt; 0">$loc/strings/BeginPositionFormat</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- End position -->
+  <sch:pattern>
     <sch:title>$loc/strings/EndPosition</sch:title>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:endPosition
@@ -724,33 +884,7 @@
     </sch:rule>
   </sch:pattern>
 
-  <sch:pattern>
-    <sch:title>$loc/strings/BeginPositionFormat</sch:title>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition
-      |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition
-      |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition">
-
-      <sch:let name="beginPosition" value="." />
-
-      <sch:assert test="geonet:verifyDateFormat($beginPosition) &gt; 0">$loc/strings/BeginPositionFormat</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-
-  <!-- Xpaths include gml:TimePeriodTypeCHOICE_ELEMENT, added in editor -->
-  <sch:pattern>
-    <sch:title>$loc/strings/BeginPositionFormat</sch:title>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition
-      |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition
-      |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/*/gml:beginPosition">
-
-      <sch:let name="beginPosition" value="." />
-
-      <sch:assert test="geonet:verifyDateFormat($beginPosition) &gt; 0">$loc/strings/BeginPositionFormat</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-
+  <!-- Distribution - Resources -->
   <sch:pattern>
     <sch:title>$loc/strings/EC9</sch:title>
 
@@ -771,7 +905,7 @@
     </sch:rule>
   </sch:pattern>
 
-
+  <!-- Distribution - Format -->
   <sch:pattern>
     <sch:title>$loc/strings/EC21</sch:title>
 
@@ -802,9 +936,9 @@
     </sch:rule>
   </sch:pattern>
 
-  <!-- Distributor contact -->
+  <!-- Distributor contact - Organisation Name -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC1</sch:title>
+    <sch:title>$loc/strings/DistributorOrganisationName</sch:title>
 
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:organisationName">
 
@@ -815,7 +949,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-        >$loc/strings/EC1</sch:assert>
+        >$loc/strings/DistributorOrganisationName</sch:assert>
 
     </sch:rule>
   </sch:pattern>
@@ -864,7 +998,26 @@
     </sch:rule>
   </sch:pattern>
 
-    <sch:pattern>
+  <!-- Distributor - Position name -->
+  <sch:pattern>
+    <sch:title>$loc/strings/DistributorPositionName</sch:title>
+
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/DistributorPositionName</sch:assert>
+
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Distributor contact - Country -->
+  <sch:pattern>
       <sch:title>$loc/strings/ECCountry</sch:title>
 
        <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:country">
@@ -887,27 +1040,25 @@
       </sch:rule>
     </sch:pattern>
 
+  <!-- Distributor - Phone -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC3</sch:title>
-
-    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
+    <sch:title>$loc/strings/DistributorPhone</sch:title>
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
-                or (@gco:nilReason)" />
+                " />
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
 
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-        >$loc/strings/EC3</sch:assert>
-
+      >$loc/strings/DistributorPhone</sch:assert>
     </sch:rule>
   </sch:pattern>
 
-
-  <!-- Delivery point -->
+  <!-- Distributor - Delivery point -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC30</sch:title>
+    <sch:title>$loc/strings/DistributorDeliveryPoint</sch:title>
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
@@ -917,13 +1068,14 @@
 
       <sch:assert
               test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-      >$loc/strings/EC30</sch:assert>
+      >$loc/strings/DistributorDeliveryPoint</sch:assert>
 
     </sch:rule>
   </sch:pattern>
 
+  <!-- Distributor - Electronic Mail -->
   <sch:pattern>
-    <sch:title>$loc/strings/EC34</sch:title>
+    <sch:title>$loc/strings/DistributorElectronicMail</sch:title>
 
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
 
@@ -935,11 +1087,28 @@
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
-        >$loc/strings/EC34</sch:assert>
+        >$loc/strings/DistributorElectronicMail</sch:assert>
 
     </sch:rule>
   </sch:pattern>
 
+  <!-- Distributor - Hours of service -->
+  <sch:pattern>
+    <sch:title>$loc/strings/DistributorHoursOfService</sch:title>
+
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                " />
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/DistributorHoursOfService</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+
+  <!-- Distributor - Role -->
   <sch:pattern>
     <sch:title>$loc/strings/MissingDistributorRole</sch:title>
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
@@ -979,6 +1148,7 @@
     </sch:rule>
   </sch:pattern>
 
+  <!-- Distribution - Resources -->
   <sch:pattern>
     <sch:title>$loc/strings/EC23</sch:title>
 
@@ -1070,12 +1240,10 @@
       </sch:rule>
   </sch:pattern>
 
-
-  <!-- Optional multilingual -->
+  <!-- Supplemental information -->
   <sch:pattern>
     <sch:title>$loc/strings/EC27</sch:title>
 
-    <!-- Supplemental information -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:supplementalInformation
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:supplementalInformation
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:supplementalInformation">
@@ -1091,43 +1259,6 @@
         >$loc/strings/EC27</sch:assert>
 
 
-    </sch:rule>
-  </sch:pattern>
-
-  <!-- Hours of service -->
-  <sch:pattern>
-    <sch:title>$loc/strings/EC29</sch:title>
-
-    <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-                " />
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-      <sch:assert
-        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-        >$loc/strings/EC29</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-
-  <!-- Delivery point -->
-  <sch:pattern>
-    <sch:title>$loc/strings/EC30</sch:title>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact//gmd:address/gmd:CI_Address/gmd:deliveryPoint
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact//gmd:address/gmd:CI_Address/gmd:deliveryPoint">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-                " />
-
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-      <sch:assert
-        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-        >$loc/strings/EC30</sch:assert>
     </sch:rule>
   </sch:pattern>
 
@@ -1216,85 +1347,62 @@
     </sch:rule>
   </sch:pattern>
 
-   <!-- Thesaurus info -->
-    <sch:pattern>
-        <sch:rule context="//gmd:descriptiveKeywords">
-
-            <sch:let name="thesaurusNamePresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation) > 0" />
-
-
-            <sch:let name="missingTitle" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString))
-                or (@gco:nilReason)" />
-
-            <sch:let name="missingTitleOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingTitle) and not($missingTitleOtherLang))"
-                >$loc/strings/ECThesaurusTitle</sch:assert>
-
-
-            <sch:let name="missingPublication" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingPublication))"
-                >$loc/strings/ECThesaurusPubDate</sch:assert>
-
-            <sch:let name="missingCreation" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingCreation))"
-                >$loc/strings/ECThesaurusCreDate</sch:assert>
-
-
-            <sch:let name="missingRole" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue))" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingRole))"
-                >$loc/strings/ECThesaurusRole</sch:assert>
-
-            <sch:let name="missingOrganisation" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString))
-                or (@gco:nilReason)" />
-
-            <sch:let name="missingOrganisationOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingOrganisation) and not($missingOrganisationOtherLang))"
-                >$loc/strings/ECThesaurusOrg</sch:assert>
-
-            <sch:let name="emailPresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress) > 0" />
-
-            <sch:let name="missingEmail" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString))
-                or (@gco:nilReason)" />
-
-            <sch:let name="missingEmailOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-            <sch:assert
-                test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
-                >$loc/strings/ECThesaurusEmail</sch:assert>
-        </sch:rule>
-    </sch:pattern>
-
-
-
+  <!-- Thesaurus info -->
   <sch:pattern>
-    <sch:title>$loc/strings/InvalidSpatialRepresentationType</sch:title>
+      <sch:rule context="//gmd:descriptiveKeywords">
 
-    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType
-                         |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:spatialRepresentationType
-                         |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:spatialRepresentationType">
+          <sch:let name="thesaurusNamePresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation) > 0" />
 
-      <sch:let name="spatialRepresentationTypeCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
 
-      <sch:let name="missing" value="not(string(gmd:MD_SpatialRepresentationTypeCode/@codeListValue))
-                 or (@gco:nilReason)" />
+          <sch:let name="missingTitle" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString))
+              or (@gco:nilReason)" />
 
-      <sch:let name="value" value="gmd:MD_SpatialRepresentationTypeCode/@codeListValue" />
-      <sch:let name="isValid" value="count($spatialRepresentationTypeCodelist/codelists/codelist[@name='gmd:MD_SpatialRepresentationTypeCode']/entry[code=$value]) = 1" />
+          <sch:let name="missingTitleOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
 
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidSpatialRepresentationType</sch:assert>
-    </sch:rule>
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingTitle) and not($missingTitleOtherLang))"
+              >$loc/strings/ECThesaurusTitle</sch:assert>
+
+
+          <sch:let name="missingPublication" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
+
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingPublication))"
+              >$loc/strings/ECThesaurusPubDate</sch:assert>
+
+          <sch:let name="missingCreation" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
+
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingCreation))"
+              >$loc/strings/ECThesaurusCreDate</sch:assert>
+
+
+          <sch:let name="missingRole" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:role/gmd:CI_RoleCode/@codeListValue))" />
+
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingRole))"
+              >$loc/strings/ECThesaurusRole</sch:assert>
+
+          <sch:let name="missingOrganisation" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString))
+              or (@gco:nilReason)" />
+
+          <sch:let name="missingOrganisationOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and not($missingOrganisation) and not($missingOrganisationOtherLang))"
+              >$loc/strings/ECThesaurusOrg</sch:assert>
+
+          <sch:let name="emailPresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress) > 0" />
+
+          <sch:let name="missingEmail" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString))
+              or (@gco:nilReason)" />
+
+          <sch:let name="missingEmailOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+          <sch:assert
+              test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
+              >$loc/strings/ECThesaurusEmail</sch:assert>
+      </sch:rule>
   </sch:pattern>
 
   <!-- Maintenance and frequency -->

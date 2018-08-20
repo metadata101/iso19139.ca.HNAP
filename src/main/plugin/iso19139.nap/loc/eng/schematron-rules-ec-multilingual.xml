@@ -24,14 +24,10 @@
     <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
 
     <EC27>Supplemental Information should be empty or filled in both languages</EC27>
-    <EC28>Project should be empty or filled in both languages</EC28>
-    <EC29>Hours of service should be empty or filled in both languages</EC29>
-    <EC30>Delivery Point should be empty or filled in both languages</EC30>
     <EC31>Note (Other Constraints) is required in both languages</EC31>
 
     <EC32>Abstract is required in both languages</EC32>
     <EC33>Title is required in both languages</EC33>
-    <EC34>Electronic mail address is required in both languages</EC34>
 
     <SpatialRepresentation>Value is required for Spatial representation</SpatialRepresentation>
     <EC36>Keyword is required in both languages</EC36>
@@ -80,4 +76,29 @@
     <BeginDate>Value is required for Begin Date</BeginDate>
 
     <Status>Value is required for status</Status>
+
+    <ContactOrganisationName>Contact - Organization name is required in both languages</ContactOrganisationName>
+    <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required in both languages</CitedResponsiblePartyOrganisationName>
+    <DistributorOrganisationName>Distributor - Organization name is required in both languages</DistributorOrganisationName>
+
+    <ContactPositionName>Contact - Position Name should be empty or filled in English and French</ContactPositionName>
+    <CitedResponsiblePartyPositionName>Cited Responsible Party - Position Name should be empty or filled in English and French</CitedResponsiblePartyPositionName>
+    <DistributorPositionName>Distributor - Position Name should be empty or filled in English and French</DistributorPositionName>
+
+    <ContactElectronicMail>Contact - Electronic mail address is required in both languages</ContactElectronicMail>
+    <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required in both languages</CitedResponsiblePartyElectronicMail>
+    <DistributorElectronicMail>Distributor - Electronic mail address is required in both languages</DistributorElectronicMail>
+
+    <ContactHoursOfService>Contact - Hours of service should be empty or filled in English and French</ContactHoursOfService>
+    <CitedResponsiblePartyHoursOfService>Cited Responsible Party - Hours of service should be empty or filled in English and French</CitedResponsiblePartyHoursOfService>
+    <DistributorHoursOfService>Distributor - Hours of service should be empty or filled in English and French</DistributorHoursOfService>
+
+
+    <ContactDeliveryPoint>Contact - Delivery Point should be empty or filled in English and French</ContactDeliveryPoint>
+    <CitedResponsiblePartyDeliveryPoint>Cited Responsible Party - Delivery Point should be empty or filled in English and French</CitedResponsiblePartyDeliveryPoint>
+    <DistributorDeliveryPoint>Distributor - Delivery Point should be empty or filled in English and French</DistributorDeliveryPoint>
+
+    <ContactPhone>Contact - Phone should be empty or filled in English and French</ContactPhone>
+    <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
+    <DistributorPhone>Distributor - Phone should be empty or filled in English and French</DistributorPhone>
 </strings>

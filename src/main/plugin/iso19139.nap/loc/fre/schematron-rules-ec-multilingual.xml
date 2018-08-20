@@ -23,62 +23,82 @@
     <EC38GovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovEnglish>
     <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
 
-    <EC27>Supplemental Information should be empty or filled in both languages</EC27>
-    <EC28>Project should be empty or filled in both languages</EC28>
-    <EC29>Hours of service should be empty or filled in both languages</EC29>
-    <EC30>Delivery Point should be empty or filled in both languages</EC30>
-    <EC31>Note (Other Constraints) is required in both languages</EC31>
+    <EC27>Informations supplémentaires devrait être vide ou rempli en anglais et en français</EC27>
+    <EC31>Autres contraintes devrait être vide ou rempli en anglais et en français</EC31>
 
-    <EC32>Abstract is required in both languages</EC32>
-    <EC33>Title is required in both languages</EC33>
-    <EC34>Electronic mail address is required in both languages</EC34>
+    <EC32>Le résumé est obligatoire dans les deux langues</EC32>
+    <EC33>Le titre est obligatoire dans les deux langues</EC33>
 
     <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
     <EC36>Mot Clé est requise dans les deux langues</EC36>
 
-    <HierarchyLevel>Value is required for HierarchyLevel</HierarchyLevel>
-    <MaintenanceFrequency>Value is required for Maintenance and update frequency</MaintenanceFrequency>
+    <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
+    <MaintenanceFrequency>Une valeur est nécessaire pour: Fréquence de mise à jour</MaintenanceFrequency>
 
+    <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
+    <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>
+    <MapResourcesWMS>Les sources de la carte WMS devraient être disponibles en anglais et en français</MapResourcesWMS>
+    <MapResourcesWMSNumber>Le nombre de sources de la carte WMS devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesWMSNumber>
+    <ResourceDescription>La description des ressources en ligne n'est pas valide. Le format devrait être : TypeContenu;Format;Lang</ResourceDescription>
+    <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+    <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
+    <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
+    <OpenLicense>Le Licence du gouvernement ouvert est nécessaire. Anglais valeur : Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada) , Français valeur : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</OpenLicense>
+    <BeginPositionFormat>Le format de la date de début n’est pas valide</BeginPositionFormat>
+    <EndPositionFormat>Le format de la date de fin n’est pas valide</EndPositionFormat>
+    <EndPosition>La valeur de la date de fin devrait être après celle du début</EndPosition>
+    <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
+    <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
+    <ECThesaurusPubDate>La date de publication du Thésaurus est requise</ECThesaurusPubDate>
+    <ECThesaurusCreDate>La date de création du Thésaurus est requise</ECThesaurusCreDate>
+    <ECThesaurusOrg>Le nom de l’organisation responsable du thésaurus est requis</ECThesaurusOrg>
+    <ECThesaurusRole>Le rôle du responsable du thesaurus est requis</ECThesaurusRole>
+    <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
+    <ReferenceSystemInfo>Une valeur est nécessaire pour: Reference System</ReferenceSystemInfo>
+    <ReferenceSystemInfoCode>Une valeur est nécessaire pour: Information sur le système de référence - Code</ReferenceSystemInfoCode>
 
-    <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
-    <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
-    <MapResourcesWMS>WMS Map Resources should be available in english and french</MapResourcesWMS>
-    <MapResourcesWMSNumber>The number of WMS Map Resources should be at most 2 (one for english and one for french)</MapResourcesWMSNumber>
-    <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
-    <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
-    <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are: </ResourceDescriptionFormat>
-    <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
-    <OpenLicense>The Open Government Licence is required. English value : Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada) , French value : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</OpenLicense>
-    <EndPosition>End position date should be after begin position</EndPosition>
-    <BeginPositionFormat>Begin position format is not value</BeginPositionFormat>
-    <EndPositionFormat>End position format is not value</EndPositionFormat>
-    <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
-    <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
-    <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
-    <ECThesaurusCreDate>Thesaurus creation date is required</ECThesaurusCreDate>
-    <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
-    <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
-    <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
-    <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
-    <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
-
-    <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
-    <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
-    <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
-    <InvalidContactRole>Contact role code is not valid</InvalidContactRole>
-    <InvalidCitedResponsibleRole>Cited responsible role is not valid</InvalidCitedResponsibleRole>
-    <InvalidDistributorRole>Distributor role code is not valid</InvalidDistributorRole>
-    <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
-    <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
-    <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
-    <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
+    <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
+    <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
+    <InvalidStatusCode>Le code d'état n'est pas valide</InvalidStatusCode>
+    <InvalidContactRole>Le code de rôle contact n'est pas valide</InvalidContactRole>
+    <InvalidCitedResponsibleRole>Le code de rôle responsable cité n'est pas valable</InvalidCitedResponsibleRole>
+    <InvalidDistributorRole>Le code de rôle distributeur n'est pas valide</InvalidDistributorRole>
+    <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+    <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
+    <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
+    <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
 
     <MissingContactRole>Contact role is required</MissingContactRole>
     <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
     <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
-    <MissingDate>Value is required for Date</MissingDate>
-    <BeginDate>Value is required for Begin Date</BeginDate>
+    <MissingDate>Une valeur est nécessaire pour date</MissingDate>
+    <BeginDate>Une valeur est nécessaire pour Date de début</BeginDate>
 
     <Status>Une valeur est nécessaire pour: Etat</Status>
+
+
+    <ContactOrganisationName>Contact - Nom de l'organisation est obligatoire dans les deux langues</ContactOrganisationName>
+    <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Nom de l'organisation est obligatoire dans les deux langues</CitedResponsiblePartyOrganisationName>
+    <DistributorOrganisationName>Distributor - Nom de l'organisation est obligatoire dans les deux langues</DistributorOrganisationName>
+
+    <ContactPositionName>Responsable des métadonnées - Position devrait être vide ou rempli en anglais et en français</ContactPositionName>
+    <CitedResponsiblePartyPositionName>Responsable de la ressource - Position devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPositionName>
+    <DistributorPositionName>Distributeur - Position devrait être vide ou rempli en anglais et en français</DistributorPositionName>
+
+    <ContactElectronicMail>Contact - Le courriel est obligatoire dans les deux langues</ContactElectronicMail>
+    <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Le courriel est obligatoire dans les deux langues</CitedResponsiblePartyElectronicMail>
+    <DistributorElectronicMail>Distributor - Le courriel est obligatoire dans les deux langues</DistributorElectronicMail>
+
+    <ContactHoursOfService>Responsable des métadonnées - Heures de service devrait être vide ou rempli en anglais et en français</ContactHoursOfService>
+    <CitedResponsiblePartyHoursOfService>Responsable de la ressource - Heures de service devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyHoursOfService>
+    <DistributorHoursOfService>Responsable de la distribution - Heures de service devrait être vide ou rempli en anglais et en français</DistributorHoursOfService>
+
+    <ContactDeliveryPoint>Responsable des métadonnées - Adresse devrait être vide ou rempli en anglais et en français</ContactDeliveryPoint>
+    <CitedResponsiblePartyDeliveryPoint>Responsable de la ressource - Adresse devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyDeliveryPoint>
+    <DistributorDeliveryPoint>Responsable de la distribution - Adresse devrait être vide ou rempli en anglais et en français</DistributorDeliveryPoint>
+
+    <ContactPhone>Responsable des métadonnées - Numéro de téléphone devrait être vide ou rempli en anglais et en français</ContactPhone>
+    <CitedResponsiblePartyPhone>Responsable de la ressource - Numéro de téléphone devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPhone>
+    <DistributorPhone>Responsable de la distribution - Numéro de téléphone devrait être vide ou rempli en anglais et en français</DistributorPhone>
 </strings>
