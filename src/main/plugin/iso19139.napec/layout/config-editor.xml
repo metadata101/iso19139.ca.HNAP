@@ -271,6 +271,7 @@
       <name>gmd:individualName</name>
       <name>gmd:name</name>
       <name>gmd:code</name>
+      <name>gmd:voice</name>
     </exclude>
   </multilingualFields>
 

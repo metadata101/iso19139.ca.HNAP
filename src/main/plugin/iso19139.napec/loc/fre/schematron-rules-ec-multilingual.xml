@@ -84,4 +84,28 @@
   <SecurityClassification>Une valeur est nécessaire pour: Data classification - GC Restrictions de manipulation</SecurityClassification>
   <MissingDate>Une valeur est nécessaire pour Date</MissingDate>
   <BeginDate>Une valeur est nécessaire pour Date de début</BeginDate>
+
+  <ContactIndividualName>Responsable des métadonnées - Nom de la personne est requis</ContactIndividualName>
+  <CitedResponsiblePartyIndividualName>Responsable de la ressource -Nom de la personne est requis</CitedResponsiblePartyIndividualName>
+  <DistributorIndividualName>Distributeur - Nom de la personne requis</DistributorIndividualName>
+
+  <ContactOrganisationName>Contact - Nom de l'organisation est obligatoire dans les deux langues</ContactOrganisationName>
+  <CitedResponsiblePartyOrganisationName>Responsable de la ressource - Nom de l'organisation est obligatoire dans les deux langues</CitedResponsiblePartyOrganisationName>
+  <DistributorOrganisationName>Distributor - Nom de l'organisation est obligatoire dans les deux langues</DistributorOrganisationName>
+
+  <ContactPositionName>Responsable des métadonnées - Position est obligatoire dans les deux langues</ContactPositionName>
+  <CitedResponsiblePartyPositionName>Responsable de la ressource - Position est obligatoire dans les deux langues</CitedResponsiblePartyPositionName>
+  <DistributorPositionName>Distributeur - Position est obligatoire dans les deux langues</DistributorPositionName>
+
+  <ContactElectronicMail>Contact - Le courriel est obligatoire dans les deux langues</ContactElectronicMail>
+  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Le courriel est obligatoire dans les deux langues</CitedResponsiblePartyElectronicMail>
+  <DistributorElectronicMail>Distributor - Le courriel est obligatoire dans les deux langues</DistributorElectronicMail>
+
+  <ContactHoursOfService>Responsable des métadonnées - Heures de service devrait être vide ou rempli en anglais et en français</ContactHoursOfService>
+  <CitedResponsiblePartyHoursOfService>Responsable de la ressource - Heures de service devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyHoursOfService>
+  <DistributorHoursOfService>Responsable de la distribution - Heures de service devrait être vide ou rempli en anglais et en français</DistributorHoursOfService>
+
+  <ContactDeliveryPoint>Responsable des métadonnées - Adresse devrait être vide ou rempli en anglais et en français</ContactDeliveryPoint>
+  <CitedResponsiblePartyDeliveryPoint>Responsable de la ressource - Adresse devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyDeliveryPoint>
+  <DistributorDeliveryPoint>Responsable de la distribution - Adresse devrait être vide ou rempli en anglais et en français</DistributorDeliveryPoint>
 </strings>
