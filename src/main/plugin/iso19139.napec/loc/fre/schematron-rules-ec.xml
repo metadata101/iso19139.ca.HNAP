@@ -87,6 +87,6 @@
   <Branch>Une valeur est nécessaire pour: Data classification - Direction générale</Branch>
   <Directorate>Une valeur est nécessaire pour: Data classification - Direction</Directorate>
   <SecurityClassification>Une valeur est nécessaire pour: Data classification - GC Restrictions de manipulation</SecurityClassification>
-  <MissingDate>Une valeur est nécessaire pour Date</MissingDate>
-  <BeginDate>Une valeur est nécessaire pour Date de début</BeginDate>
+  <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
+  <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
 </strings>

@@ -68,12 +68,12 @@
     <EC40>Une valeur est nécessaire pour: Métadonnées date de publication</EC40>
     <EC41>Une valeur est nécessaire pour: Métadonnées date de création</EC41>
 
-    <SupplementalInformation>Valeurs anglais et le français sont nécessaires pour: Informations supplémentaires</SupplementalInformation>
-    <Project>Valeurs anglais et le français sont nécessaires pour: Titre de projet</Project>
-    <HoursOfService>Valeurs anglais et le français sont nécessaires pour: Contact pour la ressource - Heures de service</HoursOfService>
+    <SupplementalInformation>Les valeurs en anglais et en français sont nécessaires pour: Informations supplémentaires</SupplementalInformation>
+    <Project>Les valeurs en anglais et en français sont nécessaires pour: Titre de projet</Project>
+    <HoursOfService>Les valeurs en anglais et en français sont nécessaires pour: Contact pour la ressource - Heures de service</HoursOfService>
     <Linkage>Une valeur est nécessaire pour: Ressource en ligne - Adresse Internet</Linkage>
-    <Name>Valeurs anglais et le français sont nécessaires pour: Ressource en ligne - Nom</Name>
-    <Description>Valeurs anglais et le français sont nécessaires pour: Ressource en ligne - Description</Description>
+    <Name>Les valeurs en anglais et en français sont nécessaires pour: Ressource en ligne - Nom</Name>
+    <Description>Les valeurs en anglais et en français sont nécessaires pour: Ressource en ligne - Description</Description>
 
     <SupplementalInformation_1>Anglais valeur est nécessaire pour:Supplemental Information</SupplementalInformation_1>
     <SupplementalInformation_2>Français valeur est nécessaire pour: Supplemental Information</SupplementalInformation_2>
