@@ -72,8 +72,8 @@
     <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
     <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
-    <MissingDate>Une valeur est nécessaire pour date</MissingDate>
-    <BeginDate>Une valeur est nécessaire pour Date de début</BeginDate>
+    <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
+    <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
 
     <Status>Une valeur est nécessaire pour: Etat</Status>
 
