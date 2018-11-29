@@ -307,7 +307,7 @@
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
-			<code>RI_405</code>
+            <code>RI_406</code>
 			<value>diagramHardcopy; diagrammePapier</value>
 			<label>Diagram Hardcopy</label>
 			<description></description>
@@ -413,7 +413,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>RI_421</code>
-      <code>mediator; médiateur</code>
+      <value>mediator; médiateur</value>
       <label>Mediator</label>
       <description>Mediator</description>
     </entry>
@@ -476,7 +476,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_429</code>
-			<code>largerWorkCitation; référenceGénérique</code>
+      <value>largerWorkCitation; référenceGénérique</value>
 			<label>Larger work citation</label>
 			<description>Reference to a master dataset of which this one is a part</description>
 		</entry>
@@ -848,7 +848,7 @@
 		<entry>
 			<code>RI_481</code>
       <value>big5; big5</value>
-			<label>Big 5</label>
+      <label>BIG 5</label>
 			<description>Traditional Chinese code set used in Taiwan, Hong Kong of China and other
 				areas</description>
 		</entry>
@@ -2042,7 +2042,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_633</code>
-			<code>tile; tuile</code>
+      <value>tile; tuile</value>
 			<label>Tile</label>
 			<description>Information applies to a tile, a spatial subset of geographic
 			data</description>
@@ -2544,7 +2544,7 @@
 	<codelist name="srv:SV_CouplingType">
     <entry>
       <code>RI_685</code>
-      <code>tight; fort</code>
+      <value>tight; fort</value>
       <label>Tight</label>
       <description>Tightly coupled: data associated</description>
     </entry>
