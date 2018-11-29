@@ -214,7 +214,7 @@
       <xsl:with-param name="attributesSnippet" select="$attributes"/>
       <xsl:with-param name="type"
                       select="gn-fn-metadata:getFieldType($editorConfig, name(),
-        name($theElement))"/>
+        name($theElement), $xpath)"/>
       <xsl:with-param name="name" select="$theElement/gn:element/@ref"/>
       <xsl:with-param name="editInfo" select="$theElement/gn:element"/>
       <xsl:with-param name="parentEditInfo"
