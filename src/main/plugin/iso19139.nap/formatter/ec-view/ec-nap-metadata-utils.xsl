@@ -90,19 +90,9 @@
           <xsl:if test="position() &gt; 5"><xsl:attribute name="style" select="'display:none'"/></xsl:if>
           <div style="float:left"> <!-- todo: check here the schema for icon to display -->
             <img class="icon" align="bottom">
-              <xsl:choose>
-                <xsl:when test="geonet:info/schema='sensorML'">
-                  <xsl:attribute name="src" select="concat(/root/gui/url,'/images/monsite.png')" />
-                  <xsl:attribute name="alt" select="concat('Monitoring Site:&#160;',title)" />
-                  <xsl:attribute name="title" select="concat('Monitoring Site:&#160;',title)" />
-                </xsl:when>
-                <!-- <xsl:when test=""></xsl:when> todo hierarchy level -> test if service -->
-                <xsl:otherwise>
-                  <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
-                  <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
-                  <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
-                </xsl:otherwise>
-              </xsl:choose>
+              <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
+              <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
+              <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
             </img>
             <!-- Response for related resources is different depending on the relation:
                 * Child relation return a brief representation of metadata

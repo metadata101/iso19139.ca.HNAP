@@ -209,7 +209,6 @@
                     <xsl:value-of
                       select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/images/')"/>
                     <xsl:choose>
-                      <xsl:when test="geonet:info/schema='sensorML'">transmit_blue.png</xsl:when>
                       <xsl:otherwise>database.png</xsl:otherwise>
                     </xsl:choose>
                   </xsl:attribute>
@@ -255,7 +254,6 @@
                     <xsl:value-of
                       select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/images/')"/>
                     <xsl:choose>
-                      <xsl:when test="geonet:info/schema='sensorML'">transmit_blue.png</xsl:when>
                       <xsl:otherwise>database.png</xsl:otherwise>
                     </xsl:choose>
                   </xsl:attribute>
