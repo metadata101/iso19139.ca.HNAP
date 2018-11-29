@@ -278,7 +278,7 @@
     </entry>
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
-      <code>RI_405</code>
+      <code>RI_406</code>
       <value>diagramHardcopy; diagrammePapier</value>
       <label>Diagramme Papier</label>
       <description></description>
@@ -380,7 +380,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>RI_421</code>
-      <code>mediator; médiateur</code>
+      <value>mediator; médiateur</value>
       <label>Médiateur</label>
       <description>Médiateur</description>
     </entry>
@@ -438,7 +438,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_429</code>
-      <code>largerWorkCitation; référenceGénérique</code>
+      <value>largerWorkCitation; référenceGénérique</value>
 			<label>Référence générique</label>
 			<description>Référence à un jeu de données maître</description>
 		</entry>
@@ -609,14 +609,14 @@
 		<entry>
       <code>RI_455</code>
       <value>ucs2; ucs2</value>
-			<label>Ucs2</label>
+      <label>UCS2</label>
 			<description>16-bit fixed size Universal Character Set, based on ISO 10646</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_456</code>
       <value>ucs4; ucs4</value>
-			<label>Ucs4</label>
+      <label>UCS4</label>
 			<description>32-bit fixed size Universal Character Set, based on ISO/IEC
 			10646</description>
 		</entry>
@@ -624,21 +624,21 @@
 		<entry>
       <code>RI_457</code>
       <value>utf7; utf7</value>
-			<label>Utf7</label>
+      <label>UTF7</label>
 			<description>7-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_458</code>
       <value>utf8; utf8</value>
-			<label>Utf8</label>
+      <label>UTF8</label>
 			<description>8-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_459</code>
       <value>utf16; utf16</value>
-			<label>Utf16</label>
+      <label>UTF16</label>
 			<description>16-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -765,7 +765,7 @@
 		<entry>
       <code>RI_475</code>
       <value>jis; jis</value>
-			<label>Jis</label>
+      <label>JIS</label>
 			<description>Japanese code set used for electronic transmission</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -779,35 +779,35 @@
 		<entry>
       <code>RI_477</code>
       <value>eucJP; eucJP</value>
-			<label>EucJP</label>
+      <label>>EUC JP</label>
 			<description>Japanese code set used on UNIX based machines</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_478</code>
       <value>usAscii; usAscii</value>
-			<label>UsAscii</label>
+      <label>US ASCII</label>
 			<description>United States ASCII code set (ISO 646 US)</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_479</code>
       <value>ebcdic; ebcdic</value>
-			<label>Ebcdic</label>
+      <label>EBCDIC</label>
 			<description>IBM mainframe code set</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_480</code>
       <value>eucKR; eucKR</value>
-			<label>EucKR</label>
+      <label>EUC KR</label>
 			<description>Korean code set</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_481</code>
       <value>big5; big5</value>
-			<label>Big5</label>
+      <label>BIG 5</label>
 			<description>Traditional Chinese code set used in Taiwan, Hong Kong of China and other
 				areas</description>
 		</entry>
@@ -1286,7 +1286,7 @@
 		<entry>
       <code>RI_540</code>
       <value>asNeeded; auBesoin</value>
-			<label>Au Besoin</label>
+      <label>Au besoin</label>
 			<description>Mise à jour lorsque cela est jugé nécessaire</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1300,7 +1300,7 @@
 		<entry>
       <code>RI_542</code>
       <value>notPlanned; nonPlanifié</value>
-			<label>Non Planifié</label>
+      <label>Non planifié</label>
 			<description>Mise à jour non planifiée</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1376,7 +1376,6 @@
     </entry>
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
-	<!-- ==================================================== -->
   <!-- ==================================================== -->
   <codelist name="gmd:MD_MediumNameCode">
     <entry>
@@ -1858,33 +1857,29 @@
   </codelist>
 	<!-- ==================================================== -->
 	<codelist name="gmd:MD_ScopeCode">
-		<entry>
-      <code>RI_618</code>
-      <value>attribute; attribut</value>
+		<!--<entry>
+                <code>attribute</code>
       <label>Attribut</label>
       <description>Informations appliquées aux caractéristiques de l’attribut</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_619</code>
-      <value>attributeType; typeAttribut</value>
+        <!--<entry>
+                <code>attributeType</code>
       <label>Type d'attribut</label>
       <description>Informations appliquées aux caractéristiques de l’entité</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_620</code>
-      <value>collectionHardware; collectionMatériel</value>
+        <!--<entry>
+                <code>collectionHardware</code>
       <label>Collection matérielle</label>
       <description>Informations appliquées aux caractéristiques d’une collection matérielle</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_621</code>
-      <value>collectionSession; collectionSession</value>
+        <!--<entry>
+                <code>collectionSession</code>
       <label>Collection de session</label>
       <description>Informations appliquées aux caractéristiques d’une collection de session</description>
-    </entry>
+        </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_622</code>
@@ -1896,58 +1891,51 @@
 		<entry>
       <code>RI_623</code>
       <value>series; série</value>
-			<label>Série</label>
+			<label>Collection de données</label>
 			<description>Informations appliquées aux caractéristiques de la collection de données</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-      <code>RI_624</code>
-      <value>nonGeographicDataset; JeuDonnéesNonGéographique</value>
-			<label>Jeu de données non géographique</label>
+		<!--<entry>
+			<code>nonGeographicDataset</code>
+			<label>Jeux de données non géographiques</label>
 			<description>Informations appliquées aux caractéristiques de jeux de données non géographiques</description>
-		</entry>
+		</entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_625</code>
-      <value>dimensionGroup; groupeDimension</value>
-      <label>Groupe dimension</label>
+                <!--<entry>
+                <code>dimensionGroup</code>
+                <label>Dimension d'un groupe</label>
       <description>Informations appliquées à un groupe</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_626</code>
-      <value>feature; entité</value>
+        <!--<entry>
+                <code>feature</code>
       <label>Entité</label>
       <description>Informations appliquées à une entité</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_627</code>
-      <value>featureType; typeEntité</value>
+        <!--<entry>
+                <code>featureType</code>
       <label>Type d’entité</label>
       <description>Informations appliquées à un type d’entité</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_628</code>
-      <value>propertyType; typePropriété</value>
+        <!--<entry>
+                <code>propertyType</code>
       <label>Type de propriété</label>
       <description>Informations appliquées à un type de propriété</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_629</code>
-      <value>fieldSession; campagneTerrain</value>
-      <label>Campagne terrain</label>
+        <!--<entry>
+                <code>fieldSession</code>
+                <label>Champ de session</label>
       <description>Informations appliquées aux caractéristiques d’un champ de session</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_630</code>
-      <value>software; logiciel</value>
+        <!--<entry>
+                <code>software</code>
       <label>Logiciel</label>
       <description>Informations appliquées à programme ou à une routine</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>RI_631</code>
@@ -1956,19 +1944,17 @@
       <description>Informations appliquées à un service Internet</description>
     </entry>
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_632</code>
-      <value>model; modèle</value>
+        <!--<entry>
+                <code>model</code>
       <label>Modèle</label>
       <description>Informations appliquées à modèle décrivant les objets ou un ensemble d'objets</description>
-    </entry>
+        </entry>-->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <entry>
-      <code>RI_633</code>
-      <code>tile; tuile</code>
+        <!--<entry>
+                <code>tile</code>
       <label>Tuile</label>
       <description>Tuile</description>
-    </entry>
+        </entry>-->
 
 		<!-- ISO PROFIL CHE ONLY
 		<entry>
@@ -2461,7 +2447,6 @@
         </entry>
     </codelist>
 
-    <!-- ==================================================== -->
   <!-- ==================================================== -->
   <codelist name="napm:napMD_FileFormatCode">
     <entry>

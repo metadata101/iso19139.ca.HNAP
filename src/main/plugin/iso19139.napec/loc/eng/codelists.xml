@@ -308,7 +308,7 @@
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
-			<code>RI_405</code>
+      <code>RI_406</code>
 			<value>diagramHardcopy; diagrammePapier</value>
 			<label>Diagram Hardcopy</label>
 			<description></description>
@@ -327,7 +327,7 @@
 		<entry>
 			<code>RI_409</code>
       <value>custodian; conservateur</value>
-			<label>Custodian</label>
+      <label>Steward</label>
 			<description>Party that accepts accountability and responsability for the data and ensures
 				appropriate care and maintenance of the resource</description>
 		</entry>
@@ -414,7 +414,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>RI_421</code>
-      <code>mediator; médiateur</code>
+      <value>mediator; médiateur</value>
       <label>Mediator</label>
       <description>Mediator</description>
     </entry>
@@ -477,7 +477,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_429</code>
-			<code>largerWorkCitation; référenceGénérique</code>
+			<value>largerWorkCitation; référenceGénérique</value>
 			<label>Larger work citation</label>
 			<description>Reference to a master dataset of which this one is a part</description>
 		</entry>
@@ -849,7 +849,7 @@
 		<entry>
 			<code>RI_481</code>
       <value>big5; big5</value>
-			<label>Big 5</label>
+      <label>BIG 5</label>
 			<description>Traditional Chinese code set used in Taiwan, Hong Kong of China and other
 				areas</description>
 		</entry>
@@ -1933,33 +1933,33 @@
   </codelist>
 	<!-- ==================================================== -->
 	<codelist name="gmd:MD_ScopeCode">
-		<entry>
+    <!--<entry>
 			<code>RI_618</code>
       <value>attribute; attribut</value>
 			<label>Attribute</label>
 			<description>Information applies to the attribute class</description>
-		</entry>
+    </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
 			<code>RI_619</code>
       <value>attributeType; typeAttribut</value>
 			<label>Attribute type</label>
 			<description>Information applies to the characteristic of a feature</description>
-		</entry>
+    </entry> -->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_620</code>
 			<value>collectionHardware; collectionMatériel</value>
 			<label>Collection hardware</label>
 			<description>Information applies to the collection hardware class</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_621</code>
 			<value>collectionSession; collectionSession</value>
 			<label>Collection session</label>
 			<description>Information applies to the collection session</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_622</code>
@@ -1975,54 +1975,54 @@
 			<description>Information applies to the series</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!-- <entry>
       <code>RI_624</code>
 			<value>nonGeographicDataset; JeuDonnéesNonGéographique</value>
 			<label>Non geographic dataset</label>
 			<description>Information applies to non-geographic data</description>
-		</entry>
+    </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_625</code>
 			<value>dimensionGroup; groupeDimension</value>
 			<label>Dimension group</label>
 			<description>Information applies to a dimension group</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_626</code>
 			<value>feature; entité</value>
 			<label>Feature</label>
 			<description>Information applies to a feature</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_627</code>
 			<value>featureType; typeEntité</value>
 			<label>Feature type</label>
 			<description>Information applies to a feature type</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_628</code>
 			<value>propertyType; typePropriété</value>
 			<label>Property type</label>
 			<description>Information applies to a property type</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_629</code>
 			<value>fieldSession; campagneTerrain</value>
 			<label>Field session</label>
 			<description>Information applies to a field session</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_630</code>
 			<value>software; logiciel</value>
 			<label>Software</label>
 			<description>Information applies to a computer program or routine</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
       <code>RI_631</code>
@@ -2033,21 +2033,21 @@
 				such as a use case</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_632</code>
 			<value>model; modèle</value>
 			<label>Model</label>
 			<description>Information applies to a copy or imitation of an existing or hypothetical
 				object</description>
-		</entry>
+   </entry>-->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
+    <!--<entry>
       <code>RI_633</code>
 			<code>tile; tuile</code>
 			<label>Tile</label>
 			<description>Information applies to a tile, a spatial subset of geographic
 			data</description>
-		</entry>
+   </entry>-->
 		<!-- ISO PROFIL CHE ONLY
 		<entry>
 			<code>project</code>
@@ -2551,7 +2551,7 @@
 	<codelist name="srv:SV_CouplingType">
     <entry>
       <code>RI_685</code>
-      <code>tight; fort</code>
+        <value>tight; fort</value>
       <label>Tight</label>
       <description>Tightly coupled: data associated</description>
     </entry>
