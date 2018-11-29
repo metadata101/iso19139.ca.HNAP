@@ -287,7 +287,6 @@
     <!-- md title -->
     <h1 id="wb-cont" style="border-bottom:none" itemprop="name">
       <!-- as defined in md-show -->
-      <img src="{/root/gui/url}/images/dataset.png" class="ds-icon-lg" alt="{$schemaStrings/dataset}: {/root/gmd:MD_Metadata//gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale)='/root/lang']}" />
       <xsl:for-each select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title">
         <xsl:call-template name="localised">
           <xsl:with-param name="langId" select="$langForMetadata" />
