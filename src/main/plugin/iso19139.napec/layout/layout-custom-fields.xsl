@@ -689,6 +689,11 @@
             <xsl:with-param name="process-params">{"replace": true}</xsl:with-param>
           </xsl:call-template>
         </xsl:if>-->
+
+        <div class="col-sm-offset-2 col-sm-9">
+          <xsl:call-template name="get-errors"/>
+        </div>
+
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates mode="mode-iso19139" select="*"/>

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
+  <Metadata>Metadata Information</Metadata>
+  <DataIdentification>Data Identification</DataIdentification>
+  <Distribution>Distribution</Distribution>
+  <CorporateInfo>Corporate Information</CorporateInfo>
+  <InformationClassification>Information Classification</InformationClassification>
+
   <EC1>Value is required for Organization name</EC1>
   <EC2>Value is required for Individual name</EC2>
   <EC3>Value is required for Position name</EC3>
