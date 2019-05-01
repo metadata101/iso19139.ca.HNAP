@@ -83,9 +83,7 @@
 
           <xsl:attribute name="error">
             <xsl:choose>
-              <xsl:when test="normalize-space($contentTypeStatus) = 'true' and normalize-space($formatStatus) = 'true' and normalize-space($languageStatus) = 'true'">
-                false
-              </xsl:when>
+              <xsl:when test="normalize-space($contentTypeStatus) = 'true' and normalize-space($formatStatus) = 'true' and normalize-space($languageStatus) = 'true'">false</xsl:when>
               <xsl:otherwise>true</xsl:otherwise>
             </xsl:choose>
           </xsl:attribute>
