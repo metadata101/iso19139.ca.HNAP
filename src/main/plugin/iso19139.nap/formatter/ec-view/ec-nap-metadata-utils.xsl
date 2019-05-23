@@ -339,7 +339,7 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:choose>
@@ -367,7 +367,7 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:apply-templates mode="localised" select=".">
@@ -390,7 +390,7 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:apply-templates mode="render-value" select="gmd:CI_Date/gmd:date"/>
@@ -415,7 +415,7 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:apply-templates mode="render-field" select="*"/>
@@ -435,7 +435,7 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:variable name="text">
@@ -487,13 +487,13 @@
       <dt>
         <xsl:value-of select="if ($fieldName)
                                 then $fieldName
-                                else tr:node-label(tr:create($schema), name(), null)"/>
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
       </dt>
       <dd>
         <xsl:for-each select="../gmd:topicCategory/gmd:MD_TopicCategoryCode">
           <xsl:variable name="codelistTranslation"
                         select="tr:codelist-value-label(
-                            tr:create($schema),
+                            tr:create($schema, $language),
                            local-name(), .)"/>
           <xsl:value-of select="$codelistTranslation" />
           <xsl:if test="position() != last()"><xsl:text>, </xsl:text></xsl:if>
@@ -515,7 +515,7 @@
 
     <dl>
       <dt>
-        <xsl:value-of select="tr:node-label(tr:create($schema), $thesaurusId, null)"/>
+        <xsl:value-of select="tr:node-label(tr:create($schema, $language), $thesaurusId, null)"/>
       </dt>
       <dd>
         <xsl:variable name="infoCatList">
@@ -584,14 +584,14 @@
     <xsl:variable name="id" select="."/>
     <xsl:variable name="codelistTranslation"
                   select="tr:codelist-value-label(
-                            tr:create($schema),
+                            tr:create($schema, $language),
                             parent::node()/local-name(), $id)"/>
     <xsl:choose>
       <xsl:when test="$codelistTranslation != ''">
 
         <xsl:variable name="codelistDesc"
                       select="tr:codelist-value-desc(
-                            tr:create($schema),
+                            tr:create($schema, $language),
                             parent::node()/local-name(), $id)"/>
         <span title="{$codelistDesc}">
           <xsl:value-of select="$codelistTranslation"/>
