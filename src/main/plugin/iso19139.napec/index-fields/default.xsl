@@ -588,7 +588,7 @@
     <xsl:choose>
       <xsl:when test="gmd:hierarchyLevel">
         <xsl:for-each select="gmd:hierarchyLevel/gmd:MD_ScopeCode">
-          <Field name="type" string="{string(tokenize(., ';')[1])}" store="true" index="true"/>
+          <Field name="type" string="{string(tokenize(lower-case(.), ';')[1])}" store="true" index="true"/>
         </xsl:for-each>
       </xsl:when>
       <xsl:otherwise>

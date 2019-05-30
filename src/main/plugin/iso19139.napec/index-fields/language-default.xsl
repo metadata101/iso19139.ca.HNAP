@@ -415,13 +415,22 @@
 
     <xsl:choose>
       <xsl:when test="gmd:hierarchyLevel">
-        <xsl:for-each select="gmd:hierarchyLevel/gmd:MD_ScopeCode/@codeListValue">
-          <Field name="type" string="{string(.)}" store="true" index="true"/>
+        <xsl:for-each select="gmd:hierarchyLevel/gmd:MD_ScopeCode">
+          <Field name="type" string="{string(tokenize(lower-case(.), ';')[1])}" store="true" index="true"/>
         </xsl:for-each>
       </xsl:when>
       <xsl:otherwise>
         <Field name="type" string="dataset" store="true" index="true"/>
       </xsl:otherwise>
+    </xsl:choose>
+
+    <xsl:choose>
+      <xsl:when test="gmd:identificationInfo/srv:SV_ServiceIdentification">
+        <Field name="type" string="service" store="false" index="true"/>
+      </xsl:when>
+      <!-- <xsl:otherwise>
+       ... gmd:*_DataIdentification / hierachicalLevel is used and return dataset, serie, ...
+       </xsl:otherwise>-->
     </xsl:choose>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
