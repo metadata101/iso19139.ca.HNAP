@@ -139,6 +139,22 @@
 
       </sch:rule>
 
+
+      <!-- Position Name -->
+      <sch:rule context="//gmd:contact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+        <sch:assert
+          test="not($missing) and not($missingOtherLang)"
+
+        >$loc/strings/ContactPositionName</sch:assert>
+      </sch:rule>
+
+
       <!-- Country -->
        <sch:rule context="//gmd:contact//gmd:country">
         <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'))"/>
@@ -195,7 +211,23 @@
 
       </sch:rule>
 
-        <!-- Country -->
+      <!-- Position Name -->
+      <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
+            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+        <sch:assert
+          test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+        >$loc/strings/CitedResponsiblePartyPositionName</sch:assert>
+
+      </sch:rule>
+
+      <!-- Country -->
        <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country">
@@ -252,6 +284,19 @@
         <sch:assert test="not(string($organisationNameOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])) = $titleNameOtherLang]))
                 )">$loc/strings/EC26GovFrench</sch:assert>
 
+      </sch:rule>
+
+      <!-- Position name -->
+      <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+              or (@gco:nilReason)" />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+
+        <sch:assert
+          test="not($missing) and not($missingOtherLang)"
+        >$loc/strings/DistributorPositionName</sch:assert>
       </sch:rule>
 
       <!-- Country -->

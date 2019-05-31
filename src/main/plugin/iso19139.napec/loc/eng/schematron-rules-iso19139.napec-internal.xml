@@ -73,6 +73,12 @@
     <Project>English and French values are required for Project</Project>
     <Project_1>English value is required for Project</Project_1>
     <Project_2>French value is required for Project</Project_2>
+    <PositionName_1>English value is required for Contact - Position Name</PositionName_1>
+    <PositionName_2>French value is required for Contact - Position Name</PositionName_2>
+    <PositionNameCited_1>English value is required for Cited Responsible Contact - Position Name</PositionNameCited_1>
+    <PositionNameCited_2>French value is required for Cited Responsible Contact - Position Name</PositionNameCited_2>
+    <PositionNameDist_1>English value is required for Distributor Contact - Position Name</PositionNameDist_1>
+    <PositionNameDist_2>French value is required for Distributor Contact - Position Name</PositionNameDist_2>
     <HoursOfService>English and French values are required for Contact - Hours of Service</HoursOfService>
     <HoursOfService_1>English value is required for Contact - Hours of Service</HoursOfService_1>
     <HoursOfService_2>French value is required for Contact - Hours of Service</HoursOfService_2>

@@ -80,6 +80,12 @@
     <SupplementalInformation_2>Français valeur est nécessaire pour: Supplemental Information</SupplementalInformation_2>
     <Project_1>English value is required for Project</Project_1>
     <Project_2>Français valeur est nécessaire pour: Project</Project_2>
+    <PositionName_1>English value is required for Contact - Position Name</PositionName_1>
+    <PositionName_2>French value is required for Contact - Position Name</PositionName_2>
+    <PositionNameCited_1>English value is required for Cited Responsible Contact - Position Name</PositionNameCited_1>
+    <PositionNameCited_2>French value is required for Cited Responsible Contact - Position Name</PositionNameCited_2>
+    <PositionNameDist_1>English value is required for Distributor Contact - Position Name</PositionNameDist_1>
+    <PositionNameDist_2>French value is required for Distributor Contact - Position Name</PositionNameDist_2>
     <HoursOfService_1>English value is required for Contact - Hours of Service</HoursOfService_1>
     <HoursOfService_2>Français valeur est nécessaire pour: Contact - Hours of Service</HoursOfService_2>
     <HoursOfServiceCited_1>Anglais valeur est nécessaire pour: Responsable Contact - Heures de service</HoursOfServiceCited_1>
