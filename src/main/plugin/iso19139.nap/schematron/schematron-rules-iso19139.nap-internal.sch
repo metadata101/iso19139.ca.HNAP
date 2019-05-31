@@ -622,19 +622,34 @@
         </sch:rule>
 
       <!-- Contact -->
-        <!-- Hours of service -->
-        <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:hoursOfService">
 
-           <sch:let name="missing" value="not(string(gco:CharacterString))
+      <!-- Position name -->
+      <sch:rule context="//gmd:contact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
                " />
 
-           <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']))" />
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']))" />
 
-            <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
-                                                           not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
-            <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/HoursOfService_1</sch:assert>
-            <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/HoursOfService_2</sch:assert>
-        </sch:rule>
+        <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                       not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+        <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/PositionName_1</sch:assert>
+        <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/PositionName_2</sch:assert>
+      </sch:rule>
+
+      <!-- Hours of service -->
+      <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:hoursOfService">
+
+         <sch:let name="missing" value="not(string(gco:CharacterString))
+             " />
+
+         <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']))" />
+
+          <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                         not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+          <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/HoursOfService_1</sch:assert>
+          <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/HoursOfService_2</sch:assert>
+      </sch:rule>
 
 		 <!-- Delivery point -->
 		 <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
@@ -716,6 +731,20 @@
       </sch:rule>
 
       <!-- Distributor Contact -->
+      <!-- Position name -->
+      <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+               " />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']))" />
+
+        <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                       not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+        <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/PositionNameDist_1</sch:assert>
+        <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/PositionNameDist_2</sch:assert>
+      </sch:rule>
+
       <!-- Hours of service -->
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
 

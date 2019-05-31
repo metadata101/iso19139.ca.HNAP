@@ -199,9 +199,6 @@
         test="not($missing)"
       >$loc/strings/MissingContactRole</sch:assert>
 
-
-      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
-
       <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
       <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />
 
@@ -532,8 +529,8 @@
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date">
 
-      <sch:let name="missing" value="not(string(*/text()))
-                      " />
+      <sch:let name="missing" value="not(string(gco:Date)) and not(string(gco:DateTime))
+                    " />
 
       <sch:assert
         test="not($missing)"
@@ -566,18 +563,6 @@
             or (@gco:nilReason)" />
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-      <sch:assert
-        test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC36</sch:assert>
-
-    </sch:rule>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(string(gmd:thesaurusName/gmd:CI_Citation/@id))]">
-      <sch:let name="missing" value="not(string(gmd:keyword/gco:CharacterString))
-            or (@gco:nilReason)" />
-
-      <sch:let name="missingOtherLang" value="not(string(gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
@@ -737,16 +722,17 @@
     <!-- Begin position -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement">
 
-      <sch:let name="beginPosition" value="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition" />
+      <sch:let name="beginPosition" value="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod//gml:beginPosition" />
       <sch:let name="missingBeginPosition" value="not(string($beginPosition))" />
 
       <sch:assert test="not($missingBeginPosition)">$loc/strings/BeginDate</sch:assert>
       <sch:assert test="$missingBeginPosition or (geonet:verifyDateFormat($beginPosition) &gt; 0)">$loc/strings/BeginPositionFormat</sch:assert>
 
-      <sch:let name="endPosition" select="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:endPosition" />
+
+      <sch:let name="endPosition" select="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod//gml:endPosition" />
       <sch:let name="missingEndPosition" value="not(string($endPosition))" />
 
-      <sch:assert test="$missingBeginPosition or $missingEndPosition or geonet:compareDates($endPosition, $beginPosition) &gt;= 0">$loc/strings/EndPosition</sch:assert>
+      <sch:assert test="$missingBeginPosition or $missingEndPosition or (geonet:compareDates($endPosition, $beginPosition) &gt;= 0)">$loc/strings/EndPosition</sch:assert>
     </sch:rule>
 
 
@@ -1024,7 +1010,6 @@
     <!-- Distributor - Role -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
 
-      <xsl:message>InvalidDistributorRole check</xsl:message>
       <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
 
       <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
@@ -1033,9 +1018,6 @@
       <sch:assert
         test="not($missing)"
       >$loc/strings/MissingDistributorRole</sch:assert>
-
-
-      <sch:let name="roleCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
 
       <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
       <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />

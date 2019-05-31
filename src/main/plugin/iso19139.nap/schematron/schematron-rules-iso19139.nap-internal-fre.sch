@@ -608,6 +608,20 @@
         </sch:rule>
 
       <!-- Contact -->
+      <!-- Position name -->
+      <sch:rule context="//gmd:contact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+               " />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']))" />
+
+        <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                       not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+        <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/PositionName_1</sch:assert>
+        <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/PositionName_2</sch:assert>
+      </sch:rule>
+
       <!-- Hours of service -->
       <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:hoursOfService">
 
@@ -653,6 +667,22 @@
 
 
       <!-- Cited Responsible Contact -->
+      <!-- Position name -->
+      <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
+                |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
+                |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+               " />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']))" />
+
+        <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                       not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+        <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/PositionNameCited_1</sch:assert>
+        <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/PositionNameCited_2</sch:assert>
+      </sch:rule>
+
       <!-- Hours of service -->
       <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
                 |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
@@ -704,6 +734,20 @@
 
 
       <!-- Distributor Contact -->
+      <!-- Position name -->
+      <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
+
+        <sch:let name="missing" value="not(string(gco:CharacterString))
+               " />
+
+        <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng']))" />
+
+        <!--<sch:assert test="(not($missing and not($missingOtherLang)) and
+                                                       not($missingOtherLang and not($missing)))">$loc/strings/HoursOfService</sch:assert>-->
+        <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/PositionNameDist_1</sch:assert>
+        <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/PositionNameDist_2</sch:assert>
+      </sch:rule>
+
       <!-- Hours of service -->
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
 
