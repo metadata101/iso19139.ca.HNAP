@@ -474,6 +474,10 @@
         <xsl:for-each select="//@codeListValue">
           <xsl:value-of select="concat(., ' ')"/>
         </xsl:for-each>
+        <xsl:text> </xsl:text>
+        <xsl:for-each select="//gmd:fileIdentifier/gco:CharacterString">
+          <xsl:value-of select="concat(., ' ')"/>
+        </xsl:for-each>
       </xsl:attribute>
     </Field>
 
