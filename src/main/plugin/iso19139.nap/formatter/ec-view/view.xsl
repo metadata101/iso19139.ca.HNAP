@@ -468,6 +468,43 @@
         <xsl:with-param name="content">
           <table class="sidebar" style="table-layout:fixed; width:99% !important; word-wrap: break-word;">
             <tbody>
+              <!-- keywords (no Core Subject thesaurus) -->
+              <xsl:variable name="kCodelist" select="/root/schemas/*[name()=$schema]/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
+
+              <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords[
+                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and
+                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
+
+                <dl>
+                  <dt>
+                    <xsl:value-of select="$kCodelist/entry[code=current-grouping-key()]/label" />
+                  </dt>
+                  <dd>
+                    <xsl:variable name="keywordsList">
+                      <xsl:for-each select="current-group()">
+
+                        <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
+                          <xsl:variable name="keywordVal">
+                            <xsl:call-template name="localised">
+                              <xsl:with-param name="langId" select="$langForMetadata" />
+                            </xsl:call-template>
+                          </xsl:variable>
+
+                          <xsl:value-of select="normalize-space($keywordVal)" /><xsl:if test="string(normalize-space($keywordVal))"><xsl:text>, </xsl:text></xsl:if>
+                        </xsl:for-each>
+
+                      </xsl:for-each>
+                    </xsl:variable>
+
+                    <xsl:variable name="keywordsListNorm" select="normalize-space($keywordsList)" />
+                    <xsl:if test="string($keywordsListNorm)">
+                      <xsl:value-of select="substring($keywordsListNorm, 1, string-length($keywordsListNorm) - 1)" />
+                    </xsl:if>
+                  </dd>
+                </dl>
+
+              </xsl:for-each-group>
+
               <xsl:apply-templates mode="render-field" select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:descriptiveKeywords[contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Government of Canada Core Subject Thesaurus') or
                 contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Thésaurus des sujets de base du gouvernement du Canada')]" />
 
