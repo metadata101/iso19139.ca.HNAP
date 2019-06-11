@@ -553,7 +553,13 @@
                 priority="3000">
 
 
-    <xsl:variable name="thesaurusId" select="*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString" />
+    <xsl:variable name="thesaurusId">
+      <xsl:choose>
+        <xsl:when test="contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Government of Canada Core Subject Thesaurus') or
+                contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Thésaurus des sujets de base du gouvernement du Canada')">CoreSubjectThesaurus</xsl:when>
+        <xsl:otherwise><xsl:value-of select="*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
 
     <dl>
       <dt>
