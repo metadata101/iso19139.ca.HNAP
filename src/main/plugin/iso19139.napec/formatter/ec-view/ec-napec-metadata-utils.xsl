@@ -152,15 +152,28 @@
       </xsl:choose>
     </xsl:variable>-->
 
-    <!--<xsl:variable name="xmlUrl" select="concat($url,'/', normalize-space($mdDownloadLink), '?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
-    <xsl:variable name="xmlUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xml')"/>
+    <xsl:variable name="draftParameter">
+      <xsl:choose>
+        <xsl:when test="/root/info/record/workspace = 'true' or /root/info/record/status = '1'">?draft=true</xsl:when>
+        <xsl:otherwise></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="xmlUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xml', $draftParameter)"/>
     <a href="#" target="_blank" onclick="downloadXml('{$xmlUrl}', '{$muuid}'); return false;" title="{/root/gui/strings/downloadas} XML" class="btn btn-default btn-md mrgn-rght-sm">
       <img src="{/root/gui/url}/images/xml.png" alt="{/root/gui/strings/downloadas} XML" title="{/root/gui/strings/downloadas} XML" />
     </a>
 
+    <xsl:variable name="draftParameter2">
+      <xsl:choose>
+        <xsl:when test="/root/info/record/workspace = 'true' or /root/info/record/status = '1'">&amp;draft=y</xsl:when>
+        <xsl:otherwise>&amp;draft=n</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
     <!-- add pdf link -->
     <!--<xsl:variable name="pdfUrl" select="concat($url,'/rest.pdf?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
-    <xsl:variable name="pdfUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xsl-view?root=div&amp;output=pdf')"/>
+    <xsl:variable name="pdfUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xsl-view?root=div&amp;output=pdf', $draftParameter2)"/>
     <a href="{$pdfUrl}" title="{/root/gui/strings/downloadas} PDF" class="btn btn-default btn-md" target="_blank">
       <img src="{/root/gui/url}/images/pdf_small.gif" alt="{/root/gui/strings/downloadas} PDF" title="{/root/gui/strings/downloadas} PDF" />
     </a>
