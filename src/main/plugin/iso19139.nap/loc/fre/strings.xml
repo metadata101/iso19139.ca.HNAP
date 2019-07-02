@@ -189,10 +189,10 @@
   <DataPointContact>Point de contact pour les données</DataPointContact>
 
   <Status>Statut</Status>
-  <Publishedto>Published à</Publishedto>
-  <owner>Auteur</owner>
+  <Publishedto>Emplacement de publication</Publishedto>
+  <owner>Propriétaire de la métadonnée</owner>
   <lastChangedBy>Dernier changement effectué par</lastChangedBy>
-  <changeDate>Date de mise à jour des métadonnées</changeDate>
+  <changeDate>Date de mise à jour de la métadonnée</changeDate>
   <rating>Openness rating</rating>
   <ParentCollection>Ensemble apparenté</ParentCollection>
 
@@ -206,16 +206,16 @@
   <distributionFormats>Distribution Formats</distributionFormats>
   <distributionResources>Resources</distributionResources>
 
-  <view>View</view>
-  <published>Published</published>
-  <approved_local>Published &amp; Draft</approved_local>
+  <view>Voir</view>
+  <published>Publié</published>
+  <approved_local>Publié+Ébauche</approved_local>
   <approved>Approved</approved>
-  <retired>Retired</retired>
-  <submitted>Submitted</submitted>
-  <rejected>Rejected</rejected>
-  <view_published>View published version</view_published>
-  <view_draft>View draft version</view_draft>
-  <draft>Draft</draft>
+  <retired>Retirée</retired>
+  <submitted>Soumise</submitted>
+  <rejected>Refusée</rejected>
+  <view_published>Voir Publiées</view_published>
+  <view_draft>Voir Ébauche</view_draft>
+  <draft>Ébauche</draft>
 
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
   <addDate>Add date</addDate>
