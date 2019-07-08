@@ -133,7 +133,7 @@
     <xsl:param name="title" select="''" />
     <xsl:param name="content" />
     <xsl:param name="style" select="''" /> <!-- can be '', success, info, warning, danger-->
-    <div class="list-group">
+    <div class="list-group" style="word-wrap: break-word;">
       <xsl:if test="$title!=''">
         <xsl:variable name="titlestyle"><xsl:choose>
           <xsl:when test="$style=''">active</xsl:when>
