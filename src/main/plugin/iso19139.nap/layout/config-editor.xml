@@ -510,6 +510,18 @@
     </view>
 
     <view name="advanced">
+      <topPanel>
+        <directive data-gn-validation-report=""/>
+      </topPanel>
+
+      <topPanel2>
+        <directive data-gn-classification-canada=""/>
+      </topPanel2>
+
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+      </sidePanel>
+
       <tab id="identificationInfo" default="true">
         <section xpath="/gmd:MD_Metadata/gmd:identificationInfo" or="identificationInfo"
                  in="/gmd:MD_Metadata"/>
