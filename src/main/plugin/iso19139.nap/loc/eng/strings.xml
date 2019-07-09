@@ -23,6 +23,17 @@
   <nap-default>NAP default</nap-default>
   <xml>XML view</xml>
 
+  <identificationInfo>Identification</identificationInfo>
+  <distributionInfo>Distribution</distributionInfo>
+  <dataQualityInfo>Quality</dataQualityInfo>
+  <spatialRepresentationInfo>Spatial rep.</spatialRepresentationInfo>
+  <referenceSystemInfo>Ref. system</referenceSystemInfo>
+  <contentInfo>Content</contentInfo>
+  <portrayalCatalogueInfo>Portrayal</portrayalCatalogueInfo>
+  <metadataConstraints>Md. constraints</metadataConstraints>
+  <metadataMaintenance>Md. maintenance</metadataMaintenance>
+  <applicationSchemaInfo>Schema info</applicationSchemaInfo>
+
   <GeographicExtent>Geographic Extent</GeographicExtent>
   <GeographicScope>Geographic Scope</GeographicScope>
   <Timeperiod>Time Period</Timeperiod>
