@@ -390,15 +390,15 @@
     <!-- this template is in /envcan/metadata.xsl, and includes a title, if any relations -->
     <xsl:call-template name="parentCollection">
       <!-- TODO retrieve the parent metadata -->
-      <xsl:with-param name="resources" select="/root/gui/relation/parent/response/*[geonet:info]"/>
-      <xsl:with-param name="theme" select="geonet:info/Theme"/>
-      <xsl:with-param name="subtheme" select="geonet:info/Subtheme"/>
-      <xsl:with-param name="schema" select="geonet:info/schema"/>
+      <xsl:with-param name="resources" select="/root/gui/related/parent/item"/>
+      <xsl:with-param name="theme" select="/root/info/record/classificationinfo/theme"/>
+      <xsl:with-param name="subtheme" select="/root/info/record/classificationinfo/subtheme"/>
+      <xsl:with-param name="schema" select="/root/info/record/datainfo/schemaid"/>
     </xsl:call-template>
 
     <xsl:call-template name="relatedDatasets">
     <!-- TODO retrieve the children metadata -->
-      <xsl:with-param name="resources" select="/root/gui/relation/children/response/*[geonet:info]|/root/gui/relation/services/response/*[geonet:info]|/root/gui/relation/related/response/*[geonet:info]"/>
+      <xsl:with-param name="resources" select="/root/gui/related/children/item"/>
     </xsl:call-template>
 
   </xsl:template>

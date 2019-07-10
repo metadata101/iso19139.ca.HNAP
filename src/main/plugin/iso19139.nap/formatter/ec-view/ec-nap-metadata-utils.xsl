@@ -38,9 +38,10 @@
 
     <xsl:if test="count($resources/*) &gt; 0">
       <h3><xsl:value-of select="/root/schemas/iso19139.nap/strings/ParentCollection"/></h3>
+      <xsl:variable name="guiLang" select="/root/lang" />
       <xsl:for-each select="$resources">
         <!-- Sort first datasets -->
-        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+        <xsl:sort select="normalize-space(title/value[@lang=$guiLang])"/>
 
         <div class="relatedDatasets" id="rlds{position()}">
           <!-- hide records over 5, to make visible with more button -->
@@ -48,25 +49,14 @@
           <div style="float:left"> <!-- todo: check here the schema for icon to display -->
             <img class="icon" align="bottom">
               <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
-              <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
-              <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+              <xsl:attribute name="alt" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
+              <xsl:attribute name="title" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
             </img>
-            <!-- Response for related resources is different depending on the relation:
-                * Child relation return a brief representation of metadata
-                * Parent reprentation (and others) return the raw metadata
-            -->
-
-
-            <xsl:variable name="md">
-              <xsl:apply-templates mode="brief" select="."/>
-            </xsl:variable>
-            <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
-            <!--<xsl:value-of select="$metadata/title" />-->
-            &#160;<a href="search?_schema={$schema}&amp;parentUuid={$metadata/geonet:info/uuid}" title="Search metadata in the collection {$metadata/title}"><xsl:value-of select="$metadata/title" /></a>
+            &#160;<a href="search?_schema={$schema}&amp;parentUuid={id}" title="Search metadata in the collection {title/value[@lang=$guiLang]}"><xsl:value-of select="title/value[@lang=$guiLang]" /></a>
 
           </div>
           <div style="float:right">
-            <a class="btn btn-default btn-sm" href="metadata/{/root/lang}/{geonet:info/uuid}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/View"/></a>
+            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/View"/></a>
           </div>
           <div style="clear:both"></div>
         </div>
@@ -81,39 +71,25 @@
 
     <xsl:if test="count($resources/*) &gt; 0">
       <h3><xsl:value-of select="/root/schemas/iso19139.nap/strings/Relateddata"/> (<xsl:value-of select="count($resources)" />)</h3>
+      <xsl:variable name="guiLang" select="/root/lang" />
       <xsl:for-each select="$resources">
         <!-- Sort first datasets -->
-        <xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>
+        <!--<xsl:sort select="normalize-space(concat(geonet:info/schema, ' ', title))"/>-->
+        <xsl:sort select="normalize-space(title/value[@lang=$guiLang])"/>
 
         <div class="relatedDatasets" id="rlds{position()}">
           <!-- hide records over 5, to make visible with more button -->
           <xsl:if test="position() &gt; 5"><xsl:attribute name="style" select="'display:none'"/></xsl:if>
           <div style="float:left"> <!-- todo: check here the schema for icon to display -->
             <img class="icon" align="bottom">
-              <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
-              <xsl:attribute name="alt" select="concat('Dataset&#160;:',title)" />
-              <xsl:attribute name="title" select="concat('Dataset&#160;:',title)" />
+                <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
+                <xsl:attribute name="alt" select="concat('Dataset&#160;:',title/value[@lang=$guiLang])" />
+                <xsl:attribute name="title" select="concat('Dataset&#160;:',title/value[@lang=$guiLang])" />
             </img>
-            <!-- Response for related resources is different depending on the relation:
-                * Child relation return a brief representation of metadata
-                * Parent reprentation (and others) return the raw metadata
-            -->
-            <xsl:choose>
-              <xsl:when test="name() != 'metadata'">
-                <xsl:variable name="md">
-                  <xsl:apply-templates mode="brief" select="."/>
-                </xsl:variable>
-                <xsl:variable name="metadata" select="exslt:node-set($md)/*[1]"/>
-                <xsl:value-of select="$metadata/title" />
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="title" />
-              </xsl:otherwise>
-            </xsl:choose>
-
+            <xsl:value-of select="normalize-space(title/value[@lang=$guiLang])" />
           </div>
           <div style="float:right">
-            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/gui/language}/{geonet:info/uuid}"><xsl:value-of select="/root/gui/strings/View"/></a>
+            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="/root/gui/strings/View"/></a>
           </div>
           <div style="clear:both"></div>
         </div>
