@@ -62,6 +62,10 @@
     </xsl:apply-templates>
   </xsl:template>
 
+  <!-- napm:napMD_FileFormatCode_PropertyType is not a codelist element even if having codeList attribute.
+    It's present in gmd:MD_BrowseGraphic that is handled in the Thubnails panel. Avoid processing it -->
+  <xsl:template mode="mode-iso19139" priority="3005" match="*[*/@codeList and */@xsi:type='napm:napMD_FileFormatCode_PropertyType']" />
+
   <!-- Codelist - delegate to schema codelists -->
   <xsl:template mode="mode-iso19139" priority="2005" match="*[*/@codeList]">
     <xsl:param name="schema" select="$schema" required="no"/>
