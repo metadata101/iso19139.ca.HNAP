@@ -27,7 +27,8 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:srv="http://www.isotc211.org/2005/srv"
-                xmlns:gml="http://www.opengis.net/gml"
+                xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:gn="http://www.fao.org/geonetwork"
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
                 xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
@@ -48,6 +49,10 @@
     </xsl:apply-templates>
   </xsl:template>
 
+
+  <!-- napm:napMD_FileFormatCode_PropertyType is not a codelist element even if having codeList attribute.
+       It's present in gmd:MD_BrowseGraphic that is handled in the Thubnails panel. Avoid processing it -->
+  <xsl:template mode="mode-iso19139" priority="3005" match="*[*/@codeList and */@xsi:type='napm:napMD_FileFormatCode_PropertyType']" />
 
   <!-- Codelist - delegate to schema codelists -->
   <xsl:template mode="mode-iso19139" priority="2005" match="*[*/@codeList]">
