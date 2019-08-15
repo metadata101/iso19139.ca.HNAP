@@ -29,6 +29,7 @@
                 xmlns:srv="http://www.isotc211.org/2005/srv"
                 xmlns:gml="http://www.opengis.net/gml"
                 xmlns:gn="http://www.fao.org/geonetwork"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
                 xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
