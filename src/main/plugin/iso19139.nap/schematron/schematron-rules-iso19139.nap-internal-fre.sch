@@ -573,17 +573,19 @@
       </sch:rule>
 
       <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
-        <sch:rule context="/gmd:MD_Metadata">
-          <sch:let name="spatialRepresentationType" value="concat(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode/@codeListValue, '')" />
+      <sch:rule context="/gmd:MD_Metadata">
+        <sch:let name="missing" value="not(gmd:referenceSystemInfo)
+                  " />
 
-          <sch:let name="missing" value="not(gmd:referenceSystemInfo)
-                " />
+        <sch:let name="sRequireRefSystemInfo" value="count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_635']) +
+                                                       count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_636']) +
+                                                       count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_638'])" />
 
-            <sch:assert
-                test="(($spatialRepresentationType = 'RI_635' or $spatialRepresentationType = 'RI_636' or $spatialRepresentationType = 'RI_638') and not($missing)) or
-                ($spatialRepresentationType != 'RI_635' and $spatialRepresentationType != 'RI_636' and $spatialRepresentationType != 'RI_638')"
-                >$loc/strings/ReferenceSystemInfo</sch:assert>
-        </sch:rule>
+        <sch:assert
+          test="(($sRequireRefSystemInfo > 0) and not($missing)) or
+              $sRequireRefSystemInfo = 0"
+        >$loc/strings/ReferenceSystemInfo</sch:assert>
+      </sch:rule>
     </sch:pattern>
 
     <sch:pattern name="Optional">
