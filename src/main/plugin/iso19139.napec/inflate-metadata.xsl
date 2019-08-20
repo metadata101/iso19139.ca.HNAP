@@ -451,6 +451,32 @@
 
   <!-- ================================================================= -->
 
+  <xsl:template match="gmd:MD_Format">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+
+      <!-- Fix invalid multilingual gmd:name -->
+      <xsl:choose>
+        <xsl:when test="gmd:name/gmd:PT_FreeText">
+          <gmd:name>
+            <gco:CharacterString><xsl:value-of select="gmd:name/gco:CharacterString" /></gco:CharacterString>
+          </gmd:name>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="gmd:name" />
+        </xsl:otherwise>
+      </xsl:choose>
+
+      <xsl:apply-templates select="gmd:version" />
+      <xsl:apply-templates select="gmd:amendmentNumber" />
+      <xsl:apply-templates select="gmd:specification" />
+      <xsl:apply-templates select="gmd:fileDecompressionTechnique" />
+      <xsl:apply-templates select="gmd:formatDistributor" />
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- ================================================================= -->
+
   <!-- copy everything else as is -->
 
   <xsl:template match="@*|node()">

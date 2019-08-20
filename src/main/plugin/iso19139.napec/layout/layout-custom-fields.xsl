@@ -294,8 +294,8 @@
       <xsl:with-param name="xpath" select="$xpath"/>
       <xsl:with-param name="type" select="'select'"/>
       <xsl:with-param name="name"
-                      select="*/gn:element/@ref"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
+                      select="*[1]/gn:element/@ref"/>
+      <xsl:with-param name="editInfo" select="*[1]/gn:element"/>
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="listOfValues"
                       select="$listOfValues/entries"/>
