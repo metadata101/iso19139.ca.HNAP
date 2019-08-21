@@ -2,8 +2,10 @@
 <strings>
     <EC1English>English value is required for Contact - Organization name</EC1English>
     <EC1French>French value is required for Contact - Organization name</EC1French>
-    <EC1GovEnglish>English value for Contact - Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC1GovEnglish>
-    <EC1GovFrench>French value for Contact - Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC1GovFrench>
+    <EC1GovEnglish>English value for Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC1GovEnglish>
+    <EC1GovFrench>French value for Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC1GovFrench>
+    <EC1GovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC1GovAllowedEnglish>
+    <EC1GovAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC1GovAllowedFrench>
     <EC2>Value is required for Contact - Individual name</EC2>
     <EC3English>English value is required for Contact - Position name</EC3English>
     <EC3French>French value is required for Contact - Position name</EC3French>
@@ -35,8 +37,11 @@
     <EC25French>French value is required for Keyword</EC25French>
     <EC26English>English value is required for Distributor Contact - Organization name</EC26English>
     <EC26French>French value is required for Distributor Contact - Organization name</EC26French>
-    <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
-    <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+    <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
+    <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+    <EC26GovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC26GovAllowedEnglish>
+    <EC26GovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC26GovAllowedFrench>
+
     <EC27>Value is required for Distributor Contact - Individual name</EC27>
     <EC28English>English value is required for Distributor Contact - Position name</EC28English>
     <EC28French>French value is required for Distributor Contact - Position name</EC28French>
@@ -58,8 +63,10 @@
 
     <EC37English>English value is required for Cited Responsible Contact - Organisation name</EC37English>
     <EC37French>French value is required for Cited Responsible Contact - Organisation name</EC37French>
-    <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
-    <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+    <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+    <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Government of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+    <EC37GovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC37GovAllowedEnglish>
+    <EC37GovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC37GovAllowedFrench>
 
     <EC38>Value is required for distribution format - File name</EC38>
     <EC39>Value is required for distribution format - File version</EC39>
@@ -67,6 +74,11 @@
     <EC40>Value is required for Metadata publication date</EC40>
     <EC41>Value is required for Metadata creation date</EC41>
 
+    <Project>English and French values are required for Project</Project>
+    <HoursOfService>English and French values are required for Contact - Hours of Service</HoursOfService>
+    <Linkage>Value is required for Online Resource - URL</Linkage>
+    <Name>English and French values are required for Online Resource - Name</Name>
+    <Description>English and French values are required for Online Resource - Description</Description>
     <SupplementalInformation>English and French values are required for Supplemental Information</SupplementalInformation>
     <SupplementalInformation_1>English value is required for Supplemental Information</SupplementalInformation_1>
     <SupplementalInformation_2>French value is required for Supplemental Information</SupplementalInformation_2>
@@ -86,7 +98,7 @@
     <HoursOfServiceCited_2>French value is required for Cited Responsible Contact - Hours of Service</HoursOfServiceCited_2>
     <HoursOfServiceDist_1>English value is required for Distributor Contact - Hours of Service</HoursOfServiceDist_1>
     <HoursOfServiceDist_2>French value is required for Distributor Contact - Hours of Service</HoursOfServiceDist_2>
-    <Linkage>Value is required for Online Resource - URL</Linkage>
+    <Linkage>English and French values are required for Online Resource - URL</Linkage>
     <Linkage_1>English value is required for Online Resource - URL</Linkage_1>
     <Linkage_2>French value is required for Online Resource - URL</Linkage_2>
     <Name>English and French values are required for Online Resource - Name</Name>

@@ -4,6 +4,8 @@
     <EC1French>Français valeur est nécessaire pour: Contact pour la ressource - Organisation</EC1French>
     <EC1GovEnglish>Anglais valeur est nécessaire pour: Contact pour la ressource - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC1GovEnglish>
     <EC1GovFrench>Français valeur est nécessaire pour: Contact pour la ressource - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC1GovFrench>
+    <EC1GovAllowedEnglish>Anglais valeur est nécessaire pour: Contact pour la ressource - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador'. </EC1GovAllowedEnglish>
+    <EC1GovAllowedFrench>Français valeur est nécessaire pour: Contact pour la ressource - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador'.</EC1GovAllowedFrench>
     <EC2>Français valeur est nécessaire pour: Contact pour la ressource - Nom de la personne</EC2>
     <EC3English>Anglais valeur est nécessaire pour: Contact pour la ressource - Position</EC3English>
     <EC3French>Français valeur est nécessaire pour: Contact pour la ressource - Position</EC3French>
@@ -38,6 +40,9 @@
     <EC26French>Français valeur est nécessaire pour: Distributor Contact - Organization </EC26French>
     <EC26GovEnglish>Anglais valeur est nécessaire pour: Distributor Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
     <EC26GovFrench>Français valeur est nécessaire pour: Distributor Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+    <EC26GovAllowedEnglish>Anglais valeur est nécessaire pour: Distributor Contact - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador'. </EC26GovAllowedEnglish>
+    <EC26GovAllowedFrench>Français valeur est nécessaire pour: Distributor Contact - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador'.</EC26GovAllowedFrench>
+
     <EC27>Une valeur est nécessaire pour: Distributor Contact - Nom de la personne</EC27>
     <EC28English>Anglais valeur est nécessaire pour: Distributor Contact - Position</EC28English>
     <EC28French>Français valeur est nécessaire pour: Distributor Contact - Position</EC28French>
@@ -53,14 +58,16 @@
     <EC33>Une valeur est nécessaire pour: Reference System - Code</EC33>
     <EC34>Une valeur est nécessaire pour: Reference System - Codespace</EC34>
 
-    <EC35English>Anglais valeur est nécessaire pour: Responsable Contact - Courriel</EC35English>
-    <EC35French>Français valeur est nécessaire pour: Responsable Contact - Courriel</EC35French>
+    <EC35English>Anglais valeur est nécessaire pour le Responsable de la ressource- Courriel</EC35English>
+    <EC35French>Français valeur est nécessaire pour le Responsable de la ressource - Courriel</EC35French>
     <EC36>Une valeur est nécessaire pour: Responsable Contact - Rôle</EC36>
 
-    <EC37English>Anglais valeur est nécessaire pour: Responsable Contact - Organisation</EC37English>
-    <EC37French>Français valeur est nécessaire pour: Responsable Contact - Organisation</EC37French>
-    <EC37GovEnglish>Anglais valeur est nécessaire pour: Responsable Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
-    <EC37GovFrench>Français valeur est nécessaire pour: Responsable Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+    <EC37English>Anglais valeur est nécessaire pour le Responsable de la ressource - Organisation</EC37English>
+    <EC37French>Français valeur est nécessaire pour le Responsable de la ressource - Organisation</EC37French>
+    <EC37GovEnglish>Anglais valeur est nécessaire pour le Responsable de la ressource - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+    <EC37GovFrench>Français valeur est nécessaire pour le Responsable de la ressource - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+    <EC37GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable de la ressource - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador'. </EC37GovAllowedEnglish>
+    <EC37GovAllowedFrench>Français valeur est nécessaire pour le Responsable de la ressource - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador'.</EC37GovAllowedFrench>
 
     <EC38>Une valeur est nécessaire pour: Distribution format - Nom du format</EC38>
     <EC39>Une valeur est nécessaire pour: Distribution format - Version</EC39>
@@ -79,8 +86,13 @@
     <SupplementalInformation_2>Français valeur est nécessaire pour: Supplemental Information</SupplementalInformation_2>
     <Project_1>English value is required for Project</Project_1>
     <Project_2>Français valeur est nécessaire pour: Project</Project_2>
-    <HoursOfService_1>Anglais valeur est nécessaire pour: Contact - Heures de servic</HoursOfService_1>
-    <HoursOfService_2>Français valeur est nécessaire pour: Contact - Heures de servic</HoursOfService_2>
+    <PositionName_2>Français valeur est nécessaire pour le Responsable des métadonnées - Position</PositionName_2>
+    <PositionNameCited_1>>Anglais valeur est nécessaire pour le Responsable de la ressource - Position</PositionNameCited_1>
+    <PositionNameCited_2>Français valeur est nécessaire pour le Responsable de la ressource - Position</PositionNameCited_2>
+    <PositionNameDist_1>Anglais valeur est nécessaire pour le Responsable de la distribution - Position</PositionNameDist_1>
+    <PositionNameDist_2>Français valeur est nécessaire pour le Responsable de la distribution - Position</PositionNameDist_2>
+    <HoursOfService_1>Anglais valeur est nécessaire pour: Contact - Heures de service</HoursOfService_1>
+    <HoursOfService_2>Français valeur est nécessaire pour: Contact - Heures de service</HoursOfService_2>
     <HoursOfServiceCited_1>Anglais valeur est nécessaire pour: Responsable Contact - Heures de service</HoursOfServiceCited_1>
     <HoursOfServiceCited_2>Français valeur est nécessaire pour: Responsable Contact - Heures de service</HoursOfServiceCited_2>
     <HoursOfServiceDist_1>Anglais valeur est nécessaire pour: Distributor Contact - Heures de service</HoursOfServiceDist_1>
