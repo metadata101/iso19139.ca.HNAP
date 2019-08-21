@@ -269,16 +269,12 @@
 
             <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
 
-            <!-- TODO: Update condition -->
-            <!--<xsl:if test="(/root/gmd:MD_Metadata/geonet:info/disabledMapServices = 'false' or not(/root/gmd:MD_Metadata/geonet:info/disabledMapServices)) and
-                          (((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered)) or
-                           ((/root/gmd:MD_Metadata/geonet:info/rcs_protocol_registered = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
-                           (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">-->
             <xsl:if test="(/root/info/record/disabledMapServices = 'false' or not(/root/info/record/disabledMapServices)) and
-                          ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
-                           (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))">
+                          (((/root/info/record/datainfo/registeredrcsprotocol != '-1') and ($webMapServicesProtocols/record[name = $p]/id = /root/info/record/datainfo/registeredrcsprotocol)) or
+                           ((/root/info/record/datainfo/registeredrcsprotocol = '-1') and ((lower-case(gmd:protocol/gco:CharacterString) = $esriRestValue) or
+                           (not($hasRESTService) and lower-case(gmd:protocol/gco:CharacterString) = 'ogc:wms'))))">
 
-              <xsl:variable name="sq">'</xsl:variable>
+            <xsl:variable name="sq">'</xsl:variable>
               <xsl:variable name="tsq">\\'</xsl:variable>
               <xsl:variable name="titleMap"><xsl:apply-templates select="/root/*/geonet:info/uuid" mode="getMetadataTitle" /></xsl:variable>
               <xsl:variable name="titleMapEscaped" select="replace($titleMap, $sq, $tsq)" />
