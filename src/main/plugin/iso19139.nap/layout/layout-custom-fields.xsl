@@ -13,6 +13,7 @@
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                 xmlns:xslutil="java:org.fao.geonet.util.XslUtil"
+                xmlns:saxon="http://saxon.sf.net/"
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
   <xsl:variable name="thesauriDir" select="/root/gui/thesaurusDir" />
@@ -694,5 +695,38 @@
 
   </xsl:template>
 
+
+  <xsl:template mode="mode-iso19139" match="gmd:EX_BoundingPolygon" priority="5000">
+    <xsl:param name="schema" select="$schema" required="no"/>
+    <xsl:param name="labels" select="$labels" required="no"/>
+
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+
+    <xsl:call-template name="render-boxed-element">
+      <xsl:with-param name="label"
+                      select="$labelConfig/label"/>
+      <xsl:with-param name="editInfo" select="../gn:element"/>
+      <xsl:with-param name="cls" select="local-name()"/>
+      <xsl:with-param name="subTreeSnippet">
+
+        <xsl:variable name="geometry">
+          <xsl:apply-templates select="gmd:polygon/gml:MultiSurface|gmd:polygon/gml:LineString|gmd:polygon/gml:Polygon"
+                               mode="gn-element-cleaner"/>
+        </xsl:variable>
+
+        <xsl:variable name="identifier"
+                      select="concat('_X', gmd:polygon/gn:element/@ref, '_replace')"/>
+        <xsl:variable name="readonly" select="ancestor-or-self::node()[@xlink:href] != ''"/>
+
+        <br />
+        <gn-bounding-polygon polygon-xml="{saxon:serialize($geometry, 'default-serialize-mode')}"
+                             identifier="{$identifier}"
+                             read-only="{$readonly}">
+        </gn-bounding-polygon>
+      </xsl:with-param>
+    </xsl:call-template>
+  </xsl:template>
 
 </xsl:stylesheet>
