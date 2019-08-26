@@ -731,14 +731,14 @@
 
           <!-- large thumbnail link -->
           <xsl:when test="$images/image[@type='overview']">
-            <a href="javascript:popWindow('{$images/image[@type='overview']}')">
-              <img class="full-width" src="{$images/image[@type='thumbnail']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            <a href="javascript:popWindow('{$images/image[@type='overview'][1]}')">
+              <img class="full-width" src="{$images/image[@type='thumbnail'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
             </a>
           </xsl:when>
 
           <!-- no large thumbnail -->
           <xsl:otherwise>
-            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$langId]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$langId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
           </xsl:otherwise>
         </xsl:choose>
 
@@ -751,14 +751,14 @@
 
           <!-- large thumbnail link -->
           <xsl:when test="$images/image[@type='overview']">
-            <a href="javascript:popWindow('{$images/image[@type='overview']}')">
-              <img class="full-width" src="{$images/image[@type='thumbnail']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            <a href="javascript:popWindow('{$images/image[@type='overview'][1]}')">
+              <img class="full-width" src="{$images/image[@type='thumbnail'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
             </a>
           </xsl:when>
 
           <!-- no large thumbnail -->
           <xsl:otherwise>
-            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$otherLangId]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$otherLangId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
           </xsl:otherwise>
         </xsl:choose>
 
@@ -766,7 +766,7 @@
 
       <!-- unknown thumbnail (usually a url so limit size) -->
       <xsl:when test="$images/image[@type='unknown']">
-        <img class="full-width" src="{$images/image[@type='unknown']}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'">
+        <img class="full-width" src="{$images/image[@type='unknown'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'">
           <xsl:if test="string($size)">
             <xsl:attribute name="width"><xsl:value-of select="$size" /></xsl:attribute>
             <xsl:attribute name="height"><xsl:value-of select="$size" /></xsl:attribute>
