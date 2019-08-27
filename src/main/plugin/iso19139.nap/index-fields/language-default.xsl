@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
-<xsl:stylesheet version="1.0" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+<xsl:stylesheet version="2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:srv="http://www.isotc211.org/2005/srv"
-                xmlns:java="java:org.fao.geonet.util.XslUtil"
+                xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
->
+                xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
        Searches can be conducted on indexes defined here.
@@ -19,6 +19,7 @@
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
   <xsl:include href="../convert/functions.xsl"/>
+  <xsl:include href="../../../xsl/utils-fn.xsl"/>
 
   <!-- ========================================================================================= -->
   <xsl:variable name="isoDocLangId">
@@ -389,8 +390,44 @@
       <!-- index online protocol -->
 
       <xsl:for-each
-              select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:protocol//gmd:LocalisedCharacterString[@locale=$langId]">
-        <Field name="protocol" string="{string(.)}" store="true" index="true"/>
+        select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL!='']">
+
+        <xsl:variable name="download_check">
+          <xsl:text>&amp;fname=&amp;access</xsl:text>
+        </xsl:variable>
+        <xsl:variable name="linkage" select="gmd:linkage/gmd:URL"/>
+        <xsl:variable name="title" select="normalize-space(gmd:name//gmd:LocalisedCharacterString[@locale=$langId]|gmd:name/gmx:MimeFileType)"/>
+        <xsl:variable name="desc" select="normalize-space(gmd:description//gmd:LocalisedCharacterString[@locale=$langId])"/>
+        <xsl:variable name="protocol" select="normalize-space(gmd:protocol//gmd:LocalisedCharacterString[@locale=$langId])"/>
+        <xsl:variable name="mimetype"
+                      select="geonet:protocolMimeType($linkage, $protocol, gmd:name/gmx:MimeFileType/@type)"/>
+
+        <!-- ignore empty downloads -->
+        <xsl:if test="string($linkage)!='' and not(contains($linkage,$download_check))">
+          <Field name="protocol" string="{string($protocol)}" store="false" index="true"/>
+        </xsl:if>
+
+        <xsl:if test="normalize-space($mimetype)!=''">
+          <Field name="mimetype" string="{$mimetype}" store="false" index="true"/>
+        </xsl:if>
+
+        <xsl:if test="contains($protocol, 'WWW:DOWNLOAD')">
+          <Field name="download" string="true" store="false" index="true"/>
+        </xsl:if>
+
+        <xsl:if test="contains($protocol, 'OGC:WMS')">
+          <Field name="dynamic" string="true" store="false" index="true"/>
+        </xsl:if>
+        <Field name="link" string="{concat($title, '|', $desc, '|', $linkage, '|', $protocol, '|', $mimetype)}"
+               store="true" index="false"/>
+
+        <!-- Add KML link if WMS -->
+        <xsl:if test="starts-with($protocol,'OGC:WMS-') and contains($protocol,'-get-map') and string($linkage)!='' and string($title)!=''">
+          <!-- FIXME : relative path -->
+          <Field name="link" string="{concat($title, '|', $desc, '|',
+						'../../srv/en/google.kml?uuid=', /gmd:MD_Metadata/gmd:fileIdentifier/gco:CharacterString, '&amp;layers=', $title,
+						'|application/vnd.google-earth.kml+xml|application/vnd.google-earth.kml+xml')}" store="true" index="false"/>
+        </xsl:if>
       </xsl:for-each>
     </xsl:for-each>
 
@@ -469,7 +506,9 @@
     <!-- === Free text search === -->
     <Field name="any" store="false" index="true">
       <xsl:attribute name="string">
-        <xsl:value-of select="normalize-space(//node()[@locale=$langId])"/>
+        <xsl:for-each select="//node()[@locale=$langId]">
+          <xsl:value-of select="concat(normalize-space(.), ' ')"/>
+        </xsl:for-each>
         <xsl:text> </xsl:text>
         <xsl:for-each select="//@codeListValue">
           <xsl:value-of select="concat(., ' ')"/>
