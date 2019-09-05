@@ -138,11 +138,11 @@ Insert is made in first transferOptions found.
 
   <!-- Updating the link matching the update key. -->
   <xsl:template match="gmd:onLine[
-                        normalize-space($updateKey) = concat(
-                        gmd:CI_OnlineResource/gmd:linkage/gmd:URL,
-                        gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString,
-                        gmd:CI_OnlineResource/gmd:name/gco:CharacterString)
-                        ]">
+        normalize-space($updateKey) = concat(
+        gmd:CI_OnlineResource/gmd:linkage/gmd:URL,
+        gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString,
+        gmd:CI_OnlineResource/gmd:name/gco:CharacterString)
+        and (not(string($language)) or (string($language) and (@xlink:role = $language)))]">
     <xsl:call-template name="createOnlineSrc"/>
   </xsl:template>
 
