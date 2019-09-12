@@ -6,7 +6,10 @@
                 xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
-                xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
   <xsl:include href="../convert/functions.xsl"/>
   <xsl:include href="../../../xsl/utils-fn.xsl"/>
@@ -32,8 +35,10 @@
                 select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
   <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
 
+  <xsl:variable name="government-names" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Government_Names.rdf'))"/>
+
   <!-- If identification creation, publication and revision date
-    should be indexed as a temporal extent information (eg. in INSPIRE 
+    should be indexed as a temporal extent information (eg. in INSPIRE
     metadata implementing rules, those elements are defined as part
     of the description of the temporal extent). -->
   <xsl:variable name="useDateAsTemporalExtent" select="false()"/>
@@ -281,15 +286,21 @@
           </xsl:choose>
         </xsl:variable>
 
-        <xsl:if test="starts-with(lower-case(gco:CharacterString), 'government of canada') or starts-with(lower-case(gco:CharacterString), 'gouvernement du canada')">
-          <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
+        <xsl:variable name="orgName" select="gco:CharacterString" />
+
+        <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
+                      $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
+        <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
           <Field name="orgNameCanada_{$mainLang}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
 
-        <xsl:if test="starts-with(lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString), 'government of canada') or starts-with(lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString), 'gouvernement du canada')">
-          <Field name="orgNameCanada_{$otherLang}"
+        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString" />
+
+        <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
+                      $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
+        <Field name="orgNameCanada_{$otherLang}"
                  string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString, ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
@@ -450,7 +461,7 @@
         <xsl:if test="starts-with($protocol,'OGC:WMS-') and contains($protocol,'-get-map') and string($linkage)!='' and string($title)!=''">
           <!-- FIXME : relative path -->
           <Field name="link" string="{concat($title, '|', $desc, '|',
-						'../../srv/en/google.kml?uuid=', /gmd:MD_Metadata/gmd:fileIdentifier/gco:CharacterString, '&amp;layers=', $title, 
+						'../../srv/en/google.kml?uuid=', /gmd:MD_Metadata/gmd:fileIdentifier/gco:CharacterString, '&amp;layers=', $title,
 						'|application/vnd.google-earth.kml+xml|application/vnd.google-earth.kml+xml')}" store="true" index="false"/>
         </xsl:if>
 
@@ -687,9 +698,9 @@
     <xsl:choose>
       <!-- annex i -->
       <xsl:when test="$englishKeyword='coordinate reference systems' or $englishKeyword='geographical grid systems'
-			            or $englishKeyword='geographical names' or $englishKeyword='administrative units' 
-			            or $englishKeyword='addresses' or $englishKeyword='cadastral parcels' 
-			            or $englishKeyword='transport networks' or $englishKeyword='hydrography' 
+			            or $englishKeyword='geographical names' or $englishKeyword='administrative units'
+			            or $englishKeyword='addresses' or $englishKeyword='cadastral parcels'
+			            or $englishKeyword='transport networks' or $englishKeyword='hydrography'
 			            or $englishKeyword='protected sites'">
         <xsl:text>i</xsl:text>
       </xsl:when>
@@ -700,15 +711,15 @@
       </xsl:when>
       <!-- annex iii -->
       <xsl:when test="$englishKeyword='statistical units' or $englishKeyword='buildings'
-			            or $englishKeyword='soil' or $englishKeyword='land use' 
-			            or $englishKeyword='human health and safety' or $englishKeyword='utility and government services' 
-			            or $englishKeyword='environmental monitoring facilities' or $englishKeyword='production and industrial facilities' 
-			            or $englishKeyword='agricultural and aquaculture facilities' or $englishKeyword='population distribution - demography' 
-			            or $englishKeyword='area management/restriction/regulation zones and reporting units' 
-			            or $englishKeyword='natural risk zones' or $englishKeyword='atmospheric conditions' 
-			            or $englishKeyword='meteorological geographical features' or $englishKeyword='oceanographic geographical features' 
-			            or $englishKeyword='sea regions' or $englishKeyword='bio-geographical regions' 
-			            or $englishKeyword='habitats and biotopes' or $englishKeyword='species distribution' 
+			            or $englishKeyword='soil' or $englishKeyword='land use'
+			            or $englishKeyword='human health and safety' or $englishKeyword='utility and government services'
+			            or $englishKeyword='environmental monitoring facilities' or $englishKeyword='production and industrial facilities'
+			            or $englishKeyword='agricultural and aquaculture facilities' or $englishKeyword='population distribution - demography'
+			            or $englishKeyword='area management/restriction/regulation zones and reporting units'
+			            or $englishKeyword='natural risk zones' or $englishKeyword='atmospheric conditions'
+			            or $englishKeyword='meteorological geographical features' or $englishKeyword='oceanographic geographical features'
+			            or $englishKeyword='sea regions' or $englishKeyword='bio-geographical regions'
+			            or $englishKeyword='habitats and biotopes' or $englishKeyword='species distribution'
 			            or $englishKeyword='energy resources' or $englishKeyword='mineral resources'">
         <xsl:text>iii</xsl:text>
       </xsl:when>

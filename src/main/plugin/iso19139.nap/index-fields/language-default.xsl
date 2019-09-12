@@ -6,7 +6,10 @@
                 xmlns:geonet="http://www.fao.org/geonetwork"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
-                xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
        Searches can be conducted on indexes defined here.
@@ -20,6 +23,11 @@
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
   <xsl:include href="../convert/functions.xsl"/>
   <xsl:include href="../../../xsl/utils-fn.xsl"/>
+
+  <xsl:param name="thesauriDir"/>
+
+  <xsl:variable name="government-names" select="document(concat('file:///', $thesauriDir, '/local/thesauri/theme/EC_Government_Names.rdf'))"/>
+
 
   <!-- ========================================================================================= -->
   <xsl:variable name="isoDocLangId">
@@ -249,15 +257,21 @@
           </xsl:choose>
         </xsl:variable>
 
-        <xsl:if test="starts-with(lower-case(gco:CharacterString), 'government of canada') or starts-with(lower-case(gco:CharacterString), 'gouvernement du canada')">
+        <xsl:variable name="orgName" select="gco:CharacterString" />
+
+        <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
+                      $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
           <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
           <Field name="orgNameCanada_{$mainLang}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
 
-        <xsl:if test="starts-with(lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString), 'government of canada') or starts-with(lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString), 'gouvernement du canada')">
-          <Field name="orgNameCanada_{$otherLang}"
+        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString" />
+
+        <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
+                      $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
+        <Field name="orgNameCanada_{$otherLang}"
                  string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString, ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
