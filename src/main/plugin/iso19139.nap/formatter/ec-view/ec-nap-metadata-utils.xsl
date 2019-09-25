@@ -277,7 +277,9 @@
 
               <xsl:variable name="vm-smallkey">
                 <xsl:choose>
-                  <xsl:when test="/root/info/record/workspace = 'true' or /root/info/record/status = '1'">draft-<xsl:value-of select="normalize-space(/root/info/record/uuid)" /></xsl:when>
+                  <xsl:when test="/root/info/record/workspace = 'true' or
+                                  (/root/info/record/status = '4' and /root/info/record/workspace = 'false' and /root/info/record/publishedCopy = 'false') or
+                                  /root/info/record/status = '1'">draft-<xsl:value-of select="normalize-space(/root/info/record/uuid)" /></xsl:when>
                   <xsl:otherwise><xsl:value-of select="normalize-space(/root/info/record/uuid)" /></xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
