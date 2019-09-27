@@ -173,7 +173,7 @@
 
     <!-- add pdf link -->
     <!--<xsl:variable name="pdfUrl" select="concat($url,'/rest.pdf?uuid=',$muuid, '&amp;fromWorkspace=', $workspace)"/>-->
-    <xsl:variable name="pdfUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/xsl-view?root=div&amp;output=pdf', $draftParameter2)"/>
+    <xsl:variable name="pdfUrl" select="concat($nodeUrl, 'api/records/', $muuid, '/formatters/ec-view?root=div&amp;output=pdf', $draftParameter2)"/>
     <a href="{$pdfUrl}" title="{/root/gui/strings/downloadas} PDF" class="btn btn-default btn-md" target="_blank">
       <img src="{/root/gui/url}/images/pdf_small.gif" alt="{/root/gui/strings/downloadas} PDF" title="{/root/gui/strings/downloadas} PDF" />
     </a>
