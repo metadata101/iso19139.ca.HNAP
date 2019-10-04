@@ -163,7 +163,61 @@
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
 
-      <xsl:apply-templates select="gmd:citation" />
+      <xsl:for-each select="gmd:citation">
+        <xsl:copy>
+          <xsl:copy-of select="@*" />
+          <xsl:for-each select="gmd:CI_Citation ">
+            <xsl:copy>
+              <xsl:copy-of select="@*" />
+
+              <xsl:apply-templates select="gmd:title" />
+              <xsl:apply-templates select="gmd:alternateTitle" />
+              <xsl:apply-templates select="gmd:date" />
+
+              <xsl:if test="count(gmd:date[*/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0">
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <gco:Date></gco:Date>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                                           codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+              </xsl:if>
+
+              <xsl:if test="count(gmd:date[*/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0">
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <gco:Date></gco:Date>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                                           codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+              </xsl:if>
+
+              <xsl:apply-templates select="gmd:edition" />
+              <xsl:apply-templates select="gmd:editionDate" />
+              <xsl:apply-templates select="gmd:identifier" />
+              <xsl:apply-templates select=" gmd:citedResponsibleParty" />
+              <xsl:apply-templates select="gmd:presentationForm" />
+              <xsl:apply-templates select="gmd:series" />
+              <xsl:apply-templates select="gmd:otherCitationDetails" />
+              <xsl:apply-templates select="gmd:collectiveTitle" />
+              <xsl:apply-templates select="gmd:ISBN" />
+              <xsl:apply-templates select="gmd:ISSN" />
+            </xsl:copy>
+          </xsl:for-each>
+
+        </xsl:copy>
+      </xsl:for-each>
+
       <xsl:apply-templates select="gmd:abstract" />
       <xsl:apply-templates select="gmd:purpose" />
       <xsl:apply-templates select="gmd:credit" />
