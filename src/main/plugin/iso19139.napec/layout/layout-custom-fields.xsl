@@ -694,7 +694,9 @@
         </xsl:if>-->
 
         <div class="col-sm-offset-2 col-sm-9">
-          <xsl:call-template name="get-errors"/>
+          <xsl:call-template name="get-errors-2">
+            <xsl:with-param name="refToUse" select="gmd:keyword[1]/gn:element/@ref" />
+          </xsl:call-template>
         </div>
 
       </xsl:when>
