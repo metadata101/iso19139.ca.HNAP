@@ -415,7 +415,7 @@
 
 
     <!-- Cited Responsible Party - Hours of service -->
-    <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService">
 
@@ -442,6 +442,13 @@
       <sch:assert
         test="not($missing)"
       >$loc/strings/MissingCitedResponsibleRole</sch:assert>
+
+      <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
+      <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidCitedResponsibleRole</sch:assert>
 
     </sch:rule>
 
@@ -749,7 +756,7 @@
 
     </sch:rule>
 
-
+    <!-- Access constraints -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:accessConstraints">
 
       <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))
@@ -770,7 +777,7 @@
       >$loc/strings/InvalidAccessConstraints</sch:assert>
     </sch:rule>
 
-
+    <!-- Use constraints -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints">
 
       <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))
@@ -1031,13 +1038,6 @@
       <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
       <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
     </sch:rule>
-
-
-
-
-
-
-
 
 
     <!-- Distribution - Format -->

@@ -137,4 +137,6 @@
     <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
     <MetadataStandardName>Value is not valid for Metadata Standard Name, should be 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' in english and 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' in french</MetadataStandardName>
     <SpatialRepresentation>Value is required for Spatial representation</SpatialRepresentation>
+    <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
+    <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
 </strings>

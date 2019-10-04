@@ -408,6 +408,15 @@
                     test="not($missing)"
                     >$loc/strings/EC23</sch:assert>
 
+                <sch:let name="accessConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+                <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+
+                <sch:let name="isValid" value="count($accessConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+                <sch:assert
+                  test="$isValid or $missing"
+                >$loc/strings/InvalidAccessConstraints</sch:assert>
         </sch:rule>
 
         <!-- Use constraints -->
@@ -421,6 +430,15 @@
           <sch:assert
             test="not($missing)"
             >$loc/strings/EC24</sch:assert>
+
+          <sch:let name="useConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+          <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+          <sch:let name="isValid" value="count($useConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+          <sch:assert
+            test="$isValid or $missing"
+          >$loc/strings/InvalidUseConstraints</sch:assert>
 
         </sch:rule>
 
