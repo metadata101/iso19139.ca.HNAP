@@ -9,15 +9,15 @@
   <EC3>Position name is required in both languages</EC3>
   <EC8>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</EC8>
   <EC9>Value is required for Online Resource URL</EC9>
-  <EC10>Value is required for Topic Category</EC10>
-  <EC11>Value is required for Use Limitation</EC11>
-  <EC12>Value is required for Legal Access Constraints</EC12>
-  <EC13>Value is required for Legal Use Constraints</EC13>
-  <EC14>Value is required for Metadata publication date</EC14>
-  <EC15>Value is required for Metadata creation date</EC15>
+  <EC10>Une valeur est nécessaire pour: Catégorie thématique</EC10>
+  <EC11>Limitation d'utilisation est obligatoire dans les deux langues</EC11>
+  <EC12>Une valeur est nécessaire pour: Contraintes d'accès</EC12>
+  <EC13>Une valeur est nécessaire pour: Contraintes d'utilisation</EC13>
+  <EC14>>Une valeur est nécessaire pour: Métadonnées date de publication</EC14>
+  <EC15>>Une valeur est nécessaire pour: Métadonnées date de création</EC15>
   <EC19>Valeur ne est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</EC19>
-  <EC21>Value is required for distribution format - File name</EC21>
-  <EC22>Value is required for distribution format - File version</EC22>
+  <EC21>Une valeur est nécessaire pour: Distribution format - Nom du format</EC21>
+  <EC22>Une valeur est nécessaire pour: Distribution format - Version</EC22>
   <EC23>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</EC23>
   <EC26>Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26>
   <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
@@ -115,4 +115,7 @@
   <ContactPhone>Responsable des métadonnées - Numéro de téléphone devrait être vide ou rempli en anglais et en français</ContactPhone>
   <CitedResponsiblePartyPhone>Responsable de la ressource - Numéro de téléphone devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPhone>
   <DistributorPhone>Responsable de la distribution - Numéro de téléphone devrait être vide ou rempli en anglais et en français</DistributorPhone>
+
+  <DataLanguage>Une valeur est nécessaire pour: Langue</DataLanguage>
+  <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
 </strings>

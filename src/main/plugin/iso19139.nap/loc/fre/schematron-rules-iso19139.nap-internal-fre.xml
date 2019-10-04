@@ -21,9 +21,6 @@
     <EC10>Une valeur est nécessaire pour: Etat</EC10>
     <EC11>Une valeur est nécessaire pour: Fréquence de mise à jour</EC11>
     <EC12>Une valeur est nécessaire pour: Catégorie thématique</EC12>
-    <EC13>Une valeur est nécessaire pour: Data classification - Branch</EC13>
-    <EC14>Une valeur est nécessaire pour: Data classification - Directorate</EC14>
-    <EC15>Une valeur est nécessaire pour: Data classification - Security classification</EC15>
     <EC16English>Anglais valeur est nécessaire pour: Contact pour la ressource - Courriel</EC16English>
     <EC16French>Français valeur est nécessaire pour: Contact pour la ressource - Courriel</EC16French>
     <EC17>Une valeur est nécessaire pour: Contact pour la ressource - Rôle</EC17>
@@ -141,4 +138,7 @@
     <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
     <MetadataStandardName>Valeur ne est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</MetadataStandardName>
     <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
+    <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
+    <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+    <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
 </strings>

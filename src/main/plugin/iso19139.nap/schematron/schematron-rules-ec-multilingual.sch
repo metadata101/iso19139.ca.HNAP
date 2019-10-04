@@ -515,7 +515,7 @@
 
 
     <!-- Cited Responsible Party - Hours of service -->
-    <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:CI_Contact/gmd:hoursOfService">
 
@@ -529,7 +529,7 @@
     </sch:rule>
 
 
-    <!-- Cited Responsible Party -  Role -->
+    <!-- Cited Responsible Party - Role -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
       |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
       |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role">
@@ -542,6 +542,13 @@
       <sch:assert
         test="not($missing)"
       >$loc/strings/MissingCitedResponsibleRole</sch:assert>
+
+      <sch:let name="value" value="gmd:CI_RoleCode/@codeListValue" />
+      <sch:let name="isValid" value="count($roleCodelist/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidCitedResponsibleRole</sch:assert>
 
     </sch:rule>
 
@@ -763,17 +770,21 @@
 
     </sch:rule>
 
+    <!-- Use limitation -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation">
 
-      <sch:let name="missing" value="not(string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                         or (@gco:nilReason)" />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
 
       <sch:assert
-        test="not($missing)"
+        test="not($missing) and not($missingOtherLang)"
       >$loc/strings/EC11</sch:assert>
 
     </sch:rule>
 
-
+    <!-- Access constraints -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:accessConstraints">
 
       <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))" />
@@ -782,8 +793,18 @@
         test="not($missing)"
       >$loc/strings/EC12</sch:assert>
 
+      <sch:let name="accessConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+
+      <sch:let name="isValid" value="count($accessConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidAccessConstraints</sch:assert>
     </sch:rule>
 
+    <!-- Use constraints -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints">
 
       <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))" />
@@ -792,6 +813,14 @@
         test="not($missing)"
       >$loc/strings/EC12</sch:assert>
 
+      <sch:let name="useConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+      <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+      <sch:let name="isValid" value="count($useConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+      <sch:assert
+        test="$isValid or $missing"
+      >$loc/strings/InvalidUseConstraints</sch:assert>
     </sch:rule>
 
 
@@ -811,6 +840,19 @@
       <sch:assert test="$missingBeginPosition or $missingEndPosition or (geonet:compareDates($endPosition, $beginPosition) &gt;= 0)">$loc/strings/EndPosition</sch:assert>
     </sch:rule>
 
+
+    <!-- Dataset language -->
+    <sch:rule context="//gmd:identificationInfo/*/gmd:language
+                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:language
+                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:language">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+               or (@gco:nilReason)" />
+
+      <sch:assert
+        test="not($missing)"
+      >$loc/strings/DataLanguage</sch:assert>
+    </sch:rule>
 
     <!-- Maintenance and frequency -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency
@@ -941,7 +983,14 @@
         test="not($missing)"
       >$loc/strings/EC21</sch:assert>
 
+      <sch:let name="distribution-formats" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'))"/>
+
+      <sch:let name="distributionFormat" value="gco:CharacterString" />
+
+      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang='en']) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
+
     </sch:rule>
+
 
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:version">
 

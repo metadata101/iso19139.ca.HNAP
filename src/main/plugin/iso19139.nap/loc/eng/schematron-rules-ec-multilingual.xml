@@ -10,7 +10,7 @@
   <EC8>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</EC8>
   <EC9>Value is required for Online Resource URL</EC9>
   <EC10>Value is required for Topic Category</EC10>
-  <EC11>Value is required for Use Limitation</EC11>
+  <EC11>Value is required for Use Limitation in both languages</EC11>
   <EC12>Value is required for Legal Access Constraints</EC12>
   <EC13>Value is required for Legal Use Constraints</EC13>
   <EC14>Value is required for Metadata publication date</EC14>
@@ -114,4 +114,7 @@
   <ContactPhone>Contact - Phone should be empty or filled in English and French</ContactPhone>
   <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
   <DistributorPhone>Distributor - Phone should be empty or filled in English and French</DistributorPhone>
+
+  <DataLanguage>Value is required for language</DataLanguage>
+  <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
 </strings>

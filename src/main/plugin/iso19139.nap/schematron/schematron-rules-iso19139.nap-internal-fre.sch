@@ -444,6 +444,15 @@
                     test="not($missing)"
                     >$loc/strings/EC23</sch:assert>
 
+                <sch:let name="accessConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+                <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+                <sch:let name="isValid" value="count($accessConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+                <sch:assert
+                  test="$isValid or $missing"
+                >$loc/strings/InvalidAccessConstraints</sch:assert>
+
         </sch:rule>
 
         <!-- Use constraints -->
@@ -458,6 +467,14 @@
             test="not($missing)"
             >$loc/strings/EC24</sch:assert>
 
+          <sch:let name="useConstraintsCodelist" value="document(concat('file:///', $schemaDir, '/loc/', $lang, '/codelists.xml'))"/>
+
+          <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
+          <sch:let name="isValid" value="count($useConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+
+          <sch:assert
+            test="$isValid or $missing"
+          >$loc/strings/InvalidUseConstraints</sch:assert>
         </sch:rule>
 
 
@@ -570,6 +587,11 @@
           test="not($missing)"
           >$loc/strings/EC38</sch:assert>
 
+        <sch:let name="distribution-formats" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'))"/>
+
+        <sch:let name="distributionFormat" value="gco:CharacterString" />
+
+        <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang='en']) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
       </sch:rule>
 
         <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:version">
