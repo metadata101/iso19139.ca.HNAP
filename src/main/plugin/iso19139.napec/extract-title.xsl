@@ -32,6 +32,7 @@
   <xsl:variable name="mdLanguage">
     <xsl:choose>
       <xsl:when test="$language='fre'">fra</xsl:when>
+      <xsl:when test="$language='fra'">fra</xsl:when>
       <xsl:otherwise>eng</xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
@@ -45,6 +46,7 @@
         <xsl:variable name="locale">
           <xsl:choose>
             <xsl:when test="$language='fre'">#fra</xsl:when>
+            <xsl:when test="$language='fra'">#fra</xsl:when>
             <xsl:otherwise>#eng</xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
