@@ -352,6 +352,9 @@
         <xsl:when test="/root/lang='fra'">
           <xsl:text>fre</xsl:text>
         </xsl:when>
+        <xsl:when test="/root/lang='fre'">
+          <xsl:text>fre</xsl:text>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:text>eng</xsl:text>
         </xsl:otherwise>
