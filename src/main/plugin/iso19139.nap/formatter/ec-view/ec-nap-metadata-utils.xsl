@@ -324,25 +324,29 @@
                 priority="50">
     <xsl:param name="fieldName" select="''" as="xs:string"/>
 
-    <dl>
-      <dt>
-        <xsl:value-of select="if ($fieldName)
-                                then $fieldName
-                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
-      </dt>
-      <dd>
-        <xsl:choose>
-          <xsl:when test="*/@codeListValue">
-            <xsl:apply-templates mode="render-value" select="*/@codeListValue"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:apply-templates mode="render-value" select="*"/>
-          </xsl:otherwise>
-        </xsl:choose>
+    <xsl:variable name="valueToDisplay">
+      <xsl:choose>
+        <xsl:when test="*/@codeListValue">
+          <xsl:apply-templates mode="render-value" select="*/@codeListValue"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates mode="render-value" select="*"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
 
-        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
-      </dd>
-    </dl>
+    <xsl:if test="string(normalize-space($valueToDisplay))">
+      <dl>
+        <dt>
+          <xsl:value-of select="if ($fieldName)
+                                  then $fieldName
+                                  else tr:node-label(tr:create($schema, $language), name(), null)"/>
+        </dt>
+        <dd>
+          <xsl:value-of select="$valueToDisplay" />
+        </dd>
+      </dl>
+    </xsl:if>
   </xsl:template>
 
 
@@ -352,21 +356,25 @@
 
     <xsl:param name="fieldName" select="''" as="xs:string"/>
 
-    <dl>
-      <dt>
-        <xsl:value-of select="if ($fieldName)
-                                then $fieldName
-                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
-      </dt>
-      <dd>
-        <xsl:apply-templates mode="localised" select=".">
-          <xsl:with-param name="langId" select="$langForMetadata" />
-        </xsl:apply-templates>
+    <xsl:variable name="valueToDisplay">
+      <xsl:apply-templates mode="localised" select=".">
+        <xsl:with-param name="langId" select="$langForMetadata" />
+      </xsl:apply-templates>
+    </xsl:variable>
 
-        <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
-      </dd>
-    </dl>
-
+    <xsl:if test="string(normalize-space($valueToDisplay))">
+      <dl>
+        <dt>
+          <xsl:value-of select="if ($fieldName)
+                                  then $fieldName
+                                  else tr:node-label(tr:create($schema, $language), name(), null)"/>
+        </dt>
+        <dd>
+          <xsl:value-of select="$valueToDisplay" />
+          <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+        </dd>
+      </dl>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template mode="render-field"
