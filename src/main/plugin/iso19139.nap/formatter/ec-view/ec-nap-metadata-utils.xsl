@@ -492,6 +492,10 @@
   </xsl:template>
 
   <xsl:template mode="render-field"
+                match="gmd:topicCategory[preceding-sibling::*[1]/name() = name()]"
+                priority="3100" />
+
+  <xsl:template mode="render-field"
                 match="gmd:descriptiveKeywords"
                 priority="2090"></xsl:template>
 
