@@ -474,7 +474,18 @@
         </xsl:apply-templates>
       </xsl:when>
       <xsl:otherwise>
-        <!--<xsl:message>descriptiveKeywords fieldset!=false</xsl:message>-->
+        <xsl:variable name="hideDelete" as="xs:boolean">
+          <xsl:choose>
+            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
+                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
+
+              <xsl:value-of select="true()" />
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:message>descriptiveKeywords 2</xsl:message>
+              <xsl:value-of select="false()" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
 
         <xsl:call-template name="render-boxed-element">
           <xsl:with-param name="label"
@@ -485,6 +496,7 @@
           <xsl:with-param name="cls" select="local-name()"/>
           <xsl:with-param name="xpath" select="$xpath"/>
           <xsl:with-param name="attributesSnippet" select="$attributes"/>
+          <xsl:with-param name="hideDelete" select="$hideDelete" />
           <xsl:with-param name="subTreeSnippet">
             <xsl:apply-templates mode="mode-iso19139" select="*">
               <xsl:with-param name="schema" select="$schema"/>
