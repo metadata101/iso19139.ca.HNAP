@@ -619,6 +619,9 @@
     <xsl:apply-templates mode="render-field"/>
   </xsl:template>
 
+  <!-- Don't show protocol for contact online resource -->
+  <xsl:template mode="render-field" match="gmd:protocol[name(../..) = 'gmd:onlineResource']" priority="3100" />
+
   <!-- ########################## -->
   <!-- Render values for text ... -->
   <xsl:template mode="render-value"
