@@ -550,6 +550,9 @@
     </dl>
   </xsl:template>
 
+  <!-- Don't show protocol for contact online resource -->
+  <xsl:template mode="render-field" match="gmd:protocol[name(../..) = 'gmd:onlineResource']" priority="3100" />
+
   <!-- Traverse the tree -->
   <xsl:template mode="render-field"
                 match="*">
