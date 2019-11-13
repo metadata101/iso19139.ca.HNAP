@@ -114,4 +114,5 @@
   <ContactDeliveryPoint>Responsable des métadonnées - Adresse devrait être vide ou rempli en anglais et en français</ContactDeliveryPoint>
   <CitedResponsiblePartyDeliveryPoint>Responsable de la ressource - Adresse devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyDeliveryPoint>
   <DistributorDeliveryPoint>Responsable de la distribution - Adresse devrait être vide ou rempli en anglais et en français</DistributorDeliveryPoint>
+  <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
 </strings>

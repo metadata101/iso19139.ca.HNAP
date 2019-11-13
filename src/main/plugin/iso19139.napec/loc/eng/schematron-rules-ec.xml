@@ -94,4 +94,5 @@
   <SecurityClassification>Value is required for Security Classification</SecurityClassification>
   <MissingDate>Value is required for Date</MissingDate>
   <BeginDate>Value is required for Begin Date</BeginDate>
+  <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
 </strings>

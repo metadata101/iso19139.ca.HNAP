@@ -113,4 +113,5 @@
   <ContactDeliveryPoint>Contact - Delivery Point should be empty or filled in English and French</ContactDeliveryPoint>
   <CitedResponsiblePartyDeliveryPoint>Cited Responsible Party - Delivery Point should be empty or filled in English and French</CitedResponsiblePartyDeliveryPoint>
   <DistributorDeliveryPoint>Distributor - Delivery Point should be empty or filled in English and French</DistributorDeliveryPoint>
+  <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
 </strings>

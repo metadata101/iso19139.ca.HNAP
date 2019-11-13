@@ -95,4 +95,5 @@
   <SecurityClassification>Une valeur est nécessaire pour: Data classification - GC Restrictions de manipulation</SecurityClassification>
   <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
+  <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
 </strings>
