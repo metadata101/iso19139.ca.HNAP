@@ -141,4 +141,5 @@
     <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
     <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
     <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
+    <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
 </strings>

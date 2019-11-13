@@ -117,4 +117,5 @@
 
   <DataLanguage>Value is required for language</DataLanguage>
   <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
+  <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
 </strings>

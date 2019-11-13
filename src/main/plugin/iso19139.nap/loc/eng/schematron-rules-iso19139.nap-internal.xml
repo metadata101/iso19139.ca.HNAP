@@ -147,4 +147,5 @@
     <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
     <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
     <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
+    <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
 </strings>

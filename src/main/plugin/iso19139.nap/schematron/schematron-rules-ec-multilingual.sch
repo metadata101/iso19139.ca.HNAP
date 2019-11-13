@@ -315,6 +315,13 @@
         test="$openLicense > 0"
       >$loc/strings/OpenLicense</sch:assert>
 
+
+      <!-- Core Subject Thesaurus -->
+      <sch:let name="coreSubjectThesaurusExists"
+               value="count(gmd:descriptiveKeywords[*/gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus' or
+              */gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus']) > 0" />
+
+      <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
     </sch:rule>
 
     <!-- Title -->
@@ -878,7 +885,6 @@
     </sch:rule>
 
   </sch:pattern>
-
 
   <!-- Distribution - Resources -->
   <sch:pattern>
