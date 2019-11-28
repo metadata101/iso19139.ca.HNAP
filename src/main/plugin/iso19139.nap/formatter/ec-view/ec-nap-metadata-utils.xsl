@@ -52,7 +52,7 @@
               <xsl:attribute name="alt" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
               <xsl:attribute name="title" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
             </img>
-            &#160;<a href="search?_schema={$schema}&amp;parentUuid={id}" title="Search metadata in the collection {title/value[@lang=$guiLang]}"><xsl:value-of select="title/value[@lang=$guiLang]" /></a>
+            &#160;<a href="{/root/gui/url}/search/{/root/lang}?_schema={$schema}&amp;parentUuid={id}" title="Search metadata in the collection {title/value[@lang=$guiLang]}"><xsl:value-of select="title/value[@lang=$guiLang]" /></a>
 
           </div>
           <div style="float:right">
