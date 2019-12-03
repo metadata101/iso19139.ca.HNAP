@@ -15,11 +15,13 @@
     <sch:ns prefix="geonet" uri="http://www.fao.org/geonetwork"/>
     <sch:ns prefix="xsl" uri="http://www.w3.org/1999/XSL/Transform"/>
     <sch:ns prefix="XslUtilHnap" uri="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"/>
+    <sch:ns prefix="tr" uri="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"/>
     <sch:ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
     <sch:ns prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <sch:ns prefix="ns2" uri="http://www.w3.org/2004/02/skos/core#"/>
     <sch:ns prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
 
+    <sch:let name="schema" value="'iso19139.ca.HNAP'"/>
     <sch:let name="mainLanguage" value="if (normalize-space(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue) != '')
                                        then normalize-space(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue)
                                        else if (contains(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString,';'))
@@ -498,10 +500,13 @@
                     test="not($missing)"
                     >$loc/strings/EC23</sch:assert>
 
-                <sch:let name="accessConstraintsCodelist" value="document(concat('file:///', replace(concat($schemaDir, '/loc/', $lang, '/codelists.xml'), '\\', '/')))"/>
+                <sch:let name="accessConstraintsCodelistLabel"
+                     value="tr:codelist-value-label(
+                            tr:create($schema),
+                            gmd:MD_RestrictionCode/local-name(),
+                            gmd:MD_RestrictionCode/@codeListValue)"/>
 
-                <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
-                <sch:let name="isValid" value="count($accessConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+                <sch:let name="isValid" value="($accessConstraintsCodelistLabel != '') and ($accessConstraintsCodelistLabel != gmd:MD_RestrictionCode/@codeListValue)"/>
 
                 <sch:assert
                   test="$isValid or $missing"
@@ -521,10 +526,13 @@
             test="not($missing)"
             >$loc/strings/EC24</sch:assert>
 
-          <sch:let name="useConstraintsCodelist" value="document(concat('file:///', replace(concat($schemaDir, '/loc/', $lang, '/codelists.xml'), '\\', '/')))"/>
+          <sch:let name="useConstraintsCodelistLabel"
+                     value="tr:codelist-value-label(
+                            tr:create($schema),
+                            gmd:MD_RestrictionCode/local-name(),
+                            gmd:MD_RestrictionCode/@codeListValue)"/>
 
-          <sch:let name="value" value="gmd:MD_RestrictionCode/@codeListValue" />
-          <sch:let name="isValid" value="count($useConstraintsCodelist/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code=$value]) = 1" />
+          <sch:let name="isValid" value="($useConstraintsCodelistLabel != '') and ($useConstraintsCodelistLabel != gmd:MD_RestrictionCode/@codeListValue)"/>
 
           <sch:assert
             test="$isValid or $missing"
