@@ -25,7 +25,10 @@
   <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
   <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
 
-  <xsl:variable name="lang" select="/root/env/language" />
+  <!-- Codelists in HNAP contain text in English and French, can load the english codelists as the
+       content is the same and /root/env/lang is not available -->
+  <!--<xsl:variable name="lang" select="/root/env/lang" />-->
+  <xsl:variable name="lang" select="'eng'" />
   <xsl:variable name="codelistFile" select="document(xslutil:getCodeListFileUri($lang))"/>
 
 
