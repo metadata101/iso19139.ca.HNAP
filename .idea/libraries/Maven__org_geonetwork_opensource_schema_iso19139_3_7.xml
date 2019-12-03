@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.geonetwork-opensource:schema-iso19139:3.7">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geonetwork-opensource/schema-iso19139/3.7/schema-iso19139-3.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geonetwork-opensource/schema-iso19139/3.7/schema-iso19139-3.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/geonetwork-opensource/schema-iso19139/3.7/schema-iso19139-3.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

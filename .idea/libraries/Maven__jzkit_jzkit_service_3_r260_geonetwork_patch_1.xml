@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jzkit:jzkit-service:3.r260.geonetwork.patch.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jzkit/jzkit-service/3.r260.geonetwork.patch.1/jzkit-service-3.r260.geonetwork.patch.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jzkit/jzkit-service/3.r260.geonetwork.patch.1/jzkit-service-3.r260.geonetwork.patch.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jzkit/jzkit-service/3.r260.geonetwork.patch.1/jzkit-service-3.r260.geonetwork.patch.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

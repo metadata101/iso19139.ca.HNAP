@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <english>Anglais</english>
+  <french>Français</french>
+
+  <understandResource>Comprendre la ressource</understandResource>
+  <relatedResources>Service disponible et données associées</relatedResources>
+  <techInfo>Les informations techniques</techInfo>
+  <contactInfo>Les contacts</contactInfo>
+  <mdContactInfo>Contacts pour les métadonnées</mdContactInfo>
+  <temporalRef>Référence(s) temporelle(s)</temporalRef>
+  <refDate>Date(s) de référence</refDate>
+  <constraintInfo>Contraintes d'accès et d'utilisation</constraintInfo>
+
+  <xml_iso19139>Télécharger le fichier au format de XML</xml_iso19139>
+
+  <!-- View and tabs -->
+  <advanced>ISO Complet</advanced>
+  <default>Vue par défaut</default>
+  <simple>Vue par défaut</simple>
+  <inspire>INSPIRE</inspire>
+  <inspire_sds>SDS</inspire_sds>
+  <nap-default>NAP default</nap-default>
+  <xml>XML</xml>
+
+  <identificationInfo>Identification</identificationInfo>
+  <distributionInfo>Distribution</distributionInfo>
+  <dataQualityInfo>Qualité</dataQualityInfo>
+  <spatialRepresentationInfo>Information spatiale</spatialRepresentationInfo>
+  <referenceSystemInfo>Système de réf.</referenceSystemInfo>
+  <contentInfo>Contenu</contentInfo>
+  <portrayalCatalogueInfo>Représentation</portrayalCatalogueInfo>
+  <metadataConstraints>Md. contraintes</metadataConstraints>
+  <metadataMaintenance>Md. maintenance</metadataMaintenance>
+  <applicationSchemaInfo>Extension</applicationSchemaInfo>
+
+  <GeographicExtent>Étendue géographique</GeographicExtent>
+  <GeographicScope>Portée Géographique</GeographicScope>
+  <Timeperiod>Période de temps</Timeperiod>
+  <DistributionInformation>Informations sur la distribution</DistributionInformation>
+  <Name>Name</Name>
+  <Version>Version</Version>
+  <Fees>Fees</Fees>
+  <Download>Télécharger</Download>
+  <Relateddatasets>Données associés</Relateddatasets>
+  <Metadatarecord>Fiche de métadonnées</Metadatarecord>
+  <Datasetidentification>Identification d’ensemble de données</Datasetidentification>
+  <Thumbnail>Vignette</Thumbnail>
+  <Dataclassification>Classification des données</Dataclassification>
+  <Dataresources>Ressources de données</Dataresources>
+  <DataresourcesDesc>Ajouter des données en téléversant des fichiers ou en établissant un lien vers des fichiers ou des services existants</DataresourcesDesc>
+  <Additionalinformation>Information additionnelle</Additionalinformation>
+  <Additionalmetadata>Métadonnées supplémentaires</Additionalmetadata>
+  <AdditionalmetadataDesc>Ajouter une documentation à l'appui en téléversant des fichiers ou en établissant un lien vers des fichiers existants </AdditionalmetadataDesc>
+  <MapResources>Sources de la carte</MapResources>
+  <MapResourcesDesc>Ajouter des liens aux ressources pour le service cartographique</MapResourcesDesc>
+
+  <Dataresources_Name>Nom</Dataresources_Name>
+  <Dataresources_Description>Description</Dataresources_Description>
+  <Dataresources_Geospatial>Données géospatiales</Dataresources_Geospatial>
+  <Dataresources_Protocol>Protocole</Dataresources_Protocol>
+  <Dataresources_Service>Service</Dataresources_Service>
+  <Dataresources_Layer>Couche</Dataresources_Layer>
+  <Dataresources_Language>Langue de service</Dataresources_Language>
+  <Dataresources_RCS>Afficher la carte</Dataresources_RCS>
+  <Dataresources_Format>Format</Dataresources_Format>
+  <Dataresources_Link>Link</Dataresources_Link>
+  <Dataresources_Lang>Langue</Dataresources_Lang>
+  <Dataresources_Type>Type de ressource</Dataresources_Type>
+
+  <Additionalmetadata_Type>Type de métadonnées</Additionalmetadata_Type>
+  <Additionalmetadata_Url>Fichier/Adresse URL</Additionalmetadata_Url>
+
+  <Edit>Modifier</Edit>
+  <EditDesc>Modifier ressource</EditDesc>
+  <Delete>Supprimer</Delete>
+  <DeleteDesc>Supprimer ressource</DeleteDesc>
+
+  <AddDataResource>Ajouter une ressource de données</AddDataResource>
+  <AddAdditionalmetadata>Ajouter des métadonnées supplémentaires</AddAdditionalmetadata>
+  <AddMapServiceResource>Ajouter une ressource pour le service cartographique</AddMapServiceResource>
+
+  <Yes>Oui</Yes>
+  <URL>URL</URL>
+  <LocalFile>Fichier local</LocalFile>
+
+  <Theme>Fonction</Theme>
+  <Subtheme>Sous-fonction</Subtheme>
+
+  <can>CAN (Canada)</can>
+  <usa>É.-U. (États-Unis d'Amérique)</usa>
+
+  <countries>
+    <country code="CAN" eng="Canada" fre="Canada" />
+    <country code="USA" eng="United States of America" fre="États-Unis d'Amérique"/>
+  </countries>
+
+  <adminAreas>
+    <area country="CAN" eng="Alberta" fre="Alberta" />
+    <area country="CAN" eng="British Columbia" fre="Colombie-Britannique" />
+    <area country="CAN" eng="New Brunswick" fre="Nouveau-Brunswick" />
+    <area country="CAN" eng="Newfoundland and Labrador" fre="Terre-Neuve-et-Labrador" />
+    <area country="CAN" eng="Northwest Territories" fre="Territoires du Nord-Ouest" />
+    <area country="CAN" eng="Nova Scotia" fre="Nouvelle-Écosse" />
+    <area country="CAN" eng="Nunavut" fre="Nunavut" />
+    <area country="CAN" eng="Ontario" fre="Ontario" />
+    <area country="CAN" eng="Prince Edward Island" fre="Île-du-Prince-Édouard" />
+    <area country="CAN" eng="Quebec" fre="Québec" />
+    <area country="CAN" eng="Saskatchewan" fre="Saskatchewan" />
+    <area country="CAN" eng="Yukon" fre="Yukon" />
+    <area country="USA" eng="Alabama" fre="Alabama" />
+    <area country="USA" eng="Alaska" fre="Alaska" />
+    <area country="USA" eng="American Samoa" fre="Samoa américaine" />
+    <area country="USA" eng="Arizona" fre="Arizona" />
+    <area country="USA" eng="Arkansas" fre="Arkansas" />
+    <area country="USA" eng="California" fre="Californie" />
+    <area country="USA" eng="Colorado" fre="Colorado" />
+    <area country="USA" eng="Connecticut" fre="Connecticut" />
+    <area country="USA" eng="Delaware" fre="Delaware" />
+    <area country="USA" eng="District of Columbia" fre="District de Columbia" />
+    <area country="USA" eng="Florida" fre="Floride" />
+    <area country="USA" eng="Georgia" fre="Georgie" />
+    <area country="USA" eng="Guam" fre="Guam" />
+    <area country="USA" eng="Hawaii" fre="Hawaii" />
+    <area country="USA" eng="Idaho" fre="Idaho" />
+    <area country="USA" eng="Illinois" fre="Illinois" />
+    <area country="USA" eng="Indiana" fre="Indiana" />
+    <area country="USA" eng="Iowa" fre="Iowa" />
+    <area country="USA" eng="Kansas" fre="Kansas" />
+    <area country="USA" eng="Kentucky" fre="Kentucky" />
+    <area country="USA" eng="Louisiana" fre="Louisiane" />
+    <area country="USA" eng="Maine" fre="Maine" />
+    <area country="USA" eng="Marshall Islands" fre="Îles Marshall" />
+    <area country="USA" eng="Maryland" fre="Maryland" />
+    <area country="USA" eng="Massachusetts" fre="Massachusetts" />
+    <area country="USA" eng="Michigan" fre="Michigan" />
+    <area country="USA" eng="Micronesia" fre="Micronésie" />
+    <area country="USA" eng="Minnesota" fre="Minnesota" />
+    <area country="USA" eng="Minor Outlying Islands" fre="Minor Outlying Islands" />
+    <area country="USA" eng="Mississippi" fre="Mississippi" />
+    <area country="USA" eng="Missouri" fre="Missouri" />
+    <area country="USA" eng="Montana" fre="Montana" />
+    <area country="USA" eng="Nebraska" fre="Nebraska" />
+    <area country="USA" eng="Nevada" fre="Nevada" />
+    <area country="USA" eng="New Hampshire" fre="New Hampshire" />
+    <area country="USA" eng="New Jersey" fre="New Jersey" />
+    <area country="USA" eng="New Mexico" fre="Nouveau Mexique" />
+    <area country="USA" eng="New York" fre="New York" />
+    <area country="USA" eng="North Carolina" fre="Caroline du Nord" />
+    <area country="USA" eng="North Dakota" fre="Dakota du Nord" />
+    <area country="USA" eng="Northern Mariana Islands" fre="Northern Mariana Islands" />
+    <area country="USA" eng="Ohio" fre="Ohio" />
+    <area country="USA" eng="Oklahoma" fre="Oklahoma" />
+    <area country="USA" eng="Oregon" fre="Oregon" />
+    <area country="USA" eng="Palau" fre="Palau" />
+    <area country="USA" eng="Pennsylvania" fre="Pennsylvanie" />
+    <area country="USA" eng="Puerto Rico" fre="Puerto Rico" />
+    <area country="USA" eng="Rhode Island" fre="Rhode Island" />
+    <area country="USA" eng="South Carolina" fre="Caroline du Sud" />
+    <area country="USA" eng="South Dakota" fre="Dakota du Sud" />
+    <area country="USA" eng="Tennessee" fre="Tennessee" />
+    <area country="USA" eng="Texas" fre="Texas" />
+    <area country="USA" eng="Utah" fre="Utah" />
+    <area country="USA" eng="Vermont" fre="Vermont" />
+    <area country="USA" eng="Virginia" fre="Virginie" />
+    <area country="USA" eng="Virgin Islands" fre="Îles Vierges" />
+    <area country="USA" eng="Washington" fre="Washington" />
+    <area country="USA" eng="West Virginia" fre="Virginie de l'Ouest" />
+    <area country="USA" eng="Wisconsin" fre="Wisconsin" />
+    <area country="USA" eng="Wyoming" fre="Wyoming" />
+  </adminAreas>
+
+
+  <from>Depuis</from>
+  <to>Jusqu'à</to>
+
+  <sw>SO</sw>
+  <ne>NE</ne>
+
+  <resources>Ressources (Utilisez la vue par défaut pour les ressources édition)</resources>
+  <dataset>Ensemble de données</dataset>
+  <datasets>Ensembles de données</datasets>
+  <description>Résumé</description>
+  <when_explained>Utilisez ces paramètres pour trouver des ensembles de données par période</when_explained>
+  <where_explained>Utilisez ces paramètres pour trouver des ensembles de données par secteur</where_explained>
+  <what_explained>Utilisez ces paramètres pour trouver des ensembles de données par sujet</what_explained>
+  <identification_explained>Utilisez ces paramètres pour trouver des ensembles de données par métadonnées générales</identification_explained>
+  <tagcloud_explained>Nuage de mots clés. Cliquez sur un mot clé ou tapez les mots clés dans l'encadré ci-dessus (séparés par une virgule).</tagcloud_explained>
+  <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
+  <Relateddata>Ressources connexes</Relateddata>
+  <View>Voir</View>
+  <more>Plus</more>
+
+  <updateExtent>Update geographic extent</updateExtent>
+
+  <Contact>Coordonnées</Contact>
+  <DistributorContact>Renseignements au sujet du distributeur </DistributorContact>
+  <MetadataContact>Point de contact pour les métadonnées</MetadataContact>
+  <DataContact>Point de contact pour les données</DataContact>
+  <DataPointContact>Point de contact pour les données</DataPointContact>
+
+  <Status>Statut</Status>
+  <Publishedto>Emplacement de publication</Publishedto>
+  <owner>Propriétaire de la métadonnée</owner>
+  <lastChangedBy>Dernier changement effectué par</lastChangedBy>
+  <changeDate>Date de mise à jour de la métadonnée</changeDate>
+  <rating>Openness rating</rating>
+  <ParentCollection>Ensemble apparenté</ParentCollection>
+
+  <display-thumbnails-header>Vignette</display-thumbnails-header>
+  <display-overviews-header>Étendue</display-overviews-header>
+
+  <temporalRangeSection>Temporal Extent</temporalRangeSection>
+  <beginPosition>Begin Date</beginPosition>
+  <endPosition>End Date</endPosition>
+
+  <distributionFormats>Distribution Formats</distributionFormats>
+  <distributionResources>Resources</distributionResources>
+
+  <view>Voir</view>
+  <published>Publié</published>
+  <approved_local>Publié+Ébauche</approved_local>
+  <approved>Approved</approved>
+  <retired>Retirée</retired>
+  <submitted>Soumise</submitted>
+  <rejected>Refusée</rejected>
+  <view_published>Voir Publiées</view_published>
+  <view_draft>Voir Ébauche</view_draft>
+  <draft>Ébauche</draft>
+
+  <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
+  <addDate>Add date</addDate>
+  <addCharacterSet>Add character set</addCharacterSet>
+  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
+  
+  <trueValue>Oui</trueValue>
+  <falseValue>Non</falseValue>
+  <nilValue>Non défini</nilValue>
+</strings>

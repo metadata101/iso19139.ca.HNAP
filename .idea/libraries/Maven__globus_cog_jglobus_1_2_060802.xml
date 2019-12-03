@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: globus:cog-jglobus:1.2-060802">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/globus/cog-jglobus/1.2-060802/cog-jglobus-1.2-060802.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/globus/cog-jglobus/1.2-060802/cog-jglobus-1.2-060802-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/globus/cog-jglobus/1.2-060802/cog-jglobus-1.2-060802-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

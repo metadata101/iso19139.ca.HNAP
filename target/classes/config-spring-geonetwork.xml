@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+  xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="iso19139.hnapSchemaPlugin"
+        class="org.fao.geonet.schema.iso19139.ISO19139SchemaPlugin">
+    <property name="xpathTitle">
+      <util:list value-type="java.lang.String">
+        <value>gmd:identificationInfo/*/gmd:citation/*/gmd:title/gco:CharacterString</value>
+        <value>gmd:identificationInfo/*/gmd:citation/*/gmd:title/*/gmd:textGroup/gmd:LocalisedCharacterString</value>
+      </util:list>
+    </property>
+  </bean>
+</beans>

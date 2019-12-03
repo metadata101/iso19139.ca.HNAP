@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+	<Folder FolderName="convert"/>
+	<Folder FolderName="formatter"/>
+	<Folder FolderName="XML Files" ExtStr="xml;cml;math;rdf;smil;svg;wml">
+		<File FilePath="src\main\plugin\iso19139.nap\oasis-catalog.xml" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema-conversions.xml" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema-ident.xml" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema-substitutes.xml" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema-suggestions.xml" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XSL Files" ExtStr="xsl;xslt">
+		<File FilePath="src\main\plugin\iso19139.nap\cleanup-doi.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-atom-feed.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-ckan-dataset.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-classification.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-datapackage.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-datasetid.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-datasetinfo-from-service-feed.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-datasets.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-date-modified.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-doi-value.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-doi.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-gml.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-links.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-metadata-language.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-onlineresources-desc-status.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-relations.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-spatialrepresentation.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-thumbnails.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-title.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-type.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\extract-uuid.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\inflate-metadata.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema.xsd" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-collection-info.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-doi.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-product-info.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-template-language.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-thumbnail.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\set-uuid.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\suggest.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\unset-thumbnail.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\update-child-from-parent-info.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\update-classification-info.xsl" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\update-fixed-info.xsl" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="XQuery Files" ExtStr="xq;xql;xquery;xqu"/>
+	<Folder FolderName="HTML Files" ExtStr="html;htm;xhtml;asp"/>
+	<Folder FolderName="schema" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<Folder FolderName="gco">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gco\basicTypes.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gco\gco.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gco\gcoBase.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gmd">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\applicationSchema.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\citation.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\constraints.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\content.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\dataQuality.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\distribution.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\extent.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\freeText.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\gmd.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\identification.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\maintenance.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\metadataApplication.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\metadataEntity.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\metadataExtension.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\portrayalCatalogue.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\referenceSystem.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmd\spatialRepresentation.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gml">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\basicTypes.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\coordinateOperations.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\coordinateReferenceSystems.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\coordinateSystems.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\coverage.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\datums.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\dictionary.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\direction.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\dynamicFeature.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\feature.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\geometryAggregates.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\geometryBasic0d1d.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\geometryBasic2d.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\geometryComplexes.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\geometryPrimitives.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\gml.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\gmlBase.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\grids.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\measures.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\observation.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\readme.txt" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\referenceSystems.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\temporal.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\temporalReferenceSystems.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\temporalTopology.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\topology.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\units.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gml\valueObjects.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gmx">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\catalogues.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\codelistItem.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\crsItem.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\extendedTypes.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\gmx.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\gmxUsage.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gmx\uomItem.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gsr">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gsr\gsr.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gsr\spatialReferencing.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gss">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gss\geometry.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gss\gss.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="gts">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gts\gts.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\gts\temporalObjects.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="napec">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\napec\napec.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\napec\napecExtensions.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="napm">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\napm\napm.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\napm\napmCharacterString.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="resources">
+			<Folder FolderName="Codelist">
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\Codelist\gmxCodelists.xml" HomeFolder="Yes"/>
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\Codelist\ML_gmxCodelists.xml" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="crs">
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\crs\gmxCrs.xml" HomeFolder="Yes"/>
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\crs\ML_gmxCrs.xml" HomeFolder="Yes"/>
+			</Folder>
+			<Folder FolderName="uom">
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\uom\gmxUom.xml" HomeFolder="Yes"/>
+				<File FilePath="src\main\plugin\iso19139.nap\schema\resources\uom\ML_gmxUom.xml" HomeFolder="Yes"/>
+			</Folder>
+		</Folder>
+		<Folder FolderName="srv">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\srv\serviceMetadata.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\srv\serviceModel.xsd" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\srv\srv.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="xlink">
+			<File FilePath="src\main\plugin\iso19139.nap\schema\xlink\version.txt" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\schema\xlink\xlinks.xsd" HomeFolder="Yes"/>
+		</Folder>
+		<File FilePath="src\main\plugin\iso19139.nap\schema\19139-GML_readme.txt" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema\napMetadata_XML_Schema.txt" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schema\Version.txt" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="DTD/Schemas" ExtStr="dtd;dcd;xdr;biz;xsd">
+		<File FilePath="src\main\plugin\iso19139.nap\schema.xsd"/>
+		<ExtMountFolder FolderName="src\main\plugin\iso19139.nap\schema"/>
+	</Folder>
+	<Folder FolderName="Entities" ExtStr="ent"/>
+	<Folder FolderName="schematron">
+		<File FilePath="src\main\plugin\iso19139.nap\schematron\criteria-type.xml" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schematron\schematron-rules-ec.sch" HomeFolder="Yes"/>
+		<File FilePath="src\main\plugin\iso19139.nap\schematron\schematron-rules-hnap-internal.sch" HomeFolder="Yes"/>
+	</Folder>
+	<Folder FolderName="loc">
+		<Folder FolderName="eng">
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\codelists.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\criteria-type.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\labels.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\schematron-rules-ec-multilingual.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\schematron-rules-ec.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\schematron-rules-hnap-internal-fre.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\schematron-rules-hnap-internal.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\eng\strings.xml" HomeFolder="Yes"/>
+		</Folder>
+		<Folder FolderName="fre">
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\codelists.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\criteria-type.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\labels.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\schematron-rules-ec-multilingual.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\schematron-rules-ec.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\schematron-rules-hnap-internal-fre.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\schematron-rules-hnap-internal.xml" HomeFolder="Yes"/>
+			<File FilePath="src\main\plugin\iso19139.nap\loc\fre\strings.xml" HomeFolder="Yes"/>
+		</Folder>
+	</Folder>
+	<Folder FolderName="codelist">
+		<Folder FolderName="local">
+			<Folder FolderName="thesauri">
+				<Folder FolderName="place">
+					<File FilePath="src\main\config\codelist\local\thesauri\place\dfo_area.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\place\EC_Geographic_Scope.rdf" HomeFolder="Yes"/>
+				</Folder>
+				<Folder FolderName="theme">
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\DFO_Waf.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Content_Scope.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Core_Subject.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Data_Usage_Scope.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Government_Titles.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Information_Category.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_ISO_Countries.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Resource_ContentTypes.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Resource_Formats.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_States.rdf" HomeFolder="Yes"/>
+					<File FilePath="src\main\config\codelist\local\thesauri\theme\EC_Waf.rdf" HomeFolder="Yes"/>
+				</Folder>
+			</Folder>
+		</Folder>
+	</Folder>
+	<File FilePath="src\main\plugin\iso19139.nap\schema.xsd"/>
+</Project>
