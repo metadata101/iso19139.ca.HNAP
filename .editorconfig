@@ -12,3 +12,7 @@ indent_size = 4
 [*.md]
 indent_size = 2
 trim_trailing_whitespace = false
+
+[{*.jhm,*.xjb,*.rng,*.wsdd,*.wsdl,*.fxml,*.sch,*.plan,*.bpmn,*.pom,*.xslt,*.jrxml,*.ant,*.xul,*.xsl,*.xsd,*.tld,*.jnlp,*.wadl,*.xml}]
+indent_size = 2
+tab_width = 2
