@@ -68,8 +68,6 @@
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
 
-    <xsl:message>iso19139.ca.HNAP codelist</xsl:message>
-
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
                       select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
