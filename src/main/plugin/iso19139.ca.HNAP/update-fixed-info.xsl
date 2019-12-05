@@ -25,13 +25,6 @@
   <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
   <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
 
-  <!-- Codelists in HNAP contain text in English and French, can load the english codelists as the
-       content is the same and /root/env/lang is not available -->
-  <!--<xsl:variable name="lang" select="/root/env/lang" />-->
-  <xsl:variable name="lang" select="'eng'" />
-  <xsl:variable name="codelistFile" select="document(XslUtilHnap:getCodeListFileUri($lang))"/>
-
-
   <xsl:variable name="localeForTranslations">
     <xsl:choose>
       <xsl:when test="normalize-space(/root/gmd:MD_Metadata/gmd:language/gco:CharacterString) = 'eng; CAN'">#fra</xsl:when>
@@ -532,52 +525,140 @@
 	<!-- ================================================================= -->
 	<!-- codelists: set @codeList path -->
 	<!-- ================================================================= -->
-	<xsl:template match="gmd:LanguageCode[@codeListValue]" priority="10">
+  <!-- Add codelist labels -->
+    <xsl:template match="gmd:LanguageCode[@codeListValue]" priority="2200">
+        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/">
+			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
+
+            <xsl:if test="normalize-space(./text()) != ''">
+               <xsl:value-of select="XslUtil:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
+            </xsl:if>
+        </gmd:LanguageCode>
+    </xsl:template>
+
+    <xsl:template match="gmd:*[@codeListValue]" priority="220">
+      <xsl:copy>
+         <xsl:apply-templates select="@*"/>
+            <xsl:attribute name="codeList">
+            	<xsl:variable name="codelistCode">
+            		<xsl:choose>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ScopeCode'">
+            				  <xsl:value-of select="'IC_108'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ProgressCode' and name(parent::*) = 'gmd:status'">
+            				  <xsl:value-of select="'IC_106'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_SpatialRepresentationTypeCode' and name(parent::*) = 'gmd:spatialRepresentationType'">
+            				  <xsl:value-of select="'IC_109'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MaintenanceFrequencyCode' and name(parent::*) = 'gmd:maintenanceAndUpdateFrequency'">
+            				  <xsl:value-of select="'IC_102'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:CI_RoleCode' and name(parent::*) = 'gmd:role'">
+            				  <xsl:value-of select="'IC_90'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:CI_DateTypeCode' and name(parent::*) = 'gmd:dateType'">
+            				  <xsl:value-of select="'IC_87'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_RestrictionCode'">
+            				  <xsl:value-of select="'IC_107'"/>
+            			</xsl:when>
+            	  	<xsl:when test="normalize-space(name(.)) = 'gmd:CI_PresentationFormCode' and name(parent::*) = 'gmd:presentationForm'">
+            				  <xsl:value-of select="'IC_89'"/>
+            			</xsl:when>
+            		 	<xsl:when test="normalize-space(name(.)) = 'gmd:MD_GeometricObjectTypeCode'">
+            				  <xsl:value-of select="'IC_99'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CellGeometryCode'">
+            				  <xsl:value-of select="'IC_94'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_PixelOrientationCode'">
+            				  <xsl:value-of select="'IC_105'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:DQ_EvaluationMethodTypeCode'">
+            				  <xsl:value-of select="'IC_91'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:DS_AssociationTypeCode'">
+            				  <xsl:value-of select="'IC_92'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:DS_InitiativeTypeCode'">
+            				  <xsl:value-of select="'IC_93'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ClassificationCode'">
+            				  <xsl:value-of select="'IC_96'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CoverageContentTypeCode'">
+            				  <xsl:value-of select="'IC_97'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_DimensionNameTypeCode'">
+            				  <xsl:value-of select="'IC_98'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ImagingConditionCode'">
+            				  <xsl:value-of select="'IC_100'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumFormatCode'">
+            				  <xsl:value-of select="'IC_103'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_TopologyLevelCode'">
+            				  <xsl:value-of select="'IC_111'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumNameCode'">
+            				  <xsl:value-of select="'IC_104'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CharacterSetCode' 
+            				                and ((name(parent::*) = 'gmd:characterSet'
+            				                    and (name(parent::*/parent::*) = 'gmd:MD_DataIdentification' 
+            				                      or name(parent::*/parent::*) = 'gmd:MD_Metadata')
+            				                     )or(
+            				                     (name(parent::*) = 'gmd:characterEncoding'
+            				                      and name(parent::*/parent::*) = 'gmd:PT_Locale')
+            				                    ))">
+            				  <xsl:value-of select="'IC_95'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_KeywordTypeCode' and name(parent::*) = 'gmd:type'">
+            				  <xsl:value-of select="'IC_101'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'srv:SV_CouplingType'">
+            				  <xsl:value-of select="'IC_114'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'srv:DCPList'">
+            				  <xsl:value-of select="'IC_112'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:Country'">
+            				  <xsl:value-of select="'IC_117'"/>
+            			</xsl:when>
+            			<xsl:when test="normalize-space(name(.)) = 'gmd:fileType'">
+            				  <xsl:value-of select="'IC_115'"/>
+            			</xsl:when>
+            			<xsl:otherwise>
+            		  </xsl:otherwise>
+            	  </xsl:choose>
+            	</xsl:variable>
+
+            	<xsl:choose>
+            		<xsl:when test="normalize-space($codelistCode) != ''">
+                   <xsl:value-of select="concat('http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#',$codelistCode)"/>
+            	  </xsl:when>
+            		<xsl:otherwise>
+                   <xsl:value-of select="concat('http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#',local-name(.))"/>
+            		</xsl:otherwise>
+            	</xsl:choose>
+            </xsl:attribute>
+            <xsl:if test="normalize-space(./text()) != '' and string(@codeListValue)">
+                <xsl:value-of select="XslUtil:getCodelistTranslation(name(), string(@codeListValue), string($mainLanguage))"/>
+            </xsl:if>
+       </xsl:copy>
+  </xsl:template>
+
+	<!--xsl:template match="gmd:LanguageCode[@codeListValue]" priority="10">
 		<gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116">
 			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
 
-            <!-- Update the language code text value if it exists
-                 It will attempt to detect the existing format and update it.
-                 Formats include
-                    - 2 character lang code
-                    - 3 character lang code
-                    - character language code + country code (i.e. eng; USA)
-                 if format can not be determined then it will keep the same value -->
             <xsl:if test="normalize-space(./text()) != ''">
-                <xsl:choose>
-                    <!-- If the length is 3 characters then assume the text is equal to the code list value -->
-                    <xsl:when test="string-length(normalize-space(./text())) = 3 and @codeListValue != ''">
-                        <xsl:value-of  select="normalize-space(@codeListValue)"/>
-                    </xsl:when>
-                    <!-- If the length is 2 characters then assume the text is equal to the code list value as a 2 char code-->
-                    <xsl:when test="string-length(normalize-space(./text())) = 2 and @codeListValue != ''">
-                        <xsl:value-of  select="normalize-space(upper-case(XslUtilHnap:twoCharLangCode(@codeListValue, '')))"/>
-                    </xsl:when>
-                    <!-- If contains a ";" then assume language is in the format of "eng; USA" if there is a semicolon so we will update the language -->
-                    <xsl:when test="contains(./text(),';') and @codeListValue != ''">
-                        <xsl:value-of  select="normalize-space(@codeListValue)"/>
-                        <xsl:text>; </xsl:text>
-                        <xsl:variable name="langCode" select="@codeListValue"/>
-                        <xsl:variable name="countryCode">
-                            <xsl:value-of  select="normalize-space(/root/*/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue = $langCode]/gmd:country/gmd:Country/@codeListValue)"/>
-                        </xsl:variable>
-                        <xsl:choose>
-                            <xsl:when test="$countryCode != ''">
-                                <xsl:value-of  select="$countryCode"/>
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <xsl:value-of  select="substring-after(./text(),';')"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
-                    </xsl:when>
-                    <!-- unknown format just keep it as is?? -->
-                    <xsl:otherwise>
-                        <xsl:value-of select="./text()"/>
-                    </xsl:otherwise>
-                </xsl:choose>
+               <xsl:value-of select="XslUtil:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
             </xsl:if>
         </gmd:LanguageCode>
-	</xsl:template>
+	</xsl:template-->
 
 
 	<!--<xsl:template match="gmd:*[@codeListValue]">
@@ -868,289 +949,13 @@
     </xsl:copy>
     </xsl:template>
 
-  <xsl:template match="gmd:MD_ScopeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ScopeCode']/entry[code = $currentCodeValue]/value" />
-      <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
-                        codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_ScopeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:status">
-    <xsl:variable name="currentCodeValue" select="gmd:MD_ProgressCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ProgressCode']/entry[code = $currentCodeValue]/value" />
-
-
-    <gmd:status>
-      <gmd:MD_ProgressCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_106"
-                           codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_ProgressCode>
-    </gmd:status>
-  </xsl:template>
-
-  <xsl:template match="gmd:spatialRepresentationType">
-    <xsl:variable name="currentCodeValue" select="gmd:MD_SpatialRepresentationTypeCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_SpatialRepresentationTypeCode']/entry[code = $currentCodeValue]/value" />
-
-   <!--<xsl:message>gmd:spatialRepresentationType <xsl:value-of select="$schemaTranslationsDir" /> - <xsl:value-of select="$thesauriDir" /></xsl:message>
-    <xsl:message>gmd:spatialRepresentationType (currentCodeValue): <xsl:value-of select="$currentCodeValue" /></xsl:message>
-    <xsl:message>gmd:spatialRepresentationType (value): <xsl:value-of select="$value" /></xsl:message>-->
-
-    <gmd:spatialRepresentationType>
-      <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
-                        codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_SpatialRepresentationTypeCode>
-    </gmd:spatialRepresentationType>
-  </xsl:template>
-
-  <xsl:template match="gmd:maintenanceAndUpdateFrequency">
-    <xsl:variable name="currentCodeValue" select="gmd:MD_MaintenanceFrequencyCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MaintenanceFrequencyCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:maintenanceAndUpdateFrequency>
-      <gmd:MD_MaintenanceFrequencyCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_102"
-                                            codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_MaintenanceFrequencyCode>
-    </gmd:maintenanceAndUpdateFrequency>
-  </xsl:template>
-
-  <xsl:template match="gmd:role">
-    <xsl:variable name="currentCodeValue" select="gmd:CI_RoleCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:role>
-      <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
-                                       codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:CI_RoleCode>
-    </gmd:role>
-  </xsl:template>
-
-  <xsl:template match="gmd:dateType">
-    <xsl:variable name="currentCodeValue" select="gmd:CI_DateTypeCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_DateTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:dateType>
-      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
-                                            codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:CI_DateTypeCode>
-    </gmd:dateType>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_RestrictionCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107"
-                           codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_RestrictionCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:presentationForm">
-    <xsl:variable name="currentCodeValue" select="gmd:CI_PresentationFormCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_PresentationFormCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:presentationForm>
-      <gmd:CI_PresentationFormCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_89"
-                              codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:CI_PresentationFormCode>
-    </gmd:presentationForm>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_GeometricObjectTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_GeometricObjectTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_GeometricObjectTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_99"
-                            codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_GeometricObjectTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_CellGeometryCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CellGeometryCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_CellGeometryCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_94"
-                                    codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_CellGeometryCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_PixelOrientationCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_PixelOrientationCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_PixelOrientationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_105"
-                             codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_PixelOrientationCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:DQ_EvaluationMethodTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DQ_EvaluationMethodTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:DQ_EvaluationMethodTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_91"
-                                 codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:DQ_EvaluationMethodTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:DS_AssociationTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DS_AssociationTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:DS_AssociationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_92"
-                                     codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:DS_AssociationTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:DS_InitiativeTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DS_InitiativeTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:DS_InitiativeTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_93"
-                                codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:DS_InitiativeTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_ClassificationCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ClassificationCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_ClassificationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96"
-                               codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_ClassificationCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_CoverageContentTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CoverageContentTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_CoverageContentTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_97"
-                               codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_CoverageContentTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_DimensionNameTypeCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_DimensionNameTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_DimensionNameTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_98"
-                                    codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_DimensionNameTypeCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_ImagingConditionCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ImagingConditionCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_ImagingConditionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_100"
-                                  codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_ImagingConditionCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_MediumFormatCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MediumFormatCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_MediumFormatCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_103"
-                                 codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_MediumFormatCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_TopologyLevelCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_TopologyLevelCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_TopologyLevelCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_111"
-                             codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_TopologyLevelCode>
-  </xsl:template>
-
-  <xsl:template match="gmd:MD_MediumNameCode">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MediumNameCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:MD_MediumNameCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_104"
-                              codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </gmd:MD_MediumNameCode>
-  </xsl:template>
-
-
-  <!-- CharacterSet (in IdentificationInfo). The same element at metadata level is fixed to utf-8. -->
-  <xsl:template match="gmd:MD_DataIdentification/gmd:characterSet" priority="20">
-    <xsl:variable name="currentCodeValue" select="gmd:MD_CharacterSetCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CharacterSetCode']/entry[code = $currentCodeValue]/value" />
-
-   <gmd:characterSet>
-     <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
-                               codeListValue="{$currentCodeValue}">
-       <xsl:value-of select="$value" />
-     </gmd:MD_CharacterSetCode>
-   </gmd:characterSet>
- </xsl:template>
-
-  <!-- KeywordTypeCode -->
-  <xsl:template match="gmd:type[gmd:MD_KeywordTypeCode]" priority="20">
-    <xsl:variable name="currentCodeValue" select="gmd:MD_KeywordTypeCode/@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value" />
-
-    <gmd:type>
-      <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101"
-                              codeListValue="{$currentCodeValue}">
-        <xsl:value-of select="$value" />
-      </gmd:MD_KeywordTypeCode>
-    </gmd:type>
-  </xsl:template>
-
-  <!-- srv:SV_CouplingType -->
-  <xsl:template match="srv:SV_CouplingType">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='srv:SV_CouplingType']/entry[code = $currentCodeValue]/value" />
-
-    <srv:SV_CouplingType codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_114"
-                           codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </srv:SV_CouplingType>
-  </xsl:template>
-
-  <!-- srv:DCPList -->
-  <xsl:template match="srv:DCPList">
-    <xsl:variable name="currentCodeValue" select="@codeListValue" />
-    <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='srv:DCPList']/entry[code = $currentCodeValue]/value" />
-
-    <srv:DCPList codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_112"
-                         codeListValue="{$currentCodeValue}">
-      <xsl:value-of select="$value" />
-    </srv:DCPList>
-  </xsl:template>
-
 
   <!--<xsl:template match="gmd:topicCategory">
     <xsl:variable name="currentValue" select="gmd:MD_TopicCategoryCode" />
-    <xsl:variable name="codeValue" select="$codelistFile/codelists/codelist[@name='gmd:MD_TopicCategoryCode']/entry[value= $currentValue]/code" />
     <xsl:message>gmd:topicCategory</xsl:message>
     <xsl:message>gmd:topicCategory (currentValue): <xsl:value-of select="$currentValue" /></xsl:message>
     <xsl:message>gmd:topicCategory (codeValue): <xsl:value-of select="$codeValue" /></xsl:message>
-    <xsl:message>gmd:topicCategory (values): <xsl:value-of select="$codelistFile/codelists/codelist[@name='gmd:MD_TopicCategoryCode']" /></xsl:message>
+    <xsl:message>gmd:topicCategory (values): <xsl:value-of select="XslUtil:getCodelistTranslation(gmd:MD_TopicCategoryCode/name(), string(gmd:MD_TopicCategoryCode/@codeListValue), string($mainLanguage))" /></xsl:message>
     <gmd:topicCategory>
       <gmd:MD_TopicCategoryCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_110"
                                           codeListValue="{$codeValue}">
@@ -1390,9 +1195,9 @@
 
 
             <gmd:type>
-              <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value" />
-
-              <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}"><xsl:value-of select="$value" /></gmd:MD_KeywordTypeCode>
+              <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}">
+                <xsl:value-of select="XslUtil:getCodelistTranslation('gmd:MD_KeywordTypeCode', string(@type), string($mainLanguage))"/>
+              </gmd:MD_KeywordTypeCode>
             </gmd:type>
 
             <xsl:copy-of select="keyword[1]/gmd:thesaurusName" />
@@ -1480,18 +1285,6 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
-
-
-    <!-- Add codelist labels -->
-    <xsl:template match="gmd:LanguageCode[@codeListValue]" priority="2200">
-        <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/">
-            <xsl:apply-templates select="@*[name(.)!='codeList']"/>
-
-            <xsl:value-of select="XslUtil:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
-        </gmd:LanguageCode>
-    </xsl:template>
-
-
 
   <!-- ================================================================= -->
 	<!-- copy everything else as is -->
