@@ -152,6 +152,21 @@
   <xsl:variable name="editorConfig"
                 select="document('layout/config-editor.xml')"/>
 
+
+  <!-- convert ISO 639-2T to_ISO 639-2B - i.e. FRA to FRE -->
+  <xsl:variable name="mainLanguage_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$mainLanguage ='fra'">
+        <xsl:value-of select="'fre'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$mainLanguage"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+  <!-- load codelist Document-->
+  <xsl:variable name="codelistDocument" select="document(concat('loc/', $mainLanguage_ISO639_2B, '/codelists.xml'))"/>
+
   <xsl:variable name="nonMultilingualFields"
                 select="$editorConfig/editor/multilingualFields/exclude"/>
 
@@ -536,120 +551,146 @@
         </gmd:LanguageCode>
     </xsl:template>
 
-    <xsl:template match="gmd:*[@codeListValue]" priority="220">
-      <xsl:copy>
-         <xsl:apply-templates select="@*"/>
-            <xsl:attribute name="codeList">
-            	<xsl:variable name="codelistCode">
-            		<xsl:choose>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ScopeCode'">
-            				  <xsl:value-of select="'IC_108'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ProgressCode' and name(parent::*) = 'gmd:status'">
-            				  <xsl:value-of select="'IC_106'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_SpatialRepresentationTypeCode' and name(parent::*) = 'gmd:spatialRepresentationType'">
-            				  <xsl:value-of select="'IC_109'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MaintenanceFrequencyCode' and name(parent::*) = 'gmd:maintenanceAndUpdateFrequency'">
-            				  <xsl:value-of select="'IC_102'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:CI_RoleCode' and name(parent::*) = 'gmd:role'">
-            				  <xsl:value-of select="'IC_90'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:CI_DateTypeCode' and name(parent::*) = 'gmd:dateType'">
-            				  <xsl:value-of select="'IC_87'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_RestrictionCode'">
-            				  <xsl:value-of select="'IC_107'"/>
-            			</xsl:when>
-            	  	<xsl:when test="normalize-space(name(.)) = 'gmd:CI_PresentationFormCode' and name(parent::*) = 'gmd:presentationForm'">
-            				  <xsl:value-of select="'IC_89'"/>
-            			</xsl:when>
-            		 	<xsl:when test="normalize-space(name(.)) = 'gmd:MD_GeometricObjectTypeCode'">
-            				  <xsl:value-of select="'IC_99'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CellGeometryCode'">
-            				  <xsl:value-of select="'IC_94'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_PixelOrientationCode'">
-            				  <xsl:value-of select="'IC_105'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:DQ_EvaluationMethodTypeCode'">
-            				  <xsl:value-of select="'IC_91'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:DS_AssociationTypeCode'">
-            				  <xsl:value-of select="'IC_92'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:DS_InitiativeTypeCode'">
-            				  <xsl:value-of select="'IC_93'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ClassificationCode'">
-            				  <xsl:value-of select="'IC_96'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CoverageContentTypeCode'">
-            				  <xsl:value-of select="'IC_97'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_DimensionNameTypeCode'">
-            				  <xsl:value-of select="'IC_98'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_ImagingConditionCode'">
-            				  <xsl:value-of select="'IC_100'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumFormatCode'">
-            				  <xsl:value-of select="'IC_103'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_TopologyLevelCode'">
-            				  <xsl:value-of select="'IC_111'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumNameCode'">
-            				  <xsl:value-of select="'IC_104'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_CharacterSetCode' 
+  <!-- We don't have code list for country so only handle "CAN" -->
+  <xsl:template match="gmd:Country[@codeListValue='CAN']" priority="2200">
+  	<xsl:copy>
+  	  <xsl:apply-templates select="@*"/>
+  	  <xsl:attribute name="codeList">http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117</xsl:attribute>
+  	  <xsl:text>Canada; Canada</xsl:text>
+  	</xsl:copy>
+  </xsl:template>
+  
+  <xsl:template match="gmd:*[@codeListValue]" priority="220">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:variable name="codelistCode">
+        <xsl:choose>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_ScopeCode'">
+            <xsl:value-of select="'IC_108'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_ProgressCode' and name(parent::*) = 'gmd:status'">
+            <xsl:value-of select="'IC_106'"/>
+          </xsl:when>
+          <xsl:when
+            test="normalize-space(name(.)) = 'gmd:MD_SpatialRepresentationTypeCode' and name(parent::*) = 'gmd:spatialRepresentationType'">
+            <xsl:value-of select="'IC_109'"/>
+          </xsl:when>
+          <xsl:when
+            test="normalize-space(name(.)) = 'gmd:MD_MaintenanceFrequencyCode' and name(parent::*) = 'gmd:maintenanceAndUpdateFrequency'">
+            <xsl:value-of select="'IC_102'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:CI_RoleCode' and name(parent::*) = 'gmd:role'">
+            <xsl:value-of select="'IC_90'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:CI_DateTypeCode' and name(parent::*) = 'gmd:dateType'">
+            <xsl:value-of select="'IC_87'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_RestrictionCode'">
+            <xsl:value-of select="'IC_107'"/>
+          </xsl:when>
+          <xsl:when
+            test="normalize-space(name(.)) = 'gmd:CI_PresentationFormCode' and name(parent::*) = 'gmd:presentationForm'">
+            <xsl:value-of select="'IC_89'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_GeometricObjectTypeCode'">
+            <xsl:value-of select="'IC_99'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_CellGeometryCode'">
+            <xsl:value-of select="'IC_94'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_PixelOrientationCode'">
+            <xsl:value-of select="'IC_105'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:DQ_EvaluationMethodTypeCode'">
+            <xsl:value-of select="'IC_91'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:DS_AssociationTypeCode'">
+            <xsl:value-of select="'IC_92'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:DS_InitiativeTypeCode'">
+            <xsl:value-of select="'IC_93'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_ClassificationCode'">
+            <xsl:value-of select="'IC_96'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_CoverageContentTypeCode'">
+            <xsl:value-of select="'IC_97'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_DimensionNameTypeCode'">
+            <xsl:value-of select="'IC_98'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_ImagingConditionCode'">
+            <xsl:value-of select="'IC_100'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumFormatCode'">
+            <xsl:value-of select="'IC_103'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_TopologyLevelCode'">
+            <xsl:value-of select="'IC_111'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_MediumNameCode'">
+            <xsl:value-of select="'IC_104'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_CharacterSetCode'
             				                and ((name(parent::*) = 'gmd:characterSet'
-            				                    and (name(parent::*/parent::*) = 'gmd:MD_DataIdentification' 
+            				                    and (name(parent::*/parent::*) = 'gmd:MD_DataIdentification'
             				                      or name(parent::*/parent::*) = 'gmd:MD_Metadata')
             				                     )or(
             				                     (name(parent::*) = 'gmd:characterEncoding'
             				                      and name(parent::*/parent::*) = 'gmd:PT_Locale')
             				                    ))">
-            				  <xsl:value-of select="'IC_95'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:MD_KeywordTypeCode' and name(parent::*) = 'gmd:type'">
-            				  <xsl:value-of select="'IC_101'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'srv:SV_CouplingType'">
-            				  <xsl:value-of select="'IC_114'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'srv:DCPList'">
-            				  <xsl:value-of select="'IC_112'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:Country'">
-            				  <xsl:value-of select="'IC_117'"/>
-            			</xsl:when>
-            			<xsl:when test="normalize-space(name(.)) = 'gmd:fileType'">
-            				  <xsl:value-of select="'IC_115'"/>
-            			</xsl:when>
-            			<xsl:otherwise>
-            		  </xsl:otherwise>
-            	  </xsl:choose>
-            	</xsl:variable>
+            <xsl:value-of select="'IC_95'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'gmd:MD_KeywordTypeCode' and name(parent::*) = 'gmd:type'">
+            <xsl:value-of select="'IC_101'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'srv:SV_CouplingType'">
+            <xsl:value-of select="'IC_114'"/>
+          </xsl:when>
+          <xsl:when test="normalize-space(name(.)) = 'srv:DCPList'">
+            <xsl:value-of select="'IC_112'"/>
+          </xsl:when>
+          <xsl:when
+            test="normalize-space(name(.)) = 'gmd:fileType' and @xsi:type='napm:napMD_FileFormatCode_PropertyType'">
+            <xsl:value-of select="'IC_115'"/>
+          </xsl:when>
+          <xsl:otherwise>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
 
-            	<xsl:choose>
-            		<xsl:when test="normalize-space($codelistCode) != ''">
-                   <xsl:value-of select="concat('http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#',$codelistCode)"/>
-            	  </xsl:when>
-            		<xsl:otherwise>
-                   <xsl:value-of select="concat('http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#',local-name(.))"/>
-            		</xsl:otherwise>
-            	</xsl:choose>
-            </xsl:attribute>
-            <xsl:if test="normalize-space(./text()) != '' and string(@codeListValue)">
-                <xsl:value-of select="XslUtil:getCodelistTranslation(name(), string(@codeListValue), string($mainLanguage))"/>
-            </xsl:if>
-       </xsl:copy>
+      <xsl:attribute name="codeList">
+        <xsl:choose>
+          <xsl:when test="normalize-space($codelistCode) != ''">
+            <xsl:value-of
+              select="concat('http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#',$codelistCode)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of
+              select="concat('http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#',local-name(.))"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+      <xsl:if test="string(@codeListValue) and normalize-space($codelistCode) != ''">
+        <xsl:variable name="elementCodeValue" select="string(@codeListValue)"/>
+        <xsl:choose>
+          <xsl:when
+            test="gco:CharacterString and normalize-space(name(.)) = 'gmd:fileType' and @xsi:type='napm:napMD_FileFormatCode_PropertyType'">
+            <gco:CharacterString>
+              <xsl:value-of
+                select="$codelistDocument/codelists/codelist[@name='napm:napMD_FileFormatCode']/entry[code = $elementCodeValue]/value"/>
+            </gco:CharacterString>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:variable name="elementName" select="name()"/>
+            <xsl:value-of
+              select="$codelistDocument/codelists/codelist[@name=$elementName]/entry[code = $elementCodeValue]/value"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:if>
+    </xsl:copy>
   </xsl:template>
-
+  
 	<!--xsl:template match="gmd:LanguageCode[@codeListValue]" priority="10">
 		<gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116">
 			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
