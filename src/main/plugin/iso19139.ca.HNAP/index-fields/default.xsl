@@ -223,12 +223,9 @@
 
           <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)">
 
-            <xsl:variable name="langTranslation"
-                          select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale"/>
-
             <xsl:variable name="mainLang">
               <xsl:choose>
-                <xsl:when test="$langTranslation = '#fra'">eng</xsl:when>
+                <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
                 <xsl:otherwise>fre</xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
@@ -269,12 +266,10 @@
 
       <xsl:for-each
               select="gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName">
-        <xsl:variable name="langTranslation"
-                      select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale"/>
 
         <xsl:variable name="mainLang">
           <xsl:choose>
-            <xsl:when test="$langTranslation = '#fra'">eng</xsl:when>
+            <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
             <xsl:otherwise>fre</xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
