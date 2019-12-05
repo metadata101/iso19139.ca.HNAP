@@ -76,11 +76,11 @@
     </xsl:call-template>
   </xsl:template>
 
-            <!-- Readonly elements -->
+  <!-- Readonly elements -->
   <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier|gmd:dateStamp">
-      <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)" />
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)" />
 
-      <xsl:call-template name="render-element">
+    <xsl:call-template name="render-element">
       <xsl:with-param name="label"
                       select="gn-fn-metadata:getLabel($schema, name(), $labels)"/>
       <xsl:with-param name="value" select="*"/>
@@ -531,7 +531,7 @@
     <xsl:variable name="thesaurusTitle"
                   select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
 
-    <!--<xsl:message>THESAURUS TITLE C:<xsl:copy-of select="/root/gui/schemas/iso19139.nap" /></xsl:message>-->
+    <!--<xsl:message>THESAURUS TITLE C:<xsl:copy-of select="/root/gui/schemas/iso19139.ca.HNAP" /></xsl:message>-->
     <xsl:variable name="thesaurusTitle2">
       <xsl:choose>
         <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
