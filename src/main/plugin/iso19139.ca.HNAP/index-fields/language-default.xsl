@@ -201,7 +201,7 @@
         <xsl:for-each select="gmd:keyword[normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
                                                 normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']">
 
-          <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)">
+          <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId] )">
 
             <xsl:variable name="mainLang">
               <xsl:choose>
@@ -220,7 +220,7 @@
             <Field name="coreSubject_{$mainLang}" string="{string(normalize-space(gco:CharacterString))}" store="true"
                    index="true"/>
             <Field name="coreSubject_{$otherLang}"
-                   string="{string(normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))}"
+                   string="{string(normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId]))}"
                    store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
@@ -267,12 +267,12 @@
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
 
-        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString" />
+        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId]" />
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
         <Field name="orgNameCanada_{$otherLang}"
-                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString, ';')[2]))}"
+                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId], ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
 
