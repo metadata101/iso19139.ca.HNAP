@@ -528,7 +528,7 @@
   <!-- Add codelist labels -->
     <xsl:template match="gmd:LanguageCode[@codeListValue]" priority="2200">
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/">
-			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
+            <xsl:apply-templates select="@*[name(.)!='codeList']"/>
 
             <xsl:if test="normalize-space(./text()) != ''">
                <xsl:value-of select="XslUtil:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
@@ -947,7 +947,7 @@
         </gmd:thesaurusName>
       </xsl:if>
     </xsl:copy>
-    </xsl:template>
+  </xsl:template>
 
 
   <!--<xsl:template match="gmd:topicCategory">
@@ -1136,7 +1136,7 @@
             <!-- Group by thesaurus -->
               <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
                 <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale}">
+                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]/@locale}">
                     <xsl:copy-of select="../gmd:thesaurusName" />
                   </keyword>
                 </xsl:for-each>
@@ -1153,7 +1153,7 @@
           <xsl:for-each-group select="current-group()" group-by="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString">
             <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
               <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale}">
+                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]/@locale}">
                   <xsl:copy-of select="../gmd:thesaurusName" />
                 </keyword>
               </xsl:for-each>
@@ -1224,16 +1224,6 @@
   </xsl:template>
 
 
-  <!-- Apply same changes as above to the gmd:LocalisedCharacterString -->
-  <xsl:template  match="gmd:LocalisedCharacterString">
-    <xsl:element name="gmd:{local-name()}">
-      <xsl:apply-templates select="@*"/>
-        <xsl:attribute name="locale">
-          <xsl:value-of select="$localeForTranslations"/>
-        </xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:element>
-  </xsl:template>
 
   <xsl:template  match="gco:Distance">
     <xsl:element name="gco:{local-name()}">
