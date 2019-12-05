@@ -31,6 +31,10 @@
   <xsl:param name="thesauriDir"/>
   <xsl:param name="inspire">false</xsl:param>
 
+  <xsl:variable name="mainLanguage">
+    <xsl:call-template name="langId19139"/>
+  </xsl:variable>
+
   <xsl:variable name="inspire-thesaurus"
                 select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
   <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
