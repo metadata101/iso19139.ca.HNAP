@@ -14,10 +14,10 @@
                         xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-                        xmlns:xslutil="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
-                        xmlns:java="java:org.fao.geonet.util.XslUtil"
-                xmlns:exslt = "http://exslt.org/common"
-                        exclude-result-prefixes="gml320 rdf ns2 rdfs skos exslt geonet xslutil java gn-fn-iso19139">
+                        xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
+                        xmlns:XslUtil="java:org.fao.geonet.util.XslUtil"
+                        xmlns:exslt = "http://exslt.org/common"
+                        exclude-result-prefixes="gml320 rdf ns2 rdfs skos exslt geonet XslUtil XslUtilHnap gn-fn-iso19139">
 
 	<xsl:include href="../iso19139.ca.HNAP/convert/functions.xsl"/>
   <xsl:include href="layout/utility-fn.xsl"/>
@@ -29,7 +29,7 @@
        content is the same and /root/env/lang is not available -->
   <!--<xsl:variable name="lang" select="/root/env/lang" />-->
   <xsl:variable name="lang" select="'eng'" />
-  <xsl:variable name="codelistFile" select="document(xslutil:getCodeListFileUri($lang))"/>
+  <xsl:variable name="codelistFile" select="document(XslUtilHnap:getCodeListFileUri($lang))"/>
 
 
   <xsl:variable name="localeForTranslations">
@@ -89,22 +89,20 @@
   <xsl:variable name="locales"
                 select="/root/*/gmd:locale/gmd:PT_Locale"/>
 
-  <!--xsl:variable name="mainLanguageId"
-                select="xslutil:getLangCodeBasedOnLocales($mainLanguage, string-join(/root/*/gmd:locale/gmd:PT_Locale/@id, ',')))"/-->
-
   <!-- ******************************************************************************************************
-        get main language code to be used in locale ID -->
+        get main language code to be used in locale ID
+        If it does not already exists in the pt_local then it will generate one to be used. -->
   <xsl:variable name="mainLanguageId">
      <!-- Potential options include 3 char or 2 char code in both upper and lower. -->
 
       <xsl:variable name="localeList"
                     select="/root/*/gmd:locale/gmd:PT_Locale"/>
       <xsl:variable name="twoCharMainLangCode"
-                select="xslutil:twoCharLangCode($mainLanguage)"/>
+                select="XslUtilHnap:twoCharLangCode($mainLanguage)"/>
      <xsl:variable name="nextThreeCharLangCode"
                 select="substring(concat($localeList[1]/@id, '   '), 1, 3)"/>
      <xsl:variable name="nextTwoCharLangCode"
-                select="xslutil:twoCharLangCode($localeList[1]/@id)"/>
+                select="XslUtilHnap:twoCharLangCode($localeList[1]/@id)"/>
 
       <xsl:choose>
         <!-- If one of the locales is equal to the main language then that is the id that will be used. -->
@@ -551,7 +549,7 @@
                     </xsl:when>
                     <!-- If the length is 2 characters then assume the text is equal to the code list value as a 2 char code-->
                     <xsl:when test="string-length(normalize-space(./text())) = 2 and @codeListValue != ''">
-                        <xsl:value-of  select="normalize-space(upper-case(xslutil:twoCharLangCode(@codeListValue, '')))"/>
+                        <xsl:value-of  select="normalize-space(upper-case(XslUtilHnap:twoCharLangCode(@codeListValue, '')))"/>
                     </xsl:when>
                     <!-- If contains a ";" then assume language is in the format of "eng; USA" if there is a semicolon so we will update the language -->
                     <xsl:when test="contains(./text(),';') and @codeListValue != ''">
@@ -1664,7 +1662,7 @@
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/">
             <xsl:apply-templates select="@*[name(.)!='codeList']"/>
 
-            <xsl:value-of select="java:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
+            <xsl:value-of select="XslUtil:getIsoLanguageLabel(@codeListValue, $mainLanguage)" />
         </gmd:LanguageCode>
     </xsl:template>
 
