@@ -22,8 +22,12 @@
 	<xsl:include href="../iso19139.ca.HNAP/convert/functions.xsl"/>
   <xsl:include href="layout/utility-fn.xsl"/>
 
-  <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
+  <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
   <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
+
+  <xsl:variable name="coreThesaurusEng" select="'Government of Canada Core Subject Thesaurus'" />
+  <xsl:variable name="coreThesaurusFre" select="'Thésaurus des sujets de base du gouvernement du Canada'" />
+
 
   <xsl:variable name="localeForTranslations">
     <xsl:choose>
@@ -826,8 +830,8 @@
 		</gco:CharacterString>
 	</xsl:template>
 
-  <xsl:template match="gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='Government of Canada Core Subject Thesaurus' or
-                                        gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='Thésaurus des sujets de base du gouvernement du Canada']">
+  <xsl:template match="gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString=$coreThesaurusEng or
+                                        gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString=$coreThesaurusFre]">
 
     <xsl:variable name="mainLanguageIdPound" select="concat('#', $mainLanguageId)"/>
     <xsl:variable name="altLanguageIdPound" select="concat('#', $altLanguageId)"/>
@@ -880,7 +884,7 @@
                   <xsl:variable name="localisedValue">
                     <xsl:if test="normalize-space(gco:CharacterString)">
                       <xsl:value-of
-                        select="$ecCoreThesaurus//skos:concept[skos:prefLabel[@xml:lang=$mainLanguage2char] = $value]/skos:prefLabel[@xml:lang=$altLanguage2char]"/>
+                        select="$ecCoreThesaurus//skos:Concept[skos:prefLabel[@xml:lang=$mainLanguage2char] = $value]/skos:prefLabel[@xml:lang=$altLanguage2char]"/>
                     </xsl:if>
                   </xsl:variable>
                   <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}">
@@ -903,10 +907,11 @@
             <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
               <gco:CharacterString>
                 <xsl:choose>
-                  <xsl:when test="$mainLanguage2char = 'en'">Government of Canada Core Subject
-                    Thesaurus
+                  <xsl:when test="$mainLanguage2char = 'fr'">
+                      <xsl:value-of select="$coreThesaurusFre"/>
                   </xsl:when>
-                  <xsl:otherwise>Thésaurus des sujets de base du gouvernement du Canada
+                  <xsl:otherwise>
+                      <xsl:value-of select="$coreThesaurusEng"/>
                   </xsl:otherwise>
                 </xsl:choose>
               </gco:CharacterString>
@@ -914,12 +919,13 @@
                 <gmd:textGroup>
                   <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}">
                     <xsl:choose>
-                      <xsl:when test="$mainLanguage2char = 'en'">Thésaurus des sujets de base du
-                        gouvernement du Canada
-                      </xsl:when>
-                      <xsl:otherwise></xsl:otherwise>
+                        <xsl:when test="$mainLanguage2char = 'fr'">
+                            <xsl:value-of select="$coreThesaurusEng"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="$coreThesaurusFre"/>
+                        </xsl:otherwise>
                     </xsl:choose>
-                    Government of Canada Core Subject Thesaurus
                   </gmd:LocalisedCharacterString>
                 </gmd:textGroup>
               </gmd:PT_FreeText>
@@ -1163,9 +1169,6 @@
       <xsl:apply-templates select="gmd:graphicOverview"/>
       <xsl:apply-templates select="gmd:resourceFormat"/>
 
-
-      <xsl:variable name="coreThesaurusEng" select="'Government of Canada Core Subject Thesaurus'" />
-      <xsl:variable name="coreThesaurusFre" select="'Thésaurus des sujets de base du gouvernement du Canada'" />
 
       <xsl:variable name="keywordGroups">
         <keywords xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco">

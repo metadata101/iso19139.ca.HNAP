@@ -179,4 +179,192 @@
     </gmd:MD_Keywords>
   </xsl:template>
 
+   <xsl:function name="geonet:add-thesaurus-info-2">
+    <xsl:param name="currentThesaurus" as="xs:string"/>
+    <xsl:param name="withThesaurusAnchor" as="xs:boolean"/>
+    <xsl:param name="thesauri" as="node()"/>
+    <xsl:param name="thesaurusInfo" as="xs:boolean"/>
+    <xsl:param name="mdlang" as="xs:string"/>
+
+    <xsl:variable name="altLang">
+      <xsl:choose>
+        <xsl:when test="starts-with(lower-case($mdlang), 'eng')">fra</xsl:when>
+        <xsl:when test="starts-with(lower-case($mdlang), 'fre')">eng</xsl:when>
+        <xsl:when test="starts-with(lower-case($mdlang), 'fra')">eng</xsl:when>
+        <xsl:otherwise>eng</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+
+    <!-- Add thesaurus theme -->
+    <gmd:type>
+      <gmd:MD_KeywordTypeCode
+        codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_KeywordTypeCode"
+        codeListValue="{$thesauri/thesaurus[key = $currentThesaurus]/dname}"/>
+    </gmd:type>
+    <xsl:if test="$thesaurusInfo">
+      <xsl:variable name="thesaurusTitle" select="$thesauri/thesaurus[key = $currentThesaurus]/title" />
+
+      <gmd:thesaurusName>
+        <gmd:CI_Citation>
+          <xsl:choose>
+            <xsl:when test="normalize-space($thesaurusTitle) = 'theme.EC_Core_Subject.rdf'">
+              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra">Thésaurus des sujets de base du gouvernement du Canada</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2004</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeListValue="RI_366"
+                                         codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2016-07-04</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>
+                      <xsl:choose>
+                        <xsl:when test="$altLang = 'fra'">Government of Canada; Library and Archives Canada</xsl:when>
+                        <xsl:otherwise>Gouvernement du Canada; Bibliothèque et Archives Canada</xsl:otherwise>
+                      </xsl:choose>
+                    </gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#{$altLang}">
+                          <xsl:choose>
+                            <xsl:when test="$altLang = 'fra'">Gouvernement du Canada; Bibliothèque et Archives Canada</xsl:when>
+                            <xsl:otherwise>Government of Canada; Library and Archives Canada</xsl:otherwise>
+                          </xsl:choose>
+                        </gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:organisationName>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>
+
+            </xsl:when>
+            <xsl:otherwise>
+              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString><xsl:value-of select="$thesauri/thesaurus[key = $currentThesaurus]/title"/></gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"><xsl:value-of select="$thesauri/thesaurus[key = $currentThesaurus]/title"/></gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+
+
+              <xsl:variable name="thesaurusDate"
+                            select="normalize-space($thesauri/thesaurus[key = $currentThesaurus]/date)"/>
+
+              <xsl:if test="$thesaurusDate != ''">
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <xsl:choose>
+                        <xsl:when test="contains($thesaurusDate, 'T')">
+                          <gco:DateTime>
+                            <xsl:value-of select="$thesaurusDate"/>
+                          </gco:DateTime>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <gco:Date>
+                            <xsl:value-of select="$thesaurusDate"/>
+                          </gco:Date>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <xsl:choose>
+                        <xsl:when test="contains($thesaurusDate, 'T')">
+                          <gco:DateTime>
+                            <xsl:value-of select="$thesaurusDate"/>
+                          </gco:DateTime>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <gco:Date>
+                            <xsl:value-of select="$thesaurusDate"/>
+                          </gco:Date>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode codeListValue="RI_366"
+                                           codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+              </xsl:if>
+
+
+              <xsl:if test="$withThesaurusAnchor">
+                <gmd:identifier>
+                  <gmd:MD_Identifier>
+                    <gmd:code>
+                      <gmx:Anchor xlink:href="{$thesauri/thesaurus[key = $currentThesaurus]/url}">
+                        geonetwork.thesaurus.<xsl:value-of
+                        select="$currentThesaurus"/>
+                      </gmx:Anchor>
+                    </gmd:code>
+                  </gmd:MD_Identifier>
+                </gmd:identifier>
+              </xsl:if>
+
+              <xsl:if test="contains($thesaurusTitle, 'EC_')">
+                <gmd:citedResponsibleParty>
+                  <gmd:CI_ResponsibleParty>
+                    <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                      <gco:CharacterString>Government of Canada; Environment and Climate Change Canada</gco:CharacterString>
+                      <gmd:PT_FreeText>
+                        <gmd:textGroup>
+                          <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Environnement et Changement climatique Canada</gmd:LocalisedCharacterString>
+                        </gmd:textGroup>
+                      </gmd:PT_FreeText>
+                    </gmd:organisationName>
+                    <gmd:role>
+                      <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                                       codeListValue="RI_409"/>
+                    </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+                </gmd:citedResponsibleParty>
+              </xsl:if>
+            </xsl:otherwise>
+          </xsl:choose>
+
+
+
+        </gmd:CI_Citation>
+      </gmd:thesaurusName>
+    </xsl:if>
+  </xsl:function>
 </xsl:stylesheet>
