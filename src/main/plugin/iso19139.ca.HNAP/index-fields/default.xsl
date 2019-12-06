@@ -35,6 +35,27 @@
     <xsl:call-template name="langId19139"/>
   </xsl:variable>
 
+  <!-- convert ISO 639-2T to_ISO 639-2B - i.e. FRA to FRE -->
+  <xsl:variable name="mainLanguage_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$mainLanguage ='fra'">
+        <xsl:value-of select="'fre'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$mainLanguage"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="altLang_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$mainLanguage = 'eng'">fre</xsl:when>
+      <xsl:otherwise>eng</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="altLanguageId" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
+
   <xsl:variable name="inspire-thesaurus"
                 select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
   <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
@@ -196,7 +217,7 @@
       <xsl:for-each select="//gmd:MD_Keywords">
 
         <xsl:for-each
-                select="gmd:keyword/gco:CharacterString|gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
+                select="gmd:keyword/gco:CharacterString|gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]">
           <xsl:variable name="keywordLower" select="lower-case(.)"/>
           <Field name="keyword" string="{string(.)}" store="true" index="true"/>
 
@@ -225,26 +246,12 @@
         <xsl:for-each select="gmd:keyword[normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
                                                 normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']">
 
-          <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)">
+          <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])">
 
-            <xsl:variable name="mainLang">
-              <xsl:choose>
-                <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
-                <xsl:otherwise>fre</xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <xsl:variable name="otherLang">
-              <xsl:choose>
-                <xsl:when test="$mainLang = 'fre'">eng</xsl:when>
-                <xsl:otherwise>fre</xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <Field name="coreSubject_{$mainLang}" string="{string(normalize-space(gco:CharacterString))}" store="true"
+            <Field name="coreSubject_{$mainLanguage_ISO639_2B}" string="{string(normalize-space(gco:CharacterString))}" store="true"
                    index="true"/>
-            <Field name="coreSubject_{$otherLang}"
-                   string="{string(normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))}"
+            <Field name="coreSubject_{$altLang_ISO639_2B}"
+                   string="{string(normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))}"
                    store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
@@ -271,36 +278,22 @@
       <xsl:for-each
               select="gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName">
 
-        <xsl:variable name="mainLang">
-          <xsl:choose>
-            <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
-            <xsl:otherwise>fre</xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-
-        <xsl:variable name="otherLang">
-          <xsl:choose>
-            <xsl:when test="$mainLang = 'fre'">eng</xsl:when>
-            <xsl:otherwise>fre</xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-
         <xsl:variable name="orgName" select="gco:CharacterString" />
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
         <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
-          <Field name="orgNameCanada_{$mainLang}"
+          <Field name="orgNameCanada_{$mainLanguage_ISO639_2B}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
 
-        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString" />
+        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
-        <Field name="orgNameCanada_{$otherLang}"
-                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString, ';')[2]))}"
+        <Field name="orgNameCanada_{$altLang_ISO639_2B}"
+                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)], ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
 
