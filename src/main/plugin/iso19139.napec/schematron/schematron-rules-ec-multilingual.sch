@@ -586,17 +586,17 @@
     <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
+                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.theme.EC_Waf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]/gmd:keyword
                        |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
+                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.theme.EC_Waf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]/gmd:keyword
                        |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
+                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.theme.EC_Waf' or
                                                                                           gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]/gmd:keyword">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
@@ -609,32 +609,6 @@
       >$loc/strings/EC35</sch:assert>
     </sch:rule>
 
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]
-                       |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]
-                       |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Data_Usage_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Information_Category.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Content_Scope.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'theme.EC_Waf.rdf' or
-                                                                                          gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'place.EC_Geographic_Scope.rdf')]">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-          or (@gco:nilReason)" />
-
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString))" />
-
-      <sch:assert
-        test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC35</sch:assert>
-    </sch:rule>
 
 
     <!-- Thesaurus info -->
@@ -905,35 +879,12 @@
 
     </sch:rule>
 
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[
-          gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Information_Category' or
-          normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'theme.EC_Information_Category.rdf']">
-
-      <sch:let name="missing" value="not(string(normalize-space(gmd:keyword/gco:CharacterString)))" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC7</sch:assert>
-
-    </sch:rule>
-
     <!-- Geographic scope -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[
           gmd:thesaurusName/gmd:CI_Citation/@id = 'local.place.EC_Geographic_Scope' or
           normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'place.EC_Geographic_Scope.rdf']/gmd:keyword">
 
       <sch:let name="missing" value="not(string(normalize-space(gco:CharacterString)))" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC6</sch:assert>
-    </sch:rule>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[
-          gmd:thesaurusName/gmd:CI_Citation/@id = 'local.place.EC_Geographic_Scope' or
-          normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'place.EC_Geographic_Scope.rdf']">
-
-      <sch:let name="missing" value="not(string(normalize-space(gmd:keyword/gco:CharacterString)))" />
 
       <sch:assert
         test="not($missing)"
