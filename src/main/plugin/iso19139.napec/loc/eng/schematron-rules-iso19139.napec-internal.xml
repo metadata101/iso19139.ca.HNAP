@@ -134,4 +134,10 @@
     <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
     <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
     <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
+
+    <InformationClassification>Value is required for Information Category</InformationClassification>
+    <GeographyScope>Value is required for Geography</GeographyScope>
+    <Branch>Value is required for Branch</Branch>
+    <Directorate>Value is required for Directorate</Directorate>
+    <SecurityClassification>Value is required for Security Classification</SecurityClassification>
 </strings>

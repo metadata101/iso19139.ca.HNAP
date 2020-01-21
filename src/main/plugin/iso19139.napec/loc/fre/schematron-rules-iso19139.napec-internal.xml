@@ -138,4 +138,10 @@
     <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
     <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
     <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+
+    <InformationClassification>Value is required for Information Category</InformationClassification>
+    <GeographyScope>Value is required for Geography</GeographyScope>
+    <Branch>Value is required for Branch</Branch>
+    <Directorate>Value is required for Directorate</Directorate>
+    <SecurityClassification>Value is required for Security Classification</SecurityClassification>
 </strings>

@@ -67,8 +67,6 @@
     <EC40>Value is required for Metadata publication date</EC40>
     <EC41>Value is required for Metadata creation date</EC41>
 
-    <SupplementalInformation>English and French values are required for Supplemental Information</SupplementalInformation>
-    <Project>English and French values are required for Project</Project>
     <HoursOfService>English and French values are required for Contact - Hours of Service</HoursOfService>
     <Linkage>Value is required for Online Resource - URL</Linkage>
     <Name>English and French values are required for Online Resource - Name</Name>
@@ -140,4 +138,10 @@
     <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
     <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
     <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
+
+    <InformationClassification>Value is required for Information Category</InformationClassification>
+    <GeographyScope>Value is required for Geography</GeographyScope>
+    <Branch>Value is required for Branch</Branch>
+    <Directorate>Value is required for Directorate</Directorate>
+    <SecurityClassification>Value is required for Security Classification</SecurityClassification>
 </strings>

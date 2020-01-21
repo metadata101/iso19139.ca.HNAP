@@ -13,6 +13,7 @@
     <sch:ns prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <sch:ns prefix="ns2" uri="http://www.w3.org/2004/02/skos/core#"/>
     <sch:ns prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+    <sch:ns prefix="napec" uri="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"/>
 
     <!-- =============================================================
     EC schematron rules:
@@ -372,6 +373,65 @@
                        >$loc/strings/EC12</sch:assert>
         </sch:rule>
 
+        <!-- Branch -->
+        <sch:rule context="//*[@gco:isoType='gmd:MD_DataIdentification']/napec:EC_CorporateInfo/napec:EC_Branch
+                     |//*[@gco:isoType='srv:SV_ServiceIdentification']/napec:EC_CorporateInfo/napec:EC_Branch">
+
+          <sch:let name="missing" value="not(string(napec:EC_Branch_TypeCode/@codeListValue))" />
+
+          <sch:assert
+            test="not($missing)"
+          >$loc/strings/Branch</sch:assert>
+        </sch:rule>
+
+
+        <!-- Directorate -->
+        <sch:rule context="//*[@gco:isoType='gmd:MD_DataIdentification']/napec:EC_CorporateInfo/napec:EC_Directorate
+                     |//*[@gco:isoType='srv:SV_ServiceIdentification']/napec:EC_CorporateInfo/napec:EC_Directorate">
+
+          <sch:let name="missing" value="not(string(napec:EC_Directorate_TypeCode/@codeListValue))" />
+
+          <sch:assert
+            test="not($missing)"
+          >$loc/strings/Directorate</sch:assert>
+        </sch:rule>
+
+        <!-- Information category -->
+        <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[
+              gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Information_Category' or
+              normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'theme.EC_Information_Category.rdf']/gmd:keyword">
+
+          <sch:let name="missing" value="not(string(normalize-space(gco:CharacterString)))" />
+
+          <sch:assert
+            test="not($missing)"
+          >$loc/strings/InformationClassification</sch:assert>
+
+        </sch:rule>
+
+        <!-- Geographic scope -->
+        <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[
+              gmd:thesaurusName/gmd:CI_Citation/@id = 'local.place.EC_Geographic_Scope' or
+              normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'place.EC_Geographic_Scope.rdf']/gmd:keyword">
+
+          <sch:let name="missing" value="not(string(normalize-space(gco:CharacterString)))" />
+
+          <sch:assert
+            test="not($missing)"
+          >$loc/strings/GeographyScope</sch:assert>
+        </sch:rule>
+
+        <!-- Security Classification -->
+        <sch:rule context="//*[@gco:isoType='gmd:MD_DataIdentification']/napec:EC_CorporateInfo/napec:GC_Security_Classification
+                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/napec:EC_CorporateInfo/napec:GC_Security_Classification">
+
+          <sch:let name="missing" value="not(string(napec:GC_Security_Classification_TypeCode/@codeListValue))" />
+
+          <sch:assert
+            test="not($missing)"
+          >$loc/strings/SecurityClassification</sch:assert>
+        </sch:rule>
+
         <!-- Maintenance and frequency -->
         <sch:rule context="//gmd:identificationInfo/*/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency
                    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency
@@ -685,6 +745,20 @@
                 <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/SupplementalInformation_1</sch:assert>
                 <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/SupplementalInformation_2</sch:assert>
 
+        </sch:rule>
+
+        <!-- Project -->
+        <sch:rule context="//gmd:identificationInfo/*/napec:EC_CorporateInfo/napec:EC_Project
+            |//*[@gco:isoType='gmd:MD_DataIdentification']/napec:EC_CorporateInfo/napec:EC_Project
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']/napec:EC_CorporateInfo/napec:EC_Project">
+
+          <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
+
+          <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']))" />
+
+          <sch:assert test="not($missing and not($missingOtherLang))">$loc/strings/Project_1</sch:assert>
+          <sch:assert test="not($missingOtherLang and not($missing))">$loc/strings/Project_2</sch:assert>
         </sch:rule>
 
       <!-- Contact -->
