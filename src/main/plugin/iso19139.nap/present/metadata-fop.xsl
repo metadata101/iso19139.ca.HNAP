@@ -41,6 +41,26 @@
       </xsl:call-template>
     </xsl:variable>
 
+    <xsl:variable name="webMapServicesProtocols" select="/root/gui/webServiceTypes" />
+
+    <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
+
+    <xsl:variable name="port">
+      <xsl:choose>
+        <xsl:when test="/root/gui/env/server/protocol = 'https'"><xsl:value-of select="/root/gui/env/server/securePort" /></xsl:when>
+        <xsl:otherwise><xsl:value-of select="/root/gui/env/server/port" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="portSection">
+      <xsl:choose>
+        <xsl:when test="$port = '80' or $port='443'"></xsl:when>
+        <xsl:otherwise><xsl:value-of select="concat(':', $port)" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="urlBase" select="concat(/root/gui/env/server/protocol, '://', /root/gui/env/server/host, $portSection, /root/gui/url)" />
+
     <fo:table-row>
       <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt" margin-right="8pt">
         <fo:block>
@@ -113,8 +133,9 @@
                     <fo:block>
                       <fo:external-graphic content-width="300pt" alignment-adjust="baseline">
                         <xsl:attribute name="src">
-                          <xsl:value-of
-                            select="concat( //server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/srv/eng/region.getmap.png?mapsrs=EPSG:4326&amp;geom=', $geom, '&amp;geomsrs=EPSG:4326&amp;background=geogratis&amp;width=300')"
+
+                         <xsl:value-of
+                              select="concat( $urlBase, '/srv/eng/region.getmap.png?mapsrs=EPSG:4326&amp;geom=', $geom, '&amp;geomsrs=EPSG:4326&amp;background=geogratis&amp;width=300')"
                           />
 
                         </xsl:attribute>
@@ -126,8 +147,7 @@
             </fo:table>
           </xsl:if>
 
-
-          <xsl:if test="/root/gmd:MD_Metadata/gmd:identificationInfo//gmd:extent/gmd:EX_Extent/gmd:temporalElement">
+          <xsl:if test="/root/gmd:MD_Metadata/gmd:identificationInfo//gmd:extent/gmd:EX_Extent/gmd:temporalElement[gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod]">
             <fo:table width="100%" table-layout="fixed">
               <fo:table-column column-width="5cm"/>
               <fo:table-column column-width="6.8cm"/>
@@ -141,8 +161,18 @@
                       <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Timeperiod"/>
                     </xsl:with-param>
                     <xsl:with-param name="text">
+
+                      <xsl:choose>
+                        <xsl:when test="gml:beginPosition or gml:endPosition">
                       <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/from"/>:<xsl:value-of select="gml:beginPosition"/> -
                       <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/to"/>:<xsl:value-of select="gml:endPosition"/>
+                        </xsl:when>
+                        <xsl:when test="gml:begin or gml:end">
+
+                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/from"/>:<xsl:value-of select="gml:begin/gml:TimeInstant/gml:timePosition"/> -
+                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/to"/>:<xsl:value-of select="gml:end/gml:TimeInstant/gml:timePosition"/>
+                        </xsl:when>
+                      </xsl:choose>
                     </xsl:with-param>
                   </xsl:call-template>
                 </xsl:for-each>
@@ -155,42 +185,225 @@
 
           <!-- Dataresources -->
           <xsl:if
-            test="count(gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang]/gmd:CI_OnlineResource|gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[not(string(@xlink:role))]/gmd:CI_OnlineResource) != 0">
-            <fo:block font-weight="bold" font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
-                      padding-right="4pt">
-              <xsl:value-of select="/root/gui/strings/Dataresources"/>
+            test="count(gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang and gmd:CI_OnlineResource/gmd:linkage/gmd:URL != '']/gmd:CI_OnlineResource|gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[not(string(@xlink:role)) and gmd:CI_OnlineResource/gmd:linkage/gmd:URL != '']/gmd:CI_OnlineResource) != 0">
+
+            <fo:block>
+              <fo:block font-weight="bold" font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
+                        padding-right="4pt">
+                <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources"/>
+              </fo:block>
+
+              <fo:block font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
+                        padding-right="4pt">
+                <fo:table border="none" table-layout="fixed" width="100%">
+                  <fo:table-column column-width="4.8cm"/>
+                  <fo:table-column column-width="3cm"/>
+                  <fo:table-column column-width="2cm"/>
+                  <fo:table-column column-width="2.5cm"/>
+
+                  <fo:table-header>
+                    <fo:table-cell>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Name" /></fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Type" /></fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Lang" /></fo:block>
+                    </fo:table-cell>
+                    <fo:table-cell>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Format" /></fo:block>
+                    </fo:table-cell>
+                  </fo:table-header>
+
+
+                  <fo:table-body>
+
+                    <!-- Map resources managed in RCS -->
+                    <xsl:for-each
+                      select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name]">
+                      <xsl:if test="normalize-space(gmd:linkage/gmd:URL)!=''">
+                        <xsl:variable name="des">
+                          <xsl:for-each select="gmd:description">
+                            <xsl:call-template name="localised">
+                              <xsl:with-param name="langId"
+                                              select="concat('#', $langForMetadata)"/>
+                            </xsl:call-template>
+                          </xsl:for-each>
+                        </xsl:variable>
+
+
+                        <fo:table-row>
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <fo:basic-link>
+                                <xsl:attribute name="external-destination">url('<xsl:value-of select="gmd:linkage/gmd:URL"/>')
+                                </xsl:attribute>
+                                <fo:inline text-decoration="underline">
+                                  <xsl:choose>
+                                    <xsl:when test="normalize-space(gmd:name)!=''">
+                                      <xsl:for-each select="gmd:name">
+                                        <xsl:call-template name="localised">
+                                          <xsl:with-param name="langId"
+                                                          select="concat('#', $langForMetadata)"/>
+                                        </xsl:call-template>
+                                      </xsl:for-each>
+                                    </xsl:when>
+                                    <xsl:when test="normalize-space(gmd:description)!=''">
+                                      <xsl:for-each select="gmd:description">
+                                        <xsl:call-template name="localised">
+                                          <xsl:with-param name="langId"
+                                                          select="concat('#', $langForMetadata)"/>
+                                        </xsl:call-template>
+                                      </xsl:for-each>
+
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <xsl:value-of select="gmd:linkage/gmd:URL"/>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </fo:inline>
+                              </fo:basic-link>
+
+                            </fo:block>
+
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+
+                              <!--<xsl:choose>
+                                <xsl:when test="string(tokenize($des, ';')[2])">
+                                  <xsl:value-of select="tokenize($des, ';')[2]"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <xsl:value-of select="gmd:protocol"/>
+                                </xsl:otherwise>
+                              </xsl:choose>-->
+
+                              <xsl:value-of select="tokenize($des, ';')[1]"/>
+
+                            </fo:block>
+                          </fo:table-cell>
+
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <xsl:variable name="langResource" select="tokenize($des, ';')[3]" />
+                              <xsl:for-each select="tokenize($langResource, ',')">
+                                <xsl:variable name="v" select="." />
+                                <xsl:value-of select="$isoLanguages/record[code=$v]/label/*[name()=/root/gui/language]" /><xsl:if test="position() != last()">,<xsl:text> </xsl:text></xsl:if>
+                              </xsl:for-each>
+                            </fo:block>
+                          </fo:table-cell>
+
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <xsl:value-of select="tokenize($des, ';')[2]" />
+                            </fo:block>
+                          </fo:table-cell>
+
+                        </fo:table-row>
+
+                      </xsl:if>
+                    </xsl:for-each>
+
+                    <!-- Other resources -->
+                    <xsl:for-each
+                      select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[not(lower-case(normalize-space(gmd:protocol/gco:CharacterString))=$webMapServicesProtocols/record/name)]">
+                      <xsl:if test="normalize-space(gmd:linkage/gmd:URL)!=''">
+                        <fo:table-row>
+                          <xsl:variable name="des">
+                            <xsl:for-each select="gmd:description">
+                              <xsl:call-template name="localised">
+                                <xsl:with-param name="langId"
+                                                select="concat('#', $langForMetadata)"/>
+                              </xsl:call-template>
+                            </xsl:for-each>
+                          </xsl:variable>
+
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <fo:basic-link>
+                                <xsl:attribute name="external-destination">url('<xsl:value-of select="gmd:linkage/gmd:URL"/>')
+                                </xsl:attribute>
+                                <fo:inline text-decoration="underline">
+                                  <xsl:choose>
+                                    <xsl:when test="normalize-space(gmd:name)!=''">
+                                      <xsl:for-each select="gmd:name">
+                                        <xsl:call-template name="localised">
+                                          <xsl:with-param name="langId"
+                                                          select="concat('#', $langForMetadata)"/>
+                                        </xsl:call-template>
+                                      </xsl:for-each>
+                                    </xsl:when>
+                                    <xsl:when test="normalize-space(gmd:description)!=''">
+                                      <xsl:for-each select="gmd:description">
+                                        <xsl:call-template name="localised">
+                                          <xsl:with-param name="langId"
+                                                          select="concat('#', $langForMetadata)"/>
+                                        </xsl:call-template>
+                                      </xsl:for-each>
+
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                      <xsl:value-of select="gmd:linkage/gmd:URL"/>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </fo:inline>
+                              </fo:basic-link>
+
+                            </fo:block>
+
+                          </fo:table-cell>
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+
+
+                              <!--<xsl:choose>
+                                <xsl:when test="string(tokenize($des, ';')[2])">
+                                  <xsl:value-of select="tokenize($des, ';')[2]"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <xsl:value-of select="gmd:protocol"/>
+                                </xsl:otherwise>
+                              </xsl:choose>-->
+
+
+                              <xsl:value-of select="tokenize($des, ';')[1]"/>
+
+                            </fo:block>
+                          </fo:table-cell>
+
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <xsl:variable name="langResource" select="tokenize($des, ';')[3]" />
+                              <xsl:for-each select="tokenize($langResource, ',')">
+                                <xsl:variable name="v" select="." />
+                                <xsl:value-of select="$isoLanguages/record[code=$v]/label/*[name()=/root/gui/language]" /><xsl:if test="position() != last()">,<xsl:text> </xsl:text></xsl:if>
+                              </xsl:for-each>
+                            </fo:block>
+                          </fo:table-cell>
+
+                          <fo:table-cell>
+                            <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
+                              <xsl:value-of select="tokenize($des, ';')[2]" />
+                            </fo:block>
+                          </fo:table-cell>
+
+
+                        </fo:table-row>
+
+                      </xsl:if>
+                    </xsl:for-each>
+
+
+                  </fo:table-body>
+
+                </fo:table>
+              </fo:block>
             </fo:block>
 
-
-            <xsl:for-each
-              select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role=$isoLang]/gmd:CI_OnlineResource|gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[not(string(@xlink:role))]/gmd:CI_OnlineResource">
-              <xsl:if test="normalize-space(gmd:linkage/gmd:URL)!=''">
-                <fo:block padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt">
-                  <fo:basic-link>
-                    <xsl:attribute name="external-destination">url('<xsl:value-of select="gmd:linkage/gmd:URL"/>')
-                    </xsl:attribute>
-                    <fo:inline text-decoration="underline">
-                      <xsl:choose>
-                        <xsl:when test="normalize-space(gmd:name)!=''">
-                          <xsl:value-of select="gmd:name"/>
-                        </xsl:when>
-                        <xsl:when test="normalize-space(gmd:description)!=''">
-                          <xsl:value-of select="gmd:description"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                          <xsl:value-of select="gmd:linkage/gmd:URL"/>
-                        </xsl:otherwise>
-                      </xsl:choose>
-                    </fo:inline>
-                  </fo:basic-link>
-
-                </fo:block>
-
-              </xsl:if>
-            </xsl:for-each>
             <fo:block margin-top="8pt"/>
           </xsl:if>
-
           <!-- Relateddata -->
 
           <!-- Products -->
@@ -207,15 +420,12 @@
                 <fo:external-graphic content-width="10pt" padding-right="8pt" alignment-adjust="baseline">
                   <xsl:attribute name="src">
                     <xsl:value-of
-                      select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/images/')"/>
-                    <xsl:choose>
-                      <xsl:otherwise>database.png</xsl:otherwise>
-                    </xsl:choose>
+                      select="concat($urlBase, '/images/database.png')"/>
                   </xsl:attribute>
                 </fo:external-graphic>
                 <fo:basic-link>
                   <xsl:attribute name="external-destination">url('<xsl:value-of
-                    select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url,'/srv/',/root/gui/language,'/pdf?uuid=',geonet:info/uuid)"
+                    select="concat($urlBase,'/srv/',/root/gui/language,'/pdf?uuid=',geonet:info/uuid)"
                   />')
                   </xsl:attribute>
                   <fo:inline text-decoration="underline">
@@ -252,15 +462,13 @@
                 <fo:external-graphic content-width="10pt" padding-right="8pt" alignment-adjust="baseline">
                   <xsl:attribute name="src">
                     <xsl:value-of
-                      select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/images/')"/>
-                    <xsl:choose>
-                      <xsl:otherwise>database.png</xsl:otherwise>
-                    </xsl:choose>
+                      select="concat($urlBase, '/images/database.png')"/>
+
                   </xsl:attribute>
                 </fo:external-graphic>
                 <fo:basic-link>
                   <xsl:attribute name="external-destination">url('<xsl:value-of
-                    select="concat(//server/protocol, '://', //server/host,':', //server/port, /root/gui/url,'/srv/',/root/gui/language,'/pdf?uuid=',geonet:info/uuid)"
+                    select="concat($urlBase,'/srv/',/root/gui/language,'/pdf?uuid=',geonet:info/uuid)"
                   />')
                   </xsl:attribute>
                   <fo:inline text-decoration="underline">
@@ -289,7 +497,155 @@
             <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Additionalinformation"/>
           </fo:block>
 
+
+          <!-- Datasetidentification -->
+          <fo:block border-width="1pt" border-style="solid" border-color="#1b5a9f">
+            <fo:table table-layout="fixed" width="100%">
+              <fo:table-column column-width="5cm"/>
+              <fo:table-column column-width="6.8cm"/>
+
+              <fo:table-body>
+                <fo:table-row background-color="#1b5a9f">
+                  <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
+                                 number-columns-spanned="2" display-align="center">
+                    <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
+                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Datasetidentification"/>
+                    </fo:block>
+                  </fo:table-cell>
+                </fo:table-row>
+
+                <xsl:variable name="identificationInfo">
+                  <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo/*/gmd:citation/*/*[name() != 'gmd:title' and name() != 'gmd:citedResponsibleParty']">
+                  <xsl:with-param name="schema" select="$schema"/>
+
+                </xsl:apply-templates>
+                </xsl:variable>
+
+                <xsl:call-template name="blockElementFop">
+                  <xsl:with-param name="block" select="$identificationInfo" />
+                    <xsl:with-param name="width-label" select="'5cm'" />
+                    <xsl:with-param name="width-content" select="'6.8cm'" />
+                </xsl:call-template>
+
+
+                <xsl:variable name="identificationInfo2">
+                  <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo/*/*[name() != 'gmd:citation' and
+                name() != 'gmd:abstract' and name() != 'gmd:pointOfContact' and name() != 'gmd:descriptiveKeywords' and
+                name() != 'gmd:extent' and name() != 'gmd:graphicOverview' and name() != 'gmd:topicCategory']">
+                  <xsl:with-param name="schema" select="$schema"/>
+                </xsl:apply-templates>
+                </xsl:variable>
+
+                <xsl:call-template name="blockElementFop">
+                  <xsl:with-param name="block" select="$identificationInfo2"/>
+                  <xsl:with-param name="width-label" select="'5cm'" />
+                  <xsl:with-param name="width-content" select="'6.8cm'" />
+                </xsl:call-template>
+              </fo:table-body>
+            </fo:table>
+          </fo:block>
+
+          <xsl:if test="gmd:distributionInfo/*/*[name() = 'gmd:distributionFormat']">
+            <fo:block margin-top="12pt"/>
+            <fo:block border-width="1pt" border-style="solid" border-color="#1b5a9f">
+              <fo:table table-layout="fixed" width="100%">
+                <fo:table-column column-width="5cm"/>
+                <fo:table-column column-width="6.8cm"/>
+
+                <fo:table-body>
+                  <fo:table-row background-color="#1b5a9f">
+                    <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
+                                   number-columns-spanned="2" display-align="center">
+                      <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
+                        <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/DistributionInformation"/>
+                      </fo:block>
+                    </fo:table-cell>
+                  </fo:table-row>
+
+
+                  <xsl:for-each select="gmd:distributionInfo/*/*[name() = 'gmd:distributionFormat']">
+                    <xsl:variable name="distributionInfo">
+                      <xsl:apply-templates mode="elementFop" select=".">
+                    <xsl:with-param name="schema" select="$schema"/>
+                  </xsl:apply-templates>
+                    </xsl:variable>
+
+                  <xsl:call-template name="blockElementFop">
+                    <xsl:with-param name="block" select="$distributionInfo"/>
+                    <xsl:with-param name="label" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:distributionFormat']/label" />
+                    <xsl:with-param name="width-label" select="'5cm'" />
+                    <xsl:with-param name="width-content" select="'6.8cm'" />
+                  </xsl:call-template>
+                </xsl:for-each>
+
+                </fo:table-body>
+              </fo:table>
+            </fo:block>
+          </xsl:if>
+
+          <xsl:if test="gmd:dataQualityInfo/*">
+            <fo:block margin-top="12pt"/>
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:dataQualityInfo']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:dataQualityInfo/*">
+                      <xsl:with-param name="schema" select="$schema"/>
+                    </xsl:apply-templates>
+              </xsl:with-param>
+            </xsl:call-template>
+          </xsl:if>
+
+          <xsl:if test="gmd:portrayalCatalogueInfo/*">
+            <fo:block margin-top="12pt"/>
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:portrayalCatalogueInfo']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:portrayalCatalogueInfo/*">
+                          <xsl:with-param name="schema" select="$schema"/>
+                        </xsl:apply-templates>
+              </xsl:with-param>
+            </xsl:call-template>
+          </xsl:if>
+
+          <xsl:if test="gmd:metadataConstraints/*">
+            <fo:block margin-top="12pt"/>
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataConstraints']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:metadataConstraints/*">
+                          <xsl:with-param name="schema" select="$schema"/>
+                        </xsl:apply-templates>
+              </xsl:with-param>
+            </xsl:call-template>
+          </xsl:if>
+
+          <xsl:if test="gmd:applicationSchemaInfo/*">
+            <fo:block margin-top="12pt"/>
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:applicationSchemaInfo']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:applicationSchemaInfo/*">
+                          <xsl:with-param name="schema" select="$schema"/>
+                        </xsl:apply-templates>
+                        </xsl:with-param>
+                      </xsl:call-template>
+          </xsl:if>
+
+          <xsl:if test="gmd:metadataMaintenance/*">
+            <fo:block margin-top="12pt"/>
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataMaintenance']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:metadataMaintenance/*">
+                      <xsl:with-param name="schema" select="$schema"/>
+                    </xsl:apply-templates>
+                    </xsl:with-param>
+                  </xsl:call-template>
+          </xsl:if>
+
+
           <!-- Metadatarecord -->
+          <fo:block margin-top="12pt"/>
           <fo:block border-width="1pt" border-style="solid" border-color="#1b5a9f">
             <fo:table table-layout="fixed" width="100%">
               <fo:table-column column-width="5cm"/>
@@ -328,192 +684,63 @@
 
                 </xsl:apply-templates>
 
+                <!-- Metadata language -->
+                <xsl:apply-templates mode="elementFop" select="gmd:language|geonet:child[string(@name)='language']">
+                  <xsl:with-param name="schema" select="$schema"/>
+
+                </xsl:apply-templates>
+
+                <!-- Character set -->
+                <xsl:apply-templates mode="elementFop" select="gmd:characterSet|geonet:child[string(@name)='characterSet']">
+                  <xsl:with-param name="schema" select="$schema"/>
+                </xsl:apply-templates>
+
+                <!-- Metadata standard name -->
+                <xsl:apply-templates mode="elementFop" select="gmd:metadataStandardName|geonet:child[string(@name)='metadataStandardName']">
+                  <xsl:with-param name="schema" select="$schema"/>
+                </xsl:apply-templates>
+
+                <!-- Metadata standard version -->
+                <xsl:apply-templates mode="elementFop" select="gmd:metadataStandardVersion|geonet:child[string(@name)='metadataStandardVersion']">
+                  <xsl:with-param name="schema" select="$schema"/>
+                </xsl:apply-templates>
+
                 <!-- ReferenceSystemInfo -->
-                <xsl:for-each select="gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier">
-                  <xsl:apply-templates mode="elementFop" select="gmd:codeSpace">
+                <xsl:variable name="referenceSystemInfo">
+                  <xsl:apply-templates mode="elementFop"
+                                       select="gmd:referenceSystemInfo">
                     <xsl:with-param name="schema" select="$schema"/>
                   </xsl:apply-templates>
-                  <xsl:apply-templates mode="elementFop" select="gmd:code">
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:apply-templates>
-                  <xsl:apply-templates mode="elementFop" select="gmd:version">
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:apply-templates>
-                </xsl:for-each>
+                </xsl:variable>
+                <xsl:call-template name="blockElementFop">
+                  <xsl:with-param name="block" select="$referenceSystemInfo"/>
+                  <xsl:with-param name="label">
+                    <xsl:value-of
+                            select="/root/gui/schemas/*[name()=$schema]/labels/element[@name='gmd:referenceSystemInfo']/label"/>
+                  </xsl:with-param>
+                  <xsl:with-param name="width-label" select="'5cm'" />
+                  <xsl:with-param name="width-content" select="'6.8cm'" />
+                </xsl:call-template>
+
 
               </fo:table-body>
             </fo:table>
           </fo:block>
           <fo:block margin-top="12pt"/>
 
-          <!-- Datasetidentification -->
-          <fo:block border-width="1pt" border-style="solid" border-color="#1b5a9f">
-            <fo:table table-layout="fixed" width="100%">
-              <fo:table-column column-width="5cm"/>
-              <fo:table-column column-width="6.8cm"/>
 
-              <fo:table-body>
-                <fo:table-row background-color="#1b5a9f">
-                  <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
-                                 number-columns-spanned="2" display-align="center">
-                    <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
-                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Datasetidentification"/>
-                    </fo:block>
-                  </fo:table-cell>
-                </fo:table-row>
+          <xsl:if test="gmd:metadataExtensionInfo/*">
 
-                <xsl:apply-templates mode="elementFop"
-                                     select="gmd:identificationInfo//gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date">
-                  <xsl:with-param name="schema" select="$schema"/>
-
-                </xsl:apply-templates>
-
-                <xsl:apply-templates mode="elementFop" select="gmd:language|geonet:child[string(@name)='language']">
-                  <xsl:with-param name="schema" select="$schema"/>
-
-                </xsl:apply-templates>
-
-                <xsl:apply-templates mode="elementFop"
-                                     select="gmd:characterSet|geonet:child[string(@name)='characterSet']">
+            <xsl:call-template name="sectionBlock">
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataExtensionInfo']/label" />
+              <xsl:with-param name="content">
+                <xsl:apply-templates mode="elementFop" select="gmd:metadataExtensionInfo/*">
                   <xsl:with-param name="schema" select="$schema"/>
                 </xsl:apply-templates>
+              </xsl:with-param>
+            </xsl:call-template>
+          </xsl:if>
 
-                <!-- todo: which status to use? -->
-                <xsl:apply-templates mode="elementFop"
-                                     select="gmd:identificationInfo//gmd:status">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-
-                <!-- Maintenance and update frequency -->
-                <xsl:apply-templates mode="elementFop"
-                                     select="gmd:identificationInfo//gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-
-                <!-- Spatial representation type -->
-                <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo//gmd:spatialRepresentationType|geonet:child[string(@name)='spatialRepresentationType']">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-                <!-- Legal constraints -->
-
-                <xsl:if test="gmd:identificationInfo//gmd:resourceConstraints/gmd:MD_LegalConstraints">
-                  <xsl:call-template name="info-rows-separator" />
-                </xsl:if>
-
-                <xsl:for-each select="gmd:identificationInfo//gmd:resourceConstraints">
-                  <xsl:apply-templates mode="elementFop"
-                                       select="gmd:MD_LegalConstraints//gmd:useLimitation">
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:apply-templates>
-
-                  <xsl:apply-templates mode="elementFop"
-                                       select="gmd:MD_LegalConstraints//gmd:MD_RestrictionCode/@codeListValue">
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:apply-templates>
-
-                  <xsl:apply-templates mode="elementFop"
-                                       select="gmd:MD_LegalConstraints//gmd:otherConstraints">
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:apply-templates>
-
-                  <xsl:call-template name="info-rows-separator" />
-                </xsl:for-each>
-
-
-
-                <xsl:apply-templates mode="elementFop"
-                                     select="gmd:identificationInfo//gmd:supplementalInformation|geonet:child[string(@name)='supplementalInformation']">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-                <!-- Service type - specific info -->
-                <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo/*/srv:serviceType">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-                <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo/*/srv:serviceTypeVersion">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-                <xsl:apply-templates mode="elementFop" select="gmd:identificationInfo/*/srv:couplingType">
-                  <xsl:with-param name="schema" select="$schema"/>
-                </xsl:apply-templates>
-
-                <xsl:for-each select="gmd:identificationInfo/*/srv:containsOperations/srv:SV_OperationMetadata">
-
-                  <xsl:variable name="operation">
-                    <xsl:apply-templates mode="elementFop"
-                                         select="./srv:operationName">
-                      <xsl:with-param name="schema" select="$schema"/>
-                    </xsl:apply-templates>
-                    <xsl:apply-templates mode="elementFop"
-                                         select="./srv:DCP/srv:DCPList">
-                      <xsl:with-param name="schema" select="$schema"/>
-                    </xsl:apply-templates>
-                    <xsl:apply-templates mode="elementFop"
-                                         select="./srv:operationDescription">
-                      <xsl:with-param name="schema" select="$schema"/>
-                    </xsl:apply-templates>
-
-                    <xsl:for-each select="srv:parameters/srv:SV_Parameter">
-                      <xsl:variable name="parameter">
-                        <xsl:apply-templates mode="elementFop"
-                                             select="./srv:name">
-                          <xsl:with-param name="schema" select="$schema"/>
-                        </xsl:apply-templates>
-
-                        <xsl:apply-templates mode="elementFop"
-                                             select="./srv:direction">
-                          <xsl:with-param name="schema" select="$schema"/>
-                        </xsl:apply-templates>
-
-                        <xsl:apply-templates mode="elementFop"
-                                             select="./srv:description">
-                          <xsl:with-param name="schema" select="$schema"/>
-                        </xsl:apply-templates>
-
-                        <xsl:apply-templates mode="elementFop"
-                                             select="./srv:repeatability">
-                          <xsl:with-param name="schema" select="$schema"/>
-                        </xsl:apply-templates>
-
-
-                        <xsl:apply-templates mode="elementFop"
-                                             select="./srv:valueType">
-                          <xsl:with-param name="schema" select="$schema"/>
-                        </xsl:apply-templates>
-                      </xsl:variable>
-
-                      <xsl:call-template name="blockElementFop">
-                        <xsl:with-param name="block" select="$parameter"/>
-                        <xsl:with-param name="label">
-                          <xsl:value-of
-                            select="/root/gui/schemas/*[name()=$schema]/labels/element[@name='srv:SV_Parameter']/label"/>
-                        </xsl:with-param>
-                      </xsl:call-template>
-                    </xsl:for-each>
-
-
-                    <xsl:apply-templates mode="elementFop"
-                                         select="./srv:connectPoint">
-                      <xsl:with-param name="schema" select="$schema"/>
-                    </xsl:apply-templates>
-                  </xsl:variable>
-
-                  <xsl:call-template name="blockElementFop">
-                    <xsl:with-param name="block" select="$operation"/>
-                    <xsl:with-param name="label">
-                      <xsl:value-of
-                        select="/root/gui/schemas/*[name()=$schema]/labels/element[@name='srv:containsOperations']/label"/>
-                    </xsl:with-param>
-                  </xsl:call-template>
-                </xsl:for-each>
-              </fo:table-body>
-            </fo:table>
-          </fo:block>
         </fo:block>
       </fo:table-cell>
 
@@ -612,9 +839,19 @@
                         <fo:inline padding="0.5cm">
                           <fo:external-graphic content-width="6.2cm">
                             <xsl:attribute name="src">
+                              <xsl:choose>
+                                <xsl:when test="starts-with($fileName, 'http')">
                               <xsl:value-of
-                                select="concat( //server/protocol, '://', //server/host,':', //server/port, /root/gui/url, '/srv/eng/resources.get?uuid=', gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')"
+                                          select="$fileName"
+                                  />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                  <xsl:value-of
+                                          select="concat( $urlBase, '/srv/eng/resources.get?uuid=', gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')"
                               />
+                                </xsl:otherwise>
+                              </xsl:choose>
+
                             </xsl:attribute>
                           </fo:external-graphic>
                         </fo:inline>
@@ -645,8 +882,88 @@
                 </fo:table-cell>
               </fo:table-row>
 
+              <xsl:variable name="kCodelist" select="/root/gui/schemas/iso19139.nap/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
+
+
+              <xsl:for-each-group select="gmd:identificationInfo//gmd:descriptiveKeywords[
+                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and
+                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
+
+                <xsl:variable name="kCode">
+                  <xsl:for-each select="current-group()">
+                    <xsl:for-each select="gmd:MD_Keywords/gmd:type">
+                      <xsl:value-of  select="gmd:MD_KeywordTypeCode/@codeListValue" />
+                    </xsl:for-each>
+                  </xsl:for-each>
+                </xsl:variable>
+
+                <xsl:variable name="keywordsList">
+                  <xsl:for-each select="current-group()">
+
+                    <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
+                      <xsl:variable name="keywordVal">
+                        <xsl:call-template name="localised">
+                          <xsl:with-param name="langId"
+                                          select="concat('#', $langForMetadata)"/>
+                        </xsl:call-template>
+                      </xsl:variable>
+                      <xsl:value-of select="normalize-space($keywordVal)" /><xsl:if test="string(normalize-space($keywordVal))"><xsl:text>, </xsl:text></xsl:if>
+                    </xsl:for-each>
+
+                  </xsl:for-each>
+                </xsl:variable>
+
+                <xsl:variable name="keywordsListNorm" select="normalize-space($keywordsList)" />
+                <xsl:if test="string($keywordsListNorm)">
+                  <xsl:call-template name="TRFop">
+                    <xsl:with-param name="label">
+                      <xsl:value-of select="$kCodelist/entry[code=$kCode]/label" />
+                    </xsl:with-param>
+                    <xsl:with-param name="text">
+                      <xsl:value-of select="substring($keywordsListNorm, 1, string-length($keywordsListNorm) - 1)" />
+                    </xsl:with-param>
+                  </xsl:call-template>
+                </xsl:if>
+
+              </xsl:for-each-group>
+
+
+              <xsl:for-each-group select="gmd:identificationInfo//gmd:descriptiveKeywords[
+                (normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') or
+                (normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
 
               <xsl:variable name="keywordsList">
+                  <xsl:for-each select="current-group()">
+
+                    <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
+                      <xsl:variable name="keywordVal">
+                        <xsl:call-template name="localised">
+                          <xsl:with-param name="langId"
+                                          select="concat('#', $langForMetadata)"/>
+                        </xsl:call-template>
+                      </xsl:variable>
+                      <xsl:value-of select="normalize-space($keywordVal)" /><xsl:if test="string(normalize-space($keywordVal))"><xsl:text>, </xsl:text></xsl:if>
+                    </xsl:for-each>
+
+                  </xsl:for-each>
+                </xsl:variable>
+
+                <xsl:variable name="keywordsListNorm" select="normalize-space($keywordsList)" />
+                <xsl:if test="string($keywordsListNorm)">
+                  <xsl:call-template name="TRFop">
+                    <xsl:with-param name="label">
+                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/labels/element[@name='CoreSubjectThesaurus']/label" />
+                    </xsl:with-param>
+                    <xsl:with-param name="text">
+                      <xsl:value-of select="substring($keywordsListNorm, 1, string-length($keywordsListNorm) - 1)" />
+                    </xsl:with-param>
+                  </xsl:call-template>
+                </xsl:if>
+
+              </xsl:for-each-group>
+
+
+              <!--<xsl:variable name="keywordsList">
                 <xsl:for-each
                   select="gmd:identificationInfo//gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
                   <xsl:choose>
@@ -676,7 +993,7 @@
                       select="normalize-space(substring($keywordsList, 1, string-length($keywordsList) - 1))"/>
                   </xsl:if>
                 </xsl:with-param>
-              </xsl:call-template>
+              </xsl:call-template>-->
 
 
               <xsl:apply-templates mode="elementFop"
@@ -817,4 +1134,36 @@
       </fo:table-cell>
     </fo:table-row>
   </xsl:template>
+
+  <xsl:template name="sectionBlock">
+    <xsl:param name="headerLabel" />
+    <xsl:param name="content" />
+
+    <fo:block border-width="1pt" border-style="solid" border-color="#1b5a9f">
+      <fo:table table-layout="fixed" width="100%">
+        <fo:table-column column-width="5cm"/>
+        <fo:table-column column-width="6.8cm"/>
+
+        <fo:table-body>
+          <fo:table-row background-color="#1b5a9f">
+            <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
+                           number-columns-spanned="2" display-align="center">
+              <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
+                <xsl:value-of select="$headerLabel"/>
+              </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+
+
+          <xsl:call-template name="blockElementFop">
+            <xsl:with-param name="block" select="$content"/>
+            <xsl:with-param name="width-label" select="'5cm'" />
+            <xsl:with-param name="width-content" select="'6.8cm'" />
+          </xsl:call-template>
+        </fo:table-body>
+      </fo:table>
+    </fo:block>
+  </xsl:template>
+
+
 </xsl:stylesheet>
