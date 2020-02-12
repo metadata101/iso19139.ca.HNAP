@@ -278,7 +278,7 @@
       <entries>
         <xsl:for-each select="$resourceFormatsTh/rdf:RDF/rdf:Description">
           <entry>
-            <code><xsl:value-of select="ns2:prefLabel[@xml:lang='en']" /></code>
+            <code><xsl:value-of select="replace(@rdf:about, 'http://geonetwork-opensource.org/EC/resourceformat#', '')" /></code>
             <label> <xsl:value-of select="ns2:prefLabel[@xml:lang='en']" /></label>
           </entry>
         </xsl:for-each>
