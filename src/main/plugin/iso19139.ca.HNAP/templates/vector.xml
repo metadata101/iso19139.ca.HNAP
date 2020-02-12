@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns="http://www.isotc211.org/2005/gmd"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:gfc="http://www.isotc211.org/2005/gfc"
+                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:gmi="http://www.isotc211.org/2005/gmi"
+                 xmlns:gml="http://www.opengis.net/gml/3.2"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gsr="http://www.isotc211.org/2005/gsr"
+                 xmlns:gss="http://www.isotc211.org/2005/gss"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:srv="http://www.isotc211.org/2005/srv">
+  <gmd:fileIdentifier>
+    <gco:CharacterString/>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gco:CharacterString>eng; CAN</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108" codeListValue="RI_622">dataset; jeuDonnées</gmd:MD_ScopeCode>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+        <gco:CharacterString/>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#fra"/>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:organisationName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone>
+            <gmd:CI_Telephone>
+              <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:voice>
+              <gmd:facsimile>
+                <gco:CharacterString/>
+              </gmd:facsimile>
+            </gmd:CI_Telephone>
+          </gmd:phone>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:deliveryPoint>
+              <gmd:city gco:nilReason="missing">
+                <gco:CharacterString/>
+              </gmd:city>
+              <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:administrativeArea>
+              <gmd:postalCode gco:nilReason="missing">
+                <gco:CharacterString/>
+              </gmd:postalCode>
+              <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:country>
+              <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue="pointOfContact"/>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2011-05-03T15:42:54</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
+    <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
+    <gmd:PT_FreeText>
+      <gmd:textGroup>
+        <gmd:LocalisedCharacterString locale="#fra">Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gmd:LocalisedCharacterString>
+      </gmd:textGroup>
+    </gmd:PT_FreeText>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>CAN/CGSB-171.100-2009</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:dataSetURI gco:nilReason="missing">
+    <gco:CharacterString/>
+  </gmd:dataSetURI>
+  <gmd:locale>
+    <gmd:PT_Locale id="fra">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116" codeListValue="fra">French; Français</gmd:LanguageCode>
+      </gmd:languageCode>
+      <gmd:country>
+        <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117" codeListValue="CAN">Canada; Canada</gmd:Country>
+      </gmd:country>
+      <gmd:characterEncoding>
+        <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+      </gmd:characterEncoding>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:code>
+            <gco:CharacterString/>
+          </gmd:code>
+          <gmd:codeSpace>
+            <gco:CharacterString/>
+          </gmd:codeSpace>
+          <gmd:version>
+            <gco:CharacterString/>
+          </gmd:version>
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>FGP - Dataset Metadata - ISO19115 NAP (Default)</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">FGP - Dataset Metadata - ISO19115 NAP (Default)
+                </gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date/>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date/>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:MD_Identifier>
+              <gmd:code/>
+            </gmd:MD_Identifier>
+          </gmd:identifier>
+          <gmd:citedResponsibleParty>
+            <gmd:CI_ResponsibleParty>
+              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:organisationName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:phone>
+                    <gmd:CI_Telephone>
+                      <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:voice>
+                      <gmd:facsimile>
+                      <gco:CharacterString/>
+                      </gmd:facsimile>
+                    </gmd:CI_Telephone>
+                  </gmd:phone>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:deliveryPoint>
+                      <gmd:city gco:nilReason="missing">
+                        <gco:CharacterString/>
+                      </gmd:city>
+                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode gco:nilReason="missing">
+                        <gco:CharacterString/>
+                      </gmd:postalCode>
+                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:country>
+                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue="pointOfContact"/>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:citedResponsibleParty>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+        <gco:CharacterString/>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#fra"/>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:abstract>
+      <gmd:status>
+        <gmd:MD_ProgressCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_106" codeListValue=""/>
+      </gmd:status>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_102" codeListValue=""/>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString/>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra"/>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra">Thésaurus des sujets de base du gouvernement du Canada</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2004</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeListValue="RI_366"
+                                         codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2015-04-21</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Government of Canada; Library and Archives Canada</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Bibliothèque et Archives Canada</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:organisationName>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+            <gco:CharacterString>Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)
+            </gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:useLimitation>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107" codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
+          </gmd:accessConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107" codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
+          </gmd:useConstraints>
+          <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString/>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra"/>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:spatialRepresentationType>
+        <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"/>
+      </gmd:spatialRepresentationType>
+      <gmd:language>
+        <gco:CharacterString>eng; CAN</gco:CharacterString>
+      </gmd:language>
+      <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="utf8"/>
+      </gmd:characterSet>
+      <gmd:topicCategory gco:nilReason="missing">
+        <gmd:MD_TopicCategoryCode></gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:environmentDescription gco:nilReason="missing">
+        <gco:CharacterString/>
+      </gmd:environmentDescription>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:temporalElement>
+            <gmd:EX_TemporalExtent>
+              <gmd:extent>
+                <gml:TimePeriod gml:id="timeperiod1">
+                  <gml:beginPosition/>
+                  <gml:endPosition/>
+                </gml:TimePeriod>
+              </gmd:extent>
+            </gmd:EX_TemporalExtent>
+          </gmd:temporalElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>-141.0030</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>-52.6174</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>41.6755</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>83.1139</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+      <gmd:supplementalInformation gco:nilReason="missing">
+        <gco:CharacterString/>
+      </gmd:supplementalInformation>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name gco:nilReason="missing">
+            <gco:CharacterString></gco:CharacterString>
+          </gmd:name>
+          <gmd:version gco:nilReason="missing">
+            <gco:CharacterString></gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributor>
+        <gmd:MD_Distributor>
+          <gmd:distributorContact>
+            <gmd:CI_ResponsibleParty>
+              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                <gco:CharacterString/>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:organisationName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:phone>
+                    <gmd:CI_Telephone>
+                      <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:voice>
+                      <gmd:facsimile>
+                        <gco:CharacterString/>
+                      </gmd:facsimile>
+                    </gmd:CI_Telephone>
+                  </gmd:phone>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:deliveryPoint>
+                      <gmd:city gco:nilReason="missing">
+                        <gco:CharacterString/>
+                      </gmd:city>
+                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode gco:nilReason="missing">
+                        <gco:CharacterString/>
+                      </gmd:postalCode>
+                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:country>
+                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                        <gco:CharacterString/>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#fra"/>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue=""/>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:distributorContact>
+        </gmd:MD_Distributor>
+      </gmd:distributor>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+</gmd:MD_Metadata>
