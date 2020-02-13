@@ -32,7 +32,9 @@
   <xsl:param name="inspire">false</xsl:param>
 
   <xsl:variable name="mainLanguage">
-    <xsl:call-template name="langId19139"/>
+    <xsl:call-template name="langId_from_gmdlanguage19139">
+      <xsl:with-param name="gmdlanguage" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language"/>
+    </xsl:call-template>
   </xsl:variable>
 
   <!-- convert ISO 639-2T to_ISO 639-2B - i.e. FRA to FRE -->
