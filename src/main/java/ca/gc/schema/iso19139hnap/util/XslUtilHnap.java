@@ -43,7 +43,7 @@ import javax.annotation.Nonnull;
 
 public class XslUtilHnap {
     //TODO, change to 'iso19139.hnap' after schema is renamed. Task 19337
-    final private static String HNAP_SCHEMA_NAME = "iso19139.nap";
+    final private static String HNAP_SCHEMA_NAME = "iso19139.ca.HNAP";
     private static String strSchemaDir = null;
 
 
@@ -257,7 +257,7 @@ public class XslUtilHnap {
     }
 
     /*
-     * Calculate schemaDir from system config value. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.nap
+     * Calculate schemaDir from system config value. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.ca.HNAP
      * @return The schema folder path
      */
     public static
@@ -273,7 +273,7 @@ public class XslUtilHnap {
      * Calculate codeList file path from language code
      * @param langCode  Language code, eng or fre
      * @return The code list file path
-     * Example : C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.nap\loc\eng\codelists.xml
+     * Example : C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.ca.HNAP\loc\eng\codelists.xml
      */
     public static
     @Nonnull

@@ -54,7 +54,7 @@
         <directory>src/test/resources/org/fao/geonet</directory>
       </testResource>
       <testResource>
-        <directory>src/main/plugin/iso19139.nap</directory>
+        <directory>src/main/plugin/iso19139.ca.HNAP</directory>
       </testResource>
     </testResources>
   </build>

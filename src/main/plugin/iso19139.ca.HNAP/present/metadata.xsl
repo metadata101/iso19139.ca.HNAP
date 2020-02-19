@@ -20,9 +20,9 @@
   <xsl:import href="metadata-brief.xsl"/>
   <xsl:import href="metadata-fop.xsl"/>
   <xsl:import href="metadata-utils.xsl"/>
-  <xsl:include href="iso19139.nap-readonly.xsl"/>
+  <xsl:include href="iso19139.ec.HNAP-readonly.xsl"/>
 
-  <!-- main template - the way into processing iso19139.nap -->
+  <!-- main template - the way into processing iso19139.ca.HNAP -->
   <xsl:template name="metadata-iso19139.ca.HNAP">
     <xsl:param name="schema"/>
     <xsl:param name="edit" select="false()"/>
@@ -213,13 +213,13 @@
       <xsl:when test="$edit=false()">
         <!--<xsl:choose>
                     <xsl:when test="/root/request/viewMode = 'full'">
-                        <xsl:call-template name="iso19139.napFullView">
+                        <xsl:call-template name="iso19139.ca.HNAPFullView">
                             <xsl:with-param name="schema" select="$schema"/>
                             <xsl:with-param name="edit"   select="$edit"/>
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:call-template name="iso19139.napCustomView">
+                        <xsl:call-template name="iso19139.ca.HNAPCustomView">
                             <xsl:with-param name="schema" select="$schema"/>
                             <xsl:with-param name="edit"   select="$edit"/>
                         </xsl:call-template>
@@ -259,7 +259,7 @@
         <xsl:template mode="extraTab" match="/">
         <xsl:param name="tabLink"/>
         <xsl:param name="schema"/>
-        <xsl:if test="$schema='iso19139.nap'">
+        <xsl:if test="$schema='iso19139.ca.HNAP'">
         ...
         </xsl:if>
         </xsl:template>
@@ -281,7 +281,7 @@
   </xsl:template>
 
   <!-- ============================================================================= -->
-  <!-- iso19139.nap custom elements -->
+  <!-- iso19139.ca.HNAP custom elements -->
   <!-- ============================================================================= -->
 
 
