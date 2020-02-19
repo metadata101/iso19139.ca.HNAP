@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://ec.gc.ca/skos/datamart#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:base="http://ec.gc.ca/skos/datamart">
+  <owl:Ontology rdf:about="http://ec.gc.ca/skos/datamart">
+    <owl:imports rdf:resource="http://www.w3.org/2008/05/skos" />
+  </owl:Ontology>
+  <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+  <!-- http://www.w3.org/2004/02/skos/core#prefLabel -->
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#prefLabel">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label" />
+  </owl:AnnotationProperty>
+  <!-- http://www.w3.org/2004/02/skos/core#scopeNote -->
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#scopeNote">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label" />
+  </owl:AnnotationProperty>
+  <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+  <!-- http://www.w3.org/2004/02/skos/core#broader -->
+  <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader" />
+  <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+  <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+  <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept" />
+  <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+  <!-- THEMES -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversight">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Core Management &amp; Oversight</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gestion et surveillance des fonctions essentielles</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Partnerships">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Engagement and Partnership with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Engagement et partenariat avec les régulateurs externes et les organes directeurs</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Instruments">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create and Promote Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer des instruments et les promouvoir</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Sites">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Oversee and Manage Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Superviser et gérer l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Species">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Protect Species Well-Being</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Protéger le bien-être des espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Substances">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Assess Toxicity, Manage and Monitor for Environmental Presence of Hazardous Substances and Waste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Évaluer la toxicité de la présence dans l'environnement des substances et des déchets dangereux, les gérer et les surveiller</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Regulatee">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Enforce Regulatee Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Appliquer la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Weather">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Provide Weather Information Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Fournir des services et des produits d'information sur les conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Air">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Provide Air Quality/UV Information Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Fournir des services et des produits d'information sur la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Climate">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Provide Climate Information Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Fournir des services et des produits d'information sur le climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <!-- TODO: French translation -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Water">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Provide Water Quantity Information Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Fournir des services et des produits d'information sur la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#Ice">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Provide Ice Conditions Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Fournir des services et des produits d'information sur les glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ECData" />
+  </owl:NamedIndividual>
+  <!-- SUBTHEMES -->
+  <!-- Partnerships -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversightPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Core Functions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant les fonctions essentielles</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversightFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Core Functions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique pour les fonctions essentielles</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversightFrameworkGandC">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Grants and Contributions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique pour les subventions et contributions</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversightSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Core Functions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur les fonctions essentielles</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ManagementOversightSystemsGandC">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Grants and Contributions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information pour les subventions et contributions</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#ManagementOversight" />
+  </owl:NamedIndividual>
+  <!-- Partnerships -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant les organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+      <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif aux organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+      <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur les organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsOpportunities">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Identify Opportunities for Engagement with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cerner les possibilités de mobilisation des organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsPreparePosition">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Prepare Canada's Position to Negotiate and Ratify Agreements and Partnerships with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer la position canadienne en vue de négocier et de ratifier des accords et des partenariats avec des organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsNegotiateRatify">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Participate in Fora to Negotiate and Ratify Agreements and Partnerships with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Participer à des forums en vue de négocier et de ratifier des accords et des partenariats avec des organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsMaintainAgreements">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Maintain Agreements and Partnerships with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Maintenir les accords et les partenariats avec les organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsMembership">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Make Application for Membership in External Organization or Governing Body</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Présenter une demande d'adhésion à une organisation ou un organisme dirigeant externe</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsPromoteEngagements">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Communicate and Promote Engagements with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Communiquer et promouvoir les mobilisations auprès des organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsCooperativeActivities">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Engage in Committees and Cooperative Activities with External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Participer à des comités et à des activités de collaboration avec des organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#PartnershipsGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreements for External Regulators and Governing Bodies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions pour les organismes de réglementation et dirigeants/instances externes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Partnerships" />
+  </owl:NamedIndividual>
+  <!-- Instruments -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant les instruments</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif aux instruments</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information relatifs aux instruments</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsCreatePolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create / Amend Environmental Policy</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer et modifier la politique environnementale</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsPromotePolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Communicate and Promote Environmental Policy</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Communiquer et promouvoir la politique environnementale</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsCreateLegislation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create / Amend Environmental Legislation</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer et modifier la législation environnementale</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsPromoteLegislation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Communicate and Promote Environmental Legislation</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Communiquer et promouvoir la législation environnementale</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsCreateInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create / Amend Control Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer et modifier les instruments de contrôle</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsComplianceMaterial">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create / Amend Compliance Promotion Materials</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer et modifier le matériel de promotion de la conformité</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsComplianceMaterial">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Create / Amend Compliance Promotion Materials</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Créer et modifier le matériel de promotion de la conformité</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#InstrumentsGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreements for Instruments</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer  des accords de subventions et de contributions concernant les instruments</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Instruments" />
+  </owl:NamedIndividual>
+  <!-- Sites -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif à l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur  l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesAreaInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Designate and Manage Areas of Interest or Concern</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Établir et gérer les zones d'intérêt ou les secteurs préoccupants</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesHabitat">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Designate and Manage Priority Habitat</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Désigner et gérer  les habitats prioritaires</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesContaminated">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Perform Remediation and Advisement Services for Contaminated Sites</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Offrir des services d'assainissement et de consultation visant les sites contaminés</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesAssess">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Assess Environmental Impacts of Projects, Facilities or Disposal of Waste (on a Site)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Évaluer les répercussions environnementales des projets, des installations ou du rejet des déchets (sur un site)</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesEmergencies">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Respond to Environmental Emergencies</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Intervenir lors d'urgences environnementales</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesEstablishPartnerships">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Establish Sites Conservation/Recovery Networks, Partnerships and Agreements</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Établir des réseaux, des partenariats et des accords de conservation et de rétablissement des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Conduct Public Education / Outreach / Training about Sites</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Mener des séances d'éducation, des interventions directes  et de la formation du pour le public sur l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesRepondCalls">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Respond to Calls / Concerns / Complaints about Sites</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Répondre aux appels, aux préoccupations et aux plaintes concernant Sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreements for Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions concernant l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SitesScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Assessing Site Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes pour gérer, protéger et rétablir les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Sites" />
+  </owl:NamedIndividual>
+  <!-- Species -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes d'évaluation de l'état des sites</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif aux espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information relatifs aux espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Develop Species Assessment Strategy</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Élaborer une stratégie d'évaluation des espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesAssess">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Assess Status of Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Évaluer l'état des espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesEstablishStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Establish Legislated Status of Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Établir l'état des espèces imposé par la Loi</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesDevelopPlans">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Develop Species Recovery / Management / Conservation Plans</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Élaborer des plans de rétablissement, de gestion et de conservation des espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesProtectRestore">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Protect and Restore Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Protéger et rétablir les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesEstablishPartnerships">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Establish Species Conservation/Recovery Networks, Partnerships and Agreements</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Établir des réseaux de conservation et de rétablissement des espèces, des partenariats et des accords</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Conduct public education /outreach/ training on Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Mener des séances d'éducation, de sensibilisation et de formation du public sur les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesRepondCalls">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Respond to Calls / Concerns / Complaints about Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Répondre aux appels, aux préoccupations et aux plaintes concernant les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreements for Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer  des accords de subvention et contribution concernant les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SpeciesScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge/Develop New Methodologies for Managing, Protecting and Restoring Species</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes pour gérer, protéger et rétablir les espèces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Species" />
+  </owl:NamedIndividual>
+  <!-- Substances -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Hazardous Substances</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant les substances dangereuses et aux déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Hazardous Substances</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif aux substances dangereuses et aux déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Hazardous Substances</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur les substances dangereuses et aux déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Develop Substance Assessment Strategy</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Élaborer la stratégie d'évaluation des substances</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesAssess">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Assess Toxicity of Substance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Évaluer la toxicité de la substance</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesRiskManagement">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Develop Risk Management Strategies for Substances of Concern</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Élaborer des stratégies de gestion des risques pour les substances préoccupantes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesPlanInfrastruture">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Monitoring Infrastructure to Assess Presence and Levels of Substances of Concern</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en œuvre l'infrastructure de surveillance dans le but d'évaluer la présence et les niveaux de substances préoccupantes</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor / Assess Substance and Waste Levels in Air, Water, Soil, Biota</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Surveiller et évaluer les niveaux des substances et des déchets dans l'air, l'eau, le sol, le biote</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesEstablishPartnerships">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Establish Substance and Waste Management Networks, Partnerships and Agreements for Substances and Waste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Établir des réseaux de gestion des substances dangereuses et des déchets dangereux, ainsi que des partenariats et des accords les concernant</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Conduct public education / outreach / training on Substances and Waste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Mener des séances d'éducation, d'interventions directes et de formation du public sur les substances dangereuses et les déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesRepondCalls">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Respond to Calls / Concerns / Complaints about Substances and Waste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Répondre aux appels, aux préoccupations et aux plaintes concernant les substances dangereuses et les déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreements for Hazardous Substances</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Configurer et administrer les accords de subvention et de contribution concernant les substances dangereuses et les déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#SubstancesScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge/Develop New Methodologies for Identifying, Monitoring and Managing Hazardous Substances and Waste</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes pour déterminer, surveiller et gérer les substances dangereuses et les déchets dangereux</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Substances" />
+  </owl:NamedIndividual>
+  <!-- Regulatee -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateePlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Regulatee Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Regulatee Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif à la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <!-- TODO: French translation -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Regulatee Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeConductCompliance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Conduct Compliance Promotion Operations with Regulatees</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Mener des opérations de promotion de la conformité auprès des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeSubmissions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Regulatee Submissions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les présentations des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeAuthorizations">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Regulatee Authorizations and Collect Fees</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les autorisations des entités réglementées et percevoir les frais</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeVerifyCompliance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Verify Regulatee Compliance with Environmental Framework</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Vérifier la conformité des entités réglementées au cadre environnemental</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeVerifyInvestigate">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Investigate Violations</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Enquêter sur les infractions</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeVerifyNonCompliance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Respond to Regulatee Non-Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Intervenir en cas de non-conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeProsecute">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Prosecute offenders (Environmental law)</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Poursuivre les contrevenants (législation environnementale)</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Regulatees</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions pour la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#RegulateeScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Assessing Regulatee Compliance</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et mettre en place de nouvelles méthodes  pour l'évaluation de la conformité des entités réglementées</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Regulatee" />
+  </owl:NamedIndividual>
+  <!-- Weather -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant les conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif aux conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur les conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherMonitoringInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Monitoring Infrastructure for Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de prévisions des conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor Weather Parameters and Manage Data</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">SSurveiller les conditions météorologiques et gérer les données météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherPredictionInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Weather Prediction Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de prévisions des conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherPredict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Predict Weather Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Prédire les conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherProducts">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Deliver Weather Products and Services to Clients</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Livrer des produits et des services météorologiques aux clients</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Client Relations/Interaction for Weather Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les relations avec la clientèle et la sensibilisation en ce qui concerne les produits et les services météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions relatif aux produits et aux services météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WeatherScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Monitoring and Predicting Weather</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes de surveillance et de prévision des conditions météorologiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Weather" />
+  </owl:NamedIndividual>
+  <!-- Air -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Air Quality</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Air Quality</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif à la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Air Quality</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirMonitoringInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Air Quality and UV Monitoring Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de surveillance de la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor Air Quality and UV Parameters and Manage Data</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Surveiller les paramètres de qualité de l'air et du rayonnement UV et en faire la gestion des données</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirPredictionInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Air Quality and UV Prediction Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de prévision relatives à la qualité de l'air et au rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirPredict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Predict Air Quality and UV Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Prévoir la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirProducts">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Deliver Air Quality and UV Products and Services to Clients</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Livrer aux clients des produits et des services liés à la qualité de l'air et au rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Client Relations/Interaction for Air Quality and UV Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les relations avec la clientèle et l'intervention directe en ce qui concerne les produits et les services liés à la qualité de l'air et au rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Air Quality</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions concernant les produits et les services liés à la qualité de l'air et au rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#AirScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Monitoring and Predicting Air Quality / UV</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes de surveillance et de prédiction de la qualité de l'air et du rayonnement UV</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Air" />
+  </owl:NamedIndividual>
+  <!-- Climate -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimatePlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Climate</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant le climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Climate</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif au climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Climate</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information relatifs au climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateMonitoringInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Climate Monitoring Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en œuvre l'infrastructure de surveillance du climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor Climate Parameters and Manage Data</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Surveiller les paramètres des conditions du climat et gérer les données</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimatePredictionInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Climate Prediction Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de  prévisions climatiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimatePredict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Predict Climate Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Prédire les conditions climatiques</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateProducts">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Deliver Climate Products and Services to Clients</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Livrer aux clients des produits et des services liés  au climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Client Relations/Interaction for Climate Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les relations avec la clientèle et la sensibilisation en ce qui concerne les produits et les services liés  au climat</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Climate</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions concernant le climat et le changement climatique</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#ClimateScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge for Climate Monitoring and Prediction</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes de recherche le climat et le changement climatique</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+    <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Climate" />
+
+  </owl:NamedIndividual>
+  <!-- Water -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterPlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Water Quantity</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif à la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Water Quantity</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterMonitoringInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Water Quantity Monitoring Infrastructure</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de surveillance de la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor Water Quantity Parameters and Manage Data</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Surveiller les paramètres sur la quantité d'eau et gérer les données</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterProducts">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Deliver Water Quantity Products and Services to Clients</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Livrer aux clients des produits et des services liés à la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Client Relations and Outreach for Water Quantity Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les relations avec la clientèle et la sensibilisation en ce qui concerne les produits et les services liés à la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Water Quantity</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions concernant la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#WaterScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Water Quantity Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes visant les produits et les services liés à la quantité d'eau</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Water" />
+  </owl:NamedIndividual>
+  <!-- Ice -->
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IcePlansReports">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plans and Reports for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Plans et rapports concernant l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceFramework">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Policy Framework for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Cadre stratégique relatif à l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+              <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceSystems">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Information Systems for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Systèmes d'information sur l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceMonitoringInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Monitoring Infrastructure for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de surveillance de l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceMonitor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Monitor Ice Conditions Parameters and Manage Data</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Surveiller les paramètres de l'état des glaces et gérer les données</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IcePredictionInfrastructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Plan and Implement Prediction Infrastructure for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Planifier et mettre en place les infrastructures de prédiction de l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IcePredict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Predict Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Prédire l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceProducts">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Deliver Ice Conditions Products and Service to Clients</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Livrer aux clients des produits et services liés à l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceOutreach">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Manage Client Relations/Interactions for Ice Conditions Products and Services</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Gérer les relations et la sensibilisation de la clientèle pour les produits et services liés à l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceGrantsContributions">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Set-up and Administer Grants &amp; Contributions Agreement for Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Préparer et administrer des accords de subventions et de contributions concernant les produits et les services liés à l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://ec.gc.ca/skos/datamart#IceScientificKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept" />
+    <skos:prefLabel xml:lang="en">Expand Scientific Knowledge / Develop New Methodologies for Monitoring and Forecasting Ice Conditions</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Approfondir les connaissances scientifiques et formuler de nouvelles méthodes de surveillance et de prévision de l'état des glaces</skos:prefLabel>
+    <skos:broader rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+          <skos:hasTopConcept rdf:resource="http://ec.gc.ca/skos/datamart#Ice" />
+
+  </owl:NamedIndividual>
+</rdf:RDF>
+

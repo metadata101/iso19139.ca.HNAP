@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	DFO - BY : criteria types for schematron files
+	TODO : There are 2 default built in gn, should we define our own ?
+  -->
+
+<criteriaTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xsi:noNamespaceSchemaLocation="../criteria-type.xsd">
+  <type>
+    <value>*//gmd:keyword/gco:CharacterString/text() =
+      '@@value@@'__OR__*//gmd:keyword/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/text()
+      = '@@value@@'
+    </value>
+    <type>XPATH</type>
+    <name>Keyword</name>
+    <allowArbitraryValue>false</allowArbitraryValue>
+    <remote>
+      <cacheTime>0</cacheTime> <!-- Don't cache -->
+      <url>xml.search.keywords@json?pNewSearch=true&amp;maxResults=100&amp;pKeyword=@@search@@&amp;pTypeSearch=CONTAINS</url>
+
+      <!-- The following 3 elements are functions (paramName) {function body} and will be converted to a javascript function
+           in the UI by pre-pending function to the body text -->
+      <selectRecordArray>(data, scope) { return data[0] }</selectRecordArray>
+      <selectLabelFunction>(record, scope) { return record.value['#text'] + ' (' +
+        record.thesaurus.title + ')' }
+      </selectLabelFunction>
+      <selectValueFunction>(record, scope) { return record.value['#text'] }</selectValueFunction>
+    </remote>
+  </type>
+</criteriaTypes>

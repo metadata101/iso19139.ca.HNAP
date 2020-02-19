@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <schematron.title>HNAP validation rules for FGP publication</schematron.title>
+    <Metadata>Metadata Information</Metadata>
+    <DataIdentification>Data Identification</DataIdentification>
+    <Distribution>Distribution</Distribution>
+
+  <EC1>Organization name is required in both languages</EC1>
+  <EC2>Value is required for Individual name</EC2>
+  <EC3>Position name is required in both languages</EC3>
+  <EC8>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</EC8>
+  <EC9>Value is required for Online Resource URL</EC9>
+  <EC10>Value is required for Topic Category</EC10>
+  <EC11>Value is required for Use Limitation in both languages</EC11>
+  <EC12>Value is required for Legal Access Constraints</EC12>
+  <EC13>Value is required for Legal Use Constraints</EC13>
+  <EC14>Value is required for Metadata publication date</EC14>
+  <EC15>Value is required for Metadata creation date</EC15>
+  <EC19>Value is not valid for Metadata Standard Name, should be 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' in english and 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' in french</EC19>
+  <EC21>Value is required for distribution format - File name</EC21>
+  <EC22>Value is required for distribution format - File version</EC22>
+  <EC23>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</EC23>
+  <EC26>Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26>
+  <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
+  <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+  <EC26GovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC26GovAllowedEnglish>
+  <EC26GovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC26GovAllowedFrench>
+
+  <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+  <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+  <EC37GovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC37GovAllowedEnglish>
+  <EC37GovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC37GovAllowedFrench>
+
+  <EC38GovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovEnglish>
+  <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
+  <EC38GovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC38GovAllowedEnglish>
+  <EC38GovAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC38GovAllowedFrench>
+
+  <EC27>Supplemental Information should be empty or filled in both languages</EC27>
+  <EC31>Note (Other Constraints) is required in both languages</EC31>
+
+  <EC32>Abstract is required in both languages</EC32>
+  <EC33>Title is required in both languages</EC33>
+
+  <SpatialRepresentation>Value is required for Spatial representation</SpatialRepresentation>
+  <EC36>Keyword is required in both languages</EC36>
+
+  <HierarchyLevel>Value is required for HierarchyLevel</HierarchyLevel>
+  <MaintenanceFrequency>Value is required for Maintenance and update frequency</MaintenanceFrequency>
+
+  <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
+  <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
+  <MapResourcesWMS>WMS Map Resources should be available in english and french</MapResourcesWMS>
+  <MapResourcesWMSNumber>The number of WMS Map Resources should be at most 2 (one for english and one for french)</MapResourcesWMSNumber>
+  <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
+  <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
+  <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
+  <OpenLicense>An Open Goverment Licence is required. Accepted English values: Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada) or Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) or Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp) or Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario) or Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island) or Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc) or Open Government Licence - Alberta (https://open.alberta.ca/licence).
+    Accepted French values : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada) or Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) or Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp) or Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario) or Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard) or Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc) or Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</OpenLicense>
+  <EndPosition>End position date should be after begin position</EndPosition>
+  <BeginPositionFormat>Begin position format is not valid value</BeginPositionFormat>
+  <EndPositionFormat>End position format is not valid value</EndPositionFormat>
+  <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
+  <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
+  <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
+  <ECThesaurusCreDate>Thesaurus creation date is required</ECThesaurusCreDate>
+  <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
+  <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
+  <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
+  <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
+  <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+
+  <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
+  <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
+  <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
+  <InvalidContactRole>Contact role code is not valid</InvalidContactRole>
+  <InvalidCitedResponsibleRole>Cited responsible role is not valid</InvalidCitedResponsibleRole>
+  <InvalidDistributorRole>Distributor role code is not valid</InvalidDistributorRole>
+  <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
+  <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
+  <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
+  <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
+
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+
+  <MissingDate>Value is required for Date</MissingDate>
+  <BeginDate>Value is required for Begin Date</BeginDate>
+
+  <Status>Value is required for status</Status>
+
+  <ContactOrganisationName>Contact - Organization name is required in both languages</ContactOrganisationName>
+  <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required in both languages</CitedResponsiblePartyOrganisationName>
+  <DistributorOrganisationName>Distributor - Organization name is required in both languages</DistributorOrganisationName>
+
+  <ContactPositionName>Contact - Position Name should be empty or filled in English and French</ContactPositionName>
+  <CitedResponsiblePartyPositionName>Cited Responsible Party - Position Name should be empty or filled in English and French</CitedResponsiblePartyPositionName>
+  <DistributorPositionName>Distributor - Position Name should be empty or filled in English and French</DistributorPositionName>
+
+  <ContactElectronicMail>Contact - Electronic mail address is required in both languages</ContactElectronicMail>
+  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required in both languages</CitedResponsiblePartyElectronicMail>
+  <DistributorElectronicMail>Distributor - Electronic mail address is required in both languages</DistributorElectronicMail>
+
+  <ContactHoursOfService>Contact - Hours of service should be empty or filled in English and French</ContactHoursOfService>
+  <CitedResponsiblePartyHoursOfService>Cited Responsible Party - Hours of service should be empty or filled in English and French</CitedResponsiblePartyHoursOfService>
+  <DistributorHoursOfService>Distributor - Hours of service should be empty or filled in English and French</DistributorHoursOfService>
+
+
+  <ContactDeliveryPoint>Contact - Delivery Point should be empty or filled in English and French</ContactDeliveryPoint>
+  <CitedResponsiblePartyDeliveryPoint>Cited Responsible Party - Delivery Point should be empty or filled in English and French</CitedResponsiblePartyDeliveryPoint>
+  <DistributorDeliveryPoint>Distributor - Delivery Point should be empty or filled in English and French</DistributorDeliveryPoint>
+
+  <ContactPhone>Contact - Phone should be empty or filled in English and French</ContactPhone>
+  <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
+  <DistributorPhone>Distributor - Phone should be empty or filled in English and French</DistributorPhone>
+
+  <DataLanguage>Value is required for language</DataLanguage>
+  <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
+  <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
+</strings>
