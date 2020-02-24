@@ -188,6 +188,8 @@
   <recordType_explained>Use these parameters to filter the metadata type to search</recordType_explained>
   <Relateddata>Related Products</Relateddata>
   <View>View</View>
+  <ViewParent>View parent</ViewParent>
+  <ViewCollection>View collection</ViewCollection>
   <more>more</more>
 
   <updateExtent>Update geographic extent</updateExtent>
