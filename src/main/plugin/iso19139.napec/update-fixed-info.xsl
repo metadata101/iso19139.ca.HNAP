@@ -1721,7 +1721,13 @@
             <!-- Group by thesaurus -->
               <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
                 <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale}">
+                  <xsl:variable name="locale">
+                    <xsl:choose>
+                      <xsl:when test="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale)"><xsl:value-of select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale" /></xsl:when>
+                      <xsl:otherwise><xsl:value-of select="$localeForTranslations"/></xsl:otherwise>
+                    </xsl:choose>
+                  </xsl:variable>
+                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{$locale}">
                     <xsl:copy-of select="../gmd:thesaurusName" />
                   </keyword>
                 </xsl:for-each>
@@ -1738,7 +1744,13 @@
           <xsl:for-each-group select="current-group()" group-by="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString">
             <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
               <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale}">
+                <xsl:variable name="locale">
+                  <xsl:choose>
+                    <xsl:when test="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale)"><xsl:value-of select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/@locale" /></xsl:when>
+                    <xsl:otherwise><xsl:value-of select="$localeForTranslations"/></xsl:otherwise>
+                  </xsl:choose>
+                </xsl:variable>
+                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString}" locale="{$locale}">
                   <xsl:copy-of select="../gmd:thesaurusName" />
                 </keyword>
               </xsl:for-each>
