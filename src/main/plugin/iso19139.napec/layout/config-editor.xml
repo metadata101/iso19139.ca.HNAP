@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2001-2016 Food and Agriculture Organization of the
+  ~ United Nations (FAO-UN), United Nations World Food Programme (WFP)
+  ~ and United Nations Environment Programme (UNEP)
+  ~
+  ~ This program is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 2 of the License, or (at
+  ~ your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful, but
+  ~ WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program; if not, write to the Free Software
+  ~ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
+  ~
+  ~ Contact: Jeroen Ticheler - FAO - Viale delle Terme di Caracalla 2,
+  ~ Rome - Italy. email: geonetwork@osgeo.org
+  -->
+
+<editor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:gn="http://www.fao.org/geonetwork"
+        xmlns:gco="http://www.isotc211.org/2005/gco"
+        xmlns:gmd="http://www.isotc211.org/2005/gmd"
+        xmlns:gmx="http://www.isotc211.org/2005/gmx"
+        xmlns:srv="http://www.isotc211.org/2005/srv"
+        xmlns:gml="http://www.opengis.net/gml/3.2"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
+        xsi:noNamespaceSchemaLocation="../../../../../../config-editor.xsd">
+
+  <!-- Form field type configuration. Default is text. -->
+  <fields>
+    <for name="gmd:abstract" use="textarea"/>
+    <for name="gmd:checkPointDescription" use="textarea"/>
+    <for name="gmd:credit" use="textarea"/>
+    <for name="gmd:description" use="textarea"/>
+    <for name="gmd:evaluationMethodDescription" use="textarea"/>
+    <for name="gmd:explanation" use="textarea"/>
+    <for name="gmd:handlingDescription" use="textarea"/>
+    <for name="gmd:maintenanceNote" use="textarea"/>
+    <for name="gmd:measureDescription" use="textarea"/>
+    <for name="gmd:purpose" use="textarea"/>
+    <for name="gmd:orderingInstructions" use="textarea"/>
+    <for name="gmd:otherConstraints" use="textarea"/>
+    <for name="gmd:statement" use="textarea"/>
+    <for name="gmd:supplementalInformation" use="textarea"/>
+    <for name="gmd:specificUsage" use="textarea"/>
+    <for name="gmd:userNote" use="textarea"/>
+    <for name="gmd:useLimitation" use="textarea"/>
+
+
+    <for name="gco:Distance" use="number"/>
+    <for name="gco:Decimal" use="number"/>
+    <for name="gco:Integer" use="number"/>
+    <for name="gco:Real" use="number"/>
+    <for name="gco:Boolean" use="checkbox"/>
+
+
+    <for name="gco:Date" use="data-gn-date-picker"/>
+    <for name="gco:DateTime" use="data-gn-date-picker"/>
+
+
+    <!-- gmx:FileName/@src attribute -->
+    <for name="src" use="data-gn-logo-selector"/>
+
+    <for name="gmd:electronicMailAddress" use="email"/>
+
+    <for name="gmd:language" use="data-gn-language-picker"/>
+    <for name="gmd:languageCode" use="data-gn-language-picker"/>
+
+    <for name="gmd:country" use="data-gn-country-selector-ec"/>
+
+    <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
+
+
+    <for name="gmd:organisationName" use="data-gn-organisation-entry-selector-ec"/>
+
+    <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+        data-template-add-action="true"
+        data-search-action="true"
+        data-popup-action="true"
+        data-template-type="contact"
+        data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+        data-template-add-action="true"
+        data-search-action="true"
+        data-popup-action="true"
+        data-template-type="contact"
+        data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+        data-template-add-action="true"
+        data-search-action="true"
+        data-popup-action="true"
+        data-template-type="contact"
+        data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:processor" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+        data-template-add-action="true"
+        data-search-action="true"
+        data-popup-action="true"
+        data-template-type="contact"
+        data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+        data-template-add-action="true"
+        data-search-action="true"
+        data-popup-action="true"
+        data-template-type="contact"
+        data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+
+
+    <!-- Example configuration: Add onLine source from subtemplate
+    <for name="gmd:onLine" addDirective="data-gn-directory-entry-selector">
+      <directiveAttributes
+              data-template-add-action="true"
+              data-template-type="onLine"
+              data-filter='{"_root": "gmd:CI_OnlineResource"}'/>
+    </for>
+    -->
+    <for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
+      <!--
+      Example of configuration to disable free text keywords in the thesaurus selector
+      <directiveAttributes data-allow-free-text-keywords="false" />
+
+      To restrict the list of thesaurus allowed, set the include attribute
+      for the directive:
+      <directiveAttributes data-include="external.theme.inspire-theme,external.place.regions"/>
+
+      Exclude a thesaurus:
+      <directiveAttributes data-include="-external.place.regions"/>
+
+      Exclude all thesaurus already used in the metadata:
+      -->
+      <directiveAttributes data-include="xpath::string-join(gmd:MD_Metadata/gmd:identificationInfo
+                                          //gmd:thesaurusName/*/gmd:identifier/*/
+                                            gmd:code/gmx:Anchor/
+                                              concat('-', substring-after(text()[. != ''], 'geonetwork.thesaurus.')), ',')"/>
+    </for>
+  </fields>
+
+
+  <fieldsWithFieldset>
+    <name>gmd:MD_Metadata</name>
+    <name>gmd:identificationInfo</name>
+    <name>gmd:distributionInfo</name>
+    <name>gmd:portrayalCatalogueInfo</name>
+    <name>gmd:portrayalCatalogueCitation</name>
+    <name>gmd:thesaurusName</name>
+    <name>gmd:resourceConstraints</name>
+    <name>gmd:spatialRepresentationInfo</name>
+    <name>gmd:pointOfContact</name>
+    <name>gmd:contact</name>
+    <name>gmd:graphicOverview</name>
+    <name>gmd:citedResponsibleParty</name>
+    <name>gmd:dataQualityInfo</name>
+    <name>gmd:contentInfo</name>
+    <name>gmd:spatialResolution</name>
+    <name>gmd:offLine</name>
+    <name>gmd:onLine</name>
+    <name>gmd:projection</name>
+    <name>gmd:ellipsoid</name>
+    <name>gmd:attributes</name>
+    <name>gmd:geographicBox</name>
+    <name>gmd:EX_TemporalExtent</name>
+    <name>gmd:MD_Distributor</name>
+    <name>srv:containsOperations</name>
+    <name>srv:SV_Parameter</name>
+    <name>srv:connectPoint</name>
+    <name>srv:SV_CoupledResource</name>
+    <name>gmd:metadataConstraints</name>
+    <name>gmd:aggregationInfo</name>
+    <name>gmd:processStep</name>
+    <name>gmd:lineage</name>
+    <name>gmd:centerPoint</name>
+    <name>gml:verticalCS</name>
+    <name>gml:verticalDatum</name>
+    <name>gmd:identifier</name>
+    <name>gmd:distributionFormat</name>
+    <name>gmd:distributorContact</name>
+    <name>gmd:referenceSystemInfo</name>
+  </fieldsWithFieldset>
+
+  <multilingualFields>
+    <!-- In multilingual mode, define which mode
+    the widget should have. If expanded, then one
+    field per language is displayed. -->
+    <expanded>
+      <name>gmd:title</name>
+      <name>gmd:abstract</name>
+      <name>gmd:organisationName</name>
+      <name>gmd:country</name>
+    </expanded>
+    <!-- All fields in ISO could be multilingual.
+    Define element to exclude.
+
+      The name element can optionally have ancestor, child or parent attributes to
+      further restrict the exclusion.  For example if some gmd:code elements are
+      multilingual but others are not then adding a parent/child/parent attribute
+      can restrict the exclude to only some elements.
+
+      For example:
+        <name ancestor="gmd:thesaurusName">gmd:code</name>
+        or
+        <name child="gmx:Anchor">gmd:code</name>
+    -->
+    <exclude>
+      <name>gmd:identifier</name>
+      <name>gmd:metadataStandardName</name>
+      <name>gmd:metadataStandardVersion</name>
+      <name>gmd:hierarchyLevelName</name>
+      <name>gmd:dataSetURI</name>
+      <name>gmd:postalCode</name>
+      <name>gmd:city</name>
+      <name>gmd:language</name>
+      <name>gmd:administrativeArea</name>
+      <name>gmd:facsimile</name>
+      <name>gmd:dataset</name>
+      <name>gmd:other</name>
+      <name>gmd:applicationProfile</name>
+      <name>gmd:page</name>
+      <name>gmd:date</name>
+      <name>gmd:linkage</name>
+      <name>gmd:fileName</name>
+      <name>gmd:protocol</name>
+      <name>gmd:fileType</name>
+      <name>gmd:unitsOfDistribution</name>
+      <name>gmd:amendmentNumber</name>
+      <name>gmd:specification</name>
+      <name>gmd:fileDecompressionTechnique</name>
+      <name>gmd:turnaround</name>
+      <name>gmd:fees</name>
+      <name>gmd:userDeterminedLimitations</name>
+      <name>gmd:codeSpace</name>
+      <name>gmd:version</name>
+      <name>gmd:edition</name>
+      <name>gmd:ISBN</name>
+      <name>gmd:ISSN</name>
+      <name>gmd:errorStatistic</name>
+      <name>gmd:schemaAscii</name>
+      <name>gmd:softwareDevelopmentFileFormat</name>
+      <name>gmd:shortName</name>
+      <name>gmd:condition</name>
+      <name>gmd:maximumOccurence</name>
+      <name>gmd:domainValue</name>
+      <name>gmd:densityUnits</name>
+      <name>gmd:descriptor</name>
+      <name>gmd:denominator</name>
+      <name>gmd:classificationSystem</name>
+      <name>gmd:checkPointDescription</name>
+      <name>gmd:transformationDimensionDescription</name>
+      <name>gmd:orientationParameterDescription</name>
+      <name>gmd:distance</name>
+      <name>srv:name</name>
+      <name>srv:invocationName</name>
+      <name>srv:serviceTypeVersion</name>
+      <name>srv:operationName</name>
+      <name>srv:identifier</name>
+      <name>gmd:individualName</name>
+      <name>gmd:name</name>
+      <name>gmd:code</name>
+      <name>gmd:voice</name>
+    </exclude>
+  </multilingualFields>
+
+
+  <!-- View configuration -->
+  <views>
+    <view name="default" displayTooltips="true" displayTooltipsMode="icon">
+      <topPanel>
+        <directive data-gn-validation-report=""/>
+      </topPanel>
+
+      <topPanel2>
+        <directive data-gn-classification-canada=""/>
+      </topPanel2>
+
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+      </sidePanel>
+
+      <tab id="default" default="true" mode="flat">
+        <section name="gmd:MD_Metadata">
+          <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
+          <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
+          <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel"/>
+          <field xpath="/gmd:MD_Metadata/gmd:dataSetURI"/>
+          <!--<field xpath="/gmd:MD_Metadata/gmd:contact"  or="contact"  in="/gmd:MD_Metadata" />-->
+
+
+
+        </section>
+          <!--<section name="gmd:contact">
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:individualName"  or="individualName"  in="/gmd:MD_Metadata/gmd:contact/*" />
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:organisationName"  or="organisationName" in="/gmd:MD_Metadata/gmd:contact/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:positionName"  or="positionName" in="/gmd:MD_Metadata/gmd:contact/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*/gmd:voice"  or="voice" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*/gmd:facsimile"  or="facsimile" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/*"/>
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint"  or="deliveryPoint" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:city"  or="city" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea"  or="administrativeArea" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:postalCode"  or="postalCode" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:country"  or="country" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress"  or="electronicMailAddress" in="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/*"/>
+
+            <field xpath="/gmd:MD_Metadata/gmd:contact/*/gmd:role"  or="role" in="/gmd:MD_Metadata/gmd:contact/*"/>
+
+          </section>-->
+
+
+        <!-- Identification Info -->
+        <section name="gmd:MD_DataIdentification">
+          <!-- Title -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:title"/>
+
+          <!-- Dates -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
+              gmd:date"/>
+          <action type="add" name="date" or="date" btnLabel="addDate"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation">
+            <template>
+              <snippet>
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <gco:Date></gco:Date>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode
+                              codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                              codeListValue=""/>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+              </snippet>
+            </template>
+          </action>
+
+          <!-- Abstract -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:abstract" del=""/>
+
+          <!-- Status -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:status"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                 or="status" />
+
+          <!-- Language -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:language"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                 or="language"/>
+
+          <!-- Characterset -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet" />
+
+          <!-- Only show action if no gmd:characterSet is present -->
+          <action type="add" name="characterSet" or="characterSet" btnLabel="addCharacterSet"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                  if="count(gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:characterSet) = 0">
+              <template>
+                <snippet>
+                  <gmd:characterSet>
+                    <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+                                             codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+                  </gmd:characterSet>
+                </snippet>
+              </template>
+          </action>
+
+          <!-- Topic Category -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:topicCategory" />
+
+          <!-- Supplemental Info -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:supplementalInformation"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                 or="supplementalInformation" />
+
+          <!-- Maintenance and update frequency -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation"
+                 or="maintenanceAndUpdateFrequency"/>
+
+          <!-- Spatial representation type -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:spatialRepresentationType"/>
+
+          <!-- Cited responsible party -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:citation/gmd:CI_Citation"
+                 or="citedResponsibleParty"/>
+
+          <!-- Keywords -->
+          <section name="gmd:MD_Keywords">
+
+            <!-- Free text keywords -->
+            <field
+              xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/
+              gmd:descriptiveKeywords[not(gmd:MD_Keywords/gmd:thesaurusName)]" />
+
+            <action type="add" name="descriptiveKeywords" or="descriptiveKeywords" btnLabel="addFreeTextKeywords"
+                    in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification">
+              <template>
+                <snippet>
+                  <gmd:descriptiveKeywords>
+                    <gmd:MD_Keywords>
+                      <gmd:keyword>
+                        <gco:CharacterString/>
+                      </gmd:keyword>
+                      <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+                      </gmd:type>
+                    </gmd:MD_Keywords>
+                  </gmd:descriptiveKeywords>
+                </snippet>
+              </template>
+            </action>
+
+            <!-- Keywords from thesaurus (except special ones from ECCC -->
+            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:descriptiveKeywords
+                             [gmd:MD_Keywords/gmd:thesaurusName and not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')) and
+                             not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')) and
+                             not(contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope'))]" />
+          </section>
+
+          <!-- Resource constraints -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:resourceConstraints"
+                   in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification"
+                   or="resourceConstraints"/>
+
+          <!-- Temporal extent -->
+          <section name="temporalRangeSection">
+            <field name="temporalRangeSection" templateModeOnly="true"
+                   xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement">
+              <template>
+                <values>
+                  <!-- -Need a * for gml:TimePeriodTypeCHOICE_ELEMENT2 added by editor enumerated tree -->
+                  <key label="beginPosition"
+                       xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:beginPosition"
+                       use="gn-date-picker"
+                       required="true"
+                       tooltip="gmd:extent|gmd:EX_TemporalExtent">
+                    <directiveAttributes data-tag-name="gml:beginPosition"/>
+                  </key>
+                  <key label="endPosition"
+                       xpath="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/*/gml:endPosition"
+                       use="gn-date-picker"
+                       tooltip="gmd:extent|gmd:EX_TemporalExtent"
+                  >
+                    <directiveAttributes
+                            data-tag-name="gml:endPosition" />
+                  </key>
+                </values>
+                <snippet>
+                  <gmd:temporalElement>
+                    <gmd:EX_TemporalExtent>
+                      <gmd:extent>
+                        <gml:TimePeriod gml:id="">
+                          {{beginPosition}}
+                          {{endPosition}}
+                        </gml:TimePeriod>
+                      </gmd:extent>
+                    </gmd:EX_TemporalExtent>
+                  </gmd:temporalElement>
+                </snippet>
+              </template>
+            </field>
+          </section>
+
+          <!-- Geographical extent -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement"/>
+
+        </section>
+
+        <!-- ECCC corporate info -->
+        <section name="napec:EC_CorporateInfo">
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Branch"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="EC_Branch" del="." />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Directorate"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="EC_Directorate" del="." />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Project"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="EC_Project" />
+        </section>
+
+        <!-- ECCC information classification -->
+        <section name="napec:informationClassification">
+          <!-- Information classification -->
+          <field name="informationCategory"
+            xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
+            gmd:descriptiveKeywords
+            [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Information_Category')]"/>
+
+          <!-- Geographic scope -->
+          <field
+            xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
+            gmd:descriptiveKeywords
+            [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Geographic_Scope')]"/>
+
+          <!-- Content scope -->
+          <field
+            xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/
+            gmd:descriptiveKeywords
+            [contains(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'EC_Content_Scope')]"/>
+
+          <!--- ECCC program -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:EC_Program"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="napec:EC_Program" />
+
+          <action btnLabel="addECProgram" type="add"
+                  name="napec:EC_Program"
+                  or="EC_Program"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo">
+            <template>
+              <snippet>
+                <napec:EC_Program>
+                  <napec:EC_Program_TypeCode codeListValue=""
+                                             codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#EC_Program"/>
+                </napec:EC_Program>
+              </snippet>
+            </template>
+
+          </action>
+
+          <!-- ECCC Security classification -->
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo/napec:GC_Security_Classification"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/napec:MD_DataIdentification/napec:EC_CorporateInfo"
+                 or="napec:GC_Security_Classification" />
+        </section>
+
+        <!-- Reference system info -->
+        <section name="gmd:referenceSystemInfo">
+          <field xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
+                 in="/gmd:MD_Metadata"
+                 or="referenceSystemInfo"/>
+        </section>
+
+        <!-- Distribution formats -->
+        <section name="distributionFormats">
+          <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
+                 in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+                 or="distributionFormat"/>
+        </section>
+
+      </tab>
+
+      <!-- Elements that should not use the "flat" mode -->
+      <flatModeExceptions>
+        <for name="gmd:descriptiveKeywords"/>
+        <for name="gmd:keyword"/>
+        <for name="gmd:spatialResolution"/>
+        <for name="gmd:distributor"/>
+        <for name="gmd:contact"/>
+        <for name="gmd:processor"/>
+        <for name="gmd:topicCategory"/>
+      </flatModeExceptions>
+    </view>
+
+    <view name="advanced">
+      <topPanel>
+        <directive data-gn-validation-report=""/>
+      </topPanel>
+
+      <topPanel2>
+        <directive data-gn-classification-canada=""/>
+      </topPanel2>
+
+      <sidePanel>
+        <directive data-gn-onlinesrc-list=""/>
+      </sidePanel>
+
+      <tab id="identificationInfo" default="true">
+        <section xpath="/gmd:MD_Metadata/gmd:identificationInfo" or="identificationInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="distributionInfo">
+        <section xpath="/gmd:MD_Metadata/gmd:distributionInfo" or="distributionInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="dataQualityInfo">
+        <section xpath="/gmd:MD_Metadata/gmd:dataQualityInfo" or="dataQualityInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="spatialRepresentationInfo">
+        <section xpath="/gmd:MD_Metadata/gmd:spatialRepresentationInfo"
+                 or="spatialRepresentationInfo" in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="referenceSystemInfo">
+        <section xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo" or="referenceSystemInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="contentInfo" toggle="true">
+        <section xpath="/gmd:MD_Metadata/gmd:contentInfo" or="contentInfo" in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="portrayalCatalogueInfo" toggle="true">
+        <section xpath="/gmd:MD_Metadata/gmd:portrayalCatalogueInfo" or="portrayalCatalogueInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="metadata">
+        <section name="metadata">
+          <field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>
+          <field xpath="/gmd:MD_Metadata/gmd:language" or="language" in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:characterSet"/>
+          <field xpath="/gmd:MD_Metadata/gmd:parentIdentifier" or="parentIdentifier"
+                 in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevel" or="hierarchyLevel"
+                 in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:hierarchyLevelName" or="hierarchyLevelName"
+                 in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:dateStamp"/>
+          <field xpath="/gmd:MD_Metadata/gmd:metadataStandardName"/>
+          <field xpath="/gmd:MD_Metadata/gmd:metadataStandardVersion"/>
+          <field xpath="/gmd:MD_Metadata/gmd:contact" or="contact" in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:dataSetURI" or="dataSetURI" in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:locale" or="locale" in="/gmd:MD_Metadata"/>
+          <field xpath="/gmd:MD_Metadata/gmd:series"/>
+          <field xpath="/gmd:MD_Metadata/gmd:describes"/>
+          <field xpath="/gmd:MD_Metadata/gmd:propertyType"/>
+          <field xpath="/gmd:MD_Metadata/gmd:featureType"/>
+          <field xpath="/gmd:MD_Metadata/gmd:featureAttribute"/>
+        </section>
+      </tab>
+      <tab id="metadataConstraints" toggle="true">
+        <section xpath="/gmd:MD_Metadata/gmd:metadataConstraints" or="metadataConstraints"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="metadataMaintenance" toggle="true">
+        <section xpath="/gmd:MD_Metadata/gmd:metadataMaintenance" or="metadataMaintenance"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+      <tab id="applicationSchemaInfo" toggle="true">
+        <section xpath="/gmd:MD_Metadata/gmd:applicationSchemaInfo" or="applicationSchemaInfo"
+                 in="/gmd:MD_Metadata"/>
+      </tab>
+    </view>
+    <view name="xml">
+      <tab id="xml" default="true"/>
+    </view>
+  </views>
+  <batchEditing>
+    <section name="identification">
+      <!-- Update existing title in metadata record -->
+      <field name="title"
+             xpath="gmd:identificationInfo/*/
+                      gmd:citation/gmd:CI_Citation/gmd:title"
+             indexField="title">
+        <template>
+          <![CDATA[<gco:CharacterString xmlns:gco='http://www.isotc211.org/2005/gco'>{{value}}</gco:CharacterString>]]></template>
+      </field>
+
+      <!-- Insert a new keyword in the first gmd:descriptiveKeywords found.
+      Warning: The section may contains a thesaurusName reference and
+      the keyword may not be part of it.
+      Warning: Duplicates may be inserted.
+      -->
+      <field name="keyword"
+             xpath="gmd:identificationInfo/gmd:MD_DataIdentification/
+                      gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword"
+             indexField="keyword"
+             insertMode="gn_create">
+        <template>
+          <![CDATA[<gco:CharacterString xmlns:gco='http://www.isotc211.org/2005/gco'>{{value}}</gco:CharacterString>]]></template>
+      </field>
+
+      <!-- Insert a new topic category
+      Warning: Duplicates may be inserted.
+      -->
+      <field name="topicCats"
+             xpath="gmd:identificationInfo/*/
+                      gmd:topicCategory"
+             use="data-gn-codelist-picker"
+             codelist="gmd:MD_TopicCategoryCode"
+             indexField="topicCat"
+             insertMode="gn_create">
+        <template>
+          <![CDATA[<gmd:MD_TopicCategoryCode xmlns:gmd='http://www.isotc211.org/2005/gmd'>{{value}}</gmd:MD_TopicCategoryCode>]]></template>
+      </field>
+
+      <!-- Insert a new extent
+      Warning: Duplicates may be inserted.
+      -->
+      <field name="extent"
+             xpath="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent"
+             use="data-gn-draw-bbox"
+             insertMode="gn_create"/>
+
+      <!-- Insert a new resource language
+      Warning: Duplicates may be inserted.
+      -->
+      <field name="language"
+             xpath="gmd:identificationInfo/*/
+                      gmd:language"
+             use="data-gn-language-picker"
+             insertMode="gn_replace"
+             removable="true">
+        <template>
+          <![CDATA[<gmd:LanguageCode xmlns:gmd='http://www.isotc211.org/2005/gmd' codeListValue='{{value}}'/>]]></template>
+      </field>
+
+      <!-- Insert, or replace if existing, the parent identifier.
+      Warning: Duplicates may be inserted.
+      -->
+      <field name="parentIdentifier"
+             xpath="gmd:parentIdentifier"
+             use="data-gn-metadata-picker"
+             insertMode="gn_replace"
+             removable="true">
+        <template>
+          <![CDATA[<gco:CharacterString xmlns:gco='http://www.isotc211.org/2005/gco'>{{value}}</gco:CharacterString>]]></template>
+      </field>
+
+      <field name="resourceStatus"
+             xpath="gmd:identificationInfo/*/
+                      gmd:status"
+             use="data-gn-codelist-picker"
+             codelist="gmd:MD_ProgressCode"
+             insertMode="gn_replace"
+             removable="true">
+        <template>
+          <![CDATA[<gmd:MD_ProgressCode xmlns:gmd='http://www.isotc211.org/2005/gmd' codeListValue='{{value}}'/>]]></template>
+      </field>
+    </section>
+
+    <section name="resourceConstraints">
+      <!-- Insert a new access contraints
+            Warning: Duplicates may be inserted.
+      -->
+      <field name="legalConstraints"
+             xpath="gmd:identificationInfo/*/
+                      gmd:resourceConstraints/gmd:MD_LegalConstraints/
+                        gmd:accessConstraints"
+             use="data-gn-codelist-picker"
+             codelist="gmd:MD_RestrictionCode"
+             insertMode="gn_create"
+             removable="true">
+        <template>
+          <![CDATA[<gmd:MD_RestrictionCode xmlns:gmd='http://www.isotc211.org/2005/gmd' codeListValue='{{value}}'/>]]></template>
+      </field>
+
+      <!-- Insert a new other contraints
+            Warning: Duplicates may be inserted.
+      -->
+      <field name="otherConstraints"
+             xpath="gmd:identificationInfo/*/
+                      gmd:resourceConstraints/gmd:MD_LegalConstraints/
+                        gmd:otherConstraints"
+             use="textarea"
+             insertMode="gn_create"
+             removable="true">
+        <template>
+          <![CDATA[<gco:CharacterString xmlns:gco='http://www.isotc211.org/2005/gco'>{{value}}</gco:CharacterString>]]></template>
+      </field>
+    </section>
+
+
+    <!-- Replace current lineage or insert a new one.
+          Warning: Duplicates may be inserted.
+    -->
+    <section name="quality">
+      <field name="lineage"
+             xpath="gmd:dataQualityInfo/gmd:DQ_DataQuality/
+                      gmd:lineage/gmd:LI_Lineage/gmd:statement"
+             use="textarea"
+             insertMode="gn_replace"
+             removable="true">
+        <template>
+          <![CDATA[<gco:CharacterString xmlns:gco='http://www.isotc211.org/2005/gco'>{{value}}</gco:CharacterString>]]></template>
+      </field>
+    </section>
+
+    <section name="contact">
+      <field name="resourceContact"
+             xpath="gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact"
+             use="data-gn-directory-entry-selector"
+             insertMode="gn_create"/>
+      <field name="distributor"
+             xpath="gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact"
+             use="data-gn-directory-entry-selector"
+             insertMode="gn_create"/>
+      <field name="mdContact"
+             xpath="gmd:contact"
+             use="data-gn-directory-entry-selector"
+             insertMode="gn_create"/>
+    </section>
+
+    <section name="metadata">
+      <field name="mdLanguage"
+             xpath="gmd:language"
+             use="data-gn-language-picker"
+             removable="true">
+        <template>
+          <![CDATA[<gmd:LanguageCode xmlns:gmd='http://www.isotc211.org/2005/gmd' codeListValue='{{value}}'/>]]></template>
+      </field>
+    </section>
+  </batchEditing>
+</editor>

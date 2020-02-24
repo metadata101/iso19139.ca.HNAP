@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <EC1English>Anglais valeur est nécessaire pour: Contact pour la ressource - Organisation</EC1English>
+    <EC1French>Français valeur est nécessaire pour: Contact pour la ressource - Organisation</EC1French>
+    <EC1GovEnglish>Anglais valeur est nécessaire pour: Contact pour la ressource - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC1GovEnglish>
+    <EC1GovFrench>Français valeur est nécessaire pour: Contact pour la ressource - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC1GovFrench>
+    <EC2>Français valeur est nécessaire pour: Contact pour la ressource - Nom de la personne</EC2>
+    <EC3English>Anglais valeur est nécessaire pour: Contact pour la ressource - Position</EC3English>
+    <EC3French>Français valeur est nécessaire pour: Contact pour la ressource - Position</EC3French>
+    <EC4>Une valeur est nécessaire pour: Type de mot clé</EC4>
+    <EC5>Une valeur est nécessaire pour: Titre</EC5>
+    <EC5English>Anglais valeur est nécessaire pour: Titre</EC5English>
+    <EC5French>Français valeur est nécessaire pour: Titre</EC5French>
+    <EC6>Une valeur est nécessaire pour: Date</EC6>
+    <EC7>Une valeur est nécessaire pour: Type de date</EC7>
+    <EC8>Une valeur est nécessaire pour: Type de ressource</EC8>
+    <EC9English>Anglais valeur est nécessaire pour: Résumé</EC9English>
+    <EC9French>Français valeur est nécessaire pour: Résumé</EC9French>
+    <EC10>Une valeur est nécessaire pour: Etat</EC10>
+    <EC11>Une valeur est nécessaire pour: Fréquence de mise à jour</EC11>
+    <EC12>Une valeur est nécessaire pour: Catégorie thématique</EC12>
+    <EC13>Une valeur est nécessaire pour: Data classification - Branch</EC13>
+    <EC14>Une valeur est nécessaire pour: Data classification - Directorate</EC14>
+    <EC15>Une valeur est nécessaire pour: Data classification - Security classification</EC15>
+    <EC16English>Anglais valeur est nécessaire pour: Contact pour la ressource - Courriel</EC16English>
+    <EC16French>Français valeur est nécessaire pour: Contact pour la ressource - Courriel</EC16French>
+    <EC17>Une valeur est nécessaire pour: Contact pour la ressource - Rôle</EC17>
+    <EC18>Une valeur est nécessaire pour: Contact pour la ressource - Ressource en ligne</EC18>
+    <EC19>Une valeur est nécessaire pour: Langue</EC19>
+    <EC20>Une valeur est nécessaire pour: Etendue temporelle</EC20>
+    <EC21>Une valeur est nécessaire pour: Étendue géographique</EC21>
+    <EC22>Une valeur est nécessaire pour: Type de représentation spatiale</EC22>
+    <EC23>Une valeur est nécessaire pour: Contraintes d'accès</EC23>
+    <EC24>Une valeur est nécessaire pour: Contraintes d'utilisation </EC24>
+    <EC25English>Anglais valeur est nécessaire pour: Mot Clé</EC25English>
+    <EC25French>Français valeur est nécessaire pour: Mot Clé</EC25French>
+    <EC26English>Anglais valeur est nécessaire pour: Distributor Contact - Organization</EC26English>
+    <EC26French>Français valeur est nécessaire pour: Distributor Contact - Organization </EC26French>
+    <EC26GovEnglish>Anglais valeur est nécessaire pour: Distributor Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
+    <EC26GovFrench>Français valeur est nécessaire pour: Distributor Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+    <EC27>Une valeur est nécessaire pour: Distributor Contact - Nom de la personne</EC27>
+    <EC28English>Anglais valeur est nécessaire pour: Distributor Contact - Position</EC28English>
+    <EC28French>Français valeur est nécessaire pour: Distributor Contact - Position</EC28French>
+
+    <EC29English>Anglais valeur est nécessaire pour: Distributor Contact - Courriel</EC29English>
+    <EC29French>Français valeur est nécessaire pour: Distributor Contact - Courriel</EC29French>
+    <EC30>Une valeur est nécessaire pour: Distributor Contact - Role</EC30>
+    <EC31>Une valeur est nécessaire pour: Distributor Contact - Online resource</EC31>
+
+    <EC32English>Anglais valeur est nécessaire pour: Use Limitation</EC32English>
+    <EC32French>Français valeur est nécessaire pour: Use Limitation</EC32French>
+
+    <EC33>Une valeur est nécessaire pour: Reference System - Code</EC33>
+    <EC34>Une valeur est nécessaire pour: Reference System - Codespace</EC34>
+
+    <EC35English>Anglais valeur est nécessaire pour: Responsable Contact - Courriel</EC35English>
+    <EC35French>Français valeur est nécessaire pour: Responsable Contact - Courriel</EC35French>
+    <EC36>Une valeur est nécessaire pour: Responsable Contact - Rôle</EC36>
+
+    <EC37English>Anglais valeur est nécessaire pour: Responsable Contact - Organisation</EC37English>
+    <EC37French>Français valeur est nécessaire pour: Responsable Contact - Organisation</EC37French>
+    <EC37GovEnglish>Anglais valeur est nécessaire pour: Responsable Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+    <EC37GovFrench>Français valeur est nécessaire pour: Responsable Contact - Organisation dans «Goverment du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+
+    <EC38>Une valeur est nécessaire pour: Distribution format - Nom du format</EC38>
+    <EC39>Une valeur est nécessaire pour: Distribution format - Version</EC39>
+
+    <EC40>Une valeur est nécessaire pour: Métadonnées date de publication</EC40>
+    <EC41>Une valeur est nécessaire pour: Métadonnées date de création</EC41>
+
+    <SupplementalInformation>Les valeurs en anglais et en français sont nécessaires pour: Informations supplémentaires</SupplementalInformation>
+    <Project>Les valeurs en anglais et en français sont nécessaires pour: Titre de projet</Project>
+    <HoursOfService>Les valeurs en anglais et en français sont nécessaires pour: Contact pour la ressource - Heures de service</HoursOfService>
+    <Linkage>Une valeur est nécessaire pour: Ressource en ligne - Adresse Internet</Linkage>
+    <Name>Les valeurs en anglais et en français sont nécessaires pour: Ressource en ligne - Nom</Name>
+    <Description>Les valeurs en anglais et en français sont nécessaires pour: Ressource en ligne - Description</Description>
+
+
+    <SupplementalInformation_1>Anglais valeur est nécessaire pour:Supplemental Information</SupplementalInformation_1>
+    <SupplementalInformation_2>Français valeur est nécessaire pour: Supplemental Information</SupplementalInformation_2>
+    <Project_1>English value is required for Project</Project_1>
+    <Project_2>Français valeur est nécessaire pour: Project</Project_2>
+    <PositionName_1>English value is required for Contact - Position Name</PositionName_1>
+    <PositionName_2>French value is required for Contact - Position Name</PositionName_2>
+    <PositionNameCited_1>English value is required for Cited Responsible Contact - Position Name</PositionNameCited_1>
+    <PositionNameCited_2>French value is required for Cited Responsible Contact - Position Name</PositionNameCited_2>
+    <PositionNameDist_1>English value is required for Distributor Contact - Position Name</PositionNameDist_1>
+    <PositionNameDist_2>French value is required for Distributor Contact - Position Name</PositionNameDist_2>
+    <HoursOfService_1>English value is required for Contact - Hours of Service</HoursOfService_1>
+    <HoursOfService_2>Français valeur est nécessaire pour: Contact - Hours of Service</HoursOfService_2>
+    <HoursOfServiceCited_1>Anglais valeur est nécessaire pour: Responsable Contact - Heures de service</HoursOfServiceCited_1>
+    <HoursOfServiceCited_2>Français valeur est nécessaire pour: Responsable Contact - Heures de service</HoursOfServiceCited_2>
+    <HoursOfServiceDist_1>Anglais valeur est nécessaire pour: Distributor Contact - Heures de service</HoursOfServiceDist_1>
+    <HoursOfServiceDist_2>Français valeur est nécessaire pour: Distributor Contact - Heures de service</HoursOfServiceDist_2>
+    <Linkage_1>Anglais valeur est nécessaire pour: Online Resource - URL</Linkage_1>
+    <Linkage_2>Français valeur est nécessaire pour: Online Resource - URL</Linkage_2>
+    <Name_1>Anglais valeur est nécessaire pour: Online Resource - Name</Name_1>
+    <Name_2>Français valeur est nécessaire pour: Online Resource - Name</Name_2>
+    <Description_1>Anglais valeur est nécessaire pour: Online Resource - Description</Description_1>
+    <Description_2>Français valeur est nécessaire pour: Online Resource - Description</Description_2>
+    <Note_1>Anglais valeur est nécessaire pour: Autres contraintes</Note_1>
+    <Note_2>Français valeur est nécessaire pour: Autres contraintes</Note_2>
+    <DeliveryPoint_1>Anglais valeur est nécessaire pour: Contact - Adresse</DeliveryPoint_1>
+    <DeliveryPoint_2>Français valeur est nécessaire pour: Contact - Adresse</DeliveryPoint_2>
+    <DeliveryPointCited_1>Anglais valeur est nécessaire pour: Cited Responsible Contact - Adresse</DeliveryPointCited_1>
+    <DeliveryPointCited_2>Français valeur est nécessaire pour: Cited ResponsibleContact - Adresse</DeliveryPointCited_2>
+    <DeliveryPointDist_1>Anglais valeur est nécessaire pour: Distributor Contact - Adresse</DeliveryPointDist_1>
+    <DeliveryPointDist_2>Français valeur est nécessaire pour: DistributorContact - Adresse</DeliveryPointDist_2>
+    <Phone_1>Anglais valeur est nécessaire pour: Contact - Numéro de téléphone</Phone_1>
+    <Phone_2>Français valeur est nécessaire pour: Contact - Numéro de téléphone</Phone_2>
+    <PhoneCited_1>Anglais valeur est nécessaire pour: Cited Responsible Contact - Numéro de téléphone</PhoneCited_1>
+    <PhoneCited_2>Français valeur est nécessaire pour: Cited Responsible Contact - Numéro de téléphone</PhoneCited_2>
+    <PhoneDist_1>Anglais valeur est nécessaire pour: Distributor Contact - Numéro de téléphone</PhoneDist_1>
+    <PhoneDist_2>Français valeur est nécessaire pour: Distributor Contact - Numéro de téléphone</PhoneDist_2>
+
+    <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
+    <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
+    <MapResourcesWMS>WMS Map Resources should be available in english and french</MapResourcesWMS>
+    <MapResourcesWMSNumber>The number of WMS Map Resources should be at most 2 (one for english and one for french)</MapResourcesWMSNumber>
+    <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
+    <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+    <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are: </ResourceDescriptionFormat>
+    <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
+    <OpenLicense>Le Licence du gouvernement ouvert est nécessaire. Anglais valeur : Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada) , Français valeur : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</OpenLicense>
+    <EndPosition>End position date should be after begin position</EndPosition>
+    <BeginPositionFormat>Begin position format is not value</BeginPositionFormat>
+    <EndPositionFormat>End position format is not value</EndPositionFormat>
+    <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
+    <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
+    <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
+    <ECThesaurusCreDate>Thesaurus creation date is required</ECThesaurusCreDate>
+    <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
+    <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
+    <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
+    <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
+    <MetadataStandardName>Valeur ne est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</MetadataStandardName>
+    <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
+    <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+    <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
+    <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+
+    <InformationClassification>Value is required for Information Category</InformationClassification>
+    <GeographyScope>Value is required for Geography</GeographyScope>
+    <Branch>Value is required for Branch</Branch>
+    <Directorate>Value is required for Directorate</Directorate>
+    <SecurityClassification>Value is required for Security Classification</SecurityClassification>
+</strings>
