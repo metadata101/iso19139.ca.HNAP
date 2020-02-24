@@ -189,6 +189,8 @@
   <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
   <Relateddata>Ressources connexes</Relateddata>
   <View>Voir</View>
+  <ViewParent>View parent</ViewParent>
+  <ViewCollection>View collection</ViewCollection>
   <more>Plus</more>
 
   <updateExtent>Update geographic extent</updateExtent>

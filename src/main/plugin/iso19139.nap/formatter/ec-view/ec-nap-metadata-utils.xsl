@@ -46,17 +46,17 @@
         <div class="relatedDatasets" id="rlds{position()}">
           <!-- hide records over 5, to make visible with more button -->
           <xsl:if test="position() &gt; 5"><xsl:attribute name="style" select="'display:none'"/></xsl:if>
-          <div style="float:left"> <!-- todo: check here the schema for icon to display -->
+          <div style="float:left; width:80%"> <!-- todo: check here the schema for icon to display -->
             <img class="icon" align="bottom">
               <xsl:attribute name="src" select="concat(/root/gui/url,'/images/dataset.png')" />
               <xsl:attribute name="alt" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
               <xsl:attribute name="title" select="concat('Dataset&#160;:', normalize-space(title/value[@lang=$guiLang]))" />
             </img>
-            &#160;<a href="{/root/gui/url}/search/{/root/lang}?_schema={$schema}&amp;parentUuid={id}" title="Search metadata in the collection {title/value[@lang=$guiLang]}"><xsl:value-of select="title/value[@lang=$guiLang]" /></a>
-
+            &#160;<span><xsl:value-of select="title/value[@lang=$guiLang]" /></span>
           </div>
-          <div style="float:right">
-            <a class="btn btn-default btn-sm" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/View"/></a>
+          <div style="float:right; width:20%">
+            <a class="btn btn-default btn-sm btn-block" href="{/root/gui/url}/metadata/{/root/lang}/{id}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/ViewParent"/></a>
+            <a class="btn btn-default btn-sm btn-block" style="margin-top: 5px"  href="{/root/gui/url}/search/{/root/lang}?_schema={$schema}&amp;parentUuid={id}" title="Search metadata in the collection {title/value[@lang=$guiLang]}"><xsl:value-of select="/root/schemas/iso19139.nap/strings/ViewCollection"/></a>
           </div>
           <div style="clear:both"></div>
         </div>
