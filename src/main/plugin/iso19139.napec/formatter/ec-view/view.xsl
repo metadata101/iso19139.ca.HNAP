@@ -292,6 +292,10 @@
           <xsl:with-param name="langId" select="$langForMetadata" />
         </xsl:call-template>
       </xsl:for-each>
+
+      <xsl:if test="/root/info/record/datainfo/type = 'TEMPLATE'">
+        &#160;<span class="badge">TEMPLATE</span>
+      </xsl:if>
     </h1>
 
     <xsl:apply-templates select="." mode="showAddMapCart" />
