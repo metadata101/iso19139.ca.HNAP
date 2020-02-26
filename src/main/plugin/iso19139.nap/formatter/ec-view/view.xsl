@@ -290,7 +290,7 @@
     <xsl:variable name="licensesFrench">
       <licenses>
         <license gov="Gouvernement de la Colombie-Britannique">Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</license>
-        <license gov="Gouvernement de l'Alberta">'Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</license>
+        <license gov="Gouvernement de l'Alberta">Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</license>
         <license gov="Gouvernement de Terre-Neuve-et-Labrador">Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
         <license gov="Gouvernement de la  Nouvelle-Écosse">Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</license>
         <license gov="Gouvernement de l'Ontario">Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</license>
@@ -322,13 +322,13 @@
 
       <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
 
-      <section>
+      <section class="mrgn-tp-md">
         <details class="alert alert-info" id="alert-info" open="open">
           <summary class="h3">
             <h3> <xsl:value-of select="$schemaStrings/disclaimer_header"/>&#160;<xsl:value-of select="$licenseGovernment" /></h3>
           </summary>
 
-          <xsl:copy-of select="$schemaStrings/disclaimer"/>
+          <xsl:copy-of select="$schemaStrings/disclaimer/*"/>
         </details>
       </section>
     </xsl:if>
@@ -366,7 +366,6 @@
         </xsl:call-template>
       </xsl:for-each>
     </pre>
-    <br/><br/>
 
     <xsl:call-template name="provinceDataLicenseDisclaimer" />
 

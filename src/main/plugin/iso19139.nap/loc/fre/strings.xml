@@ -238,7 +238,7 @@
   <disclaimer_header>Rendus disponibles par l'entremise du</disclaimer_header>
 
   <disclaimer>
-    <div>
+    <div class="mrgn-rght-md">
       <p>
         Ces ressources ne sont pas contrôlées par le gouvernement du Canada, et l'hyperlien est fourni uniquement pour la facilité d'utilisation des visiteurs de notre site Web. Nous ne sommes pas responsables de l'exactitude, l'actualité et la fiabilité du contenu. Le gouvernement du Canada n'offre aucune garantie à cet égard et n'est pas responsable des renseignements trouvés par l'entremise de ce lien.
       </p>
