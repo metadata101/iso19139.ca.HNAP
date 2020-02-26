@@ -207,7 +207,7 @@
   <lastChangedBy>Dernier changement effectué par</lastChangedBy>
   <changeDate>Date de mise à jour de la métadonnée</changeDate>
   <rating>Openness rating</rating>
-  <ParentCollection>Ensemble apparenté</ParentCollection>
+  <ParentCollection>Collection parent</ParentCollection>
 
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
