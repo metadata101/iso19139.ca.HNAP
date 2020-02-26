@@ -2144,6 +2144,12 @@
     ]]></help>
     <help><![CDATA[<b>Contre-exemple :</b> FR, FRA, french, français
     ]]></help>
+    <helper>
+      <option value="eng; CAN">Anglais</option>
+      <option value="fra; CAN">Francais</option>
+      <option value="spa">Espagnol</option>
+      <option value="zxx">Pas de contenu linguistique</option>
+    </helper>
   </element>
   <element name="gmd:language" id="235.0" context="gmd:MD_FeatureCatalogueDescription">
     <label>Langue</label>
