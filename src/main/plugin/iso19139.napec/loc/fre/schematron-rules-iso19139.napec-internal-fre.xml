@@ -141,4 +141,5 @@
     <Branch>Value is required for Branch</Branch>
     <Directorate>Value is required for Directorate</Directorate>
     <SecurityClassification>Value is required for Security Classification</SecurityClassification>
+    <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
 </strings>
