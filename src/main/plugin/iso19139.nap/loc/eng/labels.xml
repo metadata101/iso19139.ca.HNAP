@@ -1273,7 +1273,6 @@
           <option value="eng; CAN">English</option>
           <option value="fra; CAN">French</option>
           <option value="spa">Spanish</option>
-          <option value="zxx">No linguistic context</option>
         </helper>
     </element>
     <element name="gmd:language" context="gmd:MD_FeatureCatalogueDescription" id="235.0">
