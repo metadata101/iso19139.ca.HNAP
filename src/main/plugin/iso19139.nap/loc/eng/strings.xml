@@ -23,6 +23,7 @@
   <nap-default>NAP default</nap-default>
   <xml>XML view</xml>
 
+  <metadata>Metadata</metadata>
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Quality</dataQualityInfo>
@@ -236,7 +237,6 @@
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
   <addDate>Add date</addDate>
   <addCharacterSet>Add character set</addCharacterSet>
-  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
 
   <disclaimer_header>Made available by the</disclaimer_header>
 
