@@ -23,6 +23,7 @@
   <nap-default>NAP default</nap-default>
   <xml>XML</xml>
 
+  <metadata>Métadonnées</metadata>
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Qualité</dataQualityInfo>
