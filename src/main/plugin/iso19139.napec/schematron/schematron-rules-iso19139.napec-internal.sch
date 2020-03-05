@@ -626,6 +626,11 @@
           test="not($missing)"
           >$loc/strings/EC38</sch:assert>
 
+        <sch:let name="distribution-formats" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'))"/>
+
+        <sch:let name="distributionFormat" value="gco:CharacterString" />
+
+        <sch:assert test="($missing) or (count($distribution-formats//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $distributionFormat)]) > 0)">$loc/strings/DistributionFormatInvalid</sch:assert>
       </sch:rule>
 
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:version">

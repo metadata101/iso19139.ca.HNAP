@@ -30,6 +30,10 @@
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
                 xmlns:tr="java:org.fao.geonet.api.records.formatters.SchemaLocalizations"
@@ -69,6 +73,9 @@
 
   <xsl:variable name="nodeUrl"
                 select="/root/gui/nodeUrl"/>
+
+  <xsl:variable name="thesauriDir" select="/root/thesaurusDir" />
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
 
   <xsl:template match="/">
     <xsl:apply-templates select="/root/gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"/>
@@ -292,6 +299,10 @@
           <xsl:with-param name="langId" select="$langForMetadata" />
         </xsl:call-template>
       </xsl:for-each>
+
+      <xsl:if test="/root/info/record/datainfo/type = 'TEMPLATE'">
+        &#160;<span class="badge">TEMPLATE</span>
+      </xsl:if>
     </h1>
 
     <xsl:apply-templates select="." mode="showAddMapCart" />
@@ -791,6 +802,12 @@
       </xsl:choose>
     </xsl:variable>
 
+    <xsl:variable name="formatLang">
+      <xsl:choose>
+        <xsl:when test="/root/gui/language = 'fre'">fr</xsl:when>
+        <xsl:otherwise>en</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
 
     <table class="wb-tables table table-striped table-hover table-bordered" role="grid">
       <xsl:attribute name="data-wb-tables">{"bPaginate": false, "searching":false, "info":false}</xsl:attribute>
@@ -828,7 +845,8 @@
 
           <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
 
-          <xsl:variable name="formatValue" select="tokenize($descriptionValue, ';')[2]" />
+          <xsl:variable name="formatKey" select="concat('http://geonetwork-opensource.org/EC/resourceformat#', tokenize($descriptionValue, ';')[2])" />
+          <xsl:variable name="formatValue" select="$resourceFormatsTh/rdf:RDF/rdf:Description[@rdf:about=$formatKey]/ns2:prefLabel[@xml:lang=$formatLang]" />
 
           <tr>
             <td><xsl:value-of select="$nameValue" /></td>
@@ -844,7 +862,12 @@
               <div style="min-height:35px; margin-left: 5px" class="pull-right">
                 <a class="btn btn-default btn-sm" href="{$urlValue}"
                    title="{concat(/root/gui/strings/View, ' ', $formatValue, ' ', lower-case(/root/gui/schemas/iso19139.napec/strings/Dataresources_Format), ':&#160;', $nameValue )}">
-                  <xsl:value-of select="$formatValue" />
+                  <xsl:choose>
+                    <xsl:when test="string($formatValue)"><xsl:value-of select="$formatValue" /></xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="tokenize($descriptionValue, ';')[2]" />
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </a>
               </div>
             </td>
@@ -907,7 +930,8 @@
 
           <xsl:variable name="p" select="lower-case(normalize-space(gmd:protocol/gco:CharacterString))" />
 
-          <xsl:variable name="formatValue" select="tokenize($descriptionValue, ';')[2]" />
+          <xsl:variable name="formatKey" select="concat('http://geonetwork-opensource.org/EC/resourceformat#', tokenize($descriptionValue, ';')[2])" />
+          <xsl:variable name="formatValue" select="$resourceFormatsTh/rdf:RDF/rdf:Description[@rdf:about=$formatKey]/ns2:prefLabel[@xml:lang=$formatLang]" />
 
           <tr>
             <td><xsl:value-of select="$nameValue" /></td>
@@ -927,7 +951,12 @@
                    title="{concat(/root/gui/strings/View, ' ', $formatValue, ' ', lower-case(/root/gui/schemas/iso19139.napec/strings/Dataresources_Format), ':&#160;', $nameValue )}">
                   <xsl:attribute name="onclick">logExternalDownload('<xsl:value-of select="/root/gmd:MD_Metadata//gmd:fileIdentifier/gco:CharacterString" />','<xsl:value-of select="$urlValue" />');</xsl:attribute>
 
-                  <xsl:value-of select="$formatValue" />
+                  <xsl:choose>
+                    <xsl:when test="string($formatValue)"><xsl:value-of select="$formatValue" /></xsl:when>
+                    <xsl:otherwise>
+                      <xsl:value-of select="tokenize($descriptionValue, ';')[2]" />
+                    </xsl:otherwise>
+                  </xsl:choose>
                 </a>
               </div>
             </td>
