@@ -1,0 +1,2 @@
+This is a beta version of the NAP - Metadata XML Schema
+Date: 20091203
