@@ -23,6 +23,7 @@
   <nap-default>NAP default</nap-default>
   <xml>XML</xml>
 
+  <metadata>Métadonnées</metadata>
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Qualité</dataQualityInfo>
@@ -189,8 +190,8 @@
   <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
   <Relateddata>Ressources connexes</Relateddata>
   <View>Voir</View>
-  <ViewParent>View parent</ViewParent>
-  <ViewCollection>View collection</ViewCollection>
+  <ViewParent>Voir le parent</ViewParent>
+  <ViewCollection>Voir la collection</ViewCollection>
   <more>Plus</more>
 
   <updateExtent>Update geographic extent</updateExtent>
@@ -207,7 +208,7 @@
   <lastChangedBy>Dernier changement effectué par</lastChangedBy>
   <changeDate>Date de mise à jour de la métadonnée</changeDate>
   <rating>Openness rating</rating>
-  <ParentCollection>Ensemble apparenté</ParentCollection>
+  <ParentCollection>Collection parent</ParentCollection>
 
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
@@ -233,5 +234,18 @@
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
   <addDate>Add date</addDate>
   <addCharacterSet>Add character set</addCharacterSet>
-  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
+
+  <disclaimer_header>Rendus disponibles par l'entremise du</disclaimer_header>
+
+  <disclaimer>
+    <div class="mrgn-rght-md">
+      <p>
+        Ces ressources ne sont pas contrôlées par le gouvernement du Canada, et l'hyperlien est fourni uniquement pour la facilité d'utilisation des visiteurs de notre site Web. Nous ne sommes pas responsables de l'exactitude, l'actualité et la fiabilité du contenu. Le gouvernement du Canada n'offre aucune garantie à cet égard et n'est pas responsable des renseignements trouvés par l'entremise de ce lien.
+      </p>
+
+      <p>
+        Les visiteurs devraient également savoir que les renseignements offerts par l'entremise de ce site Web ne sont pas gérés par le gouvernement du Canada et ne relèvent pas de la <a href="http://laws-lois.justice.gc.ca/fra/lois/P-21/index.html">Loi sur la protection des renseignements personnels</a> ni de la <a href="http://laws-lois.justice.gc.ca/fra/lois/O-3.01/">Loi sur les langues officielles</a>, et qu'ils pourraient ne pas être accessibles aux personnes handicapées. Les renseignements offerts pourraient être uniquement disponibles dans la langue utilisée dans le site en question. En ce qui concerne la protection des renseignements personnels, les visiteurs devraient vérifier les politiques de confidentialité de ce site Web non gouvernemental avant de fournir leurs renseignements personnels.
+      </p>
+    </div>
+  </disclaimer>
 </strings>

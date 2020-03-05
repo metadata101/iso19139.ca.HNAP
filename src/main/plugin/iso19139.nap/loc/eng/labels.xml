@@ -1269,6 +1269,11 @@
         <description>Language(s) used within the dataset</description>
         <help>language(s) used within the dataset</help>
         <condition>mandatory</condition>
+        <helper>
+          <option value="eng; CAN">English</option>
+          <option value="fra; CAN">French</option>
+          <option value="spa">Spanish</option>
+        </helper>
     </element>
     <element name="gmd:language" context="gmd:MD_FeatureCatalogueDescription" id="235.0">
         <label>Language</label>
