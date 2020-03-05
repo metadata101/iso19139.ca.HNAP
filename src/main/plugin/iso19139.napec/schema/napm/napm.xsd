@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm" xmlns:gmd="http://www.isotc211.org/2005/gmd" elementFormDefault="qualified" version="0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm">
+	<!-- ================================= Annotation ================================ -->
+	<xs:annotation>
+		<xs:documentation>This file consists in the ISO19139 XML schema profile of the NAP-Metadata profile of  ISO19115:2003 == 04-03-2009  ====== </xs:documentation>
+	</xs:annotation>
+	<!-- ================================== Imports ================================== -->
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
+	<xs:include schemaLocation="napmCharacterString.xsd"/>
+	<!-- ########################################################################### -->
+</xs:schema>
