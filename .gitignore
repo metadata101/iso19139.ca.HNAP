@@ -32,6 +32,7 @@ hs_err_pid*
 # auto-import.
 *.iml
 *.ipr
+target/
 
 # File-based project format
 *.iws
