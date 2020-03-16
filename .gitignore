@@ -95,3 +95,11 @@ local.properties
 .idea/modules
 *.iml
 *.ipr
+
+# macOS
+.DS_Store
+
+# windows
+Thumbs.db
+Thumbs.db
+*.lnk
