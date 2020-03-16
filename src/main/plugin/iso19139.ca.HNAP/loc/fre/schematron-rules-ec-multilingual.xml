@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <schematron.title>HNAP validation rules for FGP publication(fre)</schematron.title>
+
+  <Metadata>Metadata Information</Metadata>
+  <DataIdentification>Data Identification</DataIdentification>
+  <Distribution>Distribution</Distribution>
+
+  <EC1>Organization name is required in both languages</EC1>
+  <EC2>Value is required for Individual name</EC2>
+  <EC3>Position name is required in both languages</EC3>
+  <EC8>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</EC8>
+  <EC9>Value is required for Online Resource URL</EC9>
+  <EC10>Une valeur est nécessaire pour: Catégorie thématique</EC10>
+  <EC11>Limitation d'utilisation est obligatoire dans les deux langues</EC11>
+  <EC12>Une valeur est nécessaire pour: Contraintes d'accès</EC12>
+  <EC13>Une valeur est nécessaire pour: Contraintes d'utilisation</EC13>
+  <EC14>>Une valeur est nécessaire pour: Métadonnées date de publication</EC14>
+  <EC15>>Une valeur est nécessaire pour: Métadonnées date de création</EC15>
+  <EC19>Valeur ne est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</EC19>
+  <EC21>Une valeur est nécessaire pour: Distribution format - Nom du format</EC21>
+  <EC22>Une valeur est nécessaire pour: Distribution format - Version</EC22>
+  <EC23>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</EC23>
+  <EC26>Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26>
+  <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
+  <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
+  <EC26GovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC26GovAllowedEnglish>
+  <EC26GovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC26GovAllowedFrench>
+
+  <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
+  <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
+  <EC37GovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC37GovAllowedEnglish>
+  <EC37GovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC37GovAllowedFrench>
+
+  <EC38GovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovEnglish>
+  <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
+  <EC38GovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</EC38GovAllowedEnglish>
+  <EC38GovAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</EC38GovAllowedFrench>
+
+
+  <EC27>Informations supplémentaires devrait être vide ou rempli en anglais et en français</EC27>
+  <EC31>Autres contraintes devrait être vide ou rempli en anglais et en français</EC31>
+
+  <EC32>Le résumé est obligatoire dans les deux langues</EC32>
+  <EC33>Le titre est obligatoire dans les deux langues</EC33>
+
+  <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
+  <EC36>Mot Clé est requise dans les deux langues</EC36>
+
+  <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
+  <MaintenanceFrequency>Une valeur est nécessaire pour: Fréquence de mise à jour</MaintenanceFrequency>
+
+  <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
+  <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>
+  <MapResourcesWMS>Les sources de la carte WMS devraient être disponibles en anglais et en français</MapResourcesWMS>
+  <MapResourcesWMSNumber>Le nombre de sources de la carte WMS devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesWMSNumber>
+  <ResourceDescription>La description des ressources en ligne n'est pas valide. Le format devrait être : TypeContenu;Format;Lang</ResourceDescription>
+  <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+  <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
+  <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
+  <OpenLicense>Une licence de gouvernement ouvert est nécessaire. Valeurs anglaises acceptées : Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada) ou Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp) ou Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario) ou Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island) ou Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc) ou Open Government Licence - Alberta (https://open.alberta.ca/licence).
+    Valeurs françaises acceptées : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada) ou Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp) ou Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario) ou Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard) ou Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc) ou Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</OpenLicense>
+  <BeginPositionFormat>Le format de la date de début n’est pas valide</BeginPositionFormat>
+  <EndPositionFormat>Le format de la date de fin n’est pas valide</EndPositionFormat>
+  <EndPosition>La valeur de la date de fin devrait être après celle du début</EndPosition>
+  <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
+  <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
+  <ECThesaurusPubDate>La date de publication du Thésaurus est requise</ECThesaurusPubDate>
+  <ECThesaurusCreDate>La date de création du Thésaurus est requise</ECThesaurusCreDate>
+  <ECThesaurusOrg>Le nom de l’organisation responsable du thésaurus est requis</ECThesaurusOrg>
+  <ECThesaurusRole>Le rôle du responsable du thesaurus est requis</ECThesaurusRole>
+  <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
+  <ReferenceSystemInfo>Une valeur est nécessaire pour: Reference System</ReferenceSystemInfo>
+  <ReferenceSystemInfoCode>Une valeur est nécessaire pour: Information sur le système de référence - Code</ReferenceSystemInfoCode>
+
+  <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
+  <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
+  <InvalidStatusCode>Le code d'état n'est pas valide</InvalidStatusCode>
+  <InvalidContactRole>Le code de rôle contact n'est pas valide</InvalidContactRole>
+  <InvalidCitedResponsibleRole>Le code de rôle responsable cité n'est pas valable</InvalidCitedResponsibleRole>
+  <InvalidDistributorRole>Le code de rôle distributeur n'est pas valide</InvalidDistributorRole>
+  <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+  <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
+  <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
+  <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
+
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+
+  <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
+  <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
+
+  <Status>Une valeur est nécessaire pour: Etat</Status>
+
+
+  <ContactOrganisationName>Contact - Nom de l'organisation est obligatoire dans les deux langues</ContactOrganisationName>
+  <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Nom de l'organisation est obligatoire dans les deux langues</CitedResponsiblePartyOrganisationName>
+  <DistributorOrganisationName>Distributor - Nom de l'organisation est obligatoire dans les deux langues</DistributorOrganisationName>
+
+  <ContactPositionName>Responsable des métadonnées - Position devrait être vide ou rempli en anglais et en français</ContactPositionName>
+  <CitedResponsiblePartyPositionName>Responsable de la ressource - Position devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPositionName>
+  <DistributorPositionName>Distributeur - Position devrait être vide ou rempli en anglais et en français</DistributorPositionName>
+
+  <ContactElectronicMail>Contact - Le courriel est obligatoire dans les deux langues</ContactElectronicMail>
+  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Le courriel est obligatoire dans les deux langues</CitedResponsiblePartyElectronicMail>
+  <DistributorElectronicMail>Distributor - Le courriel est obligatoire dans les deux langues</DistributorElectronicMail>
+
+  <ContactHoursOfService>Responsable des métadonnées - Heures de service devrait être vide ou rempli en anglais et en français</ContactHoursOfService>
+  <CitedResponsiblePartyHoursOfService>Responsable de la ressource - Heures de service devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyHoursOfService>
+  <DistributorHoursOfService>Responsable de la distribution - Heures de service devrait être vide ou rempli en anglais et en français</DistributorHoursOfService>
+
+  <ContactDeliveryPoint>Responsable des métadonnées - Adresse devrait être vide ou rempli en anglais et en français</ContactDeliveryPoint>
+  <CitedResponsiblePartyDeliveryPoint>Responsable de la ressource - Adresse devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyDeliveryPoint>
+  <DistributorDeliveryPoint>Responsable de la distribution - Adresse devrait être vide ou rempli en anglais et en français</DistributorDeliveryPoint>
+
+  <ContactPhone>Responsable des métadonnées - Numéro de téléphone devrait être vide ou rempli en anglais et en français</ContactPhone>
+  <CitedResponsiblePartyPhone>Responsable de la ressource - Numéro de téléphone devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPhone>
+  <DistributorPhone>Responsable de la distribution - Numéro de téléphone devrait être vide ou rempli en anglais et en français</DistributorPhone>
+
+  <DataLanguage>Une valeur est nécessaire pour: Langue</DataLanguage>
+  <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
+  <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+</strings>

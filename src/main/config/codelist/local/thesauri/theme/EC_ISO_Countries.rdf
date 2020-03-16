@@ -1,0 +1,3739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AFG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Afghanistan (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Afghanistan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ALA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Åland(les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Åland Islands
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ALB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Albanie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Albania
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DZA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Algérie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Algeria
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ASM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Samoa américaines (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">American Samoa
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AND">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Andorre (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Andorra
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AGO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Angola (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Angola
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AIA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anguilla
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Anguilla
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ATA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Antarctique (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Antarctica
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ATG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Antigua-et-Barbuda
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Antigua and Barbuda
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ARG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Argentine (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Argentina
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ARM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Arménie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Armenia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ABW">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Aruba
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Aruba
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AUS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Australie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Australia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AUT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Autriche (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Austria
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#AZE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Azerbaïdjan (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Azerbaijan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BHS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bahamas (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bahamas (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BHR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bahreïn
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bahrain
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BGD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bangladesh (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bangladesh
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BRB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Barbade (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Barbados
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BLR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bélarus (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Belarus
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BEL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Belgique (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Belgium
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BLZ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Belize (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Belize
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BEN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bénin (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Benin
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BMU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bermudes (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bermuda
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BTN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bhoutan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bhutan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BOL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bolivie (État plurinational de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bolivia (Plurinational State of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BES">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bonaire, Saint-Eustache et Saba
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bonaire, Sint Eustatius and Saba
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BIH">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bosnie-Herzégovine (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bosnia and Herzegovina
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BWA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Botswana (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Botswana
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BVT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bouvet (l'Île)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bouvet Island
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BRA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Brésil (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Brazil
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IOT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Indien (le Territoire britannique de l'océan)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">British Indian Ocean Territory (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BRN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Brunéi Darussalam (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Brunei Darussalam
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BGR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bulgarie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Bulgaria
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BFA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Burkina Faso (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Burkina Faso
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BDI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Burundi (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Burundi
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CPV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cabo Verde
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cabo Verde
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KHM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cambodge (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cambodia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CMR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cameroun (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cameroon
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CAN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Canada (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Canada
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CYM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Caïmans (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cayman Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CAF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">République centrafricaine (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Central African Republic (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TCD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tchad (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Chad
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CHL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Chili (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Chile
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CHN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Chine (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">China
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CXR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Christmas (l'Île)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Christmas Island
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CCK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cocos (les Îles)/ Keeling (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cocos (Keeling) Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#COL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Colombie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Colombia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#COM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Comores (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Comoros (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#COD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Congo (la République démocratique du)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Congo (the Democratic Republic of the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#COG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Congo (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Congo (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#COK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cook (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cook Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CRI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Costa Rica (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Costa Rica
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CIV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Côte d'Ivoire (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Côte d'Ivoire
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HRV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Croatie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Croatia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CUB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Cuba
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cuba
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CUW">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Curaçao
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Curaçao
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CYP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Chypre
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Cyprus
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CZE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">tchèque (la République)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Czech Republic (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DNK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Danemark (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Denmark
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DJI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Djibouti
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Djibouti
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DMA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Dominique (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Dominica
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DOM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">dominicaine (la République)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Dominican Republic (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ECU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Équateur (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Ecuador
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#EGY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Égypte (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Egypt
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SLV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">El Salvador
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">El Salvador
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GNQ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guinée équatoriale (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Equatorial Guinea
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ERI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Érythrée (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Eritrea
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#EST">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Estonie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Estonia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ETH">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Éthiopie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Ethiopia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FLK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Falkland (les Îles)/Malouines (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Falkland Islands (the) [Malvinas]
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FRO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Féroé (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Faroe Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FJI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Fidji (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Fiji
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FIN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Finlande (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Finland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FRA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">France (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">France
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GUF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guyane française (la )
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">French Guiana
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PYF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Polynésie française (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">French Polynesia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ATF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Terres australes françaises (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">French Southern Territories (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GAB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Gabon (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Gabon
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GMB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Gambie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Gambia (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GEO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Géorgie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Georgia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#DEU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Allemagne (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Germany
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GHA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Ghana (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Ghana
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GIB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Gibraltar
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Gibraltar
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GRC">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Grèce (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Greece
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GRL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Groenland (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Greenland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GRD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Grenade (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Grenada
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GLP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guadeloupe (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guadeloupe
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GUM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guam
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guam
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GTM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guatemala (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guatemala
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GGY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guernesey
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guernsey
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GIN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guinée (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guinea
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GNB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guinée-Bissau (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guinea-Bissau
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GUY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Guyana (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Guyana
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HTI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Haïti
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Haiti
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HMD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Heard-et-Îles MacDonald (l'Île)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Heard Island and McDonald Islands
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VAT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Siège (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Holy See (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HND">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Honduras (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Honduras
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HKG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Hong Kong
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Hong Kong
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#HUN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Hongrie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Hungary
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ISL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Islande (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Iceland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IND">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Inde (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">India
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IDN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Indonésie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Indonesia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IRN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Iran (République Islamique d')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Iran (Islamic Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IRQ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Iraq (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Iraq
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IRL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Irlande (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Ireland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#IMN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Île de Man
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Isle of Man
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ISR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Israël
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Israel
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ITA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Italie (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Italy
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#JAM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Jamaïque (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Jamaica
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#JPN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Japon (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Japan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#JEY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Jersey
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Jersey
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#JOR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Jordanie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Jordan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KAZ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Kazakhstan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Kazakhstan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KEN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Kenya (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Kenya
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KIR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Kiribati
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Kiribati
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PRK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Corée (la République populaire démocratique de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Korea (the Democratic People's Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KOR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Corée (la République de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Korea (the Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KWT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Koweït (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Kuwait
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KGZ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Kirghizistan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Kyrgyzstan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LAO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Lao, République démocratique populaire
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Lao People's Democratic Republic (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LVA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Lettonie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Latvia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LBN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Liban (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Lebanon
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LSO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Lesotho (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Lesotho
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LBR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Libéria (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Liberia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LBY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Libye (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Libya
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LIE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Liechtenstein (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Liechtenstein
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LTU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Lituanie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Lithuania
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LUX">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Luxembourg (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Luxembourg
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MAC">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Macao
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Macao
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MKD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Macédoine (l'ex‑République yougoslave de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Macedonia (the former Yugoslav Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MDG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Madagascar
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Madagascar
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MWI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Malawi (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Malawi
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MYS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Malaisie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Malaysia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MDV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Maldives (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Maldives
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MLI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mali (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mali
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MLT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Malte
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Malta
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MHL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Marshall (Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Marshall Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MTQ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Martinique (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Martinique
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MRT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mauritanie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mauritania
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MUS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Maurice
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mauritius
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MYT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mayotte
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mayotte
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MEX">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mexique (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mexico
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#FSM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Micronésie (États fédérés de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Micronesia (Federated States of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MDA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Moldova , République de
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Moldova (the Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MCO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Monaco
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Monaco
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MNG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mongolie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mongolia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MNE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Monténégro (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Montenegro
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MSR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Montserrat
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Montserrat
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MAR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Maroc (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Morocco
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MOZ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mozambique (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Mozambique
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MMR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Myanmar (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Myanmar
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NAM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Namibie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Namibia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NRU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Nauru
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Nauru
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NPL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Népal (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Nepal
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NLD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pays-Bas (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Netherlands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NCL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Nouvelle-Calédonie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">New Caledonia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NZL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Nouvelle-Zélande (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">New Zealand
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NIC">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Nicaragua (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Nicaragua
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NER">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Niger (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Niger (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NGA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Nigéria (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Nigeria
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NIU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Niue
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Niue
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NFK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Norfolk (l'Île)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Norfolk Island
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MNP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Mariannes du Nord (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Northern Mariana Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#NOR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Norvège (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Norway
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#OMN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Oman
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Oman
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PAK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pakistan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Pakistan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PLW">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Palaos (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Palau
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PSE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Palestine, État de
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Palestine, State of
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PAN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Panama (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Panama
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PNG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Papouasie-Nouvelle-Guinée (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Papua New Guinea
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PRY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Paraguay (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Paraguay
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PER">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pérou (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Peru
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PHL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Philippines (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Philippines (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PCN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pitcairn
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Pitcairn
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#POL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pologne (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Poland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PRT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Portugal (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Portugal
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#PRI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Porto Rico
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Puerto Rico
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#QAT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Qatar (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Qatar
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#REU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Réunion (La)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Réunion
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ROU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Roumanie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Romania
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#RUS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Russie (la Fédération de)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Russian Federation (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#RWA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Rwanda (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Rwanda
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#BLM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Barthélemy
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Barthélemy
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SHN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sainte-Hélène, Ascension et Tristan da Cunha
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Helena, Ascension and Tristan da Cunha
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#KNA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Kitts-et-Nevis
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Kitts and Nevis
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LCA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sainte-Lucie
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Lucia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#MAF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Martin (partie française)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Martin (French part)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SPM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Pierre-et-Miquelon
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Pierre and Miquelon
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VCT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Vincent-et-les Grenadines
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saint Vincent and the Grenadines
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#WSM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Samoa (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Samoa
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SMR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Marin
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">San Marino
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#STP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sao Tomé-et-Principe
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sao Tome and Principe
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SAU">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Arabie saoudite (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Saudi Arabia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SEN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sénégal (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Senegal
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SRB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Serbie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Serbia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SYC">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Seychelles (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Seychelles
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SLE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sierra Leone (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sierra Leone
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SGP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Singapour
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Singapore
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SXM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Saint-Martin (partie néerlandaise)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sint Maarten (Dutch part)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SVK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Slovaquie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Slovakia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SVN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Slovénie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Slovenia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SLB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Salomon (Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Solomon Islands
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SOM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Somalie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Somalia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ZAF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Afrique du Sud (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">South Africa
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SGS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Géorgie du Sud-et-les Îles Sandwich du Sud (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">South Georgia and the South Sandwich Islands
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SSD">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Soudan du Sud (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">South Sudan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ESP">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Espagne (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Spain
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#LKA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sri Lanka
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sri Lanka
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SDN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Soudan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sudan (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SUR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Suriname (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Suriname
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SJM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Svalbard et l'Île Jan Mayen (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Svalbard and Jan Mayen
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SWZ">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Swaziland (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Swaziland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SWE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Suède (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Sweden
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#CHE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Suisse (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Switzerland
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#SYR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">République arabe syrienne (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Syrian Arab Republic
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TWN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Taïwan (Province de Chine)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Taiwan (Province of China)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TJK">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tadjikistan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tajikistan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TZA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tanzanie, République-Unie de
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tanzania, United Republic of
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#THA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Thaïlande (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Thailand
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TLS">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Timor-Leste (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Timor-Leste
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TGO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Togo (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Togo
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TKL">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tokelau (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tokelau
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TON">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tonga (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tonga
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TTO">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Trinité-et-Tobago (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Trinidad and Tobago
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TUN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tunisie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tunisia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TUR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Turquie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Turkey
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TKM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Turkménistan (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Turkmenistan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TCA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Turks-et-Caïcos (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Turks and Caicos Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#TUV">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Tuvalu (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Tuvalu
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#UGA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Ouganda (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Uganda
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#UKR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Ukraine (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Ukraine
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ARE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Émirats arabes unis (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">United Arab Emirates (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#GBR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Royaume-Uni de Grande-Bretagne et d'Irlande du Nord (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">United Kingdom of Great Britain and Northern Ireland (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#UMI">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Îles mineures éloignées des États-Unis (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">United States Minor Outlying Islands (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#USA">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">États-Unis d'Amérique (les)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">United States of America (the)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#URY">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Uruguay (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Uruguay
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#UZB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Ouzbékistan (l')
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Uzbekistan
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VUT">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Vanuatu (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Vanuatu
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VEN">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Venezuela (République bolivarienne du)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Venezuela (Bolivarian Republic of)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VNM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Viet Nam (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Viet Nam
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VGB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Vierges britanniques (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Virgin Islands (British)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#VIR">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Vierges des États-Unis (les Îles)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Virgin Islands (U.S.)
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#WLF">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Wallis-et-Futuna
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Wallis and Futuna
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ESH">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Sahara occidental (le)*
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Western Sahara*
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#YEM">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Yémen (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Yemen
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ZMB">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Zambie (la)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Zambia
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/countries#ZWE">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Zimbabwe (le)
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Zimbabwe
+        </ns2:prefLabel>
+    </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Dataset">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
+            >Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
+            >Definition</ns2:scopeNote>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Données</ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Dataset</ns2:prefLabel>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Web Service">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
+            >Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
+            >Definition</ns2:scopeNote>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Service Web</ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Web Service</ns2:prefLabel>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#API">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
+            >Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
+            >Definition</ns2:scopeNote>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">API</ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">API</ns2:prefLabel>
+    </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Supporting Document">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
+            >Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
+            >Definition</ns2:scopeNote>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Document de soutien</ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Supporting Document</ns2:prefLabel>
+    </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Application">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
+            >Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
+            >Definition</ns2:scopeNote>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Application</ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Application</ns2:prefLabel>
+    </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,2910 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	
+ * Hide in edit mode : If some codelist needs to be hidden
+ in edit mode, the hideInEditMode attribute could be added
+ to any entries.
+ 
+ eg.
+	<entry hideInEditMode="true">
+	
+ This will restrict the number of available entries for end
+ user editors and keep all records ISO compatible when using
+ codelist (eg. harvested records could use codelist hidden
+ in local node and needs to be displayed in view mode).
+ 
+ By default, this attribute is not used.
+-->
+<codelists xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm">
+	<!-- ==================================================== -->
+	<codelist name="gmd:CI_DateTypeCode">
+		<entry>
+			<code>RI_366</code>
+      <value>creation; création</value>
+			<label>Creation</label>
+			<description>Date identifies when the resource was brought into existence</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_367</code>
+      <value>publication; publication</value>
+			<label>Publication</label>
+			<description>Date identifies when the resource was issued</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_368</code>
+      <value>revision; révision</value>
+			<label>Revision</label>
+			<description>Date identifies when the resource was examined or re-examined and improved or
+				amended</description>
+		</entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_369</code>
+      <value>notAvailable; nonDisponible</value>
+      <label>Not Available</label>
+      <description>Not Available</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_370</code>
+      <value>inForce; enVigueur</value>
+      <label>In Force</label>
+      <description>In Force</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_371</code>
+      <value>adopted; adoptée</value>
+      <label>Adopted</label>
+      <description>Adopted</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_372</code>
+      <value>deprecated; réprouvée</value>
+      <label>Deprecated</label>
+      <description>Deprecated</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_373</code>
+      <value>superseded; remplacée</value>
+      <label>Superseded</label>
+      <description>Superseded</description>
+    </entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:CI_OnLineFunctionCode">
+		<entry>
+			<code>RI_375</code>
+      <value>download; téléchargement</value>
+			<label>Download</label>
+			<description>Online instructions for transferring data from one storage device or system to
+				another</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_376</code>
+			<value>information; information</value>
+			<label>Information</label>
+			<description>Online information about the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_377</code>
+			<value>offlineAccess; accèsHorsLigne</value>
+			<label>Offline access</label>
+			<description>Online instructions for requesting the resource from the
+			provider</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_378</code>
+			<value>order; commande</value>
+			<label>Order</label>
+			<description>Online order process for obtening the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_379</code>
+			<value>search; recherche</value>
+			<label>Search</label>
+			<description>Online search interface for seeking out information about the
+			resource</description>
+		</entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_380</code>
+      <value>upload; téléversement</value>
+      <label>Upload</label>
+      <description>Online instructions for transfering data or file from a local storage device or system to another (e.g. mainframe or remote computer) via network</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_381</code>
+      <value>webService; serviceWeb</value>
+      <label>Web Service</label>
+      <description>Online instructions for the connection to a Web service (e.g. Web Services Description Language file) providing an on-line geographic service other than a Web map service</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_382</code>
+      <value>emailService; serviceCourriel</value>
+      <label>Email Service</label>
+      <description>Online instructions for the connection to an email service providing geographic services from emails</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_383</code>
+      <value>browsing; furetage</value>
+      <label>Browsing</label>
+      <description>Online interface for exploring and seeking information about the resource from a Web browser</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_384</code>
+      <value>fileAccess; AccèsFichier</value>
+      <label>File Access</label>
+      <description>Direct retrieval of a file from a remote system, typically through the use of http or ftp protocol (or their secure variants)</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_385</code>
+      <value>webMapService; ServiceCartesWeb</value>
+      <label>Web Map Service</label>
+      <description>Online instructions for the connection to a Web -based map request service, which may return custom georeferenced map images, streamed features, raster data, or surface data to a mapping client</description>
+    </entry>
+  </codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:CI_PresentationFormCode">
+		<entry>
+      <code>RI_387</code>
+      <value>documentDigital; documentNumérique</value>
+			<label>Digital document</label>
+			<description>Digital representation of a primarily textual item (can contain illustrations
+				also)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_389</code>
+      <value>imageDigital; imageNumérique</value>
+			<label>Digital image</label>
+			<description>Likeness of natural or man-made features, objects, and activities acquired
+				through the sensing of visual or any other segment of the electromagnetic spectrum by
+				sensors, such as thermal infrared, and high resolution radar and stored in digital
+				format</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_388</code>
+      <value>documentHardcopy; documentPapier</value>
+			<label>Hardcopy document</label>
+			<description>Representation of a primarily textual item (can contain illustrations also) on
+				paper, photograhic material, or other media</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_390</code>
+			<value>imageHardcopy; imagePapier</value>
+			<label>Hardcopy image</label>
+			<description>Likeness of natural or man-made features, objects, and activities acquired
+				through the sensing of visual or any other segment of the electromagnetic spectrum by
+				sensors, such as thermal infrared, and high resolution radar and reproduced on paper,
+				photographic material, or other media for use directly by the human user</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_391</code>
+			<value>mapDigital;carteNumérique</value>
+			<label>Digital map</label>
+			<description>Map represented in raster or vector form</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_392</code>
+			<value>mapHardcopy; cartePapier</value>
+			<label>Hardcopy map</label>
+			<description>Map printed on paper, photographic material, or other media for use directly
+				by the human user</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_393</code>
+      <value>modelDigital; modèleNumérique</value>
+			<label>Digital model</label>
+			<description>Multi-dimensional digital representation of a feature, process,
+			etc.</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_394</code>
+      <value>modelHardcopy; maquette</value>
+			<label>Hardcopy model</label>
+			<description>3-dimensional, physical model</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_395</code>
+      <value>profileDigital; profilNumérique</value>
+			<label>Digital profile</label>
+			<description>Vertical cross-section in digital form</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_396</code>
+      <value>profileHardcopy; profilPapier</value>
+			<label>Hardcopy profile</label>
+			<description>Vertical cross-section printed on paper, etc.</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_397</code>
+      <value>tableDigital; tableNumérique</value>
+			<label>Digital table</label>
+			<description>Digital representation of facts or figures systematically displayed,
+				especially in columns</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_398</code>
+      <value>tableHardcopy; tablePapier</value>
+			<label>Hardcopy table</label>
+			<description>Representation of facts or figures systematically displayed, especially in
+				columns, printed onpapers, photographic material, or other media</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_399</code>
+      <value>videoDigital; vidéoNumérique</value>
+			<label>Digital video</label>
+			<description>Digital video recording</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_400</code>
+      <value>videoHardcopy; vidéoFilm</value>
+			<code></code>
+			<label>Hardcopy video</label>
+			<description>Video recording on film</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_401</code>
+			<value>audioDigital; audioNumérique</value>
+			<label>Audio Digital</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_402</code>
+			<value>audioHardcopy; audioAnalogique</value>
+			<label>Audio Hardcopy</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_403</code>
+			<value>multimediaDigital; multimédiaNumérique</value>
+			<label>Multimedia Digital</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_404</code>
+			<value>multimediaHardcopy; multimédiaAnalogique</value>
+			<label>Multimedia Hardcopy</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_405</code>
+			<value>diagramDigital; diagrammeNumérique</value>
+			<label>Diagram Digital</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+            <code>RI_406</code>
+			<value>diagramHardcopy; diagrammePapier</value>
+			<label>Diagram Hardcopy</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:CI_RoleCode">
+		<entry>
+			<code>RI_408</code>
+      <value>resourceProvider; fournisseurRessource</value>
+			<label>Resource provider</label>
+			<description>Party that supplies the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_409</code>
+      <value>custodian; conservateur</value>
+			<label>Custodian</label>
+			<description>Party that accepts accountability and responsability for the data and ensures
+				appropriate care and maintenance of the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_410</code>
+      <value>owner; propriétaire</value>
+			<label>Owner</label>
+			<description>Party that owns the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_411</code>
+      <value>user; utilisateur</value>
+			<label>User</label>
+			<description>Party who uses the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_412</code>
+      <value>distributor; distributeur</value>
+			<label>Distributor</label>
+			<description>Party who distributes the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_413</code>
+      <value>originator; auteur</value>
+			<label>Originator</label>
+			<description>Party who created the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_414</code>
+      <value>pointOfContact; contact</value>
+			<label>Point of contact</label>
+			<description>Party who can be contacted for acquiring knowledge about or acquisition of the
+				resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_415</code>
+      <value>principalInvestigator; chercheurPrincipal</value>
+			<label>Principal investigator</label>
+			<description>Key party responsible for gathering information and conducting
+			research</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_416</code>
+      <value>processor; traiteur</value>
+			<label>Processor</label>
+			<description>Party wha has processed the data in a manner such that the resource has been
+				modified</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_417</code>
+      <value>publisher; éditeur</value>
+			<label>Publisher</label>
+			<description>Party who published the resource</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_418</code>
+      <value>author; auteur</value>
+			<label>Author</label>
+			<description>Party who authored the resource</description>
+		</entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_419</code>
+      <value>collaborator; collaborateur</value>
+      <label>Collaborator</label>
+      <description>Collaborator</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_420</code>
+      <value>editor; réviseur</value>
+      <label>Editor</label>
+      <description>Editor</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_421</code>
+      <value>mediator; médiateur</value>
+      <label>Mediator</label>
+      <description>Mediator</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_422</code>
+      <value>rightsHolder; détenteurDroits</value>
+      <label>Rights Holder</label>
+      <description>Rights Holder</description>
+    </entry>
+		<!-- ISO PROFIL CHE ONLY 
+		<entry>
+			<code>editor</code>
+			<label>Editor</label>
+			<description></description>
+		</entry>
+		<entry>
+			<code>partner</code>
+			<label>Partner</label>
+			<description></description>
+		</entry>-->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:DQ_EvaluationMethodTypeCode">
+		<entry>
+      <code>RI_424</code>
+			<value>directInternal; interneDirecte</value>
+			<label>Direct internal</label>
+			<description>Method of evaluating the quality of a dataset based on inspection of items
+				within the dataset, where all data required is internal to the dataset being
+			evaluated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_425</code>
+			<value>directExternal; externeDirecte</value>
+			<label>Direct external</label>
+			<description>Method of evaluating the quality of a dataset based on inspection of items
+				within the dataset, where reference data external to the dataset being evaluated is
+				required</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_426</code>
+			<value>indirect; indirecte</value>
+			<label>Indirect</label>
+			<description>Method of evaluating the quality of a dataset based on external
+			knowledge</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:DS_AssociationTypeCode">
+		<entry>
+      <code>RI_428</code>
+			<value>crossReference; référenceCroisée</value>
+			<label>Cross reference</label>
+			<description>Reference from one dataset to another</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_429</code>
+      <value>largerWorkCitation; référenceGénérique</value>
+			<label>Larger work citation</label>
+			<description>Reference to a master dataset of which this one is a part</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_430</code>
+			<value>partOfSeamlessDatabase; partieDeBaseDeDonnéesContinue</value>
+			<label>Part of seamless database</label>
+			<description>Part of the same structured set of data held in a computer</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_431</code>
+			<value>source; source</value>
+			<label>Source</label>
+			<description>Mapping and charting information from which the dataset content
+			originates</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_432</code>
+			<value>stereoMate; stéréoAssociée</value>
+			<label>Stereo mate</label>
+			<description>Part of a set of imagery that when used together, provides three-dimensional
+				images</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_433</code>
+      <value>isComposedOf; estComposéDe</value>
+      <label>Is Composed Of</label>
+      <description>Reference to datasets that are parts of this data set</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:DS_InitiativeTypeCode">
+		<entry>
+      <code>RI_435</code>
+			<value>campaign; campagne</value>
+			<label>Campaign</label>
+			<description>Series of organized planned actions</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_436</code>
+			<value>collection; collection</value>
+			<label>Collection</label>
+			<description>Accumulation of datasets assembled for a specific purpose</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_437</code>
+			<value>exercise; exercice</value>
+			<label>Exercise</label>
+			<description>Specific performance of a function or group of functions</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_438</code>
+      <value>experiment; expérience</value>
+			<label>Experiment</label>
+			<description>Process designed to find if something is effective or valid</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_439</code>
+			<value>investigation; investigation</value>
+			<label>Investigation</label>
+			<description>Search or systematic inquiry</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_440</code>
+			<value>mission; mission</value>
+			<label>Mission</label>
+			<description>Specific operation of a data collection system</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_441</code>
+			<value>sensor; capteur</value>
+			<label>Sensor</label>
+			<description>Device or piece of equipment which detects or records</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_442</code>
+			<value>operation; opération</value>
+			<label>Operation</label>
+			<description>Action that is part of a series of actions</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_443</code>
+			<value>platform; plateforme</value>
+			<label>Platform</label>
+			<description>Vehicle or other support base that holds a sensor</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_444</code>
+			<value>process; processus</value>
+			<label>Process</label>
+			<description>Method of doing something involving a number of steps</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_445</code>
+			<value>program; programme</value>
+			<label>Program</label>
+			<description>Specific planned activity</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_446</code>
+			<value>project; projet</value>
+			<label>Project</label>
+			<description>Organized undertaking, research, or development</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_447</code>
+			<value>study; étude</value>
+			<label>Study</label>
+			<description>Examination or investigation</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_448</code>
+			<value>task; tâche</value>
+			<label>Task</label>
+			<description>Piece of work</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_449</code>
+			<value>trial; essai</value>
+			<label>Trial</label>
+			<description>Process of testing to discover or demonstrate something</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_CellGeometryCode">
+		<entry>
+			<code>RI_451</code>
+      <value>point; point</value>
+			<label>Point</label>
+			<description>Each cell represents a point</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_452</code>
+			<value>area; surface</value>
+			<label>Area</label>
+			<description>Each cell represents an area</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_453</code>
+			<value>voxel; voxel</value>
+			<label>Voxel</label>
+			<description></description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_CharacterSetCode">
+		<entry>
+			<code>RI_455</code>
+      <value>ucs2; ucs2</value>
+			<label>UCS2</label>
+			<description>16-bit fixed size Universal Character Set, based on ISO/IEC
+			10646</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_456</code>
+      <value>ucs4; ucs4</value>
+			<label>UCS4</label>
+			<description>32-bit fixed size Universal Character Set, based on ISO/IEC
+			10646</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_457</code>
+      <value>utf7; utf7</value>
+			<label>UTF7</label>
+			<description>7-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_458</code>
+      <value>utf8; utf8</value>
+			<label>UTF8</label>
+			<description>8-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_459</code>
+      <value>utf16; utf16</value>
+			<label>UTF16</label>
+			<description>16-bit variable size UCS Transfer Format, based on ISO/IEC 10646</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_460</code>
+      <value>8859part1; 8859partie1</value>
+			<label>8859 Part 1</label>
+			<description>ISO/IEC 8859-1, Information technology - 8-bit single byte coded graphic
+				character sets - Part 1 : Latin alphabet No.1</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_461</code>
+      <value>8859part2; 8859partie2</value>
+			<label>8859 Part 2</label>
+			<description>ISO/IEC 8859-2, Information technology - 8-bit single byte coded graphic
+				character sets - Part 2 : Latin alphabet No.2</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_462</code>
+      <value>8859part3; 8859partie3</value>
+			<label>8859 Part 3</label>
+			<description>ISO/IEC 8859-3, Information technology - 8-bit single byte coded graphic
+				character sets - Part 3 : Latin alphabet No.3</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_463</code>
+      <value>8859part4; 8859partie4</value>
+			<label>8859 Part 4</label>
+			<description>ISO/IEC 8859-4, Information technology - 8-bit single byte coded graphic
+				character sets - Part 4 : Latin alphabet No.4</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_464</code>
+      <value>8859part5; 8859partie5</value>
+			<label>8859 Part 5</label>
+			<description>ISO/IEC 8859-5, Information technology - 8-bit single byte coded graphic
+				character sets - Part 5 : Latin/Cyrillic alphabet</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_465</code>
+      <value>8859part6; 8859partie6</value>
+			<label>8859 Part 6</label>
+			<description>ISO/IEC 8859-6, Information technology - 8-bit single byte coded graphic
+				character sets - Part 6 : Latin/Arabic alphabet</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_466</code>
+      <value>8859part7; 8859partie7</value>
+			<label>8859 Part 7</label>
+			<description>ISO/IEC 8859-7, Information technology - 8-bit single byte coded graphic
+				character sets - Part 7 : Latin/Greek alphabet</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_467</code>
+      <value>8859part8; 8859partie8</value>
+			<label>8859 Part 8</label>
+			<description>ISO/IEC 8859-8, Information technology - 8-bit single byte coded graphic
+				character sets - Part 8 : Latin/Hebrew alphabet</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_468</code>
+      <value>8859part9; 8859partie9</value>
+			<label>8859 Part 9</label>
+			<description>ISO/IEC 8859-9, Information technology - 8-bit single byte coded graphic
+				character sets - Part 9 : Latin alphabet No.5</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_469</code>
+      <value>8859part10; 8859partie10</value>
+			<label>8859 Part 10</label>
+			<description>ISO/IEC 8859-10, Information technology - 8-bit single byte coded graphic
+				character sets - Part 10 : Latin alphabet No.6</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_470</code>
+      <value>8859part11; 8859partie11</value>
+			<label>8859 Part 11</label>
+			<description>ISO/IEC 8859-11, Information technology - 8-bit single byte coded graphic
+				character sets - Part 11 : Latin/Thai alphabet</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_471</code>
+      <value>8859part13; 8859partie13</value>
+			<label>8859 Part 13</label>
+			<description>ISO/IEC 8859-13, Information technology - 8-bit single byte coded graphic
+				character sets - Part 13 : Latin alphabet No.7</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_472</code>
+      <value>8859part14; 8859partie14</value>
+			<label>8859 Part 14</label>
+			<description>ISO/IEC 8859-14, Information technology - 8-bit single byte coded graphic
+				character sets - Part 14 : Latin alphabet No.8 (Celtic)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_473</code>
+      <value>8859part15; 8859partie15</value>
+			<label>8859 Part 15</label>
+			<description>ISO/IEC 8859-15, Information technology - 8-bit single byte coded graphic
+				character sets - Part 15 : Latin alphabet No.9</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_474</code>
+      <value>8859part16; 8859partie16</value>
+			<label>8859 Part 16</label>
+			<description>ISO/IEC 8859-16, Information technology - 8-bit single byte coded graphic
+				character sets - Part 16 : Latin alphabet No.10</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_475</code>
+      <value>jis; jis</value>
+			<label>JIS</label>
+			<description>Japanese code set used for electronic transmission</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_476</code>
+      <value>shiftJIS; shiftJIS</value>
+			<label>Shift JIS</label>
+			<description>Japanese code set used on MS-DOS machines</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_477</code>
+      <value>eucJP; eucJP</value>
+			<label>EUC JP</label>
+			<description>Japanese code set used on UNIX based machines</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_478</code>
+      <value>usAscii; usAscii</value>
+			<label>US ASCII</label>
+			<description>United States ASCII code set (ISO 646 US)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_479</code>
+      <value>ebcdic; ebcdic</value>
+			<label>EBCDIC</label>
+			<description>IBM mainframe code set</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_480</code>
+      <value>eucKR; eucKR</value>
+			<label>EUC KR</label>
+			<description>Korean code set</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_481</code>
+      <value>big5; big5</value>
+      <label>BIG 5</label>
+			<description>Traditional Chinese code set used in Taiwan, Hong Kong of China and other
+				areas</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_482</code>
+      <value>GB2312; GB2312</value>
+			<label>GB2312</label>
+			<description>Simplified Chinese code set</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_ClassificationCode">
+		<entry>
+      <code>RI_484</code>
+			<value>unclassified; nonClassifié</value>
+			<label>Unclassified</label>
+			<description>Available for general disclosure</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_485</code>
+			<value>restricted; restreint</value>
+			<label>Restricted</label>
+			<description>Not for general disclosure</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_486</code>
+			<value>confidential; confidentiel</value>
+			<label>Confidential</label>
+			<description>Available for someone who can be entrusted with information</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_487</code>
+			<value>secret; secret</value>
+			<label>Secret</label>
+			<description>Kept or meant to be kept private, unknown, or hidden from all but a select
+				group of people</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_488</code>
+			<value>topSecret; trèsSecret</value>
+			<label>Top secret</label>
+			<description>Of the highest secrecy</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_489</code>
+			<value>sensitive; sensible</value>
+			<label>Sensitive</label>
+			<description>Sensitive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_490</code>
+			<value>forOfficialUseOnly; réservéÀOrganisation</value>
+			<label>For Official Use Only</label>
+			<description>For Official Use Only</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->		
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_CoverageContentTypeCode">
+		<entry>
+      <code>RI_492</code>
+			<value>image; image</value>
+			<label>Image</label>
+			<description>Meaningful numerical representation of a physical parameter that is not the
+				actual value of the physical parameter</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_493</code>
+			<value>thematicClassification; classificationThématique</value>
+			<label>Thematic classification</label>
+			<description>Code value with no quantitative meaning, used to represent a physical
+			quantity</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_494</code>
+			<value>physicalMeasurement; mesurePhysique</value>
+			<label>Physical measurement</label>
+			<description>Value in physical units of the quantity being measured</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_DatatypeCode">
+		<entry>
+			<code>class</code>
+			<label>Class</label>
+			<description>Descriptor of a set of objects that share the same attributes, operations,
+				methods, relationships, and behavior</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>codelist</code>
+			<label>Codelist</label>
+			<description>Descriptor of a set of objects that share the same attributes, operations,
+				methods, relationships, and behavior</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>enumeration</code>
+			<label>Enumeration</label>
+			<description>Data type whose instances form a list of named literal values, not
+			extendable</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>codelistElement</code>
+			<label>Codelist element</label>
+			<description>Permissible value for a codelist or enumeration</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>abstractClass</code>
+			<label>Abstract class</label>
+			<description>Class that cannot be directly instantiated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>aggregateClass</code>
+			<label>Aggregate class</label>
+			<description>Class that is composed of classes it is connected to by an aggregate
+				relationship</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>specifiedClass</code>
+			<label>Specified class</label>
+			<description>Subclass that may be substituted for its superclass</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>datatypeClass</code>
+			<label>Datatype class</label>
+			<description>Class with few or no operations whose primary purpose is to hold the abstract
+				state of another class for transmittal, storage, encoding or persistent
+			storage</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>interfaceClass</code>
+			<label>Interface class</label>
+			<description>Named set of operations that characterize the behavior of an
+			element</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>unionClass</code>
+			<label>Union class</label>
+			<description>Class describing a selection of one of the specified types</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>metaClass</code>
+			<label>Meta class</label>
+			<description>Class whose instances are classes</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>typeClass</code>
+			<label>Type class</label>
+			<description>Class used for specification of a domain of instances (objects), together with
+				the operations applicable to the objects. A type may have attributes and
+			associations</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>characterString</code>
+			<label>Character string</label>
+			<description>Free text field</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>integer</code>
+			<label>Integer</label>
+			<description>Numerical field</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>association</code>
+			<label>Association</label>
+			<description>Semantic relationship between two classes that involves connections among
+				their instances</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_DimensionNameTypeCode">
+		<entry>
+      <code>RI_496</code>
+			<value>row; rangée</value>
+			<label>Row</label>
+			<description>Ordinate (y) axis</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_497</code>
+			<value>column; colonne</value>
+			<label>Column</label>
+			<description>Abscissa (x) axis</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_498</code>
+			<value>vertical; vertical</value>
+			<label>Vertical</label>
+			<description>Vertical (z) axis</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_499</code>
+			<value>track; trajectoire</value>
+			<label>Track</label>
+			<description>Along the direction of motion of the scan point</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_500</code>
+			<value>crossTrack; trajectoireTransverse</value>
+			<label>Cross track</label>
+			<description>Perpendicular to the direction of motion of the scan point</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_501</code>
+			<value>line; ligne</value>
+			<label>Line</label>
+			<description>Scan line of a sensor</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_502</code>
+			<value>sample; échantillon</value>
+			<label>Sample</label>
+			<description>Element along a scan line</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_503</code>
+			<value>time; temps</value>
+			<label>Time</label>
+			<description>Duration</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_GeometricObjectTypeCode">
+		<entry>
+      <code>RI_505</code>
+			<value>complex; complexe</value>
+			<label>Complex</label>
+			<description>Set of geometric primitives such that their boundaries can be represented as a
+				union of other primitives</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_506</code>
+			<value>composite; composé</value>
+			<label>Composite</label>
+			<description>Connected set of curves, solids or surfaces</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_507</code>
+			<value>curve; courbe</value>
+			<label>Curve</label>
+			<description>Bounded, 1-dimensional geometric primitive, representing the continuous image
+				of a line</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_508</code>
+			<value>point; point</value>
+			<label>Point</label>
+			<description>Zero-dimensional geometric primitive, representing a position but not having
+				an extent</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_509</code>
+      <value>solid; solide</value>
+			<label>Solid</label>
+			<description>Bounded, connected 3-dimensional geometric primitive, representing the
+				continuous image of a region of space</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_510</code>
+			<value>surface; surface</value>
+			<label>Surface</label>
+			<description>Bounded, connected 2-dimensional geometric primitive, representing the
+				continuous image of a region of a plane</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_ImagingConditionCode">
+		<entry>
+      <code>RI_512</code>
+			<value>blurredImage; imageFloue</value>
+			<label>Blurred image</label>
+			<description>Portion of the image is blurred</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_513</code>
+			<value>cloud; nuage</value>
+			<label>Cloud</label>
+			<description>Portion of the image is partially obscured by cloud cover</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_514</code>
+			<value>degradingObliquity; variationObliquité</value>
+			<label>Degrading obliquity</label>
+			<description>Acute angle between the plane of the ecliptic (the plane of the Earth s orbit)
+				and the plane of the celestial equator</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_515</code>
+			<value>fog; brouillard</value>
+			<label>Fog</label>
+			<description>Portion of the image is partially obscured by fog</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_516</code>
+			<value>heavySmokeOrDust; fuméeDenseOuPoussière</value>
+			<label>Heavy smoke or dust</label>
+			<description>Portion of the image is partially obscured by heavy smoke or
+			dust</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_517</code>
+			<value>night; nuit</value>
+			<label>Night</label>
+			<description>Image was taken at night</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_518</code>
+			<value>rain; pluie</value>
+			<label>Rain</label>
+			<description>Image was taken during rainfall</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_519</code>
+			<value>semiDarkness; semiObscurité</value>
+			<label>Semi darkness</label>
+			<description>Image was taken during semi-dark conditions -- twilight
+			conditions</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_520</code>
+			<value>shadow; ombre</value>
+			<label>Shadow</label>
+			<description>Portion of the image is obscured by shadow</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_521</code>
+			<value>snow; neige</value>
+			<label>Snow</label>
+			<description>Portion of the image is obscured by snow</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_522</code>
+			<value>terrainMasking; masqueTerrain</value>
+			<label>Terrain masking</label>
+			<description>The absence of collection data of a given point or area caused by the relative
+				location of topographic features which obstruct the collection path between the
+				collector(s) and the subject(s) of interest</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+  <codelist name="gmd:MD_KeywordTypeCode">
+    <entry>
+      <code>RI_524</code>
+      <value>discipline; discipline</value>
+      <label>Discipline</label>
+      <description>Keyword identifies a branch of instruction or specialized
+        learning</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_525</code>
+      <value>place; endroit</value>
+      <label>Place</label>
+      <description>Keyword identifies a location</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_526</code>
+      <value>stratum; strate</value>
+      <label>Stratum</label>
+      <description>Keyword identifies the layer(s) of any deposited substance</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_527</code>
+      <value>temporal; temporel</value>
+      <label>Temporal</label>
+      <description>Keyword identifies a time period related to the dataset</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_528</code>
+      <value>theme; thème</value>
+      <label>Theme</label>
+      <description>Keyword identifies a particular subject or topic</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_529</code>
+      <value>product; produit</value>
+      <label>Product</label>
+      <description>Keyword identifies a type of product</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_530</code>
+      <value>subTopicCategory; catégorieSousSujet</value>
+      <label>Subtopic Category</label>
+      <description>Refinement a topic category for the purpose of geographic data classification</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+  </codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_MaintenanceFrequencyCode">
+		<entry>
+			<code>RI_532</code>
+      <value>continual; continue</value>
+			<label>Continual</label>
+			<description>Data is repeatedly and frequently updated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_533</code>
+      <value>daily; quotidien</value>
+			<label>Daily</label>
+			<description>Data is updated each day</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_534</code>
+      <value>weekly; hebdomadaire</value>
+			<label>Weekly</label>
+			<description>Data is updated on a weekly basis</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_535</code>
+      <value>fortnightly; quinzomadaire</value>
+			<label>Fortnightly</label>
+			<description>Data is updated every two weeks</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_536</code>
+      <value>monthly; mensuel</value>
+			<label>Monthly</label>
+			<description>Data is updated each month</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_537</code>
+      <value>quarterly; trimestriel</value>
+			<label>Quarterly</label>
+			<description>Data is updated every three months</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_538</code>
+      <value>biannually; semestriel</value>
+			<label>Biannually</label>
+			<description>Data is updated twice each year</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_539</code>
+      <value>annually; annuel</value>
+			<label>Annually</label>
+			<description>Data is updated every year</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_540</code>
+      <value>asNeeded; auBesoin</value>
+			<label>As needed</label>
+			<description>Data is updated as deemed necessary</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_541</code>
+      <value>irregular; irrégulier</value>
+			<label>Irregular</label>
+			<description>Data is updated in intervals that are uneven in duration</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_542</code>
+      <value>notPlanned; nonPlanifié</value>
+			<label>Not planned</label>
+			<description>There are no plans to update the data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_543</code>
+      <value>unknown; inconnu</value>
+			<label>Unknown</label>
+			<description>Frequency of maintenance for the data is not known</description>
+		</entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_544</code>
+      <value>semimonthly; bimensuel</value>
+      <label>Semi Monthly</label>
+      <description></description>
+    </entry>
+		<!-- ISO PROFIL CHE ONLY
+		<entry>
+			<code>userDefined</code>
+			<label>User defined</label>
+			<description></description>
+		</entry>
+		-->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_MediumFormatCode">
+		<entry>
+      <code>RI_546</code>
+			<value>cpio; cpio</value>
+			<label>CPIO</label>
+			<description>CoPy In / Out (UNIX file format and command)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_547</code>
+			<value>tar; tar</value>
+			<label>TAR</label>
+			<description>Tape ARchive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_548</code>
+			<value>highSierra; highSierra</value>
+			<label>High sierra</label>
+			<description>High sierra file system</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_549</code>
+			<value>iso9660; iso9660</value>
+			<label>ISO9660</label>
+			<description>Information processing volume and file structure of CD-ROM</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_550</code>
+      <value>iso9660RockRidge; iso9660RockRidge</value>
+			<label>ISO9660 Rock Ridge</label>
+			<description>Rock ridge interchange protocol (UNIX)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_551</code>
+			<value>iso9660AppleHFS; iso9660AppleHFS</value>
+			<label>ISO9660 Apple HFS</label>
+			<description>Hierarchical file system (Macintosh)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_552</code>
+      <value>UDF; UDF</value>
+      <label>Universal Disk Format</label>
+      <description>Universal Disk Format file system for storing files on optical media</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_MediumNameCode">
+		<entry>
+      <code>RI_554</code>
+			<value>cdRom; cdRom</value>
+			<label>CDROM</label>
+			<description>Read-only optical disk</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_555</code>
+			<value>dvd; dvd</value>
+			<label>DVD</label>
+			<description>Digital versatile disk</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_556</code>
+			<value>dvdRom; dvdRom</value>
+			<label>DVDROM</label>
+			<description>Digital versatile disk, read only</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_557</code>
+			<value>3halfInchFloppy; disquette3PoucesDemie</value>
+			<label>3 Half Inch Floppy</label>
+			<description>3,5 inch magnetic disk</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_558</code>
+			<value>5quarterInchFloppy; disquette5PoucesQuart</value>
+			<label>5 Quarter Inch Floppy</label>
+			<description>5,25 inch magnetic disk</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_559</code>
+			<value>7trackTape; ruban7Pistes</value>
+			<label>7 Track tape</label>
+			<description>7 track magnetic tape</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_560</code>
+			<value>9trackTape; ruban9Pistes</value>
+			<label>9 track tape</label>
+			<description>9 track magnetic tape</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_561</code>
+			<value>3480Cartridge; cartouche3480</value>
+			<label>3480 Cartridge</label>
+			<description>3480 cartridge tape drive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_562</code>
+			<value>3490Cartridge; cartouche3490</value>
+			<label>3490 Cartridge</label>
+			<description>3490 cartridge tape drive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_563</code>
+			<value>3580Cartridge; cartouche3580</value>
+			<label>3580 Cartridge</label>
+			<description>3580 cartridge tape drive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_564</code>
+			<value>4mmCartridgeTape; cartoucheRuban4mm</value>
+			<label>4 mm Cartridge tape</label>
+			<description>4 millimetre magnetic tape</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_565</code>
+			<value>8mmCartridgeTape; cartoucheRuban8mm</value>
+			<label>8 mm Cartridge tape</label>
+			<description>8 millimetre magnetic tape</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_566</code>
+			<value>1quarterInchCartridgeTape; cartoucheRuban1QuartPouce</value>
+			<label>1 Quarter inch cartridge tape</label>
+			<description>0,25 inch magnetic tape</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_567</code>
+			<value>digitalLinearTap; bandeLinéaireNumérique</value>
+			<label>Digital linear tape</label>
+			<description>Half inch cartridge streaming tape drive</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_568</code>
+      <value>onLine; enLigne</value>
+			<label>Online</label>
+			<description>Direct computer linkage</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_569</code>
+			<value>satellite; satellite</value>
+			<label>Satellite</label>
+			<description>Linkage through a satellite communication system</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_570</code>
+			<value>telephoneLink; lienTéléphonique</value>
+			<label>Telephone link</label>
+			<description>Communication through a telephone network</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+    <code>RI_571</code>
+    <value>hardcopy; copiePapier</value>
+    <label>Hardcopy</label>
+    <description>Pamphlet or leaflet giving descriptive information</description>
+  </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_572</code>
+      <value>hardcopyDiazoPolyester08; copieDiazoPolyester08</value>
+      <label>Diazo on 0,08 millimetre polyester</label>
+      <description>Diazo on 0,08 millimetre polyester</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_573</code>
+      <value>hardcopyCardMicrofilm; copieMicrofilm</value>
+      <label>Microfilm card</label>
+      <description>Microfilm card</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_574</code>
+      <value>hardcopyMicrofilm240; copieMicrofilm240</value>
+      <label>Microfilm 240 millimetre</label>
+      <description>Microfilm 240 millimetre</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_575</code>
+      <value>hardcopyMicrofilm35; copyMicrofilm35</value>
+      <label>Microfilm 35 millimetre</label>
+      <description>Microfilm 35 millimetre</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_576</code>
+      <value>hardcopyMicrofilm70; copieMicrofilm70</value>
+      <label>Microfilm 70 millimetre</label>
+      <description>Microfilm 70 millimetre</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_577</code>
+      <value>hardcopyMicrofilmGeneral; copieMicrofilmGeneral</value>
+      <label>Microfilm general</label>
+      <description>Microfilm general</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_578</code>
+      <value>hardcopyMicrofilmMicrofiche; copieMicrofilmMicrofiche</value>
+      <label>Microfiche</label>
+      <description>Microfiche</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_579</code>
+      <value>hardcopyNegativePhoto; copieNegatifPhoto</value>
+      <label>Negative photography</label>
+      <description>Negative photography</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_580</code>
+      <value>hardcopyPaper; copiePapier</value>
+      <label>Printing on paper</label>
+      <description>Printing on paper</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_581</code>
+      <value>hardcopyDiazo; copiePapierDiazo</value>
+      <label>Diazo printing on paper</label>
+      <description>Diazo printing on paper</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_582</code>
+      <value>hardcopyPhoto; copiePhotographie</value>
+      <label>Printing on photographic paper</label>
+      <description>Printing on photographic paper</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_583</code>
+      <value>hardcopyTracedPaper; copieTracéPapier</value>
+      <label>Drawing on paper</label>
+      <description>Drawing on paper</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_584</code>
+      <value>hardDisk; disqueDur</value>
+      <label>Hard disk</label>
+      <description>Mass storage temporarily plug to a computer for massive data transmission</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_585</code>
+      <value>USBFlashDrive; cléUSB</value>
+      <label>USB flash drive</label>
+      <description>Flash memory data storage devices integrated with a USB (universal serial bus) interface</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<!-- ISO PROFIL CHE ONLY
+		<entry>
+			<code>zip100</code>
+			<label>Zip100</label>
+			<description></description>
+		</entry>
+		<entry>
+			<code>zip250</code>
+			<label>Zip250</label>
+			<description></description>
+		</entry>      <entry>
+			<code>e-mail</code>
+			<label>E-mail</label>
+			<description></description>
+		</entry>      <entry>
+			<code>zip</code>
+			<label>Zip</label>
+			<description></description>
+		</entry>      <entry>
+			<code>jaz</code>
+			<label>Jaz</label>
+			<description></description>
+		</entry>      <entry>
+			<code>other</code>
+			<label>Other</label>
+			<description></description>
+		</entry>-->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_ObligationCode">
+		<entry>
+			<code>mandatory</code>
+			<label>Mandatory</label>
+			<description>Element is always required</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>optional</code>
+			<label>Optional</label>
+			<description>Element is not required</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>conditional</code>
+			<label>Conditional</label>
+			<description>Element is required when a specific condition is met</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_PixelOrientationCode">
+		<entry>
+      <code>RI_587</code>
+			<value>center; centre</value>
+			<label>Center</label>
+			<description>Point halfway between the lower left and the upper right of the
+			pixel</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_588</code>
+			<value>lowerLeft; inférieurGauche</value>
+			<label>Lower left</label>
+			<description>The corner in the pixel closest to the origin of the SRS; if two are at the
+				same distance from the origin, the one with the smallest x-value</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_589</code>
+			<value>lowerRight; inférieurDroit</value>
+			<label>Lower right</label>
+			<description>Next corner counterclockwise from the lower left</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_590</code>
+			<value>upperRight; supérieurDroit</value>
+			<label>Upper right</label>
+			<description>Next corner counterclockwise from the lower right</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_591</code>
+			<value>upperLeft; supérieurGauche</value>
+			<label>Upper left</label>
+			<description>Next corner counterclockwise from the upper right</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_ProgressCode">
+		<entry>
+			<code>RI_593</code>
+      <value>completed; complété</value>
+			<label>Completed</label>
+			<description>Production of the data has been completed</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_594</code>
+      <value>historicalArchive; archiveHistorique</value>
+			<label>Historical archive</label>
+			<description>Data has been stored in an offline storage facility</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_595</code>
+      <value>obsolete; périmé</value>
+			<label>Obsolete</label>
+			<description>Data is no longer relevant</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_596</code>
+      <value>onGoing; enContinue</value>
+			<label>On going</label>
+			<description>Data is continually being updated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_597</code>
+      <value>planned; planifié</value>
+			<label>Planned</label>
+			<description>Fixed date has been established upon or by which the data will be created or
+				updated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_598</code>
+      <value>required; requis</value>
+			<label>Required</label>
+			<description>Data needs to be generated or updated</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_599</code>
+      <value>underDevelopment; enProduction</value>
+      <label>Under development</label>
+      <description>Data is currently in the process of being created</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_600</code>
+      <value>proposed; proposé</value>
+      <label>Proposed</label>
+      <description>Proposed</description>
+    </entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+  <codelist name="gmd:MD_RestrictionCode">
+    <entry>
+      <code>RI_602</code>
+      <value>copyright; droitAuteur</value>
+      <label>Copyright</label>
+      <description>Exclusive right to the publication, production, or sale of the rights to a
+        literary, dramatic, musical, or artistic work, or to the use of a commercial print or
+        label, granted by law for a specified period of time to an author, composer, artist,
+        distributor</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_603</code>
+      <value>patent; brevet</value>
+      <label>Patent</label>
+      <description>Government has granted exclusive right to make, sell, use or license an
+        invention or discovery</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_604</code>
+      <value>patentPending; brevetEnInstance</value>
+      <label>Pending patent</label>
+      <description>Produced or sold information awaiting a patent</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_605</code>
+      <value>trademark; marqueDeCommerce</value>
+      <label>Trademark</label>
+      <description>A name, symbol, or other device identifying a product, officially registered
+        and legally restricted to the use of the owner or manufacturer</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_606</code>
+      <value>license; licence</value>
+      <label>License</label>
+      <description>Formal permission to do something</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_607</code>
+      <value>intellectualPropertyRights; droitsPropriétéIntellectuelle</value>
+      <label>Intellectual property rights</label>
+      <description>Rights to financial benefit from and control of distribution of non-tangible
+        property that is a result of creativity</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_608</code>
+      <value>restricted; restreint</value>
+      <label>Restricted</label>
+      <description>Withheld from general circulation or disclosure</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_609</code>
+      <value>otherRestrictions; autresRestrictions</value>
+      <label>Other restrictions</label>
+      <description>Limitation not listed</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_610</code>
+      <value>licenseUnrestricted; licenceSansRestriction</value>
+      <label>Unrestricted</label>
+      <description>Formal permission does not limit use of the resources</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_611</code>
+      <value>licenseEndUser; licenceUtilisateurFinal</value>
+      <label>License End User</label>
+      <description></description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_612</code>
+      <value>licenseDistributor; licenceDistributeur</value>
+      <label>License Distributor</label>
+      <description></description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_613</code>
+      <value>privacy; viePrivée</value>
+      <label>Privacy</label>
+      <description></description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_614</code>
+      <value>statutory; légal</value>
+      <label>Statutory</label>
+      <description></description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_615</code>
+      <value>confidential; confidentiel</value>
+      <label>Confidential</label>
+      <description></description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_616</code>
+      <value>sensitivity; sensible</value>
+      <label>Sensitivity</label>
+      <description></description>
+    </entry>
+  </codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_ScopeCode">
+		<entry>
+			<code>RI_618</code>
+      <value>attribute; attribut</value>
+			<label>Attribute</label>
+			<description>Information applies to the attribute class</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_619</code>
+      <value>attributeType; typeAttribut</value>
+			<label>Attribute type</label>
+			<description>Information applies to the characteristic of a feature</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_620</code>
+			<value>collectionHardware; collectionMatériel</value>
+			<label>Collection hardware</label>
+			<description>Information applies to the collection hardware class</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_621</code>
+			<value>collectionSession; collectionSession</value>
+			<label>Collection session</label>
+			<description>Information applies to the collection session</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_622</code>
+			<value>dataset; jeuDonnées</value>
+			<label>Dataset</label>
+			<description>Information applies to the dataset</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_623</code>
+			<value>series; série</value>
+			<label>Series</label>
+			<description>Information applies to the series</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_624</code>
+			<value>nonGeographicDataset; JeuDonnéesNonGéographique</value>
+			<label>Non geographic dataset</label>
+			<description>Information applies to non-geographic data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_625</code>
+			<value>dimensionGroup; groupeDimension</value>
+			<label>Dimension group</label>
+			<description>Information applies to a dimension group</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_626</code>
+			<value>feature; entité</value>
+			<label>Feature</label>
+			<description>Information applies to a feature</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_627</code>
+			<value>featureType; typeEntité</value>
+			<label>Feature type</label>
+			<description>Information applies to a feature type</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_628</code>
+			<value>propertyType; typePropriété</value>
+			<label>Property type</label>
+			<description>Information applies to a property type</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_629</code>
+			<value>fieldSession; campagneTerrain</value>
+			<label>Field session</label>
+			<description>Information applies to a field session</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_630</code>
+			<value>software; logiciel</value>
+			<label>Software</label>
+			<description>Information applies to a computer program or routine</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_631</code>
+			<value>service; service</value>
+			<label>Service</label>
+			<description>Information applies to a capability which a service provider entity makes
+				available to a service user entity through a set of interfaces that define a behaviour,
+				such as a use case</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_632</code>
+			<value>model; modèle</value>
+			<label>Model</label>
+			<description>Information applies to a copy or imitation of an existing or hypothetical
+				object</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_633</code>
+      <value>tile; tuile</value>
+			<label>Tile</label>
+			<description>Information applies to a tile, a spatial subset of geographic
+			data</description>
+		</entry>
+		<!-- ISO PROFIL CHE ONLY
+		<entry>
+			<code>project</code>
+			<label>Project</label>
+			<description></description>
+		</entry>
+		<entry>
+			<code>stationSite</code>
+			<label>Station site</label>
+			<description></description>
+		</entry>
+		<entry>
+			<code>publication</code>
+			<label>Publication</label>
+			<description>Publication</description>
+		</entry>-->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_SpatialRepresentationTypeCode">
+		<entry>
+			<code>RI_635</code>
+      <value>vector; vecteur</value>
+			<label>Vector</label>
+			<description>Vector data is used to represent geographic data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_636</code>
+      <value>grid; grille</value>
+			<label>Grid</label>
+			<description>Grid data is used to represent geographic data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_637</code>
+      <value>textTable; texteTable</value>
+			<label>Text, table</label>
+			<description>Textual or tabular data is used to represent geographic data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_638</code>
+      <value>tin; tin</value>
+			<label>TIN</label>
+			<description>Triangulated irregular network</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_639</code>
+      <value>stereoModel ; stéréomodèle</value>
+			<label>Stereo model</label>
+			<description>Three-dimensional view formed by the intersecting homologous rays of an
+				overlapping pair of images</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>RI_640</code>
+      <value>video; vidéo</value>
+			<label>Video</label>
+			<description>Scene from a video recording</description>
+		</entry>
+		<!-- ISO PROFIL CHE ONLY
+		<entry>
+			<code>paperMap</code>
+			<label>Paper map</label>MD_ScopeCode
+		</entry>-->
+	</codelist>
+	<!-- ==================================================== -->
+  <codelist name="gmd:MD_TopicCategoryCode">
+    <entry>
+      <code>farming</code>
+      <label>Farming</label>
+      <description>Rearing of animals and/or cultivation of plants. Examples: agriculture,
+        irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and
+        livestock</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>biota</code>
+      <label>Biota</label>
+      <description>Flora and/or fauna in natural environment. Examples: wildlife, vegetation,
+        biological sciences, ecology, wilderness, sealife, wetlands, habitat</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>boundaries</code>
+      <label>Boundaries</label>
+      <description>Legal land descriptions. Examples: political and administrative
+        boundaries</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>climatologyMeteorologyAtmosphere</code>
+      <label>Climatology, meteorology, atmosphere</label>
+      <description>Processes and phenomena of the atmosphere. Examples: cloud cover, weather,
+        climate, atmospheric conditions, climate change, precipitation</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>economy</code>
+      <label>Economy</label>
+      <description>Economic activities, conditions and employment. Examples: production, labour,
+        revenue, commerce, industry, tourism and ecotourism, forestry, fisheries, commercial or
+        subsistence hunting, exploration and exploitation of resources such as minerals, oil and
+        gas</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>elevation</code>
+      <label>Elevation</label>
+      <description>Height above or below sea level. Examples: altitude, bathymetry, digital
+        elevation models, slope, derived products</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>environment</code>
+      <label>Environment</label>
+      <description>Environmental resources, protection and conservation. Examples: environmental
+        pollution, waste storage and treatment, environmental impact assessment, monitoring
+        environmental risk, nature reserves, landscape</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>geoscientificInformation</code>
+      <label>Geoscientific information</label>
+      <description>Information pertaining to earth sciences. Examples: geophysical features and
+        processes, geology, minerals, sciences dealing with the composition, structure and
+        origin of the earth s rocks, risks of earthquakes, volcanic activity, landslides,
+        gravity information, soils, permafrost, hydrogeology, erosion</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>health</code>
+      <label>Health</label>
+      <description>Health, health services, human ecology, and safety. Examples: disease and
+        illness, factors affecting health, hygiene, substance abuse, mental and physical health,
+        health services</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>imageryBaseMapsEarthCover</code>
+      <label>Imagery base maps earth cover</label>
+      <description>Base maps. Examples: land cover, topographic maps, imagery, unclassified
+        images, annotations</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>intelligenceMilitary</code>
+      <label>Intelligence military</label>
+      <description>Military bases, structures, activities. Examples: barracks, training grounds,
+        military transportation, information collection</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>inlandWaters</code>
+      <label>Inland waters</label>
+      <description>Inland water features, drainage systems and their characteristics. Examples:
+        rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water
+        quality, hydrographic charts</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>location</code>
+      <label>Location</label>
+      <description>Positional information and services. Examples: addresses, geodetic networks,
+        control points, postal zones and services, place names</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>oceans</code>
+      <label>Oceans</label>
+      <description>Features and characteristics of salt water bodies (excluding inland waters).
+        Examples: tides, tidal waves, coastal information, reefs</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>planningCadastre</code>
+      <label>Planning cadastre</label>
+      <description>Information used for appropriate actions for future use of the land. Examples:
+        land use maps, zoning maps, cadastral surveys, land ownership</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>society</code>
+      <label>Society</label>
+      <description>Characteristics of society and cultures. Examples: settlements, anthropology,
+        archaeology, education, traditional beliefs, manners and customs, demographic data,
+        recreational areas and activities, social impact assessments, crime and justice, census
+        information</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>structure</code>
+      <label>Structure</label>
+      <description>Man-made construction. Examples: buildings, museums, churches, factories,
+        housing, monuments, shops, towers</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>transportation</code>
+      <label>Transportation</label>
+      <description>Means and aids for conveying persons and/or goods. Examples: roads,
+        airports/airstrips, shipping routes, tunnels, nautical charts, vehicle or vessel
+        location, aeronautical charts, railways</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>utilitiesCommunication</code>
+      <label>Utilities communication</label>
+      <description>Energy, water and waste systems and communications infrastructure and
+        services. Examples: hydroelectricity, geothermal, solar and nuclear sources of energy,
+        water purification and distribution, sewage collection and disposal, electricity and gas
+        distribution, data communication, telecommunication, radio, communication
+        networks</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+  </codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MD_TopologyLevelCode">
+		<entry>
+      <code>RI_662</code>
+			<value>geometryOnly; géométrieUniquement</value>
+			<label>Geometry only</label>
+			<description>Geometry objects without any additional structure which describes
+			topology</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_663</code>
+			<value>topology1D; topologie1D</value>
+			<label>Topology 1D</label>
+			<description>1-dimensional topological complex -- commonly called chain-node
+			topology</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_664</code>
+			<value>planarGraph; graphePlanaire</value>
+			<label>Planar graph</label>
+			<description>1-dimensional topological complex that is planar. (A planar graph is a graph
+				that can be drawn in a plane in such a way that no two edges intersect except at a
+				vertex.)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_665</code>
+			<value>fullPlanarGraph; graphePlanaireComplet</value>
+			<label>Full planar graph</label>
+			<description>2-dimensional topological complex that is planar. (A 2-dimensional topological
+				complex is commonly called full topology in a cartographic 2D
+			environment.)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_666</code>
+			<value>surfaceGraph; grapheSurfacique</value>
+			<label>Surface graph</label>
+			<description>1-dimensional topological complex that is isomorphic to a subset of a surface.
+				(A geometric complex is isomorphic to a topological complex if their elements are in a
+				one-to-one, dimensional-and boundry-preserving correspondence to one
+			another.)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_667</code>
+			<value>fullSurfaceGraph; grapheSurfaciqueComplet</value>
+			<label>Full surface graph</label>
+			<description>2-dimensional topological complex that is isomorphic to a subset of a
+			surface</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_668</code>
+			<value>topology3D; topologie3D</value>
+			<label>Topology 3D</label>
+			<description>3-dimensional topological complex. (A topological complex is a collection of
+				topological primitives that are closed under the boundary operations.)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_669</code>
+			<value>fullTopology3D; topologie3DComplète</value>
+			<label>Full topology 3D</label>
+			<description>Complete coverage of a 3D Euclidean coordinate space</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+      <code>RI_670</code>
+			<value>abstract; abstrait</value>
+			<label>Abstract</label>
+			<description>Topological complex without any specified geometric realisation</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="gmd:MX_ScopeCode">
+		<entry>
+			<code>attribute</code>
+			<label>Attribute</label>
+			<description>Information applies to the attribute class</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>attributeType</code>
+			<label>Attribute type</label>
+			<description>Information applies to the characteristic of a feature</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>collectionHardware</code>
+			<label>Collection hardware</label>
+			<description>Information applies to the collection hardware class</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>collectionSession</code>
+			<label>Collection session</label>
+			<description>Information applies to the collection session</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>dataset</code>
+			<label>Dataset</label>
+			<description>Information applies to the dataset</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>series</code>
+			<label>Series</label>
+			<description>Information applies to the series</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>nonGeographicDataset</code>
+			<label>Non geographic dataset</label>
+			<description>Information applies to non-geographic data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>dimensionGroup</code>
+			<label>Dimension group</label>
+			<description>Information applies to a dimension group</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>feature</code>
+			<label>Feature</label>
+			<description>Information applies to a feature</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>featureType</code>
+			<label>Feature type</label>
+			<description>Information applies to a feature type</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>propertyType</code>
+			<label>Property type</label>
+			<description>Information applies to a property type</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>fieldSession</code>
+			<label>Field session</label>
+			<description>Information applies to a field session</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>software</code>
+			<label>Software</label>
+			<description>Information applies to a computer program or routine</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>service</code>
+			<label>Service</label>
+			<description>Information applies to a capability which a service provider entity makes
+				available to a service user entity through a set of interfaces that define a behaviour,
+				such as a use case</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>model</code>
+			<label>Model</label>
+			<description>Information applies to a copy or imitation of an existing or hypothetical
+				object</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>tile</code>
+			<label>Tile</label>
+			<description>Information applies to a tile, a spatial subset of geographic
+			data</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>initiative</code>
+			<label>Initiative</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as an initiative (DS_Initiative)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>stereomate</code>
+			<label>Stereo mate</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as a stereo mate (DS_StereoMate)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>sensor</code>
+			<label>Sensor</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as a sensor (DS_Sensor)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>platformSeries</code>
+			<label>Platform series</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as a platform series (DS_PlatformSeries)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>sensorSeries</code>
+			<label>Sensor series</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as a sensor series (DS_SensorSeries)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>productionSeries</code>
+			<label>Production series</label>
+			<description>The referencing entity applies to a transfer aggregate which was originally
+				identified as a production series (DS_ProductionSeries)</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>transferAggregate</code>
+			<label>Transfer aggregate</label>
+			<description>The referencing entity applies to a transfer aggregate which has no existence
+				outside of the transfer context</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+		<entry>
+			<code>otherAggregate</code>
+			<label>Other aggregate</label>
+			<description>The referencing entity applies to a transfer aggregate which has an existence
+				outside of the transfer context, but which does not pertains to a specific aggregate
+				type.</description>
+		</entry>
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+	</codelist>
+	<!-- ==================================================== -->
+	<codelist name="srv:DCPList">
+    <entry>
+      <code>RI_672</code>
+      <value>XML; XML</value>
+      <label>XML</label>
+      <description>DCP is XML</description>
+    </entry>
+    <entry>
+      <code>RI_673</code>
+      <value>CORBA; CORBA</value>
+      <label>CORBA</label>
+      <description>DCP is CORBA</description>
+    </entry>
+    <entry>
+      <code>RI_674</code>
+      <value>JAVA; JAVA</value>
+      <label>JAVA</label>
+      <description>DCP is JAVA</description>
+    </entry>
+    <entry>
+      <code>RI_675</code>
+      <value>COM; COM</value>
+      <label>COM</label>
+      <description>DCP is COM</description>
+    </entry>
+    <entry>
+      <code>RI_676</code>
+      <value>SQL; SQL</value>
+      <label>SQL</label>
+      <description>DCP is SQL</description>
+    </entry>
+    <entry>
+      <code>RI_677</code>
+      <value>WebServices; servicesWeb</value>
+      <label>Web services</label>
+      <description>DCP is WebServices</description>
+    </entry>
+	</codelist>
+	<!--=== CouplingType from ISO19119 ===-->
+	<codelist name="srv:SV_CouplingType">
+    <entry>
+      <code>RI_685</code>
+      <value>tight; fort</value>
+      <label>Tight</label>
+      <description>Tightly coupled: data associated</description>
+    </entry>
+    <entry>
+      <code>RI_684</code>
+      <value>mixed; mixte</value>
+      <label>Mixed</label>
+      <description>Mixed coupled: data associated; in addition, external data might be processed</description>
+    </entry>
+    <entry>
+      <code>RI_683</code>
+      <value>loose; faible</value>
+      <label>Loose</label>
+      <description>Loosely coupled: no data associated</description>
+    </entry>
+	</codelist>
+	<codelist name="srv:SV_ParameterDirection">
+		<entry>
+      <code>RI_679</code>
+			<value>in; intrant</value>
+			<label>Input</label>
+		</entry>
+		<entry>
+      <code>RI_680</code>
+			<value>out; extrant</value>
+			<label>Output</label>
+		</entry>
+		<entry>
+      <code>RI_681</code>
+			<value>in/out; intant/extrant</value>
+			<label>Input/output</label>
+		</entry>
+	</codelist>
+
+  <!-- ==================================================== -->
+  <codelist name="napm:napMD_FileFormatCode">
+    <entry>
+      <code>RI_687</code>
+      <value>bil; bil</value>
+      <label>Bil</label>
+      <description>BIL (band interleaved by line) format line data are arranged in the order of band number and repeated with respect to line number </description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_688</code>
+      <value>bmp; bmp</value>
+      <label>Bmp</label>
+      <description>bit mapped picture/BitMap</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_689</code>
+      <value>bsq; bsq</value>
+      <label>Bsq</label>
+      <description>BSQ format (band sequential) image data (pixel number and line number) of each band are separately arranged</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_690</code>
+      <value>bzip2; bzip2</value>
+      <label>Bzip2</label>
+      <description>bzip2 compressing format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_691</code>
+      <value>cdr; cdr</value>
+      <label>Cdr</label>
+      <description>corel file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_692</code>
+      <value>cgm; cgm</value>
+      <label>Cgm</label>
+      <description>Computer Graphics Metafile format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_693</code>
+      <value>cover; cover</value>
+      <label>Cover</label>
+      <description>Arc/Info coverage format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_694</code>
+      <value>csv; csv</value>
+      <code>csv</code>
+      <label>Csv</label>
+      <description>comma separated value</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_695</code>
+      <value>dbf; dbf</value>
+      <label>Dbf</label>
+      <description>dbase file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_696</code>
+      <value>dgn; dgn</value>
+      <label>Dgn</label>
+      <description>microstation graphic file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_697</code>
+      <value>doc; doc</value>
+      <label>Doc</label>
+      <description>microsoft word file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_698</code>
+      <value>dwg; dwg</value>
+      <label>Dwg</label>
+      <description>autocad drawing format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    <entry>
+      <code>RI_699</code>
+      <value>dxf; dxf</value>
+      <label>Dxf</label>
+      <description>autocad data exchange format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_700</code>
+      <value>e00; e00</value>
+      <label>e00</label>
+      <description>arc/info exchange format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_701</code>
+      <value>ecw; ecw</value>
+      <label>Ecw</label>
+      <description>ermapper compressed format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_702</code>
+      <value>eps; eps</value>
+      <label>Eps</label>
+      <description>encapsulated postscript file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_703</code>
+      <value>ers; ers</value>
+      <label>Ers</label>
+      <description>ermapper file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_704</code>
+      <value>gdb; gdb</value>
+      <label>Gdb</label>
+      <description>arcgis geodatabase file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_705</code>
+      <value>geotiff; geotiff</value>
+      <label>Geotiff</label>
+      <description>georeference tagged interchange file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_706</code>
+      <value>gif; gif</value>
+      <label>Gif</label>
+      <description>graphic interchange format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_707</code>
+      <value>gml; gml</value>
+      <label>Gml</label>
+      <description>geography markup language</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_708</code>
+      <value>grid; grid</value>
+      <label>Grid</label>
+      <description>regular data grids are rectangular, not sparse, matrices that contain column and row</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_709</code>
+      <value>gzip; gzip</value>
+      <label>Gzip</label>
+      <description>GNU zip compression utility designed to be a replacement for compress</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_710</code>
+      <value>html; html</value>
+      <label>Html</label>
+      <description>hypertext markup language</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_711</code>
+      <value>jpg; jpg</value>
+      <label>Jpg</label>
+      <description>joint photographic experts group format (JPG)</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_712</code>
+      <value>mdb; mdb</value>
+      <label>Mdb</label>
+      <description>microsoft access database file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_713</code>
+      <value>mif; mif</value>
+      <label>Mif</label>
+      <description>mapinfo interchange format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_714</code>
+      <value>pbm; pbm</value>
+      <label>Pbm</label>
+      <description>portable bitmap format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_715</code>
+      <value>pdf; pdf</value>
+      <label>Pdf</label>
+      <description>portable document format (adobe)</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_716</code>
+      <value>png; png</value>
+      <label>Png</label>
+      <description>portable network graphics bitmap</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_717</code>
+      <value>ps; ps</value>
+      <label>Ps</label>
+      <description>postscript format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_718</code>
+      <value>rtf; rtf</value>
+      <label>Rtf</label>
+      <description>rich text format file</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_719</code>
+      <value>sdc; sdc</value>
+      <label>Sdc</label>
+      <description>smart data compression format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_720</code>
+      <value>shp; shp</value>
+      <label>Shp</label>
+      <description>arcview shape file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_721</code>
+      <value>sid; sid</value>
+      <label>Sid</label>
+      <description>multi-resolution seamless image database file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_722</code>
+      <value>svg; svg</value>
+      <label>Svg</label>
+      <description>scalable vector graphic file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_723</code>
+      <value>tab; tab</value>
+      <label>Tab</label>
+      <description>mapinfo file format (tab file)</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_724</code>
+      <value>tar; tar</value>
+      <label>Tar</label>
+      <description>tape archive file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_725</code>
+      <value>tiff; tiff</value>
+      <label>Tiff</label>
+      <description>tag image file format (TIFF) bitmap</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_726</code>
+      <value>txt; txt</value>
+      <label>Txt</label>
+      <description>text file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_727</code>
+      <value>wpd; wpd</value>
+      <label>Wpd</label>
+      <description>Wordperfect file format from corel</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_728</code>
+      <value>xhtml; xhtml</value>
+      <label>Xhtml</label>
+      <description>Extensible HyperText Markup Language</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_729</code>
+      <value>xls; xls</value>
+      <label>Xls</label>
+      <description>microsoft excell file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_730</code>
+      <value>xml; xml</value>
+      <label>Xml</label>
+      <description>extensible markup language</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_731</code>
+      <value>xwd; xwd</value>
+      <label>Xwd</label>
+      <description>dump X Window file format</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <entry>
+      <code>RI_732</code>
+      <value>zip; zip</value>
+      <label>Zip</label>
+      <description>archive file format (zip)</description>
+    </entry>
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  </codelist>
+</codelists>
