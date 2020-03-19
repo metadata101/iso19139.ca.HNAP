@@ -49,6 +49,19 @@
     </dependency>
   </dependencies>
   <build>
+    <resources>
+      <resource>
+        <directory>src/main/config/codelist/local/thesauri/theme</directory>
+        <targetPath>thesarus/theme</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/config/codelist/local/thesauri/place</directory>
+        <targetPath>thesarus/place</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
     <testResources>
       <testResource>
         <directory>src/test/resources/org/fao/geonet</directory>
