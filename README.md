@@ -32,3 +32,14 @@ $ mvn clean install -Penv-prod
 The plugin can be deployed manually in an existing GeoNetwork installation:
 
 Copy the content of the folder `schemas/iso19139.ca.HNAP/src/main/plugin` to `INSTALL_DIR/geonetwork/WEB-INF/data/config/schema_plugins/iso19139.ca.HNAP`.
+
+
+# Changes To Standard Schema Build and Initialization
+
+There is some custom code that gets run when GeoNetwork starts up.
+
+This will look in the GeoNetwork Data Directory (ThesauriDir) and check to see if the HNAP Thesauruses are already there.  If they are not (i.e. this is the very first run of GeoNetwork with the HNAP Schema), then they are are copied from the JAR to the correct location in the Data Directory.  Otherwise it does nothing.
+
+
+See `SchemaInitializer.java`
+

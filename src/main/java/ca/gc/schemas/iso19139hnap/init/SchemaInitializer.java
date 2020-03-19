@@ -2,8 +2,6 @@ package ca.gc.schemas.iso19139hnap.init;
 
 import org.fao.geonet.constants.Geonet;
 import org.fao.geonet.kernel.GeonetworkDataDirectory;
-import org.fao.geonet.kernel.SchemaManager;
-import org.fao.geonet.kernel.ThesaurusManager;
 import org.fao.geonet.utils.Log;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.io.Resource;
