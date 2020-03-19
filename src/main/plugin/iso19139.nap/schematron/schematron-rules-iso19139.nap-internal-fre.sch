@@ -95,6 +95,21 @@
 
         </sch:rule>
 
+      <!-- Check temporal extent and geographic extent exists -->
+      <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
+      |//gmd:identificationInfo/srv:SV_ServiceIdentification
+      |//*[@gco:isoType='gmd:MD_DataIdentification']/*
+      |//*[@gco:isoType='srv:SV_ServiceIdentification']/*">
+
+        <!-- Temporal extent -->
+        <sch:let name="hasTemporalExtent" value="count(gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod) > 0" />
+        <sch:assert test="$hasTemporalExtent">$loc/strings/TemporalExtentRequired</sch:assert>
+
+        <!-- Geographic extent -->
+        <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
+        <sch:assert test="$hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
+      </sch:rule>
+
       <!-- Temporal extent -->
       <sch:rule context="//gmd:identificationInfo/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition
       |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod/gml:beginPosition

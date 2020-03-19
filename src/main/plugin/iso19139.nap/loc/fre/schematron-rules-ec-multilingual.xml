@@ -119,4 +119,7 @@
   <DataLanguage>Une valeur est nécessaire pour: Langue</DataLanguage>
   <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
   <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+
+  <TemporalExtentRequired>Une valeur est nécessaire pour: Etendue temporelle</TemporalExtentRequired>
+  <GeographicExtentRequired>Une valeur est nécessaire pour: Étendue géographique</GeographicExtentRequired>
 </strings>

@@ -322,6 +322,14 @@
               */gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus']) > 0" />
 
       <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
+
+      <!-- Temporal extent -->
+      <sch:let name="hasTemporalExtent" value="count(gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod) > 0" />
+      <sch:assert test="$hasTemporalExtent">$loc/strings/TemporalExtentRequired</sch:assert>
+
+      <!-- Geographic extent -->
+      <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
+      <sch:assert test="$hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
     </sch:rule>
 
     <!-- Title -->
@@ -829,6 +837,7 @@
         test="$isValid or $missing"
       >$loc/strings/InvalidUseConstraints</sch:assert>
     </sch:rule>
+
 
 
     <!-- Begin position -->
