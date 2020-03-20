@@ -1029,7 +1029,7 @@
                           </gmd:date>
                           <gmd:dateType>
                             <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                                 codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                                                 codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
                           </gmd:dateType>
                         </gmd:CI_Date>
                       </gmd:date>
@@ -1210,7 +1210,7 @@
                         </gmd:date>
                         <gmd:dateType>
                           <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                               codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                                               codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
                         </gmd:dateType>
                       </gmd:CI_Date>
                     </gmd:date>
