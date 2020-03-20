@@ -72,7 +72,12 @@
     <for name="gmd:language" use="data-gn-language-picker"/>
     <for name="gmd:languageCode" use="data-gn-language-picker"/>
 
-    <for name="gmd:country" use="data-gn-country-selector-ec"/>
+<!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
+    <for name="gmd:country"
+             use="data-gn-keyword-picker">
+          <directiveAttributes data-thesaurus-key="external.theme.EC_ISO_Countries"/>
+
+    </for>
 
     <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
 
