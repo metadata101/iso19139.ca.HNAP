@@ -401,6 +401,40 @@
 
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="gmd:MD_Format/gmd:name"
+                priority="100">
+
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <xsl:variable name="formatLang">
+      <xsl:choose>
+        <xsl:when test="/root/gui/language = 'fre'">fr</xsl:when>
+        <xsl:otherwise>en</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <dl>
+      <dt>
+        <xsl:value-of select="if ($fieldName)
+                                then $fieldName
+                                else tr:node-label(tr:create($schema, $language), name(), null)"/>
+      </dt>
+      <dd>
+        <xsl:variable name="formatKey" select="concat('http://geonetwork-opensource.org/EC/resourceformat#', gco:CharacterString)" />
+        <xsl:variable name="formatValue" select="$resourceFormatsTh/rdf:RDF/rdf:Description[@rdf:about=$formatKey]/ns2:prefLabel[@xml:lang=$formatLang]" />
+
+        <xsl:choose>
+          <xsl:when test="string($formatValue)"><xsl:value-of select="$formatValue" /></xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="gco:CharacterString" />
+          </xsl:otherwise>
+        </xsl:choose>
+      </dd>
+    </dl>
+
+  </xsl:template>
+
   <!-- Block elements -->
   <xsl:template mode="render-field"
                 match="gmd:resourceConstraints|gmd:referenceSystemInfo|gmd:distributionFormat"
