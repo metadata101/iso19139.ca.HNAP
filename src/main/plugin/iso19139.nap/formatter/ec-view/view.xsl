@@ -281,6 +281,68 @@
     </div>
   </xsl:template>
 
+  <!-- template to display the province data license disclaimer -->
+  <xsl:template name="provinceDataLicenseDisclaimer">
+
+    <xsl:variable name="licensesEnglish">
+      <licenses>
+        <license gov="Government of British Columbia">Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</license>
+        <license gov="Government of Alberta">Open Government Licence - Alberta (https://open.alberta.ca/licence)</license>
+        <license gov="Government of Newfoundland and Labrador">Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
+        <license gov="Government of Nova Scotia">Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)</license>
+        <license gov="Government of Ontario">Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)</license>
+        <license gov="Government of Prince Edward Island">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
+      </licenses>
+
+    </xsl:variable>
+
+    <xsl:variable name="licensesFrench">
+      <licenses>
+        <license gov="Gouvernement de la Colombie-Britannique">Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</license>
+        <license gov="Gouvernement de l'Alberta">Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</license>
+        <license gov="Gouvernement de Terre-Neuve-et-Labrador">Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
+        <license gov="Gouvernement de la  Nouvelle-Écosse">Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</license>
+        <license gov="Gouvernement de l'Ontario">Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</license>
+        <license gov="Gouvernement de l'Île-du-Prince-Édouard">Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)</license>
+      </licenses>
+    </xsl:variable>
+
+    <xsl:variable name="hasProvinceLicense" select="if ($langForMetadata = 'fra') then
+                  (count(/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesFrench/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesFrench/licenses/license]) > 0)
+                  else
+                  (count(/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesEnglish/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesEnglish/licenses/license]) > 0)" />
+
+
+    <xsl:if test="$hasProvinceLicense = true()">
+      <xsl:variable name="licenseValue1" select="if ($langForMetadata = 'fra') then
+                  /root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesFrench/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesFrench/licenses/license]/gco:CharacterString
+                  else
+                  /root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesEnglish/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesEnglish/licenses/license]/gco:CharacterString" />
+
+      <xsl:variable name="licenseValue2" select="if ($langForMetadata = 'fra') then
+                  /root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesFrench/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesFrench/licenses/license]/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1]
+                  else
+                  /root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[gco:CharacterString = $licensesEnglish/licenses/license or gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1] = $licensesEnglish/licenses/license]/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[1]" />
+
+      <xsl:variable name="licenseGovernment" select="if ($langForMetadata = 'fra') then
+                 $licensesFrench/licenses/license[. = $licenseValue1 or . = $licenseValue2]/@gov
+                  else
+                   $licensesEnglish/licenses/license[. = $licenseValue1 or . = $licenseValue2]/@gov" />
+
+      <xsl:variable name="schemaStrings" select="/root/schemas/*[name()=$schema]/strings" />
+
+      <section class="mrgn-tp-md">
+        <details class="alert alert-info" id="alert-info" open="open">
+          <summary class="h3">
+            <h3> <xsl:value-of select="$schemaStrings/disclaimer_header"/>&#160;<xsl:value-of select="$licenseGovernment" /></h3>
+          </summary>
+
+          <xsl:copy-of select="$schemaStrings/disclaimer/*"/>
+        </details>
+      </section>
+    </xsl:if>
+  </xsl:template>
+
   <xsl:template name="common-detailview-fields">
     <xsl:param name="schema" />
     <xsl:param name="edit" />
@@ -311,6 +373,7 @@
     </pre>
     <br/><br/>
 
+    <xsl:call-template name="provinceDataLicenseDisclaimer" />
 
     <div class="row mrgn-tp-md">
       <!-- Spatial extent -->
