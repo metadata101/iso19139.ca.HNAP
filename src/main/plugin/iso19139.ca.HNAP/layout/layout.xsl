@@ -228,11 +228,10 @@
                                         gmd:LocalisedCharacterString[
                                           @locale = concat('#', $currentLanguageId)]) = 0"/>
 
-
             <xsl:choose>
               <xsl:when test="$ptFreeElementDoesNotExist and
                               $text != '' and
-                              $code = $metadataLanguage">
+                              substring($code,1,3) = substring($metadataLanguage,1,3)">
               <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
                        lang="{@id}">
                   <xsl:value-of select="$text"/>
