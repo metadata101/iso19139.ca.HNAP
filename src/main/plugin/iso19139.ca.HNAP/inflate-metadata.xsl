@@ -5,7 +5,10 @@
                   xmlns:xlink='http://www.w3.org/1999/xlink'
                   xmlns:gco="http://www.isotc211.org/2005/gco"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  exclude-result-prefixes="gmd xlink gco xsi">
+                  xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
+                  exclude-result-prefixes="gmd xlink gco xsi XslUtilHnap">
+
+  <xsl:include href="../iso19139.ca.HNAP/convert/functions.xsl"/>
 
   <xsl:variable name="lang"><xsl:value-of select="/root/env/lang"/></xsl:variable>
   <xsl:variable name="mdLang"><xsl:value-of select="//gmd:MD_Metadata/gmd:language/gco:CharacterString"/></xsl:variable>
@@ -16,12 +19,89 @@
     </xsl:choose>
   </xsl:variable>
 
+  <xsl:variable name="mainLanguage">
+    <xsl:call-template name="langId_from_gmdlanguage19139">
+      <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
+    </xsl:call-template>
+  </xsl:variable>
+
+  <xsl:variable name="isMultilingual"
+                select="count(/root/*/gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]) > 0"/>
+
   <xsl:variable name="altLang">
     <xsl:choose>
       <xsl:when test="$mdLang = 'eng; CAN'">fra</xsl:when>
       <xsl:otherwise>eng</xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
+
+  <xsl:variable name="locales"
+                select="/root/*/gmd:locale/gmd:PT_Locale"/>
+
+  <!-- ******************************************************************************************************
+        get main language code to be used in locale ID
+        If it does not already exists in the pt_local then it will generate one to be used. -->
+  <xsl:variable name="mainLanguageId">
+    <!-- Potential options include 3 char or 2 char code in both upper and lower. -->
+
+    <xsl:variable name="localeList"
+                  select="/root/*/gmd:locale/gmd:PT_Locale"/>
+    <xsl:variable name="twoCharMainLangCode"
+                  select="XslUtilHnap:twoCharLangCode($mainLanguage)"/>
+    <xsl:variable name="nextThreeCharLangCode"
+                  select="substring(concat($localeList[1]/@id, '   '), 1, 3)"/>
+    <xsl:variable name="nextTwoCharLangCode"
+                  select="XslUtilHnap:twoCharLangCode($localeList[1]/@id)"/>
+
+    <xsl:choose>
+      <!-- If one of the locales is equal to the main language then that is the id that will be used. -->
+      <xsl:when test="$localeList[upper-case(@id) = upper-case($mainLanguage)]">
+        <xsl:value-of  select="$localeList[upper-case(@id) = upper-case($mainLanguage)]/@id"/>
+      </xsl:when>
+      <!-- If one of the locales is equal to the 2 Char main language then that is the id that will be used. -->
+      <xsl:when test="$localeList[upper-case(@id) = upper-case($twoCharMainLangCode)]">
+        <xsl:value-of  select="$localeList[upper-case(@id) = upper-case($twoCharMainLangCode)]/@id"/>
+      </xsl:when>
+
+      <!-- If one of the locales is equal to the upper case version then the codes are assumed to be in uppercase. -->
+      <xsl:when test="$localeList[@id = upper-case($nextThreeCharLangCode)]">
+        <xsl:value-of  select="upper-case($mainLanguage)"/>
+      </xsl:when>
+      <!-- If one of the locales is equal to the lower case version then the codes are assumed to be in lowercase. -->
+      <xsl:when test="$localeList[@id = lower-case($nextThreeCharLangCode)]">
+        <xsl:value-of  select="lower-case($mainLanguage)"/>
+      </xsl:when>
+
+      <!-- If one of the locales is equal to the 2 char upper case version then the codes are assumed to be in uppercase 2 char. -->
+      <xsl:when test="$localeList[@id = upper-case($nextTwoCharLangCode)]">
+        <xsl:value-of  select="upper-case($twoCharMainLangCode)"/>
+      </xsl:when>
+      <!-- If one of the locales is equal to the 2 char lower case version then the codes are assumed to be in lowercase 2 char. -->
+      <xsl:when test="$localeList[@id = lower-case($nextTwoCharLangCode)]">
+        <xsl:value-of  select="lower-case($twoCharMainLangCode)"/>
+      </xsl:when>
+
+      <!-- If we did not find an option then just use the main language as the code. -->
+      <xsl:otherwise><xsl:value-of select="$mainLanguage"/></xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <!-- Get alt language -->
+  <xsl:variable name="altLanguageId" select="$locales[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
+
+  <!-- *******************************************************************************************************
+        The default country code to be used in the gmd:locale
+        for multilingual metadata records. -->
+  <xsl:variable name="mainLanguageCountryId">
+    <xsl:variable name="language"  select="normalize-space(/root/*/gmd:language/gco:CharacterString/text())"/>
+    <!-- Get the main language which could be "EN", "EN; US" if it contains a ; then extract country code -->
+    <xsl:choose>
+      <xsl:when test="contains($language,';')">
+        <xsl:value-of  select="normalize-space(substring-after($language,';'))"/>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:variable>
+
   <!-- ================================================================= -->
 
   <xsl:template match="/root">
@@ -87,37 +167,42 @@
 
       <xsl:apply-templates select="gmd:dataSetURI" />
 
-      <xsl:apply-templates select="gmd:locale" />
-      <xsl:if test="not(gmd:locale)">
+      <!-- Copy existing locales and create an extra one for the default metadata language. -->
+      <xsl:if test="$isMultilingual">
+        <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
         <gmd:locale>
-        <xsl:choose>
-          <xsl:when test="$mdLang = 'fra; CAN'">
-            <gmd:PT_Locale id="eng">
-              <gmd:languageCode>
-                <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116" codeListValue="eng">English; Anglais</gmd:LanguageCode>
-              </gmd:languageCode>
-              <gmd:country>
-                <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117" codeListValue="CAN">Canada; Canada</gmd:Country>
-              </gmd:country>
-              <gmd:characterEncoding>
-                <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
-              </gmd:characterEncoding>
-            </gmd:PT_Locale>
-          </xsl:when>
-          <xsl:otherwise>
-            <gmd:PT_Locale id="fra">
-              <gmd:languageCode>
-                <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116" codeListValue="fra">French; Français</gmd:LanguageCode>
-              </gmd:languageCode>
-              <gmd:country>
-                <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117" codeListValue="CAN">Canada; Canada</gmd:Country>
-              </gmd:country>
-              <gmd:characterEncoding>
-                <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
-              </gmd:characterEncoding>
-            </gmd:PT_Locale>
-          </xsl:otherwise>
-        </xsl:choose>
+          <gmd:PT_Locale id="{$mainLanguageId}">
+            <gmd:languageCode>
+              <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
+                                codeListValue="{$mainLanguage}">
+                <xsl:choose>
+                  <xsl:when test="normalize-space($mainLanguage) = 'fra'">French; Français</xsl:when>
+                  <xsl:otherwise>English; Anglais</xsl:otherwise>
+                </xsl:choose>
+              </gmd:LanguageCode>
+            </gmd:languageCode>
+            <xsl:choose>
+              <!-- Add country code if it exists. -->
+              <xsl:when test="$mainLanguageCountryId">
+                <gmd:country>
+                  <xsl:choose>
+                    <xsl:when test="upper-case($mainLanguageCountryId) = 'CAN'">
+                      <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
+                                   codeListValue="CAN">Canada; Canada</gmd:Country>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
+                                   codeListValue="$mainLanguageCountryId"></gmd:Country>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </gmd:country>
+              </xsl:when>
+            </xsl:choose>
+            <gmd:characterEncoding>
+              <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+                                       codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+            </gmd:characterEncoding>
+          </gmd:PT_Locale>
         </gmd:locale>
       </xsl:if>
 
