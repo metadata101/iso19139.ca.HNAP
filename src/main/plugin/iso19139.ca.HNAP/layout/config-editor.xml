@@ -82,7 +82,7 @@
     <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
 
 
-    <for name="gmd:organisationName" use="data-gn-organisation-entry-selector-ec"/>
+<!--    <for name="gmd:organisationName" use="data-gn-organisation-entry-selector-ec"/>-->
 
     <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
@@ -208,6 +208,7 @@
       <name>gmd:organisationName</name>
       <name>gmd:country</name>
       <name>gmd:name</name>
+      <name>gmd:administrativeArea</name>
     </expanded>
     <!-- All fields in ISO could be multilingual.
     Define element to exclude.
@@ -231,7 +232,6 @@
       <name>gmd:postalCode</name>
       <name>gmd:city</name>
       <name>gmd:language</name>
-      <name>gmd:administrativeArea</name>
       <name>gmd:facsimile</name>
       <name>gmd:dataset</name>
       <name>gmd:other</name>
