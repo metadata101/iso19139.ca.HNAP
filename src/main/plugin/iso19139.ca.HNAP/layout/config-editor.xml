@@ -75,7 +75,7 @@
 <!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
     <for name="gmd:country"
              use="data-gn-keyword-picker">
-          <directiveAttributes data-thesaurus-key="external.theme.EC_ISO_Countries"/>
+          <directiveAttributes data-thesaurus-key="external.theme.EC_ISO_Countries" data-focus-to-input="false"/>
 
     </for>
 
