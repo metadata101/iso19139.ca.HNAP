@@ -36,7 +36,7 @@ public class SchemaInitializer implements
         //for each of the .rdf files
         for (Resource r : resolver.getResources(jarRDFPattern)) {
             String fname = r.getFilename(); //i.e. thesaurus/theme/EC_ISO_Countries.rdf
-            String[] subDirs = r.getURI().toURL().getPath().split(Pattern.quote(File.separator));
+            String[] subDirs = r.getURI().toURL().getPath().split(Pattern.quote("/"));
             String dir = subDirs[subDirs.length - 2]; // ie. "theme"
             ///put in - WEB-INF/data/config/codelist/external/thesauri/theme/EC_ISO_Countries.rdf
             //ensure that dirs exist
