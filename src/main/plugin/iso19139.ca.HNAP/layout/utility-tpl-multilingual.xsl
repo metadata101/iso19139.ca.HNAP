@@ -33,10 +33,31 @@
 
   <xsl:import href="../../iso19139/layout/utility-tpl-multilingual.xsl"/>
 
+
   <!-- Get the main metadata languages -->
   <xsl:template name="get-iso19139.ca.HNAP-language">
-    <xsl:call-template name="get-iso19139-language" />
+    <xsl:variable name="isTemplate" select="$metadata/gn:info[position() = last()]/isTemplate"/>
+    <xsl:choose>
+      <xsl:when test="$isTemplate = 's' or $isTemplate = 't'">
+        <xsl:value-of select="xslutil:getLanguage()" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="$metadata/gmd:language/gmd:LanguageCode/@codeListValue">
+            <xsl:value-of select="$metadata/gmd:language/gmd:LanguageCode/@codeListValue"/>
+          </xsl:when>
+          <xsl:when test="contains($metadata/gmd:language/gco:CharacterString,';')">
+            <xsl:value-of  select="normalize-space(substring-before($metadata/gmd:language/gco:CharacterString,';'))"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$metadata/gmd:language/gco:CharacterString"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
+
+
 
 
   <!-- Get the list of other languages in JSON -->
