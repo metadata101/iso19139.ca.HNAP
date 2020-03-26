@@ -238,7 +238,7 @@ public class XslUtilHnap {
     public static
     @Nonnull String getMappLangId(String lang, String id) {
         if (id == null || id.isEmpty()) {
-            return lang;
+            return getMappedLang(lang); // convert eng; CAN --> eng    OR  fra; CAN --> fra
         }
         else {
             return id;
