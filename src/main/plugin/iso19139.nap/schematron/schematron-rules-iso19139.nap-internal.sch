@@ -523,6 +523,30 @@
                                   >$loc/strings/EC21</sch:assert>
         </sch:rule>
 
+        <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude">
+
+          <sch:let name="westBoundLongitude" value="gco:Decimal" />
+          <sch:let name="eastBoundLongitude" value="../gmd:eastBoundLongitude/gco:Decimal" />
+
+          <sch:assert
+            test="not(string($westBoundLongitude))  or not(string($eastBoundLongitude)) or (number($westBoundLongitude) &lt; number($eastBoundLongitude))">$loc/strings/GeographicExtentWestEast</sch:assert>
+        </sch:rule>
+
+        <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//*[@gco:isoType='gmd:MD_DataIdentification']/*/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//*[@gco:isoType='srv:SV_ServiceIdentification']/*/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude">
+
+          <sch:let name="southBoundLatitude" value="gco:Decimal" />
+          <sch:let name="northBoundLatitude" value="../gmd:northBoundLatitude/gco:Decimal" />
+
+          <sch:assert
+            test="not(string($northBoundLatitude))  or not(string($southBoundLatitude)) or (number($southBoundLatitude) &lt; number($northBoundLatitude))">$loc/strings/GeographicExtentNorthSouth</sch:assert>
+        </sch:rule>
+
        <!-- Spatial reference code -->
        <sch:rule context="//gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code">
 

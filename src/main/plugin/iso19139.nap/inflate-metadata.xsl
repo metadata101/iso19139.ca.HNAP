@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+                  xmlns:gml="http://www.opengis.net/gml/3.2"
                   xmlns:gmd="http://www.isotc211.org/2005/gmd"
                   xmlns:xlink='http://www.w3.org/1999/xlink'
                   xmlns:gco="http://www.isotc211.org/2005/gco"
@@ -393,6 +394,50 @@
 
       <xsl:apply-templates select="gmd:environmentDescription" />
       <xsl:apply-templates select="gmd:extent" />
+
+      <!-- Add mandatory temporal extent -->
+      <xsl:if test="count(gmd:extent/gmd:EX_Extent/gmd:temporalElement[gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod]) = 0">
+        <gmd:extent>
+          <gmd:EX_Extent>
+            <gmd:temporalElement>
+              <gmd:EX_TemporalExtent>
+                <gmd:extent>
+                  <gml:TimePeriod gml:id="{generate-id(.)}">
+                    <gml:beginPosition></gml:beginPosition>
+                    <gml:endPosition></gml:endPosition>
+                  </gml:TimePeriod>
+                </gmd:extent>
+              </gmd:EX_TemporalExtent>
+            </gmd:temporalElement>
+          </gmd:EX_Extent>
+        </gmd:extent>
+      </xsl:if>
+
+      <!-- Add mandatory geographic extent -->
+      <xsl:if test="count(gmd:extent/gmd:EX_Extent/gmd:geographicElement[gmd:EX_GeographicBoundingBox]) = 0">
+        <gmd:extent>
+          <gmd:EX_Extent>
+            <gmd:geographicElement>
+              <gmd:EX_GeographicBoundingBox>
+                <gmd:westBoundLongitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:westBoundLongitude>
+                <gmd:eastBoundLongitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:eastBoundLongitude>
+                <gmd:southBoundLatitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:southBoundLatitude>
+                <gmd:northBoundLatitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:northBoundLatitude>
+              </gmd:EX_GeographicBoundingBox>
+            </gmd:geographicElement>
+          </gmd:EX_Extent>
+        </gmd:extent>
+
+      </xsl:if>
+
       <xsl:apply-templates select="gmd:supplementalInformation" />
     </xsl:copy>
   </xsl:template>

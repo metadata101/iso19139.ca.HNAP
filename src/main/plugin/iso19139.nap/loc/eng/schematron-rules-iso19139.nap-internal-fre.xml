@@ -150,4 +150,6 @@
     <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
     <TemporalExtentRequired>Temporal extent is required</TemporalExtentRequired>
     <GeographicExtentRequired>Geographic extent is required</GeographicExtentRequired>
+    <GeographicExtentWestEast>Geographic extent - westbound longitude should be lower than eastbound longitude</GeographicExtentWestEast>
+    <GeographicExtentNorthSouth>Geographic extent - southbound latitude should be lower than northbound latitude</GeographicExtentNorthSouth>
 </strings>
