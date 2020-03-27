@@ -102,7 +102,7 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:text>{</xsl:text><xsl:value-of select="string-join($langs/lang, ',')"/><xsl:text>}</xsl:text>
+    <xsl:text>{</xsl:text><xsl:value-of select="string-join(distinct-values($langs/lang), ',')"/><xsl:text>}</xsl:text>
   </xsl:template>
 
   <!-- Get the list of other languages -->
