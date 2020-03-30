@@ -65,12 +65,6 @@
             <!-- not tokenized title for sorting -->
             <Field name="_defaultTitle" string="{string($_defaultTitle)}" store="true" index="true"/>
 
-            <xsl:variable name="title"
-                          select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:identificationInfo//gmd:citation//gmd:title//gmd:LocalisedCharacterString[@locale=$poundLangId]"/>
-
-            <!-- not tokenized title for sorting -->
-            <Field name="_title" string="{string($title)}" store="true" index="true"/>
-
             <xsl:apply-templates select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']"
                                  mode="metadata">
               <xsl:with-param name="langId" select="$poundLangId"/>
