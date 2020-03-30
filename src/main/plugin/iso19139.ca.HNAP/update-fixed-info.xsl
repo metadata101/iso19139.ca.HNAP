@@ -473,16 +473,20 @@
 
               <!-- Populate PT_FreeText for default language if not existing and it is not null. -->
               <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
-              <xsl:if test="normalize-space(gco:CharacterString|gmx:Anchor) != ''">
-                <gmd:PT_FreeText>
-                  <gmd:textGroup>
-                    <gmd:LocalisedCharacterString locale="#{$mainLanguageId}">
-                      <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>
-                    </gmd:LocalisedCharacterString>
-                  </gmd:textGroup>
-                  <xsl:call-template name="populate-free-text"/>
-                </gmd:PT_FreeText>
-              </xsl:if>
+                <!-- only put this in if there's stuff to put in, otherwise we get a <gmd:PT_FreeText/> in output -->
+                <xsl:if test="(normalize-space(gco:CharacterString|gmx:Anchor) != '') or gmd:PT_FreeText">
+                  <gmd:PT_FreeText>
+                    <xsl:if test="normalize-space(gco:CharacterString|gmx:Anchor) != ''"> <!-- default lang-->
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#{$mainLanguageId}">
+                          <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>
+                        </gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </xsl:if>
+                    <xsl:call-template name="populate-free-text"/> <!-- other langs -->
+                  </gmd:PT_FreeText>
+                </xsl:if>
+
             </xsl:otherwise>
           </xsl:choose>
         </xsl:otherwise>
@@ -498,7 +502,6 @@
   <xsl:template name="populate-free-text">
     <xsl:variable name="freeText"
                   select="gmd:PT_FreeText/gmd:textGroup"/>
-
     <!-- Loop on locales in order to preserve order.
         Keep main language on top.
         Translations having no locale are ignored. eg. when removing a lang. -->
@@ -563,7 +566,7 @@
   	  <xsl:text>Canada; Canada</xsl:text>
   	</xsl:copy>
   </xsl:template>
-  
+
   <xsl:template match="gmd:*[@codeListValue]" priority="220">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
@@ -694,7 +697,7 @@
       </xsl:if>
     </xsl:copy>
   </xsl:template>
-  
+
 	<!--xsl:template match="gmd:LanguageCode[@codeListValue]" priority="10">
 		<gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116">
 			<xsl:apply-templates select="@*[name(.)!='codeList']"/>
