@@ -9,10 +9,8 @@
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-
-  <xsl:include href="../convert/functions.xsl"/>
-  <xsl:include href="../../../xsl/utils-fn.xsl"/>
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
        Searches can be conducted on indexes defined here.
@@ -24,6 +22,8 @@
   <!-- ========================================================================================= -->
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
+  <xsl:include href="../convert/functions.xsl"/>
+  <xsl:include href="../../../xsl/utils-fn.xsl"/>
 
 
   <!-- ========================================================================================= -->
@@ -270,8 +270,9 @@
 
         <xsl:variable name="role" select="../../gmd:role/*/@codeListValue"/>
         <xsl:variable name="logo" select="../..//gmx:FileName/@src"/>
+        <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($mainLanguage))"/>
 
-        <Field name="responsibleParty" string="{concat($role, '|resource|', ., '|', $logo)}" store="true"
+        <Field name="responsibleParty" string="{concat($roleTranslation, '|resource|', ., '|', $logo)}" store="true"
                index="false"/>
 
       </xsl:for-each>
@@ -603,8 +604,9 @@
 
       <xsl:variable name="role" select="../../gmd:role/*/@codeListValue"/>
       <xsl:variable name="logo" select="../..//gmx:FileName/@src"/>
+      <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($mainLanguage))"/>
 
-      <Field name="responsibleParty" string="{concat($role, '|metadata|', ., '|', $logo)}" store="true" index="false"/>
+      <Field name="responsibleParty" string="{concat($roleTranslation, '|metadata|', ., '|', $logo)}" store="true" index="false"/>
     </xsl:for-each>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

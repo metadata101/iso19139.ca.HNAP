@@ -10,6 +10,7 @@
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
@@ -73,6 +74,7 @@
             <xsl:apply-templates select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']"
                                  mode="metadata">
               <xsl:with-param name="langId" select="$poundLangId"/>
+              <xsl:with-param name="isoLangId" select="$isoLangId"/>
             </xsl:apply-templates>
 
           </Document>
@@ -85,6 +87,17 @@
 
   <xsl:template match="*" mode="metadata">
     <xsl:param name="langId"/>
+    <xsl:param name="isoLangId"/>
+
+    <!-- get iso language code as ISO639 2B -->
+    <xsl:variable name="langCode_ISO639_2B">
+      <xsl:choose>
+        <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
+        <xsl:otherwise>$isoLangId</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+
     <!-- === Data or Service Identification === -->
 
     <!-- the double // here seems needed to index MD_DataIdentification when
@@ -273,7 +286,7 @@
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
-        <Field name="orgNameCanada_{$otherLang}"
+          <Field name="orgNameCanada_{$otherLang}"
                  string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId], ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
@@ -394,6 +407,18 @@
         <Field name="_mdType" string="nomap" store="true" index="true"/>
       </xsl:otherwise>
     </xsl:choose>
+
+    <xsl:for-each
+            select="gmd:contact/*/gmd:organisationName//gmd:LocalisedCharacterString[@locale=$langId]">
+      <Field name="metadataPOC" string="{string(.)}" store="false" index="true"/>
+
+      <xsl:variable name="role" select="../../../../gmd:role/*/@codeListValue"/>
+      <xsl:variable name="logo" select="../../../..//gmx:FileName/@src"/>
+      <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
+
+      <Field name="responsibleParty" string="{concat($roleTranslation, '|metadata|', ., '|', $logo)}" store="true" index="false"/>
+    </xsl:for-each>
+
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- === Distribution === -->
 
@@ -406,7 +431,7 @@
       <!-- index online protocol -->
 
       <xsl:for-each
-        select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL!='']">
+              select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL!='']">
 
         <xsl:variable name="download_check">
           <xsl:text>&amp;fname=&amp;access</xsl:text>
