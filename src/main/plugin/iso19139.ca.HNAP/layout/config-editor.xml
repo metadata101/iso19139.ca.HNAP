@@ -79,6 +79,12 @@
 
     </for>
 
+    <for name="gmd:administrativeArea"
+         use="data-gn-keyword-picker">
+      <directiveAttributes data-thesaurus-key="external.theme.EC_States" data-focus-to-input="false"/>
+
+    </for>
+
     <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
 
 
