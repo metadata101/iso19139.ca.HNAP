@@ -319,7 +319,7 @@
       <!-- Core Subject Thesaurus -->
       <sch:let name="coreSubjectThesaurusExists"
                value="count(gmd:descriptiveKeywords[*/gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus' or
-              */gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus']) > 0" />
+              */gmd:thesaurusName/*/gmd:title/*/text() = 'Thésaurus des sujets de base du gouvernement du Canada']) > 0" />
 
       <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
 
@@ -1014,17 +1014,21 @@
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
       <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 
-      <sch:let name="mapRESTCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCount" value="$mapRESTCountE + $mapRESTCountF" />
 
-      <sch:assert test="$mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
-      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount = 2 or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+      <!--  $mapRESTCount &gt; 2 to fail in the 2on check only and avoid 2 messages -->
+      <sch:assert test="($mapRESTCountE = 0 and $mapRESTCountF = 0) or ($mapRESTCountE = 1 and $mapRESTCountF = 1) or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
 
-      <sch:let name="mapWMSCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
+      <sch:let name="mapWMSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
+      <sch:let name="mapWMSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
+      <sch:let name="mapWMSCount" value="$mapWMSCountE + $mapWMSCountF" />
 
-      <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
-      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
+      <!--  $mapWMSCount &gt; 2 to fail in the 2on check only and avoid 2 messages -->
+      <sch:assert test="($mapWMSCountE = 0 and $mapWMSCountF = 0) or ($mapWMSCountE = 1 and $mapWMSCountF = 1) or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
+      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
     </sch:rule>
 
 
