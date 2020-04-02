@@ -23,7 +23,7 @@
   <xsl:include href="layout/utility-fn.xsl"/>
 
   <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
-  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
+  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
 
   <xsl:variable name="coreThesaurusEng" select="'Government of Canada Core Subject Thesaurus'" />
   <xsl:variable name="coreThesaurusFre" select="'Thésaurus des sujets de base du gouvernement du Canada'" />
@@ -476,13 +476,14 @@
                 <!-- only put this in if there's stuff to put in, otherwise we get a <gmd:PT_FreeText/> in output -->
                 <xsl:if test="(normalize-space(gco:CharacterString|gmx:Anchor) != '') or gmd:PT_FreeText">
                   <gmd:PT_FreeText>
-                    <xsl:if test="normalize-space(gco:CharacterString|gmx:Anchor) != ''"> <!-- default lang-->
-                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#{$mainLanguageId}">
-                          <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>
-                        </gmd:LocalisedCharacterString>
-                      </gmd:textGroup>
-                    </xsl:if>
+                    <!-- do NOT put in the main language (again) -->
+<!--                    <xsl:if test="normalize-space(gco:CharacterString|gmx:Anchor) != ''"> &lt;!&ndash; default lang&ndash;&gt;-->
+<!--                      <gmd:textGroup>-->
+<!--                        <gmd:LocalisedCharacterString locale="#{$mainLanguageId}">-->
+<!--                          <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>-->
+<!--                        </gmd:LocalisedCharacterString>-->
+<!--                      </gmd:textGroup>-->
+<!--                    </xsl:if>-->
                     <xsl:call-template name="populate-free-text"/> <!-- other langs -->
                   </gmd:PT_FreeText>
                 </xsl:if>
@@ -502,10 +503,8 @@
   <xsl:template name="populate-free-text">
     <xsl:variable name="freeText"
                   select="gmd:PT_FreeText/gmd:textGroup"/>
-    <!-- Loop on locales in order to preserve order.
-        Keep main language on top.
-        Translations having no locale are ignored. eg. when removing a lang. -->
-    <xsl:apply-templates select="$freeText[*/@locale = concat('#', $mainLanguageId)]"/>
+    <!-- dont put in main language - its aready in the main section -->
+<!--    <xsl:apply-templates select="$freeText[*/@locale = concat('#', $mainLanguageId)]"/>-->
 
     <xsl:for-each select="$locales[@id != $mainLanguageId]">
       <xsl:variable name="localId"
