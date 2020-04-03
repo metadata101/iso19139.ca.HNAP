@@ -22,7 +22,7 @@
  */
 
 /*
- * ISO19139.hnap xsl utilities
+ * iso19139.ca.HNAP     xsl utilities
  * Ported from XslUtil.java and utils-fn.xsl in ecc geonetwork
 */
 
@@ -42,7 +42,6 @@ import org.fao.geonet.util.XslUtil;
 import javax.annotation.Nonnull;
 
 public class XslUtilHnap {
-    //TODO, change to 'iso19139.hnap' after schema is renamed. Task 19337
     final private static String HNAP_SCHEMA_NAME = "iso19139.ca.HNAP";
     private static String strSchemaDir = null;
 
@@ -247,7 +246,7 @@ public class XslUtilHnap {
 
     /**
      * Get thesauriDir from system config value
-     * @return Code list folder path. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\codelist
+     * @return Code list folder path. i.e. /geonetwork/WEB-INF/data/config/codelist
      */
     public static
     @Nonnull
