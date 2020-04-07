@@ -9,7 +9,7 @@
     <links>
       <xsl:for-each select="gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource">
         <xsl:if test="string(gmd:CI_OnlineResource/gmd:linkage/gmd:URL)">
-          <link type="metadata-contact"><xsl:v layout-custom-fields.xslalue-of select="gmd:CI_OnlineResource/gmd:linkage/gmd:URL" /></link>
+          <link type="metadata-contact"><xsl:value-of select="gmd:CI_OnlineResource/gmd:linkage/gmd:URL" /></link>
         </xsl:if>
       </xsl:for-each>
 

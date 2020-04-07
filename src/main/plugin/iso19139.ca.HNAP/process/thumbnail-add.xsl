@@ -177,11 +177,6 @@
                     <xsl:variable name="nameValue"
                                   select="substring-after(., '#')"></xsl:variable>
 
-                    <xsl:message>$nameLang: <xsl:value-of select="$nameLang" /></xsl:message>
-                    <xsl:message>$mainLang: <xsl:value-of select="$mainLang" /></xsl:message>
-                    <xsl:message>$useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
-                    <xsl:message>$nameValue: <xsl:value-of select="$nameValue" /></xsl:message>
-
                     <xsl:if test="$useOnlyPTFreeText = false() and $nameLang = $mainLang">
                       <gco:CharacterString>
                         <xsl:value-of select="$nameValue"/>
