@@ -206,46 +206,6 @@ public class XslUtilHnap {
         }
         return defaultValue;
     }
-
-    /**
-     * These two functions map {"eng; CAN":"#", "fra":"fra"} to '{"eng":"#eng; CAN", "fre" : "#fra"}' in utility-tpl-multilingual.xsl
-     *
-     * @param lang  hnap language code
-     * @return  iso639 language code
-     */
-    public static
-    @Nonnull
-    String getMappedLang(String lang) {
-        switch(lang) {
-            case "eng; CAN":
-                return "eng";
-
-            case "fra":
-            case "fra; CAN":
-                return "fre";
-
-            default:
-                return lang;
-        }
-    }
-
-    /**
-     * Substitute id with lang if id is absent
-     * @param lang
-     * @param id
-     * @return
-     */
-    public static
-    @Nonnull String getMappLangId(String lang, String id) {
-        if (id == null || id.isEmpty()) {
-            return getMappedLang(lang); // convert eng; CAN --> eng    OR  fra; CAN --> fra
-        }
-        else {
-            return id;
-        }
-    }
-
-    /**
      * Get thesauriDir from system config value
      * @return Code list folder path. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\codelist
      */
