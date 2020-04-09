@@ -190,24 +190,6 @@ public class XslUtilHnap {
     }
 
     /**
-     * This helper is used in update-fixed-info to get the 3 char lang code from hnap lang code
-     * @param hnapLangCode  hnap lang code, e.g. eng; CAN
-     * @param defaultValue
-     * @return
-     */
-    public static
-    @Nonnull
-    String toIso3LangCode(String hnapLangCode, String defaultValue) {
-        if (hnapLangCode != null && !hnapLangCode.isEmpty()) {
-            if (hnapLangCode.contains(";")) {
-                return hnapLangCode.substring(0, hnapLangCode.indexOf(";"));
-            }
-            return hnapLangCode;
-        }
-        return defaultValue;
-    }
-
-    /**
      * These two functions map {"eng; CAN":"#", "fra":"fra"} to '{"eng":"#eng; CAN", "fre" : "#fra"}' in utility-tpl-multilingual.xsl
      *
      * @param lang  hnap language code
@@ -254,35 +236,5 @@ public class XslUtilHnap {
     String getThesauriDir() {
         String result = XslUtil.getConfigValue(Geonet.Config.CODELIST_DIR);
         return result;
-    }
-
-    /*
-     * Calculate schemaDir from system config value. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.ca.HNAP
-     * @return The schema folder path
-     */
-    public static
-    @Nonnull
-    String getSchemaDir() {
-        if (strSchemaDir == null) {
-            strSchemaDir = XslUtil.getConfigValue(Geonet.Config.SCHEMAPLUGINS_DIR) + File.separator + HNAP_SCHEMA_NAME;
-        }
-        return strSchemaDir;
-    }
-
-    /*
-     * Calculate codeList file path from language code
-     * @param langCode  Language code, eng or fre
-     * @return The code list file path
-     * Example : C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\schema_plugins\iso19139.ca.HNAP\loc\eng\codelists.xml
-     */
-    public static
-    @Nonnull
-    String getCodeListFileUri(String langCode) {
-        if (!langCode.equals("eng") && !langCode.equals("fre")) {
-            langCode = "eng";
-        }
-
-        URI result = Paths.get(getSchemaDir(), "loc", langCode, "codelists.xml").toUri();
-        return result.toString();
     }
 }
