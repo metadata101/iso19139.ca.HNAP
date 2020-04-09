@@ -582,6 +582,38 @@
         <sch:assert test="($mapRESTCountE = 0 and $mapRESTCountF = 0) or ($mapRESTCountE = 1 and $mapRESTCountF = 1) or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
         <sch:assert test="$mapRESTCount = 0 or $mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
 
+        <sch:let name="mapRESTServerCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map server'])" />
+        <sch:let name="mapRESTServerCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map server'])" />
+        <sch:let name="mapRESTServerCount" value="$mapRESTServerCountE + $mapRESTServerCountF" />
+
+        <!--  mapRESTServerCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+        <sch:assert test="($mapRESTServerCountE = 0 and $mapRESTServerCountF = 0) or ($mapRESTServerCountE = 1 and $mapRESTServerCountF = 1) or $mapRESTServerCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+        <sch:assert test="$mapRESTServerCount = 0 or $mapRESTServerCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
+        <sch:let name="mapRESTImageCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: image service'])" />
+        <sch:let name="mapRESTImageCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: image service'])" />
+        <sch:let name="mapRESTImageCount" value="$mapRESTImageCountE + $mapRESTImageCountF" />
+
+        <!--  mapRESTImageCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+        <sch:assert test="($mapRESTImageCountE = 0 and $mapRESTImageCountF = 0) or ($mapRESTImageCountE = 1 and $mapRESTImageCountF = 1) or $mapRESTImageCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+        <sch:assert test="$mapRESTImageCount = 0 or $mapRESTImageCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
+        <sch:let name="mapRESTFSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature server'])" />
+        <sch:let name="mapRESTFSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature server'])" />
+        <sch:let name="mapRESTFSCount" value="$mapRESTFSCountE + $mapRESTFSCountF" />
+
+        <!--  mapRESTFSCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+        <sch:assert test="($mapRESTFSCountE = 0 and $mapRESTFSCountF = 0) or ($mapRESTFSCountE = 1 and $mapRESTFSCountF = 1) or $mapRESTFSCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+        <sch:assert test="$mapRESTFSCount = 0 or $mapRESTFSCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
+        <sch:let name="mapRESTTiledCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: tiled map service'])" />
+        <sch:let name="mapRESTTiledCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: tiled map service'])" />
+        <sch:let name="mapRESTTiledCount" value="$mapRESTTiledCountE + $mapRESTTiledCountF" />
+
+        <!--  mapRESTTiledCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+        <sch:assert test="($mapRESTTiledCountE = 0 and $mapRESTTiledCountF = 0) or ($mapRESTTiledCountE = 1 and $mapRESTTiledCountF = 1) or $mapRESTTiledCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+        <sch:assert test="$mapRESTTiledCount = 0 or $mapRESTTiledCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
         <sch:let name="mapWMSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
         <sch:let name="mapWMSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
         <sch:let name="mapWMSCount" value="$mapWMSCountE + $mapWMSCountF" />
