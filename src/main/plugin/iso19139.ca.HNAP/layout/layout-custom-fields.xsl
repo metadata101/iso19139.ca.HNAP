@@ -94,177 +94,149 @@
     </xsl:call-template>
   </xsl:template>
 
-<!--
 
+
+
+<!--
+    Special handling for the gmd:organisationName.  See MultiEntryCombiner.js for more info on how this works.
+    Basically this is a replacement for render-element.
+    Instead, it just creates a VERY simple HTML fragment (see MultiEntryCombiner.js for example).
+    The MultiEntryCombiner directive handles most of this.
+    This code mostly sets up two things;
+    a) basic shell HTML so it can be displayed in the editor (see MultiEntryCombiner.js for HTML example).
+    b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
+-->
   <xsl:template mode="mode-iso19139" match="gmd:organisationName" priority="2000">
 
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
 
-   <xsl:variable name="theElement" select="." />
-
-    <xsl:variable name="values">
-      <values>
-        &lt;!&ndash; Or the PT_FreeText element matching the main language &ndash;&gt;
-        <xsl:if test="gco:CharacterString">
-          &lt;!&ndash;<xsl:message>V: <xsl:value-of select="gco:CharacterString" /></xsl:message>&ndash;&gt;
-          <value ref="{gco:CharacterString/gn:element/@ref}" lang="{$metadataLanguage}">
-            <xsl:value-of select="gco:CharacterString"/>
-          </value>
-          &lt;!&ndash;<xsl:message>value main: <xsl:value-of select="gco:CharacterString" /> - <xsl:value-of select="gco:CharacterString/gn:element/@ref" /></xsl:message>&ndash;&gt;
-        </xsl:if>
-
-        &lt;!&ndash; the existing translation &ndash;&gt;
-        <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
-          <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
-            <xsl:value-of select="."/>
-          </value>
-          &lt;!&ndash;<xsl:message>value alt 1:  <xsl:value-of select="." /> - <xsl:value-of select="gn:element/@ref" /> <xsl:value-of select="substring-after(@locale, '#')" /></xsl:message>&ndash;&gt;
-        </xsl:for-each>
-
-        &lt;!&ndash; and create field for none translated language &ndash;&gt;
-        <xsl:for-each select="$metadataOtherLanguages/lang">
-          <xsl:variable name="currentLanguageId" select="@id"/>
-          <xsl:if test="count($theElement/
-                gmd:PT_FreeText/gmd:textGroup/
-                gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
-            <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
-                   lang="{@id}"></value>
-
-            &lt;!&ndash;<xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>&ndash;&gt;
-
-          </xsl:if>
-        </xsl:for-each>
-      </values>
-    </xsl:variable>
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig"/>
-      <xsl:with-param name="value" select="$values"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="directive" select="'gn-organisation-entry-selector-ec'"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="../gn:element"/>
-    </xsl:call-template>
-
-  </xsl:template>
-
-
-  <xsl:template mode="mode-iso19139" match="gmd:country" priority="2000">
-
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
-
     <xsl:variable name="theElement" select="." />
 
+    <xsl:variable name="hasDefaultValue" select="gco:CharacterString != ''"/>
+
+    <!--
+      Creates this (actual values of the metadata record);
+
+        <values>
+            <value ref="15" lang="eng">Government of Canada; Library of Parliament; david place2</value>
+            <value ref="18" lang="fra">Gouvernement du Canada; Bibliothèque du Parlement; chez david2</value>
+        </values>
+
+        Handles the Default language/non-default languages and duplication.
+    -->
     <xsl:variable name="values">
       <values>
-        &lt;!&ndash; Or the PT_FreeText element matching the main language &ndash;&gt;
-        <xsl:if test="gco:CharacterString">
-          &lt;!&ndash;<xsl:message>V: <xsl:value-of select="gco:CharacterString" /></xsl:message>&ndash;&gt;
+        <!-- main language -->
+        <xsl:if test="$hasDefaultValue">
           <value ref="{gco:CharacterString/gn:element/@ref}" lang="{$metadataLanguage}">
             <xsl:value-of select="gco:CharacterString"/>
           </value>
-          &lt;!&ndash;<xsl:message>value main: <xsl:value-of select="gco:CharacterString" /> - <xsl:value-of select="gco:CharacterString/gn:element/@ref" /></xsl:message>&ndash;&gt;
         </xsl:if>
 
-        &lt;!&ndash; the existing translation &ndash;&gt;
+        <!-- the existing translation -->
         <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
-          <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
-            <xsl:value-of select="."/>
-          </value>
-          &lt;!&ndash;<xsl:message>value alt 1:  <xsl:value-of select="." /> - <xsl:value-of select="gn:element/@ref" /> <xsl:value-of select="substring-after(@locale, '#')" /></xsl:message>&ndash;&gt;
+          <!-- don't put in the default lang if it already has a value -->
+          <xsl:if test="not($hasDefaultValue) or substring-after(@locale, '#') != $metadataLanguage">
+            <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
+              <xsl:value-of select="."/>
+            </value>
+          </xsl:if>
         </xsl:for-each>
 
-        &lt;!&ndash; and create field for none translated language &ndash;&gt;
+        <!-- and create field for none translated language -->
         <xsl:for-each select="$metadataOtherLanguages/lang">
           <xsl:variable name="currentLanguageId" select="@id"/>
           <xsl:if test="count($theElement/
                 gmd:PT_FreeText/gmd:textGroup/
                 gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
-            <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
-                   lang="{@id}"></value>
-
-            &lt;!&ndash;<xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>&ndash;&gt;
-
+            <!--don't put in default language if already there-->
+              <xsl:if test="not($hasDefaultValue) or $currentLanguageId != $metadataLanguage ">
+                 <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
+                    lang="{@id}"></value>
+              </xsl:if>
           </xsl:if>
         </xsl:for-each>
       </values>
     </xsl:variable>
 
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig"/>
-      <xsl:with-param name="value" select="$values"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="directive" select="'gn-country-selector-ec'"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="../gn:element"/>
-    </xsl:call-template>
-
-  </xsl:template>
-
-  <xsl:template mode="mode-iso19139" match="gmd:administrativeArea" priority="2000">
-
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
-
-    <xsl:variable name="theElement" select="." />
-
-    <xsl:variable name="values">
-      <values>
-        &lt;!&ndash; Or the PT_FreeText element matching the main language &ndash;&gt;
-        <xsl:if test="gco:CharacterString">
-          &lt;!&ndash;<xsl:message>V: <xsl:value-of select="gco:CharacterString" /></xsl:message>&ndash;&gt;
-          <value ref="{gco:CharacterString/gn:element/@ref}" lang="{$metadataLanguage}">
-            <xsl:value-of select="gco:CharacterString"/>
-          </value>
-          &lt;!&ndash;<xsl:message>value main: <xsl:value-of select="gco:CharacterString" /> - <xsl:value-of select="gco:CharacterString/gn:element/@ref" /></xsl:message>&ndash;&gt;
-        </xsl:if>
-
-        &lt;!&ndash; the existing translation &ndash;&gt;
-        <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
-          <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
-            <xsl:value-of select="."/>
-          </value>
-          &lt;!&ndash;<xsl:message>value alt 1:  <xsl:value-of select="." /> - <xsl:value-of select="gn:element/@ref" /> <xsl:value-of select="substring-after(@locale, '#')" /></xsl:message>&ndash;&gt;
-        </xsl:for-each>
-
-        &lt;!&ndash; and create field for none translated language &ndash;&gt;
-        <xsl:for-each select="$metadataOtherLanguages/lang">
-          <xsl:variable name="currentLanguageId" select="@id"/>
-          <xsl:if test="count($theElement/
-                gmd:PT_FreeText/gmd:textGroup/
-                gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
-            <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
-                   lang="{@id}"></value>
-
-            &lt;!&ndash;<xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>&ndash;&gt;
-
-          </xsl:if>
-        </xsl:for-each>
-      </values>
+    <!--
+      This creates the "values":  section
+       "values": {
+                  "eng":"... actual metadata record value ..." ,
+                  "fra":"... actual metadata record value ..."
+        }
+    -->
+    <xsl:variable name="json_values">
+      {
+      <xsl:for-each select="$values/values/value">
+        "<xsl:value-of select="@lang"/>":"<xsl:value-of select="."/>" <xsl:if test="not(position() = last())">,</xsl:if>
+      </xsl:for-each>
+      }
     </xsl:variable>
 
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig"/>
-      <xsl:with-param name="value" select="$values"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="directive" select="'gn-state-selector-ec'"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="../gn:element"/>
-    </xsl:call-template>
+    <!---
+      This is constant for ALL organisationNames - it defines what the UI looks like and how it works.
+    -->
+    <xsl:variable name="json_config">
+      [
+          {
+            "type": "fixedValue",
+            "heading": {
+                "eng": "",
+                "fra": ""
+            },
+            "values": {
+              "eng": "Government of Canada",
+              "fra": "Gouvernement du Canada"
+            }
+          },
+
+          {
+            "type": "thesurus",
+            "heading": {
+              "eng": "Government of Canada Organization",
+              "fra": "Organisation du Gouvernement du Canada"
+            },
+            "thesurus": "external.theme.EC_Government_Titles"
+          },
+
+          {
+            "type": "freeText",
+            "heading": {
+              "eng": "Branch/Sector/Division",
+              "fra": "Branche/Secteur/Division"
+            }
+          }
+      ]
+    </xsl:variable>
+
+    <xsl:variable name="cls" select="local-name()"/>
+
+    <xsl:variable name="json">
+      {
+        "combiner":"; ",
+        "root_id":"<xsl:value-of select="gn:element/@ref"/>",
+        "defaultLang":"<xsl:copy-of select="$metadataLanguage"/>",
+        "values": <xsl:copy-of select="$json_values"/>,
+        "config":<xsl:copy-of select="$json_config"/>
+      }
+    </xsl:variable>
+
+
+    <div class="form-group gn-field gn-{$cls}"  >
+      <label for="orgname" class="col-sm-2 control-label" data-gn-field-tooltip="iso19139.ca.HNAP|gmd:organisationName" ><xsl:copy-of select="$labelConfig/label"/></label>
+
+      <div data-gn-multientry-combiner="{$json}"
+           class="col-sm-9 col-xs-11 gn-value nopadding-in-table"
+           data-label="$labelConfig/label">
+      </div>
+      <div class="col-sm-1 gn-control"/>
+    </div>
 
   </xsl:template>
--->
+
 
 
   <!-- Distribution format: Show list of allowed formats -->
