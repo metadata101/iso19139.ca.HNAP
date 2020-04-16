@@ -120,8 +120,8 @@
       Creates this (actual values of the metadata record);
 
         <values>
-            <value ref="15" lang="eng">Government of Canada; Library of Parliament; david place2</value>
-            <value ref="18" lang="fra">Gouvernement du Canada; Bibliothèque du Parlement; chez david2</value>
+            <value ref="15" lang="eng">Government of Canada; Organization of Public Services and Procurement Canada; Defence and Marine Procurement</value>
+            <value ref="18" lang="fra">Gouvernement du Canada; Organisation de Services publics et Approvisionnement Canada; Approvisionnement maritime et de défense</value>
         </values>
 
         Handles the Default language/non-default languages and duplication.
