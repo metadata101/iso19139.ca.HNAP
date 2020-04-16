@@ -194,12 +194,12 @@
           },
 
           {
-            "type": "thesurus",
+            "type": "thesaurus",
             "heading": {
               "eng": "Government of Canada Organization",
               "fra": "Organisation du Gouvernement du Canada"
             },
-            "thesurus": "external.theme.EC_Government_Titles"
+            "thesaurus": "external.theme.EC_Government_Titles"
           },
 
           {
