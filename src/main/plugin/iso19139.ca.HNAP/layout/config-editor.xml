@@ -85,10 +85,7 @@
 
     </for>
 
-    <!--<for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>-->
-
-
-<!--    <for name="gmd:organisationName" use="data-gn-organisation-entry-selector-ec"/>-->
+<!--      gmd:organisationName == see layout-custom-fields-->
 
     <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
@@ -211,7 +208,6 @@
       <name>gmd:metadataStandardName</name>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
-      <name>gmd:organisationName</name>
       <name>gmd:country</name>
       <name>gmd:name</name>
       <name>gmd:administrativeArea</name>
