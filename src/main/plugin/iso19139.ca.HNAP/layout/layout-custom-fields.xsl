@@ -182,14 +182,15 @@
     <xsl:variable name="json_config">
       [
           {
-            "type": "fixedValue",
+            "type": "thesaurus",
             "heading": {
-                "eng": "",
-                "fra": ""
+                "eng": "Main Organization Enitity",
+                "fra": "Main Organization Enitity (fr)"
             },
-            "values": {
-              "eng": "Government of Canada",
-              "fra": "Gouvernement du Canada"
+            "thesaurus": "external.theme.EC_Org_Names",
+            "defaultValues": {
+                  "eng": "Government of Canada",
+                  "fra": "Gouvernement du Canada"
             }
           },
 
