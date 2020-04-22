@@ -1,0 +1,5 @@
+{
+  "schema": "Schema-Specific Settings",
+  "schema/iso19139.ca.HNAP": "ISO19139 HNAP Settings",
+  "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Use 'Government of Canada' Organization Selector"
+}
