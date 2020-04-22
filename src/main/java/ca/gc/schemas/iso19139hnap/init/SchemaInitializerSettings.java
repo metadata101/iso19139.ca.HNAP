@@ -19,6 +19,10 @@ import javax.annotation.PostConstruct;
  */
 public class SchemaInitializerSettings implements
     ApplicationListener<ServerStartup> {
+
+    final private static String HNAP_SCHEMA_NAME = "iso19139.ca.HNAP";
+
+
     @Autowired
     private SettingRepository _settingRepository;
 
@@ -38,7 +42,7 @@ public class SchemaInitializerSettings implements
     }
 
     private void addSettings() {
-        addSetting("schema/"+ XslUtilHnap.HNAP_SCHEMA_NAME+"/UseGovernmentOfCanadaOrganisationName",
+        addSetting("schema/"+ HNAP_SCHEMA_NAME+"/UseGovernmentOfCanadaOrganisationName",
             SettingDataType.BOOLEAN,"true",1);
     }
 
