@@ -26,14 +26,14 @@
   </gmd:hierarchyLevel>
   <gmd:contact>
     <gmd:CI_ResponsibleParty>
-      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+      <gmd:organisationName  gco:nilReason="missing">
         <gco:CharacterString/>
       </gmd:organisationName>
       <gmd:contactInfo>
         <gmd:CI_Contact>
           <gmd:phone>
             <gmd:CI_Telephone>
-              <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:voice  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:voice>
               <gmd:facsimile>
@@ -43,22 +43,22 @@
           </gmd:phone>
           <gmd:address>
             <gmd:CI_Address>
-              <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:deliveryPoint  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:deliveryPoint>
               <gmd:city gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:city>
-              <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:administrativeArea  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:administrativeArea>
               <gmd:postalCode gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:postalCode>
-              <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:country  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:country>
-              <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:electronicMailAddress  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:electronicMailAddress>
             </gmd:CI_Address>
@@ -73,7 +73,7 @@
   <gmd:dateStamp>
     <gco:DateTime>2011-05-03T15:42:54</gco:DateTime>
   </gmd:dateStamp>
-  <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
+  <gmd:metadataStandardName >
     <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
   </gmd:metadataStandardName>
   <gmd:metadataStandardVersion>
@@ -103,7 +103,7 @@
     <gmd:MD_DataIdentification>
       <gmd:citation>
         <gmd:CI_Citation>
-          <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+          <gmd:title >
             <gco:CharacterString>English-only HNAP</gco:CharacterString>
           </gmd:title>
           <gmd:date>
@@ -133,14 +133,14 @@
           </gmd:identifier>
           <gmd:citedResponsibleParty>
             <gmd:CI_ResponsibleParty>
-              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:organisationName  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
                   <gmd:phone>
                     <gmd:CI_Telephone>
-                      <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:voice  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:voice>
                       <gmd:facsimile>
@@ -150,22 +150,22 @@
                   </gmd:phone>
                   <gmd:address>
                     <gmd:CI_Address>
-                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:deliveryPoint  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:deliveryPoint>
                       <gmd:city gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:city>
-                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:administrativeArea  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:administrativeArea>
                       <gmd:postalCode gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:postalCode>
-                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:country  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:country>
-                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:electronicMailAddress  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:electronicMailAddress>
                     </gmd:CI_Address>
@@ -179,7 +179,7 @@
           </gmd:citedResponsibleParty>
         </gmd:CI_Citation>
       </gmd:citation>
-      <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+      <gmd:abstract  gco:nilReason="missing">
         <gco:CharacterString/>
       </gmd:abstract>
       <gmd:status>
@@ -194,7 +194,7 @@
       </gmd:resourceMaintenance>
       <gmd:descriptiveKeywords>
         <gmd:MD_Keywords>
-          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+          <gmd:keyword >
             <gco:CharacterString/>
           </gmd:keyword>
           <gmd:type>
@@ -202,7 +202,7 @@
           </gmd:type>
           <gmd:thesaurusName>
             <gmd:CI_Citation>
-              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+              <gmd:title >
                 <gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>
               </gmd:title>
               <gmd:date>
@@ -228,7 +228,7 @@
               </gmd:date>
               <gmd:citedResponsibleParty>
                 <gmd:CI_ResponsibleParty>
-                  <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gmd:organisationName >
                     <gco:CharacterString>Government of Canada</gco:CharacterString>
                   </gmd:organisationName>
                   <gmd:role>
@@ -242,7 +242,7 @@
       </gmd:descriptiveKeywords>
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
-          <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+          <gmd:useLimitation  gco:nilReason="missing">
             <gco:CharacterString>
               Private
             </gco:CharacterString>
@@ -253,7 +253,7 @@
           <gmd:useConstraints>
             <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107" codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
           </gmd:useConstraints>
-          <gmd:otherConstraints xsi:type="gmd:PT_FreeText_PropertyType">
+          <gmd:otherConstraints >
             <gco:CharacterString/>
           </gmd:otherConstraints>
         </gmd:MD_LegalConstraints>
@@ -328,14 +328,14 @@
         <gmd:MD_Distributor>
           <gmd:distributorContact>
             <gmd:CI_ResponsibleParty>
-              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+              <gmd:organisationName  gco:nilReason="missing">
                 <gco:CharacterString/>
               </gmd:organisationName>
               <gmd:contactInfo>
                 <gmd:CI_Contact>
                   <gmd:phone>
                     <gmd:CI_Telephone>
-                      <gmd:voice xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:voice  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:voice>
                       <gmd:facsimile>
@@ -345,22 +345,22 @@
                   </gmd:phone>
                   <gmd:address>
                     <gmd:CI_Address>
-                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:deliveryPoint  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:deliveryPoint>
                       <gmd:city gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:city>
-                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:administrativeArea  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:administrativeArea>
                       <gmd:postalCode gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:postalCode>
-                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:country  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:country>
-                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
+                      <gmd:electronicMailAddress  gco:nilReason="missing">
                         <gco:CharacterString/>
                       </gmd:electronicMailAddress>
                     </gmd:CI_Address>
