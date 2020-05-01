@@ -388,10 +388,10 @@
       <!-- Add nileason if text is empty -->
       <xsl:variable name="isMainLanguageEmpty"
                     select="if ($isMultilingual and not($excluded))
-                            then ($valueInPtFreeTextForMainLanguage = '' and normalize-space(gco:CharacterString|gmx:Anchor) = '')
+                            then ($valueInPtFreeTextForMainLanguage = '' and normalize-space(gmx:Anchor) = '')
                             else if ($valueInPtFreeTextForMainLanguage != '')
                             then $valueInPtFreeTextForMainLanguage = ''
-                            else normalize-space(gco:CharacterString|gmx:Anchor) = ''"/>
+                            else normalize-space(gmx:Anchor) = ''"/>
 
       <!-- TODO ? Removes @nilReason from parents of gmx:Anchor if anchor has @xlink:href attribute filled. -->
       <xsl:variable name="isEmptyAnchor"
@@ -472,7 +472,16 @@
             <xsl:otherwise>
 
               <!-- Populate PT_FreeText for default language if not existing and it is not null. -->
-              <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
+              <xsl:choose>
+                <xsl:when test="$valueInPtFreeTextForMainLanguage !='' or not($isMainLanguageEmpty)">
+                  <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <gco:CharacterString></gco:CharacterString>
+                </xsl:otherwise>
+              </xsl:choose>
+
+
                 <!-- only put this in if there's stuff to put in, otherwise we get a <gmd:PT_FreeText/> in output -->
                 <xsl:if test="(normalize-space(gco:CharacterString|gmx:Anchor) != '') or gmd:PT_FreeText">
                   <gmd:PT_FreeText>

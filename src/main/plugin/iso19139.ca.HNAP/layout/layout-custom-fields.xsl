@@ -182,22 +182,23 @@
     <xsl:variable name="json_config">
       [
           {
-            "type": "fixedValue",
+            "type": "thesaurus",
             "heading": {
                 "eng": "",
                 "fra": ""
             },
-            "values": {
-              "eng": "Government of Canada",
-              "fra": "Gouvernement du Canada"
+            "thesaurus": "external.theme.EC_Org_Names",
+            "defaultValues": {
+                  "eng": "Government of Canada",
+                  "fra": "Gouvernement du Canada"
             }
           },
 
           {
             "type": "thesaurus",
             "heading": {
-              "eng": "Government of Canada Organization",
-              "fra": "Organisation du Gouvernement du Canada"
+              "eng": "Department/Agency",
+              "fra": "Département/agence"
             },
             "thesaurus": "external.theme.EC_Government_Titles"
           },
@@ -225,7 +226,7 @@
     </xsl:variable>
 
 
-    <div class="form-group gn-field gn-{$cls}"  >
+    <div class="form-group gn-field gn-control gn-{$cls}"  >
       <label for="orgname" class="col-sm-2 control-label" data-gn-field-tooltip="iso19139.ca.HNAP|gmd:organisationName" ><xsl:copy-of select="$labelConfig/label"/></label>
 
       <div data-gn-multientry-combiner="{$json}"
