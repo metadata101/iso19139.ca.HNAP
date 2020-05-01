@@ -17,9 +17,10 @@
                 xmlns:saxon="http://saxon.sf.net/"
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
+
   <xsl:variable name="thesauriDir" select="/root/gui/thesaurusDir" />
   <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
-
+  <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
   <!-- Hide thesaurus name in default view -->
   <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default']" />
@@ -106,8 +107,7 @@
     a) basic shell HTML so it can be displayed in the editor (see MultiEntryCombiner.js for HTML example).
     b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
 -->
-  <xsl:template mode="mode-iso19139" match="gmd:organisationName" priority="2000">
-
+  <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true']" priority="3000"  >
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>

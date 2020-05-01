@@ -1,18 +1,24 @@
 package ca.gc.schemas.iso19139hnap.init;
 
 import org.fao.geonet.constants.Geonet;
+import org.fao.geonet.domain.Setting;
+import org.fao.geonet.domain.SettingDataType;
 import org.fao.geonet.kernel.GeonetworkDataDirectory;
+import org.fao.geonet.kernel.setting.SettingManager;
+import org.fao.geonet.repository.SettingRepository;
 import org.fao.geonet.utils.Log;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import java.io.File;
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import java.util.regex.Pattern;
 
 /**
@@ -22,8 +28,13 @@ import java.util.regex.Pattern;
  * <p>
  * See config-spring-geonetwork.xml in this schema
  */
-public class SchemaInitializer implements
+public class SchemaInitializerThesauri implements
     ApplicationListener<GeonetworkDataDirectory.GeonetworkDataDirectoryInitializedEvent> {
+
+    @PostConstruct
+    public void init()
+    {
+    }
 
 
     private static String resourceTypeDir = "external"; // "local" or "external"
