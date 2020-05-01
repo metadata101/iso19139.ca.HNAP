@@ -34,14 +34,14 @@
     <sch:let name="mainLanguageText" value="if (lower-case($mainLanguageId) = 'fra') then 'French' else 'English'"/>
     <sch:let name="altLanguageText" value="if (lower-case($altLanguageId) = 'fra') then 'French' else 'English'"/>
 
-    <!-- Common Function used by procedure 
+    <!-- Common Function used by procedure
          Todo Attempt to move to file so that it can be used by other validators
               Attempted to used <sch:include href="util-fn-schematron.sch"> but it failed - may be a working directory issue -->
 
      <xsl:function name="geonet:resourceFormatsList" as="xs:string">
         <xsl:param name="thesaurusDir" as="xs:string"/>
 
-        <xsl:variable name="formats-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
+        <xsl:variable name="formats-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
 
         <xsl:variable name="v">
             <xsl:for-each select="$formats-list//rdf:Description[ns2:prefLabel[@xml:lang='en']]">
@@ -175,8 +175,8 @@
       <!-- Contact -->
       <sch:rule context="//gmd:contact/*/gmd:organisationName">
 
-        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
-        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
+        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
+        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
 
 
         <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
@@ -221,7 +221,7 @@
 
       <!-- Country -->
        <sch:rule context="//gmd:contact//gmd:country">
-        <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
+        <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
 
         <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
         <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
@@ -257,8 +257,8 @@
                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName
                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName">
 
-        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
-        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
+        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
+        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
 
 
         <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
@@ -306,7 +306,7 @@
        <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country">
-        <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
+        <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
 
         <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
         <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
@@ -343,8 +343,8 @@
         <!-- Distributor Contact - Organisation -->
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:organisationName">
 
-        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
-        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
+        <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Titles.rdf'), '\\', '/')))"/>
+        <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
 
         <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
 
@@ -389,7 +389,7 @@
 
       <!-- Country -->
          <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:country">
-          <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
+          <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_ISO_Countries.rdf'), '\\', '/')))"/>
 
           <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
           <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
@@ -612,7 +612,7 @@
       <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine">
         <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
         <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
-        <sch:let name="formats-list" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
+        <sch:let name="formats-list" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
 
         <sch:let name="description" value="gmd:CI_OnlineResource/gmd:description/gco:CharacterString" />
         <sch:let name="contentType" value="subsequence(tokenize($description, ';'), 1, 1)" />
@@ -659,7 +659,7 @@
           test="not($missing)"
           >$loc/strings/EC38</sch:assert>
 
-        <sch:let name="distribution-formats" value="document(concat('file:///', replace(concat($thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
+        <sch:let name="distribution-formats" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))"/>
 
         <sch:let name="distributionFormat" value="gco:CharacterString" />
 
