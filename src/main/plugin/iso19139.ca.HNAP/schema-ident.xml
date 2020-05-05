@@ -38,9 +38,15 @@
 
 	<autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd"
               xmlns:gco="http://www.isotc211.org/2005/gco">
-	    <elements type="search">
+	    <elements>
+        <!-- GeoNetwork extracts the text from all children of gmd:metadataStandardName (doesn't compare the children element names)
+             As this element is multilingual the text to compare should be:
+
+              - the concatenation of English and French values.
+              - the concatenation of French and English values.
+        -->
         <gmd:metadataStandardName>
-          <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata|Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gco:CharacterString>
+          <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - MetadataProfil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées|Profil nord-américain de la norme ISO 19115:2003 - Information géographique - MétadonnéesNorth American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
         </gmd:metadataStandardName>
 	    </elements>
 	</autodetect>
