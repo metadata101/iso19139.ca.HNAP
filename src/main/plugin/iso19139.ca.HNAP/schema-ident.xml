@@ -46,7 +46,7 @@
               - the concatenation of French and English values.
         -->
         <gmd:metadataStandardName>
-          <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - MetadataProfil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées|Profil nord-américain de la norme ISO 19115:2003 - Information géographique - MétadonnéesNorth American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
+          <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata|Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées|North American Profile of ISO 19115:2003 - Geographic information - MetadataProfil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées|Profil nord-américain de la norme ISO 19115:2003 - Information géographique - MétadonnéesNorth American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
         </gmd:metadataStandardName>
 	    </elements>
 	</autodetect>
