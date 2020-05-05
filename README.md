@@ -15,9 +15,6 @@ The best approach is to add the plugin as a submodule. Use https://github.com/ge
 ```
 ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 3.10.x
 ```
-```
-./add-schema.sh iso19139.ca.HNAP https://github.com/GeoCat/iso19139.ca.HNAP.git  3.10.x
-```
 
 ### Build the application
 
