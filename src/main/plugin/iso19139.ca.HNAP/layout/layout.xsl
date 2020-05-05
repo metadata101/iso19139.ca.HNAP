@@ -200,22 +200,20 @@
                       select="normalize-space(gco:CharacterString|gmx:Anchor)"/>
 
         <values>
-          <!--
-          CharacterString is not edited anymore, but it's PT_FreeText
-          counterpart is.
 
-          Or the PT_FreeText element matching the main language
           <xsl:if test="gco:CharacterString">
             <value ref="{$theElement/gn:element/@ref}" lang="{$metadataLanguage}">
               <xsl:value-of select="gco:CharacterString"/>
             </value>
-          </xsl:if>-->
+          </xsl:if>
 
           <!-- the existing translation -->
           <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
-            <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
-              <xsl:value-of select="."/>
-            </value>
+            <xsl:if test="not($metadataLanguage = substring-after(@locale, '#'))">
+              <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
+                <xsl:value-of select="."/>
+              </value>
+            </xsl:if>
           </xsl:for-each>
 
           <!-- and create field for none translated language -->
@@ -232,17 +230,19 @@
 
 
             <xsl:choose>
-              <xsl:when test="$ptFreeElementDoesNotExist and
-                              $text != '' and
-                              $code = $metadataLanguage">
-              <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
-                       lang="{@id}">
-                  <xsl:value-of select="$text"/>
-                </value>
-              </xsl:when>
+<!--              <xsl:when test="$ptFreeElementDoesNotExist and-->
+<!--                              $text != '' and-->
+<!--                              $code = $metadataLanguage">-->
+<!--              <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"-->
+<!--                       lang="{@id}">-->
+<!--                  <xsl:value-of select="$text"/>-->
+<!--                </value>-->
+<!--              </xsl:when>-->
               <xsl:when test="$ptFreeElementDoesNotExist">
-                <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
-                     lang="{@id}"></value>
+                <xsl:if test="not($metadataLanguage = @id)">
+                  <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
+                       lang="{@id}"></value>
+                </xsl:if>
               </xsl:when>
             </xsl:choose>
           </xsl:for-each>
