@@ -292,8 +292,10 @@
         <license gov="Government of Nova Scotia">Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)</license>
         <license gov="Government of Ontario">Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)</license>
         <license gov="Government of Prince Edward Island">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
+        <license gov="Government of New Brunswick">Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)</license>
+        <license gov="Government of Yukon">Open Government Licence – Yukon (https://open.yukon.ca/data/open-government-licence-yukon)</license>
+        <license gov="Government of Quebec">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
       </licenses>
-
     </xsl:variable>
 
     <xsl:variable name="licensesFrench">
@@ -304,6 +306,10 @@
         <license gov="Gouvernement de la  Nouvelle-Écosse">Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</license>
         <license gov="Gouvernement de l'Ontario">Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</license>
         <license gov="Gouvernement de l'Île-du-Prince-Édouard">Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)</license>
+        <license gov="Gouvernement du Nouveau-Brunswick">Licence du gouvernement ouvert - Nouveau-Brunswick (http://www.snb.ca/f/2000/data-F.html)</license>
+        <license gov="Gouvernement du Yukon">Licence du gouvernement ouvert – Yukon (https://open.yukon.ca/data/fr/gouvernement-ouvert-licence-du-yukon)</license>
+        <license gov="Gouvernement du Québec">Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)</license>
+
       </licenses>
     </xsl:variable>
 
