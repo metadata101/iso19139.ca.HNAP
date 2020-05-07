@@ -153,7 +153,7 @@
                 gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
             <!--don't put in default language if already there-->
               <xsl:if test="not($hasDefaultValue) or $currentLanguageId != $metadataLanguage ">
-                 <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
+                 <value ref="lang_{@id}_{$theElement/gn:element/@ref}"
                     lang="{@id}"></value>
               </xsl:if>
           </xsl:if>
@@ -172,6 +172,14 @@
       {
       <xsl:for-each select="$values/values/value">
         "<xsl:value-of select="@lang"/>":"<xsl:value-of select="."/>" <xsl:if test="not(position() = last())">,</xsl:if>
+      </xsl:for-each>
+      }
+    </xsl:variable>
+
+    <xsl:variable name="refs_json">
+      {
+      <xsl:for-each select="$values/values/value">
+        "<xsl:value-of select="@lang"/>":"<xsl:value-of select="@ref"/>" <xsl:if test="not(position() = last())">,</xsl:if>
       </xsl:for-each>
       }
     </xsl:variable>
@@ -219,6 +227,7 @@
       {
         "combiner":"; ",
         "root_id":"<xsl:value-of select="gn:element/@ref"/>",
+        "refs":<xsl:copy-of select="$refs_json"/>,
         "defaultLang":"<xsl:copy-of select="$metadataLanguage"/>",
         "values": <xsl:copy-of select="$json_values"/>,
         "config":<xsl:copy-of select="$json_config"/>
