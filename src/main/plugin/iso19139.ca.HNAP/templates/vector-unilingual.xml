@@ -16,7 +16,7 @@
     <gco:CharacterString/>
   </gmd:fileIdentifier>
   <gmd:language>
-    <gco:CharacterString>eng</gco:CharacterString>
+    <gco:CharacterString>eng; CAN</gco:CharacterString>
   </gmd:language>
   <gmd:characterSet>
     <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
@@ -73,7 +73,7 @@
   <gmd:dateStamp>
     <gco:DateTime>2011-05-03T15:42:54</gco:DateTime>
   </gmd:dateStamp>
-  <gmd:metadataStandardName >
+  <gmd:metadataStandardName>
     <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
   </gmd:metadataStandardName>
   <gmd:metadataStandardVersion>
@@ -82,6 +82,22 @@
   <gmd:dataSetURI gco:nilReason="missing">
     <gco:CharacterString/>
   </gmd:dataSetURI>
+  <gmd:locale>
+    <gmd:PT_Locale id="eng">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
+                          codeListValue="eng">English; Anglais</gmd:LanguageCode>
+      </gmd:languageCode>
+      <gmd:country>
+        <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
+                     codeListValue="CAN">Canada; Canada</gmd:Country>
+      </gmd:country>
+      <gmd:characterEncoding>
+        <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+                                 codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+      </gmd:characterEncoding>
+    </gmd:PT_Locale>
+  </gmd:locale>
   <gmd:referenceSystemInfo>
     <gmd:MD_ReferenceSystem>
       <gmd:referenceSystemIdentifier>
@@ -104,7 +120,7 @@
       <gmd:citation>
         <gmd:CI_Citation>
           <gmd:title >
-            <gco:CharacterString>English-only HNAP</gco:CharacterString>
+            <gco:CharacterString>English-only HNAP2</gco:CharacterString>
           </gmd:title>
           <gmd:date>
             <gmd:CI_Date>
@@ -262,7 +278,7 @@
         <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"/>
       </gmd:spatialRepresentationType>
       <gmd:language>
-        <gco:CharacterString>eng</gco:CharacterString>
+        <gco:CharacterString>eng; CAN</gco:CharacterString>
       </gmd:language>
       <gmd:characterSet>
         <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="utf8"/>

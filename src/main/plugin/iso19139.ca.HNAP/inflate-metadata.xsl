@@ -168,8 +168,7 @@
       <xsl:apply-templates select="gmd:dataSetURI" />
 
       <!-- Copy existing locales and create an extra one for the default metadata language. -->
-      <xsl:if test="$isMultilingual">
-        <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
+      <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
         <gmd:locale>
           <gmd:PT_Locale id="{$mainLanguageId}">
             <gmd:languageCode>
@@ -204,7 +203,6 @@
             </gmd:characterEncoding>
           </gmd:PT_Locale>
         </gmd:locale>
-      </xsl:if>
 
       <xsl:apply-templates select="gmd:spatialRepresentationInfo" />
       <xsl:apply-templates select="gmd:referenceSystemInfo" />
@@ -498,21 +496,25 @@
           <xsl:when test="$mdLang = 'fra; CAN'">
             <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
               <gco:CharacterString/>
-              <gmd:PT_FreeText>
-                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#eng"/>
-                </gmd:textGroup>
-              </gmd:PT_FreeText>
+              <xsl:if test="isMultilingual">
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </xsl:if>
             </gmd:electronicMailAddress>
           </xsl:when>
           <xsl:otherwise>
             <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
               <gco:CharacterString/>
-              <gmd:PT_FreeText>
-                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#fra"/>
-                </gmd:textGroup>
-              </gmd:PT_FreeText>
+              <xsl:if test="isMultilingual">
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#fra"/>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </xsl:if>
             </gmd:electronicMailAddress>
           </xsl:otherwise>
         </xsl:choose>
@@ -576,12 +578,14 @@
         <xsl:attribute name="xsi:type">gmd:PT_FreeText_PropertyType</xsl:attribute>
       </xsl:if>
       <xsl:apply-templates select="*" />
-      <gmd:PT_FreeText>
-        <gmd:textGroup>
-          <gmd:LocalisedCharacterString locale="#{$altLang}">
-          </gmd:LocalisedCharacterString>
-        </gmd:textGroup>
-      </gmd:PT_FreeText>
+      <xsl:if test="isMultilingual">
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#{$altLang}">
+            </gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </xsl:if>
     </xsl:copy>
   </xsl:template>
 

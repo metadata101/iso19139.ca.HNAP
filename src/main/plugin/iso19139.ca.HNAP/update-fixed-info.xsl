@@ -210,8 +210,7 @@
 				</xsl:when>
 			</xsl:choose>
 
-     <!-- Copy existing locales and create an extra one for the default metadata language. -->
-      <xsl:if test="$isMultilingual">
+      <!-- Copy existing locales and create an extra one for the default metadata language. -->
         <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
         <gmd:locale>
           <gmd:PT_Locale id="{$mainLanguageId}">
@@ -247,8 +246,7 @@
             </gmd:characterEncoding>
           </gmd:PT_Locale>
         </gmd:locale>
-      </xsl:if>
-			<xsl:apply-templates select="node()[name()!='gmd:language' and name()!='gmd:characterSet' and name()!='gmd:locale']"/>
+ 			<xsl:apply-templates select="node()[name()!='gmd:language' and name()!='gmd:characterSet' and name()!='gmd:locale']"/>
 		</xsl:copy>
 	</xsl:template>
 
@@ -286,19 +284,23 @@
       <xsl:choose>
 			  <xsl:when test="$mainLanguage='fra'">
           <gco:CharacterString>Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gco:CharacterString>
-          <gmd:PT_FreeText>
-            <gmd:textGroup>
-              <gmd:LocalisedCharacterString locale="#eng">North American Profile of ISO 19115:2003 - Geographic information - Metadata</gmd:LocalisedCharacterString>
-            </gmd:textGroup>
-          </gmd:PT_FreeText>
+          <xsl:if test="isMultilingual">
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">North American Profile of ISO 19115:2003 - Geographic information - Metadata</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </xsl:if>
 	  	  </xsl:when>
 			  <xsl:otherwise>
           <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
-          <gmd:PT_FreeText>
-            <gmd:textGroup>
-              <gmd:LocalisedCharacterString locale="#fra">Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gmd:LocalisedCharacterString>
-            </gmd:textGroup>
-          </gmd:PT_FreeText>
+          <xsl:if test="isMultilingual">
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </xsl:if>
 		  	</xsl:otherwise>
 		  </xsl:choose>
 		</xsl:copy>
@@ -393,10 +395,10 @@
                             then $valueInPtFreeTextForMainLanguage = ''
                             else normalize-space(gco:CharacterString|gmx:Anchor) = ''"/>
 
+
       <!-- TODO ? Removes @nilReason from parents of gmx:Anchor if anchor has @xlink:href attribute filled. -->
       <xsl:variable name="isEmptyAnchor"
                     select="normalize-space(gmx:Anchor/@xlink:href) = ''" />
-
 
       <xsl:choose>
         <xsl:when test="$isMainLanguageEmpty">
@@ -477,7 +479,7 @@
                   <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <gco:CharacterString></gco:CharacterString>
+                  <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
                 </xsl:otherwise>
               </xsl:choose>
 
