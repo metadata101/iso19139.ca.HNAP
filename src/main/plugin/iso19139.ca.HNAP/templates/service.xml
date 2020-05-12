@@ -114,9 +114,10 @@
                     </gmd:hoursOfService>
                 </gmd:CI_Contact>
             </gmd:contactInfo>
-            <gmd:role>
-                <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue="pointOfContact"/>
-            </gmd:role>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                             codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
+          </gmd:role>
         </gmd:CI_ResponsibleParty>
     </gmd:contact>
     <gmd:dateStamp>
@@ -293,9 +294,10 @@
                                     </gmd:hoursOfService>
                                 </gmd:CI_Contact>
                             </gmd:contactInfo>
-                            <gmd:role>
-                                <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue="pointOfContact"/>
-                            </gmd:role>
+                          <gmd:role>
+                            <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                                             codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
+                          </gmd:role>
                         </gmd:CI_ResponsibleParty>
                     </gmd:citedResponsibleParty>
                 </gmd:CI_Citation>
@@ -612,7 +614,8 @@
                                 </gmd:CI_Contact>
                             </gmd:contactInfo>
                             <gmd:role>
-                                <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90" codeListValue=""/>
+                              <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                                               codeListValue="RI_412">distributor; distributeur</gmd:CI_RoleCode>
                             </gmd:role>
                         </gmd:CI_ResponsibleParty>
                     </gmd:distributorContact>
