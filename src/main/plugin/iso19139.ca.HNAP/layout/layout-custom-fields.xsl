@@ -13,13 +13,19 @@
                 xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
                 xmlns:xslutil="java:org.fao.geonet.util.XslUtil"
                 xmlns:saxon="http://saxon.sf.net/"
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
 
-  <xsl:variable name="thesauriDir" select="/root/gui/thesaurusDir" />
-  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
+  <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
+  <xsl:variable name="resourceFormatsThLocation" select="if ($listOfThesaurus/thesaurus[key='external.theme.EC_Resource_Formats'])
+                                                         then 'external'
+                                                         else ' local'" />
+
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/', $resourceFormatsThLocation, '/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
+
   <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
   <!-- Hide thesaurus name in default view -->
@@ -255,7 +261,7 @@
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$codelists" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
-
+    
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
