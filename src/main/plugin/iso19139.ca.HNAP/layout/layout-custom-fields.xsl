@@ -503,7 +503,7 @@
   </xsl:template>
 
 
-  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords" priority="5000">
+  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords" priority="6000">
 
 
     <xsl:variable name="thesaurusIdentifier"
@@ -518,7 +518,7 @@
       <xsl:choose>
         <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
                   (gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada')">
-          <xsl:value-of  select="'local.theme.EC_Core_Subject'"/>
+          <xsl:value-of  select="'theme.EC_Core_Subject.rdf'"/>
         </xsl:when>
 
         <xsl:otherwise>
@@ -540,7 +540,7 @@
                           then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
                           else if ($listOfThesaurus/thesaurus[title=$thesaurusIdentifier])
                           then $listOfThesaurus/thesaurus[title=$thesaurusIdentifier]
-                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle])
+                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle2])
                           then $listOfThesaurus/thesaurus[title=$thesaurusTitle2]
                           else $listOfThesaurus/thesaurus[key=$thesaurusTitle2]"/>
     <!--<xsl:message>thesaurusConfig: <xsl:copy-of select="$thesaurusConfig" /></xsl:message>
