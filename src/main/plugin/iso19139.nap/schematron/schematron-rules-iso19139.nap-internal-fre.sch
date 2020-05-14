@@ -1155,6 +1155,15 @@
 
       </sch:rule>
 
+      <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact">
+
+        <sch:let name="missing" value="count(gmd:CI_ResponsibleParty) = 0" />
+
+        <sch:assert
+          test="not($missing)"
+        >$loc/strings/DistributorContactMissing</sch:assert>
+
+      </sch:rule>
       <!-- Distributor Contact - Electronic mail address -->
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
 

@@ -152,4 +152,6 @@
     <GeographicExtentRequired>Geographic extent is required</GeographicExtentRequired>
     <GeographicExtentWestEast>Geographic extent - westbound longitude should be lower than eastbound longitude</GeographicExtentWestEast>
     <GeographicExtentNorthSouth>Geographic extent - southbound latitude should be lower than northbound latitude</GeographicExtentNorthSouth>
+
+    <DistributorContactMissing>Distributor Contact is required</DistributorContactMissing>
 </strings>

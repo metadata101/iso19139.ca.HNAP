@@ -123,4 +123,6 @@
   <GeographicExtentRequired>Une valeur est nécessaire pour: Étendue géographique</GeographicExtentRequired>
   <GeographicExtentWestEast>Étendue géographique - la longitude ouest doit être inférieure à la longitude est</GeographicExtentWestEast>
   <GeographicExtentNorthSouth>Étendue géographique - la latitude sud devrait être inférieure à la latitude nord</GeographicExtentNorthSouth>
+
+  <DistributorContactMissing>Le Responsable de la distribution est obligatoire</DistributorContactMissing>
 </strings>
