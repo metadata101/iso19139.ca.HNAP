@@ -403,9 +403,6 @@
 
     <xsl:variable name="thesaurusTitle">
       <xsl:choose>
-        <xsl:when test="contains($thesaurusTitleEl/gco:CharacterString, 'EC_')">
-          <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/*[name() = $thesaurusTitleEl/gco:CharacterString]" />
-        </xsl:when>
         <xsl:when test="normalize-space($thesaurusTitleEl/gco:CharacterString) != ''">
           <xsl:value-of select="if ($overrideLabel != '')
               then $overrideLabel
@@ -458,15 +455,6 @@
                           else $listOfThesaurus/thesaurus[title=$thesaurusTitle]"/>
 
     <xsl:choose>
-      <!-- Don't box EC thesaurus in Information Classification section -->
-      <xsl:when test="contains($thesaurusTitleEl/gco:CharacterString, 'EC_')">
-        <!--<xsl:message>descriptiveKeywords fieldset=false 1</xsl:message>-->
-
-        <xsl:apply-templates mode="mode-iso19139" select="*">
-          <xsl:with-param name="schema" select="$schema"/>
-          <xsl:with-param name="labels" select="$labels"/>
-        </xsl:apply-templates>
-      </xsl:when>
       <xsl:when test="$thesaurusConfig/@fieldset = 'false'">
 
         <xsl:apply-templates mode="mode-iso19139" select="*">

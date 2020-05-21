@@ -174,8 +174,14 @@
         </gmd:keyword>
       </xsl:if>
 
+      <xsl:variable name="lang" select="if (count($listOfLanguage) > 0)
+                                        then $listOfLanguage[1]
+                                        else if ($listOfLanguage)
+                                        then $listOfLanguage
+                                        else ''" />
+
       <xsl:copy-of
-        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $listOfLanguage[1])"/>
+        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $lang)"/>
     </gmd:MD_Keywords>
   </xsl:template>
 
