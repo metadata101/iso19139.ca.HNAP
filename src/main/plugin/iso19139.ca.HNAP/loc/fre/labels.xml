@@ -2098,8 +2098,7 @@
     <label>Mot Clé</label>
     <description>Mots ou formulations courants ou formalisés pour décrire l'objet de la ressource. Pour sélectionner un élément d'une liste préétablie de mots-clés, sélectionner le thésaurus ci-dessous. Les mots-clés sont des éléments renouvelables; sélectionner autant de mots-clés que nécessaire pour décrire les données.</description>
     <help>Mots clés du jeu de données par l'intermédiaire desquels il peut être caractérisé et défini. Ces termes sont également utilisés en tant qu''arguments de recherche. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>
-    <condition/>
-
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:language" id="3.0" context="gmd:MD_Metadata">
     <label>Langue</label>

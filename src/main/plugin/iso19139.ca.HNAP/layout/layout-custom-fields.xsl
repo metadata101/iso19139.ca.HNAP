@@ -261,7 +261,7 @@
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$codelists" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
-    
+
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
@@ -486,13 +486,24 @@
           </xsl:choose>
         </xsl:variable>
 
+        <xsl:variable name="requiredClass">
+          <xsl:choose>
+            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
+                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
+              <xsl:value-of select="'gn-required'" />
+            </xsl:when>
+            <xsl:otherwise><xsl:value-of select="''" /></xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+
+
         <xsl:call-template name="render-boxed-element">
           <xsl:with-param name="label"
                           select="if ($thesaurusTitle !='')
                     then $thesaurusTitle
                     else gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
           <xsl:with-param name="editInfo" select="gn:element"/>
-          <xsl:with-param name="cls" select="local-name()"/>
+          <xsl:with-param name="cls" select="concat(local-name(), ' ', $requiredClass)"/>
           <xsl:with-param name="xpath" select="$xpath"/>
           <xsl:with-param name="attributesSnippet" select="$attributes"/>
           <!--<xsl:with-param name="hideDelete" select="$hideDelete" />-->
