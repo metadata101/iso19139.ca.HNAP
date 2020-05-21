@@ -449,7 +449,7 @@
                         <gco:CharacterString></gco:CharacterString>
                     </srv:operationName>
                     <srv:DCP>
-                        <srv:DCPList codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_114#IC_112" codeListValue=""/>
+                        <srv:DCPList codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_112" codeListValue=""/>
                     </srv:DCP>
                     <srv:operationDescription gco:nilReason="missing">
                         <gco:CharacterString></gco:CharacterString>

@@ -273,11 +273,14 @@
       <name>gmd:distance</name>
       <name>srv:name</name>
       <name>srv:invocationName</name>
+      <name>srv:serviceType</name>
       <name>srv:serviceTypeVersion</name>
       <name>srv:operationName</name>
       <name>srv:identifier</name>
       <name>gmd:individualName</name>
       <name>gmd:code</name>
+      <name>gco:aName</name>
+      <name>srv:optionality</name>
     </exclude>
   </multilingualFields>
 
@@ -317,8 +320,99 @@
 
           </section>-->
 
+        <section name="srv:SV_ServiceIdentification"  displayIfRecord="count(gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification) > 0">
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
 
-        <section name="gmd:MD_DataIdentification">
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
+              gmd:date"/>
+          <action type="add" name="date" or="date"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation">
+            <template>
+              <snippet>
+                <gmd:date>
+                  <gmd:CI_Date>
+                    <gmd:date>
+                      <gco:Date></gco:Date>
+                    </gmd:date>
+                    <gmd:dateType>
+                      <gmd:CI_DateTypeCode
+                        codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                        codeListValue=""/>
+                    </gmd:dateType>
+                  </gmd:CI_Date>
+                </gmd:date>
+              </snippet>
+            </template>
+          </action>
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:abstract"/>
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:status"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="status"/>
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty "
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:citation/gmd:CI_Citation"
+                 or="citedResponsibleParty"/>
+
+          <section name="gmd:MD_Keywords">
+
+            <!-- Free text keywords -->
+            <field
+              xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/
+              gmd:descriptiveKeywords[not(gmd:MD_Keywords/gmd:thesaurusName)]" />
+
+            <action type="add" name="descriptiveKeywords" or="descriptiveKeywords" btnLabel="addFreeTextKeywords"
+                    in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification">
+              <template>
+                <snippet>
+                  <gmd:descriptiveKeywords>
+                    <gmd:MD_Keywords>
+                      <gmd:keyword>
+                        <gco:CharacterString/>
+                      </gmd:keyword>
+                      <gmd:type>
+                        <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+                      </gmd:type>
+                    </gmd:MD_Keywords>
+                  </gmd:descriptiveKeywords>
+                </snippet>
+              </template>
+            </action>
+
+            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:descriptiveKeywords
+                             [gmd:MD_Keywords/gmd:thesaurusName]" />
+
+          </section>
+
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:serviceType"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="serviceType" />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:serviceTypeVersion"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="serviceTypeVersion" />
+
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:restrictions"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="restrictions" />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:coupledResource"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="coupledResource" />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:couplingType"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="couplingType" />
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations"
+                 in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
+                 or="containsOperations" />
+        </section>
+
+        <section name="gmd:MD_DataIdentification"  displayIfRecord="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification) > 0">
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
@@ -507,6 +601,10 @@
         <for name="gmd:contact"/>
         <for name="gmd:processor"/>
         <for name="gmd:topicCategory"/>
+
+        <for name="srv:containsOperations"/>
+        <for name="srv:SV_OperationMetadata"/>
+        <for name="srv:parameters"/>
       </flatModeExceptions>
     </view>
 
