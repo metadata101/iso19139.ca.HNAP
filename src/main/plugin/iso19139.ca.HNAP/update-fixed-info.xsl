@@ -1003,7 +1003,8 @@
             <!-- Group by thesaurus -->
               <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
                 <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]/@locale}">
+                  <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}"
+                           locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale) and @locale != concat('#', $mainLanguageId)]/@locale}">
                     <xsl:copy-of select="../gmd:thesaurusName" />
                   </keyword>
                 </xsl:for-each>
@@ -1020,7 +1021,8 @@
           <xsl:for-each-group select="current-group()" group-by="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString">
             <keyword-group type="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue}" value="{gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode}">
               <xsl:for-each select="current-group()/gmd:MD_Keywords/gmd:keyword">
-                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}" locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]/@locale}">
+                <keyword value="{gco:CharacterString}" translation="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale != concat('#', $mainLanguageId)]}"
+                         locale="{gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[string(@locale) and @locale != concat('#', $mainLanguageId)]/@locale}">
                   <xsl:copy-of select="../gmd:thesaurusName" />
                 </keyword>
               </xsl:for-each>
@@ -1033,11 +1035,10 @@
       </xsl:variable>
 
       <xsl:variable name="list-keywords" select="exslt:node-set($keywordGroups)" />
-
       <!--<xsl:for-each select="$list-keywords/keywords/keyword-group">
         <xsl:message>KEYWORD GROUP: <xsl:value-of select="@type" /></xsl:message>
         <xsl:for-each select="keyword">
-          <xsl:message>KEYWORD11: <xsl:value-of select="@value" /></xsl:message>
+          <xsl:message>KEYWORD11: <xsl:value-of select="@value" /> - <xsl:value-of select="@locale" /></xsl:message>
         </xsl:for-each>
       </xsl:for-each>-->
 
