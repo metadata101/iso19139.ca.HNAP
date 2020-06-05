@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:ns2="http://www.w3.org/2004/02/skos/core#">
+         xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+   <skos:ConceptScheme>
+     <dc:title>ECCC Government Names</dc:title>
+     <dc:description></dc:description>
+   </skos:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovCan">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>

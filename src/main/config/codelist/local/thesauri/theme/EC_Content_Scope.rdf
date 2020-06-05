@@ -2,7 +2,14 @@
 <rdf:RDF
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <skos:ConceptScheme rdf:about="http://geonetwork-opensource.org/thesaurus/naturalearth-and-seavox">
+    <dc:title>EC Content Scope</dc:title>
+    <dc:description></dc:description>
+  </skos:ConceptScheme>
 
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/contentscope#addapplicabledatacontent">
     <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
@@ -31,13 +38,13 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:prefLabel xml:lang="en">Party (Individual/Organization)</ns2:prefLabel>
   </rdf:Description>
-  
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/contentscope#facility">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Fonctionnalité</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:prefLabel xml:lang="en">Facility</ns2:prefLabel>
   </rdf:Description>
-  
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/contentscope#substance">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Substance</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
