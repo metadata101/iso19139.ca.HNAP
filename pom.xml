@@ -2,52 +2,65 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>schemas</artifactId>
-    <groupId>org.geonetwork-opensource</groupId>
-    <version>3.7</version>
-  </parent>
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>org.geonetwork-opensource</groupId>
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
-  <name>GeoNetwork schema plugin for HNAP ISO19139/119 standard</name>
+  <version>3.10.3-SNAPSHOT</version> <!-- what is schema version -->
+
+  <name>Schema Plugin HNAP ISO19139/119</name>
+  <description>
+     GeoNetwork schema plugin for HNAP ISO19139/119 standard
+  </description>
 
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>org.geonetwork-opensource</groupId>
       <artifactId>schema-core</artifactId>
-      <version>${project.version}</version>
+      <version>${gn.schemas.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-     <groupId>${project.groupId}</groupId>
-     <artifactId>core</artifactId>
-     <version>${gn.project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>schema-core</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
+      <groupId>org.geonetwork-opensource</groupId>
+      <artifactId>core</artifactId>
+      <version>${gn.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-core</artifactId>
+      <version>${xmlunit.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-matchers</artifactId>
+      <version>${xmlunit.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+      <version>${log4j.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>org.geonetwork-opensource</groupId>
       <artifactId>common</artifactId>
-      <version>${gn.project.version}</version>
+      <version>${gn.version}</version>
+      <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.geonetwork-opensource</groupId>
+      <artifactId>schema-core</artifactId>
+      <version>${gn.schemas.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
+
   <build>
     <resources>
       <resource>
@@ -65,7 +78,12 @@
       <resource>
         <directory>src/main/resources</directory>
       </resource>
+      <resource>
+        <directory>src/main/plugin</directory>
+        <targetPath>plugin</targetPath>
+      </resource>
     </resources>
+
     <testResources>
       <testResource>
         <directory>src/test/resources/org/fao/geonet</directory>
@@ -74,6 +92,31 @@
         <directory>src/main/plugin/iso19139.ca.HNAP</directory>
       </testResource>
     </testResources>
+
+    <plugins>
+      <!-- resources -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+        </configuration>
+      </plugin>
+      <!-- compile -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <debug>true</debug>
+          <encoding>UTF-8</encoding>
+          <compilerArgument>-proc:none</compilerArgument>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <profiles>
@@ -89,9 +132,19 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
+            <version>3.0.4</version>
           </plugin>
         </plugins>
       </build>
     </profile>
   </profiles>
+
+  <properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <gn.schemas.version>3.7</gn.schemas.version>
+     <gn.version>3.10.3-SNAPSHOT</gn.version>
+     <log4j.version>1.2.17</log4j.version>
+     <xmlunit.version>2.1.1</xmlunit.version>
+  </properties>
+
 </project>
