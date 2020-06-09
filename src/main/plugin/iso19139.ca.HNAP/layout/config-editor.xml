@@ -151,7 +151,9 @@
 
       Exclude all thesaurus already used in the metadata:
       -->
-      <directiveAttributes data-include="xpath::string-join(gmd:MD_Metadata/gmd:identificationInfo
+      <directiveAttributes
+        data-always-create-new-freekeyword-section="true"
+        data-include="xpath::string-join(gmd:MD_Metadata/gmd:identificationInfo
                                           //gmd:thesaurusName/*/gmd:identifier/*/
                                             gmd:code/gmx:Anchor/
                                               concat('-', substring-after(text()[. != ''], 'geonetwork.thesaurus.')), ',')"/>
