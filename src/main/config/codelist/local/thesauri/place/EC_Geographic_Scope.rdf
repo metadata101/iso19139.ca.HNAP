@@ -8,6 +8,8 @@
 
     <skos:ConceptScheme>
       <dc:title>ECCC Geographic Scope</dc:title>
+       <dc:title xml:lang="en">ECCC Geographic Scope EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Geographic Scope FR</dc:title>
       <dc:description></dc:description>
     </skos:ConceptScheme>
 

@@ -8,6 +8,8 @@
 
    <skos:ConceptScheme>
      <dc:title>ECCC Data Usage Scope</dc:title>
+       <dc:title xml:lang="en">ECCC Data Usage Scope EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Data Usage Scope FR</dc:title>
      <dc:description></dc:description>
    </skos:ConceptScheme>
 

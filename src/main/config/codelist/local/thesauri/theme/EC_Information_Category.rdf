@@ -5,6 +5,8 @@
 
   <ns2:ConceptScheme rdf:about="http://geonetwork-opensource.org/EC/informationcategory">
         <dc:title>ECCC Information Category</dc:title>
+       <dc:title xml:lang="en">ECCC Information Category EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Information Category FR</dc:title>
         <dc:description></dc:description>
   </ns2:ConceptScheme>
 

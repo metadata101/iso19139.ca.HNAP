@@ -16,6 +16,9 @@
                 xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
                 xmlns:xslutil="java:org.fao.geonet.util.XslUtil"
                 xmlns:saxon="http://saxon.sf.net/"
+                xmlns:geonet="http://www.fao.org/geonetwork"
+
+
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
 
@@ -362,9 +365,6 @@
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="elementName" select="name()"/>
 
-    <!--<xsl:message>gmd:linkage ref: <xsl:copy-of select="*/gn:element" /></xsl:message>
-    <xsl:message>gmd:linkage $xpath: <xsl:value-of select="$xpath" /></xsl:message>-->
-
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
                       select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(gmd:URL), $labels, name(), $isoType, $xpath)"/>
@@ -378,6 +378,40 @@
     </xsl:call-template>
 
   </xsl:template>
+
+  <xsl:function name="geonet:getThesaurusTitle">
+    <xsl:param name="thesarusNameEl" />
+    <xsl:param name="lang1" />
+
+    <xsl:variable name="lang">
+        <xsl:choose>
+          <xsl:when test="lower-case($lang1) = 'fre'">
+            <xsl:value-of select="'#fra'"/>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:value-of select="concat('#',lower-case($lang1))"/>
+          </xsl:otherwise>
+        </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="thesaurusTitleSimple" select="$thesarusNameEl/gmd:CI_Citation/gmd:title/gco:CharacterString/normalize-space()" />
+    <xsl:variable name="thesaurusTitleMultilingualNode"
+                  select="$thesarusNameEl/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = $lang]/normalize-space()"
+    />
+
+
+    <xsl:choose>
+      <xsl:when test="$thesaurusTitleMultilingualNode">
+        <xsl:value-of select="$thesaurusTitleMultilingualNode"/>
+      </xsl:when>
+
+      <xsl:otherwise>
+        <xsl:value-of select="$thesaurusTitleSimple"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
+
   <!-- Metadata resources template -->
   <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1]" priority="2005" />
 
@@ -392,7 +426,7 @@
     <xsl:variable name="thesaurusTitleEl"
                   select="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title"/>
 
-    <!--<xsl:message>descriptiveKeywords title: <xsl:value-of select="$thesaurusTitleEl/gco:CharacterString" /></xsl:message>-->
+    <xsl:variable name="thesaurusTitleMultiLingual" select="geonet:getThesaurusTitle(gmd:MD_Keywords/gmd:thesaurusName,$lang)"/>
 
     <!--Add all Thesaurus as first block of keywords-->
     <xsl:if test="name(preceding-sibling::*[1]) != name()">
@@ -403,32 +437,20 @@
 
     <xsl:variable name="thesaurusTitle">
       <xsl:choose>
-        <xsl:when test="normalize-space($thesaurusTitleEl/gco:CharacterString) != ''">
+        <xsl:when test="normalize-space($thesaurusTitleMultiLingual) != ''">
           <xsl:value-of select="if ($overrideLabel != '')
               then $overrideLabel
               else concat(
                       $iso19139strings/keywordFrom,
-                      normalize-space($thesaurusTitleEl/gco:CharacterString))"/>
+                      normalize-space($thesaurusTitleMultiLingual))"/>
         </xsl:when>
-        <xsl:when test="normalize-space($thesaurusTitleEl/gmd:PT_FreeText/
-                          gmd:textGroup/gmd:LocalisedCharacterString[
-                            @locale = concat('#', upper-case(xslutil:twoCharLangCode($lang)))][1]) != ''">
-          <xsl:value-of
-            select="$thesaurusTitleEl/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = concat('#', upper-case(xslutil:twoCharLangCode($lang)))][1]"/>
-        </xsl:when>
-        <xsl:when test="$thesaurusTitleEl/gmd:PT_FreeText/
-                          gmd:textGroup/gmd:LocalisedCharacterString[
-                            normalize-space(text()) != ''][1]">
-          <xsl:value-of select="$thesaurusTitleEl/gmd:PT_FreeText/gmd:textGroup/
-                                  gmd:LocalisedCharacterString[normalize-space(text()) != ''][1]"/>
-        </xsl:when>
+
         <xsl:otherwise>
           <xsl:value-of select="gmd:MD_Keywords/gmd:thesaurusName/
                                   gmd:CI_Citation/gmd:identifier/gmd:MD_Identifier/gmd:code"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-
 
     <xsl:variable name="attributes">
       <xsl:if test="$isEditing">
@@ -444,15 +466,18 @@
       </xsl:if>
     </xsl:variable>
 
-
     <xsl:variable name="thesaurusIdentifier"
                   select="normalize-space($thesaurusTitle)"/>
 
+    <!-- DJB: might be wrong-->
     <xsl:variable name="thesaurusConfig"
                   as="element()?"
                   select="if ($thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')])
                           then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
-                          else $listOfThesaurus/thesaurus[title=$thesaurusTitle]"/>
+                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle])
+                          then $listOfThesaurus/thesaurus[title=$thesaurusTitle]
+                          else $listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$thesaurusTitle]"/>
+
 
     <xsl:choose>
       <xsl:when test="$thesaurusConfig/@fieldset = 'false'">
@@ -464,26 +489,12 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="hideDelete" as="xs:boolean">
-          <xsl:choose>
-            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
-                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
-              <xsl:value-of select="true()" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="false()" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+              <xsl:value-of select="false()" />
+         </xsl:variable>
 
         <xsl:variable name="requiredClass">
-          <xsl:choose>
-            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
-                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
-              <xsl:value-of select="'gn-required'" />
-            </xsl:when>
-            <xsl:otherwise><xsl:value-of select="''" /></xsl:otherwise>
-          </xsl:choose>
+          <xsl:value-of select="''" />
         </xsl:variable>
-
 
         <xsl:call-template name="render-boxed-element">
           <xsl:with-param name="label"
@@ -507,60 +518,57 @@
 
   </xsl:template>
 
+  <xsl:function name="geonet:findThesaurus">
+    <xsl:param name="title1" />
+    <xsl:param name="title2" />
+
+    <!--standard way to look for thesaurus-->
+    <xsl:variable name="thesaurusConfig"
+                  as="element()?"
+                  select="if ($listOfThesaurus/thesaurus[@key=substring-after($title1, 'geonetwork.thesaurus.')])
+                          then $listOfThesaurus/thesaurus[@key=substring-after($title1, 'geonetwork.thesaurus.')]
+                          else if ($listOfThesaurus/thesaurus[title=$title1])
+                          then $listOfThesaurus/thesaurus[title=$title1]
+                          else if ($listOfThesaurus/thesaurus[title=$title2])
+                          then $listOfThesaurus/thesaurus[title=$title2]
+                          else $listOfThesaurus/thesaurus[key=$title2]"/>
+    <!--handle multilingual case -->
+    <xsl:variable name="thesaurusConfig2"
+                  as="element()?"
+                  select="$listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$title1]"/>
+    <xsl:variable name="thesaurusConfig3"
+                  as="element()?"
+                  select="$listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$title2]"/>
+
+    <xsl:choose>
+        <xsl:when test="$thesaurusConfig">
+           <xsl:copy-of  select="$thesaurusConfig"/>
+        </xsl:when>
+        <xsl:when test="$thesaurusConfig2">
+          <xsl:copy-of  select="$thesaurusConfig2"/>
+        </xsl:when>
+        <xsl:when test="$thesaurusConfig3">
+          <xsl:copy-of  select="$thesaurusConfig3"/>
+        </xsl:when>
+    </xsl:choose>
+  </xsl:function>
+
 
   <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords" priority="6000">
-
 
     <xsl:variable name="thesaurusIdentifier"
                   select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
 
 
     <xsl:variable name="thesaurusTitle"
-                  select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
+                  select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString"/>
 
-    <!--<xsl:message>THESAURUS TITLE C:<xsl:copy-of select="/root/gui/schemas/iso19139.ca.HNAP" /></xsl:message>-->
     <xsl:variable name="thesaurusTitle2">
-      <xsl:choose>
-        <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
-                  (gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada')">
-          <xsl:value-of  select="'theme.EC_Core_Subject.rdf'"/>
-        </xsl:when>
-
-        <xsl:otherwise>
-          <xsl:value-of  select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
-        </xsl:otherwise>
-      </xsl:choose>
+          <xsl:value-of  select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
     </xsl:variable>
 
-    <!--<xsl:message>thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" /></xsl:message>
-    <xsl:message>thesaurusTitle: <xsl:value-of select="$thesaurusTitle" /></xsl:message>
-    <xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>
-    <xsl:message>thesaurusIdentifier substring: <xsl:value-of select="substring-after($thesaurusIdentifier, 'local.')" /></xsl:message>-->
 
-    <!--<xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>-->
-
-    <xsl:variable name="thesaurusConfig"
-                  as="element()?"
-                  select="if ($thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')])
-                          then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
-                          else if ($listOfThesaurus/thesaurus[title=$thesaurusIdentifier])
-                          then $listOfThesaurus/thesaurus[title=$thesaurusIdentifier]
-                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle2])
-                          then $listOfThesaurus/thesaurus[title=$thesaurusTitle2]
-                          else $listOfThesaurus/thesaurus[key=$thesaurusTitle2]"/>
-    <!--<xsl:message>thesaurusConfig: <xsl:copy-of select="$thesaurusConfig" /></xsl:message>
-
-    <xsl:for-each select="$listOfThesaurus/thesaurus">
-      <xsl:message>
-        $listOfThesaurus: <xsl:value-of select="key" /> - <xsl:value-of select="title" />
-      </xsl:message>
-    </xsl:for-each>
-
-    <xsl:for-each select="$thesaurusList/thesaurus">
-      <xsl:message>
-        $thesaurusList: <xsl:value-of select="@key" />
-      </xsl:message>
-    </xsl:for-each>-->
+    <xsl:variable name="thesaurusConfig"  as="element()?"  select="geonet:findThesaurus($thesaurusTitle,$thesaurusTitle2)" />
 
 
     <xsl:choose>
@@ -655,11 +663,7 @@
           </xsl:choose>
         </xsl:variable>
 
-        <!--<xsl:message>
-          $thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" />
-          $thesaurusTitleToDisplay: <xsl:value-of select="thesaurusTitleToDisplay" />
 
-        </xsl:message>-->
 
         <xsl:variable name="isMandatory">
           <xsl:choose>

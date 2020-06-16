@@ -158,9 +158,7 @@
               <xsl:for-each select="gmd:keyword">
 
                 <xsl:choose>
-                  <xsl:when test="not(../gmd:thesaurusName/gmd:CI_Citation/@id) and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
+                  <xsl:when test="not(../gmd:thesaurusName/gmd:CI_Citation/@id)">
 
                     <xsl:call-template name="updateTranslation">
                       <xsl:with-param name="position" select="concat($descriptiveKeywordsPos, '-', position())" />
@@ -284,9 +282,7 @@
               <xsl:for-each select="gmd:keyword">
 
                 <xsl:choose>
-                  <xsl:when test="not(../gmd:thesaurusName/gmd:CI_Citation/@id) and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
+                  <xsl:when test="not(../gmd:thesaurusName/gmd:CI_Citation/@id)">
 
                     <xsl:call-template name="updateTranslation">
                       <xsl:with-param name="position" select="concat($descriptiveKeywordsPos, '-', position())" />

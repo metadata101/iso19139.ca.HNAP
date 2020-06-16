@@ -10,6 +10,8 @@
 
     <skos:ConceptScheme>
       <dc:title>ECCC Waf</dc:title>
+       <dc:title xml:lang="en">ECCC Waf EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Waf FR</dc:title>
       <dc:description></dc:description>
     </skos:ConceptScheme>
 

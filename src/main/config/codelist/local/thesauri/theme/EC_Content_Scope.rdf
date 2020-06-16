@@ -7,7 +7,9 @@
 	xmlns:dc="http://purl.org/dc/elements/1.1/">
 
   <skos:ConceptScheme rdf:about="http://geonetwork-opensource.org/thesaurus/naturalearth-and-seavox">
-    <dc:title>EC Content Scope</dc:title>
+    <dc:title>ECCC Content Scope</dc:title>
+       <dc:title xml:lang="en">ECCC Content Scope EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Content Scope FR</dc:title>
     <dc:description></dc:description>
   </skos:ConceptScheme>
 

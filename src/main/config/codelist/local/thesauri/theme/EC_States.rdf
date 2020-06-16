@@ -5,6 +5,8 @@
 
     <skos:ConceptScheme>
       <dc:title>ECCC States</dc:title>
+       <dc:title xml:lang="en">ECCC States EN</dc:title>
+       <dc:title xml:lang="fr">ECCC States FR</dc:title>
       <dc:description></dc:description>
     </skos:ConceptScheme>
 

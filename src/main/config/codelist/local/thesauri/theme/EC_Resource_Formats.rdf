@@ -5,6 +5,8 @@
 
     <skos:ConceptScheme>
       <dc:title>ECCC Resource Formats</dc:title>
+       <dc:title xml:lang="en">ECCC Resource Formats EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Resource Formats FR</dc:title>
       <dc:description></dc:description>
     </skos:ConceptScheme>
 

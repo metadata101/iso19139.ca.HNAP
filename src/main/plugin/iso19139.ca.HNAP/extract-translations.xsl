@@ -233,9 +233,7 @@
       <xsl:variable name="decriptiveKeywordsPos" select="position()" />
 
       <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
-        <xsl:if test="not(../gmd:thesaurusName/gmd:CI_Citation/@id) and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
+        <xsl:if test="not(../gmd:thesaurusName/gmd:CI_Citation/@id)">
           <xsl:call-template name="recordEntry">
             <xsl:with-param name="sectionTitleE" select="$sectionTitleEnglish" />
             <xsl:with-param name="sectionTitleF" select="$sectionTitleFrench" />
@@ -361,9 +359,7 @@
       <xsl:variable name="decriptiveKeywordsPos" select="position()" />
 
       <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
-        <xsl:if test="not(../gmd:thesaurusName/gmd:CI_Citation/@id) and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and not(
-            normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
+        <xsl:if test="not(../gmd:thesaurusName/gmd:CI_Citation/@id)">
           <xsl:call-template name="recordEntry">
             <xsl:with-param name="sectionTitleE" select="$sectionTitleEnglish" />
             <xsl:with-param name="sectionTitleF" select="$sectionTitleFrench" />

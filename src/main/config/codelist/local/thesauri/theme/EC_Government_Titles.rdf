@@ -7,6 +7,8 @@
 
     <skos:ConceptScheme>
       <dc:title>ECCC Government Titles</dc:title>
+       <dc:title xml:lang="en">ECCC Government Titles EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Government Titles FR</dc:title>
       <dc:description></dc:description>
     </skos:ConceptScheme>
 
