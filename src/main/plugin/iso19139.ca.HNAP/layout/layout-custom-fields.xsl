@@ -32,10 +32,10 @@
   <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
   <!-- Hide thesaurus name in default view -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default']" />
+  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default' and $schema = 'iso19139.ca.HNAP' ]" />
 
   <!-- Hide protocol for contacts in default view -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:protocol[$tab='default']" />
+  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:protocol[$tab='default' and $schema = 'iso19139.ca.HNAP']" />
 
 
   <!-- ===================================================================== -->
@@ -87,7 +87,7 @@
   </xsl:template>
 
   <!-- Readonly elements -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier|gmd:dateStamp">
+  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier[$schema = 'iso19139.ca.HNAP']|gmd:dateStamp[$schema = 'iso19139.ca.HNAP']">
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)" />
 
     <xsl:call-template name="render-element">
@@ -116,7 +116,7 @@
     a) basic shell HTML so it can be displayed in the editor (see MultiEntryCombiner.js for HTML example).
     b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
 -->
-  <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true']" priority="3000"  >
+  <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true' and $schema = 'iso19139.ca.HNAP']" priority="3000"  >
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
@@ -259,7 +259,7 @@
 
 
   <!-- Distribution format: Show list of allowed formats -->
-  <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name" priority="2005">
+  <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name[$schema = 'iso19139.ca.HNAP']" priority="2005">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$codelists" required="no"/>
@@ -296,7 +296,7 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template mode="mode-iso19139" match="gmd:EX_GeographicBoundingBox" priority="2005">
+  <xsl:template mode="mode-iso19139" match="gmd:EX_GeographicBoundingBox[$schema = 'iso19139.ca.HNAP']" priority="2005">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
@@ -356,7 +356,7 @@
 
 
   <xsl:template mode="mode-iso19139" priority="2005"
-                match="gmd:linkage1111">
+                match="gmd:linkage1111[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
@@ -413,10 +413,10 @@
   </xsl:function>
 
   <!-- Metadata resources template -->
-  <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1]" priority="2005" />
+  <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1][$schema = 'iso19139.ca.HNAP']" priority="2005" />
 
   <xsl:template mode="mode-iso19139" priority="5000"
-                match="gmd:descriptiveKeywords">
+                match="gmd:descriptiveKeywords[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
@@ -554,7 +554,7 @@
   </xsl:function>
 
 
-  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords" priority="6000">
+  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords[$schema = 'iso19139.ca.HNAP']" priority="6000">
 
     <xsl:variable name="thesaurusIdentifier"
                   select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
@@ -611,14 +611,14 @@
                       select="if ($thesaurusConfig/@transformations != '')
                               then $thesaurusConfig/@transformations
                               else 'to-iso19139-keyword,to-iso19139-keyword-with-anchor,to-iso19139-keyword-as-xlink'"/>-->
-        <xsl:variable name="transformations" select="''" />
+        <xsl:variable name="transformations" select="'to-iso19139.ca.HNAP-keyword,to-iso19139.ca.HNAP-keyword-with-anchor,to-iso19139.ca.HNAP-keyword-as-xlink'" />
 
         <!-- Get current transformation mode based on XML fragment analysis -->
         <xsl:variable name="transformation"
-                      select="if (parent::node()/@xlink:href) then 'to-iso19139-keyword-as-xlink'
+                      select="if (parent::node()/@xlink:href) then 'to-iso19139.ca.HNAP-keyword-as-xlink'
           else if (count(gmd:keyword/gmx:Anchor) > 0)
-          then 'to-iso19139-keyword-with-anchor'
-          else 'to-iso19139-keyword'"/>
+          then 'to-iso19139.ca.HNAP-keyword-with-anchor'
+          else 'to-iso19139.ca.HNAP-keyword'"/>
 
         <xsl:variable name="parentName" select="name(..)"/>
 
@@ -714,7 +714,7 @@
   </xsl:template>
 
 
-  <xsl:template mode="mode-iso19139" match="gmd:EX_BoundingPolygon" priority="5000">
+  <xsl:template mode="mode-iso19139" match="gmd:EX_BoundingPolygon[$schema = 'iso19139.ca.HNAP']" priority="5000">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
@@ -754,7 +754,7 @@
   -->
   <xsl:template mode="mode-iso19139"
                 priority="2005"
-                match="gmd:CI_Date/gmd:date">
+                match="gmd:CI_Date/gmd:date[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="listOfValues" select="$codelists" required="no"/>

@@ -38,8 +38,11 @@
 
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
+
+
+
   <!-- Override template -->
-  <xsl:template mode="to-iso19139-keyword" match="*[not(/root/request/skipdescriptivekeywords)]" priority="100">
+  <xsl:template mode="to-iso19139.ca.HNAP-keyword" match="*[not(/root/request/skipdescriptivekeywords)]" priority="100">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
@@ -67,7 +70,7 @@
           <xsl:attribute name="xlink:show">replace</xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:call-template name="to-md-keywords-nap">
+          <xsl:call-template name="to-md-keywords-iso19139.ca.HNAP">
             <xsl:with-param name="withAnchor" select="$withAnchor"/>
             <xsl:with-param name="withThesaurusAnchor" select="$withThesaurusAnchor"/>
             <xsl:with-param name="listOfLanguage" select="$listOfLanguage"/>
@@ -78,14 +81,66 @@
     </gmd:descriptiveKeywords>
   </xsl:template>
 
+
+
+  <!-- Convert a concept to an ISO19139 fragment with an Anchor
+        for each keywords pointing to the concept URI-->
+  <xsl:template name="to-iso19139.ca.HNAP-keyword-with-anchor">
+    <xsl:call-template name="to-iso19139.ca.HNAP-keyword">
+      <xsl:with-param name="withAnchor" select="true()"/>
+    </xsl:call-template>
+  </xsl:template>
+
+
+  <!-- Convert a concept to an ISO19139 gmd:MD_Keywords with an XLink which
+    will be resolved by XLink resolver. -->
+  <xsl:template name="to-iso19139.ca.HNAP-keyword-as-xlink">
+    <xsl:call-template name="to-iso19139.ca.HNAP-keyword">
+      <xsl:with-param name="withXlink" select="true()"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <!-- Convert a concept to an ISO19139 keywords.
+     If no keyword is provided, only thesaurus section is adaded.
+     -->
+  <xsl:template name="to-iso19139.ca.HNAP-keyword">
+    <xsl:param name="withAnchor" select="false()"/>
+    <xsl:param name="withXlink" select="false()"/>
+    <!-- Add thesaurus identifier using an Anchor which points to the download link.
+        It's recommended to use it in order to have the thesaurus widget inline editor
+        which use the thesaurus identifier for initialization. -->
+    <xsl:param name="withThesaurusAnchor" select="true()"/>
+
+    <!-- The lang parameter contains a list of languages
+    with the main one as the first element. If only one element
+    is provided, then CharacterString or Anchor are created.
+    If more than one language is provided, then PT_FreeText
+    with or without CharacterString can be created. -->
+    <xsl:variable name="listOfLanguage" select="tokenize(/root/request/lang, ',')"/>
+    <xsl:variable name="textgroupOnly"
+                  as="xs:boolean"
+                  select="if (/root/request/textgroupOnly and normalize-space(/root/request/textgroupOnly) != '')
+                          then /root/request/textgroupOnly
+                          else false()"/>
+
+
+    <xsl:apply-templates mode="to-iso19139.ca.HNAP-keyword" select=".">
+      <xsl:with-param name="withAnchor" select="$withAnchor"/>
+      <xsl:with-param name="withXlink" select="$withXlink"/>
+      <xsl:with-param name="withThesaurusAnchor" select="$withThesaurusAnchor"/>
+      <xsl:with-param name="listOfLanguage" select="$listOfLanguage"/>
+      <xsl:with-param name="textgroupOnly" select="$textgroupOnly"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
   <!-- Override template -->
-  <xsl:template mode="to-iso19139-keyword" match="*[/root/request/skipdescriptivekeywords]" priority="100">
+  <xsl:template mode="to-iso19139.ca.HNAP-keyword" match="*[/root/request/skipdescriptivekeywords]" priority="100">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
     <xsl:param name="withThesaurusAnchor"/>
 
-    <xsl:call-template name="to-md-keywords-nap">
+    <xsl:call-template name="to-md-keywords-iso19139.ca.HNAP">
       <xsl:with-param name="withAnchor" select="$withAnchor"/>
       <xsl:with-param name="withThesaurusAnchor" select="$withThesaurusAnchor"/>
       <xsl:with-param name="listOfLanguage" select="$listOfLanguage"/>
@@ -93,11 +148,14 @@
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template name="to-md-keywords-nap">
+  <xsl:template name="to-md-keywords-iso19139.ca.HNAP">
     <xsl:param name="textgroupOnly"/>
     <xsl:param name="listOfLanguage"/>
     <xsl:param name="withAnchor"/>
     <xsl:param name="withThesaurusAnchor"/>
+
+    <xsl:variable name="langConversions" select="/root/request/languageConversions"/>
+
 
     <gmd:MD_Keywords>
       <!-- Get thesaurus ID from keyword or from request parameter if no keyword found. -->
@@ -135,9 +193,12 @@
                 <xsl:for-each select="$listOfLanguage">
                   <xsl:if test="position() > 1">
                     <xsl:variable name="lang" select="."/>
+
+                    <xsl:variable name="convertedLang" select="$langConversions/conversion[@from = $lang]/@to" />
+
                     <gmd:textGroup>
                       <gmd:LocalisedCharacterString
-                        locale="#{$lang}">
+                        locale="#{$convertedLang}">
                         <xsl:value-of
                           select="$keyword/values/value[@language = $lang]/text()"></xsl:value-of>
                       </gmd:LocalisedCharacterString>

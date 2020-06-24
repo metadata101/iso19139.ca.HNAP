@@ -1,0 +1,5 @@
+{
+  "schema": "Paramètres spécifiques au schéma",
+  "schema/iso19139.ca.HNAP": "ISO19139 HNAP Paramètres",
+  "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Utilisez le sélecteur d'organisation «Gouvernement du Canada»\n"
+}
