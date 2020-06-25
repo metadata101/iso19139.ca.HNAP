@@ -86,27 +86,6 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Readonly elements -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier[$schema = 'iso19139.ca.HNAP']|gmd:dateStamp[$schema = 'iso19139.ca.HNAP']">
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)" />
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels)"/>
-      <xsl:with-param name="value" select="*"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '', $xpath)"/>
-      <xsl:with-param name="name" select="''"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="gn:element"/>
-      <xsl:with-param name="isDisabled" select="true()"/>
-    </xsl:call-template>
-  </xsl:template>
-
-
-
-
 <!--
     Special handling for the gmd:organisationName.  See MultiEntryCombiner.js for more info on how this works.
     Basically this is a replacement for render-element.
@@ -295,90 +274,7 @@
                       select="$listOfValues/entries"/>
     </xsl:call-template>
   </xsl:template>
-
-  <xsl:template mode="mode-iso19139" match="gmd:EX_GeographicBoundingBox[$schema = 'iso19139.ca.HNAP']" priority="2005">
-    <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
-
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
-
-
-    <xsl:variable name="hideDelete" as="xs:boolean">
-      <xsl:choose>
-        <xsl:when test="count(//gmd:EX_GeographicBoundingBox) > 1"><xsl:value-of select="false()" /></xsl:when>
-        <xsl:otherwise><xsl:value-of select="true()" /></xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:call-template name="render-boxed-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig/label"/>
-      <xsl:with-param name="editInfo" select="../gn:element"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <!--<xsl:with-param name="hideDelete" select="$hideDelete" />-->
-      <xsl:with-param name="subTreeSnippet">
-
-        <xsl:variable name="identifier"
-                      select="../following-sibling::gmd:geographicElement[1]/gmd:EX_GeographicDescription/
-                                  gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code/(gmx:Anchor|gco:CharacterString)"/>
-        <xsl:variable name="description"
-                      select="../preceding-sibling::gmd:description/gco:CharacterString"/>
-        <xsl:variable name="readonly" select="ancestor-or-self::node()[@xlink:href] != ''"/>
-        <div gn-draw-bbox=""
-             data-hleft="{gmd:westBoundLongitude/gco:Decimal}"
-             data-hright="{gmd:eastBoundLongitude/gco:Decimal}"
-             data-hbottom="{gmd:southBoundLatitude/gco:Decimal}"
-             data-htop="{gmd:northBoundLatitude/gco:Decimal}"
-             data-hleft-ref="_{gmd:westBoundLongitude/gco:Decimal/gn:element/@ref}"
-             data-hright-ref="_{gmd:eastBoundLongitude/gco:Decimal/gn:element/@ref}"
-             data-hbottom-ref="_{gmd:southBoundLatitude/gco:Decimal/gn:element/@ref}"
-             data-htop-ref="_{gmd:northBoundLatitude/gco:Decimal/gn:element/@ref}"
-             data-lang="lang"
-             data-read-only="{$readonly}">
-          <xsl:if test="$identifier and $isFlatMode">
-            <xsl:attribute name="data-identifier"
-                           select="$identifier"/>
-            <xsl:attribute name="data-identifier-ref"
-                           select="concat('_', $identifier/gn:element/@ref)"/>
-          </xsl:if>
-          <xsl:if test="$description and $isFlatMode and not($metadataIsMultilingual)">
-            <xsl:attribute name="data-description"
-                           select="$description"/>
-            <xsl:attribute name="data-description-ref"
-                           select="concat('_', $description/gn:element/@ref)"/>
-          </xsl:if>
-        </div>
-      </xsl:with-param>
-    </xsl:call-template>
-  </xsl:template>
-
-
-  <xsl:template mode="mode-iso19139" priority="2005"
-                match="gmd:linkage1111[$schema = 'iso19139.ca.HNAP']">
-    <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="overrideLabel" select="''" required="no"/>
-
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="elementName" select="name()"/>
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(gmd:URL), $labels, name(), $isoType, $xpath)"/>
-      <xsl:with-param name="value" select="gmd:URL"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="name"
-                      select="*/gn:element/@ref"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-
-    </xsl:call-template>
-
-  </xsl:template>
-
+  
   <xsl:function name="geonet:getThesaurusTitle">
     <xsl:param name="thesarusNameEl" />
     <xsl:param name="lang1" />
