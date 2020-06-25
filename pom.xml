@@ -9,44 +9,58 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>org.geonetwork-opensource</groupId>
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
-  <name>GeoNetwork schema plugin for HNAP ISO19139/119 standard</name>
+  <version>3.10.3-SNAPSHOT</version>
+
+  <name>Schema Plugin HNAP ISO19139/119</name>
+  <description>
+     GeoNetwork schema plugin for HNAP ISO19139/119 standard
+  </description>
 
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>schema-core</artifactId>
-      <version>${project.version}</version>
+      <version>${gn.schemas.version}</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
      <groupId>${project.groupId}</groupId>
      <artifactId>core</artifactId>
      <version>${gn.project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>schema-core</artifactId>
-      <version>${project.version}</version>
-      <type>test-jar</type>
-      <scope>test</scope>
+     <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-core</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-matchers</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>common</artifactId>
       <version>${gn.project.version}</version>
+      <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>schema-core</artifactId>
+      <version>${gn.schemas.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
   <build>
     <resources>
@@ -64,6 +78,10 @@
       </resource>
       <resource>
         <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <directory>src/main/plugin</directory>
+        <targetPath>plugin</targetPath>
       </resource>
     </resources>
     <testResources>
