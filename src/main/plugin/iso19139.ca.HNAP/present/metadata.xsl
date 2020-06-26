@@ -515,9 +515,7 @@
               </tr>
 
 
-              <xsl:apply-templates mode="elementEP" select="gmd:descriptiveKeywords[
-				not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and
-          not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]">
+              <xsl:apply-templates mode="elementEP" select="gmd:descriptiveKeywords">
                 <xsl:with-param name="schema" select="$schema"/>
                 <xsl:with-param name="edit"   select="$edit"/>
               </xsl:apply-templates>
@@ -538,9 +536,7 @@
 
             <xsl:with-param name="content">
               <!-- Government of Canada Core Subject Thesaurus. -->
-              <xsl:variable name="countECCoreSubjectThesaurus" select="count(/root/gmd:MD_Metadata//gmd:keyword[
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada'])"/>
+
               <xsl:variable name="titleECGeographicScope">
                 <xsl:call-template name="getTitle">
                   <xsl:with-param name="name"   select="'gmd:keyword'"/>
@@ -558,26 +554,13 @@
               <tr id="gmd:descriptiveKeywords_new2" type="metadata" title="{/root/gui/strings/editor/addcoresubjectkeywords_desc}">
                 <th class="padded-content" width="100%" colspan="2">
                   <xsl:value-of select="/root/gui/strings/editor/addcoresubjectkeywords" />
-                  <xsl:choose>
-                    <xsl:when test="$countECCoreSubjectThesaurus &gt; 0">
-                      <xsl:variable name="kCST" select="/root/gmd:MD_Metadata//gmd:keyword[
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']" />
 
-                      <a id="add-core-subject-keyword"
-                         style="cursor:hand;cursor:pointer;"
-                         onclick="if (noDoubleClick()) keywordSelectionPanel.showPanelAdd({$kCST[1]/geonet:element/@ref}, {$kCST[1]/geonet:element/@parent}, 1);" target="_blank">
-                        <img class="icon" src="{/root/gui/url}/images/plus.gif" alt="Add" title="Add" />
-                      </a>
-                    </xsl:when>
-                    <xsl:otherwise>
                       <a id="add-core-subject-keyword"
                          style="cursor:hand;cursor:pointer;"
                          onclick="if (noDoubleClick()) keywordSelectionPanel.showPanelAdd({geonet:element/@ref}, {geonet:element/@parent}, 2);" target="_blank">
                         <img class="icon" src="{/root/gui/url}/images/plus.gif" alt="Add add" title="Add add" />
                       </a>
-                    </xsl:otherwise>
-                  </xsl:choose>
+
                 </th>
               </tr>
 
@@ -586,97 +569,8 @@
               </tr>
 
               <!-- Government of Canada Core Subject Thesaurus -->
-              <xsl:for-each select="/root/gmd:MD_Metadata//gmd:keyword[
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']">
-                <xsl:variable name="id">geographic_<xsl:value-of select="geonet:element/@uuid"/></xsl:variable>
-                <xsl:variable name="last" select="position() = last()"/>
-                <xsl:variable name="first" select="position() = 1"/>
 
-                <xsl:call-template name="simpleElementGui">
-                  <xsl:with-param name="schema" select="$schema"/>
-                  <xsl:with-param name="edit"       select="$edit"/>
-                  <xsl:with-param name="id" select="$id"/>
 
-                  <xsl:with-param name="title">
-                    <!-- Use dummy element name to identify field in metadata editor. In XML is stored as a keyword -->
-                    <xsl:value-of select="$titleECGeographicScope" />
-
-                    <xsl:call-template name="asterisk">
-                      <xsl:with-param name="edit" select="$edit"/>
-                    </xsl:call-template>
-
-                    <span id="buttons_{$id}">
-                      <xsl:variable name="removeLink">
-                        <xsl:value-of select="concat('doRemoveElementAction(',$apos,'/metadata.elem.delete',$apos,',',geonet:element/@ref,',',geonet:element/@parent,',',$apos,'',$id,$apos,',',../../geonet:element/@min,',',$apos, 'geographic' ,$apos, ');')"/>
-                      </xsl:variable>
-
-                      <xsl:if test="$edit">
-                        <xsl:if test="not($first)">&#160;</xsl:if><a id="remove_{$id}" style="cursor:hand;cursor:pointer;" onclick="if (noDoubleClick()) {$removeLink}" target="_blank">
-                        <xsl:attribute name="style">
-                          cursor:hand;cursor:pointer;
-                          <xsl:if test="$first">display:none;</xsl:if>
-                        </xsl:attribute>
-
-                        <img src="{/root/gui/url}/images/del.gif" class="icon" alt="{/root/gui/strings/del}" title="{/root/gui/strings/del}"/></a>
-                      </xsl:if>
-
-                    </span>
-
-                  </xsl:with-param>
-                  <xsl:with-param name="tooltip" select="$tooltipECGeographicScope" />
-
-                  <xsl:with-param name="validationLink">
-                    <xsl:variable name="ref" select="concat('#_',gco:CharacterString/geonet:element/@ref)"/>
-                    <xsl:call-template name="validationLink">
-                      <xsl:with-param name="ref" select="$ref"/>
-                      <xsl:with-param name="title" select="$titleECGeographicScope"/>
-                    </xsl:call-template>
-                  </xsl:with-param>
-
-                  <xsl:with-param name="text">
-                    <xsl:variable name="mainLang">
-                      <xsl:call-template name="getMainLangFromMetadata">
-                        <xsl:with-param name="md" select="/root/*"/>
-                      </xsl:call-template>
-                    </xsl:variable>
-
-                    <xsl:apply-templates mode="ecCoreSubjectThesaurus" select=".">
-                      <xsl:with-param name="schema" select="$schema"/>
-                      <xsl:with-param name="edit" select="$edit"/>
-                      <!-- Metadata main language -->
-                      <xsl:with-param name="langId">
-                        <xsl:choose>
-                          <xsl:when test="starts-with($mainLang, 'fra')">fra</xsl:when>
-                          <xsl:otherwise>eng</xsl:otherwise>
-                        </xsl:choose>
-                      </xsl:with-param>
-                    </xsl:apply-templates>
-                  </xsl:with-param>
-
-                </xsl:call-template>
-
-              </xsl:for-each>
-
-              <xsl:for-each select="/root/gmd:MD_Metadata//gmd:descriptiveKeywords[
-          normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-          normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']">
-                <xsl:variable name="refDescriptiveKeywords" select="geonet:element/@ref" />
-                <xsl:if test="/root/request/showvalidationerrors = 'true' and count(//svrl:failed-assert[@ref=concat('#_',$refDescriptiveKeywords)]) > 0">
-                  <tr>
-                    <td colspan="6">
-
-                      <div id="valmessage_{../geonet:element/@ref}" class="editor-error">
-
-                        <xsl:for-each select="//svrl:failed-assert[@ref=concat('#_',$refDescriptiveKeywords)]">
-                          <xsl:value-of select="."/><br/>
-                        </xsl:for-each>
-
-                      </div>
-                    </td>
-                  </tr>
-                </xsl:if>
-              </xsl:for-each>
 
             </xsl:with-param>
             <xsl:with-param name="schema" select="$schema"/>
@@ -1600,19 +1494,8 @@
       <xsl:when test="/root/gui/config/metadata-tab/*[name(.)=$currTab]/@flat">
 
         <xsl:choose>
-          <xsl:when test="(
-                normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-                normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
-
-            <xsl:apply-templates mode="elementEP" select="gmd:MD_Keywords">
-              <xsl:with-param name="schema" select="$schema"/>
-              <xsl:with-param name="edit"   select="$edit"/>
-            </xsl:apply-templates>
-
-          </xsl:when>
 
           <xsl:when test="((gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Waf'))">
-
           </xsl:when>
 
           <xsl:otherwise>
@@ -1659,11 +1542,7 @@
         <xsl:for-each select="gmd:keyword">
 
           <xsl:choose>
-            <!--<xsl:when test="((../gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Waf') or
-                              (gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus' or
-                              gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada'))">
 
-            </xsl:when>-->
 
             <xsl:when test="((../gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Waf'))">
 
@@ -1686,9 +1565,7 @@
         <xsl:choose>
 
           <xsl:when test="(
-              gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Waf' or
-              normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-              normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')">
+              gmd:thesaurusName/gmd:CI_Citation/@id = 'local.theme.EC_Waf'">
 
           </xsl:when>
           <xsl:otherwise>
@@ -3140,108 +3017,6 @@
     </xsl:choose>
   </xsl:template>
 
-
-  <xsl:template match="gmd:keyword[
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-          normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']" mode="iso19139" priority="200">
-    <xsl:param name="schema"/>
-    <xsl:param name="edit"/>
-
-
-    <xsl:variable name="id">geographic_<xsl:value-of select="geonet:element/@uuid"/></xsl:variable>
-    <xsl:variable name="last" select="position() = last()"/>
-
-    <xsl:variable name="titleECGeographicScope">
-      <xsl:call-template name="getTitle">
-        <xsl:with-param name="name"   select="'gmd:keyword'"/>
-        <xsl:with-param name="schema" select="$schema"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="tooltipECGeographicScope">
-      <!-- Use dummy element name to identify field in metadata editor. In XML is stored as a keyword -->
-      <xsl:call-template name="getTooltipTitle">
-        <xsl:with-param name="name"   select="'CoreSubjectThesaurus'"/>
-        <xsl:with-param name="schema" select="$schema"/>
-      </xsl:call-template>
-    </xsl:variable>
-
-    <xsl:call-template name="simpleElementGui">
-      <xsl:with-param name="schema" select="$schema"/>
-      <xsl:with-param name="edit"       select="$edit"/>
-      <xsl:with-param name="id" select="$id"/>
-
-      <xsl:with-param name="title">
-        <!-- Use dummy element name to identify field in metadata editor. In XML is stored as a keyword -->
-        <xsl:value-of select="$titleECGeographicScope" />
-
-        <xsl:call-template name="asterisk">
-          <xsl:with-param name="edit" select="$edit"/>
-        </xsl:call-template>
-
-        <span id="buttons_{$id}">
-
-          <xsl:variable name="addLink">
-            <xsl:value-of select="concat('keywordSelectionPanel.showPanelAdd(',$apos,geonet:element/@ref,$apos,',',$apos,geonet:element/@parent,$apos,',1)')"/>
-          </xsl:variable>
-
-          <xsl:variable name="removeLink">
-            <xsl:value-of select="concat('doRemoveElementAction(',$apos,'/metadata.elem.delete',$apos,',',geonet:element/@ref,',',geonet:element/@parent,',',$apos,'',$id,$apos,',',../../geonet:element/@min,',',$apos, 'core' ,$apos, ');')"/>
-          </xsl:variable>
-
-          <xsl:if test="$edit">
-            &#160;<a id="add_{$id}" style="cursor:hand;cursor:pointer;" onclick="if (noDoubleClick()) {$addLink}" target="_blank">
-            <xsl:attribute name="style">
-              cursor:hand;cursor:pointer;
-              <xsl:if test="not($last)">display:none;</xsl:if>
-            </xsl:attribute>
-
-            <img src="{/root/gui/url}/images/plus.gif" class="icon" alt="{/root/gui/strings/add}" title="{/root/gui/strings/add}"/></a>
-
-            &#160;<a id="remove_{$id}" style="cursor:hand;cursor:pointer;" onclick="if (noDoubleClick()) {$removeLink}" target="_blank">
-            <xsl:attribute name="style">
-              cursor:hand;cursor:pointer;
-              <!--<xsl:if test="$countECCoreSubjectThesaurus = 1">display:none;</xsl:if>-->
-            </xsl:attribute>
-
-            <img src="{/root/gui/url}/images/del.gif" class="icon" alt="{/root/gui/strings/del}" title="{/root/gui/strings/del}"/></a>
-          </xsl:if>
-
-        </span>
-
-      </xsl:with-param>
-      <xsl:with-param name="tooltip" select="$tooltipECGeographicScope" />
-
-      <xsl:with-param name="validationLink">
-        <xsl:variable name="ref" select="concat('#_',gco:CharacterString/geonet:element/@ref)"/>
-        <xsl:call-template name="validationLink">
-          <xsl:with-param name="ref" select="$ref"/>
-          <xsl:with-param name="title" select="$titleECGeographicScope"/>
-        </xsl:call-template>
-      </xsl:with-param>
-
-      <xsl:with-param name="text">
-        <xsl:variable name="mainLang">
-           <xsl:call-template name="getMainLangFromMetadata">
-              <xsl:with-param name="md" select="/root/*"/>
-           </xsl:call-template>
-        </xsl:variable>
-
-
-        <xsl:apply-templates mode="ecCoreSubjectThesaurus" select=".">
-          <xsl:with-param name="schema" select="$schema"/>
-          <xsl:with-param name="edit" select="$edit"/>
-          <!-- Metadata main language -->
-          <xsl:with-param name="langId">
-            <xsl:choose>
-              <xsl:when test="starts-with($mainLang, 'fra')">fra</xsl:when>
-              <xsl:otherwise>eng</xsl:otherwise>
-            </xsl:choose>
-          </xsl:with-param>
-        </xsl:apply-templates>
-      </xsl:with-param>
-
-    </xsl:call-template>
-  </xsl:template>
 
 
   <xsl:template mode="iso19139" match="gmd:metadataStandardName" priority="100">

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <skos:ConceptScheme>
+      <dc:title>ECCC Resource Content Types</dc:title>
+       <dc:title xml:lang="en">ECCC Resource Content Types EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Resource Content Types FR</dc:title>
+      <dc:description></dc:description>
+    </skos:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Dataset">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"

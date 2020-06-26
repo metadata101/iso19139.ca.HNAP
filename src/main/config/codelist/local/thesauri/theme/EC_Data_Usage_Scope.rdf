@@ -2,14 +2,23 @@
 <rdf:RDF
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-  
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+   <skos:ConceptScheme>
+     <dc:title>ECCC Data Usage Scope</dc:title>
+       <dc:title xml:lang="en">ECCC Data Usage Scope EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Data Usage Scope FR</dc:title>
+     <dc:description></dc:description>
+   </skos:ConceptScheme>
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/datausage#enforcementcompliance">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Application de la loi et conformité</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:prefLabel xml:lang="en">Enforcement/Compliance</ns2:prefLabel>
   </rdf:Description>
-  
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/datausage#environmentalmonitoring">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Surveillance environnementale</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -27,7 +36,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:prefLabel xml:lang="en">Permitting</ns2:prefLabel>
   </rdf:Description>
-  
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/datausage#regulation">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Réglementation</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -39,7 +48,7 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:prefLabel xml:lang="en">Scientific Research</ns2:prefLabel>
   </rdf:Description>
-  
+
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/datausage#strategicpolicypeportingdecisionmaking">
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Politique stratégique et prise de décisions</ns2:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>

@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://ec.gc.ca/skos/datamart#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xml:base="http://ec.gc.ca/skos/datamart">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns="http://ec.gc.ca/skos/datamart#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xml:base="http://ec.gc.ca/skos/datamart"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <skos:ConceptScheme>
+      <dc:title>ECCC Waf</dc:title>
+       <dc:title xml:lang="en">ECCC Waf EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Waf FR</dc:title>
+      <dc:description></dc:description>
+    </skos:ConceptScheme>
+
   <owl:Ontology rdf:about="http://ec.gc.ca/skos/datamart">
     <owl:imports rdf:resource="http://www.w3.org/2008/05/skos" />
   </owl:Ontology>

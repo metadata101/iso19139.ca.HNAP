@@ -2,7 +2,16 @@
 <rdf:RDF
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <skos:ConceptScheme>
+      <dc:title>ECCC Geographic Scope</dc:title>
+       <dc:title xml:lang="en">ECCC Geographic Scope EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Geographic Scope FR</dc:title>
+      <dc:description></dc:description>
+    </skos:ConceptScheme>
 
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#000">
 	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -10,34 +19,34 @@
 	<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
 	<ns2:prefLabel xml:lang="fr">National (CA)</ns2:prefLabel>
 	<ns2:prefLabel xml:lang="en">National (CA)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#001">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
 	<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
 	<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
 	<ns2:prefLabel xml:lang="fr">Atlantique</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Atlantic</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#002">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Atlantique - Nouveau-Brunswick (NB)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Atlantic - New Brunswick (NB)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#003">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Atlantique - Terre-Neuve-et-Labrador (NL)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Atlantic - Newfoundland and Labrador (NL)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#004">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Atlantique - Nouvelle-Écosse (NS)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Atlantic - Nova Scotia (NS)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#005">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Atlantique - Île-du-Prince-Édouard (PE)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Atlantic - Prince Edward Island (PE)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#006">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Ontario (ON)</ns2:prefLabel>
@@ -47,27 +56,27 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Territories</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Territories</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#008">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Colombie-Britannique (BC)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">British Columbia (BC)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#009">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Territoires - Yukon (YT)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Territories - Yukon (YT)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#010">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Prairies</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Prairie</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#011">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Prairies - Alberta (AB)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Prairie - Alberta (AB)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#012">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
@@ -79,19 +88,19 @@
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Territoires - Territoires du Nord-Ouest (NT)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Territories - Northwest Territories (NT)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#014">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Territoires - Nunavut (NU)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Territories - Nunavut (NU)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#015">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">Prairies - Saskatchewan (SK)</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Prairie - Saskatchewan (SK)</ns2:prefLabel>
-  </rdf:Description> 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#016">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
@@ -253,113 +262,113 @@
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Okanagan–Similkameen</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Okanagan–Similkameen</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#042">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Columbia</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Columbia</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#043">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Yukon</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Yukon</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#044">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Paix–Athabasca</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Peace–Athabasca</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#045">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Bas Mackenzie</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Lower Mackenzie</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#046">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Missouri</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Missouri</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#047">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Saskatchewan Nord</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - North Saskatchewan</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#048">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Saskatchewan Sud</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - South Saskatchewan</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#049">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Assiniboine–Rouge</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Assiniboine–Red</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#050">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Winnipeg</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Winnipeg</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#051">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Bas Saskatchewan–Nelson</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Lower Saskatchewan–Nelson</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#052">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Churchill</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Churchill</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#053">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Nord de l'Ontario</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Northern Ontario</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#054">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Grands Lacs</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Great Lakes</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#055">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Des Outaouais</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Ottawa</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#056">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Saint–Laurent</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - St. Lawrence</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#057">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Saint-Jean–St-Croix</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Saint John–St. Croix</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#058">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Côte des provinces maritimes</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Maritime Coastal</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GeographicScope#059">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     <ns2:prefLabel xml:lang="fr">L'eau - Régions de drainage - Terre-Neuve–Labrador</ns2:prefLabel>
     <ns2:prefLabel xml:lang="en">Water - Drainage regions - Newfoundland–Labrador</ns2:prefLabel>
-  </rdf:Description>	 
+  </rdf:Description>
 </rdf:RDF>

@@ -594,9 +594,7 @@
             <!-- keywords -->
             <xsl:variable name="kCodelist" select="/root/gui/schemas/iso19139.ca.HNAP/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
 
-            <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords[
-                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and
-                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
+            <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
 
               <tr>
                 <th class="md" colspan="2"><span class="content">
@@ -642,51 +640,6 @@
             </xsl:for-each-group>
 
 
-            <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords[
-                (normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') or
-                (normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
-
-              <tr>
-                <th class="md" colspan="2"><span class="content">
-
-                  <xsl:call-template name="getTitle">
-                    <xsl:with-param name="name"   select="'CoreSubjectThesaurus'"/>
-                    <xsl:with-param name="schema" select="$schema"/>
-                  </xsl:call-template>
-                </span>
-                </th>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <xsl:variable name="keywordsList">
-                    <xsl:for-each select="current-group()">
-
-                      <xsl:for-each select="gmd:MD_Keywords/gmd:keyword">
-                        <xsl:variable name="keywordVal">
-                          <xsl:call-template name="translatedString">
-                            <xsl:with-param name="schema" select="$schema"/>
-                            <xsl:with-param name="langId">
-                              <xsl:call-template name="getLangId">
-                                <xsl:with-param name="langGui" select="$langForMetadata"/>
-                                <xsl:with-param name="md" select="ancestor-or-self::*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']" />
-                              </xsl:call-template>
-                            </xsl:with-param>
-                          </xsl:call-template>
-                        </xsl:variable>
-                        <xsl:value-of select="normalize-space($keywordVal)" /><xsl:if test="string(normalize-space($keywordVal))"><xsl:text>, </xsl:text></xsl:if>
-                      </xsl:for-each>
-
-                    </xsl:for-each>
-                  </xsl:variable>
-
-                  <xsl:variable name="keywordsListNorm" select="normalize-space($keywordsList)" />
-                  <xsl:if test="string($keywordsListNorm)">
-                    <xsl:value-of select="substring($keywordsListNorm, 1, string-length($keywordsListNorm) - 1)" />
-                  </xsl:if>
-                </td>
-              </tr>
-
-            </xsl:for-each-group>
 
             <tr>
               <th class="md" colspan="2"><span class="content">

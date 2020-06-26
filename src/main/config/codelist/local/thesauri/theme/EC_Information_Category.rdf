@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
 
-  <skos:ConceptScheme rdf:about="http://geonetwork-opensource.org/EC/informationcategory">
-  </skos:ConceptScheme>
+  <ns2:ConceptScheme rdf:about="http://geonetwork-opensource.org/EC/informationcategory">
+        <dc:title>ECCC Information Category</dc:title>
+       <dc:title xml:lang="en">ECCC Information Category EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Information Category FR</dc:title>
+        <dc:description></dc:description>
+  </ns2:ConceptScheme>
 
   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#air">
      <ns2:scopeNote xml:lang="fr">Air data is grouped into themes such as ambient gases and particles, precipitation chemistry and upper air.</ns2:scopeNote>

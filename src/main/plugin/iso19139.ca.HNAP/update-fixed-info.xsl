@@ -25,9 +25,6 @@
   <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
   <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
 
-  <xsl:variable name="coreThesaurusEng" select="'Government of Canada Core Subject Thesaurus'" />
-  <xsl:variable name="coreThesaurusFre" select="'Thésaurus des sujets de base du gouvernement du Canada'" />
-
 
   <xsl:variable name="localeForTranslations">
     <xsl:choose>
@@ -811,171 +808,6 @@
 		</gco:CharacterString>
 	</xsl:template>
 
-  <xsl:template match="gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString=$coreThesaurusEng or
-                                        gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString=$coreThesaurusFre]">
-
-    <xsl:variable name="mainLanguageIdPound" select="concat('#', $mainLanguageId)"/>
-    <xsl:variable name="altLanguageIdPound" select="concat('#', $altLanguageId)"/>
-
-    <xsl:variable name="mainLanguage2char">
-      <xsl:choose>
-        <xsl:when test="$mainLanguage = 'eng'">en</xsl:when>
-        <xsl:otherwise>fr</xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:variable name="altLanguage2char">
-      <xsl:choose>
-        <xsl:when test="$mainLanguage2char = 'en'">fr</xsl:when>
-        <xsl:otherwise>en</xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:copy>
-      <xsl:if test="not(gmd:keyword)">
-        <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
-          <gco:CharacterString></gco:CharacterString>
-          <gmd:PT_FreeText>
-            <gmd:textGroup>
-              <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}"></gmd:LocalisedCharacterString>
-            </gmd:textGroup>
-          </gmd:PT_FreeText>
-        </gmd:keyword>
-      </xsl:if>
-
-      <xsl:for-each select="gmd:keyword">
-        <xsl:variable name="value" select="normalize-space(gco:CharacterString)"/>
-        <xsl:variable name="valueTrans"
-                      select="normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = $altLanguageIdPound])"/>
-
-        <xsl:variable name="sameValue"
-                      select="count($ecCoreThesaurus//skos:concept[(skos:prefLabel[@xml:lang=$mainLanguage2char] = $value and skos:prefLabel[@xml:lang=$altLanguage2char]  = $valueTrans)]) = 1"/>
-
-        <xsl:choose>
-          <xsl:when test="$sameValue = true()">
-            <xsl:apply-templates select="."/>
-          </xsl:when>
-          <xsl:otherwise>
-            <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
-              <gco:CharacterString>
-                <xsl:value-of select="normalize-space(gco:CharacterString)"/>
-              </gco:CharacterString>
-              <gmd:PT_FreeText>
-                <gmd:textGroup>
-                  <xsl:variable name="localisedValue">
-                    <xsl:if test="normalize-space(gco:CharacterString)">
-                      <xsl:value-of
-                        select="$ecCoreThesaurus//skos:Concept[skos:prefLabel[@xml:lang=$mainLanguage2char] = $value]/skos:prefLabel[@xml:lang=$altLanguage2char]"/>
-                    </xsl:if>
-                  </xsl:variable>
-                  <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}">
-                    <xsl:value-of select="$localisedValue"/>
-                  </gmd:LocalisedCharacterString>
-                </gmd:textGroup>
-              </gmd:PT_FreeText>
-            </gmd:keyword>
-          </xsl:otherwise>
-        </xsl:choose>
-
-      </xsl:for-each>
-
-      <xsl:apply-templates select="gmd:type"/>
-      <xsl:apply-templates select="gmd:thesaurusName"/>
-
-      <xsl:if test="not(gmd:thesaurusName)">
-        <gmd:thesaurusName>
-          <gmd:CI_Citation>
-            <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-              <gco:CharacterString>
-                <xsl:choose>
-                  <xsl:when test="$mainLanguage2char = 'fr'">
-                      <xsl:value-of select="$coreThesaurusFre"/>
-                  </xsl:when>
-                  <xsl:otherwise>
-                      <xsl:value-of select="$coreThesaurusEng"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </gco:CharacterString>
-              <gmd:PT_FreeText>
-                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}">
-                    <xsl:choose>
-                        <xsl:when test="$mainLanguage2char = 'fr'">
-                            <xsl:value-of select="$coreThesaurusEng"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="$coreThesaurusFre"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                  </gmd:LocalisedCharacterString>
-                </gmd:textGroup>
-              </gmd:PT_FreeText>
-            </gmd:title>
-            <gmd:date>
-              <gmd:CI_Date>
-                <gmd:date>
-                  <gco:Date>2004</gco:Date>
-                </gmd:date>
-                <gmd:dateType>
-                  <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                       codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">
-                    creation;création
-                  </gmd:CI_DateTypeCode>
-                </gmd:dateType>
-              </gmd:CI_Date>
-            </gmd:date>
-            <gmd:date>
-              <gmd:CI_Date>
-                <gmd:date>
-                  <gco:Date>2015-04-21</gco:Date>
-                </gmd:date>
-                <gmd:dateType>
-                  <gmd:CI_DateTypeCode
-                    codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
-                    codeListValue="RI_367">publication; publication
-                  </gmd:CI_DateTypeCode>
-                </gmd:dateType>
-              </gmd:CI_Date>
-            </gmd:date>
-            <gmd:citedResponsibleParty>
-              <gmd:CI_ResponsibleParty>
-                <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>
-                    <xsl:choose>
-                      <xsl:when test="$mainLanguage2char = 'en'">Government of Canada; Library and
-                        Archives Canada
-                      </xsl:when>
-                      <xsl:otherwise>Gouvernement du Canada; Bibliothèque et Archives Canada
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </gco:CharacterString>
-                  <gmd:PT_FreeText>
-                    <gmd:textGroup>
-                      <gmd:LocalisedCharacterString locale="{$altLanguageIdPound}">
-                        <xsl:choose>
-                          <xsl:when test="$mainLanguage2char = 'en'">Gouvernement du Canada;
-                            Bibliothèque et Archives Canada
-                          </xsl:when>
-                          <xsl:otherwise>Government of Canada; Library and Archives Canada
-                          </xsl:otherwise>
-                        </xsl:choose>
-                      </gmd:LocalisedCharacterString>
-                    </gmd:textGroup>
-                  </gmd:PT_FreeText>
-                </gmd:organisationName>
-                <gmd:role>
-                  <gmd:CI_RoleCode codeListValue="RI_409"
-                                   codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">
-                    custodian; conservateur
-                  </gmd:CI_RoleCode>
-                </gmd:role>
-              </gmd:CI_ResponsibleParty>
-            </gmd:citedResponsibleParty>
-          </gmd:CI_Citation>
-        </gmd:thesaurusName>
-      </xsl:if>
-    </xsl:copy>
-  </xsl:template>
 
   <xsl:template match="gmd:MD_DataIdentification">
     <xsl:copy>
@@ -1014,8 +846,7 @@
 
           <!-- Keywords with thesaurus -->
           <!-- Group by type -->
-        <xsl:for-each-group select="gmd:descriptiveKeywords[string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) and (gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString != $coreThesaurusEng) and
-                                      (gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString != $coreThesaurusFre)]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode">
+        <xsl:for-each-group select="gmd:descriptiveKeywords[string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode">
 
           <!-- Group by thesaurus -->
           <xsl:for-each-group select="current-group()" group-by="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString">
@@ -1073,8 +904,6 @@
         </gmd:descriptiveKeywords>
       </xsl:for-each>
 
-      <xsl:apply-templates select="gmd:descriptiveKeywords[(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = $coreThesaurusEng) or
-                                      (gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = $coreThesaurusFre)]"/>
 
       <!--<xsl:apply-templates select="gmd:descriptiveKeywords" />-->
       <xsl:apply-templates select="gmd:resourceSpecificUsage"/>

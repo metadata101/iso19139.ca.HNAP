@@ -474,9 +474,7 @@
               <!-- keywords (no Core Subject thesaurus) -->
               <xsl:variable name="kCodelist" select="/root/schemas/*[name()=$schema]/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
 
-              <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords[
-                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus') and
-                not(normalize-space(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada')]" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
+              <xsl:for-each-group select="/root/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:descriptiveKeywords" group-by="gmd:MD_Keywords/gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
 
                 <dl>
                   <dt>
@@ -507,10 +505,6 @@
                 </dl>
 
               </xsl:for-each-group>
-
-              <xsl:apply-templates mode="render-field" select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:descriptiveKeywords[contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Government of Canada Core Subject Thesaurus') or
-                contains(*/gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString, 'Thésaurus des sujets de base du gouvernement du Canada')]" />
-
 
               <xsl:apply-templates mode="render-field" select="/root/gmd:MD_Metadata//gmd:identificationInfo/*/gmd:topicCategory" />
 

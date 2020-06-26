@@ -16,6 +16,9 @@
                 xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
                 xmlns:xslutil="java:org.fao.geonet.util.XslUtil"
                 xmlns:saxon="http://saxon.sf.net/"
+                xmlns:geonet="http://www.fao.org/geonetwork"
+
+
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
 
@@ -29,10 +32,10 @@
   <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
   <!-- Hide thesaurus name in default view -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default']" />
+  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default' and $schema = 'iso19139.ca.HNAP' ]" />
 
   <!-- Hide protocol for contacts in default view -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:protocol[$tab='default']" />
+  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:protocol[$tab='default' and $schema = 'iso19139.ca.HNAP']" />
 
 
   <!-- ===================================================================== -->
@@ -83,27 +86,6 @@
     </xsl:call-template>
   </xsl:template>
 
-  <!-- Readonly elements -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="gmd:fileIdentifier|gmd:dateStamp">
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)" />
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels)"/>
-      <xsl:with-param name="value" select="*"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '', $xpath)"/>
-      <xsl:with-param name="name" select="''"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="gn:element"/>
-      <xsl:with-param name="isDisabled" select="true()"/>
-    </xsl:call-template>
-  </xsl:template>
-
-
-
-
 <!--
     Special handling for the gmd:organisationName.  See MultiEntryCombiner.js for more info on how this works.
     Basically this is a replacement for render-element.
@@ -113,7 +95,7 @@
     a) basic shell HTML so it can be displayed in the editor (see MultiEntryCombiner.js for HTML example).
     b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
 -->
-  <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true']" priority="3000"  >
+  <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true' and $schema = 'iso19139.ca.HNAP']" priority="3000"  >
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
@@ -256,7 +238,7 @@
 
 
   <!-- Distribution format: Show list of allowed formats -->
-  <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name" priority="2005">
+  <xsl:template mode="mode-iso19139" match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat/gmd:MD_Format/gmd:name[$schema = 'iso19139.ca.HNAP']" priority="2005">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$codelists" required="no"/>
@@ -292,97 +274,45 @@
                       select="$listOfValues/entries"/>
     </xsl:call-template>
   </xsl:template>
+  
+  <xsl:function name="geonet:getThesaurusTitle">
+    <xsl:param name="thesarusNameEl" />
+    <xsl:param name="lang1" />
 
-  <xsl:template mode="mode-iso19139" match="gmd:EX_GeographicBoundingBox" priority="2005">
-    <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:variable name="lang">
+        <xsl:choose>
+          <xsl:when test="lower-case($lang1) = 'fre'">
+            <xsl:value-of select="'#fra'"/>
+          </xsl:when>
 
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
-
-
-    <xsl:variable name="hideDelete" as="xs:boolean">
-      <xsl:choose>
-        <xsl:when test="count(//gmd:EX_GeographicBoundingBox) > 1"><xsl:value-of select="false()" /></xsl:when>
-        <xsl:otherwise><xsl:value-of select="true()" /></xsl:otherwise>
-      </xsl:choose>
+          <xsl:otherwise>
+            <xsl:value-of select="concat('#',lower-case($lang1))"/>
+          </xsl:otherwise>
+        </xsl:choose>
     </xsl:variable>
 
-    <xsl:call-template name="render-boxed-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig/label"/>
-      <xsl:with-param name="editInfo" select="../gn:element"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <!--<xsl:with-param name="hideDelete" select="$hideDelete" />-->
-      <xsl:with-param name="subTreeSnippet">
-
-        <xsl:variable name="identifier"
-                      select="../following-sibling::gmd:geographicElement[1]/gmd:EX_GeographicDescription/
-                                  gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code/(gmx:Anchor|gco:CharacterString)"/>
-        <xsl:variable name="description"
-                      select="../preceding-sibling::gmd:description/gco:CharacterString"/>
-        <xsl:variable name="readonly" select="ancestor-or-self::node()[@xlink:href] != ''"/>
-        <div gn-draw-bbox=""
-             data-hleft="{gmd:westBoundLongitude/gco:Decimal}"
-             data-hright="{gmd:eastBoundLongitude/gco:Decimal}"
-             data-hbottom="{gmd:southBoundLatitude/gco:Decimal}"
-             data-htop="{gmd:northBoundLatitude/gco:Decimal}"
-             data-hleft-ref="_{gmd:westBoundLongitude/gco:Decimal/gn:element/@ref}"
-             data-hright-ref="_{gmd:eastBoundLongitude/gco:Decimal/gn:element/@ref}"
-             data-hbottom-ref="_{gmd:southBoundLatitude/gco:Decimal/gn:element/@ref}"
-             data-htop-ref="_{gmd:northBoundLatitude/gco:Decimal/gn:element/@ref}"
-             data-lang="lang"
-             data-read-only="{$readonly}">
-          <xsl:if test="$identifier and $isFlatMode">
-            <xsl:attribute name="data-identifier"
-                           select="$identifier"/>
-            <xsl:attribute name="data-identifier-ref"
-                           select="concat('_', $identifier/gn:element/@ref)"/>
-          </xsl:if>
-          <xsl:if test="$description and $isFlatMode and not($metadataIsMultilingual)">
-            <xsl:attribute name="data-description"
-                           select="$description"/>
-            <xsl:attribute name="data-description-ref"
-                           select="concat('_', $description/gn:element/@ref)"/>
-          </xsl:if>
-        </div>
-      </xsl:with-param>
-    </xsl:call-template>
-  </xsl:template>
+    <xsl:variable name="thesaurusTitleSimple" select="$thesarusNameEl/gmd:CI_Citation/gmd:title/gco:CharacterString/normalize-space()" />
+    <xsl:variable name="thesaurusTitleMultilingualNode"
+                  select="$thesarusNameEl/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = $lang]/normalize-space()"
+    />
 
 
-  <xsl:template mode="mode-iso19139" priority="2005"
-                match="gmd:linkage1111">
-    <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="overrideLabel" select="''" required="no"/>
+    <xsl:choose>
+      <xsl:when test="$thesaurusTitleMultilingualNode">
+        <xsl:value-of select="$thesaurusTitleMultilingualNode"/>
+      </xsl:when>
 
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="elementName" select="name()"/>
+      <xsl:otherwise>
+        <xsl:value-of select="$thesaurusTitleSimple"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
 
-    <!--<xsl:message>gmd:linkage ref: <xsl:copy-of select="*/gn:element" /></xsl:message>
-    <xsl:message>gmd:linkage $xpath: <xsl:value-of select="$xpath" /></xsl:message>-->
-
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="if ($overrideLabel != '') then $overrideLabel else gn-fn-metadata:getLabel($schema, name(gmd:URL), $labels, name(), $isoType, $xpath)"/>
-      <xsl:with-param name="value" select="gmd:URL"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="name"
-                      select="*/gn:element/@ref"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-
-    </xsl:call-template>
-
-  </xsl:template>
   <!-- Metadata resources template -->
-  <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1]" priority="2005" />
+  <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1][$schema = 'iso19139.ca.HNAP']" priority="2005" />
 
   <xsl:template mode="mode-iso19139" priority="5000"
-                match="gmd:descriptiveKeywords">
+                match="gmd:descriptiveKeywords[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="overrideLabel" select="''" required="no"/>
@@ -392,7 +322,7 @@
     <xsl:variable name="thesaurusTitleEl"
                   select="gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:title"/>
 
-    <!--<xsl:message>descriptiveKeywords title: <xsl:value-of select="$thesaurusTitleEl/gco:CharacterString" /></xsl:message>-->
+    <xsl:variable name="thesaurusTitleMultiLingual" select="geonet:getThesaurusTitle(gmd:MD_Keywords/gmd:thesaurusName,$lang)"/>
 
     <!--Add all Thesaurus as first block of keywords-->
     <xsl:if test="name(preceding-sibling::*[1]) != name()">
@@ -403,32 +333,20 @@
 
     <xsl:variable name="thesaurusTitle">
       <xsl:choose>
-        <xsl:when test="normalize-space($thesaurusTitleEl/gco:CharacterString) != ''">
+        <xsl:when test="normalize-space($thesaurusTitleMultiLingual) != ''">
           <xsl:value-of select="if ($overrideLabel != '')
               then $overrideLabel
               else concat(
                       $iso19139strings/keywordFrom,
-                      normalize-space($thesaurusTitleEl/gco:CharacterString))"/>
+                      normalize-space($thesaurusTitleMultiLingual))"/>
         </xsl:when>
-        <xsl:when test="normalize-space($thesaurusTitleEl/gmd:PT_FreeText/
-                          gmd:textGroup/gmd:LocalisedCharacterString[
-                            @locale = concat('#', upper-case(xslutil:twoCharLangCode($lang)))][1]) != ''">
-          <xsl:value-of
-            select="$thesaurusTitleEl/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = concat('#', upper-case(xslutil:twoCharLangCode($lang)))][1]"/>
-        </xsl:when>
-        <xsl:when test="$thesaurusTitleEl/gmd:PT_FreeText/
-                          gmd:textGroup/gmd:LocalisedCharacterString[
-                            normalize-space(text()) != ''][1]">
-          <xsl:value-of select="$thesaurusTitleEl/gmd:PT_FreeText/gmd:textGroup/
-                                  gmd:LocalisedCharacterString[normalize-space(text()) != ''][1]"/>
-        </xsl:when>
+
         <xsl:otherwise>
           <xsl:value-of select="gmd:MD_Keywords/gmd:thesaurusName/
                                   gmd:CI_Citation/gmd:identifier/gmd:MD_Identifier/gmd:code"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-
 
     <xsl:variable name="attributes">
       <xsl:if test="$isEditing">
@@ -444,15 +362,18 @@
       </xsl:if>
     </xsl:variable>
 
-
     <xsl:variable name="thesaurusIdentifier"
                   select="normalize-space($thesaurusTitle)"/>
 
+    <!-- DJB: might be wrong-->
     <xsl:variable name="thesaurusConfig"
                   as="element()?"
                   select="if ($thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')])
                           then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
-                          else $listOfThesaurus/thesaurus[title=$thesaurusTitle]"/>
+                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle])
+                          then $listOfThesaurus/thesaurus[title=$thesaurusTitle]
+                          else $listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$thesaurusTitle]"/>
+
 
     <xsl:choose>
       <xsl:when test="$thesaurusConfig/@fieldset = 'false'">
@@ -464,26 +385,12 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:variable name="hideDelete" as="xs:boolean">
-          <xsl:choose>
-            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
-                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
-              <xsl:value-of select="true()" />
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="false()" /></xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
+              <xsl:value-of select="false()" />
+         </xsl:variable>
 
         <xsl:variable name="requiredClass">
-          <xsl:choose>
-            <xsl:when test="ends-with($thesaurusTitle,  'Government of Canada Core Subject Thesaurus') or
-                  ends-with($thesaurusTitle,  'Thésaurus des sujets de base du gouvernement du Canada')">
-              <xsl:value-of select="'gn-required'" />
-            </xsl:when>
-            <xsl:otherwise><xsl:value-of select="''" /></xsl:otherwise>
-          </xsl:choose>
+          <xsl:value-of select="''" />
         </xsl:variable>
-
 
         <xsl:call-template name="render-boxed-element">
           <xsl:with-param name="label"
@@ -507,60 +414,57 @@
 
   </xsl:template>
 
+  <xsl:function name="geonet:findThesaurus">
+    <xsl:param name="title1" />
+    <xsl:param name="title2" />
 
-  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords" priority="6000">
+    <!--standard way to look for thesaurus-->
+    <xsl:variable name="thesaurusConfig"
+                  as="element()?"
+                  select="if ($listOfThesaurus/thesaurus[@key=substring-after($title1, 'geonetwork.thesaurus.')])
+                          then $listOfThesaurus/thesaurus[@key=substring-after($title1, 'geonetwork.thesaurus.')]
+                          else if ($listOfThesaurus/thesaurus[title=$title1])
+                          then $listOfThesaurus/thesaurus[title=$title1]
+                          else if ($listOfThesaurus/thesaurus[title=$title2])
+                          then $listOfThesaurus/thesaurus[title=$title2]
+                          else $listOfThesaurus/thesaurus[key=$title2]"/>
+    <!--handle multilingual case -->
+    <xsl:variable name="thesaurusConfig2"
+                  as="element()?"
+                  select="$listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$title1]"/>
+    <xsl:variable name="thesaurusConfig3"
+                  as="element()?"
+                  select="$listOfThesaurus/thesaurus[./multilingualTitles/multilingualTitle/title=$title2]"/>
 
+    <xsl:choose>
+        <xsl:when test="$thesaurusConfig">
+           <xsl:copy-of  select="$thesaurusConfig"/>
+        </xsl:when>
+        <xsl:when test="$thesaurusConfig2">
+          <xsl:copy-of  select="$thesaurusConfig2"/>
+        </xsl:when>
+        <xsl:when test="$thesaurusConfig3">
+          <xsl:copy-of  select="$thesaurusConfig3"/>
+        </xsl:when>
+    </xsl:choose>
+  </xsl:function>
+
+
+  <xsl:template mode="mode-iso19139" match="gmd:MD_Keywords[$schema = 'iso19139.ca.HNAP']" priority="6000">
 
     <xsl:variable name="thesaurusIdentifier"
                   select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
 
 
     <xsl:variable name="thesaurusTitle"
-                  select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
+                  select="gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString"/>
 
-    <!--<xsl:message>THESAURUS TITLE C:<xsl:copy-of select="/root/gui/schemas/iso19139.ca.HNAP" /></xsl:message>-->
     <xsl:variable name="thesaurusTitle2">
-      <xsl:choose>
-        <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
-                  (gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada')">
-          <xsl:value-of  select="'theme.EC_Core_Subject.rdf'"/>
-        </xsl:when>
-
-        <xsl:otherwise>
-          <xsl:value-of  select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString)"/>
-        </xsl:otherwise>
-      </xsl:choose>
+          <xsl:value-of  select="normalize-space(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)"/>
     </xsl:variable>
 
-    <!--<xsl:message>thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" /></xsl:message>
-    <xsl:message>thesaurusTitle: <xsl:value-of select="$thesaurusTitle" /></xsl:message>
-    <xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>
-    <xsl:message>thesaurusIdentifier substring: <xsl:value-of select="substring-after($thesaurusIdentifier, 'local.')" /></xsl:message>-->
 
-    <!--<xsl:message>thesaurusTitle2: <xsl:value-of select="$thesaurusTitle2" /></xsl:message>-->
-
-    <xsl:variable name="thesaurusConfig"
-                  as="element()?"
-                  select="if ($thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')])
-                          then $thesaurusList/thesaurus[@key=substring-after($thesaurusIdentifier, 'geonetwork.thesaurus.')]
-                          else if ($listOfThesaurus/thesaurus[title=$thesaurusIdentifier])
-                          then $listOfThesaurus/thesaurus[title=$thesaurusIdentifier]
-                          else if ($listOfThesaurus/thesaurus[title=$thesaurusTitle2])
-                          then $listOfThesaurus/thesaurus[title=$thesaurusTitle2]
-                          else $listOfThesaurus/thesaurus[key=$thesaurusTitle2]"/>
-    <!--<xsl:message>thesaurusConfig: <xsl:copy-of select="$thesaurusConfig" /></xsl:message>
-
-    <xsl:for-each select="$listOfThesaurus/thesaurus">
-      <xsl:message>
-        $listOfThesaurus: <xsl:value-of select="key" /> - <xsl:value-of select="title" />
-      </xsl:message>
-    </xsl:for-each>
-
-    <xsl:for-each select="$thesaurusList/thesaurus">
-      <xsl:message>
-        $thesaurusList: <xsl:value-of select="@key" />
-      </xsl:message>
-    </xsl:for-each>-->
+    <xsl:variable name="thesaurusConfig"  as="element()?"  select="geonet:findThesaurus($thesaurusTitle,$thesaurusTitle2)" />
 
 
     <xsl:choose>
@@ -603,14 +507,14 @@
                       select="if ($thesaurusConfig/@transformations != '')
                               then $thesaurusConfig/@transformations
                               else 'to-iso19139-keyword,to-iso19139-keyword-with-anchor,to-iso19139-keyword-as-xlink'"/>-->
-        <xsl:variable name="transformations" select="''" />
+        <xsl:variable name="transformations" select="'to-iso19139.ca.HNAP-keyword,to-iso19139.ca.HNAP-keyword-with-anchor,to-iso19139.ca.HNAP-keyword-as-xlink'" />
 
         <!-- Get current transformation mode based on XML fragment analysis -->
         <xsl:variable name="transformation"
-                      select="if (parent::node()/@xlink:href) then 'to-iso19139-keyword-as-xlink'
+                      select="if (parent::node()/@xlink:href) then 'to-iso19139.ca.HNAP-keyword-as-xlink'
           else if (count(gmd:keyword/gmx:Anchor) > 0)
-          then 'to-iso19139-keyword-with-anchor'
-          else 'to-iso19139-keyword'"/>
+          then 'to-iso19139.ca.HNAP-keyword-with-anchor'
+          else 'to-iso19139.ca.HNAP-keyword'"/>
 
         <xsl:variable name="parentName" select="name(..)"/>
 
@@ -655,11 +559,7 @@
           </xsl:choose>
         </xsl:variable>
 
-        <!--<xsl:message>
-          $thesaurusIdentifier: <xsl:value-of select="$thesaurusIdentifier" />
-          $thesaurusTitleToDisplay: <xsl:value-of select="thesaurusTitleToDisplay" />
 
-        </xsl:message>-->
 
         <xsl:variable name="isMandatory">
           <xsl:choose>
@@ -710,7 +610,7 @@
   </xsl:template>
 
 
-  <xsl:template mode="mode-iso19139" match="gmd:EX_BoundingPolygon" priority="5000">
+  <xsl:template mode="mode-iso19139" match="gmd:EX_BoundingPolygon[$schema = 'iso19139.ca.HNAP']" priority="5000">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
@@ -750,7 +650,7 @@
   -->
   <xsl:template mode="mode-iso19139"
                 priority="2005"
-                match="gmd:CI_Date/gmd:date">
+                match="gmd:CI_Date/gmd:date[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="listOfValues" select="$codelists" required="no"/>

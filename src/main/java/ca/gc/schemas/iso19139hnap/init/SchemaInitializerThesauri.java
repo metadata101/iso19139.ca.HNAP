@@ -31,6 +31,8 @@ import java.util.regex.Pattern;
 public class SchemaInitializerThesauri implements
     ApplicationListener<GeonetworkDataDirectory.GeonetworkDataDirectoryInitializedEvent> {
 
+    boolean OVERWRITE_EXISTING_THESAURI = true;
+
     @PostConstruct
     public void init()
     {
@@ -54,7 +56,9 @@ public class SchemaInitializerThesauri implements
             Files.createDirectories(Paths.get(thesauriDir.toString(), resourceTypeDir, "thesauri", dir));
             //full path to put the .rdf
             Path correspondingDataDirFile = Paths.get(thesauriDir.toString(), resourceTypeDir, "thesauri", dir, fname);
-            if (!Files.exists(correspondingDataDirFile)) {
+            if (!Files.exists(correspondingDataDirFile) || OVERWRITE_EXISTING_THESAURI) {
+                if (Files.exists(correspondingDataDirFile))
+                    Files.delete(correspondingDataDirFile);
                 //need to copy it in...
                 Log.info(Geonet.THESAURUS, "ISO19139.HNAP: SchemaInitializer: need to copy in Thesaurus: " + fname);
                 try (InputStream is = r.getInputStream()) { //auto close

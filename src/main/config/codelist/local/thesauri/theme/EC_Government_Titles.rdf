@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
 
+    <skos:ConceptScheme>
+      <dc:title>ECCC Government Titles</dc:title>
+       <dc:title xml:lang="en">ECCC Government Titles EN</dc:title>
+       <dc:title xml:lang="fr">ECCC Government Titles FR</dc:title>
+      <dc:description></dc:description>
+    </skos:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#AANDC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -29,7 +37,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#APA">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Atlantic Pilotage Authority Canada</ns2:prefLabel>
@@ -37,7 +45,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#AECL">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Atomic Energy of Canada Limited</ns2:prefLabel>
@@ -45,7 +53,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#BWBC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Blue Water Bridge Canada</ns2:prefLabel>
@@ -53,7 +61,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#BDC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Business Development Bank of Canada</ns2:prefLabel>
@@ -61,7 +69,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CBSA">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Border Services Agency</ns2:prefLabel>
@@ -69,7 +77,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CDIC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Deposit Insurance Corporation</ns2:prefLabel>
@@ -77,7 +85,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CDEV">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Development Investment Corporation</ns2:prefLabel>
@@ -85,7 +93,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CERIA">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Emission Reduction Incentives Agency</ns2:prefLabel>
@@ -93,7 +101,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CEIC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Employment Insurance Commission</ns2:prefLabel>
@@ -101,7 +109,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CSIFB">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canada Employment Insurance Financing Board</ns2:prefLabel>
@@ -190,7 +198,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CCC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Commercial Corporation</ns2:prefLabel>
@@ -198,7 +206,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CDC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Dairy Commission</ns2:prefLabel>
@@ -238,7 +246,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#PCH">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Heritage</ns2:prefLabel>
@@ -254,7 +262,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CIHR">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Institutes of Health Research</ns2:prefLabel>
@@ -262,7 +270,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CICS">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Intergovernmental Conference Secretariat</ns2:prefLabel>
@@ -270,7 +278,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CIDA">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian International Development Agency</ns2:prefLabel>
@@ -294,7 +302,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CMC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Museum of Civilization</ns2:prefLabel>
@@ -302,7 +310,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CMIP">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Museum of Immigration at Pier 21</ns2:prefLabel>
@@ -310,7 +318,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CMN">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Canadian Museum of Nature</ns2:prefLabel>
@@ -839,7 +847,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#OIC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Offices of the Information and Privacy Commissioners of Canada</ns2:prefLabel>
@@ -847,7 +855,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#OPC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Offices of the Information and Privacy Commissioners of Canada</ns2:prefLabel>
@@ -991,7 +999,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
    </rdf:Description>
-   
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#RT">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Ridley Terminals Inc.</ns2:prefLabel>
@@ -999,7 +1007,7 @@
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
-    
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#Mint">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Royal Canadian Mint</ns2:prefLabel>

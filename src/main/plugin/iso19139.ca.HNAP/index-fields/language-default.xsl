@@ -207,32 +207,6 @@
           <Field name="keywordType" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
-        <xsl:for-each select="gmd:keyword[normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Government of Canada Core Subject Thesaurus' or
-                                                normalize-space(../gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString) = 'Thésaurus des sujets de base du gouvernement du Canada']">
-
-          <xsl:if test="string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId] )">
-
-            <xsl:variable name="mainLang">
-              <xsl:choose>
-                <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
-                <xsl:otherwise>fre</xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <xsl:variable name="otherLang">
-              <xsl:choose>
-                <xsl:when test="$mainLang = 'fre'">eng</xsl:when>
-                <xsl:otherwise>fre</xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <Field name="coreSubject_{$mainLang}" string="{string(normalize-space(gco:CharacterString))}" store="true"
-                   index="true"/>
-            <Field name="coreSubject_{$otherLang}"
-                   string="{string(normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId]))}"
-                   store="true" index="true"/>
-          </xsl:if>
-        </xsl:for-each>
       </xsl:for-each>
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 

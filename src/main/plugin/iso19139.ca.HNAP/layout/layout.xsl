@@ -41,7 +41,7 @@
   <xsl:include href="utility-tpl.xsl"/>
 
   <!-- Visit all XML tree recursively -->
-  <xsl:template mode="mode-iso19139.ca.HNAP" match="*|@*">
+  <xsl:template mode="mode-iso19139.ca.HNAP" match="*[$schema = 'iso19139.ca.HNAP']|@*[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
 
@@ -54,10 +54,10 @@
 
   <!-- napm:napMD_FileFormatCode_PropertyType is not a codelist element even if having codeList attribute.
        It's present in gmd:MD_BrowseGraphic that is handled in the Thubnails panel. Avoid processing it -->
-  <xsl:template mode="mode-iso19139" priority="3005" match="*[*/@codeList and */@xsi:type='napm:napMD_FileFormatCode_PropertyType']" />
+  <xsl:template mode="mode-iso19139" priority="3005" match="*[*/@codeList and */@xsi:type='napm:napMD_FileFormatCode_PropertyType' and $schema = 'iso19139.ca.HNAP']" />
 
   <!-- Codelist - delegate to schema codelists -->
-  <xsl:template mode="mode-iso19139" priority="2005" match="*[*/@codeList]">
+  <xsl:template mode="mode-iso19139" priority="2005" match="*[*/@codeList and $schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
     <xsl:param name="labels" select="$labels" required="no"/>
     <xsl:param name="codelists" select="$codelists" required="no"/>
@@ -111,9 +111,9 @@
   <!-- Use code previous to https://github.com/geonetwork/core-geonetwork/commit/30133214c723d04a20b50f2650fcfc12bea475c9 -->
   <!-- Render simple element which usually match a form field -->
   <xsl:template mode="mode-iso19139" priority="1000"
-                match="*[gco:CharacterString|gco:Integer|gco:Decimal|
-       gco:Boolean|gco:Real|gco:Measure|gco:Length|gco:Distance|gco:Angle|gmx:FileName|
-       gco:Scale|gco:Record|gco:RecordType|gmx:MimeFileType|gmd:URL|gco:LocalName|gmd:PT_FreeText]">
+                match="*[gco:CharacterString[$schema = 'iso19139.ca.HNAP']|gco:Integer[$schema = 'iso19139.ca.HNAP']|gco:Decimal[$schema = 'iso19139.ca.HNAP']|
+       gco:Boolean[$schema = 'iso19139.ca.HNAP']|gco:Real[$schema = 'iso19139.ca.HNAP']|gco:Measure[$schema = 'iso19139.ca.HNAP']|gco:Length[$schema = 'iso19139.ca.HNAP']|gco:Distance[$schema = 'iso19139.ca.HNAP']|gco:Angle[$schema = 'iso19139.ca.HNAP']|gmx:FileName[$schema = 'iso19139.ca.HNAP']|
+       gco:Scale[$schema = 'iso19139.ca.HNAP']|gco:Record[$schema = 'iso19139.ca.HNAP']|gco:RecordType[$schema = 'iso19139.ca.HNAP']|gmx:MimeFileType[$schema = 'iso19139.ca.HNAP']|gmd:URL[$schema = 'iso19139.ca.HNAP']|gco:LocalName[$schema = 'iso19139.ca.HNAP']|gmd:PT_FreeText[$schema = 'iso19139.ca.HNAP']]">
 
 
     <xsl:param name="schema" select="$schema" required="no"/>
