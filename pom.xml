@@ -21,34 +21,34 @@
       <groupId>org.geonetwork-opensource.schemas</groupId>
       <artifactId>schema-core</artifactId>
       <version>${project.version}</version>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
      <groupId>org.geonetwork-opensource</groupId>
      <artifactId>core</artifactId>
       <version>${project.version}</version>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-core</artifactId>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-matchers</artifactId>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.geonetwork-opensource</groupId>
       <artifactId>common</artifactId>
       <version>${project.version}</version>
-      <!--scope>provided</scope-->
+      <scope>provided</scope>
     </dependency>
 
     <dependency>
@@ -77,10 +77,6 @@
       <resource>
         <directory>src/main/resources</directory>
       </resource>
-      <resource>
-        <directory>src/main/plugin</directory>
-        <targetPath>plugin</targetPath>
-      </resource>
     </resources>
     <testResources>
       <testResource>
@@ -90,6 +86,27 @@
         <directory>src/main/plugin/iso19139.ca.HNAP</directory>
       </testResource>
     </testResources>
+
+    <plugins>
+   <!-- package up plugin folder as a zip -->
+   <plugin>
+     <artifactId>maven-assembly-plugin</artifactId>
+     <executions>
+       <execution>
+         <id>plugin-assembly</id>
+         <phase>package</phase>
+         <goals><goal>single</goal></goals>
+         <inherited>false</inherited>
+         <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptors>
+           <descriptor>src/assembly/schema-plugin.xml</descriptor>
+          </descriptors>
+         </configuration>
+       </execution>
+     </executions>
+   </plugin>
+    </plugins>
   </build>
 
   <profiles>
