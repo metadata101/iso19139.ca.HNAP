@@ -8,6 +8,9 @@
         <dc:title>ECCC ISO Countries</dc:title>
        <dc:title xml:lang="en">ECCC ISO Countries EN</dc:title>
        <dc:title xml:lang="fr">ECCC ISO Countries FR</dc:title>
+        <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+        <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
         <dc:description></dc:description>
       </skos:ConceptScheme>
 

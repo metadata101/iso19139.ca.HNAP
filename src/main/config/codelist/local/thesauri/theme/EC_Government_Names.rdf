@@ -8,7 +8,11 @@
      <dc:title>ECCC Government Names</dc:title>
        <dc:title xml:lang="en">ECCC Government Names EN</dc:title>
        <dc:title xml:lang="fr">ECCC Government Names FR</dc:title>
+       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
      <dc:description></dc:description>
+
    </skos:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovCan">
