@@ -14,6 +14,11 @@
         class="ca.gc.schemas.iso19139hnap.init.SchemaInitializerThesauri">
   </bean>
 
+  <!-- copies in converters -->
+  <bean id="iso19139.ca.HNAP.SchemaInitializerConverters"
+        class="ca.gc.schemas.iso19139hnap.init.SchemaInitializerConverters">
+  </bean>
+
   <!-- copy in any  settings -->
   <bean id="iso19139.ca.HNAP.startup.settings"
         class="ca.gc.schemas.iso19139hnap.init.SchemaInitializerSettings">
