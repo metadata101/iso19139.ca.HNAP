@@ -44,7 +44,7 @@ public class SchemaInitializerConverters implements
             Path correspondingDataDirFile = Paths.get(conversionPath.toString(), dir, fname);
             if (!Files.exists(correspondingDataDirFile)) {
                 //need to copy it in...
-                Log.info(Geonet.SCHEMA_MANAGER, "ISO19139.HNAP: SchemaInitializer: copying conversion files: " + fname + " to " + correspondingDataDirFile.toString());
+                Log.info(Geonet.SCHEMA_MANAGER, "ISO19139.HNAP: SchemaInitializerConverters: copying conversion files: " + fname + " to " + correspondingDataDirFile.toString());
                 try (InputStream is = r.getInputStream()) { //auto close
                     Files.copy(is, correspondingDataDirFile);
                 }
@@ -60,7 +60,7 @@ public class SchemaInitializerConverters implements
         try {
             ConfigureThesauruses(conversionPath);
         } catch (IOException e) {
-            Log.error(Geonet.SCHEMA_MANAGER, "SchemaInitializer: preloading conversion files", e);
+            Log.error(Geonet.SCHEMA_MANAGER, "SchemaInitializerConverters: preloading conversion files", e);
         }
     }
 }
