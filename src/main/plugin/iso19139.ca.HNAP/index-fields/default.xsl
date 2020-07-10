@@ -255,7 +255,7 @@
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
       <xsl:for-each select="gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName/gco:CharacterString">
-        <Field name="orgName" string="{string(.)}" store="false" index="true"/>
+        <Field name="orgName" string="{string(.)}" store="true" index="true"/>
 
         <xsl:variable name="role" select="../../gmd:role/*/@codeListValue"/>
         <xsl:variable name="logo" select="../..//gmx:FileName/@src"/>
@@ -406,7 +406,7 @@
 
     <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution">
       <xsl:for-each select="gmd:distributionFormat/gmd:MD_Format/gmd:name/gco:CharacterString">
-        <Field name="format" string="{string(.)}" store="false" index="true"/>
+        <Field name="format" string="{string(.)}" store="true" index="true"/>
       </xsl:for-each>
 
       <!-- index online protocol -->
