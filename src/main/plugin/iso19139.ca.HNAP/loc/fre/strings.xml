@@ -210,9 +210,9 @@
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
 
-  <temporalRangeSection>Temporal Extent</temporalRangeSection>
-  <beginPosition>Begin Date</beginPosition>
-  <endPosition>End Date</endPosition>
+  <temporalRangeSection>Étendue temporelle</temporalRangeSection>
+  <beginPosition>Date de début</beginPosition>
+  <endPosition>Date de fin</endPosition>
 
   <distributionFormats>Distribution Formats</distributionFormats>
   <distributionResources>Resources</distributionResources>
@@ -232,7 +232,7 @@
   <addDate>Add date</addDate>
   <addCharacterSet>Add character set</addCharacterSet>
   <referenceSystemInfo>Reference Systems</referenceSystemInfo>
-  
+
   <trueValue>Oui</trueValue>
   <falseValue>Non</falseValue>
   <nilValue>Non défini</nilValue>
