@@ -111,7 +111,7 @@ public class XslUtilHnap {
     }
 
     /**
-     * From df-build\XslUtil.java, declared in utils-fn.xsl, used in napec schematron .sch files
+     * From df-build\XslUtil.java, declared in utils-fn.xsl, used in schematron .sch files
      * ported from utils-fn.xsl in ec
      * @param date
      * @return
