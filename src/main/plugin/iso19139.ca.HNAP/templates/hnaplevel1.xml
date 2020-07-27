@@ -4,7 +4,6 @@
                  xmlns:gfc="http://www.isotc211.org/2005/gfc"
                  xmlns:gco="http://www.isotc211.org/2005/gco"
                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                 xmlns:napec="http://www.ec.gc.ca/data_donnees/standards/schemas/napec"
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:gmx="http://www.isotc211.org/2005/gmx"
                  xmlns:gml="http://www.opengis.net/gml/3.2"
@@ -161,7 +160,7 @@
       </gmd:MD_ReferenceSystem>
     </gmd:referenceSystemInfo>
   <gmd:identificationInfo>
-    <napec:MD_DataIdentification gco:isoType="gmd:MD_DataIdentification">
+    <gmd:MD_DataIdentification>
       <gmd:citation>
         <gmd:CI_Citation>
           <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
@@ -388,29 +387,7 @@
       <gmd:supplementalInformation gco:nilReason="missing">
         <gco:CharacterString/>
       </gmd:supplementalInformation>
-      <napec:EC_CorporateInfo>
-        <napec:EC_Branch>
-          <napec:EC_Branch_TypeCode codeListValue="" codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#EC_Branch"/>
-        </napec:EC_Branch>
-        <napec:EC_Directorate>
-          <napec:EC_Directorate_TypeCode codeListValue="" codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#EC_Directorate"/>
-        </napec:EC_Directorate>
-        <napec:EC_Project xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
-          <gco:CharacterString/>
-          <gmd:PT_FreeText>
-            <gmd:textGroup>
-              <gmd:LocalisedCharacterString locale="#fra"/>
-            </gmd:textGroup>
-          </gmd:PT_FreeText>
-        </napec:EC_Project>
-        <napec:GC_Security_Classification>
-          <napec:GC_Security_Classification_TypeCode codeListValue="" codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#GC_Security_Classification"/>
-        </napec:GC_Security_Classification>
-        <napec:EC_Program>
-          <napec:EC_Program_TypeCode codeListValue="" codeList="http://www.ec.gc.ca/data_donnees/standards/schemas/napec#EC_Program"/>
-        </napec:EC_Program>
-      </napec:EC_CorporateInfo>
-    </napec:MD_DataIdentification>
+    </gmd:MD_DataIdentification>
   </gmd:identificationInfo>
   <gmd:distributionInfo>
     <gmd:MD_Distribution>
