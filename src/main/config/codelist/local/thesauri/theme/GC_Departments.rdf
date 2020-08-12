@@ -6,9 +6,9 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <skos:ConceptScheme>
-      <dc:title>ECCC Government Titles</dc:title>
-       <dc:title xml:lang="en">ECCC Government Titles EN</dc:title>
-       <dc:title xml:lang="fr">ECCC Government Titles FR</dc:title>
+      <dc:title>Government of Canada Departments and Agencies</dc:title>
+       <dc:title xml:lang="en">Government of Canada Departments and Agencies</dc:title>
+       <dc:title xml:lang="fr">Ministères et organismes du gouvernement du Canada</dc:title>
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
 

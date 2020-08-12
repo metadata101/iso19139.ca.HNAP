@@ -4,9 +4,9 @@
          xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <skos:ConceptScheme>
-      <dc:title>ECCC Resource Formats</dc:title>
-       <dc:title xml:lang="en">ECCC Resource Formats EN</dc:title>
-       <dc:title xml:lang="fr">ECCC Resource Formats FR</dc:title>
+      <dc:title>Resource Format</dc:title>
+       <dc:title xml:lang="en">Resource Format</dc:title>
+       <dc:title xml:lang="fr">Format de fichier</dc:title>
       <dc:description></dc:description>
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>

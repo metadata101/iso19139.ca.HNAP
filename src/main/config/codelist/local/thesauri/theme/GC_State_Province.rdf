@@ -4,9 +4,9 @@
          xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <skos:ConceptScheme>
-      <dc:title>ECCC States</dc:title>
-       <dc:title xml:lang="en">ECCC States EN</dc:title>
-       <dc:title xml:lang="fr">ECCC States FR</dc:title>
+      <dc:title>Canada/US States and Provinces</dc:title>
+       <dc:title xml:lang="en">Canada/US States and Provinces</dc:title>
+       <dc:title xml:lang="fr">Canada/US États et provinces</dc:title>
       <dc:description></dc:description>
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
