@@ -196,7 +196,7 @@
               "eng": "Department/Agency",
               "fra": "Département/agence"
             },
-            "thesaurus": "external.theme.EC_Government_Titles"
+            "thesaurus": "external.theme.GC_Departments"
           },
 
           {
@@ -274,7 +274,7 @@
                       select="$listOfValues/entries"/>
     </xsl:call-template>
   </xsl:template>
-  
+
   <xsl:function name="geonet:getThesaurusTitle">
     <xsl:param name="thesarusNameEl" />
     <xsl:param name="lang1" />
