@@ -18,7 +18,7 @@
 
   <xsl:template match="gmd:MD_Metadata">
 
-    <xsl:variable name="formats-list" select="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'))"/>
+    <xsl:variable name="formats-list" select="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/GC_Resource_Formats.rdf'))"/>
 
     <results>
       <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine">
