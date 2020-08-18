@@ -556,6 +556,8 @@
         <for name="gmd:spatialResolution"/>
         <for name="gmd:distributor"/>
         <for name="gmd:contact"/>
+        <for name="gmd:citedResponsibleParty"/>
+        <for name="gmd:distributorContact"/>
         <for name="gmd:processor"/>
         <for name="gmd:topicCategory"/>
 
