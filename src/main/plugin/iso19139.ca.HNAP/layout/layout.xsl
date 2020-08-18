@@ -126,12 +126,17 @@
     <xsl:variable name="excluded"
                   select="gn-fn-iso19139:isNotMultilingualField(., $editorConfig)"/>
 
+    <!-- Allow to define the main language in gmd:locale also, overriding default check in GeoNetwork
+         that if there's 1 or more gmd:locale is handle as multilingual -->
+    <xsl:variable name="metadataIsMultilingualHNAP" select="count($metadataOtherLanguages/*) > 1"/>
+
+
     <xsl:variable name="hasPTFreeText"
                   select="count(gmd:PT_FreeText) > 0"/>
     <xsl:variable name="hasOnlyPTFreeText"
                   select="count(gmd:PT_FreeText) > 0 and count(gco:CharacterString) = 0"/>
     <xsl:variable name="isMultilingualElement"
-                  select="$metadataIsMultilingual and $excluded = false()"/>
+                  select="$metadataIsMultilingualHNAP and $excluded = false()"/>
     <xsl:variable name="isMultilingualElementExpanded"
                   select="$isMultilingualElement and count($editorConfig/editor/multilingualFields/expanded[name = $elementName]) > 0"/>
 
