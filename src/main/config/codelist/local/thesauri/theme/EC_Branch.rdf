@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns3="http://purl.org/dc/elements/1.1/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <skos:ConceptScheme>
+    <dc:title>Branch</dc:title>
+    <dc:title xml:lang="en">Branch</dc:title>
+    <dc:title xml:lang="fr">Direction Générale</dc:title>
+    <dc:description></dc:description>
+    <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+    <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+  </skos:ConceptScheme>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Branch">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <ns3:title>Environment Canada - Branch</ns3:title>
+    </rdf:Description>
+
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#finance_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Finance Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des finances</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#meteorological_service_canada">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Meteorological Service of Canada</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Service météorologique du Canada</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#corporate_secretariat">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Corporate Secretariat</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Secrétariat ministériel</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#strategic_policy_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Strategic Policy Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale de la politique stratégique</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#international_affairs_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">International Affairs Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des affaires internationales</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#corporate_services_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Corporate Services Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des services ministériels</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#science_technology_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Science and Technology Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des sciences et de la technologie</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#audit_evaluation_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Audit and Evaluation Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale de la vérification et évaluation</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#communications_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Communications Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des communications</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#legal_services">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Legal Services</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Services juridiques</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#human_resources_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Human Resources Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale des ressources humaines</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#enforcement_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Enforcement Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale de l'application de la loi</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#environmental_stewardship_branch">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Environmental Stewardship Branch</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction générale de l'intendance environnementale</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#regional_directors_general_offices">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Regional Directors General Offices</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Bureaux des directeurs généraux régionaux</ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description
+        rdf:about="http://geonetwork-opensource.org/EC/EC_Branch#values_integrity_disclosure_directorate">
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Values, Integrity and Disclosure Directorate</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Direction de valeurs, intégrité et divulgation</ns2:prefLabel>
+    </rdf:Description>
+</rdf:RDF>

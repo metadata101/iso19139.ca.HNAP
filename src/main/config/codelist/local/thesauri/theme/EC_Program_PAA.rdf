@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ns3="http://purl.org/dc/elements/1.1/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <skos:ConceptScheme>
+    <dc:title>Program (PAA)</dc:title>
+    <dc:title xml:lang="en">Program (PAA)</dc:title>
+    <dc:title xml:lang="fr">Portée du programme (PAA)</dc:title>
+    <dc:description></dc:description>
+    <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+    <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+  </skos:ConceptScheme>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <ns3:title>Environment Canada - Program</ns3:title>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#biodiversity_wildlife_and_habitat">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1. Biodiversity – Wildlife and Habitat</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1 Biodiversité - Espèces sauvages et habitats</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#biodiversity_policy_and_priorities">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1.1. Biodiversity Policy and Priorities</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1.1 Politiques et priorités sur la biodiversité</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#species_at_risk">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1.2. Species at Risk</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1.2 Espèces en péril</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#migratory_birds">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1.3. Migratory Birds</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1.3 Oiseaux migrateurs</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#habitat_conservation_partnerships">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1.4. Habitat Conservation Partnerships</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1.4 Partenariats pour la conservation des habitats</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#protected_areas">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.1.5. Protected Areas</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.1.5 Aires protégées</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#water_resources">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.2. Water Resources</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.2 Ressources en eau</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#water_quality_and_aquatic_ecosystems_health">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.2.1. Water Quality and Aquatic Ecosystems Health</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.2.1 Qualité de l'eau et santé des écosystèmes aquatiques</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#water_resource_management_and_use">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.2.2. Water Resource Management and Use</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.2.2 Gestion et utilisation des ressources en eau</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#hydrological_service_and_water_survey">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.2.3. Hydrological Service and Water Survey</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.2.3 Service et relevés hydrologiques</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#sustainable_ecosystems">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3. Sustainable Ecosystems</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3 Écosystèmes durables</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#sustainability_reporting_and_indicators">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.1. Sustainability Reporting and Indicators</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.1 Rapports axés sur le développement durable et indicateurs</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#ecosystem_assessment_and_approaches">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.2. Ecosystem Assessment and Approaches</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.2 Évaluation et approches axées sur les écosystèmes</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#community_engagement">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.3. Community Engagement</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.3 Mobilisation communautaire</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#ecoaction_community_funding">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.3.1. EcoAction Community Funding</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.3.1 Financement communautaire ÉcoAction</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#environmental_damages_fund">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.3.2. Environmental Damages Fund</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.3.2 Fonds pour dommages à l'environnement</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#environmental_youth_employment">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.3.3. Environmental Youth Employment</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.3.3 Programme d'emploi jeunesse en environnement</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#great_lakes">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.4. Great Lakes</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.4 Grands Lacs</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#st_lawrence">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.5. St. Lawrence</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.5 Saint-Laurent</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#lake_simcoe">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.6. Lake Simcoe</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.6 Lac Simcoe</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#lake_winnipeg">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.7. Lake Winnipeg</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.7 Lac Winnipeg</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#community_ecosystem_partnerships">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.3.8. Community Ecosystem Partnerships</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.3.8 Partenariats communautaires sur les écosystèmes</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#compliance_promotion_and_enforcement_wildlife">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">1.4. Compliance Promotion and Enforcement – Wildlife</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">1.4 Promotion de la conformité et Application de la loi - Faune</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#weather_and_environmental_services_for_canadians">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.1. Weather and Environmental Services for Canadians</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.1 Services météorologiques et environnementaux pour les Canadiens</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#weather_observations_forecasts_and_warnings">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.1.1. Weather Observations, Forecasts and Warnings</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.1.1 Observations, prévisions et avertissements météorologiques</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#healthrelated_meteorological_information">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.1.2. Health-related Meteorological Information</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.1.2 Information météorologique liée à la santé</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#climate_information_predictions_and_tools">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.1.3. Climate Information, Predictions and Tools</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.1.3 Information, prévisions et outils climatologiques</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#weather_and_environmental_services_for_targeted_users">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.2. Weather and Environmental Services for Targeted Users</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.2 Services météorologiques et environnementaux pour les utilisateurs ciblés</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#meteorological_services_in_support_of_air_navigation">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.2.1. Meteorological Services in Support of Air Navigation</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.2.1 Services météorologiques pour la navigation aérienne</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#meteorological_and_ice_services_in_support_of_marine_navigation">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.2.2. Meteorological and Ice Services in Support of Marine Navigation</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.2.2 Services météorologiques et des glaces pour la navigation maritime</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#meteorological_services_in_support_of_military_operations">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">2.2.3. Meteorological Services in Support of Military Operations</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">2.2.3 Services météorologiques pour les opérations militaires</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#substances_and_waste_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1. Substances and Waste Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1 Gestion des substances et des déchets</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#substances_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1.1. Substances Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1.1 Gestion des substances</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#waste_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1.2. Effluent Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1.2 Gestion des effluents</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#marine_pollution">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1.3. Marine Pollution</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1.3 Pollution marine</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#environmental_emergencies">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1.4. Environmental Emergencies</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1.4 Urgences environnementales</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#contaminated_sites">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.1.5. Contaminated Sites</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.1.5 Sites contaminés</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#climate_change_and_clean_air">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2. Climate Change and Clean Air</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2 Changements climatiques et Qualité de l'air</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#climate_change_and_clean_air_regulatory_program">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2.1. Climate Change and Clean Air Regulatory Program</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2.1 Programme de réglementation sur les changements climatiques et la qualité de l'air</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#industrial_sector_emissions">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2.1.1. Industrial Sector Emissions</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2.1.1 Émissions du secteur industriel</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#transportation_sector_emissions">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2.1.2. Transportation Sector Emissions</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2.1.2 Émissions du secteur des transports</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#international_climate_change_and_clean_air_partnerships">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2.2. International Climate Change and Clean Air Partnerships</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2.2 Partenariats Internationaux sur les changements climatiques et la qualité de l'air</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#environmental_technology">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.2.3. Environmental Technology</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.2.3 Technologie environnementale</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description
+    rdf:about="http://geonetwork-opensource.org/EC/EC_Program#compliance_promotion_and_enforcement_pollution">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">3.3. Compliance Promotion and Enforcement -– Pollution</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">3.3 Promotion de la conformité et Application de la loi – Pollution</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#internal_services">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1 Internal Services</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1 Services internes</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#management_and_oversight">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.1 Management and Oversight</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.1 Gestion et surveillance</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#communications">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.2 Communications</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.2 Communications</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#legal">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.3 Legal</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.3 Services juridique</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#human_resources_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.4 Human Resources Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.4 Gestion des ressources humaines</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#financial_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.5 Financial Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.5 Gestion financière</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#information_management">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.6 Information Management</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.6 Gestion de l'information</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#information_technology">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.7 Information Technology</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.7 Technologie de l'information</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#real_property">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.8 Real Property</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.8 Biens immobiliers</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#materiel">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.9 Materiel</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.9 Matériel</ns2:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/EC_Program#acquisition">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">4.1.10 Acquisition</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">4.1.10 Acquisition</ns2:prefLabel>
+  </rdf:Description>
+</rdf:RDF>
