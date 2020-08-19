@@ -62,7 +62,7 @@
                 select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
   <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
 
-  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
+  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
 
   <!-- If identification creation, publication and revision date
     should be indexed as a temporal extent information (eg. in INSPIRE

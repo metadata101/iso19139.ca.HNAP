@@ -28,7 +28,7 @@
 
   <xsl:param name="thesauriDir"/>
 
-  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Government_Names.rdf'), '\\', '/')))"/>
+  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
 
 
   <!-- ========================================================================================= -->

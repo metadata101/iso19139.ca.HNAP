@@ -23,7 +23,7 @@
   <xsl:include href="../iso19139.ca.HNAP/layout/utility-fn.xsl"/>
 
   <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
-  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
+  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/GC_Core_Subject.rdf'), '\\', '/')))" />
 
 
   <xsl:variable name="localeForTranslations">

@@ -23,11 +23,11 @@
 
 
   <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
-  <xsl:variable name="resourceFormatsThLocation" select="if ($listOfThesaurus/thesaurus[key='external.theme.EC_Resource_Formats'])
+  <xsl:variable name="resourceFormatsThLocation" select="if ($listOfThesaurus/thesaurus[key='external.theme.GC_Resource_Formats'])
                                                          then 'external'
                                                          else ' local'" />
 
-  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/', $resourceFormatsThLocation, '/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/', $resourceFormatsThLocation, '/thesauri/theme/GC_Resource_Formats.rdf'), '\\', '/')))" />
 
   <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
@@ -183,7 +183,7 @@
                 "eng": "",
                 "fra": ""
             },
-            "thesaurus": "external.theme.EC_Org_Names",
+            "thesaurus": "external.theme.GC_Org_Names",
             "defaultValues": {
                   "eng": "Government of Canada",
                   "fra": "Gouvernement du Canada"
@@ -196,7 +196,7 @@
               "eng": "Department/Agency",
               "fra": "Département/agence"
             },
-            "thesaurus": "external.theme.EC_Government_Titles"
+            "thesaurus": "external.theme.GC_Departments"
           },
 
           {
@@ -274,7 +274,7 @@
                       select="$listOfValues/entries"/>
     </xsl:call-template>
   </xsl:template>
-  
+
   <xsl:function name="geonet:getThesaurusTitle">
     <xsl:param name="thesarusNameEl" />
     <xsl:param name="lang1" />
