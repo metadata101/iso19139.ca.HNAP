@@ -528,6 +528,9 @@
                  or="referenceSystemInfo"/>
         </section>
 
+        <section xpath="/gmd:MD_Metadata/gmd:spatialRepresentationInfo"
+                 in="/gmd:MD_Metadata"/>
+
         <section name="gmd:MD_Distribution">
           <section name="distributionFormats">
             <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributionFormat"
@@ -546,6 +549,10 @@
           </section>-->
 
         </section>
+
+        <section xpath="/gmd:MD_Metadata/gmd:dataQualityInfo"
+                 in="/gmd:MD_Metadata"/>
+
 
       </tab>
 
