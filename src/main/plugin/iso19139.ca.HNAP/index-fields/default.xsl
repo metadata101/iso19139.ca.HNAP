@@ -620,6 +620,23 @@
       </xsl:for-each>
     </xsl:for-each>
 
+    <xsl:for-each select="gmd:spatialRepresentationInfo/gmd:MD_VectorSpatialRepresentation/gmd:geometricObjects/gmd:MD_GeometricObjects/gmd:geometricObjectType/gmd:MD_GeometricObjectTypeCode">
+      <xsl:variable name="geometryTypeValue">
+        <xsl:choose>
+          <xsl:when test="@codeListValue = 'RI_508'">point</xsl:when>
+          <xsl:when test="@codeListValue = 'RI_507'">line</xsl:when>
+          <xsl:when test="@codeListValue = 'RI_509' or @codeListValue = 'RI_510'">area</xsl:when>
+          <xsl:when test="@codeListValue = 'RI_505' or @codeListValue = 'RI_506'">multiple></xsl:when>
+          <xsl:otherwise />
+        </xsl:choose>
+      </xsl:variable>
+
+
+      <xsl:if test="string($geometryTypeValue)">
+        <Field name="geometryValue" string="{$geometryTypeValue}" store="true" index="true"/>
+      </xsl:if>
+    </xsl:for-each>
+
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- === Free text search === -->
 
