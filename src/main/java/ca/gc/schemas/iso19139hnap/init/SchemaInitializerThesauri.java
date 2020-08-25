@@ -9,6 +9,7 @@ import org.fao.geonet.repository.SettingRepository;
 import org.fao.geonet.utils.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
+import org.springframework.core.Ordered;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -29,7 +30,8 @@ import java.util.regex.Pattern;
  * See config-spring-geonetwork.xml in this schema
  */
 public class SchemaInitializerThesauri implements
-    ApplicationListener<GeonetworkDataDirectory.GeonetworkDataDirectoryInitializedEvent> {
+    ApplicationListener<GeonetworkDataDirectory.GeonetworkDataDirectoryInitializedEvent>,
+    Ordered {
 
     boolean OVERWRITE_EXISTING_THESAURI = true;
 
@@ -78,5 +80,10 @@ public class SchemaInitializerThesauri implements
         } catch (IOException e) {
             Log.error(Geonet.THESAURUS, "SchemaInitializer: preloading RDF files", e);
         }
+    }
+
+    @Override
+    public int getOrder() {
+        return 1;
     }
 }

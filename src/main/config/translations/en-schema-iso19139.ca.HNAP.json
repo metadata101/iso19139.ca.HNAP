@@ -1,5 +1,8 @@
 {
   "schema": "Schema-Specific Settings",
   "schema/iso19139.ca.HNAP": "ISO19139 HNAP Settings",
-  "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Use 'Government of Canada' Organization Selector"
+  "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Use 'Government of Canada' Organization Selector",
+  "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en": "Default top-level Organization Name (English)",
+  "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr": "Default top-level Organization Name (French)"
+
 }

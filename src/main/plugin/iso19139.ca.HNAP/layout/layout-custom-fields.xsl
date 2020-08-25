@@ -149,6 +149,12 @@
       </values>
     </xsl:variable>
 
+
+    <xsl:variable name="DefaultMainOrganizationName_fr" select="/root/gui/settings/schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr"/>
+
+    <xsl:variable name="DefaultMainOrganizationName_en" select="/root/gui/settings/schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en"/>
+
+
     <!--
       This creates the "values":  section
        "values": {
@@ -185,8 +191,8 @@
             },
             "thesaurus": "external.theme.GC_Org_Names",
             "defaultValues": {
-                  "eng": "Government of Canada",
-                  "fra": "Gouvernement du Canada"
+                  "eng": "<xsl:value-of select="$DefaultMainOrganizationName_en"/>",
+                  "fra": "<xsl:value-of select="$DefaultMainOrganizationName_fr"/>"
             }
           },
 
