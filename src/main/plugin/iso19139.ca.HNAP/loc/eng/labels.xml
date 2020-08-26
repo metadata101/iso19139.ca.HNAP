@@ -1182,7 +1182,7 @@
     </element>
     <element name="gmd:hierarchyLevel" id="6.0">
         <label>Hierarchy Level</label>
-        <description>Select the level to which the metadata applies. The default for this fields is 'Dataset'. If you are creating metadata to describe a serie of datasets with a parent/child relationship, 'Series' is the most appropriate level.</description>
+        <description>Select the level to which the metadata applies. The default for this fields is 'Dataset'. If you are creating metadata to describe a series of datasets with a parent/child relationship, 'Series' is the most appropriate level.</description>
         <condition>mandatory</condition>
     </element>
     <element name="gmd:hierarchyLevelName" id="7.0">
