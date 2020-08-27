@@ -627,10 +627,12 @@
         <description>Alphanumeric value identifying an instance in the namespace</description>
         <condition>mandatory</condition>
       <helper rel="gmd:codeSpace">
+        <option title="http://www.epsg-registry.org" value="EPSG:3857">EPSG:3857 WGS 84 / Pseudo-Mercator</option>
         <option title="http://www.epsg-registry.org" value="EPSG:3978">EPSG:3978 Lambert Conic Conformal (Nad83)</option>
         <option title="http://www.epsg-registry.org" value="EPSG:3979">EPSG:3979 Lambert Conic Conformal (CSRS)</option>
         <option title="http://www.epsg-registry.org" value="EPSG:4269">EPSG:4269 LL (Nad83)</option>
         <option title="http://www.epsg-registry.org" value="EPSG:4326">EPSG:4326 Web Mercator WGS84</option>
+        <option title="http://www.epsg-registry.org" value="EPSG:26917">EPSG:26917 NAD83 / UTM zone 17N</option>
         <option title="http://www.spatialreference.org" value="SRG-ORG:16">SRG-ORG:16</option>
         <option title="http://www.spatialreference.org" value="SRG-ORG:29">SRG-ORG:29</option>
       </helper>
