@@ -620,6 +620,29 @@
       </xsl:for-each>
     </xsl:for-each>
 
+    <!-- Index gmd:geometricObjectType, mapping codelist values to values
+         to be used in CSS properties to represent the type of geometry -->
+    <xsl:for-each select="gmd:spatialRepresentationInfo/gmd:MD_VectorSpatialRepresentation/gmd:geometricObjects/gmd:MD_GeometricObjects/gmd:geometricObjectType/gmd:MD_GeometricObjectTypeCode">
+      <xsl:variable name="geometryTypeValue">
+        <xsl:choose>
+          <!-- point; point -->
+          <xsl:when test="@codeListValue = 'RI_508'">point</xsl:when>
+          <!-- curve; courbe -->
+          <xsl:when test="@codeListValue = 'RI_507'">line</xsl:when>
+          <!-- solid; solide / surface; surface -->
+          <xsl:when test="@codeListValue = 'RI_509' or @codeListValue = 'RI_510'">area</xsl:when>
+          <!-- complex; complexe / composite; composé -->
+          <xsl:when test="@codeListValue = 'RI_505' or @codeListValue = 'RI_506'">multiple></xsl:when>
+          <xsl:otherwise />
+        </xsl:choose>
+      </xsl:variable>
+
+
+      <xsl:if test="string($geometryTypeValue)">
+        <Field name="geometryValue" string="{$geometryTypeValue}" store="true" index="true"/>
+      </xsl:if>
+    </xsl:for-each>
+
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- === Free text search === -->
 
