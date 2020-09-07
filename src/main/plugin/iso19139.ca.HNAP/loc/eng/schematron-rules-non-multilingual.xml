@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <schematron.title>HNAP validation rules - non-multilingual</schematron.title>
+
+  <Metadata>Metadata Information</Metadata>
+  <DataIdentification>Data Identification</DataIdentification>
+  <Distribution>Distribution</Distribution>
+
+  <MetadataStandardName>Value is not valid for Metadata Standard Name, should be 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' in english and 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' in french</MetadataStandardName>
+  <ContactOrganisationName>Contact - Organization name is required</ContactOrganisationName>
+  <ContactElectronicMail>Contact - Electronic mail address is required</ContactElectronicMail>
+  <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required</CitedResponsiblePartyOrganisationName>
+  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required</CitedResponsiblePartyElectronicMail>
+  <DistributorOrganisationName>Distributor - Organization name is required</DistributorOrganisationName>
+  <DistributorElectronicMail>Distributor - Electronic mail address is required</DistributorElectronicMail>
+
+  <UseLimitation>Value is required for Use Limitation</UseLimitation>
+  <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
+
+  <MetadataTitle>Title is required</MetadataTitle>
+  <MetadataAbstract>Abstract is required</MetadataAbstract>
+
+  <ContactOrganisationGovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</ContactOrganisationGovEnglish>
+  <ContactOrganisationFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</ContactOrganisationFrench>
+  <ContactOrganisationAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</ContactOrganisationAllowedEnglish>
+  <ContactOrganisationAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</ContactOrganisationAllowedFrench>
+
+  <CitedResponsibleContactGovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</CitedResponsibleContactGovEnglish>
+  <CitedResponsibleContactGovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</CitedResponsibleContactGovFrench>
+  <CitedResponsibleContactGovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</CitedResponsibleContactGovAllowedEnglish>
+  <CitedResponsibleContactGovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</CitedResponsibleContactGovAllowedFrench>
+
+  <DistributorGovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</DistributorGovEnglish>
+  <DistributorGovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</DistributorGovFrench>
+  <DistributorGovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</DistributorGovAllowedEnglish>
+  <DistributorGovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</DistributorGovAllowedFrench>
+
+  <OpenLicense>An Open Goverment Licence is required.</OpenLicense>
+  <MapServicesLanguage>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</MapServicesLanguage>
+  <Keyword>Keyword is required</Keyword>
+  <OrganisationNameThesaurus>Thesaurus organization name is required</OrganisationNameThesaurus>
+
+  <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
+
+  <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
+  <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
+  <ECThesaurusCreDate>Thesaurus creation date is required</ECThesaurusCreDate>
+  <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
+  <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
+  <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
+</strings>

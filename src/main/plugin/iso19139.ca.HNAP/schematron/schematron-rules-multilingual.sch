@@ -5,7 +5,7 @@
             xmlns:xs="http://www.w3.org/2001/XMLSchema"
             queryBinding="xslt2">
 
-  <sch:title xmlns="http://www.w3.org/2001/XMLSchema">HNAP validation rules for FGP publication (multilingual)</sch:title>
+  <sch:title xmlns="http://www.w3.org/2001/XMLSchema">HNAP validation rules (multilingual)</sch:title>
   <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
   <sch:ns prefix="gml320" uri="http://www.opengis.net/gml"/>
   <sch:ns prefix="gmd" uri="http://www.isotc211.org/2005/gmd"/>
@@ -72,30 +72,6 @@
   <sch:pattern>
     <sch:title>$loc/strings/Metadata</sch:title>
 
-    <!-- HierarchyLevel -->
-    <sch:rule context="//gmd:hierarchyLevel">
-
-      <sch:let name="missing" value="not(string(gmd:MD_ScopeCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/HierarchyLevel</sch:assert>
-
-      <sch:let name="hierarchyLevelCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_ScopeCode/local-name(),
-                            gmd:MD_ScopeCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($hierarchyLevelCodelistLabel != '') and ($hierarchyLevelCodelistLabel != gmd:MD_ScopeCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidHierarchyLevel</sch:assert>
-
-    </sch:rule>
-
     <!-- Metadata Standard Name -->
     <sch:rule context="//gmd:metadataStandardName">
 
@@ -127,7 +103,7 @@
       >$loc/strings/ContactOrganisationName</sch:assert>
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
@@ -142,11 +118,11 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
-                     )">$loc/strings/*[name() = concat('EC38Gov', $mainLanguageText)]</sch:assert>
+                     )">$loc/strings/*[name() = concat('DistributorGov', $mainLanguageText)]</sch:assert>
 
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('EC38GovAllowed', $mainLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('DistributorGovAllowed', $mainLanguageText)]</sch:assert>
 
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
       <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada;') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada;')" />
@@ -158,10 +134,10 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleNameOtherLang]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleNameOtherLang]))
-                  )">$loc/strings/*[name() = concat('EC38Gov', $altLanguageText)]</sch:assert>
+                  )">$loc/strings/*[name() = concat('DistributorGov', $altLanguageText)]</sch:assert>
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowedOtherLang
-                ">$loc/strings/*[name() = concat('EC38GovAllowed', $altLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('DistributorGovAllowed', $altLanguageText)]</sch:assert>
 
     </sch:rule>
 
@@ -283,34 +259,6 @@
       >$loc/strings/InvalidContactRole</sch:assert>
 
     </sch:rule>
-
-
-    <!-- referenceSystemInfo -->
-
-    <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
-    <sch:rule context="/gmd:MD_Metadata">
-      <sch:let name="missing" value="not(gmd:referenceSystemInfo)
-                " />
-
-      <sch:let name="sRequireRefSystemInfo" value="count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_635']) +
-                                                     count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_636']) +
-                                                     count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_638'])" />
-
-      <sch:assert
-        test="(($sRequireRefSystemInfo > 0) and not($missing)) or
-            $sRequireRefSystemInfo = 0"
-      >$loc/strings/ReferenceSystemInfo</sch:assert>
-    </sch:rule>
-
-    <sch:rule context="//gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code">
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-                " />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/ReferenceSystemInfoCode</sch:assert>
-    </sch:rule>
-
   </sch:pattern>
 
 
@@ -319,65 +267,22 @@
     <sch:title>$loc/strings/DataIdentification</sch:title>
 
     <!-- Use Limitation -->
+    <!-- Use Limitation -->
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-            |//*[@gco:isoType='gmd:MD_DataIdentification']
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']">
+        |//*[@gco:isoType='gmd:MD_DataIdentification']
+        |//*[@gco:isoType='srv:SV_ServiceIdentification']">
+
+      <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_licenses.rdf'), '\\', '/')))"/>
 
       <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-               (normalize-space(gco:CharacterString) = 'Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence - Alberta (https://open.alberta.ca/licence)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - Alberta (https://open.alberta.ca/licence)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)') or
-
-                (normalize-space(gco:CharacterString) = 'Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)') or
-
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)')
-                ])"/>
+            (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) and
+            (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
+            ])" />
 
       <sch:assert
         test="$openLicense > 0"
       >$loc/strings/OpenLicense</sch:assert>
 
-
-      <!-- Core Subject Thesaurus -->
-      <sch:let name="coreSubjectThesaurusExists"
-               value="count(gmd:descriptiveKeywords[*/gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus' or
-              */gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus']) > 0" />
-
-      <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
     </sch:rule>
 
     <!-- Title -->
@@ -392,7 +297,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-        >$loc/strings/EC33</sch:assert>
+        >$loc/strings/MetadataTitle</sch:assert>
     </sch:rule>
 
 
@@ -408,34 +313,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC32</sch:assert>
-
-    </sch:rule>
-
-    <!-- Status -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:status
-                     |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:status
-                     |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:status">
-
-      <sch:let name="missing" value="not(string(gmd:MD_ProgressCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/Status</sch:assert>
-
-
-      <sch:let name="statusCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_ProgressCode/local-name(),
-                            gmd:MD_ProgressCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($statusCodelistLabel != '') and ($statusCodelistLabel != gmd:MD_ProgressCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidStatusCode</sch:assert>
+      >$loc/strings/MetadataAbstract</sch:assert>
 
     </sch:rule>
 
@@ -456,7 +334,7 @@
       >$loc/strings/CitedResponsiblePartyOrganisationName</sch:assert>
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
@@ -469,11 +347,11 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
-              )">$loc/strings/*[name() = concat('EC37Gov', $mainLanguageText)]</sch:assert>
+              )">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $mainLanguageText)]</sch:assert>
 
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('EC37GovAllowed', $mainLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $mainLanguageText)]</sch:assert>
 
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
       <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada;') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada;')" />
@@ -485,10 +363,10 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleNameOtherLang]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleNameOtherLang]))
-              )">$loc/strings/*[name() = concat('EC37Gov', $altLanguageText)]</sch:assert>
+              )">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $altLanguageText)]</sch:assert>
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowedOtherLang
-                ">$loc/strings/*[name() = concat('EC37GovAllowed', $altLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $altLanguageText)]</sch:assert>
     </sch:rule>
 
 
@@ -595,128 +473,8 @@
     </sch:rule>
 
 
-    <!-- Cited Responsible Party - Role -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
-      |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
-      |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role">
-
-      <sch:let name="roleCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:CI_RoleCode/local-name(),
-                            gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
-        or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MissingCitedResponsibleRole</sch:assert>
-
-      <sch:let name="isValid" value="($roleCodelistLabel != '') and ($roleCodelistLabel != gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidCitedResponsibleRole</sch:assert>
-
-    </sch:rule>
-
-    <!-- Topic Category -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:topicCategory
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:topicCategory
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:topicCategory">
-
-      <sch:let name="missing" value="not(string(gmd:MD_TopicCategoryCode))
-                " />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC10</sch:assert>
-    </sch:rule>
-
-    <!-- Spatial Representation Type -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:spatialRepresentationType
-                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:spatialRepresentationType
-                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:spatialRepresentationType">
-
-      <sch:let name="missing" value="not(string(gmd:MD_SpatialRepresentationTypeCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/SpatialRepresentation</sch:assert>
-
-
-      <sch:let name="spatialRepresentationTypeCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_SpatialRepresentationTypeCode/local-name(),
-                            gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($spatialRepresentationTypeCodelistLabel != '') and ($spatialRepresentationTypeCodelistLabel != gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidSpatialRepresentationType</sch:assert>
-    </sch:rule>
-
-
-    <!-- Creation/revision dates -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation">
-
-      <sch:let name="missingPublication" value="count(gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
-
-      <sch:assert
-        test="not($missingPublication)"
-      >$loc/strings/EC14</sch:assert>
-
-      <sch:let name="missingCreation" value="count(gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
-
-      <sch:assert
-        test="not($missingCreation)"
-      >$loc/strings/EC15</sch:assert>
-
-    </sch:rule>
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date">
-
-      <sch:let name="missing" value="not(string(gco:Date)) and not(string(gco:DateTime))
-                    " />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MissingDate</sch:assert>
-    </sch:rule>
-
-
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType">
-
-      <sch:let name="dateTypeCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:CI_DateTypeCode/local-name(),
-                            gmd:CI_DateTypeCode/@codeListValue)"/>
-
-      <sch:let name="missing" value="not(string(gmd:CI_DateTypeCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:let name="isValid" value="($dateTypeCodelistLabel != '') and ($dateTypeCodelistLabel != gmd:CI_DateTypeCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidDateTypeCode</sch:assert>
-
-    </sch:rule>
-
-
     <!-- Keywords -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(string(gmd:thesaurusName/gmd:CI_Citation/@id))]/gmd:keyword">
+    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
       <sch:let name="missing" value="not(string(gco:CharacterString))
             or (@gco:nilReason)" />
 
@@ -724,7 +482,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC36</sch:assert>
+      >$loc/strings/FreeTextKeyword</sch:assert>
 
     </sch:rule>
 
@@ -740,7 +498,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC1</sch:assert>
+      >$loc/strings/OrganisationNameThesaurus</sch:assert>
 
     </sch:rule>
 
@@ -812,7 +570,7 @@
 
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-      >$loc/strings/EC27</sch:assert>
+      >$loc/strings/SupplementalInfo</sch:assert>
     </sch:rule>
 
 
@@ -828,7 +586,7 @@
 
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
-      >$loc/strings/EC31</sch:assert>
+      >$loc/strings/OtherConstraintsNote2</sch:assert>
 
       <sch:let name="filledFine" value="(
                 (string(gco:CharacterString) or string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))
@@ -841,7 +599,7 @@
                 )" />
       <sch:assert
         test="$filledFine"
-      >$loc/strings/EC8</sch:assert>
+      >$loc/strings/OtherConstraintsNote</sch:assert>
 
     </sch:rule>
 
@@ -855,109 +613,8 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/EC11</sch:assert>
+      >$loc/strings/UseLimitation</sch:assert>
 
-    </sch:rule>
-
-    <!-- Access constraints -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:accessConstraints">
-
-      <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC12</sch:assert>
-
-      <sch:let name="accessConstraintsCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_RestrictionCode/local-name(),
-                            gmd:MD_RestrictionCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($accessConstraintsCodelistLabel != '') and ($accessConstraintsCodelistLabel != gmd:MD_RestrictionCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidAccessConstraints</sch:assert>
-    </sch:rule>
-
-    <!-- Use constraints -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints">
-
-      <sch:let name="missing" value="not(string(gmd:MD_RestrictionCode/@codeListValue))" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC12</sch:assert>
-
-      <sch:let name="useConstraintsCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_RestrictionCode/local-name(),
-                            gmd:MD_RestrictionCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($useConstraintsCodelistLabel != '') and ($useConstraintsCodelistLabel != gmd:MD_RestrictionCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidUseConstraints</sch:assert>
-    </sch:rule>
-
-
-    <!-- Begin position -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement">
-
-      <sch:let name="beginPosition" value="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod//gml:beginPosition" />
-      <sch:let name="missingBeginPosition" value="not(string($beginPosition))" />
-
-      <sch:assert test="not($missingBeginPosition)">$loc/strings/BeginDate</sch:assert>
-      <sch:assert test="$missingBeginPosition or (XslUtilHnap:verifyDateFormat($beginPosition) &gt; 0)">$loc/strings/BeginPositionFormat</sch:assert>
-
-
-      <sch:let name="endPosition" select="gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod//gml:endPosition" />
-      <sch:let name="missingEndPosition" value="not(string($endPosition))" />
-
-      <sch:assert test="$missingBeginPosition or $missingEndPosition or (XslUtilHnap:compareDates($endPosition, $beginPosition) &gt;= 0)">$loc/strings/EndPosition</sch:assert>
-    </sch:rule>
-
-
-    <!-- Dataset language -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:language
-                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:language
-                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:language">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-               or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/DataLanguage</sch:assert>
-    </sch:rule>
-
-    <!-- Maintenance and frequency -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency
-                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency
-                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency">
-
-      <sch:let name="missing" value="not(string(gmd:MD_MaintenanceFrequencyCode/@codeListValue))
-               or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MaintenanceFrequency</sch:assert>
-
-
-      <sch:let name="maintenanceFrequencyCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:MD_MaintenanceFrequencyCode/local-name(),
-                            gmd:MD_MaintenanceFrequencyCode/@codeListValue)"/>
-
-      <sch:let name="isValid" value="($maintenanceFrequencyCodelistLabel != '') and ($maintenanceFrequencyCodelistLabel != gmd:MD_MaintenanceFrequencyCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidMaintenanceFrequency</sch:assert>
     </sch:rule>
 
   </sch:pattern>
@@ -967,31 +624,13 @@
     <sch:title>$loc/strings/Distribution</sch:title>
 
     <!-- Distribution - Resources -->
-
-    <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
-
-      <sch:let name="missing" value="not(string(.)) and not(string(../../../../gmd:onLine[@xlink:role!=../../../@xlink:role and @xlink:title=../../../@xlink:title]/gmd:CI_OnlineResource/gmd:linkage/gmd:URL))
-                and (string(../../gmd:protocol/gco:CharacterString) or
-                string(../../gmd:name/gco:CharacterString) or
-                string(../../../../gmd:onLine[@xlink:role!=../../../@xlink:role and @xlink:title=../../../@xlink:title]/gmd:CI_OnlineResource/gmd:name/gco:CharacterString) or
-                string(../../../../gmd:onLine[@xlink:role!=../../../@xlink:role and @xlink:title=../../../@xlink:title]/gmd:CI_OnlineResource/gmd:description/gco:CharacterString) or
-                string(../../gmd:description/gco:CharacterString))"
-        />
-
-      <sch:assert
-        test="not($missing)"
-        >$loc/strings/EC9</sch:assert>
-
-    </sch:rule>
-
-
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine">
 
       <sch:let name="missingLanguageForMapService" value="not(string(@xlink:role)) and (lower-case(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString) = 'ogc:wms' or lower-case(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString) = 'esri rest: map service')" />
 
       <sch:assert
         test="not($missingLanguageForMapService)"
-      >$loc/strings/EC23</sch:assert>
+      >$loc/strings/MapServicesLanguage</sch:assert>
 
 
       <!-- ResourceDescription -->
@@ -1036,54 +675,6 @@
 
     </sch:rule>
 
-    <!-- Online resource: MapResourcesREST, MapResourcesWMS-->
-    <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution">
-      <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
-      <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
-
-      <sch:let name="mapRESTCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
-
-      <sch:assert test="$mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
-      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount = 2 or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
-
-      <sch:let name="mapWMSCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
-
-      <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
-      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
-    </sch:rule>
-
-
-    <!-- Distribution - Format -->
-    <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:name">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-                or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC21</sch:assert>
-
-      <sch:let name="distribution-formats" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_Formats.rdf'), '\\', '/')))"/>
-
-      <sch:let name="distributionFormat" value="gco:CharacterString" />
-
-      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char]) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
-
-    </sch:rule>
-
-
-    <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:version">
-
-      <sch:let name="missing" value="not(string(gco:CharacterString))
-                or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/EC22</sch:assert>
-
-    </sch:rule>
 
     <!-- Distributor contact - Organisation Name -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:organisationName">
@@ -1099,7 +690,7 @@
 
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
@@ -1112,11 +703,11 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
-              )">$loc/strings/*[name() = concat('EC26Gov', $mainLanguageText)]</sch:assert>
+              )">$loc/strings/*[name() = concat('ContactOrganisationGov', $mainLanguageText)]</sch:assert>
 
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('EC26GovAllowed', $mainLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('ContactOrganisationGovAllowed', $mainLanguageText)]</sch:assert>
 
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
       <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case($organisationNameOtherLang), 'government of canada;') or starts-with(lower-case($organisationNameOtherLang), 'gouvernement du canada;')" />
@@ -1128,13 +719,12 @@
 
       <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleNameOtherLang]) or
                 string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleNameOtherLang]))
-               )">$loc/strings/*[name() = concat('EC26Gov', $altLanguageText)]</sch:assert>
+               )">$loc/strings/*[name() = concat('ContactOrganisationGov', $altLanguageText)]</sch:assert>
       <sch:assert test="($missing and $missingOtherLang) or
                 $isGovernmentNameAllowedOtherLang
-                ">$loc/strings/*[name() = concat('EC26GovAllowed', $altLanguageText)]</sch:assert>
+                ">$loc/strings/*[name() = concat('ContactOrganisationGovAllowed', $altLanguageText)]</sch:assert>
 
     </sch:rule>
-
 
     <!-- Distributor - Position name -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:positionName">
@@ -1149,7 +739,6 @@
       >$loc/strings/DistributorPositionName</sch:assert>
 
     </sch:rule>
-
 
     <!-- Distributor contact - Country -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:country">
@@ -1171,7 +760,6 @@
 
     </sch:rule>
 
-
     <!-- Distributor - Phone -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
 
@@ -1184,7 +772,6 @@
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
       >$loc/strings/DistributorPhone</sch:assert>
     </sch:rule>
-
 
     <!-- Distributor - Delivery point -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
@@ -1229,29 +816,6 @@
       >$loc/strings/DistributorHoursOfService</sch:assert>
     </sch:rule>
 
-
-    <!-- Distributor - Role -->
-    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
-
-      <sch:let name="roleCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:CI_RoleCode/local-name(),
-                            gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
-        or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MissingDistributorRole</sch:assert>
-
-      <sch:let name="isValid" value="($roleCodelistLabel != '') and ($roleCodelistLabel != gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidDistributorRole</sch:assert>
-    </sch:rule>
   </sch:pattern>
 
 </sch:schema>
