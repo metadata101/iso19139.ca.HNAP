@@ -1096,7 +1096,7 @@
 
       <sch:let name="distributionFormat" value="gco:CharacterString" />
 
-      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang='en']) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
+      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $distributionFormat)]))">$loc/strings/DistributionFormatInvalid</sch:assert>
 
     </sch:rule>
 
