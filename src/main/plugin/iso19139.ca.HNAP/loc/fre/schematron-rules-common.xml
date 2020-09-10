@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <schematron.title>HNAP validation rules - common</schematron.title>
+
+  <Metadata>Metadata Information</Metadata>
+  <DataIdentification>Data Identification</DataIdentification>
+  <Distribution>Distribution</Distribution>
+
+  <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
+  <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
+  <ReferenceSystemInfo>Une valeur est nécessaire pour: Reference System</ReferenceSystemInfo>
+  <ReferenceSystemInfoCode>Une valeur est nécessaire pour: Information sur le système de référence - Code</ReferenceSystemInfoCode>
+  <Status>Une valeur est nécessaire pour: Etat</Status>
+  <InvalidStatusCode>Le code d'état n'est pas valide</InvalidStatusCode>
+  <TopicCategory>Une valeur est nécessaire pour: Catégorie thématique</TopicCategory>
+  <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
+  <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
+  <PublicationDate>Une valeur est nécessaire pour: Métadonnées date de publication</PublicationDate>
+  <CreationDate>>Une valeur est nécessaire pour: Métadonnées date de création</CreationDate>
+  <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
+  <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
+  <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
+  <BeginPositionFormat>Le format de la date de début n’est pas valide</BeginPositionFormat>
+  <EndPosition>End position date should be after begin position</EndPosition>
+  <EndPositionFormat>Le format de la date de fin n’est pas valide</EndPositionFormat> <!-- TODO: check if required -->
+  <DataLanguage>Une valeur est nécessaire pour: Langue</DataLanguage>
+  <MaintenanceFrequency>Une valeur est nécessaire pour: Fréquence de mise à jour</MaintenanceFrequency>
+  <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <InvalidContactRole>Le code de rôle contact n'est pas valide</InvalidContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <InvalidCitedResponsibleRole>Le code de rôle responsable cité n'est pas valable</InvalidCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+  <InvalidDistributorRole>Le code de rôle distributeur n'est pas valide</InvalidDistributorRole>
+  <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+  <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+  <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
+  <DistributionFormatName>Une valeur est nécessaire pour: Distribution format - Nom du format</DistributionFormatName>
+  <DistributionFormatVersion>Une valeur est nécessaire pour: Distribution format - Version</DistributionFormatVersion>
+
+  <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
+  <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>
+  <MapResourcesWMS>Les sources de la carte WMS devraient être disponibles en anglais et en français</MapResourcesWMS>
+  <MapResourcesWMSNumber>Le nombre de sources de la carte WMS devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesWMSNumber>
+</strings>

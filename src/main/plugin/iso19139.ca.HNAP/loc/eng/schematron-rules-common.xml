@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+  <schematron.title>HNAP validation rules - common</schematron.title>
+
+  <Metadata>Metadata Information</Metadata>
+  <DataIdentification>Data Identification</DataIdentification>
+  <Distribution>Distribution</Distribution>
+
+  <HierarchyLevel>Value is required for HierarchyLevel</HierarchyLevel>
+  <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
+  <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
+  <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+  <Status>Value is required for status</Status>
+  <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
+  <TopicCategory>Value is required for Topic Category</TopicCategory>
+  <SpatialRepresentation>Value is required for Spatial representation</SpatialRepresentation>
+  <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
+  <PublicationDate>Value is required for Metadata publication date</PublicationDate>
+  <CreationDate>Value is required for Metadata creation date</CreationDate>
+  <MissingDate>Value is required for Date</MissingDate>
+  <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
+  <BeginDate>Value is required for Begin Date</BeginDate>
+  <BeginPositionFormat>Begin position format is not valid value</BeginPositionFormat>
+  <EndPosition>End position date should be after begin position</EndPosition>
+  <EndPositionFormat>End position format is not valid value</EndPositionFormat> <!-- TODO: check if required -->
+  <DataLanguage>Value is required for language</DataLanguage>
+  <MaintenanceFrequency>Value is required for Maintenance and update frequency</MaintenanceFrequency>
+  <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
+  <MissingContactRole>Contact role is required</MissingContactRole>
+  <InvalidContactRole>Contact role code is not valid</InvalidContactRole>
+  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <InvalidCitedResponsibleRole>Cited responsible role is not valid</InvalidCitedResponsibleRole>
+  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+  <InvalidDistributorRole>Distributor role code is not valid</InvalidDistributorRole>
+  <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
+  <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
+  <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
+  <DistributionFormatName>Value is required for distribution format - File name</DistributionFormatName>
+  <DistributionFormatVersion>Value is required for distribution format - File version</DistributionFormatVersion>
+  <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
+
+  <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
+  <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
+  <MapResourcesWMS>WMS Map Resources should be available in english and french</MapResourcesWMS>
+  <MapResourcesWMSNumber>The number of WMS Map Resources should be at most 2 (one for english and one for french)</MapResourcesWMSNumber>
+
+</strings>
