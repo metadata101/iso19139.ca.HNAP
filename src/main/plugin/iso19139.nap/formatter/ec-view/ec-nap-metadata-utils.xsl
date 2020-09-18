@@ -688,10 +688,24 @@
           <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
 
           <xsl:choose>
-            <!-- the thumbnail is an url -->
-            <xsl:when test="contains($fileName ,'://')">
+            <!-- the thumbnail is an external url -->
+            <xsl:when test="not(starts-with($fileName, /root/gui/baseUrl)) and contains($fileName ,'://')">
               <image type="unknown"><xsl:value-of select="$fileName"/></image>
             </xsl:when>
+
+            <!-- Thumbnails with new API -->
+            <xsl:when test="starts-with($fileName, /root/gui/baseUrl)">
+              <image type="thumbnail">
+                <xsl:attribute name="lang">
+                  <xsl:choose>
+                    <xsl:when test="ends-with($fileDescr, '_fre')">fre</xsl:when>
+                    <xsl:otherwise>eng</xsl:otherwise>
+                  </xsl:choose>
+                </xsl:attribute>
+                <xsl:value-of select="$fileName"/>
+              </image>
+            </xsl:when>
+
             <xsl:otherwise>
               <image type="thumbnail">
                 <xsl:attribute name="lang">
