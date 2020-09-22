@@ -294,7 +294,7 @@
         <license gov="Government of Prince Edward Island">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
         <license gov="Government of New Brunswick">Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)</license>
         <license gov="Government of Yukon">Open Government Licence – Yukon (https://open.yukon.ca/data/open-government-licence-yukon)</license>
-        <license gov="Quebec Government and Municipalities">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
+        <license gov="Government and Municipalities of Québec">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
       </licenses>
     </xsl:variable>
 
