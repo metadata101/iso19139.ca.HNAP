@@ -108,8 +108,8 @@
   <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
   <Relateddata>Ressources connexes</Relateddata>
   <View>Voir</View>
-  <ViewParent>View parent</ViewParent>
-  <ViewCollection>View collection</ViewCollection>
+  <ViewParent>Voir le parent</ViewParent>
+  <ViewCollection>Voir la collection</ViewCollection>
   <more>Plus</more>
 
   <updateExtent>Update geographic extent</updateExtent>
@@ -126,7 +126,7 @@
   <lastChangedBy>Dernier changement effectué par</lastChangedBy>
   <changeDate>Date de mise à jour de la métadonnée</changeDate>
   <rating>Openness rating</rating>
-  <ParentCollection>Ensemble apparenté</ParentCollection>
+  <ParentCollection>Collection</ParentCollection>
 
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
