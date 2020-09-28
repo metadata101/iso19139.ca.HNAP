@@ -39,7 +39,12 @@
 
   <xsl:template mode="csv" match="gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"
                 priority="20">
-    <xsl:variable name="langId" select="gn-fn-iso19139:getLangId(., $lang)"/>
+    <xsl:variable name="langId">
+      <xsl:choose>
+        <xsl:when test="$lang = 'fre'">#fra</xsl:when>
+        <xsl:otherwise><xsl:value-of select="concat('#', $lang)" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:variable name="info" select="gn:info"/>
 
     <metadata>
@@ -49,11 +54,11 @@
           <xsl:with-param name="langId" select="$langId"/>
         </xsl:apply-templates>
       </title>
-      <abstract>
+      <!--<abstract>
         <xsl:apply-templates mode="localised" select="gmd:identificationInfo/*/gmd:abstract">
           <xsl:with-param name="langId" select="$langId"/>
         </xsl:apply-templates>
-      </abstract>
+      </abstract>-->
 
       <category>
         <xsl:choose>
@@ -66,7 +71,7 @@
       </metadatacreationdate>
 
       <xsl:for-each select="gmd:identificationInfo/*/gmd:citation/*/gmd:date">
-        <xsl:element name="date-{tokenize(*/gmd:dateType/*/text(), ';')[0]}">
+        <xsl:element name="date-{tokenize(*/gmd:dateType/*/text(), ';')[1]}">
           <xsl:value-of select="*/gmd:date/*/text()"/>
         </xsl:element>
       </xsl:for-each>
