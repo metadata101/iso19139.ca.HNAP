@@ -1781,7 +1781,7 @@
     </element>
     <element name="gmd:referenceSystemInfo" id="13.0">
         <label>Reference System Information</label>
-        <btnLabel>Add Reference System Information</btnLabel>
+        <btnLabel>Add Spatial Reference System Information</btnLabel>
         <description>Description of the spatial and temporal reference systems used in the
             dataset</description>
     </element>
