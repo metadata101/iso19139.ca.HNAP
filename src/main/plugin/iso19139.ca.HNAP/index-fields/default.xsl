@@ -125,7 +125,7 @@
         </xsl:for-each>
 
         <xsl:for-each select="gmd:alternateTitle/gco:CharacterString">
-          <Field name="altTitle" string="{string(.)}" store="false" index="true"/>
+          <Field name="altTitle" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each
