@@ -56,6 +56,10 @@ Insert is made in first transferOptions found.
   of URL+Protocol+Name -->
   <xsl:param name="updateKey"/>
 
+  <xsl:param name="schemaTranslationsDir"/>
+
+  <xsl:variable name="codelistFile" select="document(concat('file:///', replace(concat($schemaTranslationsDir, '/codelists.xml'), '\\', '/')))"/>
+
 
   <xsl:variable name="mainLang">
     <xsl:value-of
@@ -258,10 +262,10 @@ Insert is made in first transferOptions found.
                         <xsl:variable name="nameValue"
                                       select="substring-after(., '#')"></xsl:variable>
 
-                        <xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
+                        <!--<xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
                         <xsl:message>ML: <xsl:value-of select="$mainLang" /></xsl:message>
                         <xsl:message>nameLang: <xsl:value-of select="$nameLang" /></xsl:message>
-                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>
+                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>-->
 
 
                         <xsl:if
@@ -349,10 +353,12 @@ Insert is made in first transferOptions found.
 
 
               <xsl:if test="$function != ''">
+                <xsl:variable name="functionValue" select="$codelistFile/codelists/codelist[@name='gmd:CI_OnLineFunctionCode']/entry[code = $function]/value" />
+
                 <gmd:function>
                   <gmd:CI_OnLineFunctionCode
-                    codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
-                    codeListValue="{$function}"/>
+                    codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_88"
+                    codeListValue="{$function}"><xsl:value-of select="$functionValue" /></gmd:CI_OnLineFunctionCode>
                 </gmd:function>
               </xsl:if>
             </gmd:CI_OnlineResource>
@@ -536,10 +542,12 @@ Insert is made in first transferOptions found.
               </xsl:if>
 
               <xsl:if test="$function != ''">
+                <xsl:variable name="functionValue" select="$codelistFile/codelists/codelist[@name='gmd:CI_OnLineFunctionCode']/entry[code = $function]/value" />
+
                 <gmd:function>
                   <gmd:CI_OnLineFunctionCode
-                    codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
-                    codeListValue="{$function}"/>
+                    codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_88"
+                    codeListValue="{$function}"><xsl:value-of select="$functionValue" /></gmd:CI_OnLineFunctionCode>
                 </gmd:function>
               </xsl:if>
             </gmd:CI_OnlineResource>
