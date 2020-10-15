@@ -4223,4 +4223,19 @@
   <element name="CoreSubjectThesaurus">
     <label>Thésaurus des sujets de base du gouvernement du Canada</label>
   </element>
+
+  <element name="gml:quantityType">
+    <label>Quantity Type</label>
+    <description></description>
+  </element>
+
+  <element name="gml:catalogSymbol">
+    <label>Catalogue symbol</label>
+    <description></description>
+  </element>
+
+  <element name="gml:unitsSystem">
+    <label>Units System</label>
+    <description></description>
+  </element>
 </labels>

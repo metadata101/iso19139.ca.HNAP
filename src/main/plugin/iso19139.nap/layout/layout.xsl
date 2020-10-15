@@ -49,6 +49,27 @@
     </xsl:apply-templates>
   </xsl:template>
 
+  <!-- Required for gml 3.2 elements in HNAP (iso19139 uses gml 3.0 -->
+  <xsl:template mode="mode-iso19139" priority="3005"  match="gml:*[$schema = 'iso19139.nap']">
+    <xsl:param name="schema" select="$schema" required="no"/>
+    <xsl:param name="labels" select="$labels" required="no"/>
+    <xsl:param name="refToDelete" required="no"/>
+    <xsl:param name="overrideLabel" required="no"/>
+
+    <!-- In flat mode, block level may contains
+    validation report. Display them when traversing the tree. -->
+    <xsl:if test="$isFlatMode">
+      <xsl:call-template name="get-errors"/>
+    </xsl:if>
+
+    <xsl:apply-templates mode="mode-iso19139" select="*|@*">
+      <xsl:with-param name="schema" select="$schema"/>
+      <xsl:with-param name="labels" select="$labels"/>
+      <xsl:with-param name="refToDelete" select="$refToDelete"/>
+      <xsl:with-param name="overrideLabel" select="$overrideLabel"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
 
   <!-- napm:napMD_FileFormatCode_PropertyType is not a codelist element even if having codeList attribute.
        It's present in gmd:MD_BrowseGraphic that is handled in the Thubnails panel. Avoid processing it -->

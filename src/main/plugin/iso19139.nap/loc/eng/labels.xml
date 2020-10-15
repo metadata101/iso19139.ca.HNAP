@@ -2739,4 +2739,20 @@
     <element name="CoreSubjectThesaurus">
       <label>GC Core Subject Thesaurus</label>
     </element>
+
+
+  <element name="gml:quantityType">
+    <label>Quantity Type</label>
+    <description></description>
+  </element>
+
+  <element name="gml:catalogSymbol">
+    <label>Catalogue symbol</label>
+    <description></description>
+  </element>
+
+  <element name="gml:unitsSystem">
+    <label>Units System</label>
+    <description></description>
+  </element>
 </labels>

@@ -190,6 +190,7 @@
     <name>gmd:distributionFormat</name>
     <name>gmd:distributorContact</name>
     <name>gmd:referenceSystemInfo</name>
+    <name>gmd:valueUnit</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -270,6 +271,12 @@
       <name>gmd:individualName</name>
       <name>gmd:name</name>
       <name>gmd:code</name>
+      <name>gml:identifier</name>
+      <name>gml:name</name>
+      <name>gml:quantityType</name>
+      <name>gml:catalogSymbol</name>
+      <name>gmd:valueType</name>
+      <name>gmd:value</name>
     </exclude>
   </multilingualFields>
 
