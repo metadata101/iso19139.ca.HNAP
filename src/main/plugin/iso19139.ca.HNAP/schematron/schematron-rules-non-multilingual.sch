@@ -97,7 +97,7 @@
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
+      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
       <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
       <sch:let name="isGovernmentNameAllowed" value="(
@@ -105,12 +105,17 @@
         )"/>
 
 
-      <sch:assert test="($missing) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]))
-                     )">$loc/strings/*[name() = concat('ContactOrganisation', $mainLanguageText)]</sch:assert>
+      <sch:let name="isErrorContactGovMain" value="not(($missing) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]))
+                     ))"/>
 
-      <sch:assert test="($missing) or
+      <sch:let name="isErrorContactGovMainAllowed" value="not($isErrorContactGovMain) and not(
+                ($missing) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('ContactOrganisationAllowed', $mainLanguageText)]</sch:assert>
+                )"/>
+
+      <sch:assert test="not($isErrorContactGovMain)">$loc/strings/*[name() = concat('ContactGov', $mainLanguageText)]</sch:assert>
+
+      <sch:assert test="not($isErrorContactGovMainAllowed)">$loc/strings/*[name() = concat('ContactGovAllowed', $mainLanguageText)]</sch:assert>
     </sch:rule>
 
 
@@ -194,7 +199,7 @@
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
+      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
       <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
       <sch:let name="isGovernmentNameAllowed" value="(
@@ -391,7 +396,7 @@
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case($organisationName), 'government of canada;') or starts-with(lower-case($organisationName), 'gouvernement du canada;')" />
+      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
       <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
       <sch:let name="isGovernmentNameAllowed" value="(
