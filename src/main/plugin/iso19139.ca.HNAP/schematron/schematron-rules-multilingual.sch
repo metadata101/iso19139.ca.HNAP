@@ -266,25 +266,6 @@
   <sch:pattern>
     <sch:title>$loc/strings/DataIdentification</sch:title>
 
-    <!-- Use Limitation -->
-    <!-- Use Limitation -->
-    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-        |//*[@gco:isoType='gmd:MD_DataIdentification']
-        |//*[@gco:isoType='srv:SV_ServiceIdentification']">
-
-      <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_licenses.rdf'), '\\', '/')))"/>
-
-      <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-            (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) and
-            (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
-            ])" />
-
-      <sch:assert
-        test="$openLicense > 0"
-      >$loc/strings/OpenLicense</sch:assert>
-
-    </sch:rule>
-
     <!-- Title -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:title
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:title

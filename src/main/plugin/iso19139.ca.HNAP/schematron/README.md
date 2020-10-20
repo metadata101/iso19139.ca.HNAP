@@ -1,5 +1,14 @@
-Deprecated: schematron-rules-hnap-internal-fre.sch
+Schematron Rules
+================
 
-schematron-rules-hnap-internal.sch and schematron-rules-hnap-internal-fre.sch are almost identical. One works for English metadata, the other works for French metadata, depend on the gmd:language code.
+The following rules are defined, and may be turned on/off during application setup.
 
-We need a better approach for schema language checking.
+* `schematron-rules-common`: required
+
+* `schematron-rules-multilingual`: required for government of canada bi-lingual records
+
+* `schematron-rules-non-multilingual`
+
+* `schematron-rules-open-license`: open license check
+
+
