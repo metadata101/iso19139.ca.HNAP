@@ -126,7 +126,7 @@
           <xsl:if test="count($theElement/
                 gmd:PT_FreeText/gmd:textGroup/
                 gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
-            <value ref="lang_{@id}_{$theElement/parent::node()/gn:element/@ref}"
+            <value ref="lang_{@id}_{$theElement/gn:element/@ref}"
                    lang="{@id}"></value>
 
             <!--<xsl:message>value alt 1: <xsl:value-of select="$theElement/parent::node()/gn:element/@ref" /> <xsl:value-of select="@id" /></xsl:message>-->
