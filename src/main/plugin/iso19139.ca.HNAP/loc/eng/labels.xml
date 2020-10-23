@@ -1749,13 +1749,14 @@
         <description>Identification of, and means of communication with, person(s) and
             organization(s) associated with the process step</description>
     </element>
-    <element name="gmd:protocol" id="398.0">
+    <element name="gmd:protocol" id="398.0" alias="protocol">
         <label>Protocol</label>
         <description>Select the appropriate protocol from the drop down list. If your dataset is available online, select 'web address (URL)'</description>
       <helper sort="true">
         <option value="HTTP">HTTP</option>
         <option value="HTTPS">HTTPS</option>
         <option value="FTP">FTP</option>
+        <option value="ESRI REST: Map Service">ESRI REST: Map Service</option>
       </helper>
     </element>
     <element name="gmd:purpose" id="26.0">
