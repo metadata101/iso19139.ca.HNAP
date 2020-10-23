@@ -84,7 +84,14 @@
         <xsl:variable name="isoLangId"
                       select="normalize-space(string(gmd:languageCode/gmd:LanguageCode/@codeListValue))"/>
         <xsl:if test="$isoLangId!=$isoDocLangId">
-          <Document locale="{$isoLangId}">
+          <!-- get iso language code as ISO639 2B -->
+          <xsl:variable name="isoLangId_ISO639_2B">
+            <xsl:choose>
+              <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
+              <xsl:otherwise>$isoLangId</xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <Document locale="{$isoLangId_ISO639_2B}">
 
             <Field name="_locale" string="{$isoLangId}" store="true" index="true"/>
             <Field name="_docLocale" string="{$isoDocLangId}" store="true" index="true"/>
