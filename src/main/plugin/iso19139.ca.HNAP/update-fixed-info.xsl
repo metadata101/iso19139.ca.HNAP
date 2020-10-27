@@ -895,7 +895,7 @@
 
             <gmd:type>
               <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}">
-                <xsl:value-of select="XslUtil:getCodelistTranslation('gmd:MD_KeywordTypeCode', string(@type), string($mainLanguage))"/>
+                  <xsl:value-of select="$codelistDocument/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value"/>
               </gmd:MD_KeywordTypeCode>
             </gmd:type>
 
