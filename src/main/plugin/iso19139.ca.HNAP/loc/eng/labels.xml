@@ -2114,14 +2114,6 @@
         <label>Security User note</label>
         <description>Explanation of the application of the legal constraints or other restrictions
             and legal prerequisites for obtaining and using the resource or metadata</description>
-    <helper>
-            <option value="Protect A">Protect A</option>
-            <option value="Protect B">Protect B</option>
-            <option value="Protect C">Protect C</option>
-            <option value="Confidential">Confidential</option>
-            <option value="Secret">Secret</option>
-            <option value="Top Secret">Top Secret</option>
-      </helper>
     </element>
     <element name="gmd:value" id="137.0" context="gmd:DQ_QuantitativeResult">
         <condition>mandatory</condition>
