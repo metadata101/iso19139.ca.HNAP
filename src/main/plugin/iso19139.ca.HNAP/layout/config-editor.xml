@@ -50,8 +50,11 @@
     <for name="gmd:supplementalInformation" use="textarea"/>
     <for name="gmd:specificUsage" use="textarea"/>
     <for name="gmd:userNote" use="textarea"/>
-    <for name="gmd:useLimitation" use="textarea"/>
-
+    <!--for name="gmd:useLimitation" use="textarea"/-->
+    <for name="gmd:useLimitation"
+             use="data-gn-keyword-picker">
+          <directiveAttributes data-thesaurus-key="external.theme.GC_Open_Licenses" data-focus-to-input="false"/>
+    </for>
 
     <for name="gco:Distance" use="number"/>
     <for name="gco:Decimal" use="number"/>
