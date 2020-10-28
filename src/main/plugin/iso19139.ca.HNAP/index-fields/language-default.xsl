@@ -266,6 +266,7 @@
       <xsl:choose>
         <xsl:when test="gmd:resourceConstraints/gmd:MD_SecurityConstraints">
           <Field name="secConstr" string="true" store="true" index="true"/>
+          <Field name="secUserNote" string="{gmd:resourceConstraints/gmd:MD_SecurityConstraints[1]/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId]}" store="true" index="true"/>
         </xsl:when>
         <xsl:otherwise>
           <Field name="secConstr" string="false" store="true" index="true"/>
