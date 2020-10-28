@@ -84,7 +84,7 @@
 					<xs:element name="administrativeArea" type="gco:CharacterString_PropertyType" minOccurs="0"/>
 					<xs:element name="postalCode" type="gco:CharacterString_PropertyType" minOccurs="0"/>
 					<xs:element name="country" type="gco:CharacterString_PropertyType" minOccurs="0"/>
-					<xs:element name="electronicMailAddress" type="gco:CharacterString_PropertyType" minOccurs="1" maxOccurs="unbounded"/> <!-- EC customized -->
+					<xs:element name="electronicMailAddress" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

@@ -188,7 +188,7 @@ The semiMinorAxis element contains the length of the semi-minor axis of the elli
 	</complexType>
 	<element name="greenwichLongitude" type="gml:AngleType">
 		<annotation>
-			<documentation>gml:greenwichLongitude is the longitude of the prime meridian measured from the Greenwich meridian, positive eastward. If the value of the prime meridian “name” is "Greenwich" then the value of greenwichLongitude shall be 0 degrees.</documentation>
+			<documentation>gml:greenwichLongitude is the longitude of the prime meridian measured from the Greenwich meridian, positive eastward. If the value of the prime meridian "name" is "Greenwich" then the value of greenwichLongitude shall be 0 degrees.</documentation>
 		</annotation>
 	</element>
 	<complexType name="PrimeMeridianPropertyType">

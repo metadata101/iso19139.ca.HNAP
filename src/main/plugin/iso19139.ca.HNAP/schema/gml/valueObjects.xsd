@@ -50,7 +50,7 @@ The value objects are defined in a hierarchy. The following relationships are de
 	<element name="CountList" type="gml:integerOrNilReasonList" substitutionGroup="gml:AbstractScalarValueList"/>
 	<element name="Quantity" substitutionGroup="gml:AbstractScalarValue" nillable="true">
 		<annotation>
-			<documentation>An XML attribute uom (“unit of measure”) is required, whose value is a URI which identifies the definition of a ratio scale or units by which the numeric value shall be multiplied, or an interval or position scale on which the value occurs.</documentation>
+			<documentation>An XML attribute uom ("unit of measure") is required, whose value is a URI which identifies the definition of a ratio scale or units by which the numeric value shall be multiplied, or an interval or position scale on which the value occurs.</documentation>
 		</annotation>
 		<complexType>
 			<simpleContent>

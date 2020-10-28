@@ -3,7 +3,7 @@
 	<annotation>
 		<appinfo source="urn:ogc:specification:gml:schema-xsd:basicTypes:3.2.0">basicTypes.xsd</appinfo>
 		<documentation>See ISO/DIS 19136 8.2.
-W3C XML Schema provides a set of built-in “simple” types which define methods for representing values as literals without internal markup.  These are described in W3C XML Schema Part 2:2001.  Because GML is an XML encoding in which instances are described using XML Schema, these simple types shall be used as far as possible and practical for the representation of data types.  W3C XML Schema also provides methods for defining 
+W3C XML Schema provides a set of built-in "simple" types which define methods for representing values as literals without internal markup.  These are described in W3C XML Schema Part 2:2001.  Because GML is an XML encoding in which instances are described using XML Schema, these simple types shall be used as far as possible and practical for the representation of data types.  W3C XML Schema also provides methods for defining 
 -	new simple types by restriction and combination of the built-in types, and 
 -	complex types, with simple content, but which also have XML attributes.  
 In many places where a suitable built-in simple type is not available, simple content types derived using the XML Schema mechanisms are used for the representation of data types in GML.  
@@ -51,7 +51,7 @@ gml:NilReasonType is used as a member of a union in a number of simple content t
 	</element>
 	<simpleType name="SignType">
 		<annotation>
-			<documentation>gml:SignType is a convenience type with values “+” (plus) and “-“ (minus).</documentation>
+			<documentation>gml:SignType is a convenience type with values "+" (plus) and "-" (minus).</documentation>
 		</annotation>
 		<restriction base="string">
 			<enumeration value="-"/>
@@ -111,7 +111,7 @@ It adds a XML attribute codeSpace to a term, where the value of the codeSpace at
 	</complexType>
 	<complexType name="MeasureType">
 		<annotation>
-			<documentation>gml:MeasureType supports recording an amount encoded as a value of XML Schema double, together with a units of measure indicated by an attribute uom, short for “units Of measure”. The value of the uom attribute identifies a reference system for the amount, usually a ratio or interval scale.</documentation>
+			<documentation>gml:MeasureType supports recording an amount encoded as a value of XML Schema double, together with a units of measure indicated by an attribute uom, short for "units Of measure". The value of the uom attribute identifies a reference system for the amount, usually a ratio or interval scale.</documentation>
 		</annotation>
 		<simpleContent>
 			<extension base="double">
@@ -127,8 +127,8 @@ It adds a XML attribute codeSpace to a term, where the value of the codeSpace at
 	</simpleType>
 	<simpleType name="UomSymbol">
 		<annotation>
-			<documentation>This type specifies a character string of length at least one, and restricted such that it must not contain any of the following characters: “:” (colon), “ “ (space), (newline), (carriage return), (tab). This allows values corresponding to familiar abbreviations, such as “kg”, “m/s”, etc. 
-It is recommended that the symbol be an identifier for a unit of measure as specified in the “Unified Code of Units of Measure" (UCUM) (http://aurora.regenstrief.org/UCUM). This provides a set of symbols and a grammar for constructing identifiers for units of measure that are unique, and may be easily entered with a keyboard supporting the limited character set known as 7-bit ASCII. ISO 2955 formerly provided a specification with this scope, but was withdrawn in 2001. UCUM largely follows ISO 2955 with modifications to remove ambiguities and other problems.</documentation>
+			<documentation>This type specifies a character string of length at least one, and restricted such that it must not contain any of the following characters: ":" (colon), " " (space), (newline), (carriage return), (tab). This allows values corresponding to familiar abbreviations, such as "kg", "m/s", etc. 
+It is recommended that the symbol be an identifier for a unit of measure as specified in the "Unified Code of Units of Measure" (UCUM) (http://aurora.regenstrief.org/UCUM). This provides a set of symbols and a grammar for constructing identifiers for units of measure that are unique, and may be easily entered with a keyboard supporting the limited character set known as 7-bit ASCII. ISO 2955 formerly provided a specification with this scope, but was withdrawn in 2001. UCUM largely follows ISO 2955 with modifications to remove ambiguities and other problems.</documentation>
 		</annotation>
 		<restriction base="string">
 			<pattern value="[^: \n\r\t]+"/>
@@ -136,8 +136,8 @@ It is recommended that the symbol be an identifier for a unit of measure as spec
 	</simpleType>
 	<simpleType name="UomURI">
 		<annotation>
-			<documentation>This type specifies a URI, restricted such that it must start with one of the following sequences: “#”, “./”, “../”, or a string of characters followed by a “:”. These patterns ensure that the most common URI forms are supported, including absolute and relative URIs and URIs that are simple fragment identifiers, but prohibits certain forms of relative URI that could be mistaken for unit of measure symbol . 
-NOTE	It is possible to re-write such a relative URI to conform to the restriction (e.g. “./m/s”).
+			<documentation>This type specifies a URI, restricted such that it must start with one of the following sequences: "#", "./", "../", or a string of characters followed by a ":". These patterns ensure that the most common URI forms are supported, including absolute and relative URIs and URIs that are simple fragment identifiers, but prohibits certain forms of relative URI that could be mistaken for unit of measure symbol . 
+NOTE	It is possible to re-write such a relative URI to conform to the restriction (e.g. "./m/s").
 In an instance document, on elements of type gml:MeasureType the mandatory uom attribute shall carry a value corresponding to either 
 -	a conventional unit of measure symbol,
 -	a link to a definition of a unit of measure that does not have a conventional symbol, or when it is desired to indicate a precise or variant definition.</documentation>
@@ -151,9 +151,9 @@ In an instance document, on elements of type gml:MeasureType the mandatory uom a
 			<documentation>This type is deprecated for tuples with ordinate values that are numbers.
 CoordinatesType is a text string, intended to be used to record an array of tuples or coordinates. 
 While it is not possible to enforce the internal structure of the string through schema validation, some optional attributes have been provided in previous versions of GML to support a description of the internal structure. These attributes are deprecated. The attributes were intended to be used as follows:
-Decimal	symbol used for a decimal point (default=”.” a stop or period)
-cs        	symbol used to separate components within a tuple or coordinate string (default=”,” a comma)
-ts        	symbol used to separate tuples or coordinate strings (default=” “ a space)
+Decimal	symbol used for a decimal point (default="." a stop or period)
+cs        	symbol used to separate components within a tuple or coordinate string (default="," a comma)
+ts        	symbol used to separate tuples or coordinate strings (default=" " a space)
 Since it is based on the XML Schema string type, CoordinatesType may be used in the construction of tables of tuples or arrays of tuples, including ones that contain mixed text and numeric values.</documentation>
 		</annotation>
 		<simpleContent>

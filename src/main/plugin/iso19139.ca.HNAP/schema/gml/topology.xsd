@@ -35,7 +35,7 @@ Each topology primitive may contain references to other topology primitives of c
 	</element>
 	<element name="isolated" type="gml:IsolatedPropertyType">
 		<annotation>
-			<documentation>The gml:isolated property element implements the role of the same name of the ISO 19107 “Isolated In” association (see ISO 19107:2003, 7.3.10.4).</documentation>
+			<documentation>The gml:isolated property element implements the role of the same name of the ISO 19107 "Isolated In" association (see ISO 19107:2003, 7.3.10.4).</documentation>
 		</annotation>
 	</element>
 	<complexType name="IsolatedPropertyType">
@@ -50,7 +50,7 @@ Each topology primitive may contain references to other topology primitives of c
 	</complexType>
 	<element name="container" type="gml:ContainerPropertyType">
 		<annotation>
-			<documentation>The gml:container property element implements the role of the same name of the ISO 19107 “Isolated In” association (see ISO 19107:2003, 7.3.10.4).</documentation>
+			<documentation>The gml:container property element implements the role of the same name of the ISO 19107 "Isolated In" association (see ISO 19107:2003, 7.3.10.4).</documentation>
 		</annotation>
 	</element>
 	<complexType name="ContainerPropertyType">
@@ -78,13 +78,13 @@ Each topology primitive may contain references to other topology primitives of c
 		<annotation>
 			<documentation>gml:Node represents the 0-dimensional primitive.
 The optional coboundary of a node (gml:directedEdge) is a sequence of directed edges which are incident on this node. Edges emanating from this node appear in the node coboundary with a negative orientation. 
-If provided, the aggregationType attribute shall have the value “sequence”.
+If provided, the aggregationType attribute shall have the value "sequence".
 A node may optionally be realised by a 0-dimensional geometric primitive (gml:pointProperty).</documentation>
 		</annotation>
 	</element>
 	<element name="directedNode" type="gml:DirectedNodePropertyType">
 		<annotation>
-			<documentation>A gml:directedNode property element describes the boundary of topology edges and is used in the support of topological point features via the gml:TopoPoint expression, see below. The orientation attribute of type gml:SignType expresses the sense in which the included node is used: start (“-“) or end (“+”) node.</documentation>
+			<documentation>A gml:directedNode property element describes the boundary of topology edges and is used in the support of topological point features via the gml:TopoPoint expression, see below. The orientation attribute of type gml:SignType expresses the sense in which the included node is used: start ("-") or end ("+") node.</documentation>
 		</annotation>
 	</element>
 	<complexType name="DirectedNodePropertyType">
@@ -112,7 +112,7 @@ A node may optionally be realised by a 0-dimensional geometric primitive (gml:po
 			<documentation>gml:Edge represents the 1-dimensional primitive.
 The topological boundary of an Edge (gml:directedNode) consists of a negatively directed start Node and a positively directed end Node.   
 The optional coboundary of an edge (gml:directedFace) is a circular sequence of directed faces which are incident on this edge in document order. In the 2D case, the orientation of the face on the left of the edge is "+"; the orientation of the face on the right on its right is "-". 
-If provided, the aggregationType attribute shall have the value “sequence”.
+If provided, the aggregationType attribute shall have the value "sequence".
 An edge may optionally be realised by a 1-dimensional geometric primitive (gml:curveProperty).</documentation>
 		</annotation>
 	</element>
@@ -144,7 +144,7 @@ An edge may optionally be realised by a 1-dimensional geometric primitive (gml:c
 	<element name="Face" type="gml:FaceType" substitutionGroup="gml:AbstractTopoPrimitive">
 		<annotation>
 			<documentation>gml:Face represents the 2-dimensional topology primitive.
-The topological boundary of a face (gml:directedEdge) consists of a sequence of directed edges. If provided, the aggregationType attribute shall have the value “sequence”.
+The topological boundary of a face (gml:directedEdge) consists of a sequence of directed edges. If provided, the aggregationType attribute shall have the value "sequence".
 The optional coboundary of a face (gml:directedTopoSolid) is a pair of directed solids which are bounded by this face. A positively directed solid corresponds to a solid which lies in the direction of the negatively directed normal to the face in any geometric realisation. 
 A face may optionally be realised by a 2-dimensional geometric primitive (gml:surfaceProperty).</documentation>
 		</annotation>
@@ -231,7 +231,7 @@ A solid may optionally be realised by a 3-dimensional geometric primitive (gml:s
 	<element name="TopoCurve" type="gml:TopoCurveType">
 		<annotation>
 			<documentation>gml:TopoCurve represents a homogeneous topological expression, a sequence of directed edges, which if realised are isomorphic to a geometric curve primitive. The intended use of gml:TopoCurve is to appear within a line feature to express the structural and geometric relationships of this feature to other features via the shared edge definitions.
-If provided, the aggregationType attribute shall have the value “sequence”.</documentation>
+If provided, the aggregationType attribute shall have the value "sequence".</documentation>
 		</annotation>
 	</element>
 	<complexType name="TopoCurvePropertyType">
