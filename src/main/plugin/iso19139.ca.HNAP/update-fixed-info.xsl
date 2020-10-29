@@ -881,14 +881,23 @@
 
             <xsl:for-each select="keyword">
 
-              <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
-                <gco:CharacterString><xsl:value-of select="@value" /></gco:CharacterString>
-                <gmd:PT_FreeText>
-                  <gmd:textGroup>
-                    <gmd:LocalisedCharacterString locale="{@locale}"><xsl:value-of select="@translation" /></gmd:LocalisedCharacterString>
-                  </gmd:textGroup>
-                </gmd:PT_FreeText>
-              </gmd:keyword>
+              <xsl:choose>
+                <xsl:when test="$isMultilingual">
+                  <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString><xsl:value-of select="@value" /></gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="{@locale}"><xsl:value-of select="@translation" /></gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:keyword>
+                </xsl:when>
+                <xsl:otherwise>
+                  <gmd:keyword>
+                    <gco:CharacterString><xsl:value-of select="@value" /></gco:CharacterString>
+                  </gmd:keyword>
+                </xsl:otherwise>
+              </xsl:choose>
 
             </xsl:for-each>
 
