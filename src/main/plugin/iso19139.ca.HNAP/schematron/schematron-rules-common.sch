@@ -326,9 +326,9 @@
             |//*[@gco:isoType='gmd:MD_DataIdentification']
             |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
-      <sch:let name="coreSubjectThesaurusExists"
+<sch:let name="coreSubjectThesaurusExists"
                value="count(gmd:descriptiveKeywords[*/gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus' or
-              */gmd:thesaurusName/*/gmd:title/*/text() = 'Government of Canada Core Subject Thesaurus']) > 0" />
+              */gmd:thesaurusName/*/gmd:title/*/text() = 'Thésaurus des sujets de base du gouvernement du Canadas']) > 0" />
 
       <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
     </sch:rule>
