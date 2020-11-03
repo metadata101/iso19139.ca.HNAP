@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xsl:stylesheet version="2.0" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+<xsl:stylesheet version="2.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:srv="http://www.isotc211.org/2005/srv"
                 xmlns:geonet="http://www.fao.org/geonetwork"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
-                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                exclude-result-prefixes="#all">
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
        Searches can be conducted on indexes defined here.
@@ -26,9 +29,11 @@
   <xsl:include href="../convert/functions.xsl"/>
   <xsl:include href="../../../xsl/utils-fn.xsl"/>
 
-  <xsl:param name="thesauriDir"/>
 
-  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+  <!-- ========================================================================================= -->
+
+  <xsl:param name="thesauriDir"/>
+  <xsl:param name="inspire">false</xsl:param>
 
 
   <!-- ========================================================================================= -->
@@ -42,16 +47,51 @@
     </xsl:call-template>
   </xsl:variable>
 
+  <!-- convert ISO 639-2T to_ISO 639-2B - i.e. FRA to FRE -->
+  <xsl:variable name="mainLanguage_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$mainLanguage ='fra'">
+        <xsl:value-of select="'fre'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$mainLanguage"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="altLang_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$mainLanguage = 'eng'">fre</xsl:when>
+      <xsl:otherwise>eng</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="altLanguageId" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
+
+  <xsl:variable name="inspire-thesaurus"
+                select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
+  <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
+
+  <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+
   <xsl:template match="/">
 
     <Documents>
-      <xsl:for-each select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale">
+      <xsl:for-each
+        select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale">
         <xsl:variable name="langId" select="@id"/>
         <!--<xsl:variable name="isoLangId" select="java:twoCharLangCode(normalize-space(string(gmd:languageCode/gmd:LanguageCode/@codeListValue)))" />-->
         <xsl:variable name="isoLangId"
                       select="normalize-space(string(gmd:languageCode/gmd:LanguageCode/@codeListValue))"/>
         <xsl:if test="$isoLangId!=$isoDocLangId">
-          <Document locale="{$isoLangId}">
+          <!-- get iso language code as ISO639 2B -->
+          <xsl:variable name="isoLangId_ISO639_2B">
+            <xsl:choose>
+              <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
+              <xsl:otherwise>$isoLangId</xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <Document locale="{$isoLangId_ISO639_2B}">
 
             <Field name="_locale" string="{$isoLangId}" store="true" index="true"/>
             <Field name="_docLocale" string="{$isoDocLangId}" store="true" index="true"/>
@@ -91,28 +131,30 @@
       </xsl:choose>
     </xsl:variable>
 
-
     <!-- === Data or Service Identification === -->
 
     <!-- the double // here seems needed to index MD_DataIdentification when
-           it is nested in a SV_ServiceIdentification class -->
+        it is nested in a SV_ServiceIdentification class -->
 
     <xsl:for-each select="gmd:identificationInfo/gmd:MD_DataIdentification|
-							gmd:identificationInfo/*[@gco:isoType='gmd:MD_DataIdentification']|
-							gmd:identificationInfo/srv:SV_ServiceIdentification|
-							gmd:identificationInfo/*[@gco:isoType='srv:SV_ServiceIdentification']">
+					gmd:identificationInfo/*[@gco:isoType='gmd:MD_DataIdentification']|
+					gmd:identificationInfo/srv:SV_ServiceIdentification|
+					gmd:identificationInfo/*[@gco:isoType='srv:SV_ServiceIdentification']">
 
       <xsl:for-each select="gmd:citation/gmd:CI_Citation">
 
-        <xsl:for-each select="gmd:identifier/gmd:MD_Identifier/gmd:code//gmd:LocalisedCharacterString[@locale=$langId]">
+        <xsl:for-each
+          select="gmd:identifier/gmd:MD_Identifier/gmd:code//gmd:LocalisedCharacterString[@locale=$langId]">
           <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <!-- not tokenized title for sorting -->
-        <Field name="_defaultTitle" string="{string(gmd:title/gco:CharacterString)}" store="true" index="true"/>
-        <!-- not tokenized title for sorting -->
-        <Field name="_title" string="{string(gmd:title//gmd:LocalisedCharacterString[@locale=$langId])}" store="true"
+        <Field name="_defaultTitle" string="{string(gmd:title/gco:CharacterString)}" store="true"
                index="true"/>
+        <!-- not tokenized title for sorting -->
+        <Field name="_title"
+               string="{string(gmd:title//gmd:LocalisedCharacterString[@locale=$langId])}"
+               store="true" index="true"/>
 
         <xsl:for-each select="gmd:title//gmd:LocalisedCharacterString[@locale=$langId]">
           <Field name="title" string="{string(.)}" store="true" index="true"/>
@@ -123,17 +165,17 @@
         </xsl:for-each>
 
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='revision']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='revision']/gmd:date/gco:Date">
           <Field name="revisionDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='creation']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='creation']/gmd:date/gco:Date">
           <Field name="createDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='publication']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='publication']/gmd:date/gco:Date">
           <Field name="publicationDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
@@ -155,14 +197,14 @@
       <xsl:for-each select="gmd:abstract//gmd:LocalisedCharacterString[@locale=$langId]">
         <Field name="abstract" string="{string(.)}" store="true" index="true"/>
       </xsl:for-each>
-
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
       <xsl:for-each select="*/gmd:EX_Extent">
-        <xsl:apply-templates select="gmd:geographicElement/gmd:EX_GeographicBoundingBox" mode="latLon"/>
+        <xsl:apply-templates select="gmd:geographicElement/gmd:EX_GeographicBoundingBox"
+                             mode="latLon"/>
 
         <xsl:for-each
-                select="gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code//gmd:LocalisedCharacterString[@locale=$langId]">
+          select="gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code//gmd:LocalisedCharacterString[@locale=$langId]">
           <Field name="geoDescCode" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
@@ -171,7 +213,7 @@
         </xsl:for-each>
 
         <xsl:for-each select="gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent|
-					gmd:temporalElement/gmd:EX_SpatialTemporalExtent/gmd:extent">
+          gmd:temporalElement/gmd:EX_SpatialTemporalExtent/gmd:extent">
           <xsl:for-each select="gml:TimePeriod/gml:beginPosition|gml320:TimePeriod/gml320:beginPosition">
             <Field name="tempExtentBegin" string="{string(.)}" store="true" index="true"/>
           </xsl:for-each>
@@ -200,25 +242,81 @@
 
       <xsl:for-each select="*/gmd:MD_Keywords">
         <xsl:for-each select="gmd:keyword//gmd:LocalisedCharacterString[@locale=$langId]">
-          <Field name="keyword" string="{string(.)}" store="true" index="true"/>
+          <xsl:variable name="keyword" select="string(.)"/>
+
+          <Field name="keyword" string="{$keyword}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each select="gmd:type/gmd:MD_KeywordTypeCode/@codeListValue">
           <Field name="keywordType" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
-
       </xsl:for-each>
+
+
+      <xsl:if test="count(//gmd:keyword//gmd:LocalisedCharacterString[@locale = $langId and text() != '']) > 0">
+        <xsl:variable name="listOfKeywords">{
+          <xsl:variable name="keywordWithNoThesaurus"
+                        select="//gmd:MD_Keywords[
+                                  not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:title/*/text() = '']/
+                                    gmd:keyword//gmd:LocalisedCharacterString[@locale=$langId][*/text() != '']"/>
+          <xsl:if test="count($keywordWithNoThesaurus) > 0">
+            'keywords': [
+            <xsl:for-each select="$keywordWithNoThesaurus/(gco:CharacterString|gmx:Anchor)">
+              {'value': <xsl:value-of select="concat('''', replace(., '''', '\\'''), '''')"/>,
+              'link': '<xsl:value-of select="@xlink:href"/>'}
+              <xsl:if test="position() != last()">,</xsl:if>
+            </xsl:for-each>
+            ]
+            <xsl:if test="//gmd:MD_Keywords[gmd:thesaurusName]">,</xsl:if>
+          </xsl:if>
+          <xsl:for-each-group select="//gmd:MD_Keywords[
+                                        gmd:thesaurusName/*/gmd:title/*/text() != '' and
+                                        count(gmd:keyword//gmd:LocalisedCharacterString[@locale = $langId and text() != '']) > 0]"
+                              group-by="gmd:thesaurusName/*/gmd:title/*/text()">
+
+            '<xsl:value-of select="replace(current-grouping-key(), '''', '\\''')"/>' :[
+            <xsl:for-each select="current-group()/gmd:keyword//gmd:LocalisedCharacterString[@locale = $langId and text() != '']">
+              {'value': <xsl:value-of select="concat('''', replace(., '''', '\\'''), '''')"/>,
+              'link': '<xsl:value-of select="@xlink:href"/>'}
+              <xsl:if test="position() != last()">,</xsl:if>
+            </xsl:for-each>
+            ]
+            <xsl:if test="position() != last()">,</xsl:if>
+          </xsl:for-each-group>
+          }
+        </xsl:variable>
+
+        <Field name="keywordGroup"
+               string="{normalize-space($listOfKeywords)}"
+               store="true"
+               index="false"/>
+      </xsl:if>
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <xsl:for-each
-              select="gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName//gmd:LocalisedCharacterString[@locale=$langId]">
-        <Field name="orgName" string="{string(.)}" store="true" index="true"/>
-        <Field name="_orgName" string="{string(.)}" store="true" index="true"/>
+      <xsl:for-each select="gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName//gmd:LocalisedCharacterString[@locale=$langId]">
+          <Field name="orgName" string="{string(.)}" store="true" index="true"/>
+          <Field name="_orgName" string="{string(.)}" store="true" index="true"/>
+
+          <xsl:variable name="role"    select="../../../../gmd:role/*/@codeListValue"/>
+          <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($isoLangId))"/>
+          <xsl:variable name="logo"    select="../../../..//gmx:FileName/@src"/>
+          <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
+          <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+          <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
+          <xsl:variable name="positionName"   select="../../../../gmd:positionName/gco:CharacterString/text()"/>
+          <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
+                                    gmd:deliveryPoint|gmd:postalCode|gmd:city|
+                                    gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+
+          <Field name="responsibleParty"
+                 string="{concat($roleTranslation, '|resource|', ., '|', $logo, '|',  string-join($email, ','), '|', $individualName, '|', $positionName, '|', $address, '|', string-join($phone, ','))}"
+                 store="true" index="false"/>
       </xsl:for-each>
+
       <xsl:for-each select="gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualName/gco:CharacterString|
-				gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualFirstName/gco:CharacterString|
-				gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualLastName/gco:CharacterString">
-        <Field name="creator" string="{string(.)}" store="true" index="true"/>
+  gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualFirstName/gco:CharacterString|
+  gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualLastName/gco:CharacterString">
+          <Field name="creator" string="{string(.)}" store="true" index="true"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -226,40 +324,27 @@
       <xsl:for-each
               select="gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName">
 
-        <xsl:variable name="mainLang">
-          <xsl:choose>
-            <xsl:when test="$mainLanguage = 'eng'">eng</xsl:when>
-            <xsl:otherwise>fre</xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-
-        <xsl:variable name="otherLang">
-          <xsl:choose>
-            <xsl:when test="$mainLang = 'fre'">eng</xsl:when>
-            <xsl:otherwise>fre</xsl:otherwise>
-          </xsl:choose>
-        </xsl:variable>
-
         <xsl:variable name="orgName" select="gco:CharacterString" />
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
           <!--<Field name="orgNameCanada" string="{string(normalize-space(tokenize(., ';')[2]))}" store="true" index="true"/>-->
 
-          <Field name="orgNameCanada_{$mainLang}"
+          <Field name="orgNameCanada_{$mainLanguage_ISO639_2B}"
                  string="{string(normalize-space(tokenize(gco:CharacterString, ';')[2]))}" store="true" index="true"/>
         </xsl:if>
 
-        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId]" />
+        <xsl:variable name="orgNameAlt" select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
-          <Field name="orgNameCanada_{$otherLang}"
-                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId], ';')[2]))}"
+        <Field name="orgNameCanada_{$altLang_ISO639_2B}"
+                 string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)], ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
 
       </xsl:for-each>
+
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
@@ -278,6 +363,10 @@
       <xsl:for-each select="gmd:topicCategory/gmd:MD_TopicCategoryCode">
         <Field name="topicCat" string="{string(.)}" store="true" index="true"/>
         <Field name="subject" string="{string(.)}" store="true" index="true"/>
+        <Field name="keyword"
+               string="{util:getCodelistTranslation('gmd:MD_TopicCategoryCode', string(.), string($isoLangId))}"
+               store="true"
+               index="true"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -295,7 +384,8 @@
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
       <xsl:for-each select="gmd:spatialResolution/gmd:MD_Resolution">
-        <xsl:for-each select="gmd:equivalentScale/gmd:MD_RepresentativeFraction/gmd:denominator/gco:Integer">
+        <xsl:for-each
+          select="gmd:equivalentScale/gmd:MD_RepresentativeFraction/gmd:denominator/gco:Integer">
           <Field name="denominator" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
@@ -390,6 +480,7 @@
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- === Distribution === -->
+
 
     <xsl:for-each select="gmd:distributionInfo/gmd:MD_Distribution">
       <xsl:for-each
