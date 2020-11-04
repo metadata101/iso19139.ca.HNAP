@@ -27,12 +27,13 @@
                                        else if (contains(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString,';'))
                                             then normalize-space(substring-before(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString,';'))
                                             else //*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString"/>
+  <sch:let name="altLanguage" value="if (lower-case($mainLanguage) = 'eng') then 'fra' else 'eng'"/>
   <sch:let name="mainLanguageId" value="//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue = $mainLanguage]/@id"/>
   <sch:let name="altLanguageId" value="//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
-  <sch:let name="mainLanguage2char" value="if (lower-case($mainLanguageId) = 'fra') then 'fr' else 'en'"/>
-  <sch:let name="altLanguage2char" value="if (lower-case($altLanguageId) = 'fra') then 'fr' else 'en'"/>
-  <sch:let name="mainLanguageText" value="if (lower-case($mainLanguageId) = 'fra') then 'French' else 'English'"/>
-  <sch:let name="altLanguageText" value="if (lower-case($altLanguageId) = 'fra') then 'French' else 'English'"/>
+  <sch:let name="mainLanguage2char" value="if (lower-case($mainLanguage) = 'fra') then 'fr' else 'en'"/>
+  <sch:let name="altLanguage2char" value="if (lower-case($altLanguage) = 'fra') then 'fr' else 'en'"/>
+  <sch:let name="mainLanguageText" value="if (lower-case($mainLanguage) = 'fra') then 'French' else 'English'"/>
+  <sch:let name="altLanguageText" value="if (lower-case($altLanguage) = 'fra') then 'French' else 'English'"/>
 
   <xsl:function name="geonet:resourceFormatsList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
@@ -84,7 +85,7 @@
 
       <sch:assert
         test="$correct"
-      >$loc/strings/EC19</sch:assert>
+      >$loc/strings/MetadataStandardName</sch:assert>
     </sch:rule>
 
 
