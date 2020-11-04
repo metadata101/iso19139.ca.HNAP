@@ -8,21 +8,23 @@
   <techInfo>Les informations techniques</techInfo>
   <contactInfo>Les contacts</contactInfo>
   <mdContactInfo>Contacts pour les métadonnées</mdContactInfo>
-  <temporalRef>Référence(s) temporelle(s)</temporalRef>
   <refDate>Date(s) de référence</refDate>
+  <temporalRef>Référence(s) temporelle(s)</temporalRef>
   <constraintInfo>Contraintes d'accès et d'utilisation</constraintInfo>
-
   <xml_iso19139>Télécharger le fichier au format de XML</xml_iso19139>
 
+  <!-- New strings added for the AngularJS editor -->
   <!-- View and tabs -->
   <advanced>ISO Complet</advanced>
   <default>Vue par défaut</default>
   <simple>Vue par défaut</simple>
   <inspire>INSPIRE</inspire>
   <inspire_sds>SDS</inspire_sds>
-  <nap-default>NAP default</nap-default>
-  <xml>XML</xml>
 
+  <keywordFrom>Mots clés - </keywordFrom>
+  <resource>Ressource</resource>
+  <xml>XML</xml>
+  <metadata>Métadonnées</metadata>
   <identificationInfo>Identification</identificationInfo>
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Qualité</dataQualityInfo>
@@ -33,7 +35,35 @@
   <metadataConstraints>Md. contraintes</metadataConstraints>
   <metadataMaintenance>Md. maintenance</metadataMaintenance>
   <applicationSchemaInfo>Extension</applicationSchemaInfo>
+  <noThesaurusName>Mots clés</noThesaurusName>
+  <bboxesSection>Zone géographique</bboxesSection>
+  <overviews>Aperçus</overviews>
+  <metadataInXML>XML</metadataInXML>
+  <providedBy>Fourni par</providedBy>
+  <shareOnSocialSite>Partager</shareOnSocialSite>
+  <viewMode>Mode d'affichage</viewMode>
+  <linkToPortal>Lien vers le portail</linkToPortal>
+  <linkToPortal-help>Consultez l'intégralité des métadonnées et accédez à la donnée.</linkToPortal-help>
+  <citationProposal>Proposition de citation</citationProposal>
+  <citationProposal-help>Cette proposition de citation a été générée automatiquement selon le format suggéré par DataCite. Nous vous invitons à vérifier dans les métadonnées si les auteurs n'ont pas imposé un format de citation spécifique.</citationProposal-help>
+  <associatedResources>Ressources associées</associatedResources>
 
+  <!-- XSD error translation -->
+  <invalidElement>Contenu invalide à l'élément </invalidElement>
+  <onElementOf>Un des éléments suivants : </onElementOf>
+  <isExpected> est attendu.</isExpected>
+  <isNotComplete>.</isNotComplete>
+  <elementLocated> L'élément parent est </elementLocated>
+  <missingElement>Élément manquant dans </missingElement>
+  <invalidValue>Valeur manquante ou invalide. </invalidValue>
+  <notValidFor> n'est pas une valeur valide pour </notValidFor>
+  <xsdErrorIs>L'erreur est : </xsdErrorIs>
+  <inElement> contenu dans </inElement>
+  <enum1>La valeur </enum1>
+  <enum2> n'est pas valide pour le champ </enum2>
+  <enum3>Les valeurs possibles sont : </enum3>
+
+  <nap-default>NAP default</nap-default>
   <GeographicExtent>Étendue géographique</GeographicExtent>
   <GeographicScope>Portée Géographique</GeographicScope>
   <Timeperiod>Période de temps</Timeperiod>
@@ -169,7 +199,6 @@
     <area country="USA" eng="Wisconsin" fre="Wisconsin" />
     <area country="USA" eng="Wyoming" fre="Wyoming" />
   </adminAreas>
-
 
   <from>Depuis</from>
   <to>Jusqu'à</to>
