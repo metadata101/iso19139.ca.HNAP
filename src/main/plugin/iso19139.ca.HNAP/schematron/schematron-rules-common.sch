@@ -340,7 +340,7 @@
 
       <sch:assert
         test="not($missing)"
-      >$loc/strings/EC12</sch:assert>
+      >$loc/strings/MissingAccessConstraints</sch:assert>
 
       <sch:let name="accessConstraintsCodelistLabel"
                value="tr:codelist-value-label(
@@ -362,7 +362,7 @@
 
       <sch:assert
         test="not($missing)"
-      >$loc/strings/EC12</sch:assert>
+      >$loc/strings/MissingUseConstraints</sch:assert>
 
       <sch:let name="useConstraintsCodelistLabel"
                value="tr:codelist-value-label(

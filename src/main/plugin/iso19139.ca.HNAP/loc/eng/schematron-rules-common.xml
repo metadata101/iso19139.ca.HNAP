@@ -33,7 +33,9 @@
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
   <InvalidDistributorRole>Distributor role code is not valid</InvalidDistributorRole>
   <CoreSubjectThesaurusMissing>Core Subject Thesaurus keywords are mandatory</CoreSubjectThesaurusMissing>
+  <MissingAccessConstraints>Access constraints code is required</MissingAccessConstraints>
   <InvalidAccessConstraints>Access constraints code is not valid</InvalidAccessConstraints>
+  <MissingUseConstraints>Use constraints code is required</MissingUseConstraints>
   <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
   <DistributionFormatName>Value is required for distribution format - File name</DistributionFormatName>
   <DistributionFormatVersion>Value is required for distribution format - File version</DistributionFormatVersion>

@@ -33,7 +33,9 @@
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
   <InvalidDistributorRole>Le code de rôle distributeur n'est pas valide</InvalidDistributorRole>
   <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
+  <MissingAccessConstraints>Access constraints code is required</MissingAccessConstraints>
   <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
+  <MissingUseConstraints>Use constraints code is required</MissingUseConstraints>
   <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
   <DistributionFormatName>Une valeur est nécessaire pour: Distribution format - Nom du format</DistributionFormatName>
   <DistributionFormatVersion>Une valeur est nécessaire pour: Distribution format - Version</DistributionFormatVersion>
