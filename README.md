@@ -2,13 +2,13 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the *North American Profile of ISO 19115:2003 - Geographic information - Metadata* used nationally.
 
-For details on this release see [3.5.0 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/2?closed=1) release notes for details.
+For details on this release see [3.6.0 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/3?closed=1) release notes for details.
 
 ## Installation
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork `3.10.5-0`, not tested with prior versions!
+Use GeoNetwork `3.10.x`, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -16,11 +16,15 @@ The schema plugin editor makes use of a number of controls for editing structure
 
 The plugin can be deployed manually in an existing GeoNetwork installation:
 
-1. Copy the content of the folder `schemas/iso19139.ca.HNAP/src/main/plugin` to `WEB-INF/data/config/schema_plugins/iso19139.ca.HNAP`.
+1. Download from [releases](https://github.com/metadata101/iso19139.ca.HNAP/releases) page.
+   
+   There are two files for each release, a `jar` and a `zip`.
 
-2. Copy the `schema-iso19139.ca.HNAP-3.10.5-0.jar` to geonetwork `WEB-INF/libs`
+2. Extract contents of the `schema-iso19139.ca.HNAP` zip download into `WEB-INF/data/config/schema_plugins/iso19139.ca.HNAP`.
 
-3. Restart geonetwork
+3. Copy the `schema-iso19139.ca.HNAP` jar to geonetwork `WEB-INF/libs`
+
+4. Restart geonetwork
 
 There is some custom initialization code run when GeoNetwork starts up:
 
@@ -54,3 +58,11 @@ The best approach is to add the plugin as a submodule:
    cd web
    mvn jetty:run -Penv-dev
    ```
+
+### Deploy locally built profile into existing installation
+
+1. Copy the `iso19139.ca.HNAP` folder from `schemas/iso19139.ca.HNAP/src/main/plugin` into geonetwork `WEB-INF/data/config/schema_plugins/`.
+
+2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs`.
+
+3. Restart geonetwork
