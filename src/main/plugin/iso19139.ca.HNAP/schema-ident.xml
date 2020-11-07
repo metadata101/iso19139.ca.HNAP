@@ -27,8 +27,8 @@
         xsi:schemaLocation="http://geonetwork-opensource.org/schemas/schema-ident http://geonetwork-opensource.org/schemas/schema-ident/schema-ident.xsd">
 	<name>iso19139.ca.HNAP</name>
 	<id>3693b080-4f89-11e4-916c-0800200c9a66</id>
-	<version>1.0</version>
-	<appMinorVersionSupported>3.6.0</appMinorVersionSupported>
+	<version>3.10.5</version>
+	<appMinorVersionSupported>3.10.5</appMinorVersionSupported>
 
 	<title xml:lang="en">ISO Harmonized North American Profile (HNAP)</title>
 	<title xml:lang="fr">ISO Profil nord-américain harmonisé (HNAP)</title>

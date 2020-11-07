@@ -6,13 +6,13 @@
     <artifactId>schemas</artifactId>
     <groupId>org.geonetwork-opensource</groupId>
     <version>3.7</version>
-    <!-- build core-geonetwork locally 3.7 dependency above -->
+    <!-- tested with 3.10.5-0 -->
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
   <name>Schema Plugin HNAP ISO19139/119</name>
-  <version>3.10.5-SNAPSHOT</version>
+  <version>3.10.5-0</version>
   <description>
      GeoNetwork schema plugin for HNAP ISO19139/119 standard
   </description>
@@ -29,13 +29,6 @@
      <artifactId>core</artifactId>
      <version>${gn.project.version}</version>
      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>schema-core</artifactId>
-      <version>3.7</version>
-      <type>test-jar</type>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
@@ -57,6 +50,14 @@
       <artifactId>common</artifactId>
       <version>${gn.project.version}</version>
       <scope>provided</scope>
+    </dependency>
+    <!-- test scope -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>schema-core</artifactId>
+      <version>3.7</version>
+      <type>test-jar</type>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
