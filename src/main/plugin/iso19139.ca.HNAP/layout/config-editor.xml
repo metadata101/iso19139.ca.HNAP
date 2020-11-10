@@ -241,8 +241,8 @@
     <exclude>
       <name>gmd:identifier</name>
       <name>gmd:metadataStandardVersion</name>
-      <name>gmd:parentIdentifier</name>
       <name>gmd:hierarchyLevelName</name>
+      <name>gmd:parentIdentifier</name>
       <name>gmd:dataSetURI</name>
       <name>gmd:postalCode</name>
       <name>gmd:city</name>
@@ -276,6 +276,10 @@
       <name>gmd:condition</name>
       <name>gmd:maximumOccurence</name>
       <name>gmd:domainValue</name>
+      <name>gmd:minimumValue</name>
+      <name>gmd:maximumValue</name>
+      <name>gmd:dimensionSize</name>
+      <name>gmd:numberOfDimensions</name>
       <name>gmd:densityUnits</name>
       <name>gmd:descriptor</name>
       <name>gmd:denominator</name>
@@ -284,12 +288,13 @@
       <name>gmd:transformationDimensionDescription</name>
       <name>gmd:orientationParameterDescription</name>
       <name>gmd:distance</name>
+      <name>gmd:geometricObjectCount</name>
       <name>srv:name</name>
       <name>srv:invocationName</name>
-      <name>srv:serviceType</name>
       <name>srv:serviceTypeVersion</name>
       <name>srv:operationName</name>
       <name>srv:identifier</name>
+      <name>srv:serviceType</name>
       <name>gmd:individualName</name>
       <name>gmd:code</name>
       <name>gco:aName</name>
