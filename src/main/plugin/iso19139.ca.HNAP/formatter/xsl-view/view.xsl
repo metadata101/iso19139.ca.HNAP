@@ -52,4 +52,26 @@
   <xsl:variable name="editorConfig"
                 select="document('../../layout/config-editor.xml')"/>
 
+  
+  <!-- Override codelist template, to don't use the text value, 
+       just the codeListValue attribute -->
+  <xsl:template mode="render-field"
+                match="*[*/@codeListValue]"
+                priority="100">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <xsl:if test="normalize-space(string-join(*/@codeListValue, '')) != ''">
+      <dl>
+        <dt>
+          <xsl:call-template name="render-field-label">
+            <xsl:with-param name="fieldName" select="$fieldName"/>
+            <xsl:with-param name="languages" select="$allLanguages"/>
+          </xsl:call-template>
+        </dt>
+        <dd><xsl:comment select="name()"/>
+          <xsl:apply-templates mode="render-value" select="*/@codeListValue"/>
+        </dd>
+      </dl>
+    </xsl:if>
+  </xsl:template>
 </xsl:stylesheet>
