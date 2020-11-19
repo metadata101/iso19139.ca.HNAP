@@ -348,6 +348,14 @@
       <!-- Geographic extent -->
       <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
       <sch:assert test="$hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
+
+      <!-- Spatial representation type -->
+      <sch:let name="missingSpatialRepresentationType" value="not(gmd:spatialRepresentationType)" />
+      <sch:assert test="not($missingSpatialRepresentationType)">$loc/strings/SpatialRepresentation</sch:assert>
+
+      <!-- Topic category -->
+      <sch:let name="missingTopiCategory" value="not(gmd:topicCategory)" />
+      <sch:assert test="not($missingTopiCategory)">$loc/strings/EC10</sch:assert>
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox

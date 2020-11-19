@@ -108,6 +108,14 @@
         <!-- Geographic extent -->
         <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
         <sch:assert test="$hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
+
+        <!-- Spatial representation type -->
+        <sch:let name="missingSpatialRepresentationType" value="not(gmd:spatialRepresentationType)" />
+        <sch:assert test="not($missingSpatialRepresentationType)">$loc/strings/SpatialRepresentation</sch:assert>
+
+        <!-- Topic category -->
+        <sch:let name="missingTopiCategory" value="not(gmd:topicCategory)" />
+        <sch:assert test="not($missingTopiCategory)">$loc/strings/EC12</sch:assert>
       </sch:rule>
 
       <!-- Temporal extent -->
@@ -744,18 +752,6 @@
                 test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
                 >$loc/strings/ECThesaurusEmail</sch:assert>
         </sch:rule>
-
-      <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:MD_DataIdentification
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/srv:SV_ServiceIdentification">
-
-
-        <sch:let name="missing" value="not(gmd:spatialRepresentationType)" />
-
-        <sch:assert
-                test="not($missing)"
-        >$loc/strings/SpatialRepresentation</sch:assert>
-      </sch:rule>
 
       <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
       <sch:rule context="/gmd:MD_Metadata">
