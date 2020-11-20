@@ -299,6 +299,7 @@
       <name>gmd:code</name>
       <name>gco:aName</name>
       <name>srv:optionality</name>
+      <name parent="gmd:MD_Format">gmd:name</name>
     </exclude>
   </multilingualFields>
 
