@@ -244,6 +244,7 @@
       <name>gmd:hierarchyLevelName</name>
       <name>gmd:parentIdentifier</name>
       <name>gmd:dataSetURI</name>
+      <name>gmd:locale</name>
       <name>gmd:postalCode</name>
       <name>gmd:city</name>
       <name>gmd:language</name>
