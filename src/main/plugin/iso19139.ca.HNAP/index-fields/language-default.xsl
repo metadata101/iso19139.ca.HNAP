@@ -91,7 +91,7 @@
               <xsl:otherwise>$isoLangId</xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
-          <Document locale="{$isoLangId_ISrevisionDateO639_2B}">
+          <Document locale="{$isoLangId_ISO639_2B}">
 
             <Field name="_locale" string="{$isoLangId}" store="true" index="true"/>
             <Field name="_docLocale" string="{$isoDocLangId}" store="true" index="true"/>
@@ -130,6 +130,15 @@
         <xsl:otherwise>$isoLangId</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
+
+    <xsl:for-each select="gmd:dateStamp/gco:DateTime">
+      <Field name="changeDate" string="{string(.)}" store="true" index="true"/>
+    </xsl:for-each>
+
+    <!-- Index gco:Date as is allowed also, GN uses gco:DateTime, but this case manages imported and not edited metadata -->
+    <xsl:for-each select="gmd:dateStamp/gco:Date">
+      <Field name="changeDate" string="{concat(string(.), 'T00:00:00')}" store="true" index="true"/>
+    </xsl:for-each>
 
     <!-- === Data or Service Identification === -->
 
