@@ -44,6 +44,8 @@ public class SchemaInitializerSettings implements
     private void addSettings() {
         addSetting("schema/"+ HNAP_SCHEMA_NAME+"/UseGovernmentOfCanadaOrganisationName",
             SettingDataType.BOOLEAN,"true",1);
+        addSetting("schema/"+ HNAP_SCHEMA_NAME+"/UseDFOStructuredFormatDescription",
+            SettingDataType.BOOLEAN,"true",1);
         addSetting("schema/"+ HNAP_SCHEMA_NAME+"/DefaultMainOrganizationName_en",
             SettingDataType.STRING,"Government of Canada",2);
         addSetting("schema/"+ HNAP_SCHEMA_NAME+"/DefaultMainOrganizationName_fr",

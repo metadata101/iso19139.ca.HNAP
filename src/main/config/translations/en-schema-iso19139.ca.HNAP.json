@@ -3,6 +3,6 @@
   "schema/iso19139.ca.HNAP": "ISO19139 HNAP Settings",
   "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Use Enhanced ('MultiEntryCombiner') Organization Selector",
   "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en": "Org Select: Default top-level Organization Name (English)",
-  "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr": "Org Select: Default top-level Organization Name (French)"
-
+  "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr": "Org Select: Default top-level Organization Name (French)",
+  "schema/iso19139.ca.HNAP/UseDFOStructuredFormatDescription": "Use Enhanced ('MultiEntryCombiner') Format Description"
 }

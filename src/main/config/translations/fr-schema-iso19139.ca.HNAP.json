@@ -4,4 +4,5 @@
   "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName": "Utiliser le sélecteur d'organisation amélioré («combinaison d'entrées multiples»)\n",
   "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en": "Sélection de l'organisation: Nom de l'organisation de niveau supérieur par défaut (anglais)",
   "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr": "Sélection de l'organisation: Nom de l'organisation de niveau supérieur par défaut (français)"
+  "schema/iso19139.ca.HNAP/UseDFOStructuredFormatDescription": "Utiliser la description du format amélioré"
 }

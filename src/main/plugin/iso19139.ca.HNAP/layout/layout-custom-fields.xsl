@@ -31,6 +31,8 @@
 
   <xsl:variable name="UseGOCOrganisationName" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"/>
 
+  <xsl:variable name="UseDFOStructuredFormatDescription" select="/root/gui/settings/schema/iso19139.ca.HNAP/UseDFOStructuredFormatDescription"/>
+
   <!-- Hide thesaurus name in default view -->
   <xsl:template mode="mode-iso19139" priority="2005" match="gmd:thesaurusName[$tab='default' and $schema = 'iso19139.ca.HNAP' ]" />
 
@@ -210,6 +212,148 @@
             "heading": {
               "eng": "Branch/Sector/Division",
               "fra": "Branche/Secteur/Division"
+            }
+          }
+      ]
+    </xsl:variable>
+
+    <xsl:variable name="cls" select="local-name()"/>
+
+    <xsl:variable name="json">
+      {
+        "combiner":"; ",
+        "root_id":"<xsl:value-of select="gn:element/@ref"/>",
+        "refs":<xsl:copy-of select="$refs_json"/>,
+        "defaultLang":"<xsl:copy-of select="$metadataLanguage"/>",
+        "values": <xsl:copy-of select="$json_values"/>,
+        "config":<xsl:copy-of select="$json_config"/>
+      }
+    </xsl:variable>
+
+
+    <div class="form-group gn-field gn-control gn-{$cls}"  >
+      <label for="orgname" class="col-sm-2 control-label" data-gn-field-tooltip="iso19139.ca.HNAP|gmd:organisationName" ><xsl:copy-of select="$labelConfig/label"/></label>
+
+      <div data-gn-multientry-combiner="{$json}"
+           class="col-sm-9 col-xs-11 gn-value nopadding-in-table"
+           data-label="$labelConfig/label">
+      </div>
+      <div class="col-sm-1 gn-control"/>
+    </div>
+
+  </xsl:template>
+
+
+  <!-- Special handlig for gmd:description. See MultiEntryCombiner.js for more info on how this works -->
+<!--
+    Special handling for the gmd:organisationName.  See MultiEntryCombiner.js for more info on how this works.
+    Basically this is a replacement for render-element.
+    Instead, it just creates a VERY simple HTML fragment (see MultiEntryCombiner.js for example).
+    The MultiEntryCombiner directive handles most of this.
+    This code mostly sets up two things;
+    a) basic shell HTML so it can be displayed in the editor (see MultiEntryCombiner.js for HTML example).
+    b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
+-->
+  <xsl:template mode="mode-iso19139" match="gmd:description[$UseFGPDescriptionStructure = 'true' and $schema = 'iso19139.ca.HNAP']" priority="3000"  >
+
+    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+    <xsl:variable name="theElement" select="." />
+    <xsl:variable name="hasDefaultValue" select="gco:CharacterString != ''"/>
+
+    <!-- creates values of combined text field -->
+    <!--
+      Actual values of the description
+        <values>
+            <value ref="15" lang="eng">Dataset;CSV;eng</value>
+            <value ref="18" lang="fra">Dataset;CSV;eng</value>
+        </values>
+    -->
+    <xsl:variable name="values">
+      <values>
+        <!-- 1. main language -->
+        <xsl:if test="$hasDefaultValue">
+          <value ref="{gco:CharacterString/gn:element/@ref}" lang="{$metadataLanguage}">
+            <xsl:value-of select="gco:CharacterString"/>
+          </value>
+        </xsl:if>
+
+        <!-- 2. field for translations -->
+        <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
+          <!-- don't put in the default lang if it already has a value -->
+          <xsl:if test="not($hasDefaultValue) or substring-after(@locale, '#') != $metadataLanguage">
+            <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
+              <xsl:value-of select="."/>
+            </value>
+          </xsl:if>
+        </xsl:for-each>
+
+        <!-- 3. field for none translated language -->
+        <xsl:for-each select="$metadataOtherLanguages/lang">
+          <xsl:variable name="currentLanguageId" select="@id"/>
+          <xsl:if test="count($theElement/
+                gmd:PT_FreeText/gmd:textGroup/
+                gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
+              <!--don't put in default language if already there-->
+              <xsl:if test="not($hasDefaultValue) or $currentLanguageId != $metadataLanguage ">
+                 <value ref="lang_{@id}_{$theElement/gn:element/@ref}"
+                    lang="{@id}"></value>
+              </xsl:if>
+          </xsl:if>
+        </xsl:for-each>
+      </values>
+    </xsl:variable>
+
+    <!--
+      Creates the "values":  section
+       "values": {
+                  "eng":"... actual metadata record value ..." ,
+                  "fra":"... actual metadata record value ..."
+        }
+    -->
+    <xsl:variable name="json_values">
+      {
+      <xsl:for-each select="$values/values/value">
+        "<xsl:value-of select="@lang"/>":"<xsl:value-of select="."/>" <xsl:if test="not(position() = last())">,</xsl:if>
+      </xsl:for-each>
+      }
+    </xsl:variable>
+
+    <xsl:variable name="refs_json">
+      {
+      <xsl:for-each select="$values/values/value">
+        "<xsl:value-of select="@lang"/>":"<xsl:value-of select="@ref"/>" <xsl:if test="not(position() = last())">,</xsl:if>
+      </xsl:for-each>
+      }
+    </xsl:variable>
+
+    <!---
+      Constant for ALL gmd:description - it defines what the UI looks like and how it works.
+    -->
+    <xsl:variable name="json_config">
+      [
+          {
+            "type": "freeText",
+            "heading": {
+              "eng": "content",
+              "fra": "content"
+            }
+          },
+
+          {
+            "type": "freeText",
+            "heading": {
+              "eng": "format",
+              "fra": "format"
+            }
+          },
+
+          {
+            "type": "freeText",
+            "heading": {
+              "eng": "language",
+              "fra": "language"
             }
           }
       ]
