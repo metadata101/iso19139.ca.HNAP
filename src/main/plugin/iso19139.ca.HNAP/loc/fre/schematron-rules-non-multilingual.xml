@@ -2,9 +2,9 @@
 <strings>
   <schematron.title>HNAP validation rules - non-multilingual</schematron.title>
 
-  <Metadata>Metadata Information</Metadata>
-  <DataIdentification>Data Identification</DataIdentification>
-  <Distribution>Distribution</Distribution>
+  <Metadata>Metadata Information[FR]</Metadata>
+  <DataIdentification>Data Identification[FR]</DataIdentification>
+  <Distribution>Distribution[FR]</Distribution>
 
   <MetadataStandardName>Valeur ne est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</MetadataStandardName>
   <ContactOrganisationName>Contact - Nom de l'organisation est obligatoire dans les deux langues</ContactOrganisationName>
