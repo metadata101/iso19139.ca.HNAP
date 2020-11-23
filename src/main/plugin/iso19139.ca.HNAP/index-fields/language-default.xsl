@@ -91,7 +91,7 @@
               <xsl:otherwise>$isoLangId</xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
-          <Document locale="{$isoLangId_ISO639_2B}">
+          <Document locale="{$isoLangId_ISrevisionDateO639_2B}">
 
             <Field name="_locale" string="{$isoLangId}" store="true" index="true"/>
             <Field name="_docLocale" string="{$isoDocLangId}" store="true" index="true"/>
@@ -165,17 +165,17 @@
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='revision']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date/gco:Date">
           <Field name="revisionDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='creation']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_366']/gmd:date/gco:Date">
           <Field name="createDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='publication']/gmd:date/gco:Date">
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date/gco:Date">
           <Field name="publicationDate" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
