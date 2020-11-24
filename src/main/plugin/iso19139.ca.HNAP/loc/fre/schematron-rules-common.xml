@@ -2,9 +2,9 @@
 <strings>
   <schematron.title>HNAP validation rules - common</schematron.title>
 
-  <Metadata>Metadata Information[FR]</Metadata>
-  <DataIdentification>Data Identification[FR]</DataIdentification>
-  <Distribution>Distribution[FR]</Distribution>
+  <Metadata>Information sur les métadonnées</Metadata>
+  <DataIdentification>Identification des données</DataIdentification>
+  <Distribution>Distribution</Distribution>
 
   <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
   <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
