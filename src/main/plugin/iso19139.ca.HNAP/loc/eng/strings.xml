@@ -61,8 +61,8 @@
   <xsdErrorIs>XSD error is: </xsdErrorIs>
   <inElement> in element </inElement>
   <enum1>Value </enum1>
-  <enum2> is not valid for the field </enum2>
-  <enum3>Potential values are: </enum3>
+  <enum2> is not valid for the field</enum2>
+  <enum3>The topic category must be found in the following list </enum3>
 
   <nap-default>NAP default</nap-default>
   <GeographicExtent>Geographic Extent</GeographicExtent>
