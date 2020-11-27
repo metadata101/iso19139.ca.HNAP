@@ -325,7 +325,8 @@
 
 
         <section name="gmd:MD_DataIdentification">
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"
+                  or="title" in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation"/>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
               gmd:date"/>
@@ -690,6 +691,7 @@
 
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
+        <for name="gmd:title"/>
         <for name="gmd:descriptiveKeywords"/>
         <for name="gmd:keyword"/>
         <for name="gmd:spatialResolution"/>
