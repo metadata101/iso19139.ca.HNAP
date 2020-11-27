@@ -13,7 +13,7 @@
       <gco:CharacterString></gco:CharacterString>
    </gmd:fileIdentifier>
    <gmd:language>
-      <gco:CharacterString>eng; CAN</gco:CharacterString>
+      <gco:CharacterString>fra; CAN</gco:CharacterString>
    </gmd:language>
    <gmd:characterSet>
       <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
@@ -29,10 +29,10 @@
             <gco:CharacterString/>
          </gmd:individualName>
          <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-            <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
+            <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
             <gmd:PT_FreeText>
                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
+                  <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
                </gmd:textGroup>
             </gmd:PT_FreeText>
          </gmd:organisationName>
@@ -44,10 +44,10 @@
                <gmd:address>
                   <gmd:CI_Address>
                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>200 Kent, 11th Floor</gco:CharacterString>
+                        <gco:CharacterString>200 rue Kent</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">200 Kent, 11e étage</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">200 Kent Street</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:deliveryPoint>
@@ -58,7 +58,7 @@
                         <gco:CharacterString>Ontario</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Ontario</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">Ontario</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:administrativeArea>
@@ -66,10 +66,10 @@
                         <gco:CharacterString>K1A 0E6</gco:CharacterString>
                      </gmd:postalCode>
                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Canada</gco:CharacterString>
+                        <gco:CharacterString>Canada (le)</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:country>
@@ -77,7 +77,7 @@
                         <gco:CharacterString>min@dfo-mpo.gc.ca</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:electronicMailAddress>
@@ -86,7 +86,7 @@
                <gmd:onlineResource>
                   <gmd:CI_OnlineResource>
                      <gmd:linkage>
-                        <gmd:URL>https://www.dfo-mpo.gc.ca/index-eng.htm</gmd:URL>
+                        <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>https</gco:CharacterString>
@@ -105,10 +105,10 @@
       <gco:DateTime>2020-11-13T22:04:11</gco:DateTime>
    </gmd:dateStamp>
    <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
-      <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
+      <gco:CharacterString>Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gco:CharacterString>
       <gmd:PT_FreeText>
          <gmd:textGroup>
-            <gmd:LocalisedCharacterString locale="#fra">Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gmd:LocalisedCharacterString>
+            <gmd:LocalisedCharacterString locale="#eng">North American Profile of ISO 19115:2003 - Geographic information - Metadata</gmd:LocalisedCharacterString>
          </gmd:textGroup>
       </gmd:PT_FreeText>
    </gmd:metadataStandardName>
@@ -119,10 +119,10 @@
       <gco:CharacterString/>
    </gmd:dataSetURI>
    <gmd:locale>
-      <gmd:PT_Locale id="fra">
+      <gmd:PT_Locale id="eng">
          <gmd:languageCode>
             <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
-                              codeListValue="fra">French; Français</gmd:LanguageCode>
+                              codeListValue="eng">English; Anglais</gmd:LanguageCode>
          </gmd:languageCode>
          <gmd:country>
             <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
@@ -133,7 +133,7 @@
                                      codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
          </gmd:characterEncoding>
       </gmd:PT_Locale>
-  </gmd:locale>
+   </gmd:locale>
    <gmd:referenceSystemInfo>
       <gmd:MD_ReferenceSystem>
          <gmd:referenceSystemIdentifier>
@@ -156,10 +156,10 @@
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Profile - HNAP Level 1</gco:CharacterString>
+                  <gco:CharacterString>Profile - PNAH niveau 1 (française)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#fra">Profile - PNAH niveau 1</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Level 1 (French)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:title>
@@ -191,10 +191,10 @@
                         <gco:CharacterString/>
                      </gmd:individualName>
                      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
+                        <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
@@ -205,8 +205,13 @@
                            </gmd:phone>
                            <gmd:address>
                               <gmd:CI_Address>
-                                 <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString/>
+                                 <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>200 rue Kent</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#eng">200 Kent Street</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
                                  <gmd:city gco:nilReason="missing">
                                     <gco:CharacterString/>
@@ -224,7 +229,7 @@
                                     <gco:CharacterString>min@dfo-mpo.gc.ca</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#eng">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -233,7 +238,7 @@
                            <gmd:onlineResource>
                               <gmd:CI_OnlineResource>
                                  <gmd:linkage>
-                                    <gmd:URL>https://www.dfo-mpo.gc.ca/index-eng.htm</gmd:URL>
+                                    <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
                                  </gmd:linkage>
                                  <gmd:protocol>
                                     <gco:CharacterString>https</gco:CharacterString>
@@ -244,7 +249,7 @@
                      </gmd:contactInfo>
                      <gmd:role>
                         <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
-                                         codeListValue="RI_410">owner; propriétaire</gmd:CI_RoleCode>
+                                         codeListValue="RI_418">author; auteur</gmd:CI_RoleCode>
                      </gmd:role>
                   </gmd:CI_ResponsibleParty>
                </gmd:citedResponsibleParty>
@@ -254,7 +259,7 @@
             <gco:CharacterString/>
             <gmd:PT_FreeText>
                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#fra"/>
+                  <gmd:LocalisedCharacterString locale="#eng"/>
                </gmd:textGroup>
             </gmd:PT_FreeText>
          </gmd:abstract>
@@ -276,7 +281,7 @@
                   <gco:CharacterString/>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#fra"/>
+                        <gmd:LocalisedCharacterString locale="#eng"/>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:keyword>
@@ -287,10 +292,10 @@
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>
+                        <gco:CharacterString>Thésaurus des sujets de base du gouvernement du Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Thésaurus des sujets de base du gouvernement du Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada Core Subject Thesaurus</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:title>
@@ -319,10 +324,10 @@
                      <gmd:citedResponsibleParty>
                         <gmd:CI_ResponsibleParty>
                            <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                              <gco:CharacterString>Government of Canada; Library and Archives Canada</gco:CharacterString>
+                              <gco:CharacterString>Gouvernement du Canada; Bibliothèque et Archives Canada</gco:CharacterString>
                               <gmd:PT_FreeText>
                                  <gmd:textGroup>
-                                    <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Bibliothèque et Archives Canada</gmd:LocalisedCharacterString>
+                                    <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Library and Archives Canada</gmd:LocalisedCharacterString>
                                  </gmd:textGroup>
                               </gmd:PT_FreeText>
                            </gmd:organisationName>
@@ -339,10 +344,10 @@
          <gmd:resourceConstraints>
             <gmd:MD_LegalConstraints>
                <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gco:CharacterString>
+                  <gco:CharacterString>Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#fra">Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#eng">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:useLimitation>
@@ -358,7 +363,7 @@
                   <gco:CharacterString/>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#fra"/>
+                        <gmd:LocalisedCharacterString locale="#eng"/>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:otherConstraints>
@@ -380,7 +385,7 @@
                                                   codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109">vector; vecteur</gmd:MD_SpatialRepresentationTypeCode>
          </gmd:spatialRepresentationType>
          <gmd:language>
-            <gco:CharacterString>eng; CAN</gco:CharacterString>
+            <gco:CharacterString>fra; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
@@ -408,11 +413,11 @@
          </gmd:extent>
          <gmd:extent>
             <gmd:EX_Extent>
-               <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString></gco:CharacterString>
+               <gmd:description gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString/>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#fra"></gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#eng"/>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:description>
@@ -459,10 +464,10 @@
                         <gco:CharacterString/>
                      </gmd:individualName>
                      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
+                        <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
@@ -473,8 +478,13 @@
                            </gmd:phone>
                            <gmd:address>
                               <gmd:CI_Address>
-                                 <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString/>
+                                 <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>200 rue Kent</gco:CharacterString>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#eng">200 Kent Street</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
                                  <gmd:city gco:nilReason="missing">
                                     <gco:CharacterString/>
@@ -489,10 +499,10 @@
                                     <gco:CharacterString/>
                                  </gmd:country>
                                  <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>min@dfo-mpo.gc.ca</gco:CharacterString>
+                                    <gco:CharacterString>chsinfo@dfo-mpo.gc.ca</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#eng">chsinfo@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -501,7 +511,7 @@
                            <gmd:onlineResource>
                               <gmd:CI_OnlineResource>
                                  <gmd:linkage>
-                                    <gmd:URL>https://www.dfo-mpo.gc.ca/index-eng.htm</gmd:URL>
+                                    <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
                                  </gmd:linkage>
                                  <gmd:protocol>
                                     <gco:CharacterString>https</gco:CharacterString>
