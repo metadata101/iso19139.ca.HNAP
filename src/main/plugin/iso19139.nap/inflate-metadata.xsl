@@ -88,8 +88,8 @@
 
       <xsl:apply-templates select="gmd:dataSetURI" />
 
-      <xsl:apply-templates select="gmd:locale" />
-      <xsl:if test="not(gmd:locale)">
+      <xsl:apply-templates select="gmd:locale[gmd:PT_Locale]" />
+      <xsl:if test="not(gmd:locale[gmd:PT_Locale])">
         <gmd:locale>
         <xsl:choose>
           <xsl:when test="$mdLang = 'fra; CAN'">
@@ -206,7 +206,7 @@
               <xsl:apply-templates select="gmd:edition" />
               <xsl:apply-templates select="gmd:editionDate" />
               <xsl:apply-templates select="gmd:identifier" />
-              <xsl:apply-templates select=" gmd:citedResponsibleParty" />
+              <xsl:apply-templates select="gmd:citedResponsibleParty" />
               <xsl:apply-templates select="gmd:presentationForm" />
               <xsl:apply-templates select="gmd:series" />
               <xsl:apply-templates select="gmd:otherCitationDetails" />
