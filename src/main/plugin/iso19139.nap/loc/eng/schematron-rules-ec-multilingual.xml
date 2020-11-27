@@ -81,10 +81,17 @@
   <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
 
+  <MissingContactOrganisation>Contact - Organisation name is required</MissingContactOrganisation>
+  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
   <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleOrganisation>Cited responsible - Organisation name is required</MissingCitedResponsibleOrganisation>
+  <MissingCitedResponsibleMail>Cited responsible- Electronic mail address is required</MissingCitedResponsibleMail>
   <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
+  <MissingDataIdentification>Missing Data Identification section</MissingDataIdentification>
+  <MissingTitle>Title is required</MissingTitle>
+  <MissingStatus>Status is required</MissingStatus>
   <MissingDate>Value is required for Date</MissingDate>
   <BeginDate>Value is required for Begin Date</BeginDate>
 
@@ -122,6 +129,8 @@
   <GeographicExtentRequired>Geographic extent is required</GeographicExtentRequired>
   <GeographicExtentWestEast>Geographic extent - westbound longitude should be lower than eastbound longitude</GeographicExtentWestEast>
   <GeographicExtentNorthSouth>Geographic extent - southbound latitude should be lower than northbound latitude</GeographicExtentNorthSouth>
+
+  <MissingLocale>Missing information for alternative language</MissingLocale>
 
   <DistributorContactMissing>Distributor Contact is required</DistributorContactMissing>
 </strings>

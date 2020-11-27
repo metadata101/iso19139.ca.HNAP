@@ -81,10 +81,17 @@
   <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
 
+  <MissingContactOrganisation>Contact - Organisation name is required</MissingContactOrganisation>
+  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
   <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleOrganisation>Cited responsible - Organisation name is required</MissingCitedResponsibleOrganisation>
+  <MissingCitedResponsibleMail>Cited responsible- Electronic mail address is required</MissingCitedResponsibleMail>
   <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
+  <MissingDataIdentification>Missing Data Identification section</MissingDataIdentification>
+  <MissingTitle>Title is required</MissingTitle>
+  <MissingStatus>Status is required</MissingStatus>
   <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
 
@@ -123,6 +130,8 @@
   <GeographicExtentRequired>Une valeur est nécessaire pour: Étendue géographique</GeographicExtentRequired>
   <GeographicExtentWestEast>Étendue géographique - la longitude ouest doit être inférieure à la longitude est</GeographicExtentWestEast>
   <GeographicExtentNorthSouth>Étendue géographique - la latitude sud devrait être inférieure à la latitude nord</GeographicExtentNorthSouth>
+
+  <MissingLocale>Missing information for alternative language</MissingLocale>
 
   <DistributorContactMissing>Le Responsable de la distribution est obligatoire</DistributorContactMissing>
 </strings>

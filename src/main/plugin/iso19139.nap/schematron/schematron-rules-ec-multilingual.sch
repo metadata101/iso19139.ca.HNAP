@@ -233,7 +233,7 @@
 
     <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
     <sch:rule context="/gmd:MD_Metadata">
-      <sch:let name="missing" value="not(gmd:referenceSystemInfo)
+      <sch:let name="missing" value="not(gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier)
                 " />
 
       <sch:let name="sRequireRefSystemInfo" value="count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_635']) +
@@ -244,6 +244,30 @@
         test="(($sRequireRefSystemInfo > 0) and not($missing)) or
             $sRequireRefSystemInfo = 0"
       >$loc/strings/ReferenceSystemInfo</sch:assert>
+
+      <sch:let name="missingLocale" value="not(gmd:locale/gmd:PT_Locale/@id)" />
+
+      <sch:assert
+        test="not($missingLocale)"
+      >$loc/strings/MissingLocale</sch:assert>
+
+      <sch:let name="missingContactOrganisation" value="not(gmd:contact/*/gmd:organisationName)" />
+
+      <sch:assert
+        test="not($missingContactOrganisation)"
+      >$loc/strings/MissingContactOrganisation</sch:assert>
+
+      <sch:let name="missingContactMail" value="not(gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress)" />
+
+      <sch:assert
+        test="not($missingContactMail)"
+      >$loc/strings/MissingContactMail</sch:assert>
+
+      <sch:let name="missingContactRole" value="not(gmd:contact/*/gmd:role)" />
+
+      <sch:assert
+        test="not($missingContactRole)"
+      >$loc/strings/MissingContactRole</sch:assert>
     </sch:rule>
 
     <sch:rule context="//gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code">
@@ -262,7 +286,14 @@
   <sch:pattern>
     <sch:title>$loc/strings/DataIdentification</sch:title>
 
-    <!-- Use Limitation -->
+    <sch:rule context="/gmd:MD_Metadata">
+      <sch:assert
+        test="count(gmd:identificationInfo[gmd:MD_DataIdentification]) + count(gmd:identificationInfo[srv:SV_ServiceIdentification]) > 0"
+      >$loc/strings/MissingDataIdentification</sch:assert>
+    </sch:rule>
+
+
+    <!-- Use Limitation and other missing element checks -->
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
             |//*[@gco:isoType='gmd:MD_DataIdentification']
             |//*[@gco:isoType='srv:SV_ServiceIdentification']">
@@ -356,6 +387,47 @@
       <!-- Topic category -->
       <sch:let name="missingTopiCategory" value="not(gmd:topicCategory)" />
       <sch:assert test="not($missingTopiCategory)">$loc/strings/EC10</sch:assert>
+
+      <!-- Status -->
+      <sch:let name="missingStatus" value="not(gmd:status)" />
+      <sch:assert test="not(missingStatus)">$loc/strings/MissingStatus</sch:assert>
+
+      <!-- Title -->
+      <sch:let name="missingTitle" value="not(gmd:citation/*/gmd:title)" />
+      <sch:assert test="not($missingTitle)">$loc/strings/MissingTitle</sch:assert>
+
+      <!-- Dates -->
+      <sch:let name="missingPublication" value="count(gmd:citation/*/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
+
+      <sch:assert
+        test="not($missingPublication)"
+      >$loc/strings/EC14</sch:assert>
+
+      <sch:let name="missingCreation" value="count(gmd:citation/*/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
+
+      <sch:assert
+        test="not($missingCreation)"
+      >$loc/strings/EC15</sch:assert>
+
+      <!-- CitedResponsible -->
+      <sch:let name="missingCitedResponsibleOrganisation" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName)" />
+
+      <sch:assert
+        test="not($missingCitedResponsibleOrganisation)"
+      >$loc/strings/MissingCitedResponsibleOrganisation</sch:assert>
+
+      <sch:let name="missingCitedResponsibleMail" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress)" />
+
+      <sch:assert
+        test="not($missingCitedResponsibleMail)"
+      >$loc/strings/MissingCitedResponsibleMail</sch:assert>
+
+      <sch:let name="missingCitedResponsibleRole" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role)" />
+
+      <sch:assert
+        test="not($missingCitedResponsibleRole)"
+      >$loc/strings/MissingCitedResponsibleRole</sch:assert>
+
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox
