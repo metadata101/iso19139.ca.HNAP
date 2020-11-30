@@ -60,8 +60,8 @@
   <xsdErrorIs>L'erreur est : </xsdErrorIs>
   <inElement> contenu dans </inElement>
   <enum1>La valeur </enum1>
-  <enum2> n'est pas valide pour le champ</enum2>
-  <enum3>La catégorie thématique doit se retrouver dans l'énumération suivante </enum3>
+  <enum2> n'est pas valide pour le champ </enum2>
+  <enum3>Les valeurs possibles sont : </enum3>
 
   <nap-default>NAP default</nap-default>
   <GeographicExtent>Étendue géographique</GeographicExtent>

@@ -2118,7 +2118,6 @@
   <codelist name="gmd:MD_TopicCategoryCode">
     <entry>
       <code>farming</code>
-      <value>farming</value>
       <label>Farming</label>
       <description>Rearing of animals and/or cultivation of plants. Examples: agriculture,
         irrigation, aquaculture, plantations, herding, pests and diseases affecting crops and
@@ -2127,7 +2126,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>biota</code>
-      <value>biota</value>
       <label>Biota</label>
       <description>Flora and/or fauna in natural environment. Examples: wildlife, vegetation,
         biological sciences, ecology, wilderness, sealife, wetlands, habitat</description>
@@ -2135,7 +2133,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>boundaries</code>
-      <value>boundaries</value>
       <label>Boundaries</label>
       <description>Legal land descriptions. Examples: political and administrative
         boundaries</description>
@@ -2143,7 +2140,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>climatologyMeteorologyAtmosphere</code>
-      <value>climatologyMeteorologyAtmosphere</value>
       <label>Climatology, meteorology, atmosphere</label>
       <description>Processes and phenomena of the atmosphere. Examples: cloud cover, weather,
         climate, atmospheric conditions, climate change, precipitation</description>
@@ -2151,7 +2147,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>economy</code>
-      <value>economy</value>
       <label>Economy</label>
       <description>Economic activities, conditions and employment. Examples: production, labour,
         revenue, commerce, industry, tourism and ecotourism, forestry, fisheries, commercial or
@@ -2161,7 +2156,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>elevation</code>
-      <value>elevation</value>
       <label>Elevation</label>
       <description>Height above or below sea level. Examples: altitude, bathymetry, digital
         elevation models, slope, derived products</description>
@@ -2169,7 +2163,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>environment</code>
-      <value>environment</value>
       <label>Environment</label>
       <description>Environmental resources, protection and conservation. Examples: environmental
         pollution, waste storage and treatment, environmental impact assessment, monitoring
@@ -2178,7 +2171,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>geoscientificInformation</code>
-      <value>geoscientificInformation</value>
       <label>Geoscientific information</label>
       <description>Information pertaining to earth sciences. Examples: geophysical features and
         processes, geology, minerals, sciences dealing with the composition, structure and
@@ -2188,7 +2180,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>health</code>
-      <value>health</value>
       <label>Health</label>
       <description>Health, health services, human ecology, and safety. Examples: disease and
         illness, factors affecting health, hygiene, substance abuse, mental and physical health,
@@ -2197,7 +2188,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>imageryBaseMapsEarthCover</code>
-      <value>imageryBaseMapsEarthCover</value>
       <label>Imagery base maps earth cover</label>
       <description>Base maps. Examples: land cover, topographic maps, imagery, unclassified
         images, annotations</description>
@@ -2205,7 +2195,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>intelligenceMilitary</code>
-      <value>intelligenceMilitary</value>
       <label>Intelligence military</label>
       <description>Military bases, structures, activities. Examples: barracks, training grounds,
         military transportation, information collection</description>
@@ -2213,7 +2202,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>inlandWaters</code>
-      <value>inlandWaters</value>
       <label>Inland waters</label>
       <description>Inland water features, drainage systems and their characteristics. Examples:
         rivers and glaciers, salt lakes, water utilization plans, dams, currents, floods, water
@@ -2222,7 +2210,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>location</code>
-      <value>location</value>
       <label>Location</label>
       <description>Positional information and services. Examples: addresses, geodetic networks,
         control points, postal zones and services, place names</description>
@@ -2230,7 +2217,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>oceans</code>
-      <value>oceans</value>
       <label>Oceans</label>
       <description>Features and characteristics of salt water bodies (excluding inland waters).
         Examples: tides, tidal waves, coastal information, reefs</description>
@@ -2238,7 +2224,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>planningCadastre</code>
-      <value>planningCadastre</value>
       <label>Planning cadastre</label>
       <description>Information used for appropriate actions for future use of the land. Examples:
         land use maps, zoning maps, cadastral surveys, land ownership</description>
@@ -2246,7 +2231,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>society</code>
-      <value>society</value>
       <label>Society</label>
       <description>Characteristics of society and cultures. Examples: settlements, anthropology,
         archaeology, education, traditional beliefs, manners and customs, demographic data,
@@ -2256,7 +2240,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>structure</code>
-      <value>structure</value>
       <label>Structure</label>
       <description>Man-made construction. Examples: buildings, museums, churches, factories,
         housing, monuments, shops, towers</description>
@@ -2264,7 +2247,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>transportation</code>
-      <value>transportation</value>
       <label>Transportation</label>
       <description>Means and aids for conveying persons and/or goods. Examples: roads,
         airports/airstrips, shipping routes, tunnels, nautical charts, vehicle or vessel
@@ -2273,7 +2255,6 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>utilitiesCommunication</code>
-      <value>utilitiesCommunication</value>
       <label>Utilities communication</label>
       <description>Energy, water and waste systems and communications infrastructure and
         services. Examples: hydroelectricity, geothermal, solar and nuclear sources of energy,
