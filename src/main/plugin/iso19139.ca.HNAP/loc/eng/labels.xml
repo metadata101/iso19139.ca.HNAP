@@ -387,7 +387,7 @@
     <element name="gmd:MD_ReferenceSystem" id="186.0">
         <label>Reference system</label>
         <description>Information about the reference system.</description>
-        <help>information about the reference system</help>
+        <!--<help>information about the reference system</help>-->
     </element>
     <element name="gmd:MD_RepresentativeFraction" id="56.0">
         <label>Representative fraction</label>
@@ -657,7 +657,7 @@
         <description>Common title with holdings note. NOTE title identifies elements of a series
             collectively, combined with information about what volumes are available at the source
             cited</description>
-        <help>This field is used to name the Basic Geodata as defined in the GeoIV Annex I, as it is possible that there are more than 1 "physical" datasets assigned to 1 legal entry. E.g.: Entry no. 47 "Geophysikalisches Kartenwerk" consists of 3 datasets "Geophysikalische Karten 1:500000", "Geophysikalische Spezialkarten" and "Gravimetrischer Atlas 1:100000"</help>
+        <!--<help>This field is used to name the Basic Geodata as defined in the GeoIV Annex I, as it is possible that there are more than 1 "physical" datasets assigned to 1 legal entry. E.g.: Entry no. 47 "Geophysikalisches Kartenwerk" consists of 3 datasets "Geophysikalische Karten 1:500000", "Geophysikalische Spezialkarten" and "Gravimetrischer Atlas 1:100000"</help>-->
     </element>
     <element name="gmd:complianceCode" id="234.0">
         <label>Compliance code</label>
@@ -748,8 +748,8 @@
     <element name="gmd:dataSetURI" id="11.1">
         <label>Dataset Uniform Resource Identifier (URI)</label>
         <description>Use this field to designate either a URL link to the dataset if available or a unique identifier (such as a DOI) for the resource if one exists</description>
-        <help>Uniformed Resource Identifier (URI) of the dataset to which the metadata applies. This
-            link refers direct to the machine-readable dataset.</help>
+        <!--<help>Uniformed Resource Identifier (URI) of the dataset to which the metadata applies. This
+            link refers direct to the machine-readable dataset.</help>-->
     </element>
     <element name="gmd:dataType" id="313.0">
         <label>Data type</label>
@@ -1270,7 +1270,7 @@
         <label>Language</label>
         <btnLabel>Add language</btnLabel>
         <description>Language(s) used within the dataset</description>
-        <help>language(s) used within the dataset</help>
+        <!--<help>language(s) used within the dataset</help>-->
         <condition>mandatory</condition>
     </element>
     <element name="gmd:language" context="gmd:MD_FeatureCatalogueDescription" id="235.0">
@@ -1614,7 +1614,7 @@
             obtained</description>
     </element>
     <element name="gmd:onlineResource" id="390.0">
-        <help>Define URL to access the website</help>
+        <!--<help>Define URL to access the website</help>-->
         <label>Website</label>
         <description>On-line information that can be used to contact the individual or
             organisation</description>
