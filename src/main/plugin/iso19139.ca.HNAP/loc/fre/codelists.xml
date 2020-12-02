@@ -867,7 +867,7 @@
 			<label>Réservé À Organisation</label>
 			<description>For Official Use Only</description>
 		</entry>
-		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->	
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
 	<codelist name="gmd:MD_CoverageContentTypeCode">
@@ -2433,7 +2433,7 @@
       <description>Absence de donnée associée</description>
     </entry>
 	</codelist>
-	    
+
     <codelist name="srv:SV_ParameterDirection">
         <entry>
           <code>RI_679</code>

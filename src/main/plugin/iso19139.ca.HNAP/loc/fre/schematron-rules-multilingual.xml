@@ -2,8 +2,8 @@
 <strings>
   <schematron.title>HNAP validation rules - multilingual</schematron.title>
 
-  <Metadata>Metadata Information</Metadata>
-  <DataIdentification>Data Identification</DataIdentification>
+  <Metadata>Information sur les métadonnées</Metadata>
+  <DataIdentification>Identification des données</DataIdentification>
   <Distribution>Distribution</Distribution>
 
   <OrganisationNameThesaurus>Thesaurus organization name is required in both languages</OrganisationNameThesaurus>
