@@ -106,21 +106,18 @@
   <element name="gmd:CI_Address" id="380.0">
     <label>Adresse</label>
     <description>Type de données pour la localisation de l'organisation ou la personne individuelle responsable</description>
-    <!--<help>Type de données avec indication d'adresse.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:CI_Citation" id="359.0">
     <label>Information de référence</label>
     <description>Type de données pour la description standardisée des informations de références de la ressource</description>
-    <!--<help>Type de données destiné à une description unifiée des sources (renvoi standardisé aux sources). Ce type de données permet une indication standardisée des sources (CI_Citation). Il contient également des types de données pour la description des services en charge de données et de métadonnées (CI_ResponsibleParty). La description du service compétent peut intégrer le nom de l'organisation comme celui de la personne responsable au sein de cette organisation. Il est également impératif de décrire sa fonction (son rôle). CI_Contact recèle des informations sur le mode de communication avec le service compétent. CI_Citation contient les principaux attributs permettant l'identification d'un jeu de données ou d'une source. Parmi ceux-ci on peut citer le titre, sa forme abrégée, l'édition ou la date. Le type de données CI_Citation est alors appelé lorsque l'identification complète d'une information supplémentaire d'une source de données est à fournir. Des renvois sont effectués à partir de ce type de données vers chacun des autres types de données du groupe ?Citation?. CI_Citation est un regroupement de classes pouvant être appelées par plusieurs attributs de la norme.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:CI_Contact" id="387.0">
     <label>Contact</label>
     <description>Type de données avec l'information utilisée pour permettre le contact avec la personne et/ou l'organisation responsable</description>
-    <!--<help>Type de données intégrant des informations telles qu''un numéro de téléphone, de télécopie, des heures d'ouverture ou d'autres indications, toujours en rapport avec la personne ou le service désigné dans CI_ResponsibleParty.</help>-->
     <condition/>
 
   </element>
@@ -134,14 +131,12 @@
   <element name="gmd:CI_OnlineResource" id="396.0">
     <label>Ressource en ligne</label>
     <description>Type de données pour l'information sur les sources en ligne, grâce auxquelles les éléments de métadonnées étendus sur le jeu de données, la spécification ou le profil peuvent être obtenus</description>
-    <!--<help>Type de données contenant des informations relatives à la possibilité et dans l'affirmative, à la manière d'accéder en ligne au jeu de données.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:CI_ResponsibleParty" id="374.0">
     <label>Responsable</label>
     <description>Type de données pour l'identification des personnes et organisations, ainsi que pour la description des modes de communication avec, associées avec le jeu de données</description>
-    <!--<help>Type de données destiné à l'identification de personnes et/ou d'organisations en relation avec le jeu de données (en tant que responsable, en charge du traitement, propriétaire, etc.), intégrant par ailleurs d'autres informations telles que le numéro de téléphone, l'adresse (postale, messagerie électronique) permettant d'entrer en contact avec ces personnes et/ou organisations. Les trois premiers attributs (individualName, organisationName, positionName) de ce type de données permettent de savoir s'il s'agit de la description d'une personne, d'un service ou de la domiciliation d'une personne précédemment définie. Une indication au moins est obligatoire. La liste de sélection CI_RoleCode spécifie alors la nature de la responsabilité endossée par le service désigné. Cf. CI_Citation pour d'autres informations.</help>-->
     <condition/>
 
   </element>
@@ -341,43 +336,12 @@
   <element name="gmd:EX_Extent" id="334.0">
     <label>Étendue</label>
     <description>Type de données pour l'information sur l'étendue horizontale, verticale et temporelle du jeu de données</description>
-    <!--<help>Type de données contenant des informations relatives à l'extension horizontale, verticale et temporelle du jeu de données. Les types de données de cette classe contiennent des éléments de métadonnées décrivant l'extension spatiale et temporelle des données. EX_Extent est une agrégation des classes EX_GeographicExtent (description de l'extension géographique), EX_TemporalExtent (extension temporelle des données) et EX_VerticalExtent (extension verticale des données). l'extension géographique est spécifiée plus avant par une délimitation au moyen d'un polygone (EX_BoundingPolygon) comme par un rectangle de délimitation géographique (EX_GeographicBoundingBox) et une description textuelle (EX_GeographicDescription). Pour EX_Extent comme pour CI_Citation, il s'agit d'un regroupement de classes pouvant être appelées par plusieurs attributs de la norme.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:EX_GeographicBoundingBox" id="343.0">
     <label>Étendue géographique</label>
     <description>Un rectangle représentant la région géographique couverte par la ressource.</description>
-    <!--<help>Type de données destiné à la description de la position géographique du jeu de données. Il s'agit ici de la définition d'une enveloppe sommaire (délimitation en latitude et en longitude). Des informations supplémentaires peuvent être trouvées sous EX_Extent et EX_GeographicExtent.</help>
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b> Étendue de la ressource dans l’espace géographique, exprimée sous la forme d’un rectangle de délimitation
-    <ul>
-      <li>Ce rectangle de délimitation est défini par les longitudes est et ouest et les latitudes sud et nord en degrés décimaux, avec une précision d’au moins deux chiffres après la virgule.</li>
-      <li>Les coordonnées du rectangle de délimitation sont exprimées dans un système de coordonnées géodésique de référence définissant le méridien de Greenwich comme méridien d’origine.</li>
-      <li>Cet élément répétable est obligatoire.</li>
-    </ul>
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <ul>
-      <li>L’emprise doit englober l’étendue du territoire pour lequel le producteur garantit la saisie de l’information fournie, une partie du territoire pouvant être vide du type d’objet saisi (par exemple, dans le cas de la localisation des sites SEVESO en Bretagne, l’emprise sera le rectangle englobant de la Bretagne, même si le rectangle englobant les sites SEVESO est plus petit ; en effet, l’absence de site SEVESO est une information en soi sur le reste du territoire breton).</li>
-      <li>Le rectangle de délimitation doit être le plus ajusté possible, afin de délimiter le plus fidèlement possible la ressource décrite (ne pas donner un rectangle couvrant la France entière pour des données limitées à une commune).</li>
-      <li>Si la ressource couvre la France métropolitaine et/ou un territoire d’outre-mer , elle contiendra autant d’emprises géographiques que de territoires couverts (pas d’emprise « mondiale »). Une seule emprise est définie pour le cas d’une ressource couvrant la France métropolitaine.</li>
-    </ul>
-    <b>Commentaire :</b>
-    Attention, certaines cartes IGN comportent deux systèmes de coordonnées géographiques, basés,
-    l’un sur le méridien de Paris, l’autre sur le méridien de Greenwich. Ne pas se tromper de système.
-    L’ordre dans lequel sont fournies les coordonnées n’est pas signifiant.
-    ]]></help>
-    <help><![CDATA[Exemple :
-    <ul>
-      <li>O : -4,24</li>
-      <li>S : 41,34</li>
-      <li>E : 10,81</li>
-      <li>N : 50,79</li>
-    </ul>
-    ]]></help>-->
     <condition>Obligatoire</condition>
 
   </element>
@@ -398,7 +362,6 @@
   <element name="gmd:EX_TemporalExtent" id="350.0">
     <label>Étendue temporelle</label>
     <description>Type de données pour la description de la période de temps couverte par le contenu du jeu de donnée</description>
-    <!--<help>La validité temporelle du jeu de données est définie dans cette classe. Cette classe connaît la représentation EX_SpatialTemporalExtent. Des informations supplémentaires peuvent être trouvées sous EX_Extent.</help>-->
     <condition/>
 
   </element>
@@ -419,7 +382,6 @@
   <element name="gmd:ISSN" id="373.0">
     <label>ISSN</label>
     <description>Numéro international normalisé d'une publication en série (ISSN)</description>
-    <!--<help>Numéro international normalisé d'une série de publications (ISSN)</help>-->
     <condition/>
 
   </element>
@@ -498,7 +460,6 @@
   <element name="gmd:MD_DataIdentification" id="36.0">
     <label>Identification des données</label>
     <description>Classe avec l'information utile pour identifier un jeu de données</description>
-    <!--<help>Classe contenant des informations de base utilisées pour l'identification sans équivoque du ou des jeux de données. Il s'agit de la description du jeu de données concret. La classe MD_DataIdentification est la représentation de MD_Identification pour les données. Elle intègre des informations relatives à la caractérisation spatiale et temporelle des données, au jeu de caractères et à la langue utilisés, de même que d'autres informations descriptives. Une extension spatiale minimale des données est à indiquer par l'intermédiaire de l'option "geographicBox" (rectangle de délimitation géographique), de l'option "geographicDescription" (description textuelle de l'extension) ou des deux simultanément. Il est en outre possible de restreindre l'extension par le biais de l'attribut "extent", aussi bien au niveau spatial (via un polygone) que temporel. La norme prévoit une liste internationale de 19 thèmes (MD_TopicCategoryCode) pour la classification thématique des données, gérée par l'intermédiaire de l'attribut "topicCategory". Une recherche standardisée par thèmes est de la sorte possible au plan international.</help>-->
     <condition/>
 
   </element>
@@ -519,14 +480,12 @@
   <element name="gmd:MD_Distribution" id="270.0">
     <label>Distribution</label>
     <description>Classe avec l'information sur le distributeur de données et sur les possibilités d'obtenir les ressources</description>
-    <!--<help>Classe contenant des informations relatives au distributeur des données de même qu''aux possibilités d'obtention du jeu de données. Cette classe recèle des indications sur le lieu de délivrance des données ainsi que sur la forme de leur obtention. MD_Distribution est une agrégation des informations concernant le transfert de données numériques (MD_DigitalTransferOptions) et des informations relatives au format des données (MD_Format).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:MD_Distributor" id="279.0">
     <label>Distributeur</label>
     <description>Classe avec l'information sur le distributeur</description>
-    <!--<help>Classe contenant les informations relatives au distributeur des données (nom, rôle, adresse, etc.). d'autres informations peuvent être trouvées sous MD_Distribution.</help>-->
     <condition/>
 
   </element>
@@ -547,7 +506,6 @@
   <element name="gmd:MD_Format" id="284.0">
     <label>Format</label>
     <description>Classe avec la description du format informatique avec lequel la représentation du jeu de donnée peut être enregistrée et transférée, sous la forme d'un enregistrement de données, d'un fichier, d'un message, d'un support de stockage ou d'un canal de transmission</description>
-    <!--<help>Classe contenant la description du format de fichier dans lequel le jeu de données peut être stocké et transféré sur un support de données, dans un fichier, via un courrier électronique, un périphérique de stockage ou un canal de transmission.</help>-->
     <condition/>
 
   </element>
@@ -603,14 +561,12 @@
   <element name="gmd:MD_LegalConstraints" id="69.0">
     <label>Contraintes légales</label>
     <description>Classe pour les restrictions et conditions préalables légales pour accéder et utiliser les ressources où de métadonnées</description>
-    <!--<help>Classe contenant des informations relatives aux restrictions juridiques s'appliquant à la ressource, au jeu de métadonnées ou à leur utilisation. Cette classe est une représentation de la classe MD_Constraints. Cf. MD_Constraints pour de plus amples informations.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:MD_MaintenanceInformation" id="142.0">
     <label>Information de maintenance</label>
     <description>Classe sur la raison, l'étendue et la fréquence des mises à jour.</description>
-    <!--<help>Les informations concernant l'étendue, la fréquence et la date de mise à jour des données sont contenues dans la classe MD_MaintenanceInformation. Cette classe recèle des attributs renseignant sur la fréquence et l'étendue de la mise à jour et de la réactualisation des données du jeu. Seule l'indication de la fréquence est impérative et doit être sélectionnée dans la liste MD_MaintenanceFrequencyCode. l'étendue de la mise à jour, les attributs qu''elle concerne et les descriptions associées sont des informations qu''il est possible d'indiquer via les attributs "updateScope" et "updateScopeDescription". Il n''est pas prévu d'indiquer l'extension spatiale de la mise à jour. Si seules des parties d'un jeu de données sont mises à jour ou si toutes ses parties ne sont pas mises à jour simultanément, alors les parties concernées par la description de la mise à jour peuvent être précisées via "+updateScopeDescription" dans la classe MD_ScopeDescription.</help>-->
     <condition/>
 
   </element>
@@ -652,47 +608,6 @@
   <element name="gmd:MD_ReferenceSystem" id="186.0">
     <label>Système de référence</label>
     <description>Classe pour l'information sur le système de référence</description>
-    <!--<help>La classe MD_ReferenceSystem décrit le système de référence spatial et temporel utilisé pour le jeu de données. Dans cette classe, le lien avec le système géodésique de référence est établi à l'aide de l'attribut "referenceSystemIdentifier". Seuls le nom du système de référence et l'organisation associée sont saisis, aucun paramètre concret n''est entré.</help>
-
-    <help><![CDATA[<b>Système de coordonnées</b>]]></help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>« Description du ou des référentiels de coordonnées utilisés dans la série de données »
-    Cet élément est obligatoire (pour les données de l’Annexe 1) et répétable.
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <ul>
-    <li>L’identifiant du système de référence doit être fourni. Cet identifiant est composé d’un code et d’un espace de nommage.</li>
-    <li>Les codes à utiliser en France sont soit les codes IGN-F, soit les codes EPSG.</li>
-    </ul>
-    <b>Commentaire :</b>
-    Cet élément de métadonnées n'est obligatoire actuellement que pour les données INSPIRE de l’Annexe 1. Toutefois, il est de bonne pratique de le noter autant que possible.
-    Il est recommandé de se fixer sur un système de référence disponible indépendamment de tel ou tel logiciel.
-    Le système de référence cité est celui de la série de données accessible par l’utilisateur.
-    ]]></help>
-    <help><![CDATA[Exemple :
-    <ul>
-    <li>L’OGC fournit un espace de noms pour référencer les systèmes de référence, par exemple, http://www.opengis.net/def/crs/EPSG/0/4258 est la référence du système ETRS89 dans le registre EPSG.</li>
-    <li>Le code IGN-F correspondant est : http://registre.ign.fr/ign/IGNF/crs/ETRS89. Le fichier de référence listant les codes IGN-F est disponible ici :  http://librairies.ign.fr/geoportail/resources/IGNF.xml.</li>
-    </ul>
-    ]]></help>
-
-    <help><![CDATA[<b>Système de référence temporel</b>]]></help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Description du ou des systèmes de référence temporels utilisés dans la série de données.
-    Cet élément n’est obligatoire que si la série de données géographiques contient des informations temporelles qui ne font pas référence au système de référence temporel par défaut (le calendrier grégorien).
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <li>Il est recommandé d’utiliser le calendrier grégorien.</li>
-    <li>Dans le cas où le calendrier grégorien n’est pas utilisé (par exemple, dans certains domaines comme la géologie), ce champ doit impérativement être renseigné.</li>
-    ]]></help>-->
-
     <condition/>
 
   </element>
@@ -720,7 +635,6 @@
   <element name="gmd:MD_SecurityConstraints" id="73.0">
     <label>Contraintes de sécurité</label>
     <description>Classe avec les restrictions de manipulation imposées sur les ressources où de métadonnées pour la sécurité nationale ou des situations de sécurité similaires</description>
-    <!--<help>Classe contenant des informations relatives aux restrictions de sécurité liées à des questions de sécurité de portée nationale ou assimilée (exemple : secret, confidentialité, etc.). Cette classe est une représentation de la classe MD_Constraints. Cf. MD_Constraints pour d'autres informations.</help>-->
     <condition/>
 
   </element>
@@ -762,7 +676,6 @@
   <element name="gmd:RS_Identifier" id="208.0">
     <label>Identifiant du système de référence</label>
     <description>Classe pour l'identifiant utilisé pour les systèmes de référence</description>
-    <!--<help>Classe réservée aux identifiants de systèmes de référence. Cette classe est une représentation de MD_Identifier pour l'identification d'un système de référence par des attributs supplémentaires. Cf. également sous MD_Identifier.</help>-->
     <condition/>
 
   </element>
@@ -806,32 +719,12 @@
   <element name="gmd:abstract" id="25.0">
     <label>Résumé</label>
     <description>Donner un aperçu du contenu, de la méthodologie et des conclusions de l'ensemble de données en texte libre.</description>
-    <!--<help>Court résumé descriptif du contenu du jeu de données. Cet attribut est du type PT_FreeText et est géré dans la classe du même nom.</help>
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    <ul>
-      <li>Cet élément doit fournir un bref résumé narratif du contenu de la ressource.</li>
-      <li>Cet élément est une chaîne de caractères obligatoire (texte libre) et ne doit pas être répété.</li>
-    </ul>
-    ]]></help>
-    <help for="france"><![CDATA[<b>Recommandations :</b>
-    <ul>
-      <li>Il est attendu un texte significatif décrivant la ressource. Tout texte vide (ensemble de caractères d’espacement) ou de type « Non renseigné », … ne permet pas de satisfaire l’obligation INSPIRE.</li>
-      <li>Le résumé devrait contenir une définition officielle quant quand elle existe, ou une définition commune, afin de rendre le contenu de la ressource compréhensible par l’utilisateur. La référence d’un texte législatif ou réglementaire n’est pas suffisante.  Pour un producteur, il s’agit en particulier de définir au mieux l’information ou le phénomène représenté dans la donnée. On va donc y trouver des éléments de définition de la ressource, mais aussi éventuellement une indication sommaire de la zone couverte ou le cas échéant, des informations sur les particularités de la version de la ressource.</li>
-    </ul>
-    ]]></help>
-    <help for="inspire"><![CDATA[<b>Exemple :</b>
-      PPRI78_Mauldre_Alea est la représentation numérique des aléas hydrauliques du plan de prévention des risques d’inondation (PPRI) concernant 12 communes de la vallée de la Mauldre dans le département des Yvelines (arrêté préfectoral n°B06-0050 du 18 septembre 2006). Cette cartographie numérique n'a pas de caractère réglementaire.</help>
-    ]]></help>
-    <help for="inspire"><![CDATA[<b>Contre-exemple :</b>
-      PPRI de Paris_ PPRi détaillé_ 1:5000
-    ]]></help>-->
     <condition>Obligatoire</condition>
 
   </element>
   <element name="gmd:accessConstraints" id="70.0">
     <label>Contraintes d'accès</label>
     <description>Cet élément permet d'indiquer toute restriction ou limitation supplémentaire ou particulière existante quant à l'accès à la ressource, outre celles couvertes par les restrictions ministérielles existantes.</description>
-    <!--<help>Restrictions d'accès relatives à la garantie de la propriété privée ou intellectuelle et restrictions de toutes natures visant à la conservation de la ressource ou des métadonnées. Elles peuvent être sélectionnées parmi les éléments suivants : droit d'auteur, brevet, brevet en voie de délivrance, marque, licence, propriété intellectuelle, diffusion limitée, autres restrictions.</help>-->
     <condition>mandatory</condition>
 
   </element>
@@ -845,14 +738,12 @@
   <element name="gmd:address" id="389.0">
     <label>Adresse</label>
     <description>Adresse physique et électronique à laquelle la personne ou l'organisation responsable peut être contactée</description>
-    <!--<help>Adresse postale ou électronique d'un premier niveau de contact (par exemple un secrétariat). Ces informations sont du type CI_Address et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:administrativeArea" id="383.0">
     <label>Province/État</label>
     <description>Canton ou département de l'emplacement</description>
-    <!--<help>Canton</help>-->
     <condition/>
 
   </element>
@@ -871,35 +762,30 @@
   <element name="gmd:aggregationInfo" id="35.1">
     <label>Information sur les agrégations</label>
     <description>Met à dispositionles les informations sur le jeu de données rassemblé</description>
-    <!--<help>Informations concernant le jeu de données de rang supérieur et les relations qu''il entretient avec le jeu de données décrit. Ces informations sont du type MD_AggregateInformation et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:alternateTitle" id="361.0">
     <label>Titre court</label>
     <description>Nom raccourci ou autre façon d'écrire le nom, sous lequel l'information des informations de références est connue. Exemple : DCW pour "Digital Chart of the World"</description>
-    <!--<help>Nom abrégé ou orthographe du titre/nom différente de celle sous laquelle l'information correspondante est connue. Exemple : DCW pour "Digital Chart of the World"</help>-->
     <condition/>
 
   </element>
   <element name="gmd:amendmentNumber" id="287.0">
     <label>Numéro de version du format</label>
     <description>Numéro d'amélioration du format</description>
-    <!--<help>Numéro de la modification apportée au format.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:applicationProfile" id="399.0">
     <label>Profil d'application</label>
     <description>Nom d'un profil d'application qui peut être utilisé avec les ressources en ligne</description>
-    <!--<help>Nom d'un profil d'application pouvant être utilisé pour la source en ligne.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:applicationSchemaInfo" id="21.0">
     <label>Renseignements sur le schéma conceptuel</label>
     <description>Renseignements sur le schéma conceptuel du jeu de données</description>
-    <!--<help>Informations relatives au schéma conceptuel du jeu de données</help>-->
     <condition/>
 
   </element>
@@ -932,7 +818,6 @@
   <element name="gmd:authority" id="206.0">
     <label>Autorité</label>
     <description>Personne ou service responsable pour la maintenance du domaine de valeurs</description>
-    <!--<help>Personne ou organisation responsable de cet espace nominal, par exemple un service. Ces informations sont du type CI_Citation et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
@@ -974,32 +859,16 @@
   <element name="gmd:characterSet" id="4.0" context="gmd:MD_Metadata">
     <label>Jeu de caractère</label>
     <description>Nom complet du standard de code de caractères utilisé pour le jeu de métadonnées</description>
-    <!--<help>Nom complet du code de caractères normalisé utilisé pour le fichier de métadonnées. Le paramètre par défaut est "utf8". Les fichiers de texte contiennent normalement des valeurs d'octets représentant un sous-ensemble de valeurs de caractères via un codage (8859_1, ISO Latin-1), un format de transfert (Unicode-Transfer-Format UTF8) ou tout autre moyen.</help>-->
     <condition>Par défaut UTF-8</condition>
   </element>
   <element name="gmd:characterSet" id="40.0" context="gmd:MD_DataIdentification">
     <label>Jeu de caractère</label>
     <description>Nom entier du standard de code de caractères utilisé pour le jeu de données</description>
-    <!--<help>Nom complet du code de caractères normalisé utilisé pour le fichier de métadonnées. Le paramètre par défaut est "utf8". Les fichiers de texte contiennent normalement des valeurs d'octets représentant un sous-ensemble de valeurs de caractères via un codage (8859_1, ISO Latin-1), un format de transfert (Unicode-Transfer-Format UTF8) ou tout autre moyen.</help>
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Est l’encodage de caractères utilisé dans la série de données.
-    Cet élément n’est obligatoire (pour les données de l’Annexe 1) que si l’encodage utilisé n’est pas basé sur UTF-8. Il ne peut pas être répété.
-
-    <p>
-    Dans le cadre de données ne suivant pas les spécifications de données INSPIRE, l’encodage des jeux de caractères utilisé dans les données est rarement UTF-8.
-    Le jeu de caractères utilisé dans les données peut dépendre notamment du poste de travail du producteur (logiciel, système d’exploitation et du gestionnaire de la base de données). </help>
-    </p>
-    ]]></help>
-    <help for="france"><![CDATA[<b>Recommandations :</b>
-    Même si le jeu de caractère de la donnée est UTF-8, le préciser.
-    Cette information, purement technique, est disponible auprès de votre administrateur de données.
-    ]]></help>-->
     <condition>Par défaut UTF-8</condition>
   </element>
   <element name="gmd:characterSet" id="4.0">
     <label>Jeu de caractère</label>
     <description>Nom complet du standard de code de caractères utilisé pour le jeu de métadonnées</description>
-    <!--<help>Nom complet du code de caractères normalisé utilisé pour le fichier de métadonnées. Le paramètre par défaut est "utf8". Les fichiers de texte contiennent normalement des valeurs d'octets représentant un sous-ensemble de valeurs de caractères via un codage (8859_1, ISO Latin-1), un format de transfert (Unicode-Transfer-Format UTF8) ou tout autre moyen.</help>-->
     <condition>Par défaut UTF-8</condition>
   </element>
   <element name="gmd:checkPointAvailability" id="163.0">
@@ -1018,7 +887,6 @@
   <element name="gmd:citation" id="24.0" context="gmd:MD_DataIdentification">
     <label>Information de référence</label>
     <description>Information de référence sur les ressources</description>
-    <!--<help>Indication des sources du jeu de données décrit. Le nom ou le titre du fichier du jeu de données de même qu''une date du type adéquat (création, publication, traitement) sont gérés ici. Cet attribut est du type CI_Citation et est géré dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
@@ -1046,28 +914,24 @@
   <element name="gmd:citedResponsibleParty" id="367.0">
     <label>Responsable</label>
     <description>Information sur le nom et la position d'une personne individuelle ou d'une organisation responsable pour la ressource</description>
-    <!--<help>Informations concernant le nom et la domiciliation de la personne ou de l'organisation responsable de la source citée. Ces informations sont du type CI_ResponsibleParty et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:city" id="382.0">
     <label>Ville</label>
     <description>Ville de l'emplacement</description>
-    <!--<help>Ville, localité</help>-->
     <condition/>
 
   </element>
   <element name="gmd:classification" id="74.0">
     <label>Restrictions de manipulation</label>
     <description>Noms des restrictions de manipulation sur les ressources où de métadonnées</description>
-    <!--<help>Type de restriction. Sélection dans la liste suivante : non classé, diffusion restreinte, confidentiel, secret, top secret.</help>-->
     <condition>Obligatoire</condition>
 
   </element>
   <element name="gmd:classificationSystem" id="76.0">
     <label>Système de classification</label>
     <description>Nom du système de classification</description>
-    <!--<help>Le nom du système de classification peut être indiqué ici, s'il en existe un.</help>-->
     <condition/>
 
   </element>
@@ -1081,7 +945,6 @@
   <element name="gmd:code" id="207.0" context="gmd:RS_Identifier">
     <label>Code</label>
     <description>Valeur alphanumérique pour l'identification d'une occurrence dans le domaine de valeurs</description>
-    <!--<help>Code alphanumérique de l'identifiant. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>-->
     <condition>mandatory</condition>
     <helper rel="gmd:codeSpace">
       <option title="http://www.epsg-registry.org" value="EPSG:3857">EPSG:3857 WGS 84 / Pseudo-Mercator</option>
@@ -1097,7 +960,6 @@
   <element name="gmd:code" id="207.0" context="gmd:MD_Identifier">
     <label>Code</label>
     <description>Valeur alphanumérique pour l'identification d'une occurrence dans le domaine de valeurs</description>
-    <!--<help>Code alphanumérique de l'identifiant. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>-->
     <condition>Obligatoire</condition>
     <!--<helper>
       <option value="FR-SIREN-CODE">FR-SIREN-CODE</option>
@@ -1121,13 +983,11 @@
   <element name="gmd:codeSpace" id="208.1">
     <label>Nom de l'identifiant</label>
     <description>Nom ou identification de la personne ou de l'organisation responsable pour la domaine de valeurs</description>
-    <!--<help>Informations sur la personne ou l'organisation en charge de l'espace nominal ou de l'identifiant.</help>-->
     <condition/>
   </element>
   <element name="gmd:collectiveTitle" id="371.0">
     <label>Titre collectif</label>
     <description>Titre commun avec indication d'une appartenance. Note : le titre identifie des éléments d'une série collective, combiné avec l'information sur quels volumes sont à disposition à la source citée</description>
-    <!--<help>Cet élement est utilisé en Suisse pour designer le nom d'une géodonnées de base qui correspond à l'entrée du catalogue Annexe I de la OGéo, car il est possible que plusieurs jeux de données "physiques" soient attribuée à une entrée "juridique". Ex.: L'entrée no. 47 "Cartes géophysiques" consiste de 3 jeux de données "Cartes géophysiques 1:500000", "Cartes géophysisques spéciales" et "Atlas gravimétrique 1:100000"</help>-->
     <condition/>
 
   </element>
@@ -1175,7 +1035,6 @@
   <element name="gmd:contact" id="148.1" context="gmd:MD_MaintenanceInformation">
     <label>Contact pour la mise à jour</label>
     <description>Indications concernant la personne ou l'organisation qui est responsable de la mis à jour des métadonnées</description>
-    <!--<help>Informations concernant la personne ou l'organisation responsable de la mise à jour des données. Ces informations sont du type CI_ResponsibleParty et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
@@ -1183,21 +1042,18 @@
   <element name="gmd:contactInfo" id="378.0">
     <label>Coordonnées de la personne-contact</label>
     <description>Heures de service du service responsable</description>
-    <!--<help>Adresse du service responsable. Ces informations sont du type CI_Contact et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:contactInstructions" id="392.0">
     <label>Instructions pour la personne-contact</label>
     <description>Instructions supplémentaires sur quand et comment contacter la personne ou l'organisation responsable</description>
-    <!--<help>Informations supplémentaires pour la prise de contact.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:contentInfo" id="16.0">
     <label>Information sur le contenu</label>
     <description>Informations sur le catalogue d'objet et sur les descriptions de la couverture et des charactéristiques raster</description>
-    <!--<help>Description du contenu du jeu de données. Renvoi au catalogue d'objets, au modèle de données ou à la description des données. Le contenu de ces catalogues et de ces descriptions ne fait toutefois pas partie des métadonnées. Ces informations sont gérées dans la classe MD_ContentInformation.</help>-->
     <condition/>
 
   </element>
@@ -1225,7 +1081,6 @@
   <element name="gmd:country" id="612.0">
     <label>Pays</label>
     <description>Pays dans la langue duquel l'URL libre est écrit</description>
-    <!--<help>Pays dans la langue duquel l'URL libre est écrit, la sélection s'opère dans la liste des pays ISO.</help>-->
     <condition/>
   </element>
   <element name="gmd:country" id="508.0" context="gmd:MD_Legislation">
@@ -1245,21 +1100,18 @@
   <element name="gmd:credit" id="27.0">
     <label>Reconnaissance</label>
     <description>Reconnaissance de ceux qui ont contribués à ces ressources</description>
-    <!--<help>Reconnaissance ou confirmation des intervenants ayant apporté leur contribution à cette ressource.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:dataQualityInfo" id="18.0">
     <label>Renseignements sur la qualité des données</label>
     <description>Estimation de la qualité des ressources</description>
-    <!--<help>Estimation de la qualité du jeu de données. Ces informations sont gérées dans la classe DQ_DataQuality.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:dataSetURI" id="11.1">
     <label>Désignation de la donnée (URI)</label>
     <description>Ce champ permet d'indiquer un lien URL pour l'ensemble de données, si disponible, ou un identificateur unique comme un identificateur d'objet numérique (DOI) pour la ressource, si disponible.</description>
-    <!--<help>Identifiant URI (Uniformed Resource Identifier) du jeu de données auquel les métadonnées renvoient. Une adresse URL est indiquée ici, par exemple www.cosig.ch.</help>-->
     <condition/>
 
   </element>
@@ -1306,7 +1158,6 @@
   <element name="gmd:date" id="144.0" context="gmd:MD_MaintenanceInformation">
     <label>Date de la prochaine mise à jour</label>
     <description>Date de la prochaine mise à jour de la ressource</description>
-    <!--<help>Date de la prochaine mise à jour (jj.mm.aaaa).</help>-->
     <condition/>
 
   </element>
@@ -1367,23 +1218,12 @@
   <element name="gmd:dateOfNextUpdate" id="144.0">
     <label>Date de la prochaine mise à jour</label>
     <description>Date de la prochaine mise à jour de la ressource</description>
-    <!--<help>Date de la prochaine mise à jour (jj.mm.aaaa).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:dateStamp" id="9.0">
     <label>Date de création</label>
     <description>Date de création des métadonnées</description>
-    <!--<help>Date de création des métadonnées. Elle est automatiquement attribuée par l'application.</help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>Ceci est la date à laquelle l’enregistrement de métadonnées a été créé ou actualisé.
-    <ul>
-    <li>Cette date doit être exprimée sous la forme AAAA-MM-JJ (ISO 8601).</li>
-    <li>Cet élément est obligatoire et ne peut pas être répété.</li>
-    </ul>
-    ]]>
-    </help>-->
-
     <condition>Obligatoire</condition>
 
   </element>
@@ -1425,7 +1265,6 @@
   <element name="gmd:deliveryPoint" id="381.0">
     <label>Adresse</label>
     <description>Inscrire l'adresse municipale de l'organisation ou de la personne responsable. Par ex. 123, rue Principale.</description>
-    <!--<help>Nom de la rue</help>-->
     <condition/>
 
   </element>
@@ -1474,13 +1313,11 @@
   <element name="gmd:description" id="335.0" context="gmd:EX_Extent">
     <label>Description</label>
     <description>Étendue spatiale et temporelle pour l'objet en question</description>
-    <!--<help>Description sous forme textuelle de l'extension spatiale et temporelle de l'objet considéré.</help>-->
     <condition/>
   </element>
   <element name="gmd:description" id="401.0" context="gmd:CI_OnlineResource">
     <label>Description</label>
     <description>Texte descriptif détaillé sur ce que la ressource en ligne est/fait</description>
-    <!--<help>Description détaillée de ce que propose la source en ligne.</help>-->
     <condition/>
 
   </element>
@@ -1493,54 +1330,7 @@
   <element name="gmd:descriptiveKeywords" id="33.0">
     <label>Mots clés descriptifs</label>
     <description>Catégorie, type et source de référence des mots clés</description>
-    <!--<help>
-      En Europe, si la ressource est une série de données géographiques ou un ensemble de séries de données géographiques, il
-      convient de fournir au moins un mot clé du thésaurus multilingue de l’environnement (GEMET, General Environ­mental Multi-lingual Thesaurus)
-      décrivant le thème dont relèvent les données géographiques, conformément aux
-      définitions des annexes I, II ou III de la directive 2007/2/CE.-->
-      <!-- [2] -->
-
-      <!--Catégorie du mot clé, décrivant si ce dernier concerne la discipline, le lieu, la couche, l'intervalle de temps, ou le thème. Ces informations sont gérées dans la classe MD_Keywords.</help>-->
     <condition/>
-    <!--<help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    La catégorie thématique étant trop imprécise pour des recherches détaillées, les mots clés permettent d’affiner la recherche en texte intégral et permettent une recherche structurée par mot clé.
-    <ul>
-      <li>Si le mot clé provient d’un vocabulaire contrôlé (thésaurus), le nom et la date de publication de celui-ci doivent être précisés.</li>
-      <li>Il est obligatoire pour les données (séries et ensembles de séries) dans le champ d’INSPIRE de fournir au moins un mot clé précisant le thème INSPIRE concerné par la donnée, comme défini dans le thésaurus GEMET des thèmes INSPIRE (« GEMET – INSPIRE themes, version 1.0 », du 2008-06-01, cf. http://www.eionet.europa.eu/gemet/inspire_themes?langcode=fr).</li>
-      <li>D’autres mots clés peuvent être fournis en complément.</li>
-    </ul>
-    Pour plus d’information, voir le texte exact en partie D2.3 du règlement.
-    <p>
-    En résumé, il est donc demandé un jeu de mots-clés obligatoire : le ou les thèmes INSPIRE, et il est possible de fournir des mots complémentaires.
-    Attention, c’est la présence du thème INSPIRE, associé au thésaurus GEMET-INSPIRE themes, qui est prise en compte pour distinguer des métadonnées relevant de la Directive INSPIRE de métadonnées décrivant des ressources hors du champ d’INSPIRE. Dans le cas de données sortant du cadre d’INSPIRE il est donc indispensable de ne pas renseigner le thème INSPIRE, et donc de ne pas utiliser le thésaurus « GEMET – INSPIRE themes, version 1.0 » du, 2008-06-01 ».
-    Comme montré dans l’exemple ci-dessus, les valeurs des thèmes INSPIRE peuvent être utilisées si nécessaire pour des données non INSPIRE, à condition de ne pas fournir le thésaurus « GEMET – INSPIRE themes, version 1.0 » du, 2008-06-01.
-    </p>
-    <p>
-    Le thésaurus GEMET des thèmes INSPIRE est multilingue. Le langage dans lequel les thèmes INSPIRE sont exprimés doit donc concorder avec le ou les langages des métadonnées.
-    Cet élément est répétable
-    </p>
-    <p>
-    Les séries de données peuvent correspondre à plusieurs thèmes, et le règlement autorise les rattachements multiples. Toutefois, la conformité aux spécifications INSPIRE est établie thème par thème. Cela incite à un rattachement à un thème unique.
-    </p>
-    <p>
-    Il est possible de fournir des mots-clés complémentaires en associant une valeur de mot-clé ou un ensemble de valeurs de mots-clés à des vocabulaires contrôlés définissant ces mots-clés.</help>
-    <ul>
-      <li>Les valeurs des mots clés sont du texte libre.</li>
-      <li>Chaque vocabulaire contrôlé est défini par au moins un titre sous forme d’une chaîne de caractères et une date de publication, révision ou de création du vocabulaire.</li>
-    </ul>
-    </p>
-    ]]></help>
-    <help for="france"><![CDATA[<b>Recommandations :</b>
-    <ul>
-    <li>Il est recommandé de ne rattacher une ressource qu’à un seul thème INSPIRE.</li>
-    <li>INSPIRE n’identifie pas explicitement d’élément de métadonnées « Thème INSPIRE » mais induit son existence de part les exigences formulées de manière générale sur la présence de mots-clés. La recommandation est donc de considérer le thème INSPIRE comme un élément à part entière.</li>
-    <li>Il est recommandé de ne pas fournir cet élément de métadonnées pour les ressources qui ne sont pas dans le champ d’INSPIRE (exemple des cartes scannéesdonnées d’accidentologie , par exemple) étant entendu que pour les ressources dans le champ d’INSPIRE, cet élément est obligatoire.
-    </li>
-    </ul>
-    Formattage : Les mots-clés doivent être fournis en minuscule, accentués, au pluriel.
-    ]]></help>
-    <help><![CDATA[<b>Exemple :</b> Zones à risque naturel
-    ]]></help>-->
   </element>
   <element name="gmd:descriptor" id="258.0">
     <label>Description de l'étendue de valeur</label>
@@ -1589,51 +1379,30 @@
     <label>Format de distribution</label>
     <btnLabel>Ajouter format de distribution</btnLabel>
     <description>Description du format de distribution</description>
-    <!--<help>Ces informations sont gérées dans la classe MD_Format.</help>-->
     <condition/>
-    <!--<help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Description du ou des concepts en langage machine spécifiant la représentation des objets de données dans un enregistrement, un fichier, un message, un dispositif de stockage ou un canal de transmission.
-    Cet élément est obligatoire (pour les données de l’Annexe 1) et répétable.
-    <p>
-    Les formats d’encodage par défaut d’INSPIRE sont ISO 19136 (GML 3.2.1) et les formats associés. Les formats d’encodage courants sont Shape, MIF-MID, etc.
-    Cet élément de métadonnée fait écho des spécifications de données INSPIRE, qui peuvent définir un encodage particulier selon les thèmes.
-    </p>
-    ]]></help>
-    <help for="france"><![CDATA[<b>Recommandations :</b>
-    <ul>
-    <li>Préciser en priorité le format d’échange (= format de distribution dans l'ISO).</li>
-    <li>Il est obligatoire de fournir au moins le nom du format d’encodage, et facultativement la version du format. Par exemple : nom : GML, version : 3.2.1.</li>
-    <li>Des données produites selon les spécifications de données INSPIRE seront par défaut encodées selon ISO 19136 (GML) ou ISO/TS 19139. Les spécifications de données spécifieront si d’autres formats d’encodage sont acceptables selon les thèmes.</li>
-    <li>Dans le cadre de la mise en place des métadonnées, il est reconnu que les données décrites ne sont pas nécessairement déjà encodées selon les règles des spécifications de données INSPIRE. Dans ce cas, le format utilisé doit être décrit selon la recommandation 2.</help>
-    </li>
-    </ul>
-    ]]></help>-->
+
   </element>
   <element name="gmd:distributionInfo" id="17.0">
     <label>Renseignements sur la distribution</label>
     <description>Renseignements sur le distributeur et sur la façon d'acquérir les ressources</description>
-    <!--<help>Informations relatives au distributeur et au mode d'acquisition de la ou des ressources. Indications concernant le lieu et la forme d'obtention des données. Ces informations sont gérées dans la classe MD_Distribution.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:distributionOrderProcess" id="281.0">
     <label>Processus de distribution et de commande</label>
     <description>Informations sur comment les données peuvent êtres commandées, ainsi que sur leur coûts et sur les formatlités de commandes</description>
-    <!--<help>Informations relatives au mode de commande des données, à leur coût ainsi qu''à d'autres instructions de commande. Ces informations sont gérées dans la classe MD_StandardOrderProcess.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:distributor" id="272.0">
     <label>Distributeur</label>
     <description>Informations sur le distributeur et sur la façon d'acquérir les ressources</description>
-    <!--<help>Informations relatives au distributeur.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:distributorContact" id="280.0">
     <label>Contact</label>
     <description>Services depuis lesquels la ressource peut être obtenue. Cette liste n''a pas besoin d'être exhaustive</description>
-    <!--<help>Personne ou organisation compétente auprès de laquelle le jeu de données peut être obtenu. Une seule information est permise. La référence est du type de données CI_ResponsibleParty et est gérée dans la classe du même nom.</help>-->
     <condition>Obligatoire</condition>
 
   </element>
@@ -1680,28 +1449,24 @@
   <element name="gmd:edition" id="363.0">
     <label>Edition</label>
     <description>Version de la ressource en question</description>
-    <!--<help>Version/édition de la source mentionnée</help>-->
     <condition/>
 
   </element>
   <element name="gmd:editionDate" id="364.0">
     <label>Date d'édition</label>
     <description>Date de l'édition</description>
-    <!--<help>Date de la version / de l'édition (jj.mm.aaaa).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:electronicMailAddress" id="386.0">
     <label>Courriel</label>
     <description>Adresse du courrier électronique de l'organisation ou de la personne individuelle responsable</description>
-    <!--<help>Adresse de courrier électronique de l'organisation ou de la personne responsable</help>-->
     <condition>mandatory</condition>
   </element>
 
   <element name="gmd:environmentDescription" id="44.0">
     <label>Description de l'environnement de travail</label>
     <description>Description de l'environnement de travail dans lequel le jeu de données a été créé, incluant des choses telles que logiciel, système d'exploitation, nom de fichier et taille du jeu de données</description>
-    <!--<help>Description de l'environnement de travail dans lequel le jeu de données est créé, incluant des éléments tels que le logiciel utilisé, le système d'exploitation, le nom et la taille du fichier.</help>-->
     <condition/>
 
   </element>
@@ -1765,7 +1530,6 @@
   <element name="gmd:extent" id="45.0" context="gmd:MD_DataIdentification">
     <label>Étendue</label>
     <description>Information complémentaire sur les étendues spatiales et temporelles du jeu de données, incluant le polygone de délimitation et les dimensions verticales et temporelles</description>
-    <!--<help>Informations supplémentaires concernant l'extension spatiale et temporelle des données, incluant le polygone de délimitation, les altitudes et la durée de validité. Ces informations sont du type EX_Extent et sont gérées dans la classe du même nom.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:extent" id="140.0" context="gmd:DQ_Scope">
@@ -1778,28 +1542,6 @@
   <element name="gmd:extent" id="351.0" context="gmd:EX_TemporalExtent">
     <label>Étendue</label>
     <description>Date et temps pour le contenu du jeu de donnée</description>
-    <!--<help>Date et heure du domaine de validité du jeu de données (texte).</help>
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    L’étendue temporelle définit la période de temps couverte par le contenu de la ressource.
-    Cette période peut être exprimée de l’une des manières suivantes :
-    <ul>
-    <li>une date déterminée,</li>
-    <li>un intervalle de dates exprimé par la date de début et la date de fin de l’intervalle,</li>
-    <li>un mélange de dates et d’intervalles.</li>
-    </ul>
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Commentaire :</b>
-    C’est par exemple la période de validité d’un Plan Local d’Urbanisme.
-    ]]></help>
-    <help><![CDATA[Exemple :
-    <ul>
-    <li>2011-08-24</li>
-    <li>2013-08-24</li>
-    </ul>
-    ]]></help>-->
     <condition>Condition</condition>
 
   </element>
@@ -1813,7 +1555,6 @@
   <element name="gmd:facsimile" id="409.0">
     <label>Numéro de télécopieur</label>
     <description>Numéro de télécopieur de la personne ou organisation responsable</description>
-    <!--<help>Numéro de télécopieur.</help>-->
     <condition/>
 
   </element>
@@ -1853,7 +1594,6 @@
   <element name="gmd:fileDecompressionTechnique" id="289.0">
     <label>Technique de décompression du fichier</label>
     <description>Recommandations sur les algorithmes et les processus qui peuvent être appliqués pour lire ou ouvrir une ressource, à laquelle des techniques de compressions ont été appliquées.</description>
-    <!--<help>Remarques relatives aux algorithmes ou aux processus à mettre en ?uvre pour la lecture ou l'extension de la ressource en cas de compression de cette dernière.</help>-->
     <condition/>
 
   </element>
@@ -1867,7 +1607,6 @@
   <element name="gmd:fileIdentifier" id="2.0">
     <label>Identifiant du fichier</label>
     <description>Identifiant unique pour ce fichier de métadonnées</description>
-    <!--<help>Identifiant unique pour ce fichier de métadonnées. Il correspond à un et un seul nom de fichier.</help>-->
     <condition/>
 
   </element>
@@ -1902,14 +1641,12 @@
   <element name="gmd:function" id="402.0">
     <label>Fonction</label>
     <description>Code pour une fonction accomplie par la ressource on-line</description>
-    <!--<help>Rôle de la source en ligne, sélection dans la liste suivante : téléchargement, information, accès hors ligne, commande ou recherche.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:geographicElement" id="336.0">
     <label>Élément géographique</label>
     <description>Informations sur l'étendue géographique</description>
-    <!--<help>Informations concernant l'extension géographique. Ces informations sont gérées dans la classe EX_GeographicExtent.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:geographicIdentifier" id="349.0">
@@ -1950,7 +1687,6 @@
   <element name="gmd:graphicOverview" id="31.0">
     <label>Aperçus</label>
     <description>Vue générale graphique illustrant les ressources (y inclus une légende)</description>
-    <!--<help>Vue d'ensemble graphique de la ressource (légende incluse). Ces informations sont gérées dans la classe MD_BrowseGraphic.</help>-->
     <condition/>
 
   </element>
@@ -1964,42 +1700,14 @@
   <element name="gmd:handlingDescription" id="77.0">
     <label>Description de manipulation</label>
     <description>Information complémentaire sur les restrictions au sujet de la manipulation des ressources où de métadonnées</description>
-    <!--<help>Description de la manière dont la restriction est à appliquer, des cas dans lesquels elle doit l'être et des exceptions recensées.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:hierarchyLevel" id="6.0">
     <label>Type de ressource</label>
     <description>Sélectionner le champ de la liste auquel s'appliquent les métadonnées. La valeur par défaut est « Jeu de données ». Si les métadonnées servent à décrire une série d’ensembles de données dans une relation parent/enfant, « Série » est la valeur la plus appropriée.</description>
-    <!--<help>Domaine auquel les métadonnées se rapportent. La catégorie d'informations à laquelle l'entité se réfère peut être indiquée dans la liste des codes (exemple : attributs, objets géométriques, jeu de données, etc.). "Jeu de données" est le paramètre par défaut.</help>-->
     <condition>mandatory</condition>
-    <!--<help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Cet élément de métadonnées renseigne le type de ressource décrit par la métadonnée.
-    Seuls trois types de ressources sont dans le champ de la directive INSPIRE :
-    <ul>
-      <li>Les séries de données géographiques,</li>
-      <li>Les ensembles de séries de données géographiques,;</li>
-      <li>Les services de données géographiques.</li>
-    </ul>
-    Cet élément est obligatoire et non répétable.
-    <p>
-    Dans le cas de métadonnées de données, seuls les deux premiers cas sont applicables.
-    La conformité des métadonnées à INSPIRE
-    implique que chaque organisation concernée par la directive ait une réflexion en amont sur les
-     ressources à documenter, et notamment sur le type de chaque ressource à documenter. Il n’est
-      pas interdit d’étendre cette liste de types de ressources pour les ressources qui sortiraient
-      du cadre d’INSPIRE. Dans tous les cas, le type de ressource est une information qui doit être
-      déterminée par l’organisation
-    responsable de la ressource avant d’initier la saisie de la fiche de métadonnées.
-    </p>
-    ]]></help>
-    <help><![CDATA[<b>Exemple :</b>
-    Dans le cas des PLU de la ville de Marseille :
-    <ul>
-      <li>La Planche 14A du Plan local d’Urbanisme (PLU) de Marseille est a priori une série de données ;</li>
-      <li>Le Plan Local d’Urbanisme (PLU) de Marseille, c’est-à-dire l’ensemble des planches composant le PLU de Marseille est a priori un ensemble de séries de données.</li>
-    </ul>
-    ]]></help>-->
+
   </element>
   <element name="gmd:hierarchyLevelName" id="7.0">
     <label>Nom du niveau de hiérarchie</label>
@@ -2010,27 +1718,23 @@
   <element name="gmd:hoursOfService" id="391.0">
     <label>Heures de service</label>
     <description>Fournir une case horaire (y compris le fuseau horaire) pour communiquer avec l'organisation ou la personne responsable.</description>
-    <!--<help>Heures d'ouverture, indications fournies sous forme de texte libre, par exemple : "08h00 - 11h45h et 13h30 - 17h00" ou "De 08h00 à 11h45 et de 13h30 à 17h00"</help>-->
     <condition/>
 
   </element>
   <element name="gmd:identificationInfo" id="15.0">
     <label>Renseignements sur l’identification</label>
     <description>Informations de base sur les ressources concernées par les métadonnées</description>
-    <!--<help>Informations de base concernant la ressource (voire les ressources) ou le jeu de données auquel se rapportent les métadonnées. Ces informations sont gérées dans la classe MD_IdentificationInformation.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:identifier" id="365.0">
     <label>Identificateur</label>
     <description>Identificateur de l'indication de provenance</description>
-    <!--<help>Identificateur de l'indication de provenance. La classe MD_Identifier permet d'affecter une indication de provenance à un registre existant.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:identifier" id="573.0" context="gmd:CI_Citation">
     <label>Identifiant</label>
     <description>Identificateur de l'indication de provenance</description>
-    <!--<help>Identificateur de l'indication de provenance. La classe MD_Identifier permet d'affecter une indication de provenance à un registre existant.</help>-->
     <condition/>
     <condition>Condition</condition>
   </element>
@@ -2079,7 +1783,6 @@
   <element name="gmd:individualName" id="375.0">
     <label>Nom de la personne</label>
     <description>Nom de la personne responsable. Prénom, nom et titre sont séparés par un signe de délimitation</description>
-    <!--<help>Nom de la personne responsable. Des séparateurs (virgules) figurent entre le prénom, le nom et le titre.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:initiativeType" id="66.5">
@@ -2106,50 +1809,13 @@
     <label>Langue</label>
     <btnLabel>Ajouter langue</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
-    <!--<help>La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>C’est la langue utilisée dans les métadonnées.
-    <ul>
-    <li>Les valeurs possibles sont les langues officielles communautaires identifiées dans la norme ISO 639-2.</li>
-    <li>Cet élément est fourni sous la forme d’un code à trois lettres (représentation ISO 639-2).</li>
-    <li>Cet élément est obligatoire et ne peut pas être répété.</li>
-    </ul>
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    Cet élément doit être fixé à fre pour les métadonnées du GéoCatalogue utilisée pour le rapportage INSPIRE.
-    ]]></help>-->
-
     <condition>Obligatoire</condition>
   </element>
   <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
     <label>Langue</label>
     <btnLabel>Ajouter langue</btnLabel>
     <description>Langue utilisée pour le jeu de données</description>
-    <!--<help>Langue utilisée pour la documentation des données. La sélection s'opère dans la liste des langues ISO. Exemple : "fr" pour le français, "de" pour l'allemand, "en" pour l'anglais, "it" pour l'italien, "rm" pour le romanche, ...</help>-->
     <condition>mandatory</condition>
-    <!--<help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Ce sont la ou les langues utilisées dans la ressource.
-    <ul>
-    <li>Les valeurs autorisées sont celles définies dans la norme ISO 639-2 (code à trois lettres).</li>
-    <li>Cet élément répétable est obligatoire si la ressource inclut des informations textuelles.</li>
-    </ul>
-    Cet élément décrit factuellement la ou les langues utilisées dans la ressource. Le code à trois lettres provient de <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">la liste normalisée</a>.
-    ]]></help>
-    <help for="france"><![CDATA[<b>Recommandations :</b>
-    <ul>
-    <li>Cet élément est fourni sous la forme d’un code à trois lettres.</li>
-    <li>La valeur de cet élément est fre pour le français.</li>
-    <li>Lorsque la ressource n’inclut pas d’information textuelle (par exemple, une orthophoto), il est recommandé de mettre par défaut la langue des métadonnées et de préférence le français.</li>
-    <li>Si des langues régionales ou étrangères sont concernées, elles peuvent être ajoutées.</li>
-    </ul>
-    ]]></help>
-    <help><![CDATA[<b>Exemple :</b> fre, bre, baq, ger
-    ]]></help>
-    <help><![CDATA[<b>Contre-exemple :</b> FR, FRA, french, français
-    ]]></help>-->
   </element>
   <element name="gmd:language" id="235.0" context="gmd:MD_FeatureCatalogueDescription">
     <label>Langue</label>
@@ -2211,21 +1877,18 @@
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
     <description>URL ou indication semblable d'une adresse Internet pour un accès on-line , par exemple http://www.isotc211.org</description>
-    <!--<help>Lien Internet, par exemple www.cosig.ch.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
     <label>Fréquence de mise à jour</label>
     <description>La fréquence des changements et des ajouts sont faits à la ressource après l'achèvement initial de la ressource. Pour une surveillance continue des données, sélectionner la valeur appropriée pour décrire la façon dont les données ont été recueillies.</description>
-    <!--<help>Fréquence à laquelle des changements et des ajouts sont apportés à la ressource. La valeur concernée est à sélectionner dans la liste suivante : en permanence, quotidienne, hebdomadaire, bimensuelle, mensuelle, trimestrielle, semestrielle, annuelle, au besoin, irrégulière, non prévue, inconnue, définie par l'utilisateur.</help>-->
     <condition>Obligatoire</condition>
 
   </element>
   <element name="gmd:maintenanceNote" id="148.0">
     <label>Remarque sur la mise à jour</label>
     <description>Informations ou remarques en ce qui concerne les besoins spécifiques concernant la maintenance des ressources</description>
-    <!--<help>Informations ou remarques concernant la prise en compte de besoins spécifiques lors de la mise à jour des ressources.</help>-->
     <condition/>
 
   </element>
@@ -2273,7 +1936,6 @@
   <element name="gmd:metadataConstraints" id="20.0" context="gmd:MD_Metadata">
     <label>Contraites sur les métadonnées</label>
     <description>Contraintes sur l'accès et l'utilisation des métadonnées</description>
-    <!--<help>Restrictions d'accès et d'utilisation des métadonnées (exemple : copyright, conditions d'octroi de licence, etc.). Ces informations sont gérées dans la classe MD_Constraints.</help>-->
     <condition/>
 
   </element>
@@ -2294,21 +1956,18 @@
   <element name="gmd:metadataMaintenance" id="22.0">
     <label>Mise à jour des métadonnées</label>
     <description>Informations sur la fréquence de mise à jour des métadonnées, ainsi que de leur étendue</description>
-    <!--<help>Informations concernant la fréquence, l'étendue, la date et la validité des mises à jour. Ces informations sont gérées dans la classe MD_MaintenanceInformation.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:metadataStandardName" id="10.0">
     <label>Nom de la norme pour les métadonnées</label>
     <description>Nom du standard (incluant le nom du profil) de métadonnées utilisé</description>
-    <!--<help>Nom de la norme sur les métadonnées utilisée, profil inclus (exemple : GM03Core, GM03Profil).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:metadataStandardVersion" id="11.0">
     <label>Version de la norme pour les métadonnées</label>
     <description>Version (du profil) du standard de métadonnées utilisé.</description>
-    <!--<help>Version (du profil) de la norme sur les métadonnées utilisée.</help>-->
     <condition/>
 
   </element>
@@ -2349,7 +2008,6 @@
   <element name="gmd:name" id="285.0" context="gmd:MD_Format">
     <label>Nom du format</label>
     <description>Indiquer le nom du format de transfert de données. Pour une liste de formats possibles, consulter le menu « Suggestions ».</description>
-    <!--<help>Nom du format de transfert de données, par exemple TIFF, ZIP, etc.</help>-->
     <condition>Obligatoire</condition>
       <!--<helper rel="gmd:version">
         <option value="Texte">Texte</option>
@@ -2426,7 +2084,6 @@
   <element name="gmd:name" id="400.0" context="gmd:CI_OnlineResource">
     <label>Nom</label>
     <description>Nom de la ressource en ligne</description>
-    <!--<help>Nom de la source en ligne.</help>-->
     <condition>Obligatoire</condition>
 
   </element>
@@ -2584,7 +2241,6 @@
   <element name="gmd:onlineResource" id="390.0">
     <label>Adresse Internet</label>
     <description>Information on-line qui peut être utilisée pour contacter la personne ou l'organisation responsable</description>
-    <!--<help>Information en ligne, par exemple l'adresse Internet de l'organisation.</help>-->
     <condition/>
 
   </element>
@@ -2598,7 +2254,6 @@
   <element name="gmd:organisationName" id="376.0">
     <label>Organisation</label>
     <description>Nom de l'organisation responsable</description>
-    <!--<help>Nom de l'organisation responsable, s'il s'agit d'une personne isolée ou nom de l'organisation au sein de laquelle cette personne est employée. Ces informations sont du type PT_FreeText et sont gérées dans la classe du même nom.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:orientationParameterAvailability" id="172.0">
@@ -2624,14 +2279,12 @@
   <element name="gmd:otherCitationDetails" id="370.0">
     <label>Autres informations de référence</label>
     <description>Autre information utilisée pour compléter les informations de référence qui ne sont pas prévues ailleurs</description>
-    <!--<help>Autre information requise pour une description complète de la source, non saisie ou impossible à saisir dans un autre attribut.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:otherConstraints" id="72.0">
     <label>Autres contraintes</label>
     <description>L'indication  'Autres restrictions' dans les champs « Contraintes d'accès » ou « Contraintes d'utilisation » permet de décrire ici d’autres contraintes quant à l'accès ou l'utilisation de la ressource</description>
-    <!--<help>Autres restrictions et conditions préalables de nature juridique concernant l'accès et l'utilisation de la ressource ou des métadonnées. Ce champ doit être complété dès lors que l'un des deux champs précédents (accessConstraints, useConstraints) porte la mention "Autres restrictions".</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:page" id="406.0">
@@ -2656,7 +2309,6 @@
   <element name="gmd:parentIdentifier" id="5.0">
     <label>Identifiant du parent</label>
     <description>Identifiant du fichier de métadonnées parent.</description>
-    <!--<help>Nom unique du fichier de métadonnées parent ou origine. Il peut s'agir d'un modèle prédéfini ou de données de rang supérieur (dans le cas par exemple d'une carte nationale au 1:25''000, le parent peut être la série de toutes les cartes au 1:25''000).</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:pass" id="132.0">
@@ -2684,7 +2336,6 @@
   <element name="gmd:phone" id="388.0">
     <label>Téléphone</label>
     <description>Numéro de téléphone avec lequel la personne ou l'organisation responsable peut être contactée</description>
-    <!--<help>Numéro de téléphone. Ces informations sont du type CI_Telephone et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
@@ -2705,41 +2356,6 @@
   <element name="gmd:pointOfContact" id="29.0">
     <label>Contact pour la ressource</label>
     <description>Identification, et mode de communication avec, des personnes ou des organisations associées aux ressources</description>
-    <!--<help>Identification de la personne (voire des personnes) ou de l'organisation (voire des organisations) responsable du jeu de données décrit et mode de communication avec elle. Cette personne ou ce service endosse un rôle (propriétaire, prestataire, gestionnaire, etc.) bien spécifique pouvant être sélectionné dans la liste proposée. Les données correspondantes de la personne ou du service sont gérées dans la classe CI_ResponsibleParty. Ce rôle peut également servir à l'affectation d'un jeu de données à une commune. Exemple : le rôle de "propriétaire" permet ici d'affecter un lot de la MO à la commune correspondante.</help>
-
-    <help><![CDATA[<b>Organisation responsable</b>]]></help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    C’est la description de l’organisation responsable. Plusieurs
-    organisations responsables peuvent être identifiées pour une ressource.
-    Pour chacune d’entre elles, les deux éléments de métadonnées suivants
-    doivent être renseignés.
-    Il est obligatoire de fournir au moins le nom de l’organisation
-    (chaîne de caractères) et une adresse de messagerie électronique
-    (chaîne de caractères).
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <ul>
-    <li>Il est déconseillé de fournir une adresse de messagerie électronique
-    nominative, ceci afin de pouvoir plus facilement gérer les changements
-    de fonctions des personnes impliquées.</li>
-    <li>Les adresses trop générique (de type « accueil@macomcom.fr »
-    ou « contact@macomcom.fr »  sont également à éviter.</li>
-    </ul>
-    <b>Commentaire :</b>
-    Dans le cas où une partie responsable a plusieurs rôles, les deux éléments de métadonnées devront être répétés pour chaque rôle.
-    ]]></help>
-    <help><![CDATA[Exemple :
-    <ul>
-    <li>Exemple :
-    <li>Préfecture de Paris-Direction de l’Urbanisme, du Logement et de l’Équipement </li>
-    <li>Email : urbanisme@paris.pref.gouv.fr</li>
-    </ul>
-    ]]></help>-->
-
     <condition/>
   </element>
   <element name="gmd:polygon" id="342.0">
@@ -2759,27 +2375,23 @@
   <element name="gmd:portrayalCatalogueInfo" id="19.0">
     <label>Renseignements sur la réprésentation</label>
     <description>Informations sur le catalogue de règles concernant la représentation des ressources</description>
-    <!--<help>Informations concernant le catalogue de règles établi pour la représentation de ressources.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:positionName" id="377.0">
     <label>Position</label>
     <description>Rôle ou position de la personne responsable</description>
-    <!--<help>Fonction ou position de la personne responsable.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:postalCode" id="384.0">
     <label>Code postal</label>
     <description>Code postale ou autre code pour l'emplacement</description>
-    <!--<help>Code postal</help>-->
     <condition/>
 
   </element>
   <element name="gmd:presentationForm" id="368.0">
     <label>Forme de la présentation</label>
     <description>Mode dans lequel la ressource est représentée</description>
-    <!--<help>Forme sous laquelle la source est disponible. Exemple : document numérique ou analogique, image, carte, modèle, etc. (sélection dans une liste).</help>-->
     <condition/>
 
   </element>
@@ -2806,7 +2418,6 @@
   <element name="gmd:protocol" id="398.0" alias="protocol">
     <label>Protocole</label>
     <description>Sélectionner le bon protocole de la liste déroulante. Si l'ensemble de données est disponible en ligne, sélectionner « Adresse Web (URL) ».</description>
-    <!--<help>Protocole de connexion utilisé, par exemple FTP.</help>-->
     <helper sort="true">
       <option value="HTTP">HTTP</option>
       <option value="HTTPS">HTTPS</option>
@@ -2819,7 +2430,6 @@
   <element name="gmd:purpose" id="26.0">
     <label>But</label>
     <description>Résumé des intentions pour lesquelles les ressources ont été développées</description>
-    <!--<help>Motif(s) de la création de ce jeu de données.</help>-->
     <condition/>
 
   </element>
@@ -2847,7 +2457,6 @@
   <element name="gmd:referenceSystemIdentifier" id="187.0">
     <label>Nom du système de référence</label>
     <description>Nom du système de référence spatiale, par lequel sont définis la projection, l'ellipsoïde et le datum géodésique utilisés</description>
-    <!--<help>Nom du système de référence spatial englobant la définition de la projection, de l'ellipsoïde et du datum géodésique utilisés. Ces informations sont du type RS_Identifier et sont gérées dans la classe du même nom.</help>-->
     <condition>Condition</condition>
 
   </element>
@@ -2855,7 +2464,6 @@
     <label>Information sur le système de référence</label>
     <btnLabel>Ajouter information sur le système de référence</btnLabel>
     <description>Description des références spatiale et temporelle utilisées dans le jeu de données</description>
-    <!--<help>Description des systèmes de référence spatiale et temporelle utilisés dans le jeu de données. Ces informations sont gérées dans la classe MD_ReferenceSystem.</help>-->
     <condition/>
 
   </element>
@@ -2875,34 +2483,6 @@
   <element name="gmd:resourceConstraints" id="35.0">
     <label>Contraintes sur la ressource</label>
     <description>Informations sur les contraintes concernant les ressources</description>
-    <!--<help>Ces informations sont gérées dans la classe MD_Constraints.</help>
-
-    <help><![CDATA[
-    <b>Contraintes en matière d'accès et d'utilisation</b>
-    Il est possible de formuler 3 grandes familles de conditions d’accès et d’usage :
-    <ul>
-      <li>Les contraintes légales.</li>
-      <li>Les contraintes de sécurité, dans le cas de la défense nationale. Par exemple, les métadonnées d'une série de données réalisée dans le cadre d'un projet d'intervention des forces françaises sont non diffusables.</li>
-      <li>Les contraintes d’usage (par exemple : données maritimes impropres à la navigation).</li>
-    </ul>
-    Les métadonnées d’une ressource peuvent donc exprimer tout un ensemble de contraintes en matière d’accès et d’utilisation couvrant ces 3 grandes familles de contraintes.
-    ]]></help>
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Une contrainte en matière d’accès et d’utilisation peut être l’un des deux éléments suivants ou les deux :
-    <ul>
-    <li>Les conditions d’accès et d’utilisation décrivant les conditions applicables à l’accès et à l’utilisation des séries et des services de données géographiques, et, le cas échéant, les frais correspondants. Si aucune condition ne s’applique à l’accès à la ressource et à son utilisation, on utilisera la mention «aucune condition ne s’applique». Si les conditions sont inconnues, on utilisera la mention «conditions inconnues».</li>
-    <li>Les limitations d’accès public c’est-à-dire les informations sur les restrictions à l’accès public et les raisons de ces restrictions lorsque les États membres restreignent l’accès public aux séries et aux services de données géographiques au titre de l'article L127-6 du code de l’environnement. S’il n’y a pas de restrictions concernant l’accès public, cet élément de métadonnées l’indiquera.</li>
-    </ul>
-
-    Il doit y avoir au moins une condition contrainte en matière d’accès et d’utilisation exprimée pour chaque ressource.
-    Au travers des différentes contraintes exprimées, il doit y avoir au moins l’expression d’une condition d’accès et d’utilisation et d’une indication sur les limitations d’accès public.
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Commentaire :</b>
-    Il faut tout d’abord remarquer que ces deux éléments sont sémantiquement liés. En effet, dans le cas où une restriction est applicable à l’accès public, le champ définissant les conditions applicables à l’accès et à l’utilisation de la ressource sera fortement influencé par la restriction et définira dans quel cadre il est possible ou non d’obtenir la ressource.
-    ]]></help>-->
     <condition/>
 
   </element>
@@ -2916,7 +2496,6 @@
   <element name="gmd:resourceMaintenance" id="30.0">
     <label>Mise à jour de la ressource</label>
     <description>Informations sur la fréquence de mise à jour des ressources, ainsi que de leur étendue</description>
-    <!--<help>Informations concernant l'étendue et la date de mise à jour de la ressource. Si la mise à jour ne concerne pas la totalité du jeu de données, les options "updateScope" et "updateScopeDescription" permettent la description de la mise à jour individualisée de chacune des parties du jeu. Exemple : les biens-fonds de la MO sont actualisés annuellement, les nomenclatures ne l'étant qu''au besoin. Ces informations sont gérées dans la classe MD_MaintenanceInformation.</help>-->
     <condition/>
 
   </element>
@@ -2937,19 +2516,6 @@
   <element name="gmd:role" id="379.0">
     <label>Rôle</label>
     <description>Sélectionner le rôle approprié dans la liste fournie. Le rôle de coordonnateur de données indique la personne responsable de l'ensemble de données.</description>
-    <!--<help>Rôle endossé par le service responsable (prestataire, gestionnaire, propriétaire, utilisateur, distributeur, créateur de données, instance compétente, évaluateur de données, responsable de leur traitement ou de leur publication, auteur, éditeur ou partenaire commercial).</help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-      Cet élément définit le rôle que joue l’organisation responsable vis-à-vis de la ressource.
-      Une valeur parmi celles listées à la partie D.6 du règlement INSPIRE doit être choisie pour chaque organisation responsable.
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Commentaire :</b>
-    Dans le cas où une partie responsable a plusieurs rôles, les deux éléments de métadonnées devront être répétés pour chaque rôle.
-    ]]></help>-->
-
     <condition>Obligatoire</condition>
 
   </element>
@@ -3005,9 +2571,6 @@
   <element name="gmd:series" id="369.0">
     <label>Séries</label>
     <description>Information sur la série (ou sur le jeu de données global) de laquelle le jeu de données est une partie</description>
-    <!--<help>Information relative à la série ou au jeu de données composé dont le jeu de données est issu.
-      Exemple : la série de toutes les cartes nationales au 1:25'000.
-      Ces informations sont du type CI_Series et sont gérées dans la classe du même nom.</help>-->
     <condition/>
 
   </element>
@@ -3088,59 +2651,17 @@
   <element name="gmd:spatialRepresentationInfo" id="12.0">
     <label>Information sur la représentation spatiale</label>
     <description>Représentation digitale de l'information spatiale dans le jeu de données</description>
-    <!--<help>Informations sur la manière dont les représentations spatiales sont définies. Une distinction est étable entre les données vectorielles et les données tramées. Dans le cas de données vectorielles, les indications concernent le type géométrique, la topologie, etc., tandis qu''elles se rapportent au nombre de pixels, à l'ordre de succession des axes, aux paramètres de géoréférencement, etc. dans le cas de données tramées. Ces informations sont gérées dans la classe MD_SpatialRepresentation.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:spatialRepresentationType" id="37.0">
     <label>Type de représentation spatiale</label>
     <description>Méthode utilisée pour représenter spatialement l'information géographique</description>
-    <!--<help>Méthode utilisée pour la représentation spatiale des informations géographiques par des vecteurs, un quadrillage, des cartes, des tableaux, ou d'autres moyens similaires.</help>-->
     <condition>mandatory</condition>
   </element>
   <element name="gmd:spatialResolution" id="38.0">
     <label>Résolution spatiale</label>
     <description>Facteur qui donne une indication générale sur la densité de données spatiales dans le jeu de données</description>
-    <!--<help>Facteur donnant une indication générale de la résolution spatiale du jeu de données. Il est indiqué sous forme d'échelle ou d'élément de comparaison au sol. Ces informations sont gérées dans la classe MD_Resolution.
-      La résolution spatiale se rapporte au niveau de détail de la série de données. Elle est exprimée comme un ensemble
-      de valeurs de distance de résolution allant de zéro à plusieurs valeurs (normalement utilisé pour des données
-      maillées et des produits dérivés d’imagerie) ou exprimée en échelles équivalentes (habituellement utilisées pour les
-      cartes ou les produits dérivés de cartes).--><!-- [2] -->
-    <!--</help>-->
-
-    <!--<help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    La résolution spatiale décrit le niveau de détail de la ressource.
-    Elle est exprimée comme un ensemble de valeurs de distance de résolution allant de zéro
-     à plusieurs valeurs ou exprimée en échelles équivalentes :
-    <ul>
-    <li>Une échelle équivalente :
-      <ul>
-      <li>Est exprimée sous la forme d’une valeur entière correspondant au dénominateur de l’échelle.</li>
-      <li>Est utilisée en général pour les cartes ou les produits dérivés de cartes.</li>
-      </ul>
-    </li>
-    <li>Une distance de résolution :
-      <ul>
-      <li>Est exprimée sous la forme d’une valeur associée à une unité de longueur.</li>
-      <li>Est utilisée en général pour des données maillées et des produits dérivés d’imagerie.</li>
-      </ul>
-    </li>
-    </ul>
-    Cet élément répétable est obligatoire pour les séries de données et les ensembles de séries de données pour lesquels une échelle équivalente ou une distance de résolution peuvent être indiquées.
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <ul>
-    <li>La résolution spatiale doit être fournie pour toutes les données géographiques (séries et ensemble de séries). Une exception est faite pour les données statistiques.</li>
-    <li>Dans le cas d’une distance, l’unité de mesure doit être indiquée en français et en toutes lettres, au singulier .</li>
-    </ul>
-    <b>Commentaire :</b>
-    Extrait du document "La qualité des données géographiques", CERTU, 2010 : "cette grandeur est exprimée soit par une échelle pour les données de type vecteur, soit par une distance pour les données de type raster.
-    (...) La notion d’échelle proposée par INSPIRE pour qualifier la résolution spatiale d’un lot de données vecteur est également très subjective et sujette à interprétation."
-    La plupart du temps, pour une donnée vectorielle, cela revient à noter l’échelle de la série de données source. A défaut, il s’agit de l’échelle optimum d’emploi de la donnée.
-    ]]></help>-->
     <condition/>
 
   </element>
@@ -3161,7 +2682,6 @@
   <element name="gmd:specification" id="288.0" context="gmd:MD_Format">
     <label>Spécification</label>
     <description>Nom d'une spécification de sous-ensemble, profil ou produit du format</description>
-    <!--<help>Nom d'une spécification partielle, de profil ou de produit du format.</help>-->
     <condition>Obligatoire</condition>
 
   </element>
@@ -3176,27 +2696,17 @@
     <label>Etat</label>
     <btnLabel>Ajouter état</btnLabel>
     <description>Sélectionner le statut de l'ensemble de données dans la liste. C'est-à-dire, si l'ensemble de données est incomplet, sélectionner « Planifié ».</description>
-    <!--<help>Etat de traitement du jeu de données. Sélection de l'une des options suivantes : complet, archive historique, obsolète, en cours, en projet, nécessaire, à l'étude.</help>-->
     <condition>mandatory</condition>
   </element>
   <element name="gmd:supplementalInformation" id="46.0">
     <label>Renseignements supplémentaires</label>
     <description>Ce champ peut servir à fournir des renseignements supplémentaires concernant l'ensemble de données non saisi dans le formulaire. Il peut servir à lier les renseignements sur le programme, des rapports sur la qualité des données, des dictionnaires de données, etc.</description>
-    <!--<help>Informations descriptives supplémentaires relatives au jeu de données présentant un intérêt général ou plus spécifiquement lié à l'utilisation, au traitement, etc. du jeu de données.</help>-->
     <condition/>
 
   </element>
   <element name="gmd:temporalElement" id="337.0">
     <label>Élément temporel</label>
     <description>Informations sur l'étendue temporelle</description>
-    <!--<help>
-      L’étendue temporelle définit la période de temps couverte par le contenu de la ressource. Cette période peut être
-      exprimée de l’une des manières suivantes : une date déterminée,
-      un intervalle de dates exprimé par la date de début et la date de fin de l’intervalle,
-      un mélange de dates et d’intervalles.-->
-      <!-- [2] -->
-
-      <!--Informations relatives à l'extension temporelle. Elles sont gérées dans la classe EX_TemporalExtent.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:textGroup" id="602.0">
@@ -3264,7 +2774,6 @@
   <element name="gmd:transferOptions" id="273.0">
     <label>Options de transfert</label>
     <description>Informations sur la façon de se procurer les données chez le distributeur</description>
-    <!--<help>Informations relatives au mode d'obtention des données auprès du distributeur. Ces informations sont gérées dans la classe MD_DigitalTransferOptions.</help>-->
     <condition/>
 
   </element>
@@ -3334,14 +2843,12 @@
   <element name="gmd:updateScope" id="146.0">
     <label>Domaine de la mise à jour</label>
     <description>Domaine d'applicabilité des données sur lequel une mise à jour est appliquée</description>
-    <!--<help>Domaine des données concerné par la mise à jour. La catégorie à laquelle l'information se rapporte peut être indiquée dans la liste de codes (exemple : attributs, objets géométriques, jeu de données, etc.).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:updateScopeDescription" id="147.0">
     <label>Description du domaine de mise à jour</label>
     <description>Information supplémentaire sur le domaine ou l'étendue de la mise à jour</description>
-    <!--<help>Informations supplémentaires relatives au domaine ou à l'étendue de la mise à jour. Ces données supplémentaires sont gérées dans la classe MD_ScopeDescription. La couche de la MO concernée par la mise à jour est par exemple précisée ici.</help>-->
     <condition/>
 
   </element>
@@ -3355,47 +2862,11 @@
   <element name="gmd:useConstraints" id="71.0">
     <label>Contraintes d'utilisation</label>
     <description>Cet élément permet d'indiquer toute restriction ou limitation supplémentaire ou particulière existante quant à l'utilisation de la ressource, outre celles couvertes par les restrictions ministérielles existantes.</description>
-    <!--<help>Restrictions d'utilisation à fondement juridique destinées à garantir la sphère privée, la propriété intellectuelle ou d'autres domaines similaires tels que les conditions d'octroi de licence. Elles peuvent être sélectionnées parmi les éléments suivants : droit d'auteur, brevet, brevet en voie de délivrance, marque, licence, propriété intellectuelle, diffusion limitée, autres restrictions.</help>-->
     <condition>mandatory</condition>
   </element>
   <element name="gmd:useLimitation" id="68.0">
     <label>Limitation d'utilisation</label>
     <description>Limitation d'utilisation de la ressource où de métadonnées. Exemple: "ne pas utiliser pour la navigation"</description>
-    <!--<help>Restriction d'utilisation de la ressource ou des métadonnées. Exemple: "ne pas utiliser pour la navigation"</help>
-
-    <help><![CDATA[<b>Conditions applicables à l’accès et à l’utilisation</b>]]></help>
-
-    <help for="inspire"><![CDATA[<b>Exigence INSPIRE :</b>
-    Cet élément de métadonnées définit les conditions applicables à l’accès et à l’utilisation des séries et des services de données géographiques, et, le cas échéant, les frais correspondants :
-    <ul>
-    <li>Au fil des différents ensembles de contraintes en matière d’accès et d’utilisation, il doit y avoir au moins une instance de cet élément.</li>
-    <li>Cet élément doit avoir une valeur textuelle. Les valeurs suivantes sont imposées dans les cas particuliers prévus par INSPIRE :
-        <ul>
-        <li>aucune condition ne s’applique si aucune condition ne s’applique à l’accès à la ressource et à son utilisation ;</li>
-        <li>conditions inconnues si les conditions sont inconnues.</li>
-        </ul>
-    </li>
-    </ul>
-    ]]>
-    </help>
-    <help for="france">
-    <![CDATA[
-    <b>Recommandations :</b>
-    <ul>
-    <li>Lorsqu’elles existent, il est obligatoire de diffuser les conditions applicables à l’accès et à l’utilisation de la ressource.</li>
-    <li>Pour les services de l’État, dans le cas général, le décret n° 201-577 du 26 mai 2011 relatif à la réutilisation des informations publiques détenues par l’État et ses établissements publics administratifs conduira à retenir la valeur “aucune condition ne s’applique”.</li>
-    <li>Il est recommandé d’éviter la valeur “conditions inconnues”. </li>
-    <li>Lorsqu’elles existent, il est recommandé d’exprimer les conditions financières d’accès et d’utilisation de la ressource.</li>
-    <li>Il est recommandé que les conditions financières d’accès et d’utilisation de la ressource soient documentées dans une instance dédiée de cet élément.</li>
-    </ul>
-    <b>Commentaire :</b>
-    Cet élément fournira aussi des informations sur tout frais éventuel à acquitter pour avoir accès à la ressource et l’utiliser, le cas échéant, ou fera référence à un localisateur de ressource uniforme (Uniform Resource Locator, URL) où il sera possible de trouver des informations sur les frais.
-    A noter que lorsque les autorités publiques soumettent à une licence d’exploitation ou à une redevance l’accès d’autres autorités publiques à des séries et services de données géographiques, l’article R. 127-8 du Code de l’environnement conduit à imposer la fourniture de certains éléments :
-    <ul>
-    <li>S’il s’agit d’une personne morale, la raison sociale du fournisseur ;</li>
-    <li>L’adresse où il est établi, son adresse de courrier électronique, ainsi que des coordonnées téléphoniques permettant d’entrer effectivement en contact avec lui”.</li>
-    <ul>
-    ]]></help>-->
     <condition>mandatory</condition>
 
     <!--<helper>
@@ -3413,7 +2884,6 @@
   <element name="gmd:userDefinedMaintenanceFrequency" id="145.0">
     <label>Autre fréquence de mise à jour</label>
     <description>Rythmes de mise à jour autres que ceux définis</description>
-    <!--<help>Rythme de mise à jour défini par l'utilisateur, si l'option "Définie par l'utilisateur" a été sélectionnée dans la liste de la "Fréquence d'entretien et de mise à jour".</help>-->
     <condition/>
 
   </element>
@@ -3427,7 +2897,6 @@
   <element name="gmd:userNote" id="75.0">
     <label>Explications sur les restrictions</label>
     <description>Explications sur l'application des contraintes légales, ou d'autres restrictions et conditions préalables légales, pour obtenir et utiliser les ressources où de métadonnées</description>
-    <!--<help>Explication plus détaillée de la restriction.</help>-->
     <condition/>
 
   </element>
@@ -3470,27 +2939,23 @@
   <element name="gmd:version" id="208.2" context="gmd:RS_Identifier">
     <label>Version</label>
     <description>Identification de la version pour la domaine de valeurs</description>
-    <!--<help>Numéro de version de l'espace nominal / de l'identifiant (alphanumérique).</help>-->
     <condition/>
 
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
     <description>Indiquer la version du format de transfert de données. Pour une liste de versions possibles, consulter le menu « Suggestions ». Si la version est inconnue, indiquer « inconnue ».</description>
-    <!--<help>Version du format de données, par exemple 6.0.</help>-->
     <condition>Obligatoire</condition>
   </element>
 
   <element name="gmd:verticalElement" id="338.0">
     <label>Élément vertical</label>
     <description>Informations sur l'étendue verticale</description>
-    <!--<help>Informations concernant l'extension verticale. Elles sont gérées dans la classe EX_VerticalExtent.</help>-->
     <condition>Condition</condition>
   </element>
   <element name="gmd:voice" id="408.0">
     <label>Numéro de téléphone</label>
     <description>Numéro de téléphone de la personne ou organisation responsable</description>
-    <!--<help>Numéro de téléphone.</help>-->
     <condition/>
 
   </element>
