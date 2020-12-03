@@ -8,7 +8,7 @@
 
   <HierarchyLevel>Une valeur est nécessaire pour: Type de ressource</HierarchyLevel>
   <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
-  <ReferenceSystemInfo>Une valeur est nécessaire pour: Reference System</ReferenceSystemInfo>
+  <ReferenceSystemInfo>Une valeur est nécessaire pour: Information sur le système de référence</ReferenceSystemInfo>
   <ReferenceSystemInfoCode>Une valeur est nécessaire pour: Information sur le système de référence - Code</ReferenceSystemInfoCode>
   <Status>Une valeur est nécessaire pour: Etat</Status>
   <InvalidStatusCode>Le code d'état n'est pas valide</InvalidStatusCode>
@@ -21,21 +21,21 @@
   <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
   <BeginPositionFormat>Le format de la date de début n’est pas valide</BeginPositionFormat>
-  <EndPosition>End position date should be after begin position</EndPosition>
+  <EndPosition>La date de fin de la portée temporelle doit être supérieure à sa date de début</EndPosition>
   <EndPositionFormat>Le format de la date de fin n’est pas valide</EndPositionFormat> <!-- TODO: check if required -->
   <DataLanguage>Une valeur est nécessaire pour: Langue</DataLanguage>
   <MaintenanceFrequency>Une valeur est nécessaire pour: Fréquence de mise à jour</MaintenanceFrequency>
   <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
-  <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingContactRole>Une valeur est nécessaire pour le code de rôle contact</MissingContactRole>
   <InvalidContactRole>Le code de rôle contact n'est pas valide</InvalidContactRole>
-  <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
+  <MissingCitedResponsibleRole>Une valeur est nécessaire pour le code de rôle responsable cité</MissingCitedResponsibleRole>
   <InvalidCitedResponsibleRole>Le code de rôle responsable cité n'est pas valable</InvalidCitedResponsibleRole>
-  <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
+  <MissingDistributorRole>Une valeur est nécessaire pour le code de rôle distributeur</MissingDistributorRole>
   <InvalidDistributorRole>Le code de rôle distributeur n'est pas valide</InvalidDistributorRole>
   <CoreSubjectThesaurusMissing>Les mots clés du Thésaurus des sujets de base du gouvernement du Canada sont obligatoires</CoreSubjectThesaurusMissing>
-  <MissingAccessConstraints>Access constraints code is required</MissingAccessConstraints>
+  <MissingAccessConstraints>Une valeur est nécessaire pour le code des contraintes d'accès</MissingAccessConstraints>
   <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
-  <MissingUseConstraints>Use constraints code is required</MissingUseConstraints>
+  <MissingUseConstraints>Une valeur est nécessaire pour le code de contraintes d'utilisation</MissingUseConstraints>
   <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
   <DistributionFormatName>Une valeur est nécessaire pour: Distribution format - Nom du format</DistributionFormatName>
   <DistributionFormatVersion>Une valeur est nécessaire pour: Distribution format - Version</DistributionFormatVersion>
