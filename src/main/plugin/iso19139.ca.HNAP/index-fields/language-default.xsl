@@ -88,7 +88,7 @@
           <xsl:variable name="isoLangId_ISO639_2B">
             <xsl:choose>
               <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
-              <xsl:otherwise>$isoLangId</xsl:otherwise>
+              <xsl:otherwise><xsl:value-of select="$isoLangId" /></xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
           <Document locale="{$isoLangId_ISO639_2B}">
