@@ -127,7 +127,7 @@
     <xsl:variable name="langCode_ISO639_2B">
       <xsl:choose>
         <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
-        <xsl:otherwise>$isoLangId</xsl:otherwise>
+        <xsl:otherwise><xsl:value-of select="$isoLangId" /></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
