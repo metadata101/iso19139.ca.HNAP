@@ -2,7 +2,7 @@
 <strings>
   <schematron.title>HNAP validation rules - common</schematron.title>
 
-  <Metadata>Information sur les métadonnées</Metadata>
+  <Metadata>Informations sur les métadonnées</Metadata>
   <DataIdentification>Identification des données</DataIdentification>
   <Distribution>Distribution</Distribution>
 
@@ -37,8 +37,8 @@
   <InvalidAccessConstraints>Le code des contraintes d'accès n'est pas valide</InvalidAccessConstraints>
   <MissingUseConstraints>Une valeur est nécessaire pour le code de contraintes d'utilisation</MissingUseConstraints>
   <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
-  <DistributionFormatName>Une valeur est nécessaire pour: Distribution format - Nom du format</DistributionFormatName>
-  <DistributionFormatVersion>Une valeur est nécessaire pour: Distribution format - Version</DistributionFormatVersion>
+  <DistributionFormatName>Une valeur est nécessaire pour: Nom du Format de distribution</DistributionFormatName>
+  <DistributionFormatVersion>Une valeur est nécessaire pour: Version du Format de distribution</DistributionFormatVersion>
 
   <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
   <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>
