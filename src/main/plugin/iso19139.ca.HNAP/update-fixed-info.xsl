@@ -207,6 +207,15 @@
 				</xsl:when>
 			</xsl:choose>
 
+      <xsl:apply-templates select="
+        gmd:hierarchyLevel|
+        gmd:hierarchyLevelName|
+        gmd:contact|
+        gmd:dateStamp|
+        gmd:metadataStandardName|
+        gmd:metadataStandardVersion|
+        gmd:dataSetURI"/>
+
       <!-- Copy existing locales and create an extra one for the default metadata language. -->
         <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
         <gmd:locale>
@@ -243,7 +252,18 @@
             </gmd:characterEncoding>
           </gmd:PT_Locale>
         </gmd:locale>
- 			<xsl:apply-templates select="node()[name()!='gmd:language' and name()!='gmd:characterSet' and name()!='gmd:locale']"/>
+ 		<xsl:apply-templates select="node()[name()!='gmd:fileIdentifier' and
+                                            name()!='gmd:language' and
+                                            name()!='gmd:parentIdentifier' and
+                                            name()!='gmd:characterSet' and
+                                            name()!='gmd:hierarchyLevel' and
+                                            name()!='gmd:hierarchyLevelName' and
+                                            name()!='gmd:contact' and
+                                            name()!='gmd:dateStamp' and
+                                            name()!='gmd:metadataStandardName' and
+                                            name()!='gmd:metadataStandardVersion' and
+                                            name()!='gmd:dataSetURI' and
+                                            name()!='gmd:locale']"/>
 		</xsl:copy>
 	</xsl:template>
 
