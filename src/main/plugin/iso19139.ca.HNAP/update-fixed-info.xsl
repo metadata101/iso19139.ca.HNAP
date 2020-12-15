@@ -471,18 +471,11 @@
             <xsl:otherwise>
 
               <!-- Populate PT_FreeText for default language if not existing and it is not null. -->
-              <xsl:choose>
-                <xsl:when test="$valueInPtFreeTextForMainLanguage !='' or not($isMainLanguageEmpty)">
-                  <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
-                </xsl:otherwise>
-              </xsl:choose>
+              <xsl:apply-templates select="gco:CharacterString|gmx:Anchor"/>
 
 
                 <!-- only put this in if there's stuff to put in, otherwise we get a <gmd:PT_FreeText/> in output -->
-                <xsl:if test="(normalize-space(gco:CharacterString|gmx:Anchor) != '') or gmd:PT_FreeText">
+              <xsl:if test="gmd:PT_FreeText">
                   <gmd:PT_FreeText>
                     <!-- do NOT put in the main language (again) -->
 <!--                    <xsl:if test="normalize-space(gco:CharacterString|gmx:Anchor) != ''"> &lt;!&ndash; default lang&ndash;&gt;-->
