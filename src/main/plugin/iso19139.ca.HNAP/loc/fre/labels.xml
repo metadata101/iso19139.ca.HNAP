@@ -1640,7 +1640,7 @@
   </element>
   <element name="gmd:function" id="402.0">
     <label>Fonction</label>
-    <description>Code pour une fonction accomplie par la ressource on-line</description>
+    <description>Code pour une fonction accomplie par la ressource en ligne</description>
     <condition/>
 
   </element>
@@ -1876,7 +1876,7 @@
   </element>
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
-    <description>URL ou indication semblable d'une adresse Internet pour un accès on-line , par exemple http://www.isotc211.org</description>
+    <description>URL ou indication semblable d'une adresse Internet pour un accès en ligne , par exemple http://www.isotc211.org</description>
     <condition/>
 
   </element>
@@ -2240,7 +2240,7 @@
   </element>
   <element name="gmd:onlineResource" id="390.0">
     <label>Adresse Internet</label>
-    <description>Information on-line qui peut être utilisée pour contacter la personne ou l'organisation responsable</description>
+    <description>Information en ligne qui peut être utilisée pour contacter la personne ou l'organisation responsable</description>
     <condition/>
 
   </element>
@@ -2385,7 +2385,7 @@
   </element>
   <element name="gmd:postalCode" id="384.0">
     <label>Code postal</label>
-    <description>Code postale ou autre code pour l'emplacement</description>
+    <description>Code postal ou autre code pour l'emplacement</description>
     <condition/>
 
   </element>
