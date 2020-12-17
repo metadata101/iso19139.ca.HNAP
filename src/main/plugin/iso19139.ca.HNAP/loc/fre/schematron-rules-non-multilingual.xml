@@ -42,6 +42,7 @@
 
   <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
 
+  <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
   <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
   <ECThesaurusPubDate>La date de publication du thésaurus est requise</ECThesaurusPubDate>
   <ECThesaurusCreDate>La date de création du thésaurus est requise</ECThesaurusCreDate>
