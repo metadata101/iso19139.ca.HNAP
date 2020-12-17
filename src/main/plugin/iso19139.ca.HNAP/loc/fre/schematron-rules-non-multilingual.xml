@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
-  <schematron.title>PNAH Règles de validation non multilingues</schematron.title>
+  <schematron.title>PNAH Règles de validation (non multilingues)</schematron.title>
 
   <Metadata>Informations sur les métadonnées</Metadata>
   <DataIdentification>Identification des données</DataIdentification>

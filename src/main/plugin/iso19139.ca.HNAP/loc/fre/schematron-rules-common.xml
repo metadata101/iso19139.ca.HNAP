@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
-  <schematron.title>HNAP validation rules - common</schematron.title>
+  <schematron.title>PNAH Règles de validation (communes)</schematron.title>
 
   <Metadata>Informations sur les métadonnées</Metadata>
   <DataIdentification>Identification des données</DataIdentification>
