@@ -6,11 +6,13 @@
   <DataIdentification>Identification des données</DataIdentification>
   <Distribution>Distribution</Distribution>
 
-  <OrganisationNameThesaurus>Le nom de l'organisation du thésaurus est requis dans les deux langues</OrganisationNameThesaurus>
-  <OtherConstraintsNote>Si vous indiquez «Autres restrictions» dans les champs «Contraintes d'accès» ou «Utiliser les contraintes», les autres contraintes d'accès ou d'utilisation de la ressource doivent être expliquées ici.</OtherConstraintsNote>
-  <UseLimitation>Limitation d'utilisation est obligatoire dans les deux langues</UseLimitation>
   <MetadataStandardName>Valeur n'est pas valable pour Nom du standard de métadonnées, devrait être 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' en anglais et en 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' en français</MetadataStandardName>
+  <OrganisationNameThesaurus>Le nom de l'organisation du thésaurus est requis dans les deux langues</OrganisationNameThesaurus>
   <MapServicesLanguage>Pour les services de carte de ressources en ligne (protocoles de service de carte OGC: WMS, Esri REST), l'attribut de langue est requis</MapServicesLanguage>
+
+  <MetadataTitle>Le titre est obligatoire dans les deux langues</MetadataTitle>
+  <MetadataAbstract>Le résumé est obligatoire dans les deux langues</MetadataAbstract>
+
   <ContactGovEnglish>Valeur en  anglais pour Contact - Le nom de l'organisation au «Gouvernement du Canada» doit avoir une valeur de titre valide. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</ContactGovEnglish>
   <ContactGovFrench>Valeur en français pour Contact - Le nom de l'organisation au «Gouvernement du Canada» doit avoir une valeur de titre valide. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</ContactGovFrench>
   <ContactGovAllowedEnglish>Valeur en anglais pour Contact - Le nom de l'organisation doit être l'un des suivants: «Gouvernement du Canada», «Gouvernement de l'Alberta», «Gouvernement de la Colombie-Britannique», «Gouvernement de l'Ontario», «Gouvernement de la Nouvelle-Écosse», «Gouvernement de l'Île-du-Prince-Édouard» ou «Gouvernement de Terre-Neuve-et-Labrador».</ContactGovAllowedEnglish>
@@ -26,29 +28,20 @@
   <DistributorGovAllowedEnglish>Valeur en anglais pour la personne-ressource du distributeur - Le nom de l'organisation doit être l'un des suivants: 'Gouvernement of Canada', 'Gouvernement of Alberta', 'la Colombie-Britannique', 'Gouvernement of Ontario', 'Gouvernement of Nova Scotia', 'Gouvernement of Prince Edward Island »ou« Gouvernement de Terre-Neuve-et-Labrador ».</DistributorGovAllowedEnglish>
   <DistributorGovAllowedFrench>Valeur en français pour le distributeur Contact - Le nom de l’organisation doit être celui du gouvernement du Canada, du gouvernement de l’Alberta, du gouvernement de la Colombie-Britannique, du gouvernement de l’Ontario, du gouvernement de la Nouvelle-Écosse, du gouvernement de l’Île-du-Prince-Édouard ou du gouvernement de Terre-Neuve-et-Labrador..</DistributorGovAllowedFrench>
 
-
+  <OpenLicense>Une licence de gouvernement ouvert est nécessaire. Valeurs en anglais acceptées sont : Licence Gouvernement ouvert - Canada (http://open.canada.ca/en/open-Gouvernement-licence-canada) ou  Licence du Gouvernement ouvert – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Licence du Gouvernement ouvert – Nova Scotia (https://novascotia.ca/opendata/licence.asp) ou Licence du Gouvernement ouvert – Ontario (https://www.ontario.ca/page/open-Gouvernement-licence-ontario) ou Licence du Gouvernement ouvert – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-Gouvernement-licence-prince-edward-island) ou Licence du Gouvernement ouvert - la Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-Gouvernement-licence-bc) ou Licence du Gouvernement ouvert - Alberta (https://open.alberta.ca/licence).
+    Valeurs françaises acceptées : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada) ou Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp) ou Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario) ou Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard) ou Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-Gouvernement-licence-bc) ou Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</OpenLicense>
   <SupplementalInfo>Informations supplémentaires devrait être vide ou rempli en anglais et en français</SupplementalInfo>
-  <OtherConstraintsNote2>Autres contraintes devrait être vide ou rempli en anglais et en français</OtherConstraintsNote2>
-
-  <MetadataAbstract>Le résumé est obligatoire dans les deux langues</MetadataAbstract>
-  <MetadataTitle>Le titre est obligatoire dans les deux langues</MetadataTitle>
-
   <Keyword>Mot Clé est requise dans les deux langues</Keyword>
+
+  <OtherConstraintsNote2>Autres contraintes devrait être vide ou rempli en anglais et en français</OtherConstraintsNote2>
 
   <ResourceDescription>La description des ressources en ligne n'est pas valide. Le format devrait être : TypeContenu;Format;Lang</ResourceDescription>
   <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
   <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
-  <OpenLicense>Une licence de gouvernement ouvert est nécessaire. Valeurs en anglais acceptées sont : Licence Gouvernement ouvert - Canada (http://open.canada.ca/en/open-Gouvernement-licence-canada) ou  Licence du Gouvernement ouvert – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Licence du Gouvernement ouvert – Nova Scotia (https://novascotia.ca/opendata/licence.asp) ou Licence du Gouvernement ouvert – Ontario (https://www.ontario.ca/page/open-Gouvernement-licence-ontario) ou Licence du Gouvernement ouvert – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-Gouvernement-licence-prince-edward-island) ou Licence du Gouvernement ouvert - la Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-Gouvernement-licence-bc) ou Licence du Gouvernement ouvert - Alberta (https://open.alberta.ca/licence).
-    Valeurs françaises acceptées : Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada) ou Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence) ou Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp) ou Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario) ou Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard) ou Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-Gouvernement-licence-bc) ou Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</OpenLicense>
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
-  <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
-  <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
-  <ECThesaurusPubDate>La date de publication du Thésaurus est requise</ECThesaurusPubDate>
-  <ECThesaurusCreDate>La date de création du Thésaurus est requise</ECThesaurusCreDate>
-  <ECThesaurusOrg>Le nom de l’organisation responsable du thésaurus est requis</ECThesaurusOrg>
-  <ECThesaurusRole>Le rôle du responsable du thesaurus est requis</ECThesaurusRole>
-  <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
+  <OtherConstraintsNote>Si vous indiquez «Autres restrictions» dans les champs «Contraintes d'accès» ou «Utiliser les contraintes», les autres contraintes d'accès ou d'utilisation de la ressource doivent être expliquées ici.</OtherConstraintsNote>
+  <UseLimitation>Limitation d'utilisation est obligatoire dans les deux langues</UseLimitation>
 
   <ContactOrganisationName>Contact - Nom de l'organisation est obligatoire dans les deux langues</ContactOrganisationName>
   <CitedResponsiblePartyOrganisationName>Partie responsable citée - Nom de l'organisation est obligatoire dans les deux langues</CitedResponsiblePartyOrganisationName>
@@ -75,4 +68,12 @@
   <DistributorPhone>Responsable de la distribution - Numéro de téléphone devrait être vide ou rempli en anglais et en français</DistributorPhone>
 
   <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
+
+  <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
+  <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
+  <ECThesaurusPubDate>La date de publication du Thésaurus est requise</ECThesaurusPubDate>
+  <ECThesaurusCreDate>La date de création du Thésaurus est requise</ECThesaurusCreDate>
+  <ECThesaurusOrg>Le nom de l’organisation responsable du thésaurus est requis</ECThesaurusOrg>
+  <ECThesaurusRole>Le rôle du responsable du thesaurus est requis</ECThesaurusRole>
+  <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
 </strings>
