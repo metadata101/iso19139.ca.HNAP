@@ -743,7 +743,7 @@
   </element>
   <element name="gmd:administrativeArea" id="383.0">
     <label>Province/État</label>
-    <description>Canton ou département de l'emplacement</description>
+    <description>Province, état de l'emplacement</description>
     <condition/>
 
   </element>
@@ -1223,7 +1223,7 @@
   </element>
   <element name="gmd:dateStamp" id="9.0">
     <label>Date de création</label>
-    <description>Date de création des métadonnées</description>
+    <description>Ceci est la date à laquelle l’enregistrement de métadonnées a été créé ou actualisé  (YYYY-MM-DDTHH:MM:SS).</description>
     <condition>Obligatoire</condition>
 
   </element>
