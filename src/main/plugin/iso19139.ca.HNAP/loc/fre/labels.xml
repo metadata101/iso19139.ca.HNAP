@@ -2423,6 +2423,8 @@
       <option value="HTTPS">HTTPS</option>
       <option value="FTP">FTP</option>
       <option value="ESRI REST: Map Service">ESRI REST: Map Service</option>
+      <option value="OGC:WMS">OGC:WMS</option>
+      <option value="OGC:WFS">OGC:WFS</option>
     </helper>
     <condition/>
 
