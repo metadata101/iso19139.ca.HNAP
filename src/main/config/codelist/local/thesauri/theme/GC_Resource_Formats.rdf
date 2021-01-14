@@ -1020,7 +1020,6 @@
             >WMV</ns2:prefLabel>
     </rdf:Description>
 
-    <!--TODO-->
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#IPA">
     		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     		<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
@@ -1105,8 +1104,6 @@
     		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     		<ns2:prefLabel xml:lang="en">SQL Lite 3</ns2:prefLabel>
     </rdf:Description>
-
-    <!--TODO-->
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#IOS">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
