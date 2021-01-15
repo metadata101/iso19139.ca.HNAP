@@ -145,5 +145,66 @@
         </plugins>
       </build>
     </profile>
+    <profile>
+      <id>docs</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>compile</phase>
+                <configuration>
+<target>
+   <property name="sphinx_build_options"
+             value="-q -N -W --keep-going -n -j auto"/>
+   <property name="theme"
+             value="sphinx_rtd_theme"/>
+   <property name="doctrees"
+             value="target/doctrees"/>
+   <property name="outputdir"
+             value="target/html"/>
+   <property name="srcdir"
+             value="src/sphinx"/>
+
+   <mkdir dir="${outputdir}"/>
+   <exec executable="sphinx-build" failonerror="true">
+     <arg line="${sphinx_build_options}"/>
+     <arg line="-b html"/>
+     <arg line="-Dhtml_theme=${theme}"/>
+     <arg line="-d ${doctrees}"/>
+     <arg path="${srcdir}"/>
+     <arg path="${outputdir}"/>
+   </exec>
+</target>
+                </configuration>
+                <goals><goal>run</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>publish</id>
+                <phase>install</phase>
+                <goals><goal>copy-resources</goal></goals>
+                <configuration>
+                  <outputDirectory>docs</outputDirectory>
+                  <resources>
+                    <resource>
+                      <directory>${project.build.directory}/html</directory>
+                    </resource>
+                  </resources>
+                  <addDefaultExcludes/>
+                  <encoding>UTF-8</encoding>
+                  <overwrite>true</overwrite>
+                </configuration>
+               </execution>
+             </executions>
+           </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 </project>
