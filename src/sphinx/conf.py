@@ -156,5 +156,6 @@ html_theme_options = {
 # 'searchbox.html']``.
 #
 # html_sidebars = {}
-
+html_copy_source = False
 html_show_sourcelink = False
+
