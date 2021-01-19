@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:dc="http://purl.org/dc/elements/1.1/"
          xmlns:ns2="http://www.w3.org/2004/02/skos/core#">
 
-    <skos:ConceptScheme>
+    <ns2:ConceptScheme>
       <dc:title>Resource Format</dc:title>
        <dc:title xml:lang="en">Resource Format</dc:title>
        <dc:title xml:lang="fr">Format de fichier</dc:title>
       <dc:description></dc:description>
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
-    </skos:ConceptScheme>
+    </ns2:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#BAG">
     		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
