@@ -2,22 +2,22 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
                 xmlns:gml="http://www.opengis.net/gml/3.2"
                 xmlns:gml320="http://www.opengis.net/gml"
-						xmlns:srv="http://www.isotc211.org/2005/srv"
-						xmlns:gmx="http://www.isotc211.org/2005/gmx"
-						xmlns:gco="http://www.isotc211.org/2005/gco"
-						xmlns:gmd="http://www.isotc211.org/2005/gmd"
-                        xmlns:xlink='http://www.w3.org/1999/xlink'
-                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                        xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
-                        xmlns:geonet="http://www.fao.org/geonetwork"
-                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                        xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
-                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-                        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-                        xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
-                        xmlns:XslUtil="java:org.fao.geonet.util.XslUtil"
-                        xmlns:exslt = "http://exslt.org/common"
-                        exclude-result-prefixes="gml320 rdf ns2 rdfs skos exslt geonet XslUtil XslUtilHnap gn-fn-iso19139">
+                xmlns:srv="http://www.isotc211.org/2005/srv"
+                xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                xmlns:gco="http://www.isotc211.org/2005/gco"
+                xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                xmlns:xlink='http://www.w3.org/1999/xlink'
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:gn-fn-iso19139="http://geonetwork-opensource.org/xsl/functions/profiles/iso19139"
+                xmlns:geonet="http://www.fao.org/geonetwork"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:XslUtilHnap="java:ca.gc.schema.iso19139hnap.util.XslUtilHnap"
+                xmlns:XslUtil="java:org.fao.geonet.util.XslUtil"
+                xmlns:exslt = "http://exslt.org/common"
+                exclude-result-prefixes="gml320 rdf ns2 rdfs skos exslt geonet XslUtil XslUtilHnap gn-fn-iso19139">
 
 	<xsl:include href="../iso19139.ca.HNAP/convert/functions.xsl"/>
   <xsl:include href="../iso19139.ca.HNAP/layout/utility-fn.xsl"/>
@@ -177,8 +177,34 @@
 
 	<!-- ================================================================= -->
 
+  <xsl:template name="add-namespaces">
+    <xsl:namespace name="xsi" select="'http://www.w3.org/2001/XMLSchema-instance'"/>
+    <xsl:namespace name="gco" select="'http://www.isotc211.org/2005/gco'"/>
+    <xsl:namespace name="gmd" select="'http://www.isotc211.org/2005/gmd'"/>
+    <xsl:namespace name="gfc" select="'http://www.isotc211.org/2005/gfc'"/>
+    <xsl:namespace name="srv" select="'http://www.isotc211.org/2005/srv'"/>
+    <xsl:namespace name="gmx" select="'http://www.isotc211.org/2005/gmx'"/>
+    <xsl:namespace name="gts" select="'http://www.isotc211.org/2005/gts'"/>
+    <xsl:namespace name="gsr" select="'http://www.isotc211.org/2005/gsr'"/>
+    <xsl:namespace name="gss" select="'http://www.isotc211.org/2005/gss'"/>
+    <xsl:namespace name="gmi" select="'http://www.isotc211.org/2005/gmi'"/>
+    <xsl:namespace name="napm" select="'http://www.geconnections.org/nap/napMetadataTools/napXsd/napm'"/>
+
+    <xsl:choose>
+      <xsl:when test="$isUsing2005Schema and not($isUsing2007Schema)">
+        <xsl:namespace name="gml" select="'http://www.opengis.net/gml'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:namespace name="gml" select="'http://www.opengis.net/gml/3.2'"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:namespace name="xlink" select="'http://www.w3.org/1999/xlink'"/>
+  </xsl:template>
+
 	<xsl:template match="gmd:MD_Metadata">
-		<xsl:copy>
+		<xsl:copy copy-namespaces="no">
+			<xsl:call-template name="add-namespaces"/>
+
 			<xsl:apply-templates select="@*"/>
 
 			<gmd:fileIdentifier>
@@ -993,6 +1019,12 @@
         <gml:endPosition />
       </xsl:if>
     </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="@xsi:schemaLocation">
+    <xsl:if test="XslUtil:getSettingValue('system/metadata/validation/removeSchemaLocation') = 'false'">
+      <xsl:copy-of select="."/>
+    </xsl:if>
   </xsl:template>
 
   <!-- ================================================================= -->
