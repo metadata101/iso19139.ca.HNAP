@@ -685,35 +685,36 @@
       <xsl:for-each select="$metadata//gmd:graphicOverview/gmd:MD_BrowseGraphic">
         <xsl:variable name="fileName"  select="gmd:fileName/gco:CharacterString"/>
         <xsl:if test="$fileName != ''">
+          <xsl:variable name="fileLang" select="../@xlink:role" />
           <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
+          <xsl:variable name="imageLang">
+            <xsl:choose>
+              <xsl:when test="$fileLang='urn:xml:lang:eng-CAN'">eng</xsl:when>
+              <xsl:when test="$fileLang='urn:xml:lang:fra-CAN'">fre</xsl:when>
+              <xsl:otherwise></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
 
           <xsl:choose>
             <!-- the thumbnail is an external url -->
             <xsl:when test="not(starts-with($fileName, /root/gui/baseUrl)) and contains($fileName ,'://')">
-              <image type="unknown"><xsl:value-of select="$fileName"/></image>
+              <image type="unknown">
+                <xsl:attribute name="lang" select="$imageLang" />
+                <xsl:value-of select="$fileName"/>
+              </image>
             </xsl:when>
 
             <!-- Thumbnails with new API -->
             <xsl:when test="starts-with($fileName, /root/gui/baseUrl)">
               <image type="thumbnail">
-                <xsl:attribute name="lang">
-                  <xsl:choose>
-                    <xsl:when test="ends-with($fileDescr, '_fre')">fre</xsl:when>
-                    <xsl:otherwise>eng</xsl:otherwise>
-                  </xsl:choose>
-                </xsl:attribute>
+                <xsl:attribute name="lang" select="$imageLang" />
                 <xsl:value-of select="$fileName"/>
               </image>
             </xsl:when>
 
             <xsl:otherwise>
               <image type="thumbnail">
-                <xsl:attribute name="lang">
-                  <xsl:choose>
-                    <xsl:when test="ends-with($fileDescr, '_fre')">fre</xsl:when>
-                    <xsl:otherwise>eng</xsl:otherwise>
-                  </xsl:choose>
-                </xsl:attribute>
+                <xsl:attribute name="lang" select="$imageLang" />
                 <xsl:value-of select="concat(/root/locUrl,'/resources.get?id=',$id,'&amp;fname=',$fileName,'&amp;access=public')"/>
               </image>
             </xsl:otherwise>
@@ -743,6 +744,16 @@
           </xsl:otherwise>
         </xsl:choose>
 
+      </xsl:when>
+
+      <!-- unknown thumbnail (usually a url so limit size) -->
+      <xsl:when test="$images/image[@type='unknown' and @lang=$langId]">
+        <img class="full-width" src="{$images/image[@type='unknown'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'">
+          <xsl:if test="string($size)">
+            <xsl:attribute name="width"><xsl:value-of select="$size" /></xsl:attribute>
+            <xsl:attribute name="height"><xsl:value-of select="$size" /></xsl:attribute>
+          </xsl:if>
+        </img>
       </xsl:when>
 
       <!-- small thumbnail other lang -->
