@@ -47,6 +47,22 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+  <xsl:function name="geonet:securityLevelList" as="xs:string">
+    <xsl:param name="thesaurusDir" as="xs:string"/>
+
+    <xsl:variable name="security-level-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
+
+    <xsl:variable name="v">
+      <xsl:for-each select="$security-level-list//rdf:Description[ns2:prefLabel[@xml:lang='en']]">
+        <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
+        <xsl:value-of select="replace(@rdf:about, 'http://geonetwork-opensource.org/EC/GC_Security_Classification#', '')" />
+        <xsl:if test="position() != last()">, </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:value-of select="$v" />
+  </xsl:function>
+
   <!-- Checks if the values in arg (can be a comma separate list of items) are all in the searchStrings list -->
   <xsl:function name="geonet:values-in" as="xs:boolean">
     <xsl:param name="arg" as="xs:string?"/>
@@ -317,6 +333,22 @@
       <sch:assert
         test="$filledFine"
       >$loc/strings/OtherConstraintsNote</sch:assert>
+    </sch:rule>
+
+    <sch:rule context="//gmd:MD_SecurityConstraints/gmd:userNote">
+
+      <sch:let name="missingTitle" value="not(string(gco:CharacterString))
+              or (@gco:nilReason)" />
+
+      <sch:let name="securityLevel" value="gco:CharacterString" />
+
+      <sch:let name="security-level-list" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
+
+      <sch:let name="securityLevelList" value="geonet:securityLevelList($thesaurusDir)" />
+      <sch:let name="locMsg" value="concat($loc/strings/SecurityLevel, $securityLevelList)" />
+
+      <sch:assert test="$missingTitle or string($security-level-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#', $securityLevel)])">$locMsg</sch:assert>
+
     </sch:rule>
 
     <!-- Use limitation -->

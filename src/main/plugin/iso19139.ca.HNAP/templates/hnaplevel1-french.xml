@@ -156,10 +156,10 @@
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Profile - PNAH niveau 1 (française)</gco:CharacterString>
+                  <gco:CharacterString>Profile - PNAH niveau 1 (langue de métadonnées: français)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Level 1 (French)</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Level 1 (metadata language: French)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:title>

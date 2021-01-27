@@ -7,15 +7,8 @@
   <Distribution>Distribution</Distribution>
 
   <MetadataStandardName>Value is not valid for Metadata Standard Name, should be 'North American Profile of ISO 19115:2003 - Geographic information - Metadata' in english and 'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées' in french</MetadataStandardName>
-  <ContactOrganisationName>Contact - Organization name is required</ContactOrganisationName>
-  <ContactElectronicMail>Contact - Electronic mail address is required</ContactElectronicMail>
-  <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required</CitedResponsiblePartyOrganisationName>
-  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required</CitedResponsiblePartyElectronicMail>
-  <DistributorOrganisationName>Distributor - Organization name is required</DistributorOrganisationName>
-  <DistributorElectronicMail>Distributor - Electronic mail address is required</DistributorElectronicMail>
-
-  <UseLimitation>Value is required for Use Limitation</UseLimitation>
-  <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
+  <OrganisationNameThesaurus>Thesaurus organization name is required</OrganisationNameThesaurus>
+  <MapServicesLanguage>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</MapServicesLanguage>
 
   <MetadataTitle>Title is required</MetadataTitle>
   <MetadataAbstract>Abstract is required</MetadataAbstract>
@@ -36,12 +29,21 @@
   <DistributorGovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</DistributorGovAllowedFrench>
 
   <OpenLicense>An Open Goverment Licence is required.</OpenLicense>
-  <MapServicesLanguage>For online resources map services (OGC:WMS, Esri REST: Map Service protocols) the language attribute is required</MapServicesLanguage>
   <Keyword>Keyword is required</Keyword>
-  <OrganisationNameThesaurus>Thesaurus organization name is required</OrganisationNameThesaurus>
+
+  <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>
+  <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
+  <UseLimitation>Value is required for Use Limitation</UseLimitation>
+
+  <ContactOrganisationName>Contact - Organization name is required</ContactOrganisationName>
+  <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required</CitedResponsiblePartyOrganisationName>
+  <DistributorOrganisationName>Distributor - Organization name is required</DistributorOrganisationName>
+  
+  <ContactElectronicMail>Contact - Electronic mail address is required</ContactElectronicMail>
+  <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required</CitedResponsiblePartyElectronicMail>
+  <DistributorElectronicMail>Distributor - Electronic mail address is required</DistributorElectronicMail>
 
   <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
-
   <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
   <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
   <ECThesaurusCreDate>Thesaurus creation date is required</ECThesaurusCreDate>

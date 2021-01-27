@@ -743,7 +743,7 @@
   </element>
   <element name="gmd:administrativeArea" id="383.0">
     <label>Province/État</label>
-    <description>Canton ou département de l'emplacement</description>
+    <description>Province, état de l'emplacement</description>
     <condition/>
 
   </element>
@@ -1223,7 +1223,7 @@
   </element>
   <element name="gmd:dateStamp" id="9.0">
     <label>Date de création</label>
-    <description>Date de création des métadonnées</description>
+    <description>Ceci est la date à laquelle l’enregistrement de métadonnées a été créé ou actualisé  (YYYY-MM-DDTHH:MM:SS).</description>
     <condition>Obligatoire</condition>
 
   </element>
@@ -1640,7 +1640,7 @@
   </element>
   <element name="gmd:function" id="402.0">
     <label>Fonction</label>
-    <description>Code pour une fonction accomplie par la ressource on-line</description>
+    <description>Code pour une fonction accomplie par la ressource en ligne</description>
     <condition/>
 
   </element>
@@ -1876,7 +1876,7 @@
   </element>
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
-    <description>URL ou indication semblable d'une adresse Internet pour un accès on-line , par exemple http://www.isotc211.org</description>
+    <description>URL ou indication semblable d'une adresse Internet pour un accès en ligne , par exemple http://www.isotc211.org</description>
     <condition/>
 
   </element>
@@ -2240,7 +2240,7 @@
   </element>
   <element name="gmd:onlineResource" id="390.0">
     <label>Adresse Internet</label>
-    <description>Information on-line qui peut être utilisée pour contacter la personne ou l'organisation responsable</description>
+    <description>Information en ligne qui peut être utilisée pour contacter la personne ou l'organisation responsable</description>
     <condition/>
 
   </element>
@@ -2385,7 +2385,7 @@
   </element>
   <element name="gmd:postalCode" id="384.0">
     <label>Code postal</label>
-    <description>Code postale ou autre code pour l'emplacement</description>
+    <description>Code postal ou autre code pour l'emplacement</description>
     <condition/>
 
   </element>
@@ -2423,6 +2423,8 @@
       <option value="HTTPS">HTTPS</option>
       <option value="FTP">FTP</option>
       <option value="ESRI REST: Map Service">ESRI REST: Map Service</option>
+      <option value="OGC:WMS">OGC:WMS</option>
+      <option value="OGC:WFS">OGC:WFS</option>
     </helper>
     <condition/>
 

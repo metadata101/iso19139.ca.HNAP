@@ -66,3 +66,42 @@ The best approach is to add the plugin as a submodule:
 2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs`.
 
 3. Restart geonetwork
+
+## Documentation
+
+Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme]. GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
+
+```
+mvn clean compile -Pdocs
+```
+
+Docs generated in `target/html/index.html`.
+
+### update github pages
+
+```
+mvn clean install -Pdocs
+git add docs
+git commit -m "update docs"
+git push
+```
+
+### sphinx-build environment
+
+windows:
+```
+pip install -U sphinx
+pip install hieroglyph recommonmark sphinx-copybutton
+```
+
+macOS:
+```
+brew install python
+brew install sphinx-doc
+pip install hieroglyph recommonmark sphinx-copybutton
+```
+
+jenkins:
+
+* [Dockerfile](https://github.com/GeoCat/jenkins-docker-agent-docs/blob/master/Dockerfile)
+
