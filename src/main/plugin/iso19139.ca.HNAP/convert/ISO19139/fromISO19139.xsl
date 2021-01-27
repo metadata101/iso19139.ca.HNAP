@@ -4,32 +4,24 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <!-- ISO19139 are compatible with HNAP however for to import to process then records as HNAP we need to ensure that the metadataStandardName is set correctly -->
+    <!-- ISO19139 are compatible with HNAP however for to import to process then records as HNAP we need to ensure that the metadataStandardName is set correctly -->
 
-  <xsl:include href="../functions.xsl"/>
+    <xsl:include href="../functions.xsl"/>
 
-  <xsl:variable name="metadataStandardNameEng"
-                select="'North American Profile of ISO 19115:2003 - Geographic information - Metadata'"/>
-  <xsl:variable name="metadataStandardNameFre"
-                select="'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées'"/>
-  <xsl:variable name="metadataStandardVersion" select="'CAN/CGSB-171.100-2009'"/>
+    <xsl:variable name="metadataStandardNameEng"
+                  select="'North American Profile of ISO 19115:2003 - Geographic information - Metadata'"/>
+    <xsl:variable name="metadataStandardNameFre"
+                  select="'Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées'"/>
+    <xsl:variable name="metadataStandardVersion" select="'CAN/CGSB-171.100-2009'"/>
 
 
-  <!-- The default language is also added as gmd:locale
- for multilingual metadata records. -->
-  <xsl:variable name="mainLanguage">
-    <xsl:call-template name="langId_from_gmdlanguage19139">
-      <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
-    </xsl:call-template>
-  </xsl:variable>
-
-  <xsl:template match="gmd:MD_Metadata">
-    <xsl:copy copy-namespaces="no">
-      <xsl:call-template name="add-namespaces"/>
-
-      <xsl:apply-templates select="node()|@*"/>
-    </xsl:copy>
-  </xsl:template>
+    <!-- The default language is also added as gmd:locale
+   for multilingual metadata records. -->
+    <xsl:variable name="mainLanguage">
+        <xsl:call-template name="langId_from_gmdlanguage19139">
+            <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
+        </xsl:call-template>
+    </xsl:variable>
 
     <xsl:template
             match="gmd:metadataStandardName/gco:CharacterString[text()!=$metadataStandardNameEng and text()!=$metadataStandardNameFre]"
