@@ -32,31 +32,6 @@
 
   <xsl:variable name="defaultLang">eng</xsl:variable>
 
-  <xsl:variable name="schemaLocationFor2007"
-                select="'http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd'"/>
-
-  <!-- ================================================================= -->
-  <!-- Try to determine if using the 2005 or 2007 version
-  of ISO19139. Based on this GML 3.2.0 or 3.2.1 is used.
-  Default is 2007 with GML 3.2.1.
-  You can force usage of a schema by setting:
-  * ISO19139:2007
-  <xsl:variable name="isUsing2005Schema" select="false()"/>
-  * ISO19139:2005 (not recommended)
-  <xsl:variable name="isUsing2005Schema" select="true()"/>
-  -->
-  <xsl:variable name="isUsing2005Schema"
-                select="(/root/gmd:MD_Metadata/@xsi:schemaLocation
-                          and /root/gmd:MD_Metadata/@xsi:schemaLocation != $schemaLocationFor2007)
-                        or
-                        count(//gml320:*) > 0"/>
-
-  <!-- This variable is used to migrate from 2005 to 2007 version.
-  By setting the schema location in a record, on next save, the record
-  will use GML3.2.1.-->
-  <xsl:variable name="isUsing2007Schema"
-                select="/root/gmd:MD_Metadata/@xsi:schemaLocation
-                          and /root/gmd:MD_Metadata/@xsi:schemaLocation = $schemaLocationFor2007"/>
 
   <!-- ================================================================== -->
   <!-- iso3code from the supplied gmdlanguage
@@ -105,6 +80,36 @@
   </xsl:template>
 
   <xsl:template name="add-namespaces">
+
+    <!-- This variable is copied from update-fixed-info.xsl. -->
+    <xsl:variable name="schemaLocation2007"
+                  select="'http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd'"/>
+
+    <!-- ================================================================= -->
+    <!-- This variable is copied from update-fixed-info.xsl. -->
+    <!-- Try to determine if using the 2005 or 2007 version
+    of ISO19139. Based on this GML 3.2.0 or 3.2.1 is used.
+    Default is 2007 with GML 3.2.1.
+    You can force usage of a schema by setting:
+    * ISO19139:2007
+    <xsl:variable name="isUsingSchema2005" select="false()"/>
+    * ISO19139:2005 (not recommended)
+    <xsl:variable name="isUsingSchema2005" select="true()"/>
+    -->
+    <xsl:variable name="isUsingSchema2005"
+                  select="(/root/gmd:MD_Metadata/@xsi:schemaLocation
+                          and /root/gmd:MD_Metadata/@xsi:schemaLocation != $schemaLocation2007)
+                        or
+                        count(//gml320:*) > 0"/>
+
+    <!-- This variable is copied from update-fixed-info.xsl. -->
+    <!-- This variable is used to migrate from 2005 to 2007 version.
+    By setting the schema location in a record, on next save, the record
+    will use GML3.2.1.-->
+    <xsl:variable name="isUsingSchema2007"
+                  select="/root/gmd:MD_Metadata/@xsi:schemaLocation
+                          and /root/gmd:MD_Metadata/@xsi:schemaLocation = $schemaLocation2007"/>
+
     <xsl:namespace name="xsi" select="'http://www.w3.org/2001/XMLSchema-instance'"/>
     <xsl:namespace name="gco" select="'http://www.isotc211.org/2005/gco'"/>
     <xsl:namespace name="gmd" select="'http://www.isotc211.org/2005/gmd'"/>
@@ -118,7 +123,7 @@
     <xsl:namespace name="napm" select="'http://www.geconnections.org/nap/napMetadataTools/napXsd/napm'"/>
 
     <xsl:choose>
-      <xsl:when test="$isUsing2005Schema and not($isUsing2007Schema)">
+      <xsl:when test="$isUsingSchema2005 and not($isUsingSchema2007)">
         <xsl:namespace name="gml" select="'http://www.opengis.net/gml'"/>
       </xsl:when>
       <xsl:otherwise>
