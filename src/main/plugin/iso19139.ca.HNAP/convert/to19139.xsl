@@ -26,13 +26,15 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 exclude-result-prefixes="#all">
 
+  <xsl:include href="functions.xsl"/>
+
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
   <!-- identity template -->
   <xsl:template match="@*|node()">
     <xsl:copy copy-namespaces="no">
+      <xsl:call-template name="add-namespaces"/>
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
-
 </xsl:stylesheet>

@@ -22,19 +22,6 @@
 	<xsl:include href="../iso19139.ca.HNAP/convert/functions.xsl"/>
   <xsl:include href="../iso19139.ca.HNAP/layout/utility-fn.xsl"/>
 
-  <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
-  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/GC_Core_Subject.rdf'), '\\', '/')))" />
-
-
-  <xsl:variable name="localeForTranslations">
-    <xsl:choose>
-      <xsl:when test="normalize-space(/root/gmd:MD_Metadata/gmd:language/gco:CharacterString) = 'eng; CAN'">#fra</xsl:when>
-      <xsl:otherwise>#eng</xsl:otherwise>
-    </xsl:choose>
-  </xsl:variable>
-
- <xsl:variable name="serviceUrl" select="/root/env/siteURL"/>
-  <xsl:variable name="node" select="/root/env/node"/>
 
   <xsl:variable name="schemaLocationFor2007"
                 select="'http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd'"/>
@@ -43,7 +30,6 @@
   <!-- Try to determine if using the 2005 or 2007 version
   of ISO19139. Based on this GML 3.2.0 or 3.2.1 is used.
   Default is 2007 with GML 3.2.1.
-
   You can force usage of a schema by setting:
   * ISO19139:2007
   <xsl:variable name="isUsing2005Schema" select="false()"/>
@@ -62,6 +48,22 @@
   <xsl:variable name="isUsing2007Schema"
                 select="/root/gmd:MD_Metadata/@xsi:schemaLocation
                           and /root/gmd:MD_Metadata/@xsi:schemaLocation = $schemaLocationFor2007"/>
+
+
+  <xsl:variable name="thesauriDir" select="XslUtilHnap:getThesauriDir()" />
+  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/external/thesauri/theme/GC_Core_Subject.rdf'), '\\', '/')))" />
+
+
+  <xsl:variable name="localeForTranslations">
+    <xsl:choose>
+      <xsl:when test="normalize-space(/root/gmd:MD_Metadata/gmd:language/gco:CharacterString) = 'eng; CAN'">#fra</xsl:when>
+      <xsl:otherwise>#eng</xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+ <xsl:variable name="serviceUrl" select="/root/env/siteURL"/>
+  <xsl:variable name="node" select="/root/env/node"/>
+
 
   <!-- We use the category check to find out if this is an SDS metadata. Please replace with anything better -->
   <xsl:variable name="isSDS"
@@ -176,30 +178,6 @@
 	</xsl:template>
 
 	<!-- ================================================================= -->
-
-  <xsl:template name="add-namespaces">
-    <xsl:namespace name="xsi" select="'http://www.w3.org/2001/XMLSchema-instance'"/>
-    <xsl:namespace name="gco" select="'http://www.isotc211.org/2005/gco'"/>
-    <xsl:namespace name="gmd" select="'http://www.isotc211.org/2005/gmd'"/>
-    <xsl:namespace name="gfc" select="'http://www.isotc211.org/2005/gfc'"/>
-    <xsl:namespace name="srv" select="'http://www.isotc211.org/2005/srv'"/>
-    <xsl:namespace name="gmx" select="'http://www.isotc211.org/2005/gmx'"/>
-    <xsl:namespace name="gts" select="'http://www.isotc211.org/2005/gts'"/>
-    <xsl:namespace name="gsr" select="'http://www.isotc211.org/2005/gsr'"/>
-    <xsl:namespace name="gss" select="'http://www.isotc211.org/2005/gss'"/>
-    <xsl:namespace name="gmi" select="'http://www.isotc211.org/2005/gmi'"/>
-    <xsl:namespace name="napm" select="'http://www.geconnections.org/nap/napMetadataTools/napXsd/napm'"/>
-
-    <xsl:choose>
-      <xsl:when test="$isUsing2005Schema and not($isUsing2007Schema)">
-        <xsl:namespace name="gml" select="'http://www.opengis.net/gml'"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:namespace name="gml" select="'http://www.opengis.net/gml/3.2'"/>
-      </xsl:otherwise>
-    </xsl:choose>
-    <xsl:namespace name="xlink" select="'http://www.w3.org/1999/xlink'"/>
-  </xsl:template>
 
 	<xsl:template match="gmd:MD_Metadata">
 		<xsl:copy copy-namespaces="no">
