@@ -2,8 +2,6 @@
 <xsl:stylesheet version="2.0"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
-                xmlns:gml320="http://www.opengis.net/gml"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <!-- There are some known discrepancies between FGP and HNAP due to misinterpretations of the standards
@@ -23,13 +21,14 @@
  for multilingual metadata records. -->
   <xsl:variable name="mainLanguage">
     <xsl:call-template name="langId_from_gmdlanguage19139">
-      <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
+      <xsl:with-param name="gmdlanguage" select="/*[@gco:isoType='gmd:MD_Metadata' or name()='gmd:MD_Metadata']/gmd:language"/>
     </xsl:call-template>
   </xsl:variable>
 
   <xsl:variable name="locales"
-                select="/root/*/gmd:locale/gmd:PT_Locale"/>
+                select="/*[@gco:isoType='gmd:MD_Metadata' or name()='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale"/>
 
+  <xsl:variable name="altLanguage" select="$locales[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/gmd:languageCode/*/@codeListValue"/>
   <xsl:variable name="altLanguageId" select="$locales[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
 
   <!-- FGP fix namespace issue
@@ -49,12 +48,10 @@
       https://github.com/metadata101/iso19139.ca.HNAP/issues/157
    -->
   <xsl:template
-    match="gmd:country/gco:CharacterString[text()='Canada' and $mainLanguage='fra']|
-           gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()='Canada' and @locale=concat('#', $altLanguageId)]"
+    match="gmd:country/gco:CharacterString[text()='Canada' and $mainLanguage='fra']/text()|
+           gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()='Canada' and @locale=concat('#', $altLanguageId) and $altLanguage='fra']/text()"
     priority="10">
-    <xsl:copy>
-      <xsl:value-of select="'Canada (le)'"/>
-    </xsl:copy>
+    <xsl:text>Canada (le)</xsl:text>
   </xsl:template>
 
   <!-- FGP fix issue where some of the data does not have the correct gmd:metadataStandardName
