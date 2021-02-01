@@ -524,7 +524,7 @@
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
-      >$loc/strings/FreeTextKeyword</sch:assert>
+      >$loc/strings/Keyword</sch:assert>
 
     </sch:rule>
 
