@@ -39,6 +39,7 @@
   <InvalidUseConstraints>Use constraints code is not valid</InvalidUseConstraints>
   <DistributionFormatName>Value is required for distribution format - File name</DistributionFormatName>
   <DistributionFormatVersion>Value is required for distribution format - File version</DistributionFormatVersion>
+  <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
 
   <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>

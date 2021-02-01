@@ -39,6 +39,7 @@
   <InvalidUseConstraints>Le code de contraintes d'utilisation n'est pas valide</InvalidUseConstraints>
   <DistributionFormatName>Une valeur est nécessaire pour: Nom du Format de distribution</DistributionFormatName>
   <DistributionFormatVersion>Une valeur est nécessaire pour: Version du Format de distribution</DistributionFormatVersion>
+  <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
 
   <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>

@@ -67,8 +67,6 @@
   <CitedResponsiblePartyPhone>Responsable de la ressource - Numéro de téléphone devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPhone>
   <DistributorPhone>Responsable de la distribution - Numéro de téléphone devrait être vide ou rempli en anglais et en français</DistributorPhone>
 
-  <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
-
   <ECCountry>Pays devrait avoir une valeur telle que définie dans la liste de codes ISO 3166. Voir https://www.iso.org/obp/ui/fr/#search/code/</ECCountry>
   <ECThesaurusTitle>Le titre du thésaurus est requis</ECThesaurusTitle>
   <ECThesaurusPubDate>La date de publication du Thésaurus est requise</ECThesaurusPubDate>
