@@ -54,17 +54,30 @@
   <xsl:function name="geonet:securityLevelList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
 
+    <xsl:variable name="locLang2char" select="if ($lang = 'fre') then 'fr' else 'en'"/>
     <xsl:variable name="security-level-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
 
     <xsl:variable name="v">
-      <xsl:for-each select="$security-level-list//rdf:Description[ns2:prefLabel[@xml:lang='en']]">
-        <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
-        <xsl:value-of select="replace(@rdf:about, 'http://geonetwork-opensource.org/EC/GC_Security_Classification#', '')" />
+      <xsl:for-each select="$security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$locLang2char]">
+        <xsl:sort select="lower-case(.)" order="ascending"/>
+        <xsl:value-of select="."/>
         <xsl:if test="position() != last()">, </xsl:if>
       </xsl:for-each>
     </xsl:variable>
 
     <xsl:value-of select="$v" />
+  </xsl:function>
+
+  <xsl:function name="geonet:appendLocaleMessage">
+    <xsl:param name="localeStringNode"/>
+    <xsl:param name="appendText" as="xs:string"/>
+
+    <xsl:for-each select="$localeStringNode">
+       <xsl:copy>
+          <xsl:copy-of select="@*"/>
+          <xsl:value-of select="concat($localeStringNode, $appendText)"/>
+       </xsl:copy>
+    </xsl:for-each>
   </xsl:function>
 
   <!-- Checks if the values in arg (can be a comma separate list of items) are all in the searchStrings list -->
@@ -632,7 +645,7 @@
 
     </sch:rule>
 
-    <sch:rule context="//gmd:MD_SecurityConstraints/gmd:userNote">
+    <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_SecurityConstraints/gmd:userNote">
 
       <sch:let name="missingTitle" value="not(string(gco:CharacterString))
               or (@gco:nilReason)" />
@@ -641,14 +654,15 @@
 
       <sch:let name="security-level-list" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
 
-      <sch:let name="userNote" value="gco:CharacterString" />
-      <sch:let name="userNoteTranslated" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
+      <sch:let name="securityLevel" value="gco:CharacterString" />
+      <sch:let name="securityLevelTranslated" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
       <sch:let name="securityLevelList" value="geonet:securityLevelList($thesaurusDir)" />
-      <sch:let name="locMsg" value="concat($loc/strings/SecurityLevel, $securityLevelList)" />
+
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityLevel, $securityLevelList)" />
 
       <sch:assert test="($missingTitle and $missingTitleOtherLang) or
-                        (string($security-level-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#', $userNote)]) and
-                         string($security-level-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#',$userNoteTranslated)]))">$locMsg</sch:assert>
+                        ($security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel and
+                         $security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]=$securityLevelTranslated)">$locMsg</sch:assert>
 
     </sch:rule>
 
@@ -713,7 +727,7 @@
 
       <sch:let name="formatTranslated" value="subsequence(tokenize($descriptionTranslated, ';'), 2, 1)" />
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
-      <sch:let name="locMsg" value="concat($loc/strings/ResourceDescriptionFormat, $resourceFormatsList)" />
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList)" />
 
       <sch:assert test="string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $format)]) and
                           string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#',$formatTranslated)])">$locMsg</sch:assert>
