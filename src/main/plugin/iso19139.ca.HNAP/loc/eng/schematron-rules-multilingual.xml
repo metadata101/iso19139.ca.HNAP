@@ -67,8 +67,6 @@
   <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
   <DistributorPhone>Distributor - Phone should be empty or filled in English and French</DistributorPhone>
 
-  <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
-
   <ECCountry>Country should have a value as defined in the ISO 3166 code list. See https://www.iso.org/obp/ui/#search/code/</ECCountry>
   <ECThesaurusTitle>Thesaurus title is required</ECThesaurusTitle>
   <ECThesaurusPubDate>Thesaurus publication date is required</ECThesaurusPubDate>
