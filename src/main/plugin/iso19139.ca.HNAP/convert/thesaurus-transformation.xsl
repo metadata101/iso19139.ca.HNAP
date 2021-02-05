@@ -241,7 +241,7 @@
                                         then $listOfLanguage
                                         else ''" />
       <xsl:copy-of
-        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $lang)"/>
+        select="geonet:add-thesaurus-info-2($currentThesaurus, $withThesaurusAnchor, /root/gui/thesaurus/thesauri, not(/root/request/keywordOnly), $lang, $listOfLanguage)"/>
     </gmd:MD_Keywords>
   </xsl:template>
 
@@ -302,6 +302,7 @@
     <xsl:param name="thesauri" as="node()"/>
     <xsl:param name="thesaurusInfo" as="xs:boolean"/>
     <xsl:param name="mdlang" as="xs:string"/>
+    <xsl:param name="listOfLanguage" />
 
     <xsl:variable name="altLang">
       <xsl:choose>
@@ -330,15 +331,23 @@
       <gmd:thesaurusName>
         <gmd:CI_Citation>
 
-              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                <gco:CharacterString><xsl:value-of select="geonet:getThesaurusTitle($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
-                <gmd:PT_FreeText>
-                  <gmd:textGroup>
-                    <gmd:LocalisedCharacterString locale="#{$altLang}"><xsl:value-of select="geonet:getThesaurusTitle($currentThesaurusFull,$altLang)"/></gmd:LocalisedCharacterString>
-                  </gmd:textGroup>
-                </gmd:PT_FreeText>
-              </gmd:title>
-
+            <xsl:choose>
+              <xsl:when test="count($listOfLanguage) > 1">
+                <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString><xsl:value-of select="geonet:getThesaurusTitle($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
+                  <gmd:PT_FreeText>
+                    <gmd:textGroup>
+                      <gmd:LocalisedCharacterString locale="#{$altLang}"><xsl:value-of select="geonet:getThesaurusTitle($currentThesaurusFull,$altLang)"/></gmd:LocalisedCharacterString>
+                    </gmd:textGroup>
+                  </gmd:PT_FreeText>
+                </gmd:title>
+              </xsl:when>
+              <xsl:otherwise>
+                <gmd:title>
+                  <gco:CharacterString><xsl:value-of select="geonet:getThesaurusTitle($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
+                </gmd:title>
+              </xsl:otherwise>
+            </xsl:choose>
 
               <xsl:variable name="thesaurusDate"
                             select="normalize-space($thesauri/thesaurus[key = $currentThesaurus]/date)"/>
@@ -407,14 +416,24 @@
 
           <gmd:citedResponsibleParty>
             <gmd:CI_ResponsibleParty>
-              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                <gco:CharacterString><xsl:value-of select="geonet:getThesaurusResponsibleParty($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
-                <gmd:PT_FreeText>
-                  <gmd:textGroup>
-                    <gmd:LocalisedCharacterString locale="#{$altLang}"><xsl:value-of select="geonet:getThesaurusResponsibleParty($currentThesaurusFull,$altLang)"/></gmd:LocalisedCharacterString>
-                  </gmd:textGroup>
-                </gmd:PT_FreeText>
-              </gmd:organisationName>
+              <xsl:choose>
+                <xsl:when test="count($listOfLanguage) > 1">
+                  <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString><xsl:value-of select="geonet:getThesaurusResponsibleParty($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#{$altLang}"><xsl:value-of select="geonet:getThesaurusResponsibleParty($currentThesaurusFull,$altLang)"/></gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:organisationName>
+                </xsl:when>
+                <xsl:otherwise>
+                  <gmd:organisationName>
+                    <gco:CharacterString><xsl:value-of select="geonet:getThesaurusResponsibleParty($currentThesaurusFull,$mdlang)"/></gco:CharacterString>
+                  </gmd:organisationName>
+                </xsl:otherwise>
+              </xsl:choose>
+
               <gmd:role>
                 <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
               </gmd:role>
