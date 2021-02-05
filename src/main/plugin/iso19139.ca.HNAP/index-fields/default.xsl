@@ -329,10 +329,10 @@
       <xsl:variable name="listOfKeywords">{
         <xsl:variable name="keywordWithNoThesaurus"
                       select="//gmd:MD_Keywords[
-                                not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:title/*/text() = '']/
+                                not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text() = '']/
                                   gmd:keyword[*/text() != '']"/>
-        <xsl:for-each-group select="//gmd:MD_Keywords[gmd:thesaurusName/*/gmd:title/*/text() != '']"
-                            group-by="gmd:thesaurusName/*/gmd:title/*/text()">
+        <xsl:for-each-group select="//gmd:MD_Keywords[gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text() != '']"
+                            group-by="gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text()">
           '<xsl:value-of select="replace(current-grouping-key(), '''', '\\''')"/>' :[
           <xsl:for-each select="current-group()/gmd:keyword/(gco:CharacterString|gmx:Anchor)">
             {'value': <xsl:value-of select="concat('''', replace(., '''', '\\'''), '''')"/>,
