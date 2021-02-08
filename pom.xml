@@ -183,6 +183,24 @@
             </executions>
           </plugin>
           <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>docs-assembly</id>
+                <phase>package</phase>
+                <goals><goal>single</goal></goals>
+                <inherited>false</inherited>
+                <configuration>
+                 <appendAssemblyId>false</appendAssemblyId>
+                 <descriptors>
+                  <descriptor>src/assembly/docs.xml</descriptor>
+                 </descriptors>
+                 <finalName>${project.build.finalName}-doc</finalName>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
             <artifactId>maven-resources-plugin</artifactId>
             <executions>
               <execution>

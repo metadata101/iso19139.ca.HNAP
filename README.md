@@ -18,13 +18,15 @@ The plugin can be deployed manually in an existing GeoNetwork installation:
 
 1. Download from [releases](https://github.com/metadata101/iso19139.ca.HNAP/releases) page.
    
-   There are two files for each release, a `jar` and a `zip`.
+   Each release includes a `jar`, `zip`, and `doc` download.
 
 2. Extract contents of the `schema-iso19139.ca.HNAP` zip download into `WEB-INF/data/config/schema_plugins/iso19139.ca.HNAP`.
 
 3. Copy the `schema-iso19139.ca.HNAP` jar to geonetwork `WEB-INF/libs`
 
-4. Restart geonetwork
+6. Copy the `schema-iso19139.ca.HNAP` doc to geonetwork `doc`
+
+5. Restart geonetwork
 
 There is some custom initialization code run when GeoNetwork starts up:
 
@@ -67,15 +69,52 @@ The best approach is to add the plugin as a submodule:
 
 3. Restart geonetwork
 
+
+### Release
+
+1. Update the `pom.xml` version information.
+
+   ```
+   find . -name ``pom.xml`` -exec sed -i '' 's/3.10.6-SNAPSHOT/3.6.10-0/g' {} \;
+   ```
+2. Build
+
+3. Commit and tag
+   
+   ```
+   git commit -am "Release 3.10.6"
+   git tag -a 3.10.6 -m "Release 3.10.6"
+   ```
+
+4. Upload artifacts from `target` to the new github page.
+   
+   ```
+   ls target/*.zip
+   ls target/*.jar
+   ```
+
+5. Restore the `pom.xml` version information.
+
+
 ## Documentation
 
 Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme]. GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
 
+Generated docs:
 ```
 mvn clean compile -Pdocs
 ```
 
-Docs generated in `target/html/index.html`.
+Docs generated into `target/html/index.html`:
+```
+open target/html/index.html
+```
+
+Package docs into `zip`:
+
+```
+mvn package -Pdocs
+```
 
 ### update github pages
 
