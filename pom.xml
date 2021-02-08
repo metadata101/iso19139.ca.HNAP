@@ -4,30 +4,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>schemas</artifactId>
-    <groupId>org.geonetwork-opensource</groupId>
-    <version>3.7</version>
+    <groupId>org.geonetwork-opensource.schemas</groupId>
+    <version>3.10-SNAPSHOT</version>
     <!-- tested with 3.10.6-SNAPSHOT -->
   </parent>
   <modelVersion>4.0.0</modelVersion>
-
+  <version>3.10-SNAPSHOT</version>
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
   <name>Schema Plugin HNAP ISO19139/119</name>
-  <version>3.10-SNAPSHOT</version>
+
   <description>
      GeoNetwork schema plugin for HNAP ISO19139/119 standard
   </description>
 
   <dependencies>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>org.geonetwork-opensource.schemas</groupId>
       <artifactId>schema-core</artifactId>
-      <version>3.7</version>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
-     <groupId>${project.groupId}</groupId>
+     <groupId>org.geonetwork-opensource</groupId>
      <artifactId>core</artifactId>
-     <version>${gn.project.version}</version>
+     <version>${project.version}</version>
      <scope>provided</scope>
     </dependency>
     <dependency>
@@ -46,16 +46,16 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>org.geonetwork-opensource</groupId>
       <artifactId>common</artifactId>
-      <version>${gn.project.version}</version>
+      <version>${project.version}</version>
       <scope>provided</scope>
     </dependency>
     <!-- test scope -->
     <dependency>
-      <groupId>${project.groupId}</groupId>
+      <groupId>org.geonetwork-opensource.schemas</groupId>
       <artifactId>schema-core</artifactId>
-      <version>3.7</version>
+      <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>

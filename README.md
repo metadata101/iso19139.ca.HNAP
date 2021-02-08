@@ -44,7 +44,7 @@ There is some custom initialization code run when GeoNetwork starts up:
 
 The best approach is to add the plugin as a submodule:
 
-1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.10.x/add-schema.sh] for automatic deployment:
+1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.10.x/add-schema.sh) for automatic deployment:
 
    ```
    ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 3.10.x
@@ -130,7 +130,7 @@ jenkins:
 1. Update the ``pom.xml`` version information.
 
    ```
-   find . -name ``pom.xml`` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
+   find . -name `pom.xml` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
    ```
    
 2. Build everything, including documentation:
@@ -161,7 +161,7 @@ jenkins:
 5. Restore the `pom.xml` version information.
 
    ```
-   find . -name ``pom.xml`` -exec sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' {} \;
+   find . -name `pom.xml` -exec sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' {} \;
    ```
 6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
    
@@ -180,5 +180,6 @@ jenkins:
    
    ```
    git add pom.xml README.md
-   git commit "Start 3.10.8 development"
+   git commit -m "Start 3.10.8 development"
+   git push
    ```
