@@ -117,7 +117,7 @@ html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {
     'logo_only': False,
-    'display_version': False,
+    'display_version': True,
     'prev_next_buttons_location': None,
     'style_external_links': True,
     'includehidden': False,
