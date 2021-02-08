@@ -2,13 +2,15 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the *North American Profile of ISO 19115:2003 - Geographic information - Metadata* used nationally.
 
-For details on this release see [3.6.0 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/3?closed=1) release notes for details.
+For details on this release see [3.7.0 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/4?closed=1) release notes for details.
+
+The project does not maintain a mailing list, instead please open up an issue with the [discussion](https://github.com/metadata101/iso19139.ca.HNAP/issues?q=is%3Aissue+label%3Adiscussion) tag.
 
 ## Installation
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork `3.10.x`, not tested with prior versions!
+Use GeoNetwork ``3.10.x``, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -65,47 +67,22 @@ The best approach is to add the plugin as a submodule:
 
 1. Copy the `iso19139.ca.HNAP` folder from `schemas/iso19139.ca.HNAP/src/main/plugin` into geonetwork `WEB-INF/data/config/schema_plugins/`.
 
-2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs`.
+2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs``.
 
 3. Restart geonetwork
-
-
-### Release
-
-1. Update the `pom.xml` version information.
-
-   ```
-   find . -name ``pom.xml`` -exec sed -i '' 's/3.10.6-SNAPSHOT/3.6.10-0/g' {} \;
-   ```
-2. Build
-
-3. Commit and tag
-   
-   ```
-   git commit -am "Release 3.10.6"
-   git tag -a 3.10.6 -m "Release 3.10.6"
-   ```
-
-4. Upload artifacts from `target` to the new github page.
-   
-   ```
-   ls target/*.zip
-   ls target/*.jar
-   ```
-
-5. Restore the `pom.xml` version information.
-
 
 ## Documentation
 
 Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme]. GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
 
 Generated docs:
+
 ```
 mvn clean compile -Pdocs
 ```
 
 Docs generated into `target/html/index.html`:
+
 ```
 open target/html/index.html
 ```
@@ -128,12 +105,14 @@ git push
 ### sphinx-build environment
 
 windows:
+
 ```
 pip install -U sphinx
 pip install hieroglyph recommonmark sphinx-copybutton
 ```
 
 macOS:
+
 ```
 brew install python
 brew install sphinx-doc
@@ -144,3 +123,62 @@ jenkins:
 
 * [Dockerfile](https://github.com/GeoCat/jenkins-docker-agent-docs/blob/master/Dockerfile)
 
+## Project Procedures
+
+### Release Process
+
+1. Update the ``pom.xml`` version information.
+
+   ```
+   find . -name ``pom.xml`` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
+   ```
+   
+2. Build everything, including documentation:
+   
+   ```
+   mvn clean install -Pdocs
+   ```
+
+3. Commit and tag
+   
+   ```
+   git add pom.xml
+   git commit -am "Version 3.10.7"
+   git tag -a 3.10.6 -m "Release 3.10.7"
+   git push origin 3.10.7
+   ```
+
+4. Navigate to release page: https://github.com/metadata101/iso19139.ca.HNAP/releases
+
+   Click ``Edit tag`` button:
+   
+   * Title: ``iso19139.ca.HNAP 3.10.7 Release``
+   
+   * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/3.10.x/README.md)
+
+   * Upload artifacts from ``target`` to the new github page.
+
+5. Restore the `pom.xml` version information.
+
+   ```
+   find . -name ``pom.xml`` -exec sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' {} \;
+   ```
+6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
+   
+   * Title: ``3.10.8``
+   * Date: leave empty
+   * Content: ``Released in conjunction with core-geonetwork 3.10.8.``
+   
+7. Update ``README.md`` to link to new milestone:
+    
+   ```
+   For details on this release see [3.10.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/5?closed=1)
+   release notes for details.
+   ```
+   
+8. Commit 
+   
+   ```
+   git add pom.xml README.md
+   git commit "Start 3.10.8 development"
+   ```
