@@ -588,11 +588,6 @@
               </snippet>
             </template>
           </action>
-
-          <!--<section name="distributionResources">
-            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />
-          </section>-->
-
         </section>
       </tab>
 

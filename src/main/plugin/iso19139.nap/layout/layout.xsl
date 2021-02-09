@@ -71,6 +71,9 @@
   </xsl:template>
 
 
+  <!-- Don't render thumbnails - use the thumbnails panel to edit them -->
+  <xsl:template mode="mode-iso19139" priority="3005" match="gmd:graphicOverview[$schema = 'iso19139.nap']" />
+
   <!-- napm:napMD_FileFormatCode_PropertyType is not a codelist element even if having codeList attribute.
        It's present in gmd:MD_BrowseGraphic that is handled in the Thubnails panel. Avoid processing it -->
   <xsl:template mode="mode-iso19139" priority="3005" match="*[*/@codeList and */@xsi:type='napm:napMD_FileFormatCode_PropertyType']" />
