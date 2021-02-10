@@ -4,7 +4,15 @@ The Canadian GeoNetwork community is pleased share the *ISO Harmonized North Ame
 
 For details on this release see [3.7.0 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/4?closed=1) release notes for details.
 
-The project does not maintain a mailing list, instead please open up an issue with the [discussion](https://github.com/metadata101/iso19139.ca.HNAP/issues?q=is%3Aissue+label%3Adiscussion) tag.
+## User Manual
+
+[User Manual (HNAP)](https://metadata101.github.io/iso19139.ca.HNAP/) is provided for end-users. The user manual explores catalog use using HNAP examples. This is an end-user supliment to the far more technical [GeoNetwork User and Developer Manuals](https://geonetwork-opensource.org/manuals/trunk/en/index.html).
+
+This user manual is available for local installation. 
+
+## Communication
+
+The [project issue tracker](https://github.com/metadata101/iso19139.ca.HNAP/issues) is used for communication, with ongoing topics tagged [discussion](https://github.com/metadata101/iso19139.ca.HNAP/issues?q=is%3Aissue+label%3Adiscussion).
 
 ## Installation
 
@@ -73,7 +81,7 @@ The best approach is to add the plugin as a submodule:
 
 ## Documentation
 
-Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme]. GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
+Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/). GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
 
 Generated docs:
 
@@ -91,15 +99,6 @@ Package docs into `zip`:
 
 ```
 mvn package -Pdocs
-```
-
-### update github pages
-
-```
-mvn clean install -Pdocs
-git add docs
-git commit -m "update docs"
-git push
 ```
 
 ### sphinx-build environment
@@ -124,6 +123,17 @@ jenkins:
 * [Dockerfile](https://github.com/GeoCat/jenkins-docker-agent-docs/blob/master/Dockerfile)
 
 ## Project Procedures
+
+### Publish User Guide Process
+
+### update github pages
+
+```
+mvn clean install -Pdocs
+git add docs
+git commit -m "update docs"
+git push
+```
 
 ### Release Process
 
