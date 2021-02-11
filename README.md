@@ -145,9 +145,9 @@ Translation workflow:
    sphinx-intl -c src/sphinx/conf.py update -p target/gettext -l fr
    ```
 
-3. Each ``rst`` file has a matching ``src/local/fr/LC_MESSAGES`` translation.
+3. Each ``rst`` file has a matching messages file in ``src/local/fr/LC_MESSAGES``.
 
-4. Message files follow the ``gettext`` format:
+4. Message files follow the ``gettext`` portable object ``po`` format:
    
    ```
    #: ../../src/sphinx/index.rst:3 338fd9f388f64839963b54e20898e403
@@ -155,14 +155,18 @@ Translation workflow:
    msgstr "Manuel d'Utilisateur"
    ```
    
+   Messages are described using:
+   
    * ``#`` a comment documenting the line number, and a uuid used to help as content is updated over time
    * ``msgid`` origional
    * ``msgstr`` translation, please take care not to break sphinx directives
+   
+   Plenty of tools are available to work with 
 
 4. Optional: translates images, figures and screen snaps:
 
-   * ``img/sample.png`` origional, `img/fr/sample.png`` translation.
-   * ``figure/example.svg`` origional, ``figure/fr/example.svg`` translation.
+   * ``img/sample.png`` origional, `img/sample_fr.png`` translation.
+   * ``figure/example.svg`` origional, ``figure/example_fr.svg`` translation.
    
 4. Build with `fr` language
    
@@ -171,7 +175,9 @@ Translation workflow:
    ```
 
 5. For more information:
-   
+  
+   * https://www.sphinx-doc.org/en/master/usage/advanced/intl.html
+   * https://www.gnu.org/software/gettext/
    * https://sphinx-intl.readthedocs.io/en/master/quickstart.html
    * https://docs.readthedocs.io/en/stable/guides/manage-translations.html
    * https://docs.transifex.com/integrations/sphinx-doc

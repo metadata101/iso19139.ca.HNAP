@@ -83,8 +83,8 @@ locale_dirs = ['../locale/']
 language = 'en'
 
 # filename format for language-specific figures
-# Example image.fr.png
-figure_language_filename = '{path}{language}/{basename}{ext}'
+# Example img/image.pngimage.fr.png
+figure_language_filename = '{path}/{basename}_{language}{ext}'
 
 # Document text domain
 gettext_compact = False
