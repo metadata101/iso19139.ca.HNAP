@@ -27,6 +27,8 @@ target/
 .*/
 out/
 
+# Sphinx-build
+*.mo
 
 # Eclipse project files
 .metadata

@@ -1,0 +1,400 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../src/sphinx/editor/validation/index.rst:2
+#: 22898c81dbac40e487ee53a935c04a88
+msgid "Validation"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:4
+#: 976e3a8421f545b983b6fc184448e074
+msgid ""
+"Records are defined using the North American Profile (NAP) which lays out"
+" the structure of the document, as well as checking how some of the "
+"values interact. Validating a document checks that are record is "
+"complete."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:6
+#: c6424e9bfcd041359ddaaab796c47d41
+msgid ""
+"While invalided or partially complete records can be useful, validation "
+"is an important step in confirm the records are machine readable."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:8
+#: 3f2bbb991c4f4104a58c5d65e9ad425e
+msgid ""
+"Schema validation is used to check the structure of the document, "
+"reporting on required elements, and if elements are in the prescribed "
+"order."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:10
+#: cf705215c29947459804a147015be923
+msgid ""
+"Schematron validation rules are used to double check the document values,"
+" and how values interact. As an example a schematron rule will check that"
+" the organization name is \"Government of Canada\"."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:12
+#: 0ca5e906d4ff4a69b3b10297df9470c3
+msgid ""
+"Technically we are working from the from the \"Harmonized\" North "
+"American Profile (HNAP) which has some Canadian checks for multi-lingual "
+"content."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:15
+#: af579023f8044c14a18970465259204c
+msgid "Editor Validation"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:17
+#: af8874331c054d9dbfbd81a47465a621
+msgid "To validate a document from the editor:"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:19
+#: db90bcab6a1848d2a86933c57136b320
+msgid "Select the validate button at the top of the page."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:23
+#: 8fcc1a4ca15a419b93e729a4db7424f9
+msgid "Running validation from the editor"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:25
+#: 2f70accac1dc4e38b62c809f6aa9cff6
+msgid ""
+"Feedback about the document structure (schema validation) is provided in "
+"the editor inline near the field which is incorrect."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:29
+#: ../../src/sphinx/editor/validation/index.rst:46
+#: a85b0ee193404b7f8324fe05407e508a bb99e13492b445f7b4c0d56be76dc766
+msgid "Data identification publication date is required."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:31
+#: a459ef758a954a43bdeb7db38c45f519
+msgid ""
+"In the example above the `xsd` errors represent issues with the document "
+"structure. And the `HNAP validation rules (common)` provide feedback from"
+" checking document contents."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:33
+#: 0d551fcfecfb4417b464a2d8ea72547f
+msgid ""
+"Feedback about document contents (schematron validation) is provided in "
+"the editor along the right hand side."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:37
+#: e0b7436d316149caa81a29e9562ece67
+msgid ""
+"This reports the number of rules failed, if the rule is associated with a"
+" specific field (like the date check above) the message is shown in the "
+"editor near the problem. If the rule is checking the values are "
+"consistent between fields the message is shown here on the right hand "
+"side."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:40
+#: 239a2ccd099c404e8b0ddc70bfab8d6a
+msgid "Data identification"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:42
+#: 06e4be46dccd494b9dcdc2746fa2a418
+msgid "To resolve data identification missing a publication date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:48
+#: fec7a080566943fcb0e2defeb6abcdbc
+msgid ""
+"Fill in a date value, there are options to provide a year, year and "
+"month, or a complete date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:52
+#: 1fdb0057a3e44a6ca8c1dbe8b1083a58
+msgid "Defining publication date as 2012"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:54
+#: ea553e980f904358a8e67b1a2c4ab6c3
+msgid "A calendar is provided when filling in a date, or date time."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:58
+#: da685910ac4a427db0d31def3bf35eee
+msgid "Use of calendar to select a publication date"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:60
+#: 6e2d2f6c0baf4183b0b6c27586ecc932
+msgid "The same approach can be used data identification missing a creation date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:62
+#: fdfb93944b544d40be115bd4946a2f1d
+msgid "Take care that creation date is before publication date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:64
+#: afbaf4d09c4d474a8a747159e6cc1b75
+msgid "To correct data identification status \"Value is required for status\"."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:68
+#: 185fe5106af54daf9e5593961a5cb916
+msgid "Value is required for status"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:70
+#: 2f00f27e78ee40cc8c7282d9ab14225a
+msgid ""
+"Select one of the values from the drop down list, a tooltip provides the "
+"definition of each value."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:73
+#: 080f3b7d1c6942b6a16c1fc59e85d124
+msgid "To correct data identification missing topic category."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:77
+#: fd4d4ad9b7c14fbd81341fad10e18eb5
+msgid "Data identification topic category is required"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:79
+#: 693d1c8d1df14038b79554505c743889
+msgid ""
+"Start typing to see the predefined topic categories provided by the north"
+" american profile."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:83
+#: 4e2fb0489adf4a67b9de9d91bd2ecb3b
+msgid "Autocomplete topic categories"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:85
+#: 06e40515ad634628a8362bf07e4699db
+msgid "Multiple topic categories can be used."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:87
+#: e6c50157001042298d2c7b13b5866f82
+msgid ""
+"This one is a little tricky, data identification \"core subject thesaurus"
+" keywords are manditory\"."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:91
+#: 0b72cdaa6d18490ea60b95602b1cfd9d
+msgid "Core subject keywords are required"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:93
+#: 7f0018cc6a13400c9e71ca45823c9981
+msgid ""
+"This checks that the keywords section includes at least one describing "
+"the record subject using a list provided by the Canadian government."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:95
+#: 5a4653ef0fc24a4481f6659e27090484
+msgid ""
+"Locate the `Choose keywords from thesaurus` actions, and choose "
+"`Government of Canada Core Subject Thesaurus` from the list."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:99
+#: bf0c89233a814ab39cc2716ac2cb18c4
+msgid "Choose keywords from a thesaurus"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:101
+#: 8724b78d69bb4991bb8cf6a69982a646
+msgid ""
+"Locate the heading for core subject thesaurus, and start typing to select"
+" one or more predefined keywords."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:105
+#: 80f181cbd2b34a30a2415a9ce994a4f9
+msgid "Historic subject recommendations"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:110
+#: b9e85cd3e7f749449eb57afb3dc9c3e2
+msgid "Cited responsible party"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:112
+#: ca834b281d1044ca8ec3e6704f79e402
+msgid "To fix cited responsible party missing email address."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:118
+#: 4b9298a749654df1b0bb0d6c406cdc88
+msgid "Fill in email address."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:123
+#: 36f457ea69fd4550bbc69d0070acb79c
+msgid "Resource constraints"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:125
+#: 71604d80cf75462082e6864a79dd8e47
+msgid ""
+"To address resource constraints missing temporal extent begin date or end"
+" date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:129
+#: 76249f130cfe4e5b8fcf6d967614238c
+msgid "Value is required for Begin Date"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:131
+#: 0cb16d8b359a4b5aad530cd35e2cadd2
+msgid ""
+"Use the :guilabel:`Begin Date` and :guilabel:`End Date` fields to define "
+"the temporal extent. These values can be provided numerically for `year` "
+"and` year and month`, or using a calendar to define `date `and `date and "
+"time`."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:135
+#: d00beca4dddd4048bae9eef48cb5c2f8
+msgid "Temporal extent begin and end date."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:138
+#: 9ccbf04e33bd408a891a92e60084e1de
+msgid "Distribution"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:140
+#: c815445a488049048ea7a2d1a962f90d
+msgid "To address distribution format missing file format and version details."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:144
+#: 560483f83fa84dbfb35535c5e6a52688
+msgid ""
+"Locate :menuselection:`Distribution --> Distribution Formats` heading. "
+"Each dataset may be available in several different formats, this message "
+"requires us to be very specific about the file format used providing both"
+" the format name and verison number."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:148
+#: 2720bf7c542d4c639eb0291e0c645874
+msgid "Distribution format requires file format and file version"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:150
+#: ffe05df3d77b4e3baec36502b1c422a4
+msgid "Select a file format from the list, and enter a file version number:"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:152
+#: 77c158439d3449f79b7a35ea8f45cba0
+msgid "`zip`"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:154
+#: b025f27d854643598f079d0b7a379d9f
+msgid ""
+"The filename extension can often be used to determine format name, you "
+"may need to check the document properties to determine the specific "
+"version."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:158
+#: 6f0305ff074b4959a020048c49d20711
+msgid "File format `zip` version `6.3.9`"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:160
+#: a269dabfddb84a83a685323b85e899ee
+msgid "Examples:"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:162
+#: 8426180262634904ae8576a9dd0e73c0
+msgid ":file:`pdf` version `1.4` as reported using operating system properties"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:163
+#: 9bb3de9125594baa99494e34b62b53a3
+msgid ""
+":file:`zip` version `2.0` using :command:`zipinfo` command line, "
+"apparently the zip format is still being developed with `6.3.9` being the"
+" latest 2020 release."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:165
+#: 16f282cccfd94d27926a4efd5d211eee
+msgid "To fix distributor contact organization name."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:169
+#: a1d01a056ce7401a8e4cb06ec8c49de7
+msgid "The organization name is defined in three parts:"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:171
+#: f02e51c674ed4a1d911f742e8dd69960
+msgid "`Government of Canada` is required"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:172
+#: 64c88fb8a7114c01b1fab0b256b4f806
+msgid ""
+"A department name, type in an approriate value (or choose an autocomplete"
+" option)"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:173
+#: b5e1334ed2f44c4aa58bcc515577a4bc
+msgid "A team or group name, optional"
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:175
+#: cf4aeaef2d944b268ee28646f9eb2ea9
+msgid "For this record we are supplying :kbd:`Tourism and Culture`."
+msgstr ""
+
+#: ../../src/sphinx/editor/validation/index.rst:179
+#: 314306bf8ff54576ba86cf64680a097b
+msgid "Organization name"
+msgstr ""
+

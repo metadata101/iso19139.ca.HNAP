@@ -124,6 +124,58 @@ jenkins:
 
 ## Project Procedures
 
+### Internationalization
+
+Before you start:
+```
+pip install sphinx-intl
+```
+
+Translation workflow:
+
+1. Geneate `pot` files:
+
+   ```
+   sphinx-build -b gettext src/sphinx target/gettext
+   ```
+
+2. Generate messages for translation
+
+   ```
+   sphinx-intl -c src/sphinx/conf.py update -p target/gettext -l fr
+   ```
+
+3. Each ``rst`` file has a matching ``src/local/fr/LC_MESSAGES`` translation.
+
+4. Message files follow the ``gettext`` format:
+   
+   ```
+   #: ../../src/sphinx/index.rst:3 338fd9f388f64839963b54e20898e403
+   msgid "User Manual"
+   msgstr "Manuel d'Utilisateur"
+   ```
+   
+   * ``#`` a comment documenting the line number, and a uuid used to help as content is updated over time
+   * ``msgid`` origional
+   * ``msgstr`` translation, please take care not to break sphinx directives
+
+4. Optional: translates images, figures and screen snaps:
+
+   * ``img/sample.png`` origional, `img/fr/sample.png`` translation.
+   * ``figure/example.svg`` origional, ``figure/fr/example.svg`` translation.
+   
+4. Build with `fr` language
+   
+   ```
+   sphinx-build -q -N -W --keep-going -n -j auto -b html -Dhtml_theme=sphinx_rtd_theme -Dlanguage=fr -d=target/doctrees src/sphinx target/fr
+   ```
+
+5. For more information:
+   
+   * https://sphinx-intl.readthedocs.io/en/master/quickstart.html
+   * https://docs.readthedocs.io/en/stable/guides/manage-translations.html
+   * https://docs.transifex.com/integrations/sphinx-doc
+   
 ### Publish User Guide Process
 
 ### update github pages
