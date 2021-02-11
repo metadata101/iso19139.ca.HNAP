@@ -728,22 +728,7 @@
     <xsl:choose>
       <!-- small thumbnail -->
       <xsl:when test="$images/image[@type='thumbnail' and @lang=$langId]">
-
-        <xsl:choose>
-
-          <!-- large thumbnail link -->
-          <xsl:when test="$images/image[@type='overview']">
-            <a href="javascript:popWindow('{$images/image[@type='overview'][1]}')">
-              <img class="full-width" src="{$images/image[@type='thumbnail'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
-            </a>
-          </xsl:when>
-
-          <!-- no large thumbnail -->
-          <xsl:otherwise>
-            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$langId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
-          </xsl:otherwise>
-        </xsl:choose>
-
+        <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$langId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
       </xsl:when>
 
       <!-- unknown thumbnail (usually a url so limit size) -->
@@ -758,22 +743,12 @@
 
       <!-- small thumbnail other lang -->
       <xsl:when test="$images/image[@type='thumbnail' and @lang=$otherLangId]">
+        <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$otherLangId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
+      </xsl:when>
 
-        <xsl:choose>
-
-          <!-- large thumbnail link -->
-          <xsl:when test="$images/image[@type='overview']">
-            <a href="javascript:popWindow('{$images/image[@type='overview'][1]}')">
-              <img class="full-width" src="{$images/image[@type='thumbnail'][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
-            </a>
-          </xsl:when>
-
-          <!-- no large thumbnail -->
-          <xsl:otherwise>
-            <img class="full-width" src="{$images/image[@type='thumbnail' and @lang=$otherLangId][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
-          </xsl:otherwise>
-        </xsl:choose>
-
+      <!-- thumbnail no lang -->
+      <xsl:when test="$images/image[@type='thumbnail' and (not(string(@lang)))]">
+        <img class="full-width" src="{$images/image[@type='thumbnail' and (not(string(@lang)))][1]}" alt="{/root/gui/strings/thumbnail}" onerror="this.src = '{/root/gui/url}/images/nopreview.png'"/>
       </xsl:when>
 
       <!-- unknown thumbnail (usually a url so limit size) -->
