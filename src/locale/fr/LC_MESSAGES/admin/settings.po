@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../src/sphinx/admin/settings.rst:2 03200042974f48e5bce386a7f012ce6e
+msgid "Settings"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:5 f66a9d95179044d29a6b10a8c8dfddde
+msgid "Settings: System"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:7 f509485a966c429b962b85bb9bd51ede
+msgid ""
+"Common :menuselection:`Admin Console > Settings` to review from the "
+":guilabel:`Settings` page:"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:9 905a0579f17e4937aebd2595c03914b7
+msgid "Catalog server:"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:11 7dacab670e39466582bf7ed5e942ce64
+msgid "Network details: Update to accurately identify this web service."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:13 28dce3cc59754b5994c0a30b8b199d65
+msgid ""
+"Log level: Change level of detail reported for troubleshooting, return to"
+" `PROD` for general use."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:17 f3bb9d19e4d84636aa7c7a61add83b44
+msgid "Catalog server"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:19 08799978c3144765b4a52d888135d5ef
+msgid "Feedback: mail configuration"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:23 de822213b89d4584b391080e91a3cb5b
+msgid "Feedback settings."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:25 3790c23364e545b88950cdd80b436a57
+msgid ""
+"Proxy server: optional proxy used to allow geonetwork to access external "
+"web services."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:29 1a14f203fd8b490f83b952c9650b1ebb
+msgid "Proxy service"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:31 1e46abf034ef49d89d2fdc1f778ccc52
+msgid ""
+"A subset of settings for :menuselection:`Admin Console > Settings` are "
+"required for validation and managed during application startup."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:33 17aaf42ff36d451082d1eb0e5e85b1f3
+msgid "Site:"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:35 2ae5c076702a42c29068729d5be0aaea
+msgid "system/site/name"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:36 2bfa3db975d2459eb6c1be49fda32869
+msgid "system/site/organization"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:38 fb3971df336c44e698868d8e1e96fed0
+msgid "Schema settings:"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:40 0e3d97e3d97b4ceca893b3b6e11160cf
+msgid "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:41 5ac226ad220d44ac8222a3e83a398c70
+msgid "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:42 d778838073554f148ef6b7df4365210a
+msgid "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:43 8722f3dd96e642ec8219e3b5e79e93b6
+msgid "system/metadata/validation/removeSchemaLocation"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:45 669a701bd82d412e963e79046a8aec99
+msgid ""
+"See initialization file :file:`initialization/settings/settings.json` for"
+" details."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:48 b0f7d91feae245e9b31afc0a374c11a6
+msgid "Settings: User Interface"
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:50 a6e8bd8289f84ab8924a60204337f015
+msgid ""
+"Settings for :menuselection:`Admin Console > Settings` :guilabel:`UI "
+"Settings` page are replaced during application startup. These settings "
+"are used to configure the custom theme."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:52 b5f62466a5594b06809c81ca0a89301f
+msgid "See :file:`initialization/settings/uisettings.json` for details."
+msgstr ""
+

@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../src/sphinx/editor/edit/index.rst:2 25204073a0804f82b6137f68b3fc3495
+msgid "Edit"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:5 d349e76f85d34327ae52fc9f09542cf2
+msgid "Edit record"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:7 8741978e6d734dee860fd0d9df9537f7
+msgid "There are several ways to open the record editor when viewing a record:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:11 b085df665fe24615b88c88345425046b
+msgid "Record view edit"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:13 ae16ac379ad34b0ab2bcb19fb356e3b2
+msgid ""
+"The record editor is started using the :guilabel:`Basic view`, showing "
+"the document title, current editor status, and a toolbar of editor "
+"actions."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:17 13189a758e3049d8adeef3bd31fdfae5
+msgid "Record editor basic view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:19 ebbc99d6d00549afa8d9597395266dcd
+msgid ""
+"The :guilabel:`Categories` dropdown shows the categorization of the "
+"record. To update use the checkboxes to assign one or more categories to "
+"the record."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:23 756738c8191e466a85f7701440dc1e92
+msgid "Change metadata Categories"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:25 9a0c0e5376054936ab4fc606cbc939b4
+msgid ""
+"Use the :guilabel:`Group` to show the group containing the record. To "
+"update use the radio button to transfer the record to a different group."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:29 7e8256426f4e48ccb4d5f30bb168788a
+msgid "Change metadata group"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:31 0c9cb838200f4be2b22cb5b703c53e61
+msgid ""
+"Use the :guilabel:`Validate` button to check the structure and contents "
+"of the record."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:33 d176ac1571624d8c8d30656c916e3abb
+msgid "Validation feedback is shown on the right-hand side of the screen."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:37 2eff9a6144924107a85c19f4e40a861d
+msgid "Record validation"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:39 33a767cc21054a4ca5f5c3467e4d8494
+msgid "Editing is completed using:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:41 1e6c6500952b44dca0169660f954a5c5
+msgid ":guilabel:`Cancel` to abandon any changes and return to viewing record."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:42 b3faa55a4e4c4e0e90c9e4fe73125b70
+msgid ":guilabel:`Save & close` to apply changes and return to viewing record."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:43 d68d5439d02348d28a440b57b9dfc982
+msgid ":guilabel:`Save metadata` to apply changes and continue editing"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:47 00eb6555c5724f169ac6f709bdaf0426
+msgid "Record apply, save and cancel options"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:49 2e41bdbe1c984f82ada2d4fd6d0d6a62
+msgid ""
+"Use the :guilabel:`View mode` (at the top of the screen on the far right)"
+" to choose the editor you would like to use."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:51 5f8de25c79634ad9acb5057d3557c8dd
+msgid "Basic view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:52 d57d64cedb59486c860f69ee4d694963
+msgid "Advanced view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:53 c32150af8fc34180b0812bb23c6622c5
+msgid "XML view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:55 fbb5d2e878de4ec2b668763e0cabeb54
+msgid ""
+"Options to toggle tooltips and show more detail adjust how the editor is "
+"shown."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:57 c69662edd3c4409492478382bbe6d9e0
+msgid ""
+":guilabel:`Basic view` is recommended and provides easy access to the "
+"most commonly required fields."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:59 7cb9be46c37145589a7b3b1179bd64ae
+msgid "Basic view is often used when editing an existing document."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:63 e76cdd3e6a7843709e5429041cad8c75
+msgid "Display mode basic view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:65 b63530c9bfdc40439d594c636be3d2b3
+msgid ""
+"The :guilabel:`Tooltips` and :guilabel:`More details` are used to toggle "
+"additional options for field editing."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:69 9467d13e818e48eb92651c2e25ba5312
+msgid "Basic view with tooltips and more detail turned off."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:71 57e8d169262842dc8a34cef93d82b21c
+msgid ""
+":guilabel:`Advanced view` provides greater control over document "
+"structure, with :guilabel:`+`  buttons to add additional information."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:73 0a8cd8b78c794ae6a539bfe3fd211568
+msgid ""
+"Advanced view is often used to add new sections when creating a document "
+"from scratch."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:77 577c99951d3d4ac9b2fc861c00d5f2a9
+msgid "Display mode advanced view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:79 99b4725783544b5d964115b99a271771
+msgid ""
+":guilabel:`XML view` is used to review the machine readable :file:`xml` "
+"content."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:81 3e351ec85ac74771b09d82b3cfbc9d2b
+msgid ""
+"The XML view is almost exclusively used for troubleshooting and is not "
+"recommended."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:85 72683bc0553e418198c723def74d8705
+msgid "Display mode xml view"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:87 29b70c5cf6544383b203314d226889ff
+msgid "Tips and tricks for editing records:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:89 470f19a1f782460b8b0ac496cbeea4ba
+msgid ""
+"To edit directly from search results use the :guilabel:`Edit` button "
+"(shown as a pencil icon below)."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:93 8771c2ed111945bc99e647b170f5a922
+msgid "Search results edit"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:96 b052226d224a498887c72b198deeb430
+msgid "Editor navigation"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:98 3b902299f5434513b27bb98690f3168a
+msgid ""
+"Records are divided into a series of nested sections covering different "
+"subjects."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:100 ac965b12708f40ef9b5d8a71d7b473d0
+msgid ""
+"Each section has a heading, use the :kbd:`v` toggle next to each heading "
+"to hide and show the section contents."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:104 126cb7fc33014b98b95ade6abb9247f7
+msgid "Record headings"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:106 350f723d823447c598d4e0ff839a993f
+msgid ""
+"A overview of :guilabel:`Metadata record information` providing quick "
+"navigation is available at the bottom right of the page."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:108 8cbb5d9406ea48d2bbeb1204c3f0f44a
+msgid "Click on a heading to jump to that section of the record."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:109 abf1d8c7524e466a90207b97aa4dfa95
+msgid ""
+"As you scroll the overview will update to show the headings on screen in "
+"bold."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:113 2ff3171ff0324e069580adc7207d3461
+msgid "Metadata record information."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:115 bf5d33cc642d4243b108984cd5377a2b
+msgid ""
+"The bottom right of the screen also includes a :guilabel:`Scroll to top` "
+"button."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:118 bd883704cbc34c97bc9e34089ff236be
+msgid "Editor fields"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:120 f3cb1806772241df9901b00ccdd827cc
+msgid "Record editing make use of data entry fields consisting of:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:122 3a8151935e2349aba22154d18eb256db
+msgid "Label naming field content"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:123 8893c6779cad40bfb60f2d598654a7bc
+msgid "Text field for data entry"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:124 a261898d64a54a16a8dec8f9e7da0454
+msgid ":guilabel:`Delete this field` button to remove optional content."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:125 9b06d63d0b1249e7925425fa1c4e115b
+msgid ":guilabel:`Tooltip` shown as a `?` icon, describing field."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:129
+#: ../../src/sphinx/editor/edit/index.rst:159 0d7285e746fc44e590265e190bb63788
+#: 163f0316d6be4fb28fedfdf908d29914
+msgid "Text field."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:131 0cc6570d5a294bf1988a052597531779
+msgid "Mandatory fields are labeled with a ``*``:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:135 3c5523c8045e486594bbff73e2c8d79e
+msgid "Mandatory field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:137 76a2b68f85e4434c88980ca85d12850b
+msgid "Fields that cannot be edited are shown grayed out."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:141 1a4029d8e0084873a7999c49e5e8c66b
+msgid "Non-editable field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:143 e2b3f157488a4ee5935d955ba5d91566
+msgid "To access tooltip information hover mouse pointer over :guilabel:`?` icon."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:147 f2c5c57c490548a099b39574eac28d32
+msgid "Field tool tip"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:149 9a678ecb9be14a3fab34279cef01f912
+msgid "Use :guilabel:`Delete this field` to remove optional fields."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:153 ec8520238cc24206b81acbf60cc81cfb
+msgid "Delete this field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:155 39f91aa7d817433cb31667d7dc09b6c2
+msgid "Text fields are used for data entry."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:161 dd9def92eb76404b856d68ccb1c9659a
+msgid ""
+"Some text fields with a large number of options offer the ability to type"
+" or search to narrow down valid suggestions."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:166 3a8afa5d5d1241dab974108ecc1f54df
+msgid "Type or search field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:168 6177f07da8824130bc102ef9ee11fee6
+msgid "Select fields are used to choose between a limited number of options:"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:172 92a56e48ca044867b6e7d02ec68aa072
+msgid "Select field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:174 33a20921f5a34e1ab7c50b287120b170
+msgid ""
+"Occasionally these fields will show an empty line, where a value has not "
+"been provided yet."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:177 1cb0ec59befc434799100522592caca8
+msgid "Optional vs Nil"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:179 33feb31943fe419ba38cea9a421e3f6b
+msgid "Optional values, can be removed using :guilabel:`Delete this field`."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:181 b9000bbc31284b568046be24aec5b6ab
+msgid ""
+"This button can be used to remove the :guilabel:`Country` field from and "
+"address."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:185 a6c6e98cfb9b4e2e976d455f01c29e0b
+msgid "Delete optional country field"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:187 b7209ebac32d4f6c83ffe8f24c290668
+msgid ""
+"This field is no longer included in the record (and may be re-added if "
+"needed using the Advanced view)."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:189 fe059a99ce344078a4fb11af4d3e9782
+msgid ""
+"Advanced: Fields can also be filled in as :guilabel:`Nil` by opening up "
+"the :guilabel:`View mode` at the top of the screen and selected "
+":guilabel:`More details` checkbox."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:191 6355ebf8cefe48b5942f7a232f5a9c0f
+msgid ""
+"This provides additional :guilabel:`Nil reason` buttons that can be used "
+"to add one or more reasons why a value cannot be provided."
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:195 a7408522aa264ea5988b5e0e9db7faf2
+msgid "Email address witheld"
+msgstr ""
+
+#: ../../src/sphinx/editor/edit/index.rst:197 c71fabbbe4454bce9941586878d5834a
+msgid ""
+"Be careful marking mandatory fields as Nil, as the resulting record may "
+"not be considered valid."
+msgstr ""
+

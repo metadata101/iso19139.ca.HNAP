@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../src/sphinx/editor/create/index.rst:2 4a4a4e9967b949cab8b4ba9cecc914d5
+msgid "Create"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:5 52e825ff79574b1c8f158bc33e9e5f75
+msgid "Create Record"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:7
+#: ../../src/sphinx/editor/create/index.rst:26 35d7723660f14c7c8263906726e0ce1a
+#: 7be6d2694cc4498a934b961adad761cd
+msgid ""
+"To create a new record navigate to :menuselection:`Contribute --> Editor "
+"board`."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:9 50d2e5a10f5e4343b5b434234dd6b91d
+msgid "Click the :guilabel:`Add new record` button."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:13
+#: ../../src/sphinx/editor/create/index.rst:30
+#: ../../src/sphinx/editor/create/index.rst:79 0542e434db1b4e599015f619827aec64
+#: 2f936393673a468b8e927f20b4e5dfdc f423eac7a4f6419a87007b8c58d7e5f5
+msgid "Editor board"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:15
+#: ../../src/sphinx/editor/create/index.rst:32
+#: ../../src/sphinx/editor/create/index.rst:81 3b1c2d4f73344faf962193eb2d1ebf0c
+#: 3b1dc545f8af47de884743e42704480a 3d443a02b3614fbeac7f82fad3a6b93f
+msgid ""
+"The contribute menu requires editor permission, talk to your "
+"administrator if you require increased access."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:17 17b032fcc9ce4d9c80d7911214039884
+msgid ""
+"Using the :guilabel:`Add a new record` screen to select a template for "
+"your new record, and use :guilabel:`Create`."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:21
+#: ../../src/sphinx/editor/create/index.rst:44 9bddd7b3a141446c9d2115183c8f01c4
+#: e93518c7727c4774bedfd99a1cc6be53
+msgid "Add a new record"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:24 2c733b6be9a54298a60c49c49941e849
+msgid "Duplicate record"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:34 c1997108a454455187bd83c5f9515e05
+msgid ""
+"Locate a record to duplicate, and use the :guilabel:`Duplicate` button "
+"(at the far right of the record actions row)."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:38 cc75d888305d463f9370d22915b4a1a3
+msgid "Record duplicate"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:40 b54e13d094cb46cc8f33b7c7860bc106
+msgid ""
+"Double check the :guilabel:`Add a new record` options and use "
+":guilabel:`Create` to duplicate the record."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:46 b413196cb17c45b5b12d36ba5593cc2b
+msgid "The new record is opened in the editor."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:48 399cb34fcbe24e58b61e982b6739392a
+msgid ""
+"The new record is generated with a generated identifier and title to "
+"avoid conflict with the original."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:52 940cf36ae5b0417d91360286445b3442
+msgid "Metadata editor showing duplicate record"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:55 153b967204ae4177aef3571a626c640d
+msgid "Create Template"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:57 bd6e08c96bbd4114bb469c45ef4f6c97
+msgid ""
+"Templates are used as a start point for the creation of new records, and "
+"do not appear as part of search results."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:59 fe42935255da454cbad52d39f7230c22
+msgid "To create a template:"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:61 d8b2d60ec74140efab4ce8437cebfdc3
+msgid ""
+"Choose an example record to start from and duplicate the record as shown "
+"in the previous section."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:63 26f5ee3c83f24a66a959b3026e20443f
+msgid "Update the title to be clear this is a template."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:65 936c224366c741e8a20179079e5c9d6f
+msgid ""
+"When saving a record you use the drop down arrow to select "
+":guilabel:`Save as template`"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:69 187575c969ba483f83154603fb985c67
+msgid "Save as template"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:73 a608b106b544450daf6f2de755b01775
+msgid "Delete Record"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:75 c170308a9cf24cb5b556fad11b0f1586
+msgid ""
+"To delete a new record navigate to :menuselection:`Contribute --> Editor "
+"board`."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:83 ee0bb81c1b3f483caf4cd969c4fe43f8
+msgid ""
+"Locate record to delete, and use the :guilabel:`Delete` button in the "
+"record actions."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:87 0b219b4db83242f5826511cbf7fb4074
+msgid "Record delete"
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:89 f88d9a6314464003ba62a4921e57c5de
+msgid "Confirm removing the record."
+msgstr ""
+
+#: ../../src/sphinx/editor/create/index.rst:93 199a5453017d4887a03b124d5d8d1979
+msgid "Record delete confirmation"
+msgstr ""
+

@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../src/sphinx/admin/privileges.rst:2 111408dc0db349578258319dff462798
+msgid "Record Privileges"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:5 a7517a8ae67f4472a5e5971ddf7d0803
+msgid "Records Privileges"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:7 a3b51c7467a14b8c93d03966882be0eb
+msgid ""
+"Selecting one or more records provides an opportunity to adjust the "
+"privileges controlling what activities are available. Privileges are "
+"provided to each group for fine grain control of record access."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:9 ed27ab0700d546f3bb350f097688f7c9
+msgid "References:"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:11 d7bb2afa6a78475eb2119e6579ef703b
+msgid ""
+":manual:`Managing privileges <community/user-guide/publishing/managing-"
+"privileges.html>`"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:13 d0be30894d5a480a814a40dd333a2a94
+msgid "Manage group records editing access:"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:15 8aa52011196d436cb42c0dc8d1b32cd5
+msgid "Navigate to the :menuselection:`Contribute --> Editor board`."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:17 d4ade6411d4f455192518aa15b27caee
+msgid ""
+"Select checkbox :guilabel:`GROUPS` and :guilabel:`Sample Group` to list "
+"all the records in group."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:19 2ed6300cc253418c80768af783377277
+msgid ""
+"At the start of the listed records locate the checkbox dropdown, and "
+"select :guilabel:`All`. This fills in the checkbox box next to each "
+"record on all of the records listed."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:23 6d9f98349ed14c86abc5a3b7825861e2
+msgid "Select all listed records"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:25 7f0d3997c7ff4e71b9dffb0b9b673a81
+msgid ""
+"Use the :guilabel:`selected` drop-down to select :guilabel:`Update "
+"privileges` for the selected records."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:29 fa1af3d678ef4f189f854b15ec29db16
+msgid "Update privileges"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:31 b9f9ed3322834655961a0ab59b0199d4
+msgid "Fill in privileges for the following groups:"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:33 b968ab871d714ac09ca83bcea6a3f6cc
+msgid "`All`: publish permissions to view published records."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:35 3c3c2bbdd5ec4206ab76476b3a751da0
+msgid "Built-in \"group\" representing visitors to the website."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:37 323501029705489abd2ddd74495ca70c
+msgid ""
+"`Intranet`: publish and download permissions to view and download "
+"published records."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:39 945e96949cd94cb8bd7ede9de8b8dd66
+msgid ""
+"Built-in group for authenticated users. Represents organization staff who"
+" have signed into the catalog and been authenticated."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:41 3b094c87014c4888bf7c48d33ef9060f
+msgid "`Guest`: publish permission to view published records."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:43 814d3b51f3cf4bd4ba46fee2d3ca5bdf
+msgid "Built-in group for website guests who have created their own account."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:45 3ad886d9cb424e6cb9f5ad93a72357c0
+msgid "`Staff`: Set-all privileges."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:47 97d9c35b7c084382b06989ebf7a3116f
+msgid ""
+"Group used to give editing permissions to a select group of individuals, "
+"staff in this example, who have signed into the catalog and been "
+"authenticated as members."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:51 28b4a2b57c354429b4afc0924e7f331a
+msgid "Record privileges"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:53 af069d92fb924e469dc7bb3b9ac4b293
+msgid "Update record permissions using :guilabel:`Replace by selected`."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:55 acf15d5b5e2a4d18976a253e8d050af8
+msgid "This may take some moments to complete."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:58 320ac008cecf4269970f9df28c7d18cf
+msgid "Examples"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:60 64df3628c35d41c8a9d6c7d792e5072e
+msgid "Example of interaction between record group and record privileges:"
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:62 a3c464a9ffba46dab2ce4591cf8600fc
+msgid ""
+"For a record with `publish` privilege in `Sample Group`, any user "
+"assigned to the SampleGroup will be able to view the record."
+msgstr ""
+
+#: ../../src/sphinx/admin/privileges.rst:64 d6414ae218aa40978813a45cf15a96c7
+msgid ""
+"For a record with `editing` privilege in `Sample Group`, any user "
+"assigned to the SampleGroup with `Editor` or `Reviewer` profile with be "
+"able to edit."
+msgstr ""
+
