@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"POT-Creation-Date: 2021-02-16 16:03-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,17 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: ../../src/sphinx/index.rst:3 338fd9f388f64839963b54e20898e403
-msgid "User Manual"
-msgstr "Manuel d'Utilisateur"
+#: ../../src/sphinx/index.rst:3 85f884771cdb441a8a37bece1a5525f3
+msgid "User Manual (HNAP)"
+msgstr "Manuel d'Utilisateur (HNAP)"
 
-#: ../../src/sphinx/index.rst:5 d96afd92b6b0471080cc04ded58461e7
+#: ../../src/sphinx/index.rst:5 9a0631c39fce4bce84a92078241847fd
 msgid ""
 "Welcome to the GeoNetwork User Manual. This manual has been prepared for "
 "use with ISO19139/119 Harmonized North American Profile (HNAP) content."
 msgstr ""
 
-#: ../../src/sphinx/index.rst:14 e98a40883fe4460eb90a8b291eb09edc
+#: ../../src/sphinx/index.rst:16 24a46c55cea3439098b9fb85e7cc6300
 msgid ":manual:`GeoNetwork User Guide <user-guide/index.html>`"
 msgstr ""
+
+#: ../../src/sphinx/index.rst:18 b5359bd3376c480a96be3d2969d511e7
+msgid "`Manuel d'Utilisateur (HNAP) <fr/index.html>`__"
+msgstr "`User Manual (HNAP) <../index.html>`__"
 

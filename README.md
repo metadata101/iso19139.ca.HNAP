@@ -124,7 +124,17 @@ jenkins:
 
 ## Project Procedures
 
-### Internationalization
+### Publish User Guide Process
+
+### update github pages
+
+```
+mvn clean install -Pdocs
+git add docs
+git commit -m "update docs"
+git push
+```
+### User Guide Internationalization
 
 Before you start:
 ```
@@ -133,21 +143,21 @@ pip install sphinx-intl
 
 Translation workflow:
 
-1. Geneate `pot` files:
-
+1. Geneate `pot` files, and generate messages for translation:
+   
+   ```
+   mvn compile -Ptranslate
+   ```
+   
+   This performs:
    ```
    sphinx-build -b gettext src/sphinx target/gettext
-   ```
-
-2. Generate messages for translation
-
-   ```
    sphinx-intl -c src/sphinx/conf.py update -p target/gettext -l fr
    ```
 
-3. Each ``rst`` file has a matching messages file in ``src/local/fr/LC_MESSAGES``.
+2. Each ``rst`` file has a matching messages ``po`` file in ``src/local/fr/LC_MESSAGES``.
 
-4. Message files follow the ``gettext`` portable object ``po`` format:
+   Message files follow the ``gettext`` portable object ``po`` format:
    
    ```
    #: ../../src/sphinx/index.rst:3 338fd9f388f64839963b54e20898e403
@@ -161,18 +171,15 @@ Translation workflow:
    * ``msgid`` origional
    * ``msgstr`` translation, please take care not to break sphinx directives
    
-   Plenty of tools are available to work with 
+   Plenty of tools are available to work with ``po` files.
+   
+   * https://poedit.net
+   * http://transifex.com
 
-4. Optional: translates images, figures and screen snaps:
+3. Optional: translates images, figures and screen snaps:
 
    * ``img/sample.png`` origional, `img/sample_fr.png`` translation.
    * ``figure/example.svg`` origional, ``figure/example_fr.svg`` translation.
-   
-4. Build with `fr` language
-   
-   ```
-   sphinx-build -q -N -W --keep-going -n -j auto -b html -Dhtml_theme=sphinx_rtd_theme -Dlanguage=fr -d=target/doctrees src/sphinx target/fr
-   ```
 
 5. For more information:
   
@@ -181,17 +188,6 @@ Translation workflow:
    * https://sphinx-intl.readthedocs.io/en/master/quickstart.html
    * https://docs.readthedocs.io/en/stable/guides/manage-translations.html
    * https://docs.transifex.com/integrations/sphinx-doc
-   
-### Publish User Guide Process
-
-### update github pages
-
-```
-mvn clean install -Pdocs
-git add docs
-git commit -m "update docs"
-git push
-```
 
 ### Release Process
 
