@@ -145,6 +145,7 @@
         </plugins>
       </build>
     </profile>
+
     <profile>
       <id>docs</id>
       <build>
@@ -153,28 +154,45 @@
             <artifactId>maven-antrun-plugin</artifactId>
             <executions>
               <execution>
+                <id>sphinx</id>
                 <phase>compile</phase>
                 <configuration>
 <target>
    <property name="sphinx_build_options"
-             value="-q -N -W --keep-going -n -j auto"/>
+             value="-N -W --keep-going -n -j auto"/>
    <property name="theme"
              value="sphinx_rtd_theme"/>
    <property name="doctrees"
              value="target/doctrees"/>
-   <property name="outputdir"
-             value="target/html"/>
    <property name="srcdir"
              value="src/sphinx"/>
 
-   <mkdir dir="${outputdir}"/>
+   <property name="en"
+             value="target/html"/>
+
+   <mkdir dir="${en}"/>
    <exec executable="sphinx-build" failonerror="true">
      <arg line="${sphinx_build_options}"/>
      <arg line="-b html"/>
      <arg line="-Dhtml_theme=${theme}"/>
-     <arg line="-d ${doctrees}"/>
+     <arg line="-d"/>
+     <arg path="${doctrees}"/>
      <arg path="${srcdir}"/>
-     <arg path="${outputdir}"/>
+     <arg path="${en}"/>
+   </exec>
+
+   <property name="fr"
+             value="target/html/fr"/>
+   <mkdir dir="${fr}"/>
+   <exec executable="sphinx-build" failonerror="true">
+     <arg line="${sphinx_build_options}"/>
+     <arg line="-b html"/>
+     <arg line="-Dhtml_theme=${theme}"/>
+     <arg line="-Dlanguage=fr"/>
+     <arg line="-d"/>
+     <arg path="${doctrees}"/>
+     <arg path="${srcdir}"/>
+     <arg path="${fr}"/>
    </exec>
 </target>
                 </configuration>
@@ -224,5 +242,46 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <id>translate</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>gettext</id>
+                <phase>compile</phase>
+                <configuration>
+<target>
+   <property name="srcdir"
+             value="src/sphinx"/>
+   <property name="gettext"
+             value="target/gettext"/>
+   <mkdir dir="${outputdir}"/>
+   <exec executable="sphinx-build" failonerror="true">
+     <arg line="-b gettext"/>
+     <arg path="${srcdir}"/>
+     <arg path="${gettext}"/>
+   </exec>
+
+   <exec executable="sphinx-intl" failonerror="true">
+     <arg line="-c"/>
+     <arg path="${srcdir}/conf.py"/>
+     <arg line="update -p"/>
+     <arg path="${gettext}"/>
+     <arg line="-l fr"/>
+   </exec>
+</target>
+                </configuration>
+                <goals><goal>run</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
+
 </project>
