@@ -8,6 +8,7 @@ Welcome to the GeoNetwork User Manual. This manual has been prepared for use wit
    :maxdepth: 2
 
    search/index
+   map/index
    editor/index
    admin/index
 
