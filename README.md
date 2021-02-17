@@ -143,7 +143,7 @@ pip install sphinx-intl
 
 Translation workflow:
 
-1. Geneate `pot` files, and generate messages for translation:
+1. Generate `pot` files, and generate messages for translation:
    
    ```
    mvn compile -Ptranslate
