@@ -94,12 +94,22 @@
           <xsl:value-of select="''"/>
         </xsl:when>
         <xsl:when test="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]">
-           <xsl:for-each select="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]/@securityLevel">
-              <!--xsl:value-of select="tr:codelist-value-label(tr:create($schema), $securityClassificationCodeNode/local-name(), .)"/-->
-              <xsl:variable name="securityLevelCode" select="concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#', .)"/>
+          <xsl:variable name="securityLevelList">
+            <xsl:for-each select="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]/@securityLevel">
+              <xsl:variable name="securityLevelCode"
+                            select="concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#', .)"/>
               <xsl:value-of select="$security-level-list//rdf:Description[@rdf:about = $securityLevelCode]/ns2:prefLabel[@xml:lang=$locLang2char]"/>
               <xsl:if test="position() != last()">, </xsl:if>
-           </xsl:for-each>
+            </xsl:for-each>
+          </xsl:variable>
+          <xsl:choose>
+            <xsl:when test="replace($securityLevelList, ', ', '') =''">
+              <xsl:value-of select="'NULL'"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$securityLevelList"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:when>
         <xsl:otherwise>
           <!-- Not Found in table so return NULL to mean that we expect this to be null   -->

@@ -414,7 +414,7 @@
             <xsl:value-of select="$securityClassification"/>
             <xsl:choose>
               <xsl:when test="$securityConstraints/gmd:userNote/gco:CharacterString !='' and $securityConstraints/gmd:userNote/gco:CharacterString != $securityClassification">
-                <xsl:value-of select="concat(':', $securityConstraints/gmd:userNote/gco:CharacterString)"/>
+                <xsl:value-of select="concat('; ', $securityConstraints/gmd:userNote/gco:CharacterString)"/>
               </xsl:when>
             </xsl:choose>
           </xsl:variable>

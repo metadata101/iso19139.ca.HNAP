@@ -369,7 +369,7 @@
             <xsl:value-of select="$securityClassification"/>
             <xsl:choose>
               <xsl:when test="$securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId] !='' and $securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId] != $securityClassification">
-                <xsl:value-of select="concat(':', $securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId])"/>
+                <xsl:value-of select="concat('; ', $securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId])"/>
               </xsl:when>
             </xsl:choose>
           </xsl:variable>
