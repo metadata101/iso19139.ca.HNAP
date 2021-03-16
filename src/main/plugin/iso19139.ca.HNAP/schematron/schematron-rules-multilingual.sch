@@ -516,7 +516,7 @@
 
 
     <!-- Keywords -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
+    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords">
       <sch:let name="missing" value="not(string(gco:CharacterString))
             or (@gco:nilReason)" />
 
