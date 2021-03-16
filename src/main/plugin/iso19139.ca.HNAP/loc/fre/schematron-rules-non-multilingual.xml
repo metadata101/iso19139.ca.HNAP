@@ -32,6 +32,8 @@
   <Keyword>Au moins un mot clé est requis</Keyword>
 
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
+  <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont :</SecurityClassificationUserNote>
+  <SecurityClassificationUserNoteEmpty>Explications sur les restrictions devrait être vide pour la restriction de manipulation</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>L'indication 'Autres restrictions' dans les champs « Contraintes d'accès » ou « Contraintes d'utilisation » permet de décrire ici d’autres contraintes quant à l'accès ou l'utilisation de la ressource.</OtherConstraintsNote>
   <UseLimitation>Limitation d'utilisation est obligatoire</UseLimitation>
 
