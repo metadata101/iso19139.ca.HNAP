@@ -97,7 +97,7 @@
           <xsl:variable name="securityLevelList">
             <xsl:for-each select="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]/@securityLevel">
               <xsl:variable name="securityLevelCode"
-                            select="concat('http://geonetwork-opensource.org/EC/GC_Security_Classification#', .)"/>
+                            select="concat('http://geonetwork-opensource.org/GC/GC_Security_Classification#', .)"/>
               <xsl:value-of select="$security-level-list//rdf:Description[@rdf:about = $securityLevelCode]/ns2:prefLabel[@xml:lang=$locLang2char]"/>
               <xsl:if test="position() != last()">, </xsl:if>
             </xsl:for-each>
@@ -423,7 +423,7 @@
 
       <sch:assert test="$validSecurityLevel">$locMsg</sch:assert>
 
-      <sch:let name="securityLevelCode" value="replace($security-level-list//rdf:Description[lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])=lower-case($securityLevel)]/@rdf:about, 'http://geonetwork-opensource.org/EC/GC_Security_Classification#', '')"/>
+      <sch:let name="securityLevelCode" value="replace($security-level-list//rdf:Description[lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])=lower-case($securityLevel)]/@rdf:about, 'http://geonetwork-opensource.org/GC/GC_Security_Classification#', '')"/>
 
       <sch:let name="checkUserNoteSecurityClassificationCode" value="geonet:checkUserNoteSecurityClassificationCode($securityLevelCode, ../gmd:classification/gmd:MD_ClassificationCode)" />
 
