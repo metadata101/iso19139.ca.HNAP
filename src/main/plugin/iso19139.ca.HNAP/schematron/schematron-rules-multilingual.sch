@@ -730,9 +730,9 @@
 
       <sch:let name="locSecurityClassificationUserNoteMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityClassificationUserNote, $checkUserNoteSecurityClassificationCode)" />
 
-      <sch:assert test="not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode='NULL' or $checkUserNoteSecurityClassificationCode = ''">$locSecurityClassificationUserNoteMsg</sch:assert>
+      <sch:assert test="($missingTitle and $missingTitleOtherLang) or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode='NULL' or $checkUserNoteSecurityClassificationCode = ''">$locSecurityClassificationUserNoteMsg</sch:assert>
 
-      <sch:assert test="not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode!='NULL' or $checkUserNoteSecurityClassificationCode = ''">$loc/strings/SecurityClassificationUserNoteEmpty</sch:assert>
+      <sch:assert test="($missingTitle and $missingTitleOtherLang) or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode!='NULL' or $checkUserNoteSecurityClassificationCode = ''">$loc/strings/SecurityClassificationUserNoteEmpty</sch:assert>
 
     </sch:rule>
 
