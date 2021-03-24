@@ -238,21 +238,24 @@
     </sch:rule>
 
     <!-- Begin position -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent">
-
-      <sch:let name="beginPosition" value="gmd:extent/gml:TimePeriod//gml:beginPosition" />
+    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod//gml:beginPosition">
+      <sch:let name="beginPosition" value="." />
       <sch:let name="missingBeginPosition" value="not(string($beginPosition))" />
 
       <sch:assert test="not($missingBeginPosition)">$loc/strings/BeginDate</sch:assert>
       <sch:assert test="$missingBeginPosition or (XslUtilHnap:verifyDateFormat($beginPosition) &gt; 0)">$loc/strings/BeginPositionFormat</sch:assert>
+    </sch:rule>
 
+    <!-- End position -->
+    <sch:rule context="//gmd:identificationInfo/*/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
+      <sch:let name="beginPosition" value="//gml:beginPosition" />
+      <sch:let name="missingBeginPosition" value="not(string($beginPosition))" />
 
-      <sch:let name="endPosition" value="gmd:extent/gml:TimePeriod//gml:endPosition" />
+      <sch:let name="endPosition" value="//gml:endPosition" />
       <sch:let name="missingEndPosition" value="not(string($endPosition))" />
 
       <sch:assert test="$missingBeginPosition or $missingEndPosition or (XslUtilHnap:compareDates($endPosition, $beginPosition) &gt;= 0)">$loc/strings/EndPosition</sch:assert>
     </sch:rule>
-
 
     <!-- Dataset language -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:language
