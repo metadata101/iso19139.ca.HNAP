@@ -423,6 +423,8 @@
         </xsl:when>
         <xsl:otherwise>
           <Field name="secConstr" string="false" store="true" index="true"/>
+          <xsl:variable name="securityConstraintsUseLimitation" select="if ($isoLangId = 'fra') then 'Inconnu' else 'Unknown'"/>
+          <Field name="MD_SecurityConstraintsUseLimitation" string="{$securityConstraintsUseLimitation}" store="true" index="true"/>
         </xsl:otherwise>
       </xsl:choose>
 
