@@ -97,6 +97,14 @@
     <xsl:call-template name="langIdWithCountry19139"/>
   </xsl:variable>
 
+  <!-- get iso language code as ISO639 2B -->
+  <xsl:variable name="langCode_ISO639_2B">
+    <xsl:choose>
+      <xsl:when test="$isoLangId = 'fra'">fre</xsl:when>
+      <xsl:otherwise><xsl:value-of select="$isoLangId" /></xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
   <!-- ========================================================================================= -->
   <xsl:template match="/">
     <Document locale="{$isoLangId}">
@@ -367,7 +375,7 @@
 
         <xsl:variable name="role" select="../../gmd:role/*/@codeListValue"/>
         <xsl:variable name="logo" select="../..//gmx:FileName/@src"/>
-        <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($mainLanguage))"/>
+        <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
 
         <Field name="responsibleParty" string="{concat($roleTranslation, '|resource|', ., '|', $logo)}" store="true"
                index="false"/>
@@ -405,7 +413,7 @@
       <xsl:choose>
         <xsl:when test="gmd:resourceConstraints/gmd:MD_SecurityConstraints">
           <xsl:variable name="securityConstraints" select="gmd:resourceConstraints/gmd:MD_SecurityConstraints[1]"/>
-          <xsl:variable name="securityClassification" select="util:getCodelistTranslation($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/name(), string($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/@codeListValue), string($isoLangId))"/>
+          <xsl:variable name="securityClassification" select="util:getCodelistTranslation($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/name(), string($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/@codeListValue), string($langCode_ISO639_2B))"/>
           <Field name="secConstr" string="true" store="true" index="true"/>
           <Field name="secUserNote" string="{$securityConstraints/gmd:userNote/gco:CharacterString}" store="true" index="true"/>
           <!-- put secUserNote in MD_SecurityConstraintsUseLimitation so that it can be displayed on the view page -->
