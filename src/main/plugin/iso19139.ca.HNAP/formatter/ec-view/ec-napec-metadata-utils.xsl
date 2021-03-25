@@ -1,4 +1,3 @@
-<!-- //TODO DFO BY - org.fao.geonet.api.records.formatters.SchemaLocalizations is missing. -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:srv="http://www.isotc211.org/2005/srv"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"

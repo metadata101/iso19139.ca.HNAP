@@ -182,7 +182,6 @@ public class XslUtilHnap {
     @Nonnull
     String twoCharLangCode(String iso3LangCode, String defaultValue) {
         if (iso3LangCode.contains(";")) {
-            //DFO BY - DEBUG - form-builder.xsl calls this function at line 238
             //Log.debug(Geonet.SCHEMA_MANAGER, "XslUtilHnap::iso3LangCode : " + iso3LangCode + " is trimmed to : " + iso3LangCode.substring(0, iso3LangCode.indexOf(";")));
             iso3LangCode = iso3LangCode.substring(0, iso3LangCode.indexOf(";"));
         }
@@ -191,7 +190,7 @@ public class XslUtilHnap {
 
     /**
      * Get thesauriDir from system config value
-     * @return Code list folder path. i.e. C:\dev\src\geonetwork-catalog\web\target\geonetwork\WEB-INF\data\config\codelist
+     * @return Code list folder path. i.e. WEB-INF\data\config\codelist
      */
     public static
     @Nonnull
