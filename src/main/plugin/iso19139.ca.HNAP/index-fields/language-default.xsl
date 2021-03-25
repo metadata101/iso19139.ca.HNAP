@@ -359,10 +359,22 @@
 
       <xsl:choose>
         <xsl:when test="gmd:resourceConstraints/gmd:MD_SecurityConstraints">
+          <xsl:variable name="securityConstraints" select="gmd:resourceConstraints/gmd:MD_SecurityConstraints[1]"/>
+          <xsl:variable name="securityClassification" select="util:getCodelistTranslation($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/name(), string($securityConstraints/gmd:classification/gmd:MD_ClassificationCode/@codeListValue), string($langCode_ISO639_2B))"/>
           <Field name="secConstr" string="true" store="true" index="true"/>
-          <Field name="secUserNote" string="{gmd:resourceConstraints/gmd:MD_SecurityConstraints[1]/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId]}" store="true" index="true"/>
+          <Field name="secUserNote" string="{$securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId]}" store="true" index="true"/>
           <!-- put secUserNote in MD_SecurityConstraintsUseLimitation so that it can be displayed on the view page -->
-          <Field name="MD_SecurityConstraintsUseLimitation" string="{gmd:resourceConstraints/gmd:MD_SecurityConstraints[1]/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId]}" store="true" index="true"/>
+
+          <xsl:variable name="securityConstraintsUseLimitation">
+            <xsl:value-of select="$securityClassification"/>
+            <xsl:choose>
+              <xsl:when test="$securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId] !='' and $securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId] != $securityClassification">
+                <xsl:value-of select="concat('; ', $securityConstraints/gmd:userNote//gmd:LocalisedCharacterString[@locale=$langId])"/>
+              </xsl:when>
+            </xsl:choose>
+          </xsl:variable>
+
+          <Field name="MD_SecurityConstraintsUseLimitation" string="{$securityConstraintsUseLimitation}" store="true" index="true"/>
         </xsl:when>
         <xsl:otherwise>
           <Field name="secConstr" string="false" store="true" index="true"/>

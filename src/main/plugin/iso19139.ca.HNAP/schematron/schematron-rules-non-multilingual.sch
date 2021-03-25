@@ -64,6 +64,63 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+  <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                name="geonet:checkUserNoteSecurityClassificationCode"
+                as="xs:string">
+    <xsl:param name="securityLevel" as="xs:string"/>
+    <xsl:param name="securityClassificationCodeNode"/>
+
+    <xsl:variable name="locLang2char" select="if ($lang = 'fre') then 'fr' else 'en'"/>
+    <xsl:variable name="security-level-list"
+                   select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
+
+    <xsl:variable name="lookup">
+      <table>
+        <row securityClassificationCode="RI_484" securityLevel="unclassified"/> <!-- unclassified/unclassified -->
+        <row securityClassificationCode="RI_485" securityLevel="protectA" />    <!-- restricted/protectA -->
+        <row securityClassificationCode="RI_485" securityLevel="protectB" />    <!-- restricted/protectB -->
+        <row securityClassificationCode="RI_485" securityLevel="protectC"/>     <!-- restricted/protectC -->
+        <row securityClassificationCode="RI_486" securityLevel="confidential"/> <!-- confidential/confidential -->
+        <row securityClassificationCode="RI_489" securityLevel="confidential"/> <!-- sensitive/confidential -->
+        <row securityClassificationCode="RI_487" securityLevel="secret"/>       <!-- secret/secret -->
+        <row securityClassificationCode="RI_488" securityLevel="topSecret"/>    <!-- topSecret/topSecret -->
+      </table>
+    </xsl:variable>
+
+    <xsl:variable name="v">
+      <xsl:choose>
+        <!-- Found so return empty list -->
+        <xsl:when test="$lookup/table/row[@securityLevel = $securityLevel and @securityClassificationCode = $securityClassificationCodeNode/@codeListValue]">
+          <xsl:value-of select="''"/>
+        </xsl:when>
+        <xsl:when test="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]">
+          <xsl:variable name="securityLevelList">
+            <xsl:for-each select="$lookup/table/row[@securityClassificationCode = $securityClassificationCodeNode/@codeListValue]/@securityLevel">
+              <xsl:variable name="securityLevelCode"
+                            select="concat('http://geonetwork-opensource.org/GC/GC_Security_Classification#', .)"/>
+              <xsl:value-of select="$security-level-list//rdf:Description[@rdf:about = $securityLevelCode]/ns2:prefLabel[@xml:lang=$locLang2char]"/>
+              <xsl:if test="position() != last()">, </xsl:if>
+            </xsl:for-each>
+          </xsl:variable>
+          <xsl:choose>
+            <xsl:when test="replace($securityLevelList, ', ', '') =''">
+              <xsl:value-of select="'NULL'"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$securityLevelList"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- Not Found in table so return NULL to mean that we expect this to be null   -->
+          <xsl:value-of select="'NULL'"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:value-of select="$v"/>
+
+  </xsl:function>
 
   <xsl:function name="geonet:appendLocaleMessage">
     <xsl:param name="localeStringNode"/>
@@ -362,7 +419,19 @@
       <sch:let name="securityLevelList" value="geonet:securityLevelList($thesaurusDir)" />
       <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityLevel, $securityLevelList)" />
 
-      <sch:assert test="$missingTitle or $security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel">$locMsg</sch:assert>
+      <sch:let name="validSecurityLevel" value="$missingTitle or $security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel"/>
+
+      <sch:assert test="$validSecurityLevel">$locMsg</sch:assert>
+
+      <sch:let name="securityLevelCode" value="replace($security-level-list//rdf:Description[lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])=lower-case($securityLevel)]/@rdf:about, 'http://geonetwork-opensource.org/GC/GC_Security_Classification#', '')"/>
+
+      <sch:let name="checkUserNoteSecurityClassificationCode" value="geonet:checkUserNoteSecurityClassificationCode($securityLevelCode, ../gmd:classification/gmd:MD_ClassificationCode)" />
+
+      <sch:let name="locSecurityClassificationUserNoteMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityClassificationUserNote, $checkUserNoteSecurityClassificationCode)" />
+
+      <sch:assert test="$missingTitle or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode='NULL' or $checkUserNoteSecurityClassificationCode = ''">$locSecurityClassificationUserNoteMsg</sch:assert>
+
+      <sch:assert test="$missingTitle or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode!='NULL' or $checkUserNoteSecurityClassificationCode = ''">$loc/strings/SecurityClassificationUserNoteEmpty</sch:assert>
 
     </sch:rule>
 

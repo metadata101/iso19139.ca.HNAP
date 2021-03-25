@@ -14,54 +14,54 @@
   </skos:ConceptScheme>
 
 
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <ns3:title>Environment Canada - GC Security Classification</ns3:title>
+        <ns3:title>Government of Canada - GC Security Classification</ns3:title>
     </rdf:Description>
 
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#protectA">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#protectA">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protect A</ns2:prefLabel>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protéger A</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protected A</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protégé A</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#protectB">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#protectB">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protect B</ns2:prefLabel>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protéger B</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protected B</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protégé B</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#protectC">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#protectC">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protect C</ns2:prefLabel>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protéger C</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Protected C</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Protégé C</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#confidential">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#confidential">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Confidential</ns2:prefLabel>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Confidentiel</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#secret">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#secret">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Secret</ns2:prefLabel>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Secret</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#topSecret">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#topSecret">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Top Secret</ns2:prefLabel>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Très Secret</ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GC_Security_Classification#unclassified">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_Security_Classification#unclassified">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
