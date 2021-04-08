@@ -1,0 +1,89 @@
+{
+  "config": {
+    "display": "radio",
+    "types": [{
+      "label": "addOnlinesrc",
+      "sources": {
+        "filestore": true
+      },
+      "icon": "fa gn-icon-onlinesrc",
+      "process": "onlinesrc-add",
+      "fields": {
+        "protocol": {
+          "value": "WWW:LINK-1.0-http--link",
+          "isMultilingual": false,
+          "required": true,
+          "tooltip": "gmd:protocol"
+        },
+        "url": {
+          "isMultilingual": false,
+          "required": true,
+          "tooltip": "gmd:URL"
+        },
+        "name": {"tooltip": "gmd:name"},
+        "desc": {
+          "tooltip": "gmd:description",
+          "directive": "gn-multientry-combiner-online-resources-description",
+          "directiveConfig": {
+            "valueElementId": "multicombinervalue",
+            "fieldName": "desc",
+            "combiner":"; ",
+            "config":
+            [
+              {
+                "type": "thesaurus",
+                "heading": {
+                  "eng": "Content type",
+                  "fra": "Content type"
+                },
+                "thesaurus": "external.theme.GC_Resource_ContentTypes"
+              },
+              {
+                "type": "thesaurus",
+                "heading": {
+                  "eng": "Format",
+                  "fra": "Format"
+                },
+                "thesaurus": "external.theme.GC_Resource_Formats"
+              },
+              {
+                "type": "thesaurus",
+                "heading": {
+                  "eng": "Language",
+                  "fra": "Language"
+                },
+                "thesaurus": "external.theme.GC_Resource_Languages"
+              }
+            ]
+          }
+        },
+        "function": {
+          "isMultilingual": false,
+          "tooltip": "gmd:function"
+        },
+        "applicationProfile": {
+          "isMultilingual": false,
+          "tooltip": "gmd:applicationProfile"
+        }
+      }
+    }, {
+      "label": "addThumbnail",
+      "sources": {
+        "filestore": true,
+        "thumbnailMaker": true
+      },
+      "icon": "fa gn-icon-thumbnail",
+      "fileStoreFilter": "*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF}",
+      "process": "thumbnail-add",
+      "fields": {
+        "url": {
+          "param": "thumbnail_url",
+          "isMultilingual": false,
+          "required": true
+        },
+        "name": {"param": "thumbnail_desc"}
+      }
+    }],
+    "multilingualFields": ["name", "desc"]
+  }
+}
