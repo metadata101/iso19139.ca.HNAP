@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
   <english>Anglais</english>
   <french>Français</french>
@@ -27,7 +27,7 @@
   <distributionInfo>Distribution</distributionInfo>
   <dataQualityInfo>Qualité</dataQualityInfo>
   <spatialRepresentationInfo>Information spatiale</spatialRepresentationInfo>
-  <referenceSystemInfo>Système de réf.</referenceSystemInfo>
+  <referenceSystemInfo>Systèmes de référence</referenceSystemInfo>
   <contentInfo>Contenu</contentInfo>
   <portrayalCatalogueInfo>Représentation</portrayalCatalogueInfo>
   <metadataConstraints>Md. contraintes</metadataConstraints>
@@ -38,14 +38,14 @@
   <GeographicScope>Portée Géographique</GeographicScope>
   <Timeperiod>Période de temps</Timeperiod>
   <DistributionInformation>Informations sur la distribution</DistributionInformation>
-  <Name>Name</Name>
+  <Name>Nom</Name>
   <Version>Version</Version>
   <Fees>Fees</Fees>
   <Download>Télécharger</Download>
   <Relateddatasets>Données associés</Relateddatasets>
   <Metadatarecord>Fiche de métadonnées</Metadatarecord>
   <Datasetidentification>Identification d’ensemble de données</Datasetidentification>
-  <Thumbnail>Vignette</Thumbnail>
+  <Thumbnail>Imagette</Thumbnail>
   <Dataclassification>Classification des données</Dataclassification>
   <Dataresources>Ressources de données</Dataresources>
   <DataresourcesDesc>Ajouter des données en téléversant des fichiers ou en établissant un lien vers des fichiers ou des services existants</DataresourcesDesc>
@@ -108,11 +108,11 @@
   <recordType_explained>Utilisez ces paramètres pour filtrer par type de métadonnées afin d'entamer la recherche</recordType_explained>
   <Relateddata>Ressources connexes</Relateddata>
   <View>Voir</View>
-  <ViewParent>View parent</ViewParent>
-  <ViewCollection>View collection</ViewCollection>
+  <ViewParent>Voir le parent</ViewParent>
+  <ViewCollection>Voir la collection</ViewCollection>
   <more>Plus</more>
 
-  <updateExtent>Update geographic extent</updateExtent>
+  <updateExtent>Mettre à jour l'étendue géographique</updateExtent>
 
   <Contact>Coordonnées</Contact>
   <DistributorContact>Renseignements au sujet du distributeur </DistributorContact>
@@ -120,28 +120,28 @@
   <DataContact>Point de contact pour les données</DataContact>
   <DataPointContact>Point de contact pour les données</DataPointContact>
 
-  <Status>Statut</Status>
+  <Status>État</Status>
   <Publishedto>Emplacement de publication</Publishedto>
   <owner>Propriétaire de la métadonnée</owner>
   <lastChangedBy>Dernier changement effectué par</lastChangedBy>
   <changeDate>Date de mise à jour de la métadonnée</changeDate>
-  <rating>Openness rating</rating>
-  <ParentCollection>Ensemble apparenté</ParentCollection>
+  <rating>Cote d'ouverture</rating>
+  <ParentCollection>Collection</ParentCollection>
 
   <display-thumbnails-header>Vignette</display-thumbnails-header>
   <display-overviews-header>Étendue</display-overviews-header>
 
-  <temporalRangeSection>Temporal Extent</temporalRangeSection>
-  <beginPosition>Begin Date</beginPosition>
-  <endPosition>End Date</endPosition>
+  <temporalRangeSection>Portée temporelle</temporalRangeSection>
+  <beginPosition>Date de début</beginPosition>
+  <endPosition>Date de fin</endPosition>
 
-  <distributionFormats>Distribution Formats</distributionFormats>
+  <distributionFormats>Formats de distribution</distributionFormats>
   <distributionResources>Resources</distributionResources>
 
   <view>Voir</view>
   <published>Publié</published>
   <approved_local>Publié+Ébauche</approved_local>
-  <approved>Approved</approved>
+  <approved>Approuvée</approved>
   <retired>Retirée</retired>
   <submitted>Soumise</submitted>
   <rejected>Refusée</rejected>
@@ -149,10 +149,9 @@
   <view_draft>Voir Ébauche</view_draft>
   <draft>Ébauche</draft>
 
-  <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
-  <addDate>Add date</addDate>
-  <addCharacterSet>Add character set</addCharacterSet>
-  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
+  <addFreeTextKeywords>Ajouter un mot-clé en texte libre</addFreeTextKeywords>
+  <addDate>Ajouter une date</addDate>
+  <addCharacterSet>Ajouter un jeu de caractères</addCharacterSet>
   <addGeographicExtent>Ajouter une etendue géographique</addGeographicExtent>
 
   <disclaimer_header>Rendus disponibles par l'entremise du</disclaimer_header>

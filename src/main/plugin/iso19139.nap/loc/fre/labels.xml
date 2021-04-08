@@ -2846,7 +2846,7 @@
   </element>
   <element name="gmd:referenceSystemInfo" id="13.0">
     <label>Information sur le système de référence</label>
-    <btnLabel>Add Reference System Information</btnLabel>
+    <btnLabel>Ajouter des informations sur le système de référence spatiale</btnLabel>
     <description>Description des références spatiale et temporelle utilisées dans le jeu de données</description>
     <help>Description des systèmes de référence spatiale et temporelle utilisés dans le jeu de données. Ces informations sont gérées dans la classe MD_ReferenceSystem.</help>
     <condition/>
@@ -4222,5 +4222,20 @@
   </element>
   <element name="CoreSubjectThesaurus">
     <label>Thésaurus des sujets de base du gouvernement du Canada</label>
+  </element>
+
+  <element name="gml:quantityType">
+    <label>Quantity Type</label>
+    <description></description>
+  </element>
+
+  <element name="gml:catalogSymbol">
+    <label>Catalogue symbol</label>
+    <description></description>
+  </element>
+
+  <element name="gml:unitsSystem">
+    <label>Units System</label>
+    <description></description>
   </element>
 </labels>

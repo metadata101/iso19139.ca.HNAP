@@ -22,17 +22,17 @@
   <EC26>Organisation name in Government of Canada should have a title value as defined in the Registry of Applied Titles. See: http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26>
   <EC26GovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
   <EC26GovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
-  <EC26GovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Quebec Government and Municipalities'.</EC26GovAllowedEnglish>
+  <EC26GovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Government and Municipalities of Québec'.</EC26GovAllowedEnglish>
   <EC26GovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador' or 'Gouvernement du Nouveau-Brunswick' or 'Gouvernement du Yukon' or 'Gouvernement et municipalités du Québec'.</EC26GovAllowedFrench>
 
   <EC37GovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
   <EC37GovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
-  <EC37GovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Quebec Government and Municipalities'.</EC37GovAllowedEnglish>
+  <EC37GovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Government and Municipalities of Québec'.</EC37GovAllowedEnglish>
   <EC37GovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador' or 'Gouvernement du Nouveau-Brunswick' or 'Gouvernement du Yukon' or 'Gouvernement et municipalités du Québec'.</EC37GovAllowedFrench>
 
   <EC38GovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovEnglish>
   <EC38GovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC38GovFrench>
-  <EC38GovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Quebec Government and Municipalities'.</EC38GovAllowedEnglish>
+  <EC38GovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador' or 'Government of Newfoundland and Labrador' or 'Government of New Brunswick' or 'Government of Yukon' or 'Government and Municipalities of Québec'.</EC38GovAllowedEnglish>
   <EC38GovAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador' or 'Gouvernement du Nouveau-Brunswick' or 'Gouvernement du Yukon' or 'Gouvernement et municipalités du Québec'.</EC38GovAllowedFrench>
 
   <EC27>Supplemental Information should be empty or filled in both languages</EC27>
@@ -81,10 +81,17 @@
   <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Maintenance frequency code is not valid</InvalidMaintenanceFrequency>
 
+  <MissingContactOrganisation>Contact - Organisation name is required</MissingContactOrganisation>
+  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
   <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleOrganisation>Cited responsible - Organisation name is required</MissingCitedResponsibleOrganisation>
+  <MissingCitedResponsibleMail>Cited responsible- Electronic mail address is required</MissingCitedResponsibleMail>
   <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
+  <MissingDataIdentification>Missing Data Identification section</MissingDataIdentification>
+  <MissingTitle>Title is required</MissingTitle>
+  <MissingStatus>Status is required</MissingStatus>
   <MissingDate>Value is required for Date</MissingDate>
   <BeginDate>Value is required for Begin Date</BeginDate>
 
@@ -122,6 +129,8 @@
   <GeographicExtentRequired>Geographic extent is required</GeographicExtentRequired>
   <GeographicExtentWestEast>Geographic extent - westbound longitude should be lower than eastbound longitude</GeographicExtentWestEast>
   <GeographicExtentNorthSouth>Geographic extent - southbound latitude should be lower than northbound latitude</GeographicExtentNorthSouth>
+
+  <MissingLocale>Missing information for alternative language</MissingLocale>
 
   <DistributorContactMissing>Distributor Contact is required</DistributorContactMissing>
 </strings>

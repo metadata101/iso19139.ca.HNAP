@@ -294,7 +294,7 @@
         <license gov="Government of Prince Edward Island">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
         <license gov="Government of New Brunswick">Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)</license>
         <license gov="Government of Yukon">Open Government Licence - Yukon (https://open.yukon.ca/open-government-licence-yukon)</license>
-        <license gov="Quebec Government and Municipalities">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
+        <license gov="Government and Municipalities of Québec">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
       </licenses>
     </xsl:variable>
 
@@ -393,7 +393,7 @@
           <xsl:variable name="geom" select="concat('POLYGON((', $minx, ' ', $miny,',',$maxx,' ',$miny,',',$maxx,' ',$maxy,',',$minx,' ',$maxy,',',$minx,' ',$miny, '))')"/>
 
           <xsl:if test="$hasGeometry">
-            <span class="bold"><xsl:value-of select="$schemaStrings/GeographicExtent"/></span><br/>
+            <span class="h6"><xsl:value-of select="$schemaStrings/GeographicExtent"/></span><br/>
             <span itemprop="spatial">
               <xsl:value-of select="$schemaStrings/sw"/>: <xsl:value-of select="concat(format-number(gmd:westBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:southBoundLatitude/gco:Decimal,'#.##'))"/> <br/>
               <xsl:value-of select="$schemaStrings/ne"/>: <xsl:value-of select="concat(format-number(gmd:eastBoundLongitude/gco:Decimal,'#.##'), ' ', format-number(gmd:northBoundLatitude/gco:Decimal,'#.##'))"/>
@@ -407,7 +407,7 @@
         <div class="col-md-6">
           <xsl:for-each select="/root/gmd:MD_Metadata//gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
             <xsl:if test="position() > 1"><br/><br/></xsl:if>
-            <span class="bold"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
+            <span class="h6"><xsl:value-of select="$schemaStrings/Timeperiod"/></span><br/>
             <xsl:value-of select="$schemaStrings/from"/>: <span itemprop="temporal"><xsl:value-of select="gml:beginPosition"/></span> <br/>
             <xsl:value-of select="$schemaStrings/to"/>:  <span itemprop="temporal"><xsl:value-of select="gml:endPosition"/></span>
           </xsl:for-each>

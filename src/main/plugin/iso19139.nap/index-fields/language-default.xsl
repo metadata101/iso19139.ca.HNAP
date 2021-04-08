@@ -9,6 +9,7 @@
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
   <!-- This file defines what parts of the metadata are indexed by Lucene
@@ -326,24 +327,18 @@
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
-      <xsl:for-each select="gmd:graphicOverview/gmd:MD_BrowseGraphic">
+      <xsl:for-each select="gmd:graphicOverview/gmd:MD_BrowseGraphic[normalize-space(gmd:fileName/gco:CharacterString) != '']">
         <xsl:variable name="fileName" select="gmd:fileName/gco:CharacterString"/>
-        <xsl:if test="$fileName != ''">
-          <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
-          <xsl:choose>
-            <xsl:when test="contains($fileName ,'://')">
-              <Field name="image" string="{concat('unknown|', $fileName)}" store="true" index="false"/>
-            </xsl:when>
-            <xsl:when test="string($fileDescr)='thumbnail'">
-              <!-- FIXME : relative path -->
-              <Field name="image"
-                     string="{concat($fileDescr, '|', '../../srv/eng/resources.get?uuid=', //gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')}"
-                     store="true" index="false"/>
-            </xsl:when>
-          </xsl:choose>
-        </xsl:if>
-      </xsl:for-each>
+        <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
+        <xsl:variable name="fileLang" select="../@xlink:role"/>
 
+        <xsl:variable name="thumbnailType"
+                      select="if (position() = 1) then 'thumbnail' else 'overview'"/>
+        <!-- First thumbnail is flagged as thumbnail and could be considered the main one -->
+        <Field name="image"
+               string="{concat($thumbnailType, '|', $fileName, '|', $fileDescr, '|', $fileLang)}"
+               store="true" index="false"/>
+      </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!--  Fields use to search on Service -->
@@ -529,6 +524,10 @@
         </xsl:for-each>
         <xsl:text> </xsl:text>
         <xsl:for-each select="//gmd:fileIdentifier/gco:CharacterString">
+          <xsl:value-of select="concat(., ' ')"/>
+        </xsl:for-each>
+        <xsl:text> </xsl:text>
+        <xsl:for-each select="//gmd:parentIdentifier/gco:CharacterString">
           <xsl:value-of select="concat(., ' ')"/>
         </xsl:for-each>
       </xsl:attribute>

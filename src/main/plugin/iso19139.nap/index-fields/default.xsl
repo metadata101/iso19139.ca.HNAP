@@ -8,6 +8,7 @@
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
@@ -407,11 +408,12 @@
         select="gmd:graphicOverview/gmd:MD_BrowseGraphic[normalize-space(gmd:fileName/gco:CharacterString) != '']">
         <xsl:variable name="fileName" select="gmd:fileName/gco:CharacterString"/>
         <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
+        <xsl:variable name="fileLang" select="../@xlink:role"/>
         <xsl:variable name="thumbnailType"
                       select="if (position() = 1) then 'thumbnail' else 'overview'"/>
         <!-- First thumbnail is flagged as thumbnail and could be considered the main one -->
         <Field name="image"
-               string="{concat($thumbnailType, '|', $fileName, '|', $fileDescr)}"
+               string="{concat($thumbnailType, '|', $fileName, '|', $fileDescr, '|', $fileLang)}"
                store="true" index="false"/>
       </xsl:for-each>
     </xsl:for-each>

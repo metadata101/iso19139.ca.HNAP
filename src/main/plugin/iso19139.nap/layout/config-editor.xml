@@ -190,6 +190,7 @@
     <name>gmd:distributionFormat</name>
     <name>gmd:distributorContact</name>
     <name>gmd:referenceSystemInfo</name>
+    <name>gmd:valueUnit</name>
   </fieldsWithFieldset>
 
   <multilingualFields>
@@ -270,6 +271,12 @@
       <name>gmd:individualName</name>
       <name>gmd:name</name>
       <name>gmd:code</name>
+      <name>gml:identifier</name>
+      <name>gml:name</name>
+      <name>gml:quantityType</name>
+      <name>gml:catalogSymbol</name>
+      <name>gmd:valueType</name>
+      <name>gmd:value</name>
     </exclude>
   </multilingualFields>
 
@@ -318,7 +325,8 @@
 
 
         <section name="gmd:MD_DataIdentification">
-          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"
+                  or="title" in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation"/>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/
               gmd:date"/>
@@ -495,6 +503,7 @@
               </snippet>
             </template>
           </action>
+
         </section>
 
 
@@ -516,17 +525,75 @@
                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor"
                  or="distributorContact"/>
 
+          <action type="add" name="distributor" or="distributor"
+                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+                  if="count(gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor) = 0">
+            <template>
+              <snippet>
+                <gmd:distributor>
+                  <gmd:MD_Distributor>
+                    <gmd:distributorContact>
+                      <gmd:CI_ResponsibleParty>
+                        <gmd:individualName>
+                          <gco:CharacterString></gco:CharacterString>
+                        </gmd:individualName>
+                        <gmd:organisationName >
+                          <gco:CharacterString></gco:CharacterString>
+                        </gmd:organisationName>
+                        <gmd:positionName>
+                          <gco:CharacterString></gco:CharacterString>
+                        </gmd:positionName>
+                        <gmd:contactInfo>
+                          <gmd:CI_Contact>
+                            <gmd:phone>
+                              <gmd:CI_Telephone>
+                                <gmd:voice>
+                                  <gco:CharacterString></gco:CharacterString>
+                                </gmd:voice>
+                              </gmd:CI_Telephone>
+                            </gmd:phone>
+                            <gmd:address>
+                              <gmd:CI_Address>
+                                <gmd:deliveryPoint >
+                                  <gco:CharacterString></gco:CharacterString>
+                                </gmd:deliveryPoint>
+                                <gmd:city>
+                                  <gco:CharacterString></gco:CharacterString>
+                                </gmd:city>
+                                <gmd:administrativeArea >
+                                  <gco:CharacterString/>
+                                </gmd:administrativeArea>
+                                <gmd:postalCode>
+                                  <gco:CharacterString></gco:CharacterString>
+                                </gmd:postalCode>
+                                <gmd:country>
+                                  <gco:CharacterString></gco:CharacterString>
+                                </gmd:country>
+                                <gmd:electronicMailAddress>
+                                  <gco:CharacterString></gco:CharacterString>
 
-          <!--<section name="distributionResources">
-            <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions" />
-          </section>-->
-
+                                </gmd:electronicMailAddress>
+                              </gmd:CI_Address>
+                            </gmd:address>
+                          </gmd:CI_Contact>
+                        </gmd:contactInfo>
+                        <gmd:role>
+                          <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                                           codeListValue="RI_412">distributor; distributeur</gmd:CI_RoleCode>
+                        </gmd:role>
+                      </gmd:CI_ResponsibleParty>
+                    </gmd:distributorContact>
+                  </gmd:MD_Distributor>
+                </gmd:distributor>
+              </snippet>
+            </template>
+          </action>
         </section>
-
       </tab>
 
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
+        <for name="gmd:title"/>
         <for name="gmd:descriptiveKeywords"/>
         <for name="gmd:keyword"/>
         <for name="gmd:spatialResolution"/>

@@ -27,6 +27,7 @@
                 xmlns:srv="http://www.isotc211.org/2005/srv"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:geonet="http://www.fao.org/geonetwork"
                 exclude-result-prefixes="#all"
                 version="2.0">
@@ -41,6 +42,7 @@
   <!-- Element to use for the file name. -->
   <xsl:param name="thumbnail_desc" select="''"/>
   <xsl:param name="thumbnail_type" select="''"/>
+  <xsl:param name="thumbnail_language" select="''"/>
 
   <!-- Target element to update. The key is based on the concatenation
   of URL+Name -->
@@ -117,6 +119,10 @@
 
 
       <gmd:graphicOverview>
+        <xsl:if test="$thumbnail_language">
+          <xsl:attribute name="xlink:role" select="$thumbnail_language"/>
+        </xsl:if>
+
         <gmd:MD_BrowseGraphic>
           <gmd:fileName>
             <xsl:choose>

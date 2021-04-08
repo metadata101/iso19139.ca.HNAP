@@ -1781,7 +1781,7 @@
     </element>
     <element name="gmd:referenceSystemInfo" id="13.0">
         <label>Reference System Information</label>
-        <btnLabel>Add Reference System Information</btnLabel>
+        <btnLabel>Add Spatial Reference System Information</btnLabel>
         <description>Description of the spatial and temporal reference systems used in the
             dataset</description>
     </element>
@@ -2739,4 +2739,20 @@
     <element name="CoreSubjectThesaurus">
       <label>GC Core Subject Thesaurus</label>
     </element>
+
+
+  <element name="gml:quantityType">
+    <label>Quantity Type</label>
+    <description></description>
+  </element>
+
+  <element name="gml:catalogSymbol">
+    <label>Catalogue symbol</label>
+    <description></description>
+  </element>
+
+  <element name="gml:unitsSystem">
+    <label>Units System</label>
+    <description></description>
+  </element>
 </labels>

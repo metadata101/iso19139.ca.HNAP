@@ -22,17 +22,17 @@
   <EC26>Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC26>
   <EC26GovEnglish>Anglais valeur est nécessaire pour le Responsable de la distribution - Organisation dans «Government du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovEnglish>
   <EC26GovFrench>Français valeur est nécessaire pour le Responsable de la distribution - Organisation dans «Government du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC26GovFrench>
-  <EC26GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable de la distribution - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Quebec Government and Municipalities'.</EC26GovAllowedEnglish>
+  <EC26GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable de la distribution - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Government and Municipalities of Québec'.</EC26GovAllowedEnglish>
   <EC26GovAllowedFrench>Français valeur est nécessaire pour le Responsable de la distribution - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador' ou 'Gouvernement du Nouveau-Brunswick' ou 'Gouvernement du Yukon' ou 'Gouvernement et municipalités du Québec'.</EC26GovAllowedFrench>
 
   <EC37GovEnglish>Anglais valeur est nécessaire pour le Responsable de la ressource - Organisation dans «Government du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovEnglish>
   <EC37GovFrench>Français valeur est nécessaire pour le Responsable de la ressource - Organisation dans «Government du Canada» devrait avoir une valeur de titre valable. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</EC37GovFrench>
-  <EC37GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable de la ressource - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Quebec Government and Municipalities'.</EC37GovAllowedEnglish>
+  <EC37GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable de la ressource - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Government and Municipalities of Québec'.</EC37GovAllowedEnglish>
   <EC37GovAllowedFrench>Français valeur est nécessaire pour le Responsable de la ressource - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador' ou 'Gouvernement du Nouveau-Brunswick' ou 'Gouvernement du Yukon' ou 'Gouvernement et municipalités du Québec'.</EC37GovAllowedFrench>
 
   <EC38GovEnglish>Anglais valeur est nécessaire pour le Responsable des métadonnées - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC38GovEnglish>
   <EC38GovFrench>Français valeur est nécessaire pour le Responsable des métadonnées - Le nom d'organisations du gouvernement du Canada doit utiliser le titre d'usage tel que défini dans le Registre des titres d'usage. Voir http://www.tbs-sct.gc.ca/fip-pcim/reg-fra.asp.</EC38GovFrench>
-  <EC38GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable des métadonnées - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Quebec Government and Municipalities'.</EC38GovAllowedEnglish>
+  <EC38GovAllowedEnglish>Anglais valeur est nécessaire pour le Responsable des métadonnées - Le nom devrait avoir une valeur de 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' ou 'Government of Newfoundland and Labrador' ou 'Government of New Brunswick' ou 'Government of Yukon' ou 'Government and Municipalities of Québec'.</EC38GovAllowedEnglish>
   <EC38GovAllowedFrench>Français valeur est nécessaire pour le Responsable des métadonnées - Le nom devrait avoir une valeur de 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' ou 'Gouvernement de Terre-Neuve-et-Labrador' ou 'Gouvernement du Nouveau-Brunswick' ou 'Gouvernement du Yukon' ou 'Gouvernement et municipalités du Québec'.</EC38GovAllowedFrench>
 
   <EC27>Informations supplémentaires devrait être vide ou rempli en anglais et en français</EC27>
@@ -81,10 +81,17 @@
   <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
   <InvalidMaintenanceFrequency>Le code de fréquence de mise à jour n'est pas valide</InvalidMaintenanceFrequency>
 
+  <MissingContactOrganisation>Contact - Organisation name is required</MissingContactOrganisation>
+  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
   <MissingContactRole>Contact role is required</MissingContactRole>
+  <MissingCitedResponsibleOrganisation>Cited responsible - Organisation name is required</MissingCitedResponsibleOrganisation>
+  <MissingCitedResponsibleMail>Cited responsible- Electronic mail address is required</MissingCitedResponsibleMail>
   <MissingCitedResponsibleRole>Cited responsible role is required</MissingCitedResponsibleRole>
   <MissingDistributorRole>Distributor role is required</MissingDistributorRole>
 
+  <MissingDataIdentification>Missing Data Identification section</MissingDataIdentification>
+  <MissingTitle>Title is required</MissingTitle>
+  <MissingStatus>Status is required</MissingStatus>
   <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
 
@@ -123,6 +130,8 @@
   <GeographicExtentRequired>Une valeur est nécessaire pour: Étendue géographique</GeographicExtentRequired>
   <GeographicExtentWestEast>Étendue géographique - la longitude ouest doit être inférieure à la longitude est</GeographicExtentWestEast>
   <GeographicExtentNorthSouth>Étendue géographique - la latitude sud devrait être inférieure à la latitude nord</GeographicExtentNorthSouth>
+
+  <MissingLocale>Missing information for alternative language</MissingLocale>
 
   <DistributorContactMissing>Le Responsable de la distribution est obligatoire</DistributorContactMissing>
 </strings>

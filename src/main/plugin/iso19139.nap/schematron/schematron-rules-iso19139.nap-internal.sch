@@ -108,6 +108,54 @@
         <!-- Geographic extent -->
         <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
         <sch:assert test="$hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
+
+        <!-- Spatial representation type -->
+        <sch:let name="missingSpatialRepresentationType" value="not(gmd:spatialRepresentationType)" />
+        <sch:assert test="not($missingSpatialRepresentationType)">$loc/strings/SpatialRepresentation</sch:assert>
+
+        <!-- Topic category -->
+        <sch:let name="missingTopiCategory" value="not(gmd:topicCategory)" />
+        <sch:assert test="not($missingTopiCategory)">$loc/strings/EC12</sch:assert>
+
+        <!-- Title -->
+        <sch:let name="missingTitle" value="not(gmd:citation/*/gmd:title)" />
+        <sch:assert test="not($missingTitle)">$loc/strings/MissingTitle</sch:assert>
+
+        <!-- Status -->
+        <sch:let name="missingStatus" value="not(gmd:status)" />
+        <sch:assert test="not(missingStatus)">$loc/strings/MissingStatus</sch:assert>
+
+        <!-- Dates -->
+        <sch:let name="missingPublication" value="count(gmd:citation/*/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
+
+        <sch:assert
+          test="not($missingPublication)"
+        >$loc/strings/EC40</sch:assert>
+
+        <sch:let name="missingCreation" value="count(gmd:citation/*/gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
+
+        <sch:assert
+          test="not($missingCreation)"
+        >$loc/strings/EC41</sch:assert>
+
+        <!-- CitedResponsible -->
+        <sch:let name="missingCitedResponsibleOrganisation" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName)" />
+
+        <sch:assert
+          test="not($missingCitedResponsibleOrganisation)"
+        >$loc/strings/MissingCitedResponsibleOrganisation</sch:assert>
+
+        <sch:let name="missingCitedResponsibleMail" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress)" />
+
+        <sch:assert
+          test="not($missingCitedResponsibleMail)"
+        >$loc/strings/MissingCitedResponsibleMail</sch:assert>
+
+        <sch:let name="missingCitedResponsibleRole" value="not(gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role)" />
+
+        <sch:assert
+          test="not($missingCitedResponsibleRole)"
+        >$loc/strings/MissingCitedResponsibleRole</sch:assert>
       </sch:rule>
 
       <!-- Temporal extent -->
@@ -301,7 +349,15 @@
 
         </sch:rule>
 
-        <!-- Distributor Contact - Organisation -->
+     <!-- Distributor Contact -->
+     <sch:rule context="//gmd:distributionInfo">
+        <sch:let name="missing" value="count(gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty) = 0" />
+
+        <sch:assert
+           test="not($missing)">$loc/strings/DistributorContactMissing</sch:assert>
+      </sch:rule>
+
+      <!-- Distributor Contact - Organisation -->
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:organisationName">
 
         <sch:let name="government-titles" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/EC_Government_Titles.rdf'))"/>
@@ -678,7 +734,7 @@
 
         <sch:let name="distributionFormat" value="gco:CharacterString" />
 
-        <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang='en']) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
+        <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $distributionFormat)]))">$loc/strings/DistributionFormatInvalid</sch:assert>
       </sch:rule>
 
       <sch:rule context="//gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:version">
@@ -693,7 +749,7 @@
       </sch:rule>
 
       <!-- Thesaurus info -->
-        <sch:rule context="//gmd:descriptiveKeywords">
+      <sch:rule context="//gmd:descriptiveKeywords">
 
             <sch:let name="thesaurusNamePresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation) > 0" />
 
@@ -748,22 +804,14 @@
                 >$loc/strings/ECThesaurusEmail</sch:assert>
         </sch:rule>
 
-
-      <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:MD_DataIdentification
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/srv:SV_ServiceIdentification">
-
-
-        <sch:let name="missing" value="not(gmd:spatialRepresentationType)" />
+      <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
+      <sch:rule context="/gmd:MD_Metadata">
 
         <sch:assert
-                test="not($missing)"
-        >$loc/strings/SpatialRepresentation</sch:assert>
-      </sch:rule>
+          test="count(gmd:identificationInfo[gmd:MD_DataIdentification]) + count(gmd:identificationInfo[srv:SV_ServiceIdentification]) > 0"
+        >$loc/strings/MissingDataIdentification</sch:assert>
 
-        <!-- Mandatory, if spatialRepresentionType in Data Identification is "vector," "grid" or "tin”. -->
-      <sch:rule context="/gmd:MD_Metadata">
-        <sch:let name="missing" value="not(gmd:referenceSystemInfo)
+        <sch:let name="missing" value="not(gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier)
                   " />
 
         <sch:let name="sRequireRefSystemInfo" value="count(//gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode[@codeListValue= 'RI_635']) +
@@ -774,6 +822,30 @@
           test="(($sRequireRefSystemInfo > 0) and not($missing)) or
               $sRequireRefSystemInfo = 0"
         >$loc/strings/ReferenceSystemInfo</sch:assert>
+
+        <sch:let name="missingLocale" value="not(gmd:locale/gmd:PT_Locale/@id)" />
+
+        <sch:assert
+          test="not($missingLocale)"
+        >$loc/strings/MissingLocale</sch:assert>
+
+        <sch:let name="missingContactOrganisation" value="not(gmd:contact/*/gmd:organisationName)" />
+
+        <sch:assert
+          test="not($missingContactOrganisation)"
+        >$loc/strings/MissingContactOrganisation</sch:assert>
+
+        <sch:let name="missingContactMail" value="not(gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress)" />
+
+        <sch:assert
+          test="not($missingContactMail)"
+        >$loc/strings/MissingContactMail</sch:assert>
+
+        <sch:let name="missingContactRole" value="not(gmd:contact/*/gmd:role)" />
+
+        <sch:assert
+          test="not($missingContactRole)"
+        >$loc/strings/MissingContactRole</sch:assert>
       </sch:rule>
     </sch:pattern>
 

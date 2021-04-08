@@ -1267,7 +1267,7 @@
   <xsl:template  match="gco:Distance">
     <xsl:element name="gco:{local-name()}">
       <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="@uom"/></xsl:attribute>
+      <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="if (contains(@uom, '#')) then tokenize(@uom,'#')[last()] else @uom"/></xsl:attribute>
       <xsl:apply-templates select="node()"/>
     </xsl:element>
   </xsl:template>
