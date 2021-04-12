@@ -126,17 +126,6 @@
     </xsl:copy>
   </xsl:template>
 
-  <!--Overwrite security constraint to default unclassified if presented in metadata xml-->
-  <!--<xsl:template match="gmd:resourceConstraints/gmd:MD_SecurityConstraints/gmd:classification">
-    <xsl:element name="gmd:classification">
-      <xsl:element name="gmd:MD_ClassificationCode">
-        <xsl:attribute name="codeList">http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96</xsl:attribute>
-        <xsl:attribute name="codeListValue">RI_484</xsl:attribute>
-        <xsl:text>unclassified; nonClassifié</xsl:text>
-      </xsl:element>
-    </xsl:element>
-  </xsl:template>-->
-
   <xsl:template match="node()|@*">
     <xsl:copy>
       <xsl:apply-templates select="node()|@*"/>
