@@ -1133,11 +1133,11 @@
                 (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert - Nouveau-Brunswick (http://www.snb.ca/f/2000/data-F.html)' and
                 normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)') or
 
-                (normalize-space(gco:CharacterString) = 'Open Government Licence – Yukon (https://open.yukon.ca/data/open-government-licence-yukon)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert – Yukon (https://open.yukon.ca/data/fr/gouvernement-ouvert-licence-du-yukon)') or
+                (normalize-space(gco:CharacterString) = 'Open Government Licence - Yukon (https://open.yukon.ca/open-government-licence-yukon)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert - Yukon (https://open.yukon.ca/fr/gouvernement-ouvert-licence-du-yukon)') or
 
-                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert – Yukon (https://open.yukon.ca/data/fr/gouvernement-ouvert-licence-du-yukon)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence – Yukon (https://open.yukon.ca/data/open-government-licence-yukon)') or
+                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert - Yukon (https://open.yukon.ca/fr/gouvernement-ouvert-licence-du-yukon)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - Yukon (https://open.yukon.ca/open-government-licence-yukon)') or
 
                 (normalize-space(gco:CharacterString) = 'Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)' and
                 normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)') or
