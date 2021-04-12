@@ -105,23 +105,16 @@
   <!--Add default unclassified as security constraint if missing from metadata xml-->
   <xsl:template match="gmd:MD_DataIdentification">
     <xsl:copy copy-namespaces="no">
-      <xsl:choose>
-        <xsl:when test="gmd:resourceConstraints/gmd:MD_SecurityConstraints/gmd:classification/gmd:MD_ClassificationCode">
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:element name="gmd:resourceConstraints">
-            <xsl:element name="gmd:MD_SecurityConstraints">
-              <xsl:element name="gmd:classification">
-                <xsl:element name="gmd:MD_ClassificationCode">
-                  <xsl:attribute name="codeList">http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96</xsl:attribute>
-                  <xsl:attribute name="codeListValue">RI_484</xsl:attribute>
-                  <xsl:text>unclassified; nonClassifié</xsl:text>
-                </xsl:element>
-              </xsl:element>
-            </xsl:element>
-          </xsl:element>
-        </xsl:otherwise>
-      </xsl:choose>
+      <xsl:if test="not(gmd:resourceConstraints/gmd:MD_SecurityConstraints/gmd:classification/gmd:MD_ClassificationCode)">
+        <gmd:resourceConstraints>
+          <gmd:MD_SecurityConstraints>
+            <gmd:classification>
+              <gmd:MD_ClassificationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96"
+                                         codeListValue="RI_484">unclassified; nonClassifié</gmd:MD_ClassificationCode>
+            </gmd:classification>
+          </gmd:MD_SecurityConstraints>
+        </gmd:resourceConstraints>
+      </xsl:if>
       <xsl:apply-templates select="node()|@*"/>
     </xsl:copy>
   </xsl:template>
