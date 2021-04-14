@@ -191,7 +191,7 @@ Translation workflow:
 
 ### Release Process
 
-1. Update the ``pom.xml`` version information:
+1. Update the ``pom.xml`` version information for release:
 
    ```
    find . -name `pom.xml` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
@@ -200,9 +200,7 @@ Translation workflow:
 2. Update the [src/main/plugin/iso19139.ca.HNAP/schema-ident.xm](src/main/plugin/iso19139.ca.HNAP/schema-ident.xml#L32) ``appMinorVersionSupported``:
 
    ```
-   <!-- hnap schema version -->
-	 <version>2.3.1</version>
-	 <appMinorVersionSupported>3.1.7</appMinorVersionSupported>
+   sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
    
 4. Build everything, including documentation:
@@ -216,7 +214,7 @@ Translation workflow:
    ```
    git add pom.xml
    git commit -am "Version 3.10.7"
-   git tag -a 3.10.6 -m "Release 3.10.7"
+   git tag -a 3.10.7 -m "Release 3.10.7"
    git push origin 3.10.7
    ```
 
@@ -230,11 +228,13 @@ Translation workflow:
 
    * Upload artifacts from ``target`` to the new github page.
 
-5. Restore the `pom.xml` version information.
+5. Restore the `pom.xml` and `schema-ident.xml` version information.
 
    ```
    find . -name `pom.xml` -exec sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' {} \;
+   sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
+
 6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
    
    * Title: ``3.10.8``
