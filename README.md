@@ -191,13 +191,21 @@ Translation workflow:
 
 ### Release Process
 
-1. Update the ``pom.xml`` version information.
+1. Update the ``pom.xml`` version information:
 
    ```
    find . -name `pom.xml` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
    ```
+
+2. Update the [src/main/plugin/iso19139.ca.HNAP/schema-ident.xm](src/main/plugin/iso19139.ca.HNAP/schema-ident.xml#L32) ``appMinorVersionSupported``:
+
+   ```
+   <!-- hnap schema version -->
+	 <version>2.3.1</version>
+	 <appMinorVersionSupported>3.1.7</appMinorVersionSupported>
+   ```
    
-2. Build everything, including documentation:
+4. Build everything, including documentation:
    
    ```
    mvn clean install -Pdocs
