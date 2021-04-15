@@ -113,6 +113,12 @@
         <sch:let name="missingSpatialRepresentationType" value="not(gmd:spatialRepresentationType)" />
         <sch:assert test="not($missingSpatialRepresentationType)">$loc/strings/SpatialRepresentation</sch:assert>
 
+        <!-- Maintenance and frequency -->
+        <sch:let name="missingMaintenanceAndUpdateFrequency" value="not(gmd:resourceMaintenance/gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency)" />
+        <sch:assert
+                test="not($missingMaintenanceAndUpdateFrequency)"
+              >$loc/strings/EC11</sch:assert>
+
         <!-- Topic category -->
         <sch:let name="missingTopiCategory" value="not(gmd:topicCategory)" />
         <sch:assert test="not($missingTopiCategory)">$loc/strings/EC12</sch:assert>
@@ -156,6 +162,19 @@
         <sch:assert
           test="not($missingCitedResponsibleRole)"
         >$loc/strings/MissingCitedResponsibleRole</sch:assert>
+
+        <!-- Access constraints -->
+        <sch:let name="missingAccessConstraints" value="not(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:accessConstraints)" />
+        <sch:assert
+              test="not($missingAccessConstraints)"
+              >$loc/strings/EC23</sch:assert>
+
+        <!-- Use constraints -->
+        <sch:let name="missingUseConstraints" value="not(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useConstraints)" />
+        <sch:assert
+             test="not($missingUseConstraints)"
+             >$loc/strings/EC24</sch:assert>
+
       </sch:rule>
 
       <!-- Temporal extent -->
