@@ -49,6 +49,9 @@
   <CitedResponsiblePartyOrganisationName>Partie responsable citée - Nom de l'organisation est obligatoire dans les deux langues</CitedResponsiblePartyOrganisationName>
   <DistributorOrganisationName>Distributeur - Nom de l'organisation est obligatoire dans les deux langues</DistributorOrganisationName>
 
+  <FileDescription>Superposition Graphique (vignette) - Description du Fichier devrait être vide ou rempli en anglais et en français</FileDescription>
+
+
   <ContactPositionName>Responsable des métadonnées - Position devrait être vide ou rempli en anglais et en français</ContactPositionName>
   <CitedResponsiblePartyPositionName>Responsable de la ressource - Position devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPositionName>
   <DistributorPositionName>Distributeur - Position devrait être vide ou rempli en anglais et en français</DistributorPositionName>
