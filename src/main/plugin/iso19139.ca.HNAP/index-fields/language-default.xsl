@@ -428,18 +428,24 @@
       <xsl:for-each select="gmd:graphicOverview/gmd:MD_BrowseGraphic">
         <xsl:variable name="fileName" select="gmd:fileName/gco:CharacterString"/>
         <xsl:if test="$fileName != ''">
-          <xsl:variable name="fileDescr" select="gmd:fileDescription/gco:CharacterString"/>
-          <xsl:choose>
-            <xsl:when test="contains($fileName ,'://')">
-              <Field name="image" string="{concat('unknown|', $fileName)}" store="true" index="false"/>
-            </xsl:when>
-            <xsl:when test="string($fileDescr)='thumbnail'">
-              <!-- FIXME : relative path -->
-              <Field name="image"
-                     string="{concat($fileDescr, '|', '../../srv/eng/resources.get?uuid=', //gmd:fileIdentifier/gco:CharacterString, '&amp;fname=', $fileName, '&amp;access=public')}"
-                     store="true" index="false"/>
-            </xsl:when>
-          </xsl:choose>
+
+          <xsl:variable name="thumbnailType" select="if (position() = 1) then 'thumbnail' else 'overview'"/>
+
+          <!-- choose the best language text.  Use the  LocalisedCharacterString (if available) otherwise use the main-language (CharacterString) -->
+          <xsl:variable name="fileDescrMainLang" select="normalize-space(gmd:fileDescription/gco:CharacterString)"/>
+          <xsl:variable name="fileDescrAltLang" select="normalize-space(gmd:fileDescription/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=$langId])"/>
+
+          <xsl:variable name="fileDescr">
+            <xsl:choose>
+              <xsl:when test="$fileDescrAltLang"><xsl:value-of select="$fileDescrAltLang"/></xsl:when>
+              <xsl:otherwise><xsl:value-of select="$fileDescrMainLang"/></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+
+          <Field name="image"
+                 string="{concat($thumbnailType, '|', $fileName, '|', $fileDescr)}"
+                 store="true" index="false"/>
+
         </xsl:if>
       </xsl:for-each>
 
