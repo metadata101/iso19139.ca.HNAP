@@ -319,8 +319,8 @@
     </sch:rule>
 
     <!-- Keywords -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
-      <sch:let name="missing" value="not(string(gco:CharacterString))
+    <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords">
+      <sch:let name="missing" value="not(string(gmd:MD_Keywords/gmd:keyword[1]/gco:CharacterString))
             or (@gco:nilReason)" />
 
       <sch:assert
