@@ -40,7 +40,7 @@
   <ContactOrganisationName>Contact - Organization name is required</ContactOrganisationName>
   <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required</CitedResponsiblePartyOrganisationName>
   <DistributorOrganisationName>Distributor - Organization name is required</DistributorOrganisationName>
-  
+
   <ContactElectronicMail>Contact - Electronic mail address is required</ContactElectronicMail>
   <CitedResponsiblePartyElectronicMail>Cited Responsible Party - Electronic mail address is required</CitedResponsiblePartyElectronicMail>
   <DistributorElectronicMail>Distributor - Electronic mail address is required</DistributorElectronicMail>
@@ -52,4 +52,8 @@
   <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
   <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
   <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
+
+  <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
+  <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
 </strings>
