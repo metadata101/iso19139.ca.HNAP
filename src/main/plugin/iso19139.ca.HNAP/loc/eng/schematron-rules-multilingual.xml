@@ -49,6 +49,8 @@
   <CitedResponsiblePartyOrganisationName>Cited Responsible Party - Organization name is required in both languages</CitedResponsiblePartyOrganisationName>
   <DistributorOrganisationName>Distributor - Organization name is required in both languages</DistributorOrganisationName>
 
+  <FileDescription>GraphicOverlay (thumbnail) - File Description should be empty or filled in English and French</FileDescription>
+
   <ContactPositionName>Contact - Position Name should be empty or filled in English and French</ContactPositionName>
   <CitedResponsiblePartyPositionName>Cited Responsible Party - Position Name should be empty or filled in English and French</CitedResponsiblePartyPositionName>
   <DistributorPositionName>Distributor - Position Name should be empty or filled in English and French</DistributorPositionName>

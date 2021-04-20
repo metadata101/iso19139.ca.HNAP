@@ -176,6 +176,24 @@
     </sch:rule>
 
 
+
+    <!-- graphicOverlay - fileDescription -->
+    <sch:rule context="//gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileDescription">
+
+      <sch:let name="missing" value="not(string(gco:CharacterString))
+                or (@gco:nilReason)" />
+
+      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+
+      <sch:assert
+        test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
+      >$loc/strings/FileDescription</sch:assert>
+
+    </sch:rule>
+
+
+
+
     <!-- Contact - Organisation Name -->
     <sch:rule context="//gmd:contact/*/gmd:organisationName">
 
