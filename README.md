@@ -18,7 +18,7 @@ The [project issue tracker](https://github.com/metadata101/iso19139.ca.HNAP/issu
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork ``3.10.x``, not tested with prior versions!
+Use GeoNetwork ``3.12.x``, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -52,10 +52,10 @@ There is some custom initialization code run when GeoNetwork starts up:
 
 The best approach is to add the plugin as a submodule:
 
-1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.10.x/add-schema.sh) for automatic deployment:
+1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.12.x/add-schema.sh) for automatic deployment:
 
    ```
-   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 3.10.x
+   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 3.12.x
    ```
 
 2. Build the application:
@@ -194,13 +194,13 @@ Translation workflow:
 1. Update the ``pom.xml`` version information for release:
 
    ```
-   find . -name `pom.xml` -exec sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' {} \;
+   find . -name `pom.xml` -exec sed -i '' 's/3.12-SNAPSHOT/3.12.7-0/g' {} \;
    ```
 
 2. Update the [src/main/plugin/iso19139.ca.HNAP/schema-ident.xm](src/main/plugin/iso19139.ca.HNAP/schema-ident.xml#L32) ``appMinorVersionSupported``:
 
    ```
-   sed -i '' 's/3.10-SNAPSHOT/3.10.7-0/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
+   sed -i '' 's/3.12-SNAPSHOT/3.12.7-0/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
    
 4. Build everything, including documentation:
@@ -213,38 +213,38 @@ Translation workflow:
    
    ```
    git add pom.xml
-   git commit -am "Version 3.10.7"
-   git tag -a 3.10.7 -m "Release 3.10.7"
-   git push origin 3.10.7
+   git commit -am "Version 3.12.7"
+   git tag -a 3.12.7 -m "Release 3.12.7"
+   git push origin 3.12.7
    ```
 
 4. Navigate to release page: https://github.com/metadata101/iso19139.ca.HNAP/releases
 
    Click ``Edit tag`` button:
    
-   * Title: ``iso19139.ca.HNAP 3.10.7 Release``
+   * Title: ``iso19139.ca.HNAP 3.12.7 Release``
    
-   * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/3.10.x/README.md)
+   * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/3.12.x/README.md)
 
    * Upload artifacts from ``target`` to the new github page.
 
 5. Restore the `pom.xml` and `schema-ident.xml` version information.
 
    ```
-   find . -name `pom.xml` -exec sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' {} \;
-   sed -i '' 's/3.10.7-0/3.10-SNAPSHOT/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
+   find . -name `pom.xml` -exec sed -i '' 's/3.12.7-0/3.12-SNAPSHOT/g' {} \;
+   sed -i '' 's/3.12.7-0/3.12-SNAPSHOT/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
 
 6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
    
-   * Title: ``3.10.8``
+   * Title: ``3.12.8``
    * Date: leave empty
-   * Content: ``Released in conjunction with core-geonetwork 3.10.8.``
+   * Content: ``Released in conjunction with core-geonetwork 3.12.8.``
    
 7. Update ``README.md`` to link to new milestone:
     
    ```
-   For details on this release see [3.10.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/5?closed=1)
+   For details on this release see [3.12.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/5?closed=1)
    release notes for details.
    ```
    
@@ -252,6 +252,6 @@ Translation workflow:
    
    ```
    git add pom.xml README.md
-   git commit -m "Start 3.10.8 development"
+   git commit -m "Start 3.12.8 development"
    git push
    ```
