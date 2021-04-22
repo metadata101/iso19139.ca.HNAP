@@ -633,7 +633,7 @@
         <option title="http://www.epsg-registry.org" value="EPSG:4326">EPSG:4326 Web Mercator WGS84</option>
         <option title="http://www.spatialreference.org" value="SR-ORG:16">SR-ORG:16</option>
         <option title="http://www.spatialreference.org" value="SR-ORG:29">SR-ORG:29</option>
-        <option title="" value="Not applicable/Unknown">Proj4</option>
+        <option title="" value="Proj4">Not applicable/Unknown</option>
       </helper>
     </element>
     <element name="gmd:code" id="207.0" context="gmd:MD_Identifier">
