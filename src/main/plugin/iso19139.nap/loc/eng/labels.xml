@@ -631,8 +631,9 @@
         <option title="http://www.epsg-registry.org" value="EPSG:3979">EPSG:3979 Lambert Conic Conformal (CSRS)</option>
         <option title="http://www.epsg-registry.org" value="EPSG:4269">EPSG:4269 LL (Nad83)</option>
         <option title="http://www.epsg-registry.org" value="EPSG:4326">EPSG:4326 Web Mercator WGS84</option>
-        <option title="http://www.spatialreference.org" value="SRG-ORG:16">SRG-ORG:16</option>
-        <option title="http://www.spatialreference.org" value="SRG-ORG:29">SRG-ORG:29</option>
+        <option title="http://www.spatialreference.org" value="SR-ORG:16">SR-ORG:16</option>
+        <option title="http://www.spatialreference.org" value="SR-ORG:29">SR-ORG:29</option>
+        <option title="" value="Not applicable/Unknown">Proj4</option>
       </helper>
     </element>
     <element name="gmd:code" id="207.0" context="gmd:MD_Identifier">
