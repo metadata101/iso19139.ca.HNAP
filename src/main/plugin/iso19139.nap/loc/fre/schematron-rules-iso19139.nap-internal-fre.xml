@@ -163,4 +163,5 @@
     <MissingLocale>Missing information for alternative language</MissingLocale>
 
     <DistributorContactMissing>Le Responsable de la distribution est obligatoire</DistributorContactMissing>
+    <ReferenceSystemInfoCodeInvalid>Information sur le système de référence Code doit avoir le format EPSG:NUMÉRO / SR-ORG:NUMÉRO ou avoir la valeur Proj4. Exemple: EPSG:4326</ReferenceSystemInfoCodeInvalid>
 </strings>

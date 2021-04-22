@@ -69,6 +69,7 @@
   <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
   <ReferenceSystemInfo>Une valeur est nécessaire pour: Reference System</ReferenceSystemInfo>
   <ReferenceSystemInfoCode>Une valeur est nécessaire pour: Information sur le système de référence - Code</ReferenceSystemInfoCode>
+  <ReferenceSystemInfoCodeInvalid>Information sur le système de référence Code doit avoir le format EPSG:NUMÉRO / SR-ORG:NUMÉRO ou avoir la valeur Proj4. Exemple: EPSG:4326</ReferenceSystemInfoCodeInvalid>
 
   <InvalidHierarchyLevel>Le code de type de ressource n'est pas valide</InvalidHierarchyLevel>
   <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>

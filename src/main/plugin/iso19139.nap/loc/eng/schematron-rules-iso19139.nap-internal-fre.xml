@@ -167,4 +167,6 @@
     <MissingLocale>Missing information for alternative language</MissingLocale>
 
     <DistributorContactMissing>Distributor Contact is required</DistributorContactMissing>
+  <ReferenceSystemInfoCodeInvalid>Reference System Code should have the format EPSG:NUMBER / SR-ORG:NUMBER or have the value Proj4. Example: EPSG:4326</ReferenceSystemInfoCodeInvalid>
+
 </strings>
