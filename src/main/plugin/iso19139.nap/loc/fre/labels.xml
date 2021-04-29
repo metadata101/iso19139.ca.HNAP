@@ -1086,6 +1086,7 @@
       <option title="http://www.spatialreference.org" value="SR-ORG:16">SR-ORG:16</option>
       <option title="http://www.spatialreference.org" value="SR-ORG:29">SR-ORG:29</option>
       <option title="" value="Proj4">N'est pas applicable / inconnu</option>
+      <option title="" value="Proj4">Proj4</option>
     </helper>
   </element>
   <element name="gmd:code" id="207.0" context="gmd:MD_Identifier">

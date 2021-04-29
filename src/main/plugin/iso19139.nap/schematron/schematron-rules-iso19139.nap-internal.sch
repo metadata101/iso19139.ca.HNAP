@@ -635,7 +635,7 @@
          <sch:let name="prefix" value="tokenize(gco:CharacterString, ':')[1]" />
          <sch:let name="value" value="tokenize(gco:CharacterString, ':')[2]" />
 
-         <sch:assert test="gco:CharacterString = 'Proj4' or
+         <sch:assert test="gco:CharacterString = 'Proj4' or gco:CharacterString = 'unknown' or
                 ($prefix = 'EPSG' and string(number($value)) != 'NaN') or
                 ($prefix = 'SR-ORG' and string(number($value)) != 'NaN')
                 ">$loc/strings/ReferenceSystemInfoCodeInvalid</sch:assert>
