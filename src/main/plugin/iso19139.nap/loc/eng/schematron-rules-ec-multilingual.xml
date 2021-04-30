@@ -69,7 +69,7 @@
   <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
   <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
   <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
-  <ReferenceSystemInfoCodeInvalid>Reference System Code should have the format EPSG:NUMBER / SR-ORG:NUMBER or have the value Proj4. Example: EPSG:4326</ReferenceSystemInfoCodeInvalid>
+  <ReferenceSystemInfoCodeInvalid>Reference System Code should have the format EPSG:NUMBER / SR-ORG:NUMBER or have the value Proj4 or unknown. Example: EPSG:4326</ReferenceSystemInfoCodeInvalid>
 
   <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
   <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
