@@ -64,7 +64,7 @@
 
     <xsl:call-template name="render-element">
       <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), '', $xpath)/label"/>
+                      select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), '', $xpath)"/>
       <xsl:with-param name="name" select="gn:element/@ref"/>
       <xsl:with-param name="value" select="text()"/>
       <xsl:with-param name="cls" select="local-name()"/>

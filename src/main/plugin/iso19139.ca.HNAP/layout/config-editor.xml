@@ -468,7 +468,7 @@
                    in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                    or="resourceConstraints"/>
 
-          <field name="temporalRangeSection" templateModeOnly="true"
+          <field name="temporalRangeSection"
                  xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
                  if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification) > 0">
             <template>
@@ -505,7 +505,7 @@
             </template>
           </field>
 
-          <field name="temporalRangeSection" templateModeOnly="true"
+          <field name="temporalRangeSection"
                  xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
                  if="count(gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification) > 0">
             <template>
