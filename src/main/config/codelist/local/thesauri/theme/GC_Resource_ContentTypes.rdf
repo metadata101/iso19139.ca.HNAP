@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:ns2="http://www.w3.org/2004/02/skos/core#">
+
+    <ns2:ConceptScheme>
+      <dc:title>Resource content type</dc:title>
+       <dc:title xml:lang="en">Resource content type</dc:title>
+       <dc:title xml:lang="fr">Type d'information de la ressource</dc:title>
+      <dc:description></dc:description>
+      <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+      <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+    </ns2:ConceptScheme>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcecontenttype#Dataset">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"

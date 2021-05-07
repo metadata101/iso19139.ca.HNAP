@@ -34,7 +34,7 @@
                 "type": "thesaurus",
                 "heading": {
                   "eng": "Content type",
-                  "fra": "Content type"
+                  "fra": "Type d'information"
                 },
                 "thesaurus": "external.theme.GC_Resource_ContentTypes"
               },
@@ -50,7 +50,7 @@
                 "type": "thesaurus",
                 "heading": {
                   "eng": "Language",
-                  "fra": "Language"
+                  "fra": "Langue"
                 },
                 "thesaurus": "external.theme.GC_Resource_Languages"
               }
