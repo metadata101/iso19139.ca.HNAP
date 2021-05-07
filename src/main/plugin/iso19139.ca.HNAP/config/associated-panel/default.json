@@ -27,7 +27,7 @@
           "directiveConfig": {
             "valueElementId": "multicombinervalue",
             "fieldName": "desc",
-            "combiner":"; ",
+            "combiner":";",
             "config":
             [
               {
