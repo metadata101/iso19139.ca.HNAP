@@ -17,9 +17,9 @@
             >Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
             >Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglais</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">eng</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">English</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">eng</ns2:prefLabel>
     </rdf:Description>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcelanguage#fra">
@@ -27,19 +27,9 @@
         >Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
         >Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Français</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">fra</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">French</ns2:prefLabel>
-    </rdf:Description>
-
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcelanguage#zxx">
-        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en"
-        >Definition</ns2:scopeNote>
-        <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
-        >Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pas de contenu linguistique</ns2:prefLabel>
-        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">No linguistic content</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">fra</ns2:prefLabel>
     </rdf:Description>
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcelanguage#eng,fra">
@@ -47,9 +37,9 @@
         >Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
         >Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglais/Français</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">eng,fra</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">English/French</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">eng,fra</ns2:prefLabel>
     </rdf:Description>
 
 </rdf:RDF>
