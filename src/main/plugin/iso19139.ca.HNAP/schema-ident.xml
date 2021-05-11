@@ -29,7 +29,7 @@
 	<id>3693b080-4f89-11e4-916c-0800200c9a66</id>
 	<!-- hnap schema version -->
 	<version>2.3.1</version>
-	<appMinorVersionSupported>3.11-SNAPSHOT</appMinorVersionSupported>
+	<appMinorVersionSupported>3.12.0</appMinorVersionSupported>
 
 	<title xml:lang="en">ISO Harmonized North American Profile (HNAP)</title>
 	<title xml:lang="fr">ISO Profil nord-américain harmonisé (HNAP)</title>
