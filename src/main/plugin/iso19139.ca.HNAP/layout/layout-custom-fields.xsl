@@ -228,9 +228,14 @@
       }
     </xsl:variable>
 
+    <xsl:variable name="gn-required">
+      <xsl:if test="$labelConfig/condition='mandatory'">
+        <xsl:text>gn-required</xsl:text>
+      </xsl:if>
+    </xsl:variable>
 
     <div class="form-group gn-field gn-control gn-{$cls}"  >
-      <label for="orgname" class="col-sm-2 control-label" data-gn-field-tooltip="iso19139.ca.HNAP|gmd:organisationName" ><xsl:copy-of select="$labelConfig/label"/></label>
+      <label for="orgname" class="col-sm-2 control-label {$gn-required}" data-gn-field-tooltip="iso19139.ca.HNAP|gmd:organisationName" ><xsl:copy-of select="$labelConfig/label/text()"/></label>
 
       <div data-gn-multientry-combiner="{$json}"
            class="col-sm-9 col-xs-11 gn-value nopadding-in-table"
