@@ -23,6 +23,7 @@
         "name": {"tooltip": "gmd:name"},
         "desc": {
           "tooltip": "gmd:description",
+          "required": true,
           "directive": "gn-multientry-combiner-online-resources-description",
           "directiveConfig": {
             "valueElementId": "multicombinervalue",
