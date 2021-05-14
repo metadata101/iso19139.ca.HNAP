@@ -322,6 +322,7 @@
   <!-- Metadata resources template -->
   <xsl:template mode="mode-iso19139"  match="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[1][$schema = 'iso19139.ca.HNAP']" priority="2005" />
 
+  <!-- Descriptive Keywords -->
   <xsl:template mode="mode-iso19139" priority="5000"
                 match="gmd:descriptiveKeywords[$schema = 'iso19139.ca.HNAP']">
     <xsl:param name="schema" select="$schema" required="no"/>
@@ -399,8 +400,11 @@
               <xsl:value-of select="false()" />
          </xsl:variable>
 
+        <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
         <xsl:variable name="requiredClass">
-          <xsl:value-of select="''" />
+          <xsl:if test="$labelConfig/condition='mandatory'">
+            <xsl:value-of select="'gn-required'" />
+          </xsl:if>
         </xsl:variable>
 
         <xsl:call-template name="render-boxed-element">

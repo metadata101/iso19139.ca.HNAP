@@ -896,6 +896,7 @@
     <element name="gmd:descriptiveKeywords" id="33.0">
         <label>Descriptive keywords</label>
         <description>Provides category keywords, their type, and reference source</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:descriptor" id="258.0">
         <label>Descriptor</label>
