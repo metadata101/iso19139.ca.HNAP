@@ -1330,7 +1330,7 @@
   <element name="gmd:descriptiveKeywords" id="33.0">
     <label>Mots clés descriptifs</label>
     <description>Catégorie, type et source de référence des mots clés</description>
-    <condition/>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:descriptor" id="258.0">
     <label>Description de l'étendue de valeur</label>
