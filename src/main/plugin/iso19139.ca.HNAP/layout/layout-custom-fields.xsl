@@ -80,7 +80,7 @@
           See http://trac.osgeo.org/geonetwork/ticket/661
         -->
       <xsl:with-param name="type"
-                      select="if (string-length($value) = 10 or $value = '') then 'date' else 'datetime'"/>
+                      select="'datetime-local'"/>
       <xsl:with-param name="editInfo" select="gn:element"/>
       <xsl:with-param name="attributesSnippet" select="$attributes"/>
     </xsl:call-template>
