@@ -349,7 +349,59 @@
     </xsl:if>
   </xsl:template>
 
+  <xsl:template mode="render-field"
+                match="gmd:credit[gco:CharacterString]"
+                priority="100">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
 
+    <xsl:variable name="valueToDisplay">
+      <xsl:apply-templates mode="render-value" select="*"/>
+    </xsl:variable>
+
+    <xsl:if test="string(normalize-space($valueToDisplay))">
+      <dl>
+        <dt>
+          <xsl:value-of select="if ($fieldName)
+                                  then $fieldName
+                                  else tr:node-label(tr:create($schema, $language), name(), null)"/>
+        </dt>
+        <dd>
+          <pre class="ec-abstract">
+            <xsl:value-of select="$valueToDisplay" />
+          </pre>
+        </dd>
+      </dl>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template mode="render-field"
+                match="gmd:processStep/gmd:LI_ProcessStep/gmd:description[gmd:PT_FreeText]|gmd:purpose[gmd:PT_FreeText]"
+                priority="200">
+    <xsl:param name="fieldName" select="''" as="xs:string"/>
+
+    <xsl:variable name="valueToDisplay">
+      <xsl:apply-templates mode="localised" select=".">
+        <xsl:with-param name="langId" select="$langForMetadata" />
+      </xsl:apply-templates>
+    </xsl:variable>
+
+    <xsl:if test="string(normalize-space($valueToDisplay))">
+      <dl>
+        <dt>
+          <xsl:value-of select="if ($fieldName)
+                                  then $fieldName
+                                  else tr:node-label(tr:create($schema, $language), name(), null)"/>
+        </dt>
+        <dd>
+          <pre class="ec-abstract">
+            <xsl:value-of select="$valueToDisplay" />
+          </pre>
+          <!--<xsl:apply-templates mode="render-value" select="@*"/>-->
+        </dd>
+      </dl>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:template mode="render-field"
                 match="*[gmd:PT_FreeText]"
                 priority="100">
