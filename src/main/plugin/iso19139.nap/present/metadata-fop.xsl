@@ -78,7 +78,7 @@
                             padding-left="4pt" padding-right="4pt">
                     <xsl:value-of select="/root/gui/strings/description"/>
                   </fo:block>
-                  <fo:block color="#2e456b">
+                  <fo:block color="#2e456b" linefeed-treatment="preserve">
                     <xsl:for-each select="/root/gmd:MD_Metadata//gmd:abstract">
                       <xsl:call-template name="localised">
                         <xsl:with-param name="langId"
