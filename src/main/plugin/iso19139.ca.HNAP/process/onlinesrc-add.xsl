@@ -186,7 +186,7 @@ Insert is made in first transferOptions found.
                 <xsl:if test="contains($mainLang, 'eng')">
                   <xsl:attribute name="xlink:role">urn:xml:lang:eng-CAN</xsl:attribute>
                 </xsl:if>
-                <xsl:if test="contains($mainLang, 'fre')">
+                <xsl:if test="contains($mainLang, 'fra')">
                   <xsl:attribute name="xlink:role">urn:xml:lang:fra-CAN</xsl:attribute>
                 </xsl:if>
               </xsl:otherwise>
