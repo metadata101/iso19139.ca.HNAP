@@ -867,7 +867,7 @@
 			<label>Réservé À Organisation</label>
 			<description>For Official Use Only</description>
 		</entry>
-		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->	
+		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
 	<codelist name="gmd:MD_CoverageContentTypeCode">
@@ -2056,7 +2056,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
     <entry>
       <code>climatologyMeteorologyAtmosphere</code>
-      <label>Climatologie, météorologie</label>
+      <label>Climatologie, météorologie, atmosphère</label>
       <description>Processus et phénomènes atmosphériques. Exemples : climat, météorologie, conditions atmosphériques, changements climatiques, couverture nuageuse</description>
     </entry>
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -2433,7 +2433,7 @@
       <description>Absence de donnée associée</description>
     </entry>
 	</codelist>
-	    
+
     <codelist name="srv:SV_ParameterDirection">
         <entry>
           <code>RI_679</code>
