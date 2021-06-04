@@ -833,6 +833,12 @@
                     </fo:table-cell>
                   </fo:table-row>
 
+                  <xsl:message>
+                    --------
+                    PDF THUMBNAIL: <xsl:value-of select="$fileName" />
+                    --------
+                  </xsl:message>
+
                   <fo:table-row>
                     <fo:table-cell number-columns-spanned="2">
                       <fo:block>
