@@ -401,7 +401,7 @@
       </dl>
     </xsl:if>
   </xsl:template>
-  
+
   <xsl:template mode="render-field"
                 match="*[gmd:PT_FreeText]"
                 priority="100">
@@ -526,11 +526,17 @@
             <xsl:when test="starts-with(gco:CharacterString, 'eng')">
               <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/english"/>
             </xsl:when>
-            <xsl:otherwise>
+            <xsl:when test="starts-with(gco:CharacterString, 'fre') or starts-with(gco:CharacterString, 'fra')">
               <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/french"/>
+            </xsl:when>
+            <xsl:when test="starts-with(gco:CharacterString, 'spa')">
+              <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/spanish"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:variable name="langCode" select="gco:CharacterString" />
+              <xsl:value-of select="/root/gui/isolanguages/record[code=$langCode]/label/*[name()=/root/gui/language]"/>
             </xsl:otherwise>
           </xsl:choose>
-
 
 
           <!-- In view mode display other languages from gmd:locale of gmd:MD_Metadata element -->
@@ -543,8 +549,15 @@
                 <xsl:when test="starts-with($c, 'eng')">
                   <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/english"/>
                 </xsl:when>
-                <xsl:otherwise>
+                <xsl:when test="starts-with(gco:CharacterString, 'fre') or starts-with(gco:CharacterString, 'fra')">
                   <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/french"/>
+                </xsl:when>
+                <xsl:when test="starts-with(gco:CharacterString, 'spa')">
+                  <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/spanish"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:variable name="langCode" select="gco:CharacterString" />
+                  <xsl:value-of select="/root/gui/isolanguages/record[code=$langCode]/label/*[name()=/root/gui/language]"/>
                 </xsl:otherwise>
               </xsl:choose>
 
