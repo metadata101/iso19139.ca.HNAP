@@ -123,8 +123,6 @@ public class XslUtilHnap {
 
         if (date.length() == 4) {
             try {
-                int yearValue = Integer.parseInt(date);
-
                 Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date + "-01-01");
 
                 return 1;
@@ -132,23 +130,15 @@ public class XslUtilHnap {
                 return 0;
             }
         } else if (date.length() == 7) {
-
             try {
-                int yearValue = Integer.parseInt(date.substring(0, 4));
-                int monthValue = Integer.parseInt(date.substring(5, 7));
-
                 Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date + "-01");
 
                 return 1;
             } catch (Exception ex) {
                 return 0;
             }
-        } else if (date.length() == 10) {
+        } else {
             try {
-                int yearValue = Integer.parseInt(date.substring(0, 4));
-                int monthValue = Integer.parseInt(date.substring(5, 7));
-                int dayValue = Integer.parseInt(date.substring(8, 10));
-
                 Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date);
 
                 return 1;
@@ -156,8 +146,6 @@ public class XslUtilHnap {
                 return 0;
             }
 
-        } else {
-            return 0;
         }
     }
 
