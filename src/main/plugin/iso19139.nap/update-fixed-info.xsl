@@ -17,7 +17,7 @@
 	<xsl:include href="../iso19139/convert/functions.xsl"/>
 
   <xsl:variable name="thesauriDir" select="/root/env/thesauriDir" />
-  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Core_Subject.rdf'), '\\', '/')))" />
+  <xsl:variable name="ecCoreThesaurus" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Core_Subject.rdf'), '\\', '/')))" />
 
   <xsl:variable name="schemaTranslationsDir" select="/root/env/schemaTranslationsDir" />
   <xsl:variable name="codelistFile" select="document(concat('file:///', replace(concat($schemaTranslationsDir, '/codelists.xml'), '\\', '/')))"/>

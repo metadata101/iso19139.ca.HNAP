@@ -19,6 +19,18 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.geonetwork-opensource</groupId>
+      <artifactId>core</artifactId>
+      <version>3.6.2-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.geonetwork-opensource</groupId>
+      <artifactId>common</artifactId>
+      <version>3.6.2-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-core</artifactId>
     </dependency>
@@ -29,16 +41,59 @@
   </dependencies>
 
   <build>
+    <resources>
+      <!-- packaged into jar -->
+      <resource>
+        <directory>src/main/config/codelist/local/thesauri/theme</directory>
+        <targetPath>thesaurus/theme</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/config/codelist/local/thesauri/place</directory>
+        <targetPath>thesaurus/place</targetPath>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+      <!-- packaged into zip -->
+      <resource>
+        <directory>src/main/plugin/iso19139.nap</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources/org/fao/geonet</directory>
+      </testResource>
+    </testResources>
+
     <plugins>
       <plugin>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
+        <configuration>
+          <includes>
+            <include>ca/**</include>
+            <include>META-INF/**</include>
+            <include>thesaurus/**</include>
+            <include>xsl/**</include>
+            <include>config-spring-geonetwork.xml</include>
+            <include>rebel.xml</include>
+          </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
-            <id>test-jar</id>
-            <goals>
-              <goal>test-jar</goal>
-            </goals>
+            <id>plugin-assembly</id>
+            <phase>package</phase>
+            <goals><goal>single</goal></goals>
+            <inherited>false</inherited>
+            <configuration>
+              <appendAssemblyId>false</appendAssemblyId>
+              <finalName>schema-iso19139.nap-${pom.version}</finalName>
+              <descriptors>
+                <descriptor>src/assembly/schema-plugin.xml</descriptor>
+              </descriptors>
+            </configuration>
           </execution>
         </executions>
       </plugin>

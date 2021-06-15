@@ -17,7 +17,7 @@
                 xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="#all">
 
   <xsl:variable name="thesauriDir" select="/root/gui/thesaurusDir" />
-  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Resource_Formats.rdf'), '\\', '/')))" />
 
 
   <!-- Hide thesaurus name in default view -->
@@ -493,7 +493,7 @@
       <xsl:choose>
         <xsl:when test="(gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Government of Canada Core Subject Thesaurus') or
                   (gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'Thésaurus des sujets de base du gouvernement du Canada')">
-          <xsl:value-of  select="'local.theme.EC_Core_Subject'"/>
+          <xsl:value-of  select="'local.theme.GC_Core_Subject'"/>
         </xsl:when>
 
         <xsl:otherwise>
@@ -616,8 +616,8 @@
 
         <xsl:variable name="thesaurusTitleToDisplay">
           <xsl:choose>
-            <xsl:when test="contains($thesaurusIdentifier, 'EC_')">
-              <xsl:value-of select="/root/gui/schemas/iso19139.napec/strings/*[name() = $thesaurusIdentifier]" />
+            <xsl:when test="contains($thesaurusIdentifier, 'EC_') or contains($thesaurusIdentifier, 'GC_')">
+              <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/*[name() = $thesaurusIdentifier]" />
             </xsl:when>
             <xsl:otherwise>
               <xsl:value-of select="$thesaurusTitle" />
@@ -634,18 +634,23 @@
         <xsl:variable name="isMandatory">
           <xsl:choose>
             <xsl:when test="contains($thesaurusIdentifier, 'EC_Information_Category') or
+                            contains($thesaurusIdentifier, 'GC_Geographic_Scope') or
                             contains($thesaurusIdentifier, 'EC_Geographic_Scope') or
-                            contains($thesaurusIdentifier, 'EC_Core_Subject')">true</xsl:when>
+                            contains($thesaurusIdentifier, 'EC_Core_Subject') or
+                            contains($thesaurusIdentifier, 'GC_Core_Subject')">true</xsl:when>
             <xsl:otherwise>false</xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
+
+        <xsl:message>Theraurus (thesaurusIdentifier): <xsl:value-of select="$thesaurusIdentifier" /></xsl:message>
+        <xsl:message>Theraurus (thesaurusTitleToDisplay): <xsl:value-of select="$thesaurusTitleToDisplay" /></xsl:message>
 
         <!-- $thesaurusIdentifier add label for keywords in Information Classification panel -->
         <div data-gn-keyword-selector="{$widgetMode}"
              data-metadata-id="{$metadataId}"
              data-element-ref="{concat('_X', ../gn:element/@ref, '_replace')}"
              data-parent-element-ref="{gmd:keyword[1]/gn:element/@ref}"
-             data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false' or contains($thesaurusIdentifier, 'EC_')) then $thesaurusTitleToDisplay else ''}"
+             data-thesaurus-title="{if ($thesaurusConfig/@fieldset = 'false' or contains($thesaurusIdentifier, 'EC_') or contains($thesaurusIdentifier, 'GC_')) then $thesaurusTitleToDisplay else ''}"
              data-thesaurus-key="{$thesaurusKey}"
              data-mandatory="{$isMandatory}"
              data-keywords="{$keywords}"

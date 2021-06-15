@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"  xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <skos:ConceptScheme rdf:about="http://geonetwork-opensource.org/EC/informationcategory">
+  </skos:ConceptScheme>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#air">
+     <ns2:scopeNote xml:lang="fr">Air data is grouped into themes such as ambient gases and particles, precipitation chemistry and upper air.</ns2:scopeNote>
+     <ns2:scopeNote xml:lang="en">Air data is grouped into themes such as ambient gases and particles, precipitation chemistry and upper air.</ns2:scopeNote>
+     <ns2:prefLabel xml:lang="fr">Air</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Air</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#airquality">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Air - qualité</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Air - Quality</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#economicsustainability">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Développement durable</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Sustainable Development</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#naturebiodiversity">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Nature et biodiversité</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Nature and Biodiversity</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#naturebiodiversitycontaminants">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Nature et biodiversité - contaminants</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Nature and Biodiversity - Contaminants</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#naturebiodiversityhabitat">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Nature et biodiversité - habitat</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Nature and Biodiversity - Habitat</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#pollutionwaste">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Pollution et déchets</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Pollution and Waste</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#water">
+     <ns2:scopeNote xml:lang="fr">Water data can be found on both the quality and quantity of water, as well as site-specific assessments.</ns2:scopeNote>
+     <ns2:scopeNote xml:lang="en">Water data can be found on both the quality and quantity of water, as well as site-specific assessments.</ns2:scopeNote>
+     <ns2:prefLabel xml:lang="fr">Eau</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Water</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#waterquality">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Eau - qualité</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Water - Quality</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#waterquantity">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Eau - quantité</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Water - Quantity</ns2:prefLabel>
+   </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#weatherclimate">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Temps et climat</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Weather and Climate</ns2:prefLabel>
+   </rdf:Description>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/informationcategory#other">
+     <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote><ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote><ns2:prefLabel xml:lang="fr">Autre</ns2:prefLabel>
+     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+     <ns2:prefLabel xml:lang="en">Other</ns2:prefLabel>
+   </rdf:Description>
+</rdf:RDF>

@@ -75,7 +75,7 @@
                 select="/root/gui/nodeUrl"/>
 
   <xsl:variable name="thesauriDir" select="/root/thesaurusDir" />
-  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/EC_Resource_Formats.rdf'), '\\', '/')))" />
+  <xsl:variable name="resourceFormatsTh" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Resource_Formats.rdf'), '\\', '/')))" />
 
 
   <xsl:template match="/">

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+  <skos:ConceptScheme rdf:about="http://www.thesaurus.gc.ca/#CoreSubjectThesaurus">
+      <dc:title>GC Open License</dc:title>
+      <dc:title xml:lang="en">GC Open License</dc:title>
+      <dc:title xml:lang="fr">Licence ouverte de la GC</dc:title>
+
+      <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+      <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+    <dc:description></dc:description>
+  </skos:ConceptScheme>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#Canada">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#Alberta">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence - Alberta (https://open.alberta.ca/licence)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#BritishColumbia">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#NewfoundlandAndLabrador">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)'</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#NovaScotia">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#Ontario">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</ns2:prefLabel>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/GC_OpenLicense#PrinceEdwardIsland">
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
+    <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)</ns2:prefLabel>
+  </rdf:Description>
+</rdf:RDF>
+

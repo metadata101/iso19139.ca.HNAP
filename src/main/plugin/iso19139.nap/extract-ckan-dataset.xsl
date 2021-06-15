@@ -351,7 +351,7 @@ gmd:thesaurusName>
                 <gco:CharacterString>local.place.EC_Geographic_Scope</gco:CharacterString>
 -->
         <!-- geographic_region: TODO: Use geographic scope, but seem same values -->
-        <xsl:for-each select="//gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.place.EC_Geographic_Scope']/gmd:keyword">
+        <xsl:for-each select="//gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.place.EC_Geographic_Scope' or gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString = 'local.place.GC_Geographic_Scope']/gmd:keyword">
           <xsl:variable name="geographicScope">
             <xsl:choose>
               <xsl:when test="starts-with($mdLanguage, 'eng')"><xsl:value-of select="gco:CharacterString" /></xsl:when>
