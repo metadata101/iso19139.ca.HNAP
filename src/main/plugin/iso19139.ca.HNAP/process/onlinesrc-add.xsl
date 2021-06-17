@@ -178,19 +178,9 @@ Insert is made in first transferOptions found.
       <xsl:choose>
         <xsl:when test="starts-with($protocol, 'OGC:') and $name != ''">
           <gmd:onLine>
-            <xsl:choose>
-              <xsl:when test="$language">
-                <xsl:attribute name="xlink:role" select="$language"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:if test="contains($mainLang, 'eng')">
-                  <xsl:attribute name="xlink:role">urn:xml:lang:eng-CAN</xsl:attribute>
-                </xsl:if>
-                <xsl:if test="contains($mainLang, 'fra')">
-                  <xsl:attribute name="xlink:role">urn:xml:lang:fra-CAN</xsl:attribute>
-                </xsl:if>
-              </xsl:otherwise>
-            </xsl:choose>
+            <xsl:if test="$language">
+              <xsl:attribute name="xlink:role" select="$language"/>
+            </xsl:if>
 
             <xsl:if test="$uuidref">
               <xsl:attribute name="uuidref" select="$uuidref"/>

@@ -457,13 +457,6 @@
     <!-- Distribution - Resources -->
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine">
 
-      <sch:let name="missingLanguageForMapService" value="not(string(@xlink:role)) and (lower-case(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString) = 'ogc:wms' or lower-case(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString) = 'esri rest: map service')" />
-
-      <sch:assert
-        test="not($missingLanguageForMapService)"
-      >$loc/strings/MapServicesLanguage</sch:assert>
-
-
       <!-- ResourceDescription -->
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
       <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
