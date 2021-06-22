@@ -1,6 +1,7 @@
 {
   "config": {
     "display": "radio",
+    "loadMapCapabilities": "false",
     "types": [{
       "label": "addOnlinesrc",
       "sources": {
