@@ -221,42 +221,9 @@
         gmd:dataSetURI"/>
 
       <!-- Copy existing locales and create an extra one for the default metadata language. -->
-        <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
-        <gmd:locale>
-          <gmd:PT_Locale id="{$mainLanguageId}">
-            <gmd:languageCode>
-              <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
-                                codeListValue="{$mainLanguage}">
-                <xsl:choose>
-                    <xsl:when test="normalize-space($mainLanguage) = 'fra'">French; Français</xsl:when>
-                    <xsl:otherwise>English; Anglais</xsl:otherwise>
-                </xsl:choose>
-              </gmd:LanguageCode>
-            </gmd:languageCode>
-            <xsl:choose>
-              <!-- Add country code if it exists. -->
-              <xsl:when test="$mainLanguageCountryId">
-                  <gmd:country>
-                      <xsl:choose>
-                          <xsl:when test="upper-case($mainLanguageCountryId) = 'CAN'">
-                              <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
-                                   codeListValue="CAN">Canada; Canada</gmd:Country>
-                          </xsl:when>
-                          <xsl:otherwise>
-                              <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
-                                     codeListValue="$mainLanguageCountryId"></gmd:Country>
-                          </xsl:otherwise>
-                      </xsl:choose>
-                  </gmd:country>
-              </xsl:when>
-            </xsl:choose>
-            <gmd:characterEncoding>
-                 <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
-                                          codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
-            </gmd:characterEncoding>
-          </gmd:PT_Locale>
-        </gmd:locale>
- 		<xsl:apply-templates select="node()[name()!='gmd:fileIdentifier' and
+      <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
+       
+ 		  <xsl:apply-templates select="node()[name()!='gmd:fileIdentifier' and
                                             name()!='gmd:language' and
                                             name()!='gmd:parentIdentifier' and
                                             name()!='gmd:characterSet' and
