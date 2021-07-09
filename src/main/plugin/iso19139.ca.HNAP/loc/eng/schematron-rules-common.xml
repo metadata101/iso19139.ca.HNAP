@@ -13,7 +13,6 @@
   <Status>Value is required for status</Status>
   <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
   <TopicCategory>Value is required for Topic Category</TopicCategory>
-  <SpatialRepresentation>Value is required for Spatial representation</SpatialRepresentation>
   <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
   <PublicationDate>Value is required for Metadata publication date</PublicationDate>
   <CreationDate>Value is required for Metadata creation date</CreationDate>

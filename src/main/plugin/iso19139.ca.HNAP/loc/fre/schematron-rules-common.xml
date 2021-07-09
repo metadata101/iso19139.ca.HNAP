@@ -13,7 +13,6 @@
   <Status>Une valeur est nécessaire pour: Etat</Status>
   <InvalidStatusCode>Le code d'état n'est pas valide</InvalidStatusCode>
   <TopicCategory>Une valeur est nécessaire pour: Catégorie thématique</TopicCategory>
-  <SpatialRepresentation>Une valeur est nécessaire pour: Type de représentation spatiale</SpatialRepresentation>
   <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
   <PublicationDate>Une valeur est nécessaire pour: Métadonnées date de publication</PublicationDate>
   <CreationDate>>Une valeur est nécessaire pour: Métadonnées date de création</CreationDate>
