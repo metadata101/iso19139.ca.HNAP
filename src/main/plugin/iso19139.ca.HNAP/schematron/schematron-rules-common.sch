@@ -170,24 +170,16 @@
                    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:spatialRepresentationType
                    |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:spatialRepresentationType">
 
-      <sch:let name="missing" value="not(string(gmd:MD_SpatialRepresentationTypeCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/SpatialRepresentation</sch:assert>
-
-
       <sch:let name="spatialRepresentationTypeCodelistLabel"
                value="tr:codelist-value-label(
                             tr:create($schema),
                             gmd:MD_SpatialRepresentationTypeCode/local-name(),
                             gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
 
-      <sch:let name="isValid" value="($spatialRepresentationTypeCodelistLabel != '') and ($spatialRepresentationTypeCodelistLabel != gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
+      <sch:let name="isValid" value="($spatialRepresentationTypeCodelistLabel = '') or ($spatialRepresentationTypeCodelistLabel != gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
 
       <sch:assert
-        test="$isValid or $missing"
+        test="$isValid"
       >$loc/strings/InvalidSpatialRepresentationType</sch:assert>
     </sch:rule>
 
