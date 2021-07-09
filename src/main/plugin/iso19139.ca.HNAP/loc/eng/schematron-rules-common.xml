@@ -10,6 +10,7 @@
   <InvalidHierarchyLevel>Hierarchy level code is not valid</InvalidHierarchyLevel>
   <ReferenceSystemInfo>Value is required for Reference System</ReferenceSystemInfo>
   <ReferenceSystemInfoCode>Value is required for Reference System - Code</ReferenceSystemInfoCode>
+  <ReferenceSystemInfoCodeInvalid>Reference System Code should have the format EPSG:NUMBER / SR-ORG:NUMBER or have the value Proj4. Example: EPSG:4326</ReferenceSystemInfoCodeInvalid>
   <Status>Value is required for status</Status>
   <InvalidStatusCode>Status code is not valid</InvalidStatusCode>
   <TopicCategory>Value is required for Topic Category</TopicCategory>
