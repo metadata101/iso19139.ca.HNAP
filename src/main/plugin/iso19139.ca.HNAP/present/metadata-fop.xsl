@@ -16,6 +16,7 @@
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
                 xmlns:fn="http://www.w3.org/2005/xpath-functions"
+                xmlns:xslUtils="java:org.fao.geonet.util.XslUtil"
                 exclude-result-prefixes="gmx gts gmd gco gml geonet xlink rdf ns2 rdfs skos xs exslt fn"
                 version="2.0">
 
@@ -45,21 +46,8 @@
 
     <xsl:variable name="isoLanguages" select="/root/gui/isolanguages" />
 
-    <xsl:variable name="port">
-      <xsl:choose>
-        <xsl:when test="/root/gui/env/server/protocol = 'https'"><xsl:value-of select="/root/gui/env/server/securePort" /></xsl:when>
-        <xsl:otherwise><xsl:value-of select="/root/gui/env/server/port" /></xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
 
-    <xsl:variable name="portSection">
-      <xsl:choose>
-        <xsl:when test="$port = '80' or $port='443'"></xsl:when>
-        <xsl:otherwise><xsl:value-of select="concat(':', $port)" /></xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <xsl:variable name="urlBase" select="concat(/root/gui/env/server/protocol, '://', /root/gui/env/server/host, $portSection, /root/gui/url)" />
+    <xsl:variable name="urlBase" select="xslUtils:getSiteUrl()" />
 
     <fo:table-row>
       <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt" margin-right="8pt">
@@ -98,12 +86,12 @@
                                   (/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal!='') and number(/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal)!=0">
                 <xsl:call-template name="TRFop">
                   <xsl:with-param name="label">
-                    <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/GeographicExtent"/>
+                    <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/GeographicExtent"/>
                   </xsl:with-param>
                   <xsl:with-param name="text">
-                    <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/sw"/>:<xsl:value-of
+                    <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/sw"/>:<xsl:value-of
                     select="concat(format-number(/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude/gco:Decimal,'#.###'), ' ', format-number(/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude/gco:Decimal,'#.###'))"/>,
-                    <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/ne"/>:<xsl:value-of
+                    <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/ne"/>:<xsl:value-of
                     select="concat(format-number(/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:eastBoundLongitude/gco:Decimal,'#.###'), ' ', format-number(/root/gmd:MD_Metadata//gmd:EX_GeographicBoundingBox/gmd:northBoundLatitude/gco:Decimal,'#.###'))"/>
                   </xsl:with-param>
                 </xsl:call-template>
@@ -158,19 +146,19 @@
                   select="/root/gmd:MD_Metadata/gmd:identificationInfo//gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod">
                   <xsl:call-template name="TRFop">
                     <xsl:with-param name="label">
-                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Timeperiod"/>
+                      <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Timeperiod"/>
                     </xsl:with-param>
                     <xsl:with-param name="text">
 
                       <xsl:choose>
                         <xsl:when test="gml:beginPosition or gml:endPosition">
-                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/from"/>:<xsl:value-of select="gml:beginPosition"/> -
-                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/to"/>:<xsl:value-of select="gml:endPosition"/>
+                          <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/from"/>:<xsl:value-of select="gml:beginPosition"/> -
+                          <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/to"/>:<xsl:value-of select="gml:endPosition"/>
                         </xsl:when>
                         <xsl:when test="gml:begin or gml:end">
 
-                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/from"/>:<xsl:value-of select="gml:begin/gml:TimeInstant/gml:timePosition"/> -
-                          <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/to"/>:<xsl:value-of select="gml:end/gml:TimeInstant/gml:timePosition"/>
+                          <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/from"/>:<xsl:value-of select="gml:begin/gml:TimeInstant/gml:timePosition"/> -
+                          <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/to"/>:<xsl:value-of select="gml:end/gml:TimeInstant/gml:timePosition"/>
                         </xsl:when>
                       </xsl:choose>
                     </xsl:with-param>
@@ -190,7 +178,7 @@
             <fo:block>
               <fo:block font-weight="bold" font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
                         padding-right="4pt">
-                <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources"/>
+                <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataresources"/>
               </fo:block>
 
               <fo:block font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
@@ -203,16 +191,16 @@
 
                   <fo:table-header>
                     <fo:table-cell>
-                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Name" /></fo:block>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataresources_Name" /></fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
-                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Type" /></fo:block>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataresources_Type" /></fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
-                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Lang" /></fo:block>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataresources_Lang" /></fo:block>
                     </fo:table-cell>
                     <fo:table-cell>
-                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataresources_Format" /></fo:block>
+                      <fo:block font-weight="bold"><xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataresources_Format" /></fo:block>
                     </fo:table-cell>
                   </fo:table-header>
 
@@ -494,7 +482,7 @@
           <!-- Additionalinformation -->
           <fo:block font-weight="bold" font-size="10pt" padding-top="4pt" padding-bottom="4pt" padding-left="4pt"
                     padding-right="4pt">
-            <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Additionalinformation"/>
+            <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Additionalinformation"/>
           </fo:block>
 
 
@@ -509,7 +497,7 @@
                   <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
                                  number-columns-spanned="2" display-align="center">
                     <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
-                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Datasetidentification"/>
+                      <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Datasetidentification"/>
                     </fo:block>
                   </fo:table-cell>
                 </fo:table-row>
@@ -553,7 +541,7 @@
                     <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
                                    number-columns-spanned="2" display-align="center">
                       <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
-                        <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/DistributionInformation"/>
+                        <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/DistributionInformation"/>
                       </fo:block>
                     </fo:table-cell>
                   </fo:table-row>
@@ -568,7 +556,7 @@
 
                     <xsl:call-template name="blockElementFop">
                       <xsl:with-param name="block" select="$distributionInfo"/>
-                      <xsl:with-param name="label" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:distributionFormat']/label" />
+                      <xsl:with-param name="label" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:distributionFormat']/label" />
                     </xsl:call-template>
                   </xsl:for-each>
 
@@ -580,7 +568,7 @@
           <xsl:if test="gmd:dataQualityInfo/*">
             <fo:block margin-top="12pt"/>
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:dataQualityInfo']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:dataQualityInfo']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:dataQualityInfo/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -592,7 +580,7 @@
           <xsl:if test="gmd:portrayalCatalogueInfo/*">
             <fo:block margin-top="12pt"/>
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:portrayalCatalogueInfo']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:portrayalCatalogueInfo']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:portrayalCatalogueInfo/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -604,7 +592,7 @@
           <xsl:if test="gmd:metadataConstraints/*">
             <fo:block margin-top="12pt"/>
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataConstraints']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:metadataConstraints']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:metadataConstraints/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -616,7 +604,7 @@
           <xsl:if test="gmd:applicationSchemaInfo/*">
             <fo:block margin-top="12pt"/>
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:applicationSchemaInfo']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:applicationSchemaInfo']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:applicationSchemaInfo/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -628,7 +616,7 @@
           <xsl:if test="gmd:metadataMaintenance/*">
             <fo:block margin-top="12pt"/>
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataMaintenance']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:metadataMaintenance']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:metadataMaintenance/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -650,7 +638,7 @@
                   <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
                                  number-columns-spanned="2" display-align="center">
                     <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
-                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Metadatarecord"/>
+                      <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Metadatarecord"/>
                     </fo:block>
                   </fo:table-cell>
                 </fo:table-row>
@@ -724,7 +712,7 @@
           <xsl:if test="gmd:metadataExtensionInfo/*">
 
             <xsl:call-template name="sectionBlock">
-              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.nap/labels/element[@name='gmd:metadataExtensionInfo']/label" />
+              <xsl:with-param name="headerLabel" select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='gmd:metadataExtensionInfo']/label" />
               <xsl:with-param name="content">
                 <xsl:apply-templates mode="elementFop" select="gmd:metadataExtensionInfo/*">
                   <xsl:with-param name="schema" select="$schema"/>
@@ -820,7 +808,7 @@
                     <fo:table-cell padding-left="4pt" padding-right="4pt" padding-top="4pt" margin-top="4pt"
                                    number-columns-spanned="2" display-align="center">
                       <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
-                        <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Thumbnail"/>
+                        <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Thumbnail"/>
                       </fo:block>
                     </fo:table-cell>
                   </fo:table-row>
@@ -873,14 +861,14 @@
                                number-columns-spanned="2" display-align="center">
                   <fo:block color="#ffffff" font-weight="bold" font-size="10pt">
 
-                    <xsl:value-of select="/root/gui/schemas/iso19139.nap/strings/Dataclassification"/>
+                    <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/strings/Dataclassification"/>
 
 
                   </fo:block>
                 </fo:table-cell>
               </fo:table-row>
 
-              <xsl:variable name="kCodelist" select="/root/gui/schemas/iso19139.nap/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
+              <xsl:variable name="kCodelist" select="/root/gui/schemas/iso19139.ca.HNAP/codelists/codelist[@name='gmd:MD_KeywordTypeCode']" />
 
 
               <xsl:for-each-group select="gmd:identificationInfo//gmd:descriptiveKeywords[
@@ -950,7 +938,7 @@
                 <xsl:if test="string($keywordsListNorm)">
                   <xsl:call-template name="TRFop">
                     <xsl:with-param name="label">
-                      <xsl:value-of select="/root/gui/schemas/iso19139.nap/labels/element[@name='CoreSubjectThesaurus']/label" />
+                      <xsl:value-of select="/root/gui/schemas/iso19139.ca.HNAP/labels/element[@name='CoreSubjectThesaurus']/label" />
                     </xsl:with-param>
                     <xsl:with-param name="text">
                       <xsl:value-of select="substring($keywordsListNorm, 1, string-length($keywordsListNorm) - 1)" />
