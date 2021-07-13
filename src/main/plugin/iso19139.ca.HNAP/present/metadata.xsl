@@ -23,7 +23,7 @@
   <xsl:import href="metadata-fop.xsl"/>
   <xsl:import href="metadata-utils.xsl"/>
 
-  <!-- main template - the way into processing iso19139.nap -->
+  <!-- main template - the way into processing iso19139.ca.HNAP -->
   <xsl:template name="metadata-iso19139.ca.HNAP">
     <xsl:param name="schema"/>
     <xsl:param name="edit" select="false()"/>
