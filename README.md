@@ -75,7 +75,7 @@ The best approach is to add the plugin as a submodule:
 
 1. Copy the `iso19139.ca.HNAP` folder from `schemas/iso19139.ca.HNAP/src/main/plugin` into geonetwork `WEB-INF/data/config/schema_plugins/`.
 
-2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs``.
+2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs`.
 
 3. Restart geonetwork
 
@@ -194,16 +194,16 @@ Translation workflow:
 1. Update the ``pom.xml`` version information for release:
 
    ```
-   find . -name `pom.xml` -exec sed -i '' 's/3.12-SNAPSHOT/3.12.7-0/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/3.12-SNAPSHOT/3.12.7/g' {} \;
    ```
 
 2. Update the [src/main/plugin/iso19139.ca.HNAP/schema-ident.xm](src/main/plugin/iso19139.ca.HNAP/schema-ident.xml#L32) ``appMinorVersionSupported``:
 
    ```
-   sed -i '' 's/3.12-SNAPSHOT/3.12.7-0/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
+   sed -i '' 's/3.12-SNAPSHOT/3.12.7/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
    
-4. Build everything, including documentation:
+4. Build everything, including docs:
    
    ```
    mvn clean install -Pdocs
@@ -212,7 +212,7 @@ Translation workflow:
 3. Commit and tag
    
    ```
-   git add pom.xml
+   git add .
    git commit -am "Version 3.12.7"
    git tag -a 3.12.7 -m "Release 3.12.7"
    git push origin 3.12.7
@@ -231,7 +231,7 @@ Translation workflow:
 5. Restore the `pom.xml` and `schema-ident.xml` version information.
 
    ```
-   find . -name `pom.xml` -exec sed -i '' 's/3.12.7-0/3.12-SNAPSHOT/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/3.12.7-0/3.12-SNAPSHOT/g' {} \;
    sed -i '' 's/3.12.7-0/3.12-SNAPSHOT/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
 
@@ -251,7 +251,7 @@ Translation workflow:
 8. Commit 
    
    ```
-   git add pom.xml README.md
+   git add .
    git commit -m "Start 3.12.8 development"
    git push
    ```
