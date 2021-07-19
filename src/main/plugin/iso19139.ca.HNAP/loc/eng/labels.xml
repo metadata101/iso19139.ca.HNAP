@@ -2173,6 +2173,7 @@
     <element name="gml:beginPosition">
         <label>Begin Date</label>
         <description>Enter the date on which data collection began or is scheduled to begin. You may use the calendar to select the date or enter it in YYYY-MM-DD format for full date, YYYY-MM format for month/year or YYYY format for year.</description>
+        <condition>mandatory</condition>
     </element>
 
     <element name="gml:endPosition">

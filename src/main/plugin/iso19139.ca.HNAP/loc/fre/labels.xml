@@ -3059,6 +3059,7 @@
   <element name="gml:beginPosition">
     <label>Date de début</label>
     <description>Entrez la date à laquelle la cueillette de données a commencé ou est prévu de commencer. Vous pouvez sélectionner la date ou l'entrer manuellement avec le format aaaa-mm-jj pour la date complète, aaaa-mm pour le mois et l'année ou aaaa pour l'année seulement.</description>
+    <condition>mandatory</condition>
   </element>
   <!-- ==================================================== -->
   <element name="gml:endPosition">

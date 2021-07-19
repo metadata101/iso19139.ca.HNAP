@@ -61,29 +61,55 @@
       </xsl:if>
     </xsl:variable>
 
+    <xsl:variable name="dateTypeElementRef" select="../gn:element/@ref"/>
+    <xsl:variable name="tooltip" select="concat($schema, '|', name(.), '|', name(..), '|', $xpath)"/>
+    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
+    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+    <xsl:variable name="gn-required">
+      <xsl:if test="$labelConfig/condition='mandatory'">
+        <xsl:text>gn-required</xsl:text>
+      </xsl:if>
+    </xsl:variable>
 
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), '', $xpath)/label"/>
-      <xsl:with-param name="name" select="gn:element/@ref"/>
-      <xsl:with-param name="value" select="text()"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <!--
-          Default field type is Date.
-          TODO : Add the capability to edit those elements as:
-           * xs:time
-           * xs:dateTime
-           * xs:anyURI
-           * xs:decimal
-           * gml:CalDate
-          See http://trac.osgeo.org/geonetwork/ticket/661
-        -->
-      <xsl:with-param name="type"
-                      select="if (string-length($value) = 10 or $value = '') then 'date' else 'datetime'"/>
-      <xsl:with-param name="editInfo" select="gn:element"/>
-      <xsl:with-param name="attributesSnippet" select="$attributes"/>
-    </xsl:call-template>
+    <div class="form-group gn-field gn-date {$gn-required}"
+         id="gn-el-{$dateTypeElementRef}"
+         data-gn-field-highlight="">
+      <label class="col-sm-2 control-label">
+        <xsl:value-of select="$labelConfig/label"/>
+      </label>
+      <div class="col-sm-6 gn-value">
+        <div data-gn-date-picker="{.}"
+             data-gn-field-tooltip="{$tooltip}"
+             data-label=""
+             data-element-name="{name(.)}"
+             data-tag-name=""
+             data-element-ref="{concat('_', gn:element/@ref)}"
+             data-hide-time="{if ($viewConfig/@hideTimeInCalendar = 'true') then 'true' else 'false'}">
+        </div>
+
+        <!-- Create form for all existing attribute (not in gn namespace)
+         and all non existing attributes not already present. -->
+        <div class="well well-sm gn-attr {if ($isDisplayingAttributes = true()) then '' else 'hidden'}">
+          <xsl:apply-templates mode="render-for-field-for-attribute"
+                               select="
+          ../../@*|
+          ../../gn:attribute[not(@name = parent::node()/@*/name())]">
+            <xsl:with-param name="ref" select="../../gn:element/@ref"/>
+            <xsl:with-param name="insertRef" select="../gn:element/@ref"/>
+          </xsl:apply-templates>
+        </div>
+      </div>
+      <div class="col-sm-1 gn-control">
+        <xsl:call-template name="render-form-field-control-remove">
+          <xsl:with-param name="editInfo" select="../gn:element"/>
+          <xsl:with-param name="parentEditInfo" select="../../gn:element"/>
+        </xsl:call-template>
+      </div>
+
+      <div class="col-sm-offset-2 col-sm-9">
+        <xsl:call-template name="get-errors"/>
+      </div>
+    </div>
   </xsl:template>
 
 <!--
