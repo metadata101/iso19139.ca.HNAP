@@ -83,7 +83,7 @@
              data-label=""
              data-element-name="{name(.)}"
              data-tag-name=""
-             data-element-ref="{concat('_X', gn:element/@ref)}"
+             data-element-ref="{concat('_', gn:element/@ref)}"
              data-hide-time="{if ($viewConfig/@hideTimeInCalendar = 'true') then 'true' else 'false'}">
         </div>
 
