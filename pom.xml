@@ -5,10 +5,10 @@
   <parent>
     <artifactId>schemas</artifactId>
     <groupId>org.geonetwork-opensource.schemas</groupId>
-    <version>3.12-SNAPSHOT</version>
+    <version>3.12.1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-
+  <version>3.12.1</version>
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
   <name>Schema Plugin HNAP ISO19139/119</name>
 
@@ -208,11 +208,10 @@
                 <goals><goal>single</goal></goals>
                 <inherited>false</inherited>
                 <configuration>
-                 <appendAssemblyId>false</appendAssemblyId>
+                 <appendAssemblyId>true</appendAssemblyId>
                  <descriptors>
                   <descriptor>src/assembly/docs.xml</descriptor>
                  </descriptors>
-                 <finalName>${project.build.finalName}-doc</finalName>
                 </configuration>
               </execution>
             </executions>
