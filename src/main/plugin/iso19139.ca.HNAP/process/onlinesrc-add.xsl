@@ -177,10 +177,16 @@ Insert is made in first transferOptions found.
       -->
       <xsl:choose>
         <xsl:when test="starts-with($protocol, 'OGC:') and $name != ''">
+
+          <xsl:variable name="resourceLang">
+            <xsl:choose>
+              <xsl:when test="ends-with($desc, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+              <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+
           <gmd:onLine>
-            <xsl:if test="$language">
-              <xsl:attribute name="xlink:role" select="$language"/>
-            </xsl:if>
+            <xsl:attribute name="xlink:role" select="$resourceLang"/>
 
             <xsl:if test="$uuidref">
               <xsl:attribute name="uuidref" select="$uuidref"/>
@@ -258,10 +264,10 @@ Insert is made in first transferOptions found.
                         <xsl:variable name="nameValue"
                                       select="substring-after(., '#')"></xsl:variable>
 
-                        <xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
+                        <!--<xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
                         <xsl:message>ML: <xsl:value-of select="$mainLang" /></xsl:message>
                         <xsl:message>nameLang: <xsl:value-of select="$nameLang" /></xsl:message>
-                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>
+                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>-->
 
 
                         <xsl:if
@@ -363,8 +369,17 @@ Insert is made in first transferOptions found.
           <!-- ... the name is simply added in the newly
           created online element. -->
           <gmd:onLine>
-            <xsl:if test="$language">
-              <xsl:attribute name="xlink:role" select="$language"/>
+            <xsl:variable name="isMapProtocol" select="starts-with($protocol, 'ESRI REST:') or starts-with($protocol, 'OGC:')" />
+
+            <xsl:variable name="resourceLang">
+              <xsl:choose>
+                <xsl:when test="ends-with($desc, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+                <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+
+            <xsl:if test="$isMapProtocol">
+              <xsl:attribute name="xlink:role" select="$resourceLang"/>
             </xsl:if>
 
             <xsl:if test="$uuidref">
@@ -446,10 +461,10 @@ Insert is made in first transferOptions found.
                         <xsl:variable name="nameValue"
                                       select="substring-after(., '#')"></xsl:variable>
 
-                        <xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
+                        <!--<xsl:message>useOnlyPTFreeText: <xsl:value-of select="$useOnlyPTFreeText" /></xsl:message>
                         <xsl:message>ML: <xsl:value-of select="$mainLang" /></xsl:message>
                         <xsl:message>nameLang: <xsl:value-of select="$nameLang" /></xsl:message>
-                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>
+                        <xsl:message>nameValue: <xsl:value-of select="$nameValue" /></xsl:message>-->
 
 
                         <xsl:if
