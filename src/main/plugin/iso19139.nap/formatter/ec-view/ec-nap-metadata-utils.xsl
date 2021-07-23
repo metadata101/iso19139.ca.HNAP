@@ -549,14 +549,14 @@
                 <xsl:when test="starts-with($c, 'eng')">
                   <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/english"/>
                 </xsl:when>
-                <xsl:when test="starts-with(gco:CharacterString, 'fre') or starts-with(gco:CharacterString, 'fra')">
+                <xsl:when test="starts-with($c, 'fra') or starts-with($c, 'fre')">
                   <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/french"/>
                 </xsl:when>
-                <xsl:when test="starts-with(gco:CharacterString, 'spa')">
+                <xsl:when test="starts-with($c, 'spa')">
                   <xsl:value-of select="/root/schemas/*[name()=$schema]/strings/spanish"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <xsl:variable name="langCode" select="gco:CharacterString" />
+                  <xsl:variable name="langCode" select="$c" />
                   <xsl:value-of select="/root/gui/isolanguages/record[code=$langCode]/label/*[name()=/root/gui/language]"/>
                 </xsl:otherwise>
               </xsl:choose>
