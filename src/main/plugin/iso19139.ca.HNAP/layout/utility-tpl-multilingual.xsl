@@ -90,37 +90,44 @@
             <xsl:variable name="mainLanguageId"
                           select="$metadata/gmd:locale/gmd:PT_Locale[
                                 gmd:languageCode/gmd:LanguageCode/@codeListValue = $mainLanguage]/@id"/>
+            <xsl:variable name="mainLanguageCode"
+                          select="$metadata/gmd:locale/gmd:PT_Locale[
+                                gmd:languageCode/gmd:LanguageCode/@codeListValue = $mainLanguage]/gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
+
             <xsl:variable name="lang_ISO639_2B">
-               <xsl:choose>
-                  <xsl:when test="$mainLanguage = 'fra'">fre</xsl:when>
-                  <xsl:otherwise><xsl:value-of select="$mainLanguage"/></xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="mainLanguageId_ISO639_2B">
               <xsl:choose>
-                <xsl:when test="$mainLanguageId[1] = 'fra'">fre</xsl:when>
+                <xsl:when test="$mainLanguage = 'fra'">fre</xsl:when>
+                <xsl:otherwise><xsl:value-of select="$mainLanguage"/></xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+            <xsl:variable name="mainLanguageCode_ISO639_2B">
+              <xsl:choose>
+                <xsl:when test="$mainLanguageCode[1] = 'fra'">fre</xsl:when>
                 <xsl:otherwise><xsl:value-of select="$mainLanguageId[1]"/></xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
 
-            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $mainLanguageId_ISO639_2B, '&quot;')"/></lang>
+
+            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $mainLanguageCode_ISO639_2B, '&quot;')"/></lang>
           </xsl:if>
 
           <xsl:for-each
             select="$metadata/gmd:locale/gmd:PT_Locale[gmd:languageCode/gmd:LanguageCode/@codeListValue != $mainLanguage]">
             <xsl:variable name="lang_ISO639_2B">
-               <xsl:choose>
-                  <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
-                  <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
-               </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="id_ISO639_2B">
               <xsl:choose>
-                <xsl:when test="@id = 'fra'">fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="@id"/></xsl:otherwise>
+                <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
+                <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
-            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $id_ISO639_2B, '&quot;')"/></lang>
+
+            <xsl:variable name="lang_code_ISO639_2B">
+              <xsl:choose>
+                <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
+                <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+
+            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $lang_code_ISO639_2B, '&quot;')"/></lang>
           </xsl:for-each>
         </xsl:otherwise>
       </xsl:choose>
