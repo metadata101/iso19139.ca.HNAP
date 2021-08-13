@@ -154,16 +154,6 @@
         <xsl:for-each select="$metadata/gmd:locale/gmd:PT_Locale">
           <xsl:variable name="langCode"
                         select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
-          <xsl:variable name="id_ISO639_2B">
-            <xsl:choose>
-              <xsl:when test="@id='fra'">
-                <xsl:value-of select="'fre'"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="@id"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
           <xsl:variable name="langCode_ISO639_2B">
             <xsl:choose>
               <xsl:when test="$langCode='fra'">
@@ -174,7 +164,7 @@
               </xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
-          <lang id="{$id_ISO639_2B}" code="{$langCode_ISO639_2B}">
+          <lang id="{$langCode_ISO639_2B}" code="{$langCode_ISO639_2B}">
             <xsl:if test="$langCode = $mainLanguage">
               <xsl:attribute name="default" select="''"/>
             </xsl:if>
