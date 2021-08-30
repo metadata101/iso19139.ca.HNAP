@@ -32,6 +32,7 @@
 
 
   <xsl:import href="../../iso19139/layout/utility-tpl-multilingual.xsl"/>
+  <xsl:include href="../../iso19139.ca.HNAP/convert/functions.xsl"/>
 
 
   <!-- Get the main metadata languages -->
@@ -47,7 +48,11 @@
             <xsl:value-of select="$metadata/gmd:language/gmd:LanguageCode/@codeListValue"/>
           </xsl:when>
           <xsl:when test="contains($metadata/gmd:language/gco:CharacterString,';')">
-            <xsl:variable name="metadataMainLanguage" select="normalize-space(substring-before($metadata/gmd:language/gco:CharacterString,';'))"/>
+            <xsl:variable name="metadataMainLanguage">
+              <xsl:call-template name="langId_from_gmdlanguage19139">
+                <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
+              </xsl:call-template>
+            </xsl:variable>
             <xsl:choose>
               <xsl:when test=" $metadataMainLanguage = 'fra'">
                 <xsl:value-of>fre</xsl:value-of>
