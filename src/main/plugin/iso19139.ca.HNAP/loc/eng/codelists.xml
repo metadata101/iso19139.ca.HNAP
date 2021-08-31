@@ -77,7 +77,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
-	<codelist name="gmd:CI_OnLineFunctionCode">
+	<codelist name="gmd:CI_OnLineFunctionCode" alias="function">
 		<entry>
 			<code>RI_375</code>
       <value>download; téléchargement</value>
@@ -315,7 +315,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
-	<codelist name="gmd:CI_RoleCode">
+	<codelist name="gmd:CI_RoleCode" alias="roleCode">
 		<entry>
 			<code>RI_408</code>
       <value>resourceProvider; fournisseurRessource</value>
@@ -466,7 +466,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
-	<codelist name="gmd:DS_AssociationTypeCode">
+	<codelist name="gmd:DS_AssociationTypeCode" alias="associationType">
 		<entry>
       <code>RI_428</code>
 			<value>crossReference; référenceCroisée</value>
@@ -513,7 +513,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
 	<!-- ==================================================== -->
-	<codelist name="gmd:DS_InitiativeTypeCode">
+	<codelist name="gmd:DS_InitiativeTypeCode" alias="initiativeType">
 		<entry>
       <code>RI_435</code>
 			<value>campaign; campagne</value>
@@ -2115,7 +2115,7 @@
 		</entry>-->
 	</codelist>
 	<!-- ==================================================== -->
-  <codelist name="gmd:MD_TopicCategoryCode">
+  <codelist name="gmd:MD_TopicCategoryCode" alias="topicCategory">
     <entry>
       <code>farming</code>
       <label>Farming</label>
