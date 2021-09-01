@@ -103,7 +103,7 @@
 
   <!-- TODO: Convert language code eng > en_US ? -->
   <xsl:variable name="metadataLanguage"
-                select="//gmd:MD_Metadata/gmd:language/*/@codeListValue"/>
+                select="replace(//gmd:MD_Metadata/gmd:language/*, '; CAN', '')"/>
 
 
   <xsl:template match="/">
@@ -574,6 +574,12 @@ eg.
     <xsl:param name="template" as="node()"/>
     <xsl:choose>
       <xsl:when test="gmd:PT_FreeText">
+        <xsl:element name="{name($template/*)}">
+          <xsl:attribute name="xml:lang" select="$metadataLanguage"/>
+          <xsl:copy-of select="$template/*/@*"/>
+          <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>
+        </xsl:element>
+        
         <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/*">
           <xsl:variable name="languageId"
                         select="@locale"/>
