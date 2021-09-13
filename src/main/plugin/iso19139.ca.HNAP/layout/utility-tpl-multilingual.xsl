@@ -141,6 +141,9 @@
   </xsl:template>
 
   <!-- Get the list of other languages -->
+  <!--This is copied from iso19139
+   https://github.com/geonetwork/core-geonetwork/blob/2208161d116fb5e0d45b45354d8fdbafe98519f1/schemas/iso19139/src/main/plugin/iso19139/layout/utility-tpl-multilingual.xsl#L102-L128
+   with language code format converting. -->
   <xsl:template name="get-iso19139.ca.HNAP-other-languages">
     <xsl:variable name="isTemplate" select="$metadata/gn:info[position() = last()]/isTemplate"/>
     <xsl:choose>
@@ -159,6 +162,10 @@
         <xsl:for-each select="$metadata/gmd:locale/gmd:PT_Locale">
           <xsl:variable name="langCode"
                         select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
+          <!--The langCode was in iso639-2t format and it need to be converted to iso639-2b
+          because of Geonetwork's standard. It may be "possible" to make this change to ISO19139
+          https://github.com/geonetwork/core-geonetwork/blob/2208161d116fb5e0d45b45354d8fdbafe98519f1/schemas/iso19139/src/main/plugin/iso19139/layout/utility-tpl-multilingual.xsl#L118-L119
+          as well. -->
           <xsl:variable name="langCode_ISO639_2B">
             <xsl:choose>
               <xsl:when test="$langCode='fra'">

@@ -231,7 +231,8 @@
           <xsl:for-each select="$metadataOtherLanguages/lang">
             <xsl:variable name="code" select="@code"/>
             <xsl:variable name="currentLanguageId" select="@id"/>
-            <xsl:variable name="currentLanguageId_none_ISO">
+
+            <xsl:variable name="currentLanguageId_iso639_2t">
               <xsl:choose>
                 <xsl:when test="$currentLanguageId = 'fre'">fra</xsl:when>
                 <xsl:otherwise><xsl:value-of select="$currentLanguageId"/></xsl:otherwise>
@@ -243,7 +244,7 @@
                           select="count($theElement/parent::node()/
                                         gmd:PT_FreeText/*/
                                         gmd:LocalisedCharacterString[
-                                          @locale = concat('#', $currentLanguageId_none_ISO)]) = 0"/>
+                                          @locale = concat('#', $currentLanguageId_iso639_2t)]) = 0"/>
 
 
             <xsl:choose>
