@@ -28,8 +28,13 @@
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:gco="http://www.isotc211.org/2005/gco" version="2.0">
-  <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
+  <!-- 'defaultLang' global variable was declared as 'eng' in  ../../iso19139/convert/functions.xsl
+  This variable is used in langIdWithCountry19139 template-->
+
+  <!--Template langId_from_gmdlanguage19139 was declared in  ../../iso19139/convert/functions.xsl
+   and it is used in template langIdWithCountry19139-->
+  <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
   <xsl:template name="langIdWithCountry19139">
     <xsl:variable name="tmp">
@@ -37,12 +42,10 @@
         <xsl:when test="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue|
         	              /*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString
                                 ">
-          <!--Template langId_from_gmdlanguage19139 was declared in ../../iso19139/convert/functions.xsl-->
           <xsl:call-template name="langId_from_gmdlanguage19139">
             <xsl:with-param name="gmdlanguage" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language"/>
           </xsl:call-template>
         </xsl:when>
-        <!-- $defaultLang global variable was declared in  ../../iso19139/convert/functions.xsl -->
         <xsl:otherwise><xsl:value-of select="$defaultLang"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -52,7 +55,6 @@
     </xsl:variable>
 
     <xsl:choose>
-      <!-- $defaultLang global variable was declared in  ../../iso19139/convert/functions.xsl -->
       <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="$defaultLang"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$tmp2"/>
       </xsl:otherwise>
