@@ -151,9 +151,15 @@
 
         <!-- the existing translation -->
         <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
+          <xsl:variable name="locale_ISO639_2B">
+            <xsl:choose>
+              <xsl:when test="@locale = '#fra'">#fre</xsl:when>
+              <xsl:otherwise><xsl:value-of select="@locale"/></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
           <!-- don't put in the default lang if it already has a value -->
-          <xsl:if test="not($hasDefaultValue) or substring-after(@locale, '#') != $metadataLanguage">
-            <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
+          <xsl:if test="not($hasDefaultValue) or substring-after($locale_ISO639_2B, '#') != $metadataLanguage">
+            <value ref="{gn:element/@ref}" lang="{substring-after($locale_ISO639_2B, '#')}">
               <xsl:value-of select="."/>
             </value>
           </xsl:if>
@@ -162,9 +168,16 @@
         <!-- and create field for none translated language -->
         <xsl:for-each select="$metadataOtherLanguages/lang">
           <xsl:variable name="currentLanguageId" select="@id"/>
+          <xsl:variable name="currentLanguageId_iso639_2t">
+            <xsl:choose>
+              <xsl:when test="$currentLanguageId = 'fre'">fra</xsl:when>
+              <xsl:otherwise><xsl:value-of select="$currentLanguageId"/></xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+
           <xsl:if test="count($theElement/
                 gmd:PT_FreeText/gmd:textGroup/
-                gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId)]) = 0">
+                gmd:LocalisedCharacterString[@locale = concat('#',$currentLanguageId_iso639_2t)]) = 0">
             <!--don't put in default language if already there-->
               <xsl:if test="not($hasDefaultValue) or $currentLanguageId != $metadataLanguage ">
                  <value ref="lang_{@id}_{$theElement/gn:element/@ref}"
