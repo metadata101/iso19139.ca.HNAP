@@ -30,29 +30,6 @@
                 xmlns:gco="http://www.isotc211.org/2005/gco" version="2.0">
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
-  <xsl:variable name="defaultLang">eng</xsl:variable>
-
-
-  <!-- ================================================================== -->
-  <!-- iso3code from the supplied gmdlanguage
-       It will prefer LanguageCode if it exists over CharacterString -->
-  <xsl:template name="langId_from_gmdlanguage19139">
-    <xsl:param name="gmdlanguage" required="yes"/>
-    <xsl:variable name="tmp">
-      <xsl:choose>
-        <xsl:when test="normalize-space($gmdlanguage/gmd:LanguageCode/@codeListValue) != ''">
-          <xsl:value-of select="$gmdlanguage/gmd:LanguageCode/@codeListValue"/>
-        </xsl:when>
-        <xsl:when test="contains($gmdlanguage/gco:CharacterString,';')">
-          <xsl:value-of  select="normalize-space(substring-before($gmdlanguage/gco:CharacterString,';'))"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$gmdlanguage/gco:CharacterString"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:value-of select="normalize-space(string($tmp))"></xsl:value-of>
-  </xsl:template>
 
   <xsl:template name="langIdWithCountry19139">
     <xsl:variable name="tmp">
@@ -60,10 +37,12 @@
         <xsl:when test="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue|
         	              /*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString
                                 ">
+          <!--Template langId_from_gmdlanguage19139 was declared in ../../iso19139/convert/functions.xsl-->
           <xsl:call-template name="langId_from_gmdlanguage19139">
             <xsl:with-param name="gmdlanguage" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language"/>
           </xsl:call-template>
         </xsl:when>
+        <!-- $defaultLang global variable was declared in  ../../iso19139/convert/functions.xsl -->
         <xsl:otherwise><xsl:value-of select="$defaultLang"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -73,6 +52,7 @@
     </xsl:variable>
 
     <xsl:choose>
+      <!-- $defaultLang global variable was declared in  ../../iso19139/convert/functions.xsl -->
       <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="$defaultLang"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$tmp2"/>
       </xsl:otherwise>
