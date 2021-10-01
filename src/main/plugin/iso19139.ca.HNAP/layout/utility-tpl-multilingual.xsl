@@ -32,7 +32,6 @@
 
 
   <xsl:import href="../../iso19139/layout/utility-tpl-multilingual.xsl"/>
-  <xsl:include href="../../iso19139.ca.HNAP/convert/functions.xsl"/>
 
 
   <!-- Get the main metadata languages -->
@@ -48,19 +47,7 @@
             <xsl:value-of select="$metadata/gmd:language/gmd:LanguageCode/@codeListValue"/>
           </xsl:when>
           <xsl:when test="contains($metadata/gmd:language/gco:CharacterString,';')">
-            <xsl:variable name="metadataMainLanguage">
-              <xsl:call-template name="langId_from_gmdlanguage19139">
-                <xsl:with-param name="gmdlanguage" select="/root/*/gmd:language"/>
-              </xsl:call-template>
-            </xsl:variable>
-            <xsl:choose>
-              <xsl:when test=" $metadataMainLanguage = 'fra'">
-                <xsl:value-of>fre</xsl:value-of>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of  select="$metadataMainLanguage"/>
-              </xsl:otherwise>
-            </xsl:choose>
+            <xsl:value-of  select="normalize-space(substring-before($metadata/gmd:language/gco:CharacterString,';'))"/>
           </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="$metadata/gmd:language/gco:CharacterString"/>
@@ -69,6 +56,8 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+
+
 
 
   <!-- Get the list of other languages in JSON -->
@@ -95,44 +84,25 @@
             <xsl:variable name="mainLanguageId"
                           select="$metadata/gmd:locale/gmd:PT_Locale[
                                 gmd:languageCode/gmd:LanguageCode/@codeListValue = $mainLanguage]/@id"/>
-            <xsl:variable name="mainLanguageCode"
-                          select="$metadata/gmd:locale/gmd:PT_Locale[
-                                gmd:languageCode/gmd:LanguageCode/@codeListValue = $mainLanguage]/gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
-
             <xsl:variable name="lang_ISO639_2B">
-              <xsl:choose>
-                <xsl:when test="$mainLanguage = 'fra'">fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="$mainLanguage"/></xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-            <xsl:variable name="mainLanguageCode_ISO639_2B">
-              <xsl:choose>
-                <xsl:when test="$mainLanguageCode[1] = 'fra'">fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="$mainLanguageId[1]"/></xsl:otherwise>
-              </xsl:choose>
+               <xsl:choose>
+                  <xsl:when test="$mainLanguage = 'fra'">fre</xsl:when>
+                  <xsl:otherwise><xsl:value-of select="$mainLanguage"/></xsl:otherwise>
+               </xsl:choose>
             </xsl:variable>
 
-
-            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $mainLanguageCode_ISO639_2B, '&quot;')"/></lang>
+            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $mainLanguageId[1], '&quot;')"/></lang>
           </xsl:if>
 
           <xsl:for-each
             select="$metadata/gmd:locale/gmd:PT_Locale[gmd:languageCode/gmd:LanguageCode/@codeListValue != $mainLanguage]">
             <xsl:variable name="lang_ISO639_2B">
-              <xsl:choose>
-                <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
-              </xsl:choose>
+               <xsl:choose>
+                  <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
+                  <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
+               </xsl:choose>
             </xsl:variable>
-
-            <xsl:variable name="lang_code_ISO639_2B">
-              <xsl:choose>
-                <xsl:when test="gmd:languageCode/gmd:LanguageCode/@codeListValue = 'fra'">fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/></xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
-            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', $lang_code_ISO639_2B, '&quot;')"/></lang>
+            <lang><xsl:value-of select="concat('&quot;', $lang_ISO639_2B, '&quot;:&quot;#', @id, '&quot;')"/></lang>
           </xsl:for-each>
         </xsl:otherwise>
       </xsl:choose>
@@ -141,49 +111,8 @@
   </xsl:template>
 
   <!-- Get the list of other languages -->
-  <!--This is copied from iso19139
-   https://github.com/geonetwork/core-geonetwork/blob/2208161d116fb5e0d45b45354d8fdbafe98519f1/schemas/iso19139/src/main/plugin/iso19139/layout/utility-tpl-multilingual.xsl#L102-L128
-   with language code format converting. -->
   <xsl:template name="get-iso19139.ca.HNAP-other-languages">
-    <xsl:variable name="isTemplate" select="$metadata/gn:info[position() = last()]/isTemplate"/>
-    <xsl:choose>
-      <xsl:when test="$isTemplate = 's' or $isTemplate = 't'">
-
-        <xsl:for-each select="distinct-values($metadata//gmd:LocalisedCharacterString/@locale)">
-          <xsl:variable name="locale" select="string(.)"/>
-          <xsl:variable name="langId" select="xslutil:threeCharLangCode(substring($locale,2,2))"/>
-          <lang id="{substring($locale,2,2)}" code="{$langId}"/>
-        </xsl:for-each>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:variable name="mainLanguage">
-          <xsl:call-template name="get-iso19139-language"/>
-        </xsl:variable>
-        <xsl:for-each select="$metadata/gmd:locale/gmd:PT_Locale">
-          <xsl:variable name="langCode"
-                        select="gmd:languageCode/gmd:LanguageCode/@codeListValue"/>
-          <!--The langCode was in iso639-2t format and it need to be converted to iso639-2b
-          because of Geonetwork's standard. It may be "possible" to make this change to ISO19139
-          https://github.com/geonetwork/core-geonetwork/blob/2208161d116fb5e0d45b45354d8fdbafe98519f1/schemas/iso19139/src/main/plugin/iso19139/layout/utility-tpl-multilingual.xsl#L118-L119
-          as well. -->
-          <xsl:variable name="langCode_ISO639_2B">
-            <xsl:choose>
-              <xsl:when test="$langCode='fra'">
-                <xsl:value-of select="'fre'"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:value-of select="$langCode"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <lang id="{$langCode_ISO639_2B}" code="{$langCode_ISO639_2B}">
-            <xsl:if test="$langCode = $mainLanguage">
-              <xsl:attribute name="default" select="''"/>
-            </xsl:if>
-          </lang>
-        </xsl:for-each>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:call-template name="get-iso19139-other-languages" />
   </xsl:template>
 
 </xsl:stylesheet>

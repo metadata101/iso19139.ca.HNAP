@@ -214,14 +214,8 @@
 
           <!-- the existing translation -->
           <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString">
-            <xsl:variable name="locale_ISO639_2B">
-              <xsl:choose>
-                <xsl:when test="@locale = '#fra'">#fre</xsl:when>
-                <xsl:otherwise><xsl:value-of select="@locale"/></xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-            <xsl:if test="not($metadataLanguage = substring-after($locale_ISO639_2B, '#'))">
-              <value ref="{gn:element/@ref}" lang="{substring-after($locale_ISO639_2B, '#')}">
+            <xsl:if test="not($metadataLanguage = substring-after(@locale, '#'))">
+              <value ref="{gn:element/@ref}" lang="{substring-after(@locale, '#')}">
                 <xsl:value-of select="."/>
               </value>
             </xsl:if>
@@ -232,19 +226,12 @@
             <xsl:variable name="code" select="@code"/>
             <xsl:variable name="currentLanguageId" select="@id"/>
 
-            <xsl:variable name="currentLanguageId_iso639_2t">
-              <xsl:choose>
-                <xsl:when test="$currentLanguageId = 'fre'">fra</xsl:when>
-                <xsl:otherwise><xsl:value-of select="$currentLanguageId"/></xsl:otherwise>
-              </xsl:choose>
-            </xsl:variable>
-
 
             <xsl:variable name="ptFreeElementDoesNotExist"
                           select="count($theElement/parent::node()/
                                         gmd:PT_FreeText/*/
                                         gmd:LocalisedCharacterString[
-                                          @locale = concat('#', $currentLanguageId_iso639_2t)]) = 0"/>
+                                          @locale = concat('#', $currentLanguageId)]) = 0"/>
 
 
             <xsl:choose>
