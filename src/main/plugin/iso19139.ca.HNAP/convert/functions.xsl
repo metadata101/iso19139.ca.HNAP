@@ -25,15 +25,12 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="java:org.fao.geonet.util.XslUtil"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:gco="http://www.isotc211.org/2005/gco" version="2.0">
 
-  <!-- 'defaultLang' global variable was declared as 'eng' in  ../../iso19139/convert/functions.xsl
-  This variable is used in langIdWithCountry19139 template-->
-
-  <!--Template langId_from_gmdlanguage19139 was declared in  ../../iso19139/convert/functions.xsl
-   and it is used in template langIdWithCountry19139-->
+  <!--Include for required for langId_from_gmdlanguage19139 -->
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
   <xsl:template name="langIdWithCountry19139">
@@ -46,7 +43,7 @@
             <xsl:with-param name="gmdlanguage" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language"/>
           </xsl:call-template>
         </xsl:when>
-        <xsl:otherwise><xsl:value-of select="$defaultLang"/></xsl:otherwise>
+        <xsl:otherwise><xsl:value-of select="java:getDefaultLangCode()"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
@@ -55,7 +52,7 @@
     </xsl:variable>
 
     <xsl:choose>
-      <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="$defaultLang"/></xsl:when>
+      <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="java:getDefaultLangCode()"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$tmp2"/>
       </xsl:otherwise>
     </xsl:choose>
