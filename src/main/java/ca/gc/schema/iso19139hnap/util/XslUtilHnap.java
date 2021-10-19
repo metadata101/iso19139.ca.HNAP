@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2001-2016 Food and Agriculture Organization of the
+ * Copyright (C) 2001-2021 Food and Agriculture Organization of the
  * United Nations (FAO-UN), United Nations World Food Programme (WFP)
  * and United Nations Environment Programme (UNEP)
  *
@@ -24,22 +24,27 @@
 /*
  * ISO19139.hnap xsl utilities
  * Ported from XslUtil.java and utils-fn.xsl in ecc geonetwork
-*/
+ */
 
 package ca.gc.schema.iso19139hnap.util;
 
-import java.io.File;
-import java.net.URI;
-import java.nio.file.Paths;
-import java.util.*;
-import org.apache.commons.lang.StringUtils;
-import org.apache.tools.ant.util.DateUtils;
 
+import net.sf.saxon.om.NodeInfo;
+import org.apache.commons.lang.StringUtils;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.tools.ant.util.DateUtils;
 import org.fao.geonet.constants.Geonet;
-import org.fao.geonet.utils.Log;
 import org.fao.geonet.util.XslUtil;
+import org.fao.geonet.utils.Log;
 
 import javax.annotation.Nonnull;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class XslUtilHnap {
     //TODO, change to 'iso19139.hnap' after schema is renamed. Task 19337
@@ -51,6 +56,7 @@ public class XslUtilHnap {
      * Compares dates (used for temporal extent dates comparison),
      * managing the different formats allowed: yyyy-mm-dd, yyyy-mm, yyyy.
      * ported from utils-fn.xsl in ec
+     *
      * @param endDate
      * @param startDate
      * @return
@@ -113,6 +119,7 @@ public class XslUtilHnap {
     /**
      * From df-build\XslUtil.java, declared in utils-fn.xsl, used in schematron .sch files
      * ported from utils-fn.xsl in ec
+     *
      * @param date
      * @return
      */
@@ -175,6 +182,7 @@ public class XslUtilHnap {
 
     /**
      * Return 2 iso lang code from a 3 iso lang code. If any error occurs return "".
+     *
      * @param iso3LangCode The 2 iso lang code
      * @return The related 3 iso lang code
      */
@@ -190,12 +198,72 @@ public class XslUtilHnap {
 
     /**
      * Get thesauriDir from system config value
+     *
      * @return Code list folder path. i.e. WEB-INF\data\config\codelist
      */
     public static
     @Nonnull
     String getThesauriDir() {
         String result = XslUtil.getConfigValue(Geonet.Config.CODELIST_DIR);
+        return result;
+    }
+
+    /**
+     * Given a String representing a URL and a query parameter name return the value of the requested parameter.
+     * Search is case-insensitive.
+     *
+     * @param paramName the name of the parameter.
+     * @param url       a string representing a URL.
+     * @return the value of the parameter. If {@code}paramName{@code} is not a valid URL or a parameter with the passed
+     * name doesn't exist return an empty string. If there is more than one parameter with the same name return their
+     * values separated by the "," sign.
+     */
+    public static @Nonnull
+    String extractUrlParameter(String paramName, String url) {
+        final List<NameValuePair> queryParams;
+        String result = "";
+        try {
+            queryParams = new URIBuilder(url).getQueryParams();
+            List<String> foundValues = queryParams.stream().filter(nvp -> nvp.getName().equalsIgnoreCase(paramName))
+                .map(NameValuePair::getValue).collect(Collectors.toList());
+            result = foundValues.stream().filter(StringUtils::isNotEmpty).collect(Collectors.joining(","));
+        } catch (URISyntaxException e) {
+            Log.info(Geonet.SCHEMA_MANAGER, "cannot parse URL in extractUrlParameter method. url=" + url);
+        }
+
+
+        return result;
+    }
+
+    /**
+     * Remove the parameters passed from the URL query.
+     *
+     * @param parametersToRemove an ArrayList with NodeInfo which values are the parameters name to remove from the URL.
+     * @param url                a String representing a URL.
+     * @return the url passed without the specified parameters in the query. If url is not a valid URL then return the
+     * empty string.
+     */
+    public static @Nonnull
+    String removeFromUrl(ArrayList<NodeInfo> parametersToRemove, String url) {
+        // Note: don't generalize the ArrayList to a List. Saxon needs a concrete class here. It can't instantiate an
+        // interface.
+        String result = "";
+        try {
+            URIBuilder builder = new URIBuilder(url);
+            List<NameValuePair> queryParams = builder.getQueryParams();
+            List<NameValuePair> newQueryParams = queryParams.stream().filter(nameValuePair ->
+                parametersToRemove.stream().noneMatch(
+                    paramToRemove -> nameValuePair.getName().equalsIgnoreCase(paramToRemove.getStringValue()))
+            ).collect(Collectors.toList());
+            builder.setParameters(newQueryParams);
+            result = builder.build().toString();
+
+
+        } catch (URISyntaxException e) {
+            Log.info(Geonet.SCHEMA_MANAGER, "cannot parse URL in removeFromUrl method. url=" + url);
+            result = url;
+        }
+
         return result;
     }
 }
