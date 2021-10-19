@@ -25,34 +25,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:java="java:org.fao.geonet.util.XslUtil"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gml320="http://www.opengis.net/gml"
                 xmlns:gco="http://www.isotc211.org/2005/gco" version="2.0">
+
+  <!--Include for required for langId_from_gmdlanguage19139 -->
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
-
-  <xsl:variable name="defaultLang">eng</xsl:variable>
-
-
-  <!-- ================================================================== -->
-  <!-- iso3code from the supplied gmdlanguage
-       It will prefer LanguageCode if it exists over CharacterString -->
-  <xsl:template name="langId_from_gmdlanguage19139">
-    <xsl:param name="gmdlanguage" required="yes"/>
-    <xsl:variable name="tmp">
-      <xsl:choose>
-        <xsl:when test="normalize-space($gmdlanguage/gmd:LanguageCode/@codeListValue) != ''">
-          <xsl:value-of select="$gmdlanguage/gmd:LanguageCode/@codeListValue"/>
-        </xsl:when>
-        <xsl:when test="contains($gmdlanguage/gco:CharacterString,';')">
-          <xsl:value-of  select="normalize-space(substring-before($gmdlanguage/gco:CharacterString,';'))"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="$gmdlanguage/gco:CharacterString"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:value-of select="normalize-space(string($tmp))"></xsl:value-of>
-  </xsl:template>
 
   <xsl:template name="langIdWithCountry19139">
     <xsl:variable name="tmp">
@@ -64,7 +43,7 @@
             <xsl:with-param name="gmdlanguage" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language"/>
           </xsl:call-template>
         </xsl:when>
-        <xsl:otherwise><xsl:value-of select="$defaultLang"/></xsl:otherwise>
+        <xsl:otherwise><xsl:value-of select="java:getDefaultLangCode()"/></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
@@ -73,7 +52,7 @@
     </xsl:variable>
 
     <xsl:choose>
-      <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="$defaultLang"/></xsl:when>
+      <xsl:when test="$tmp2 != 'eng' and $tmp2 != 'fra'"><xsl:value-of select="java:getDefaultLangCode()"/></xsl:when>
       <xsl:otherwise><xsl:value-of select="$tmp2"/>
       </xsl:otherwise>
     </xsl:choose>
