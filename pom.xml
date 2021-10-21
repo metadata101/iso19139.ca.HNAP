@@ -5,10 +5,10 @@
   <parent>
     <artifactId>schemas</artifactId>
     <groupId>org.geonetwork-opensource.schemas</groupId>
-    <version>3.10.8</version>
+    <version>3.10-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <version>3.10.8</version>
+  <version>3.10-SNAPSHOT</version>
   <artifactId>schema-iso19139.ca.HNAP</artifactId>
   <name>Schema Plugin HNAP ISO19139/119</name>
 
