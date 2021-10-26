@@ -15,7 +15,7 @@
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcelanguage#eng">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglaise</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglais</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">English</ns2:prefLabel>
     </rdf:Description>
@@ -31,7 +31,7 @@
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourcelanguage#eng,fra">
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglaise,Français</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Anglais,Français</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">English,French</ns2:prefLabel>
     </rdf:Description>
@@ -41,9 +41,9 @@
         >Definition</ns2:scopeNote>
         <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr"
         >Definition</ns2:scopeNote>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">zxx</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Pas de contenu linguistique</ns2:prefLabel>
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">zxx</ns2:prefLabel>
+        <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">No linguistic content</ns2:prefLabel>
     </rdf:Description>
 
 </rdf:RDF>
