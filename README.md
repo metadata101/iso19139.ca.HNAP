@@ -32,7 +32,7 @@ The plugin can be deployed manually in an existing GeoNetwork installation:
 
 2. Extract contents of the `schema-iso19139.ca.HNAP` zip download into `WEB-INF/data/config/schema_plugins/iso19139.ca.HNAP`.
 
-3. Copy the `schema-iso19139.ca.HNAP` jar to geonetwork `WEB-INF/libs`
+3. Copy the `schema-iso19139.ca.HNAP` jar to geonetwork `WEB-INF/lib`
 
 6. Copy the `schema-iso19139.ca.HNAP` doc to geonetwork `doc`
 
@@ -75,7 +75,7 @@ The best approach is to add the plugin as a submodule:
 
 1. Copy the `iso19139.ca.HNAP` folder from `schemas/iso19139.ca.HNAP/src/main/plugin` into geonetwork `WEB-INF/data/config/schema_plugins/`.
 
-2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/libs`.
+2. Copy `schema-iso19139.ca.HNAP` jar from `target` into geonetwork `WEB-INF/lib`.
 
 3. Restart geonetwork
 
