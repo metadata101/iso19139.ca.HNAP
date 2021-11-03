@@ -7,12 +7,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Settings &mdash; User Manual (HNAP) 3.10.8 documentation</title>
+  <title>Settings &mdash; User Manual (HNAP) 3.10-SNAPSHOT documentation</title>
   
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
 
   
   
@@ -29,6 +31,7 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
@@ -62,7 +65,7 @@
             
             
               <div class="version">
-                3.10
+                3.10-SNAPSHOT
               </div>
             
           
@@ -215,8 +218,16 @@
 </div>
 <div class="section" id="settings-user-interface">
 <h2>Settings: User Interface<a class="headerlink" href="#settings-user-interface" title="Permalink to this headline">¶</a></h2>
-<p>Settings for <span class="menuselection">Admin Console &gt; Settings</span> <span class="guilabel">UI Settings</span> page are replaced during application startup. These settings are used to configure the custom theme.</p>
-<p>See <code class="file docutils literal notranslate"><span class="pre">initialization/settings/uisettings.json</span></code> for details.</p>
+<p>Settings for <span class="menuselection">Admin Console &gt; Settings</span> <span class="guilabel">UI Settings</span> page;</p>
+<ul>
+<li><p>HNAP adds a <cite>layers=&lt;name&gt;</cite> parameter to the GetCapabilities URL used to document a WMS Service</p>
+<p>To support this functionality locate <span class="guilabel">Add WMS layers from metadata to the map viewer</span> heading, and change the <span class="guilabel">URL parameter with the layer name</span> to <kbd class="kbd docutils literal notranslate">layers</kbd>.</p>
+<div class="figure align-default" id="id4">
+<img alt="../_images/wms-url-param-setting.png" src="../_images/wms-url-param-setting.png" />
+<p class="caption"><span class="caption-text">HNAP setting for URL parameter</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+</ul>
 </div>
 </div>
 
