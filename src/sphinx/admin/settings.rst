@@ -6,26 +6,26 @@ Settings: System
 
 Common :menuselection:`Admin Console > Settings` to review from the :guilabel:`Settings` page:
 
-#. Catalog server: 
-   
+#. Catalog server:
+
    * Network details: Update to accurately identify this web service.
-   
+
    * Log level: Change level of detail reported for troubleshooting, return to `PROD` for general use.
 
    .. figure:: img/catalog_server.png
-      
+
       Catalog server
-      
+
 #. Feedback: mail configuration
-  
+
    .. figure:: img/feedback.png
-     
+
       Feedback settings.
-     
+
 #. Proxy server: optional proxy used to allow geonetwork to access external web services.
-  
+
    .. figure:: img/proxy.png
-     
+
       Proxy service
 
 #. A subset of settings for :menuselection:`Admin Console > Settings` are required for validation and managed during application startup.
@@ -47,6 +47,12 @@ Common :menuselection:`Admin Console > Settings` to review from the :guilabel:`S
 Settings: User Interface
 ------------------------
 
-Settings for :menuselection:`Admin Console > Settings` :guilabel:`UI Settings` page are replaced during application startup. These settings are used to configure the custom theme.
+Settings for :menuselection:`Admin Console > Settings` :guilabel:`UI Settings` page;
 
-See :file:`initialization/settings/uisettings.json` for details.
+* HNAP adds a `layers=<name>` parameter to the GetCapabilities URL used to document a WMS Service
+
+  To support this functionality locate :guilabel:`Add WMS layers from metadata to the map viewer` heading, and change the :guilabel:`URL parameter with the layer name` to :kbd:`layers`.
+
+  .. figure:: img/wms-url-param-setting.png
+
+     HNAP setting for URL parameter
