@@ -213,23 +213,49 @@ WMS Service Links
 
    * Append the parameter ``&layers=name`` to indicate the layer to display.
 
-     HNAP supports naming several layers (`layers=habitat,study_area`) from the same WMS service.
+     Review the raw GetCapabilities document to see all the layers available in the service, layers are indicated using:
 
-     ESRI WMS services tend to name layers using numbers `layers=0`.
+     .. code-block:: xml
+
+        <Layer queryable="1">
+           <Name>0</Name>
+           <Title>National Tornado Events</Title>
+           ...
+
+     To visually explore the GetCapabilities use a Desktop GIS application, or the included Map Viewer.
+
+     As shown above many ESRI WMS services tend to name layers using numbers `layers=0`, resulting in:
+
+     ``http://localhost:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities&layers=0``
+
+     HNAP supports naming several layers (`layers=habitat,study_area`) from the same WMS service.
 
 #. Use :guilabel:`Resource name` to provide the title of the layer in English and French.
 
+   The raw GetCapabilities document included the title of the layer:
+
+   .. code-block:: xml
+
+      <Layer queryable="1">
+         <Name>0</Name>
+         <Title>National Tornado Events</Title>
+         ...
+
 #. The description is broken up into three components, for `OGC:WMS` the following are appropriate:
 
-   * :guilabel:`Content type`: Search for ``Web Service`` term.
+   * :guilabel:`Content type`: ``Web Service``
    * :guilabel:`Format`: ``WMS``
-   * :guilabel:`Language`: Indicate if the resource is displayed with `eng`, `fra` labels, mixed `eng;fra` content.
+   * :guilabel:`Language`: Indicate if the resource is displayed with `eng` labels, `fra` labels, or mixed `eng;fra` content.
 
-     For WMS services which detect language dynamically adjust labels `eng;fra` is appropriate.
+     For WMS services which detect language dynamically adjust labels dynamically `eng;fra` is appropriate.
 
 #. Use :guilabel:`Function` to select ``Web Service`` (as the function performed by the WMS).
 
-#. If known the :guilabel:`Application profile` can be used to formally mark WMS services supporting specific profiles (Open Search, Earth Observation, Time, INSPIRE, MapML).
+#. If known the :guilabel:`Application profile` can be used to formally mark WMS services supporting specific WMS profiles (Open Search, Earth Observation, Temporal, INSPIRE, MapML).
+
+#. Tips:
+
+   * When viewing the record use :guilabel:`Add to Map` functionality to verify the web service link is correct.
 
 Thumbnail generation
 --------------------
@@ -243,7 +269,12 @@ Thumbnail generation
 
 #. Use the :guilabel:`Generate thumbnail using the view service`:
 
-   * The :guilabel:`Layout` and :guilabel:`Scale` is used to define the capture area
+   * The :guilabel:`Layout` and :guilabel:`Scale` is used to define the capture area.
+
+     The capture area is displayed as a light area providing a clear representation of the thumbnail to be generated.
+
+     Adjust the scale first until the capture area encloses your content, and then adjust the layout for an aspect ratio that matches the arrangement of your content.
+
    * Use the mouse to pan the area shown and the scroll wheel to adjust content displayed within the capture area
 
    When ready press :guilabel:`Generate thumbnail` to save a new image.
