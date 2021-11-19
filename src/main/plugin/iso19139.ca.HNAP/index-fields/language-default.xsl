@@ -539,7 +539,7 @@
         <xsl:variable name="linkage" select="gmd:linkage/gmd:URL"/>
         <xsl:variable name="title" select="normalize-space(gmd:name//gmd:LocalisedCharacterString[@locale=$langId]|gmd:name/gmx:MimeFileType)"/>
         <xsl:variable name="desc" select="normalize-space(gmd:description//gmd:LocalisedCharacterString[@locale=$langId])"/>
-        <xsl:variable name="protocol" select="normalize-space(gmd:protocol//gmd:LocalisedCharacterString[@locale=$langId])"/>
+        <xsl:variable name="protocol" select="normalize-space(gmd:protocol/gco:CharacterString)"/>
         <xsl:variable name="mimetype"
                       select="geonet:protocolMimeType($linkage, $protocol, gmd:name/gmx:MimeFileType/@type)"/>
 
