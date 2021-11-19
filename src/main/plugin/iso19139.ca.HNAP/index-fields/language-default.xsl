@@ -267,17 +267,7 @@
           <xsl:variable name="keywordWithNoThesaurus"
                         select="//gmd:MD_Keywords[
                                   not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:title/gmd:LocalisedCharacterString[@locale = $langId]/text() = '']/
-                                    gmd:keyword//gmd:LocalisedCharacterString[@locale=$langId][*/text() != '']"/>
-          <xsl:if test="count($keywordWithNoThesaurus) > 0">
-            'keywords': [
-            <xsl:for-each select="$keywordWithNoThesaurus/(gco:CharacterString|gmx:Anchor)">
-              {'value': <xsl:value-of select="concat('''', replace(., '''', '\\'''), '''')"/>,
-              'link': '<xsl:value-of select="@xlink:href"/>'}
-              <xsl:if test="position() != last()">,</xsl:if>
-            </xsl:for-each>
-            ]
-            <xsl:if test="//gmd:MD_Keywords[gmd:thesaurusName]">,</xsl:if>
-          </xsl:if>
+                                    gmd:keyword[.//gmd:LocalisedCharacterString[@locale=$langId]/text() != '']"/>
           <xsl:for-each-group select="//gmd:MD_Keywords[
                                         gmd:thesaurusName/*/gmd:title//gmd:LocalisedCharacterString[@locale = $langId]/text() != '' and
                                         count(gmd:keyword//gmd:LocalisedCharacterString[@locale = $langId and text() != '']) > 0]"
@@ -292,6 +282,16 @@
             ]
             <xsl:if test="position() != last()">,</xsl:if>
           </xsl:for-each-group>
+          <xsl:if test="count($keywordWithNoThesaurus) > 0">
+            <xsl:if test="count(//gmd:MD_Keywords[gmd:thesaurusName/*/gmd:title/*/text() != '']) > 0">,</xsl:if>
+            'otherKeywords': [
+            <xsl:for-each select="$keywordWithNoThesaurus//gmd:LocalisedCharacterString[@locale = $langId and text() != '']">
+              {'value': <xsl:value-of select="concat('''', replace(., '''', '\\'''), '''')"/>,
+              'link': '<xsl:value-of select="@xlink:href"/>'}
+              <xsl:if test="position() != last()">,</xsl:if>
+            </xsl:for-each>
+            ]
+          </xsl:if>
           }
         </xsl:variable>
 
