@@ -244,7 +244,7 @@ Translation workflow:
 7. Update ``README.md`` to link to new milestone:
     
    ```
-   For details on this release see [3.10.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/5?closed=1)
+   For details on this release see [3.10.10 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/9?closed=1)
    release notes for details.
    ```
    
