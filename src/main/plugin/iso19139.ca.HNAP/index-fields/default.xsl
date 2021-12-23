@@ -503,7 +503,7 @@
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!--  Fields use to search on Service -->
 
-      <xsl:for-each select="srv:serviceType/gco:LocalName">
+      <xsl:for-each select="srv:serviceType/gco:LocalName[string(.)]">
         <Field name="serviceType" string="{string(.)}" store="true" index="true"/>
         <Field  name="type" string="service-{string(.)}" store="true" index="true"/>
       </xsl:for-each>
