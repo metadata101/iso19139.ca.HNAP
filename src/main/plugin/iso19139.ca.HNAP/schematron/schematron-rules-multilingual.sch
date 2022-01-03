@@ -353,30 +353,6 @@
       >$loc/strings/ContactHoursOfService</sch:assert>
     </sch:rule>
 
-
-    <!-- Contact - Role -->
-    <sch:rule context="//gmd:contact/*/gmd:role">
-
-      <sch:let name="roleCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:CI_RoleCode/local-name(),
-                            gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MissingContactRole</sch:assert>
-
-      <sch:let name="isValid" value="($roleCodelistLabel != '') and ($roleCodelistLabel != gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidContactRole</sch:assert>
-
-    </sch:rule>
   </sch:pattern>
 
 
