@@ -31,7 +31,7 @@ public class SchemaInitializerSettings implements
     }
 
     private void addSetting(String key,SettingDataType type, String value, int position ) {
-        if (_settingRepository.findOne(key) == null) {
+        if (!_settingRepository.findById(key).isPresent()) {
             Setting setting = new Setting();
             setting.setDataType(type);
             setting.setName(key);
