@@ -41,6 +41,7 @@
                 exclude-result-prefixes="#all">
   <xsl:import href="../../layout/evaluate.xsl"/>
   <xsl:import href="../../layout/utility-tpl-multilingual.xsl"/>
+  <xsl:import href="../../layout/utility-fn.xsl"/>
   <xsl:import href="../../../iso19139/formatter/xsl-view/view.xsl"/>
 
   <!-- Load the editor configuration to be able
@@ -52,8 +53,8 @@
   <xsl:variable name="editorConfig"
                 select="document('../../layout/config-editor.xml')"/>
 
-  
-  <!-- Override codelist template, to don't use the text value, 
+
+  <!-- Override codelist template, to don't use the text value,
        just the codeListValue attribute -->
   <xsl:template mode="render-field"
                 match="*[*/@codeListValue]"
