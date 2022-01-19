@@ -53,6 +53,8 @@
   <xsl:variable name="editorConfig"
                 select="document('../../layout/config-editor.xml')"/>
 
+  <xsl:variable name="langId" select="gn-fn-iso19139:getLangIdHNAP($metadata, $language)"/>
+
 
   <!-- Override codelist template, to don't use the text value,
        just the codeListValue attribute -->
