@@ -14,6 +14,19 @@
     <sch:ns prefix="ns2" uri="http://www.w3.org/2004/02/skos/core#"/>
     <sch:ns prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
 
+    <sch:let name="mainLanguage" value="if (normalize-space(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue) != '')
+                                         then lower-case(normalize-space(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gmd:LanguageCode/@codeListValue))
+                                         else if (contains(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString,';'))
+                                              then lower-case(normalize-space(substring-before(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString,';')))
+                                              else lower-case(//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:language/gco:CharacterString)"/>
+    <sch:let name="altLanguage" value="if ($mainLanguage = 'eng') then 'fra' else 'eng'"/>
+    <sch:let name="mainLanguageId" value="//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue = $mainLanguage]/@id"/>
+    <sch:let name="altLanguageId" value="//*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
+    <sch:let name="mainLanguage2char" value="if ($mainLanguage = 'fra') then 'fr' else 'en'"/>
+    <sch:let name="altLanguage2char" value="if (lower-case($altLanguage) = 'fra') then 'fr' else 'en'"/>
+    <sch:let name="mainLanguageText" value="if ($mainLanguage = 'fra') then 'French' else 'English'"/>
+    <sch:let name="altLanguageText" value="if (lower-case($altLanguage) = 'fra') then 'French' else 'English'"/>
+
     <!-- =============================================================
     EC schematron rules:
     ============================================================= -->
@@ -248,24 +261,17 @@
       </sch:rule>
 
       <!-- Country -->
-       <sch:rule context="//gmd:contact//gmd:country">
+      <sch:rule context="//gmd:contact//gmd:country">
         <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/ISO_Countries.rdf'))"/>
 
         <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
-        <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)" />
+        <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-         <sch:assert test="(not($countryName) or
-           ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryName]) or
-           string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryName]))))
-
-           and
-
-           (not($countryNameOtherLang) or
-                       ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryNameOtherLang]) or
-                       string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryNameOtherLang]))
-                       ))">$loc/strings/ECCountry</sch:assert>
-
-
+        <sch:assert test="(not($countryName) or
+            ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+            and
+            (not($countryNameOtherLang) or
+            string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
       </sch:rule>
 
       <!-- Role -->
@@ -330,32 +336,25 @@
                 ">$loc/strings/EC37GovAllowedFrench</sch:assert>
       </sch:rule>
 
-        <!-- Country -->
-       <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
+      <!-- Country -->
+      <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country
                                             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:country">
         <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/ISO_Countries.rdf'))"/>
 
         <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
-        <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)" />
+        <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-         <sch:assert test="(not($countryName) or
-           ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryName]) or
-           string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryName]))))
-
-           and
-
-           (not($countryNameOtherLang) or
-                       ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryNameOtherLang]) or
-                       string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryNameOtherLang]))
-                       ))">$loc/strings/ECCountry</sch:assert>
-
-
+        <sch:assert test="(not($countryName) or
+            ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+            and
+            (not($countryNameOtherLang) or
+            string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
       </sch:rule>
 
 
         <!-- Role -->
-        <sch:rule context="//gmd:identificationInfo/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
+        <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
                   |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role
                   |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:role">
 
@@ -424,25 +423,18 @@
       </sch:rule>
 
       <!-- Country -->
-         <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:country">
+      <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:country">
           <sch:let name="country-values" value="document(concat('file:///', $thesaurusDir, '/local/thesauri/theme/ISO_Countries.rdf'))"/>
 
           <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
-          <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString)" />
+          <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-           <sch:assert test="(not($countryName) or
-             ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryName]) or
-             string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryName]))))
-
-             and
-
-             (not($countryNameOtherLang) or
-                         ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='en'])) = $countryNameOtherLang]) or
-                         string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang='fr'])) = $countryNameOtherLang]))
-                         ))">$loc/strings/ECCountry</sch:assert>
-
-
-        </sch:rule>
+          <sch:assert test="(not($countryName) or
+              ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+              and
+              (not($countryNameOtherLang) or
+              string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
+      </sch:rule>
 
         <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:role">
 
