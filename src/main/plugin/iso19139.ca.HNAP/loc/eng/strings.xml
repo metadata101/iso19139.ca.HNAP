@@ -265,7 +265,7 @@
   <addFreeTextKeywords>Add free-text keywords</addFreeTextKeywords>
   <addDate>Add date</addDate>
   <addCharacterSet>Add character set</addCharacterSet>
-  <referenceSystemInfo>Reference Systems</referenceSystemInfo>
+  <referenceSystemInfo>Reference System</referenceSystemInfo>
 
   <trueValue>Yes</trueValue>
   <falseValue>No</falseValue>

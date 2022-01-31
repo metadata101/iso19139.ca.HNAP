@@ -1783,7 +1783,7 @@
     <element name="gmd:referenceSystemInfo" id="13.0">
         <label>Reference System Information</label>
         <btnLabel>Add Reference System Information</btnLabel>
-        <description>Description of the spatial and temporal reference systems used in the
+        <description>Description of the spatial and temporal reference system used in the
             dataset</description>
     </element>
     <element name="gmd:report" id="80.0">
