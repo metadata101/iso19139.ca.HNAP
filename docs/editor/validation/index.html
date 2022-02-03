@@ -1,77 +1,37 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Validation &mdash; User Manual (HNAP) 3.12-SNAPSHOT documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+  <title>Validation &mdash; User Manual (HNAP) 3.12.3 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="../../_static/js/theme.js"></script>
-
-    
+    <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Publish" href="../publish/index.html" />
     <link rel="prev" title="Edit" href="../edit/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: gray" >
-          
-
-          
             <a href="../../index.html" class="icon icon-home"> User Manual (HNAP)
-          
-
-          
           </a>
-
-          
-            
-            
               <div class="version">
-                3.12-SNAPSHOT
+                3.12
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -79,18 +39,7 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../search/index.html">Catalogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../map/index.html">Visualizing Data</a></li>
@@ -111,73 +60,32 @@
 <li class="toctree-l1"><a class="reference internal" href="../../admin/index.html">Administrator</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: gray" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">User Manual (HNAP)</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content style-external-links">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
           <li><a href="../index.html">Editor</a> &raquo;</li>
-        
       <li>Validation</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="validation">
-<h1>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="validation">
+<h1>Validation<a class="headerlink" href="#validation" title="Permalink to this headline"></a></h1>
 <p>Records are defined using the North American Profile (NAP) which lays out the structure of the document, as well as checking how some of the values interact. Validating a document checks that are record is complete.</p>
 <p>While invalided or partially complete records can be useful, validation is an important step in confirm the records are machine readable.</p>
 <ul class="simple">
@@ -185,49 +93,59 @@
 <li><p>Schematron validation rules are used to double check the document values, and how values interact. As an example a schematron rule will check that the organization name is “Government of Canada”.</p></li>
 </ul>
 <p>Technically we are working from the from the “Harmonized” North American Profile (HNAP) which has some Canadian checks for multi-lingual content.</p>
-<div class="section" id="editor-validation">
-<h2>Editor Validation<a class="headerlink" href="#editor-validation" title="Permalink to this headline">¶</a></h2>
+<section id="editor-validation">
+<h2>Editor Validation<a class="headerlink" href="#editor-validation" title="Permalink to this headline"></a></h2>
 <p>To validate a document from the editor:</p>
 <ol class="arabic">
 <li><p>Select the validate button at the top of the page.</p>
-<div class="figure align-default" id="id1">
+<figure class="align-default" id="id1">
 <img alt="../../_images/validation.png" src="../../_images/validation.png" />
-<p class="caption"><span class="caption-text">Running validation from the editor</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Running validation from the editor</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>Feedback about the document structure (schema validation) is provided in the editor inline near the field which is incorrect.</p>
-<div class="figure align-default" id="id2">
+<figure class="align-default" id="id2">
 <img alt="../../_images/schema-validation-date.png" src="../../_images/schema-validation-date.png" />
-<p class="caption"><span class="caption-text">Data identification publication date is required.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Data identification publication date is required.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>In the example above the <cite>xsd</cite> errors represent issues with the document structure. And the <cite>HNAP validation rules (common)</cite> provide feedback from checking document contents.</p>
 </li>
 <li><p>Feedback about document contents (schematron validation) is provided in the editor along the right hand side.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/schematron-validation.png" src="../../_images/schematron-validation.png" />
-</div>
+</figure>
 <p>This reports the number of rules failed, if the rule is associated with a specific field (like the date check above) the message is shown in the editor near the problem. If the rule is checking the values are consistent between fields the message is shown here on the right hand side.</p>
 </li>
 </ol>
-</div>
-<div class="section" id="data-identification">
-<h2>Data identification<a class="headerlink" href="#data-identification" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="data-identification">
+<h2>Data identification<a class="headerlink" href="#data-identification" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
 <li><p>To resolve data identification missing a publication date.</p>
-<div class="figure align-default" id="id3">
+<figure class="align-default" id="id3">
 <img alt="../../_images/schema-validation-date.png" src="../../_images/schema-validation-date.png" />
-<p class="caption"><span class="caption-text">Data identification publication date is required.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Data identification publication date is required.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Fill in a date value, there are options to provide a year, year and month, or a complete date.</p>
-<div class="figure align-default" id="id4">
+<figure class="align-default" id="id4">
 <img alt="../../_images/date-year.png" src="../../_images/date-year.png" />
-<p class="caption"><span class="caption-text">Defining publication date as 2012</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Defining publication date as 2012</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>A calendar is provided when filling in a date, or date time.</p>
-<div class="figure align-default" id="id5">
+<figure class="align-default" id="id5">
 <img alt="../../_images/date-calendar.png" src="../../_images/date-calendar.png" />
-<p class="caption"><span class="caption-text">Use of calendar to select a publication date</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Use of calendar to select a publication date</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 <li><p>The same approach can be used data identification missing a creation date.</p>
 <div class="admonition tip">
@@ -236,92 +154,112 @@
 </div>
 </li>
 <li><p>To correct data identification status “Value is required for status”.</p>
-<div class="figure align-default" id="id6">
+<figure class="align-default" id="id6">
 <img alt="../../_images/status.png" src="../../_images/status.png" />
-<p class="caption"><span class="caption-text">Value is required for status</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Value is required for status</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Select one of the values from the drop down list, a tooltip provides the definition
 of each value.</p>
 </li>
 <li><p>To correct data identification missing topic category.</p>
-<div class="figure align-default" id="id7">
+<figure class="align-default" id="id7">
 <img alt="../../_images/topic_category.png" src="../../_images/topic_category.png" />
-<p class="caption"><span class="caption-text">Data identification topic category is required</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Data identification topic category is required</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Start typing to see the predefined topic categories provided by the north american profile.</p>
-<div class="figure align-default" id="id8">
+<figure class="align-default" id="id8">
 <img alt="../../_images/topic_categories_predefined.png" src="../../_images/topic_categories_predefined.png" />
-<p class="caption"><span class="caption-text">Autocomplete topic categories</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Autocomplete topic categories</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Multiple topic categories can be used.</p>
 </li>
 <li><p>This one is a little tricky, data identification “core subject thesaurus keywords are manditory”.</p>
-<div class="figure align-default" id="id9">
+<figure class="align-default" id="id9">
 <img alt="../../_images/core_subject_keywords.png" src="../../_images/core_subject_keywords.png" />
-<p class="caption"><span class="caption-text">Core subject keywords are required</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Core subject keywords are required</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>This checks that the keywords section includes at least one describing the record subject using a list provided by the Canadian government.</p>
 <p>Locate the <cite>Choose keywords from thesaurus</cite> actions, and choose <cite>Government of Canada Core Subject Thesaurus</cite> from the list.</p>
-<div class="figure align-default" id="id10">
+<figure class="align-default" id="id10">
 <img alt="../../_images/keyword-add-core-subject.png" src="../../_images/keyword-add-core-subject.png" />
-<p class="caption"><span class="caption-text">Choose keywords from a thesaurus</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Choose keywords from a thesaurus</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Locate the heading for core subject thesaurus, and start typing to select one or more predefined keywords.</p>
-<div class="figure align-default" id="id11">
+<figure class="align-default" id="id11">
 <img alt="../../_images/keywords-add.png" src="../../_images/keywords-add.png" />
-<p class="caption"><span class="caption-text">Historic subject recommendations</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Historic subject recommendations</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 </ol>
-</div>
-<div class="section" id="cited-responsible-party">
-<h2>Cited responsible party<a class="headerlink" href="#cited-responsible-party" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="cited-responsible-party">
+<h2>Cited responsible party<a class="headerlink" href="#cited-responsible-party" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
 <li><p>To fix cited responsible party missing email address.</p>
 <p>Fill in email address.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/party-email-provided.png" src="../../_images/party-email-provided.png" />
-</div>
+</figure>
 </li>
 </ol>
-</div>
-<div class="section" id="resource-constraints">
-<h2>Resource constraints<a class="headerlink" href="#resource-constraints" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="resource-constraints">
+<h2>Resource constraints<a class="headerlink" href="#resource-constraints" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
 <li><p>To address resource constraints missing temporal extent begin date or end date.</p>
-<div class="figure align-default" id="id12">
+<figure class="align-default" id="id12">
 <img alt="../../_images/begin_date.png" src="../../_images/begin_date.png" />
-<p class="caption"><span class="caption-text">Value is required for Begin Date</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Value is required for Begin Date</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Use the <span class="guilabel">Begin Date</span> and <span class="guilabel">End Date</span> fields to define the temporal extent. These values can be provided numerically for <cite>year</cite> and` year and month`, or using a calendar to define <cite>date `and `date and time</cite>.</p>
-<div class="figure align-default" id="id13">
+<figure class="align-default" id="id13">
 <img alt="../../_images/resource_date_range.png" src="../../_images/resource_date_range.png" />
-<p class="caption"><span class="caption-text">Temporal extent begin and end date.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Temporal extent begin and end date.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 </ol>
-</div>
-<div class="section" id="distribution">
-<h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="distribution">
+<h2>Distribution<a class="headerlink" href="#distribution" title="Permalink to this headline"></a></h2>
 <ol class="arabic">
 <li><p>To address distribution format missing file format and version details.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/format.png" src="../../_images/format.png" />
-</div>
+</figure>
 <p>Locate <span class="menuselection">Distribution ‣ Distribution Formats</span> heading. Each dataset may be available in several different formats, this message requires us to be very specific about the file format used providing both the format name and verison number.</p>
-<div class="figure align-default" id="id14">
+<figure class="align-default" id="id14">
 <img alt="../../_images/distribution_format.png" src="../../_images/distribution_format.png" />
-<p class="caption"><span class="caption-text">Distribution format requires file format and file version</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Distribution format requires file format and file version</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Select a file format from the list, and enter a file version number:</p>
 <ul class="simple">
 <li><p><cite>zip</cite></p></li>
 </ul>
 <p>The filename extension can often be used to determine format name, you may need to check the document properties to determine the specific version.</p>
-<div class="figure align-default" id="id15">
+<figure class="align-default" id="id15">
 <img alt="../../_images/format_zip.png" src="../../_images/format_zip.png" />
-<p class="caption"><span class="caption-text">File format <cite>zip</cite> version <cite>6.3.9</cite></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">File format <cite>zip</cite> version <cite>6.3.9</cite></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>Examples:</p>
 <ul class="simple">
 <li><p><code class="file docutils literal notranslate"><span class="pre">pdf</span></code> version <cite>1.4</cite> as reported using operating system properties</p></li>
@@ -329,9 +267,9 @@ of each value.</p>
 </ul>
 </li>
 <li><p>To fix distributor contact organization name.</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="../../_images/organization_name.png" src="../../_images/organization_name.png" />
-</div>
+</figure>
 <p>The organization name is defined in three parts:</p>
 <ul class="simple">
 <li><p><cite>Government of Canada</cite> is required</p></li>
@@ -339,57 +277,43 @@ of each value.</p>
 <li><p>A team or group name, optional</p></li>
 </ul>
 <p>For this record we are supplying <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Tourism</kbd> <kbd class="kbd docutils literal notranslate">and</kbd> <kbd class="kbd docutils literal notranslate">Culture</kbd></kbd>.</p>
-<div class="figure align-default" id="id16">
+<figure class="align-default" id="id16">
 <img alt="../../_images/organization_name_fixed.png" src="../../_images/organization_name_fixed.png" />
-<p class="caption"><span class="caption-text">Organization name</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">Organization name</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </li>
 </ol>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, GeoCat BV and others.
-
-    </p>
+    <p>&#169; Copyright 2022, GeoCat BV and others.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
