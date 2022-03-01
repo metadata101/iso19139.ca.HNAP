@@ -2417,7 +2417,7 @@
   </element>
   <element name="gmd:protocol" id="398.0" alias="protocol">
     <label>Protocole</label>
-    <description>Sélectionner le bon protocole de la liste déroulante. Si l'ensemble de données est disponible en ligne, sélectionner « Adresse Web (URL) ».</description>
+    <description>Sélectionnez le protocole approprié dans la liste déroulante. Si vos données sont disponibles en ligne, entrez leur location Web dans la zone de texte URL.</description>
     <helper sort="true">
       <option value="HTTP">HTTP</option>
       <option value="HTTPS">HTTPS</option>
