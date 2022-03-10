@@ -403,6 +403,14 @@
 
     </sch:rule>
 
+    <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource">
+        <sch:let name="protocolMissing" value="not(string(gmd:protocol/gco:CharacterString))" />
+    		<sch:let name="isValidProtocol" value="(string(gmd:protocol/gco:CharacterString) != 'WWW:DOWNLOAD-1.0-http--download')"/>
+    		<sch:let name="resourceName" value="gmd:name/gco:CharacterString/text()" />
+
+        <sch:assert test="not($protocolMissing) and $isValidProtocol">$loc/strings/concat(OnlineResourceProtocol, $resourceName)</sch:assert>
+
+    </sch:rule>
 
     <!-- Online resource: MapResourcesREST, MapResourcesWMS-->
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution">
