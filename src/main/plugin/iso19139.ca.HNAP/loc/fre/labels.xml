@@ -2254,7 +2254,7 @@
   <element name="gmd:organisationName" id="376.0">
     <label>Organisation</label>
     <description>Nom de l'organisation responsable</description>
-    <condition>Condition</condition>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:orientationParameterAvailability" id="172.0">
     <label>Disponibililté des paramètres d'orientation</label>
