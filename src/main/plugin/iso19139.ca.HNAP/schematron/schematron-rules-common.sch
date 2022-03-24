@@ -405,10 +405,17 @@
 
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource">
         <sch:let name="protocolMissing" value="not(string(gmd:protocol/gco:CharacterString))" />
-    		<sch:let name="isValidProtocol" value="(string(gmd:protocol/gco:CharacterString) != 'WWW:DOWNLOAD-1.0-http--download')"/>
+    		<sch:let name="isNotPlaceholderProtocol" value="(string(gmd:protocol/gco:CharacterString) != 'WWW:DOWNLOAD-1.0-http--download')"/>
+    		<!--TODO: Pass these values from ./loc/./labels.xml dynamically-->
+    		<sch:let name="isValidProtocol" value="string(gmd:protocol/gco:CharacterString) = 'HTTP'
+        												or string(gmd:protocol/gco:CharacterString) = 'HTTPS'
+        												or string(gmd:protocol/gco:CharacterString) = 'FTP'
+        												or string(gmd:protocol/gco:CharacterString) = 'ESRI REST: Map Service'
+        												or string(gmd:protocol/gco:CharacterString) = 'OGC:WMS'
+        												or string(gmd:protocol/gco:CharacterString) = 'OGC:WFS'"/>
     		<sch:let name="resourceName" value="gmd:name/gco:CharacterString/text()" />
 
-        <sch:assert test="not($protocolMissing) and $isValidProtocol">$loc/strings/concat(OnlineResourceProtocol, $resourceName)</sch:assert>
+        <sch:assert test="not($protocolMissing) and $isNotPlaceholderProtocol and $isValidProtocol">$loc/strings/concat(OnlineResourceProtocol, $resourceName)</sch:assert>
 
     </sch:rule>
 
