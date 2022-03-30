@@ -147,11 +147,11 @@
       <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-            <sch:assert test="(not($countryName) or
-                ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
-                and
-                (not($countryNameOtherLang) or
-                string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
+      <sch:assert test="(not($countryName) or
+            ($countryName and (count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) > 0 )))
+            and
+            (not($countryNameOtherLang) or
+            count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]) > 0)">$loc/strings/ECCountry</sch:assert>
     </sch:rule>
 
 
@@ -602,10 +602,10 @@
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
       <sch:assert test="(not($countryName) or
-          ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
-          and
-          (not($countryNameOtherLang) or
-          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
+            ($countryName and (count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) > 0 )))
+            and
+            (not($countryNameOtherLang) or
+            count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]) > 0)">$loc/strings/ECCountry</sch:assert>
     </sch:rule>
 
 
@@ -1292,10 +1292,11 @@
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
       <sch:assert test="(not($countryName) or
-          ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
-          and
-          (not($countryNameOtherLang) or
-          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))">$loc/strings/ECCountry</sch:assert>
+            ($countryName and (count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) > 0 )))
+            and
+            (not($countryNameOtherLang) or
+            count($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]) > 0)">$loc/strings/ECCountry</sch:assert>
+
     </sch:rule>
 
 
