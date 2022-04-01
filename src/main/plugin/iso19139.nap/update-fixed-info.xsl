@@ -347,6 +347,58 @@
 		</gco:CharacterString>
 	</xsl:template>
 
+  <xsl:template match="gmd:thesaurusName/gmd:CI_Citation[gmd:title/gco:CharacterString='Geography' or
+                                        gmd:title/gco:CharacterString='Geography Portée Géographique']">
+
+
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+
+      <xsl:apply-templates select="gmd:title" />
+      <xsl:apply-templates select="gmd:alternateTitle" />
+      <xsl:apply-templates select="gmd:date" />
+      <xsl:apply-templates select="gmd:edition" />
+      <xsl:apply-templates select="gmd:editionDate" />
+      <xsl:apply-templates select="gmd:identifier" />
+      <xsl:apply-templates select="gmd:citedResponsibleParty" />
+
+      <xsl:if test="not(gmd:citedResponsibleParty)">
+        <gmd:citedResponsibleParty>
+          <gmd:CI_ResponsibleParty>
+            <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+              <gco:CharacterString>
+                <xsl:choose>
+                  <xsl:when test="$localeForTranslations = '#fra'">Gouvernement du Canada; Bibliothèque et Archives Canada</xsl:when>
+                  <xsl:otherwise>Government of Canada; Library and Archives Canada</xsl:otherwise>
+                </xsl:choose>
+              </gco:CharacterString>
+              <gmd:PT_FreeText>
+                <gmd:textGroup>
+                  <gmd:LocalisedCharacterString locale="{$localeForTranslations}">
+                    <xsl:choose>
+                      <xsl:when test="$localeForTranslations = '#fra'">Gouvernement du Canada; Bibliothèque et Archives Canada</xsl:when>
+                      <xsl:otherwise>Government of Canada; Library and Archives Canada</xsl:otherwise>
+                    </xsl:choose>
+                  </gmd:LocalisedCharacterString>
+                </gmd:textGroup>
+              </gmd:PT_FreeText>
+            </gmd:organisationName>
+            <gmd:role>
+              <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+            </gmd:role>
+          </gmd:CI_ResponsibleParty>
+        </gmd:citedResponsibleParty>
+      </xsl:if>
+
+      <xsl:apply-templates select="gmd:presentationForm" />
+      <xsl:apply-templates select="gmd:series" />
+      <xsl:apply-templates select="gmd:otherCitationDetails" />
+      <xsl:apply-templates select="gmd:collectiveTitle" />
+      <xsl:apply-templates select="gmd:ISBN" />
+      <xsl:apply-templates select="gmd:ISSN" />
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="gmd:MD_Keywords[gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='Government of Canada Core Subject Thesaurus' or
                                         gmd:thesaurusName/gmd:CI_Citation/gmd:title/gco:CharacterString='Thésaurus des sujets de base du gouvernement du Canada']">
         <xsl:variable name="l1">
@@ -1229,7 +1281,7 @@
               <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}"><xsl:value-of select="$value" /></gmd:MD_KeywordTypeCode>
             </gmd:type>
 
-            <xsl:copy-of select="keyword[1]/gmd:thesaurusName" />
+            <xsl:apply-templates select="keyword[1]/gmd:thesaurusName" />
           </gmd:MD_Keywords>
         </gmd:descriptiveKeywords>
       </xsl:for-each>
