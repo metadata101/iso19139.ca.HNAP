@@ -2,7 +2,7 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the *North American Profile of ISO 19115:2003 - Geographic information - Metadata* used nationally.
 
-For details on this release see [3.12.4 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/12?closed=1) release notes for details.
+For details on this release see [3.12.5 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/13?closed=1) release notes for details.
 
 ## User Manual
 
