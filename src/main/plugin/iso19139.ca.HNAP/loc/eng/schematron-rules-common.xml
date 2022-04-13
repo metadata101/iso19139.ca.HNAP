@@ -41,7 +41,8 @@
   <DistributionFormatVersion>Value is required for distribution format - File version</DistributionFormatVersion>
   <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
-  <OnlineResourceProtocol>Protocol (HTTP, HTTPS, FTP, ESRI REST: Map Service, OGC:WMS, OGC:WFS) is required for Online Resource: </OnlineResourceProtocol>
+  <OnlineResourceName>Protocol of Online Resource "</OnlineResourceName>
+  <OnlineResourceProtocol>" is not valid. Valid values are: </OnlineResourceProtocol>
 
   <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
   <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
