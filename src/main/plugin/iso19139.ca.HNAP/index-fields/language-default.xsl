@@ -155,7 +155,7 @@
         <xsl:for-each select="gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString">
           <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
-        
+
         <xsl:for-each select="gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString">
           <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
@@ -312,10 +312,10 @@
           <xsl:variable name="role"    select="../../../../gmd:role/*/@codeListValue"/>
           <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
           <xsl:variable name="logo"    select="../../../..//gmx:FileName/@src"/>
-          <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
-          <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+          <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress//gmd:LocalisedCharacterString[@locale=$langId]"/>
+          <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
           <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
-          <xsl:variable name="positionName"   select="../../../../gmd:positionName/gco:CharacterString/text()"/>
+          <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
           <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
                                     gmd:deliveryPoint|gmd:postalCode|gmd:city|
                                     gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
@@ -508,10 +508,10 @@
       <xsl:variable name="role"    select="../../../../gmd:role/*/@codeListValue"/>
       <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
       <xsl:variable name="logo"    select="../../../..//gmx:FileName/@src"/>
-      <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
-      <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+      <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
       <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
-      <xsl:variable name="positionName"   select="../../../../gmd:positionName/gco:CharacterString/text()"/>
+      <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
       <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
                                     gmd:deliveryPoint|gmd:postalCode|gmd:city|
                                     gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
