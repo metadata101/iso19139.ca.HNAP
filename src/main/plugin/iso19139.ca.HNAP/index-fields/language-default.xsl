@@ -316,9 +316,14 @@
           <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
           <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
           <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
-          <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
-                                    gmd:deliveryPoint|gmd:postalCode|gmd:city|
-                                    gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+
+          <xsl:variable name="deliveryPoint"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+          <xsl:variable name="postalCode"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:postalCode/gco:CharacterString/text()"/>
+          <xsl:variable name="city"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:city/gco:CharacterString/text()"/>
+          <xsl:variable name="administrativeArea"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+          <xsl:variable name="country"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:country//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+
+          <xsl:variable name="address" select="string-join(($deliveryPoint, $postalCode, $city, $administrativeArea, $country), ', ')"/>
 
           <Field name="responsibleParty"
                  string="{concat($roleTranslation, '|resource|', ., '|', $logo, '|',  string-join($email, ','), '|', $individualName, '|', $positionName, '|', $address, '|', string-join($phone, ','))}"
@@ -512,9 +517,14 @@
       <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
       <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
       <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
-      <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
-                                    gmd:deliveryPoint|gmd:postalCode|gmd:city|
-                                    gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+
+      <xsl:variable name="deliveryPoint"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="postalCode"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:postalCode/gco:CharacterString/text()"/>
+      <xsl:variable name="city"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:city/gco:CharacterString/text()"/>
+      <xsl:variable name="administrativeArea"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="country"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:country//gmd:LocalisedCharacterString[@locale=$langId]"/>
+
+      <xsl:variable name="address" select="string-join(($deliveryPoint, $postalCode, $city, $administrativeArea, $country), ', ')"/>
 
       <Field name="responsibleParty"
              string="{concat($roleTranslation, '|metadata|', ., '|', $logo, '|',  string-join($email, ','), '|', $individualName, '|', $positionName, '|', $address, '|', string-join($phone, ','))}"
