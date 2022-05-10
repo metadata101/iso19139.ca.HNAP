@@ -41,8 +41,7 @@
   <DistributionFormatVersion>Une valeur est nécessaire pour: Version du Format de distribution</DistributionFormatVersion>
   <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
-  <OnlineResourceName>Protocole de ressource en ligne "</OnlineResourceName>
-  <OnlineResourceProtocol>" n'est pas valide. Les valeurs valides sont </OnlineResourceProtocol>
+  <OnlineResourceProtocol>Protocole de ressource en ligne n'est pas valide. Les valeurs valides sont </OnlineResourceProtocol>
 
   <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
   <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>

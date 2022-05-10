@@ -438,7 +438,7 @@
     		<sch:let name="resourceName" value="gmd:name/gco:CharacterString/text()" />
 
     		<sch:let name="protocolListString" value="geonet:protocolListString($protocolList)"/>
-    		<sch:let name="resourceNameMsg" value="geonet:appendLocaleMessage($loc/strings/OnlineResourceName, $resourceName)"/>
+
     		<sch:let name="protocolListMsg" value="geonet:appendLocaleMessage($loc/strings/OnlineResourceProtocol, $protocolListString)"/>
     		<sch:let name="locMsg" value="geonet:appendLocaleMessage($resourceNameMsg, $protocolListMsg)"/>
 
