@@ -31,5 +31,32 @@
 
   <xsl:import href="../../iso19139/layout/utility-fn.xsl"/>
 
+  <xsl:function name="gn-fn-iso19139:getLangIdHNAP" as="xs:string">
+    <xsl:param name="md"/>
+    <xsl:param name="lang"/>
 
+    <!-- convert ISO 639-2B to_ISO 639-2T - i.e. FRE to FRA -->
+    <xsl:variable name="lang_ISO639_2T">
+      <xsl:choose>
+        <xsl:when test="$lang ='fre'">
+          <xsl:value-of select="'fra'"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$lang"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:choose>
+      <xsl:when
+        test="$md/gmd:locale/gmd:PT_Locale[gmd:languageCode/gmd:LanguageCode/@codeListValue = $lang_ISO639_2T]/@id">
+        <xsl:value-of
+          select="concat('#', $md/gmd:locale/gmd:PT_Locale[gmd:languageCode/gmd:LanguageCode/@codeListValue = $lang_ISO639_2T]/@id)"
+        />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="concat('#', upper-case($lang_ISO639_2T))"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:function>
 </xsl:stylesheet>

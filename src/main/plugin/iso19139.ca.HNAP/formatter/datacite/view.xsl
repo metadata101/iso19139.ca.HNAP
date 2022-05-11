@@ -296,22 +296,22 @@
   examples.
   -->
   <xsl:variable name="scopeMapping">
-    <entry key="attribute">Model</entry>
-    <entry key="attributeType">Model</entry>
-    <entry key="featureType">Model</entry>
-    <entry key="propertyType">Model</entry>
-    <entry key="model">Model</entry>
-    <entry key="collectionHardware">Other</entry>
-    <entry key="collectionSession">Dataset</entry>
-    <entry key="dataset">Dataset</entry>
-    <entry key="tile">Image</entry>
-    <entry key="nonGeographicDataset">Dataset</entry>
-    <entry key="dimensionGroup">Other</entry>
-    <entry key="fieldSession">Event</entry>
-    <entry key="feature">PhysicalObject</entry>
-    <entry key="series">Dataset</entry>
-    <entry key="service">Service</entry>
-    <entry key="software">Software</entry>
+    <entry key="RI_618">Model</entry> <!-- attribute -->
+    <entry key="RI_619">Model</entry> <!-- attributeType -->
+    <entry key="RI_626">Model</entry> <!-- featureType -->
+    <entry key="RI_628">Model</entry> <!-- propertyType -->
+    <entry key="RI_632">Model</entry> <!-- model -->
+    <entry key="RI_620">Other</entry> <!-- collectionHardware-->
+    <entry key="RI_621">Dataset</entry> <!-- collectionSession -->
+    <entry key="RI_622">Dataset</entry> <!-- dataset -->
+    <entry key="RI_633">Image</entry> <!-- tile -->
+    <entry key="RI_624">Dataset</entry> <!-- nonGeographicDataset -->
+    <entry key="RI_625">Other</entry> <!-- dimensionGroup -->
+    <entry key="RI_629">Event</entry> <!-- fieldSession -->
+    <entry key="RI_626">PhysicalObject</entry> <!-- feature -->
+    <entry key="RI_623">Dataset</entry> <!-- series -->
+    <entry key="RI_631">Service</entry> <!-- service -->
+    <entry key="RI_630">Software</entry> <!-- software -->
   </xsl:variable>
 
   <xsl:template mode="toDatacite"
@@ -321,7 +321,7 @@
     <xsl:variable name="type"
                   select="concat(upper-case(substring(.,1,1)), substring(., 2))"/>
     <datacite:resourceType resourceTypeGeneral="{$scopeMapping//*[@key = $key]/text()}">
-      <xsl:value-of select="concat($key, '/', $type)"/>
+      <xsl:value-of select="$scopeMapping//*[@key = $key]/text()"/>
     </datacite:resourceType>
   </xsl:template>
 
@@ -337,15 +337,15 @@
   <xsl:variable name="creatorRoles"
                 select="'pointOfContact', 'custodian'"/>
   <xsl:template mode="toDatacite"
-                match="gmd:MD_Metadata/gmd:identificationInfo/*/
-                          gmd:pointOfContact[1]">
+                match="gmd:MD_Metadata/gmd:identificationInfo/*/gmd:citation/*/
+                          gmd:citedResponsibleParty[1]">
     <datacite:creators>
       <!-- [gmd:role/*/@codeListValue = $roles] TODO: Restrict on roles ?-->
-      <xsl:for-each select="../gmd:pointOfContact/*">
+      <xsl:for-each select="../gmd:citedResponsibleParty/*"> <!-- gmd:pointOfContact -->
         <datacite:creator>
           <!-- The full name of the creator. -->
-          <datacite:creatorName nameType="Personal">
-            <xsl:value-of select="gmd:individualName/*/text()"/>
+          <datacite:creatorName nameType="Organizational">
+            <xsl:value-of select="gmd:organisationName/*/text()"/>
           </datacite:creatorName>
           <!--<xsl:apply-templates mode="toDataciteLocalized" select="gmd:individualName">
             <xsl:with-param name="template">
@@ -470,7 +470,7 @@ eg.
     publication or release date
     details
     -->
-    <xsl:for-each select="$metadata/gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/*/@codeListValue = 'publication']/gmd:date[* != '']/substring(*, 1, 4)">
+    <xsl:for-each select="$metadata/gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/*/@codeListValue = 'RI_367']/gmd:date[* != '']/substring(*, 1, 4)"> <!-- publication -->
       <xsl:sort select="." order="descending" />
       <xsl:if test="position() = 1">
         <datacite:publicationYear>
@@ -549,8 +549,8 @@ eg.
   Other
 -->
   <xsl:variable name="dateMapping">
-    <entry key="creation">Created</entry>
-    <entry key="revision">Updated</entry>
+    <entry key="RI_366">Created</entry> <!-- creation -->
+    <entry key="RI_368">Updated</entry> <!-- revision -->
     <!--<entry key="publication"></entry> is in publicationYear -->
   </xsl:variable>
 
@@ -579,7 +579,7 @@ eg.
           <xsl:copy-of select="$template/*/@*"/>
           <xsl:value-of select="gco:CharacterString|gmx:Anchor"/>
         </xsl:element>
-        
+
         <xsl:for-each select="gmd:PT_FreeText/gmd:textGroup/*">
           <xsl:variable name="languageId"
                         select="@locale"/>

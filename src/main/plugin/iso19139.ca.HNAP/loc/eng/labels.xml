@@ -1746,7 +1746,7 @@
     </element>
     <element name="gmd:protocol" id="398.0" alias="protocol">
         <label>Protocol</label>
-        <description>Select the appropriate protocol from the drop down list. If your dataset is available online, select 'web address (URL)'</description>
+        <description>Select the appropriate protocol from the drop down list. If your dataset is available online, then enter its web address in the URL text box.</description>
       <helper sort="true">
         <option value="HTTP">HTTP</option>
         <option value="HTTPS">HTTPS</option>

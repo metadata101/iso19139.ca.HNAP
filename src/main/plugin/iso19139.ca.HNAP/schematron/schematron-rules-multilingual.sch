@@ -138,6 +138,18 @@
     </xsl:for-each>
   </xsl:function>
 
+  <xsl:function name="geonet:prependLocaleMessage">
+    <xsl:param name="localeStringNode"/>
+    <xsl:param name="prependText" as="xs:string"/>
+
+    <xsl:for-each select="$localeStringNode">
+      <xsl:copy>
+        <xsl:copy-of select="@*"/>
+        <xsl:value-of select="concat($prependText, $localeStringNode)"/>
+      </xsl:copy>
+    </xsl:for-each>
+  </xsl:function>
+
   <!-- Checks if the values in arg (can be a comma separate list of items) are all in the searchStrings list -->
   <xsl:function name="geonet:values-in" as="xs:boolean">
     <xsl:param name="arg" as="xs:string?"/>
@@ -283,16 +295,11 @@
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
       <sch:assert test="(not($countryName) or
-           ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) or
-           string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryName]))))
-
-           and
-
-           (not($countryNameOtherLang) or
-                       ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryNameOtherLang]) or
-                       string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))
-                       ))">$loc/strings/ECCountry</sch:assert>
-
+          ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+          and
+          (not($countryNameOtherLang) or
+          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))"
+          >$loc/strings/ECCountry</sch:assert>
 
     </sch:rule>
 
@@ -353,30 +360,6 @@
       >$loc/strings/ContactHoursOfService</sch:assert>
     </sch:rule>
 
-
-    <!-- Contact - Role -->
-    <sch:rule context="//gmd:contact/*/gmd:role">
-
-      <sch:let name="roleCodelistLabel"
-                     value="tr:codelist-value-label(
-                            tr:create($schema),
-                            gmd:CI_RoleCode/local-name(),
-                            gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:let name="missing" value="not(string(gmd:CI_RoleCode/@codeListValue))
-                 or (@gco:nilReason)" />
-
-      <sch:assert
-        test="not($missing)"
-      >$loc/strings/MissingContactRole</sch:assert>
-
-      <sch:let name="isValid" value="($roleCodelistLabel != '') and ($roleCodelistLabel != gmd:CI_RoleCode/@codeListValue)"/>
-
-      <sch:assert
-        test="$isValid or $missing"
-      >$loc/strings/InvalidContactRole</sch:assert>
-
-    </sch:rule>
   </sch:pattern>
 
 
@@ -498,15 +481,11 @@
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
       <sch:assert test="(not($countryName) or
-                ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) or
-                string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryName]))))
-
-                and
-
-                (not($countryNameOtherLang) or
-                            ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryNameOtherLang]) or
-                            string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))
-                            ))">$loc/strings/ECCountry</sch:assert>
+          ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+          and
+          (not($countryNameOtherLang) or
+          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))"
+          >$loc/strings/ECCountry</sch:assert>
     </sch:rule>
 
 
@@ -803,6 +782,8 @@
       <sch:let name="languageTranslated_present" value="geonet:values-in($languageTranslated,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
+      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionContentType, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+
       <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
               $contentType = 'Dataset' or $contentType = 'Données' or
               $contentType = 'API' or $contentType = 'Application' or
@@ -810,19 +791,21 @@
               ($contentTypeTranslated = 'Web Service' or $contentTypeTranslated = 'Service Web' or
               $contentTypeTranslated = 'Dataset' or $contentTypeTranslated = 'Données' or
               $contentTypeTranslated = 'API' or $contentTypeTranslated = 'Application' or
-              $contentTypeTranslated='Supporting Document' or $contentTypeTranslated = 'Document de soutien')">$loc/strings/ResourceDescriptionContentType</sch:assert>
+              $contentTypeTranslated='Supporting Document' or $contentTypeTranslated = 'Document de soutien')">$locMsgCt</sch:assert>
 
 
       <sch:let name="formatTranslated" value="subsequence(tokenize($descriptionTranslated, ';'), 2, 1)" />
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
-      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList)" />
+      <sch:let name="locMsg" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
 
-      <sch:assert test="string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $format)]) and
-                          string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#',$formatTranslated)])">$locMsg</sch:assert>
+      <sch:assert test="$formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($mainLanguage2char)]/text() = $format and
+                          $formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($altLanguage2char)]/text() = $formatTranslated">$locMsg</sch:assert>
 
-      <sch:assert test="normalize-space($language) != '' and normalize-space($languageTranslated) != ''">$loc/strings/ResourceDescriptionLanguage</sch:assert>
+      <sch:let name="locMsgLang" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionLanguage, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
 
-      <sch:assert test="$language_present and $languageTranslated_present">$loc/strings/ResourceDescriptionLanguage</sch:assert>
+      <sch:assert test="normalize-space($language) != '' and normalize-space($languageTranslated) != ''">$locMsgLang</sch:assert>
+
+      <sch:assert test="$language_present and $languageTranslated_present">$locMsgLang</sch:assert>
 
     </sch:rule>
 
@@ -899,15 +882,11 @@
       <sch:let name="countryNameOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
       <sch:assert test="(not($countryName) or
-              ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]) or
-              string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryName]))))
-
-              and
-
-              (not($countryNameOtherLang) or
-                          ($countryNameOtherLang and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryNameOtherLang]) or
-                          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))
-                          ))">$loc/strings/ECCountry</sch:assert>
+          ($countryName and (string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $countryName]))))
+          and
+          (not($countryNameOtherLang) or
+          string($country-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $countryNameOtherLang]))"
+          >$loc/strings/ECCountry</sch:assert>
 
     </sch:rule>
 
