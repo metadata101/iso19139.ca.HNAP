@@ -18,7 +18,7 @@ The [project issue tracker](https://github.com/metadata101/iso19139.ca.HNAP/issu
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork ``3.12.x``, not tested with prior versions!
+Use GeoNetwork ``4.0.x``, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -55,7 +55,7 @@ The best approach is to add the plugin as a submodule:
 1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.12.x/add-schema.sh) for automatic deployment:
 
    ```
-   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 3.12.x
+   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 4.0.x
    ```
 
 2. Build the application:
