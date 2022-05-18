@@ -660,8 +660,8 @@
           <sch:assert test="($mapRESTImageCountE = 0 and $mapRESTImageCountF = 0) or ($mapRESTImageCountE = 1 and $mapRESTImageCountF = 1) or $mapRESTImageCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
           <sch:assert test="$mapRESTImageCount = 0 or $mapRESTImageCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
 
-          <sch:let name="mapRESTFSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature server'])" />
-          <sch:let name="mapRESTFSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature server'])" />
+          <sch:let name="mapRESTFSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature service'])" />
+          <sch:let name="mapRESTFSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: feature service'])" />
           <sch:let name="mapRESTFSCount" value="$mapRESTFSCountE + $mapRESTFSCountF" />
 
           <!--  mapRESTFSCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
