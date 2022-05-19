@@ -31,6 +31,32 @@
   <sch:let name="mainLanguageText" value="if ($mainLanguage = 'fra') then 'French' else 'English'"/>
   <sch:let name="mainLanguage2char" value="if ($mainLanguage = 'fra') then 'fr' else 'en'"/>
 
+  <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron" name="geonet:protocolListString" as="xs:string">
+    <xsl:param name="protocolNode"/>
+
+  	<xsl:variable name="v">
+  	  <xsl:for-each select="$protocolNode">
+        <xsl:sort select="lower-case(.)" order="ascending"/>
+        <xsl:value-of select="."/>
+        <xsl:if test="position() != last()">, </xsl:if>
+       </xsl:for-each>
+    </xsl:variable>
+
+  	<xsl:value-of select="$v"/>
+  </xsl:function>
+
+  <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron" name="geonet:appendLocaleMessage">
+    <xsl:param name="localeStringNode"/>
+    <xsl:param name="appendText" as="xs:string"/>
+
+    <xsl:for-each select="$localeStringNode">
+      <xsl:copy>
+        <xsl:copy-of select="@*"/>
+        <xsl:value-of select="concat($localeStringNode, $appendText)"/>
+      </xsl:copy>
+    </xsl:for-each>
+  </xsl:function>
+
   <!--- Metadata pattern -->
   <sch:pattern>
     <sch:title>$loc/strings/Metadata</sch:title>
@@ -403,6 +429,22 @@
 
     </sch:rule>
 
+    <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource">
+        <sch:let name="locLabel" value="document(concat('../loc/', $lang, '/labels.xml'))"/>
+        <sch:let name="protocolList" value="$locLabel/labels/element[@name='gmd:protocol']/helper/option"/>
+        <sch:let name="protocol" value="gmd:protocol/gco:CharacterString/text()"/>
+        <sch:let name="isValidProtocol" value="$protocol = $protocolList"/>
+
+    		<sch:let name="resourceName" value="gmd:name/gco:CharacterString/text()" />
+
+    		<sch:let name="protocolListString" value="geonet:protocolListString($protocolList)"/>
+
+    		<sch:let name="protocolListMsg" value="geonet:appendLocaleMessage($loc/strings/OnlineResourceProtocol, $protocolListString)"/>
+    		<sch:let name="locMsg" value="geonet:appendLocaleMessage($resourceNameMsg, $protocolListMsg)"/>
+
+        <sch:assert test="$isValidProtocol">$locMsg</sch:assert>
+
+    </sch:rule>
 
     <!-- Online resource: MapResourcesREST, MapResourcesWMS-->
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution">
