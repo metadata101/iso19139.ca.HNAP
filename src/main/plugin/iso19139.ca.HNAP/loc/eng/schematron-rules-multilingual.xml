@@ -67,6 +67,10 @@
   <CitedResponsiblePartyDeliveryPoint>Cited Responsible Party - Delivery Point should be empty or filled in English and French</CitedResponsiblePartyDeliveryPoint>
   <DistributorDeliveryPoint>Distributor - Delivery Point should be empty or filled in English and French</DistributorDeliveryPoint>
 
+  <ContactAdministrativeArea>Contact - Province/State should be empty or filled in English and French</ContactAdministrativeArea>
+  <CitedResponsiblePartyAdministrativeArea>Cited Responsible Party - Province/State should be empty or filled in English and French</CitedResponsiblePartyAdministrativeArea>
+  <DistributorAdministrativeArea>Distributor - Province/State should be empty or filled in English and French</DistributorAdministrativeArea>
+
   <ContactPhone>Contact - Phone should be empty or filled in English and French</ContactPhone>
   <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
   <DistributorPhone>Distributor - Phone should be empty or filled in English and French</DistributorPhone>

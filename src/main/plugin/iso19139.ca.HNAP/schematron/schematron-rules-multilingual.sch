@@ -302,6 +302,21 @@
 
     </sch:rule>
 
+    <!-- Contact - Administrative area -->
+    <sch:rule context="//gmd:contact//gmd:administrativeArea">
+      <sch:let name="province-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_State_Province.rdf'), '\\', '/')))"/>
+
+      <sch:let name="administrativeArea" value="lower-case(gco:CharacterString)" />
+      <sch:let name="administrativeAreaOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
+
+      <sch:assert test="((not($administrativeArea) and not($administrativeAreaOtherLang)) or
+          (string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $administrativeArea])
+          and
+          string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $administrativeAreaOtherLang])))"
+      >$loc/strings/ContactAdministrativeArea</sch:assert>
+
+    </sch:rule>
+
 
     <!-- Contact - Delivery point -->
     <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
@@ -486,6 +501,20 @@
       >$loc/strings/ECCountry</sch:assert>
     </sch:rule>
 
+    <!-- Cited responsible party - Administrative area -->
+    <sch:rule context="//gmd:contact//gmd:administrativeArea">
+      <sch:let name="province-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_State_Province.rdf'), '\\', '/')))"/>
+
+      <sch:let name="administrativeArea" value="lower-case(gco:CharacterString)" />
+      <sch:let name="administrativeAreaOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
+
+      <sch:assert test="((not($administrativeArea) and not($administrativeAreaOtherLang)) or
+          (string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $administrativeArea])
+          and
+          string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $administrativeAreaOtherLang])))"
+      >$loc/strings/CitedResponsiblePartyAdministrativeArea</sch:assert>
+
+    </sch:rule>
 
     <!-- Cited Responsible Party - Position name -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:positionName
@@ -869,6 +898,21 @@
       <sch:assert
         test="($missing and $missingOtherLang) or (not($missing) and not($missingOtherLang))"
       >$loc/strings/DistributorPositionName</sch:assert>
+
+    </sch:rule>
+
+    <!-- Distributor contact - Administrative area -->
+    <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact//gmd:administrativeArea">
+      <sch:let name="province-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_State_Province.rdf'), '\\', '/')))"/>
+
+      <sch:let name="administrativeArea" value="lower-case(gco:CharacterString)" />
+      <sch:let name="administrativeAreaOtherLang" value="lower-case(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
+
+      <sch:assert test="((not($administrativeArea) and not($administrativeAreaOtherLang)) or
+          (string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $administrativeArea])
+          and
+          string($province-values//rdf:Description[lower-case(normalize-space(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $administrativeAreaOtherLang])))"
+      >$loc/strings/DistributorAdministrativeArea</sch:assert>
 
     </sch:rule>
 
