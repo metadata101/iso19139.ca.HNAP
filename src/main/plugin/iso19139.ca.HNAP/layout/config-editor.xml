@@ -84,13 +84,13 @@
 <!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
     <for name="gmd:country"
              use="data-gn-keyword-picker">
-          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false"/>
+          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false" data-number-of-suggestions="250"/>
 
     </for>
 
     <for name="gmd:administrativeArea"
          use="data-gn-keyword-picker">
-      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false"/>
+      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false" data-number-of-suggestions="75"/>
 
     </for>
 
