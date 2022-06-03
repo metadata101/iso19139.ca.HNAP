@@ -1171,7 +1171,19 @@
                 normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)') or
 
                 (normalize-space(gco:CharacterString) = 'Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)' and
-                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)')
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)') or
+
+                (normalize-space(gco:CharacterString) = 'OpenMB Information and Data Use License - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence d’utilisation de l’information et des données du site Ouverture MB - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.fr.pdf)') or
+
+                (normalize-space(gco:CharacterString) = 'Licence d’utilisation de l’information et des données du site Ouverture MB - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.fr.pdf)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'OpenMB Information and Data Use License - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf)') or
+
+                (normalize-space(gco:CharacterString) = 'Standard Unrestricted Use Data License (Version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)') or
+
+                (normalize-space(gco:CharacterString) = 'Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Standard Unrestricted Use Data License (Version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)')
                 ])"/>
 
         <sch:assert

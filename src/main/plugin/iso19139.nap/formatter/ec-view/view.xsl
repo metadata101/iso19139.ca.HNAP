@@ -295,6 +295,8 @@
         <license gov="Government of New Brunswick">Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)</license>
         <license gov="Government of Yukon">Open Government Licence - Yukon (https://open.yukon.ca/open-government-licence-yukon)</license>
         <license gov="Government and Municipalities of Québec">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
+        <license gov="Government of Manitoba">OpenMB Information and Data Use License - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf)</license>
+        <license gov="Government of Saskatchewan">Standard Unrestricted Use Data License (Version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)</license>
       </licenses>
     </xsl:variable>
 
@@ -309,7 +311,8 @@
         <license gov="Gouvernement du Nouveau-Brunswick">Licence du gouvernement ouvert - Nouveau-Brunswick (http://www.snb.ca/f/2000/data-F.html)</license>
         <license gov="Gouvernement du Yukon">Licence du gouvernement ouvert - Yukon (https://open.yukon.ca/fr/gouvernement-ouvert-licence-du-yukon)</license>
         <license gov="Gouvernement et municipalités du Québec">Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)</license>
-
+        <license gov="Gouvernement du Manitoba">Licence d’utilisation de l’information et des données du site Ouverture MB - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.fr.pdf)</license>
+        <license gov="Gouvernement de la Saskatchewan">Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)</license>
       </licenses>
     </xsl:variable>
 

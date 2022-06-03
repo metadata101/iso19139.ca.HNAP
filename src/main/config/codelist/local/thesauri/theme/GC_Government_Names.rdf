@@ -57,6 +57,14 @@
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
 
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovMan">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Government of Manitoba</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Gouvernement du Manitoba</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovPrEdIs">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Government of Prince Edward Island</ns2:prefLabel>
@@ -77,6 +85,14 @@
       <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
       <ns2:prefLabel xml:lang="en">Government of New Brunswick</ns2:prefLabel>
       <ns2:prefLabel xml:lang="fr">Gouvernement du Nouveau-Brunswick</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovSask">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="en">Government of Saskatchewan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="fr">Gouvernement de la Saskatchewan</ns2:prefLabel>
       <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
       <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
