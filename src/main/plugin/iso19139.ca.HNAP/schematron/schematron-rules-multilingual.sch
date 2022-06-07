@@ -502,7 +502,9 @@
     </sch:rule>
 
     <!-- Cited responsible party - Administrative area -->
-    <sch:rule context="//gmd:contact//gmd:administrativeArea">
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty//gmd:administrativeArea
+             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:administrativeArea
+             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty//gmd:administrativeArea">
       <sch:let name="province-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_State_Province.rdf'), '\\', '/')))"/>
 
       <sch:let name="administrativeArea" value="lower-case(gco:CharacterString)" />

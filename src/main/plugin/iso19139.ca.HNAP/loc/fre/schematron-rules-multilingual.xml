@@ -68,9 +68,9 @@
   <CitedResponsiblePartyDeliveryPoint>Responsable de la ressource - Adresse devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyDeliveryPoint>
   <DistributorDeliveryPoint>Responsable de la distribution - Adresse devrait être vide ou remplie en anglais et en français</DistributorDeliveryPoint>
 
-  <ContactAdministrativeArea>Responsable des métadonnées - Province/État devrait être vide ou remplie en anglais et en français</ContactAdministrativeArea>
-  <CitedResponsiblePartyAdministrativeArea>Responsable de la ressource - Province/État devrait être vide ou remplie en anglais et en français</CitedResponsiblePartyAdministrativeArea>
-  <DistributorAdministrativeArea>Responsable de la distribution - Province/État devrait être vide ou remplie en anglais et en français</DistributorAdministrativeArea>
+  <ContactAdministrativeArea>Responsable des métadonnées - Province/État devrait être vide ou remplie en anglais et en français avec une valeur valide</ContactAdministrativeArea>
+  <CitedResponsiblePartyAdministrativeArea>Responsable de la ressource - Province/État devrait être vide ou remplie en anglais et en français avec une valeur valide</CitedResponsiblePartyAdministrativeArea>
+  <DistributorAdministrativeArea>Responsable de la distribution - Province/État devrait être vide ou remplie en anglais et en français avec une valeur valide</DistributorAdministrativeArea>
 
   <ContactPhone>Responsable des métadonnées - Numéro de téléphone devrait être vide ou remplie en anglais et en français</ContactPhone>
   <CitedResponsiblePartyPhone>Responsable de la ressource - Numéro de téléphone devrait être vide ou rempli en anglais et en français</CitedResponsiblePartyPhone>
