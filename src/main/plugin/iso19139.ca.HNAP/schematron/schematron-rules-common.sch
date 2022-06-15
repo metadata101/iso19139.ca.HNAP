@@ -239,6 +239,14 @@
       <sch:assert
         test="not($missing)"
       >$loc/strings/MissingDate</sch:assert>
+
+      <sch:assert
+        test="not($missing)"
+      >$loc/strings/MissingDate</sch:assert>
+
+      <sch:assert
+        test="($missing) or matches(., '^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$')"
+      >$loc/strings/InvalidDate</sch:assert>
     </sch:rule>
 
 
@@ -440,7 +448,7 @@
     		<sch:let name="protocolListString" value="geonet:protocolListString($protocolList)"/>
 
         <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/OnlineResourceProtocol, $protocolListString)"/>
-     
+
         <sch:assert test="$isValidProtocol">$locMsg</sch:assert>
 
     </sch:rule>
