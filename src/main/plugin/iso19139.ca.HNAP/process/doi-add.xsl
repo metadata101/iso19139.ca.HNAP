@@ -20,6 +20,9 @@
    </xsl:choose>
   </xsl:variable>
 
+  <xsl:variable name="doiProtocol"
+                select="'HTTP'"/>
+
   <xsl:template match="gmd:distributionInfo[not($isDoiAlreadySet) and position() = 1]"
                 priority="20">
     <xsl:copy>
