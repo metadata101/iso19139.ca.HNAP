@@ -408,6 +408,7 @@
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo">
+      <sch:let name="hierarchyLevel" value="string(parent::gmd:MD_Metadata/gmd:hierarchyLevel/gmd:MD_ScopeCode)"/>
       <sch:let name="serviceLevel" value="string(parent::gmd:MD_Metadata/gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue='RI_631'])"/>
       <sch:let name="serviceIndNode" value="string( //srv:SV_ServiceIdentification | //*[@gco:isoType='srv:SV_ServiceIdentification'] )"/>
       <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/ServiceNamespace, $hierarchyLevel)"/>
