@@ -406,6 +406,14 @@
         test="$isValid or $missing"
       >$loc/strings/InvalidUseConstraints</sch:assert>
     </sch:rule>
+
+    <sch:rule context="//gmd:identificationInfo">
+      <sch:let name="serviceLevel" value="string(parent::gmd:MD_Metadata/gmd:hierarchyLevel/gmd:MD_ScopeCode[@codeListValue='RI_631'])"/>
+      <sch:let name="serviceIndNode" value="string( //srv:SV_ServiceIdentification | //*[@gco:isoType='srv:SV_ServiceIdentification'] )"/>
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/ServiceNamespace, $hierarchyLevel)"/>
+
+      <sch:assert test="($serviceLevel and $serviceIndNode) or (not($serviceLevel) and not ($serviceIndNode) )">$locMsg</sch:assert>
+    </sch:rule>
   </sch:pattern>
 
 
@@ -440,7 +448,7 @@
     		<sch:let name="protocolListString" value="geonet:protocolListString($protocolList)"/>
 
         <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/OnlineResourceProtocol, $protocolListString)"/>
-     
+
         <sch:assert test="$isValidProtocol">$locMsg</sch:assert>
 
     </sch:rule>

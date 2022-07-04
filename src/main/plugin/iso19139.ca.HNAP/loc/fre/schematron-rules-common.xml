@@ -48,4 +48,6 @@
   <MapResourcesWMS>Les sources de la carte WMS devraient être disponibles en anglais et en français</MapResourcesWMS>
   <MapResourcesWMSNumber>Le nombre de sources de la carte WMS devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesWMSNumber>
 
+  <ServiceNamespace>srv:SV_ServiceIdentification est mal placé pour gmd:MD_ScopeCode: </ServiceNamespace>
+
 </strings>
