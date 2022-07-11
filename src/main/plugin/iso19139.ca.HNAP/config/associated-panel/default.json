@@ -21,7 +21,7 @@
           "required": true,
           "tooltip": "gmd:URL"
         },
-        "name": {"tooltip": "gmd:name"},
+        "name": {"tooltip": "gmd:name", "required": true},
         "desc": {
           "tooltip": "gmd:description",
           "required": true,

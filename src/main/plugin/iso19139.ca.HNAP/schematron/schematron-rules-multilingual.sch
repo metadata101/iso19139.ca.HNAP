@@ -791,6 +791,16 @@
         test="not($missingLanguageForMapService)"
       >$loc/strings/MapServicesLanguage</sch:assert>
 
+      <!-- Resource name -->
+      <sch:let name="missingResourceName" value="not(string(gmd:CI_OnlineResource/gmd:name/gco:CharacterString))" />
+
+      <sch:let name="missingResourceNameOtherLang" value="not(string(gmd:CI_OnlineResource/gmd:name/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+
+      <sch:let name="locMsgResourceName" value="geonet:prependLocaleMessage($loc/strings/ResourceName, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+
+      <sch:assert
+        test="not($missingResourceName) and not($missingResourceNameOtherLang)"
+      >$locMsgResourceName</sch:assert>
 
       <!-- ResourceDescription -->
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
