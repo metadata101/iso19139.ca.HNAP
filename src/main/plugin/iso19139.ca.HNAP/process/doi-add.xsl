@@ -22,6 +22,9 @@
 
   <xsl:template match="gmd:distributionInfo[not($isDoiAlreadySet) and position() = 1]"
                 priority="20">
+
+    <xsl:variable name="protocol" select="upper-case(tokenize($doiProxy, ':')[1])" />
+
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
       <gmd:MD_Distribution>
@@ -39,7 +42,7 @@
                 <gmd:protocol>
                   <gco:CharacterString><xsl:value-of select="$doiProtocol"/></gco:CharacterString>
                 </gmd:protocol>
-                <gmd:name>
+                <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
                   <gco:CharacterString><xsl:value-of select="$doiName"/></gco:CharacterString>
                   <gmd:PT_FreeText>
                     <gmd:textGroup>
