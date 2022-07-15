@@ -819,11 +819,4 @@
     </xsl:for-each>
   </xsl:template>
 
-
-  <!-- ========================================================================================= -->
-
-  <xsl:template match="*" mode="codeList">
-    <xsl:apply-templates select="*" mode="codeList"/>
-  </xsl:template>
-
 </xsl:stylesheet>
