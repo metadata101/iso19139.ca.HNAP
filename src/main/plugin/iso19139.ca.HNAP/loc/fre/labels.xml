@@ -2425,6 +2425,10 @@
       <option value="ESRI REST: Map Service">ESRI REST: Map Service</option>
       <option value="OGC:WMS">OGC:WMS</option>
       <option value="OGC:WFS">OGC:WFS</option>
+      <option value="OGC API – Coverages">OGC API – Coverages</option>
+      <option value="OGC API – Features">OGC API – Features</option>
+      <option value="OGC API – Maps">OGC API – Maps</option>
+      <option value="AMQPS">Protocole avancé de file d'attente de messages</option>
     </helper>
     <condition/>
 
