@@ -2426,7 +2426,7 @@
       <option value="OGC:WMS">OGC:WMS</option>
       <option value="OGC:WFS">OGC:WFS</option>
       <option value="OGC API – Coverages">API OGC – Couvertures</option>
-      <option value="OGC API – Features">API OGC – Fonctionnalités</option>
+      <option value="OGC API – Features">API OGC – Entités</option>
       <option value="OGC API – Maps">API OGC – Cartes</option>
       <option value="AMQPS">Protocole avancé de file d'attente de messages</option>
     </helper>
