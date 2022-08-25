@@ -807,9 +807,6 @@
 
     <!-- Index all codelist -->
     <xsl:for-each select=".//*[*/@codeListValue != '']">
-
-      <Field name="{local-name()}" string="{*/@codeListValue}" store="false" index="true"/>
-
       <Field name="cl_{local-name()}"
              string="{*/@codeListValue}"
              store="true" index="true"/>
