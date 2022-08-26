@@ -58,7 +58,7 @@
 
 
       <sch:let name="numberOfCreators"
-               value="count(gmd:identificationInfo/*/gmd:pointOfContact/*[gmd:role/*/@codeListValue = ('RI_414', 'RI_409')])"/> <!--  'pointOfContact', 'custodian' -->
+               value="count(gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*[gmd:role/*/@codeListValue = ('RI_414', 'RI_409')])"/> <!--  'pointOfContact', 'custodian' -->
 
       <sch:assert test="$numberOfCreators > 0">$loc/strings/datacite.creator.missing</sch:assert>
       <sch:report test="$numberOfCreators > 0">
