@@ -30,6 +30,12 @@
 
   <xsl:output method="xml" indent="yes"/>
 
+  <!-- ISO19139 uses the protocol with value 'DOI' to match the online resource, but
+       HNAP uses for DOI resources the protocol value 'HTTP' that is used for other type
+       of online resources. 
+       
+       Changed in HNAP to use the online resource name.   
+  -->     
   <xsl:variable name="doiName"
                 select="'Digital Object Identifier (DOI)'"/>
 
