@@ -119,6 +119,29 @@
     </xsl:copy>
   </xsl:template>
 
+  <!--Add default LocalisedCharacterString to thumbnail -->
+  <xsl:template match="gmd:fileDescription">
+    <xsl:copy copy-namespaces="no">
+      <gmd:PT_FreeText>
+        <gmd:textGroup>
+          <xsl:choose>
+            <xsl:when test="$mainLanguage='eng'">
+              <gmd:LocalisedCharacterString locale="#fra">
+                <xsl:value-of select="./gco:CharacterString/text()"/>
+              </gmd:LocalisedCharacterString>
+            </xsl:when>
+            <xsl:otherwise>
+              <gmd:LocalisedCharacterString locale="#eng">
+                <xsl:value-of select="/gco:CharacterString"/>
+              </gmd:LocalisedCharacterString>
+            </xsl:otherwise>
+          </xsl:choose>
+        </gmd:textGroup>
+      </gmd:PT_FreeText>
+      <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="node()|@*">
     <xsl:copy>
       <xsl:apply-templates select="node()|@*"/>
