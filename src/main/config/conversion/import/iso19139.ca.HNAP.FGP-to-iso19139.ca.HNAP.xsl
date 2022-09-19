@@ -122,23 +122,26 @@
   <!--Add default LocalisedCharacterString to thumbnail -->
   <xsl:template match="gmd:fileDescription">
     <xsl:copy copy-namespaces="no">
-      <gmd:PT_FreeText>
-        <gmd:textGroup>
-          <xsl:choose>
-            <xsl:when test="$mainLanguage='eng'">
-              <gmd:LocalisedCharacterString locale="#fra">
-                <xsl:value-of select="./gco:CharacterString/text()"/>
-              </gmd:LocalisedCharacterString>
-            </xsl:when>
-            <xsl:otherwise>
-              <gmd:LocalisedCharacterString locale="#eng">
-                <xsl:value-of select="/gco:CharacterString"/>
-              </gmd:LocalisedCharacterString>
-            </xsl:otherwise>
-          </xsl:choose>
-        </gmd:textGroup>
-      </gmd:PT_FreeText>
-      <xsl:apply-templates select="node()|@*"/>
+      <xsl:if test="not(gmd:PT_FreeText)">
+        <gco:CharacterString><xsl:value-of select="./gco:CharacterString/text()"/></gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <xsl:choose>
+              <xsl:when test="$mainLanguage='eng'">
+                <gmd:LocalisedCharacterString locale="#fra">
+                  <xsl:value-of select="./gco:CharacterString/text()"/>
+                </gmd:LocalisedCharacterString>
+              </xsl:when>
+              <xsl:otherwise>
+                <gmd:LocalisedCharacterString locale="#eng">
+                  <xsl:value-of select="./gco:CharacterString/text()"/>
+                </gmd:LocalisedCharacterString>
+              </xsl:otherwise>
+            </xsl:choose>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </xsl:if>
+      <xsl:apply-templates select="node()/gco:CharacterString|@*"/>
     </xsl:copy>
   </xsl:template>
 
