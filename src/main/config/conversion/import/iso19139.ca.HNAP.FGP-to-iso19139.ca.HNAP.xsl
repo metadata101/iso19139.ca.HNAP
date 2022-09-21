@@ -120,10 +120,9 @@
   </xsl:template>
 
   <!--Add default LocalisedCharacterString to thumbnail -->
-  <xsl:template match="gmd:fileDescription">
+  <xsl:template match="gmd:fileDescription[gco:CharacterString/text() != ''  and not(gmd:PT_FreeText)]">
     <xsl:copy copy-namespaces="no">
-      <xsl:if test="not(gmd:PT_FreeText)">
-        <gco:CharacterString><xsl:value-of select="./gco:CharacterString/text()"/></gco:CharacterString>
+      <xsl:apply-templates select="node()|@*"/>
         <gmd:PT_FreeText>
           <gmd:textGroup>
             <xsl:choose>
@@ -140,8 +139,6 @@
             </xsl:choose>
           </gmd:textGroup>
         </gmd:PT_FreeText>
-      </xsl:if>
-      <xsl:apply-templates select="node()/gco:CharacterString|@*"/>
     </xsl:copy>
   </xsl:template>
 
