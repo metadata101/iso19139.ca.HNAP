@@ -2,7 +2,7 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the *North American Profile of ISO 19115:2003 - Geographic information - Metadata* used nationally.
 
-For details on this release see [3.12.5 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/13?closed=1) release notes for details.
+For details on this release see [3.12.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/16?closed=1) release notes for details.
 
 ## User Manual
 
@@ -18,7 +18,7 @@ The [project issue tracker](https://github.com/metadata101/iso19139.ca.HNAP/issu
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork ``4.0.x``, not tested with prior versions!
+Use GeoNetwork ``4.2.x``, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -55,7 +55,7 @@ The best approach is to add the plugin as a submodule:
 1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/3.12.x/add-schema.sh) for automatic deployment:
 
    ```
-   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 4.0.x
+   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 4.2.x
    ```
 
 2. Build the application:

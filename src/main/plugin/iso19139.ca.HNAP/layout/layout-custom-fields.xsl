@@ -228,7 +228,8 @@
               "eng": "Department/Agency",
               "fra": "Département/agence"
             },
-            "thesaurus": "external.theme.GC_Departments"
+            "thesaurus": "external.theme.GC_Departments",
+            "numberOfSuggestions": 200
           },
 
           {

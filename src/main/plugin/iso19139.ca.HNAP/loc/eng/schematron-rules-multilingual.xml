@@ -35,6 +35,7 @@
 
   <OtherConstraintsNote2>Note (Other Constraints) is required in both languages</OtherConstraintsNote2>
 
+  <ResourceName>Online resource name is required in both language</ResourceName>
   <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
   <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
   <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
@@ -66,6 +67,10 @@
   <ContactDeliveryPoint>Contact - Delivery Point should be empty or filled in English and French</ContactDeliveryPoint>
   <CitedResponsiblePartyDeliveryPoint>Cited Responsible Party - Delivery Point should be empty or filled in English and French</CitedResponsiblePartyDeliveryPoint>
   <DistributorDeliveryPoint>Distributor - Delivery Point should be empty or filled in English and French</DistributorDeliveryPoint>
+
+  <ContactAdministrativeArea>Contact - Province/State should be empty or filled in English and French with a valid value</ContactAdministrativeArea>
+  <CitedResponsiblePartyAdministrativeArea>Cited Responsible Party - Province/State should be empty or filled in English and French  with a valid value</CitedResponsiblePartyAdministrativeArea>
+  <DistributorAdministrativeArea>Distributor - Province/State should be empty or filled in English and French with a valid value</DistributorAdministrativeArea>
 
   <ContactPhone>Contact - Phone should be empty or filled in English and French</ContactPhone>
   <CitedResponsiblePartyPhone>Cited Responsible Party - Phone should be empty or filled in English and French</CitedResponsiblePartyPhone>
