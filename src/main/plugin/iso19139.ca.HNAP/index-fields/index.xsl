@@ -111,12 +111,12 @@
     <!-- Record is dataset if no hierarchyLevel -->
     <xsl:variable name="isDataset" as="xs:boolean"
                   select="
-                      count(gmd:hierarchyLevel[gmd:MD_ScopeCode/@codeListValue='dataset']) > 0 or
+                      count(gmd:hierarchyLevel[gmd:MD_ScopeCode/@codeListValue='RI_622']) > 0 or
                       count(gmd:hierarchyLevel) = 0"/>
 
     <xsl:variable name="isService" as="xs:boolean"
                   select="
-                      count(gmd:hierarchyLevel[gmd:MD_ScopeCode/@codeListValue='service']) > 0"/>
+                      count(gmd:hierarchyLevel[gmd:MD_ScopeCode/@codeListValue='RI_631']) > 0"/>
 
     <!-- Create a first document representing the main record. -->
     <doc>
@@ -180,14 +180,33 @@
         <xsl:otherwise>
           <xsl:for-each select="gmd:hierarchyLevel/*/@codeListValue[normalize-space(.) != '']">
             <resourceType>
-              <xsl:value-of select="."/>
+              <!-- Map values to iso19139 -->
+              <xsl:choose>
+                <xsl:when test=". = 'RI_618'">attribute</xsl:when>
+                <xsl:when test=". = 'RI_619'">attributeType</xsl:when>
+                <xsl:when test=". = 'RI_620'">collectionHardware</xsl:when>
+                <xsl:when test=". = 'RI_621'">collectionSession</xsl:when>
+                <xsl:when test=". = 'RI_622'">dataset</xsl:when>
+                <xsl:when test=". = 'RI_623'">series</xsl:when>
+                <xsl:when test=". = 'RI_624'">nonGeographicDataset</xsl:when>
+                <xsl:when test=". = 'RI_625'">dimensionGroup</xsl:when>
+                <xsl:when test=". = 'RI_626'">feature</xsl:when>
+                <xsl:when test=". = 'RI_627'">featureType</xsl:when>
+                <xsl:when test=". = 'RI_628'">propertyType</xsl:when>
+                <xsl:when test=". = 'RI_629'">fieldSession</xsl:when>
+                <xsl:when test=". = 'RI_630'">software</xsl:when>
+                <xsl:when test=". = 'RI_631'">service</xsl:when>
+                <xsl:when test=". = 'RI_632'">model</xsl:when>
+                <xsl:when test=". = 'RI_633'">tile</xsl:when>
+                <xsl:otherwise>dataset</xsl:otherwise>
+              </xsl:choose>
             </resourceType>
           </xsl:for-each>
         </xsl:otherwise>
       </xsl:choose>
 
       <xsl:variable name="isMapDigital"
-                    select="count(gmd:identificationInfo/*/gmd:citation/*/gmd:presentationForm[*/@codeListValue = 'mapDigital']) > 0"/>
+                    select="count(gmd:identificationInfo/*/gmd:citation/*/gmd:presentationForm[*/@codeListValue = 'RI_391']) > 0"/> <!-- mapDigital -->
       <xsl:variable name="isStatic"
                     select="count(gmd:distributionInfo/*/gmd:distributionFormat/*/gmd:name/*[contains(., 'PDF') or contains(., 'PNG') or contains(., 'JPEG')]) > 0"/>
       <xsl:variable name="isInteractive"
