@@ -33,6 +33,10 @@
 
   <xsl:include href="utility-tpl-multilingual.xsl"/>
 
+  <!-- Used to suggest metadata formats in the online resources protocols, HNAP uses a fixed list of protocols.
+       Empty template to disable that option -->
+  <xsl:template mode="get-formats-as-json" match="gmd:MD_Metadata[gn:info/schema = 'iso19139.ca.HNAP']" />
+
   <xsl:template name="get-iso19139.ca.HNAP-is-service">
     <xsl:call-template name="get-iso19139-is-service" />
   </xsl:template>
