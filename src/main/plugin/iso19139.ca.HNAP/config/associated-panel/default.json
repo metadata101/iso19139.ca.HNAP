@@ -11,7 +11,7 @@
       "process": "onlinesrc-add",
       "fields": {
         "protocol": {
-          "value": "WWW:LINK-1.0-http--link",
+          "value": "HTTP",
           "isMultilingual": false,
           "required": true,
           "tooltip": "gmd:protocol"
