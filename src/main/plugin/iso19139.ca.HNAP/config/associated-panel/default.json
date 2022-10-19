@@ -4,6 +4,7 @@
     "loadMapCapabilities": "true",
     "types": [{
       "label": "addOnlinesrc",
+      "default": true,
       "sources": {
         "filestore": true
       },
