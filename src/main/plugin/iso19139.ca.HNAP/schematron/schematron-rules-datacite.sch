@@ -38,10 +38,10 @@
       context="//gmd:MD_Metadata|//*[@gco:isoType='gmd:MD_Metadata']">
 
       <sch:let name="title"
-               value="gmd:identificationInfo/*/gmd:citation/*/gmd:title"/>
+               value="string-join(gmd:identificationInfo/*/gmd:citation/*/gmd:title/*/text(), '')"/>
 
-      <sch:assert test="$title != ''">$loc/strings/datacite.title.missing</sch:assert>
-      <sch:report test="$title != ''">
+      <sch:assert test="string-length(normalize-space($title)) > 0">$loc/strings/datacite.title.missing</sch:assert>
+      <sch:report test="string-length(normalize-space($title)) > 0">
         <sch:value-of select="$loc/strings/datacite.title.present"/>
         <sch:value-of select="$title"/>
       </sch:report>
@@ -78,7 +78,7 @@
 
 
       <sch:let name="publicationDate"
-               value="string-join(gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/*/@codeListValue = 'RI_367'], ', ')"/>
+               value="string-join(gmd:identificationInfo/*/gmd:citation/*/gmd:date[*/gmd:dateType/*/@codeListValue = 'RI_367']//(gco:Date|gco:DateTime)/text(), ', ')"/>
 
       <sch:assert test="$publicationDate != ''">$loc/strings/datacite.publicationDate.missing</sch:assert>
       <sch:report test="$publicationDate != ''">
