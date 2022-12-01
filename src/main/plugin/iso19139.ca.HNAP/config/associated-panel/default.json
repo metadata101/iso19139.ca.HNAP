@@ -47,7 +47,8 @@
                   "eng": "Format",
                   "fra": "Format"
                 },
-                "thesaurus": "external.theme.GC_Resource_Formats"
+                "thesaurus": "external.theme.GC_Resource_Formats",
+                "numberOfSuggestions": "Infinity"
               },
               {
                 "type": "thesaurus",
