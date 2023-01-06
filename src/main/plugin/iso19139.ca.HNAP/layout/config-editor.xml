@@ -509,7 +509,7 @@
                 <gmd:distributionFormat>
                   <gmd:MD_Format>
                     <gmd:name>
-                      <gco:CharacterString>DOC</gco:CharacterString>
+                      <gco:CharacterString></gco:CharacterString>
                     </gmd:name>
                     <gmd:version gco:nilReason="missing">
                       <gco:CharacterString/>
