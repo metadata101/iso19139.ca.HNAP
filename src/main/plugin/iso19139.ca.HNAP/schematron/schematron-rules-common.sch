@@ -440,7 +440,7 @@
 
     <sch:rule context="//gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource">
         <sch:let name="locLabel" value="document(concat('../loc/', $lang, '/labels.xml'))"/>
-        <sch:let name="protocolList" value="$locLabel/labels/element[@name='gmd:protocol']/helper/option"/>
+        <sch:let name="protocolList" value="$locLabel/labels/element[@name='gmd:protocol']/helper/option/@value"/>
         <sch:let name="protocol" value="gmd:protocol/gco:CharacterString/text()"/>
         <sch:let name="isValidProtocol" value="$protocol = $protocolList"/>
 
