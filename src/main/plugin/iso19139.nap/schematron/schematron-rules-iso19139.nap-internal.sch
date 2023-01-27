@@ -1184,6 +1184,12 @@
 
                 (normalize-space(gco:CharacterString) = 'Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)' and
                 normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Standard Unrestricted Use Data License (Version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)')
+
+                (normalize-space(gco:CharacterString) = 'Open Government Licence - Northwest Territories (https://www.gov.nt.ca/en/open-government-licence-northwest-territories)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#fra']) = 'Licence du gouvernement ouvert -Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)') or
+
+                (normalize-space(gco:CharacterString) = 'Licence du gouvernement ouvert -Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)' and
+                normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale='#eng'])  = 'Open Government Licence - Northwest Territories (https://www.gov.nt.ca/en/open-government-licence-northwest-territories)')
                 ])"/>
 
         <sch:assert

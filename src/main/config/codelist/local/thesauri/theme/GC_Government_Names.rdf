@@ -112,4 +112,12 @@
       <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
       <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentName#GovNWTerr">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="en">Government of Northwest Territories</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="fr">Gouvernement des Territoires du Nord-Ouest</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
 </rdf:RDF>
