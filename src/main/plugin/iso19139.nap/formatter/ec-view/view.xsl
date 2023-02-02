@@ -314,7 +314,7 @@
         <license gov="Gouvernement et municipalités du Québec">Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)</license>
         <license gov="Gouvernement du Manitoba">Licence d’utilisation de l’information et des données du site Ouverture MB - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.fr.pdf)</license>
         <license gov="Gouvernement de la Saskatchewan">Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)</license>
-        <license gov="Gouvernement des Territoires du Nord-Ouest">Licence du gouvernement ouvert -Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)</license>
+        <license gov="Gouvernement des Territoires du Nord-Ouest">Licence du gouvernement ouvert - Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)</license>
       </licenses>
     </xsl:variable>
 

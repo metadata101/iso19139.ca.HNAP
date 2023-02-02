@@ -116,7 +116,7 @@
     <ns2:scopeNote xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition</ns2:scopeNote>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Open Government Licence - Northwest Territories (https://www.gov.nt.ca/en/open-government-licence-northwest-territories)</ns2:prefLabel>
-    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert -Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)</ns2:prefLabel>
+    <ns2:prefLabel xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Licence du gouvernement ouvert - Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)</ns2:prefLabel>
   </rdf:Description>
 </rdf:RDF>
 
