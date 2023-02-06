@@ -1934,6 +1934,7 @@
     </element>
     <element name="gmd:spatialRepresentationType" id="37.0">
         <label>Spatial representation type</label>
+        <btnLabel>Add spatial representation type</btnLabel>
         <description>Method used to spatially represent geographic information</description>
     </element>
     <element name="gmd:spatialResolution" id="38.0">
