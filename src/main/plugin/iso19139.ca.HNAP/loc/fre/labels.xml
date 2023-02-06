@@ -2663,6 +2663,7 @@
   </element>
   <element name="gmd:spatialRepresentationType" id="37.0">
     <label>Type de représentation spatiale</label>
+    <btnLabel>Ajouter type de représentation spatiale</btnLabel>
     <description>Méthode utilisée pour représenter spatialement l'information géographique</description>
   </element>
   <element name="gmd:spatialResolution" id="38.0">
