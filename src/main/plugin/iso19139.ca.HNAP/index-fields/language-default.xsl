@@ -176,7 +176,7 @@
 
         <xsl:for-each
           select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date">
-          <Field name="revisionDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+          <Field name="revisionDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
 
           <Field name="createDateMonth"
                  string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 8)}" store="true"
@@ -186,7 +186,7 @@
                  index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
@@ -202,16 +202,16 @@
                  index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
         <xsl:for-each
           select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date">
-          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
