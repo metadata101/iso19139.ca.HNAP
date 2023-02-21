@@ -234,6 +234,7 @@
       <!-- Indexing metadata contact -->
       <xsl:apply-templates mode="index-contact" select="gmd:contact">
         <xsl:with-param name="fieldSuffix" select="''"/>
+        <xsl:with-param name="languages" select="$allLanguages"/>
       </xsl:apply-templates>
 
       <!-- Indexing all codelists.
@@ -357,6 +358,7 @@
         <xsl:apply-templates mode="index-contact"
                              select="gmd:pointOfContact">
           <xsl:with-param name="fieldSuffix" select="'ForResource'"/>
+          <xsl:with-param name="languages" select="$allLanguages"/>
         </xsl:apply-templates>
 
         <xsl:copy-of select="gn-fn-index:add-multilingual-field('resourceCredit', gmd:credit, $allLanguages)"/>
@@ -890,6 +892,7 @@
           <xsl:apply-templates mode="index-contact"
                                select="gmd:distributorContact">
             <xsl:with-param name="fieldSuffix" select="'ForDistribution'"/>
+            <xsl:with-param name="languages" select="$allLanguages"/>
           </xsl:apply-templates>
         </xsl:for-each>
 
