@@ -837,8 +837,8 @@
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
       <sch:let name="locMsg" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
 
-      <sch:assert test="$formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($mainLanguage2char)]/text() = $format and
-                          $formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($altLanguage2char)]/text() = $formatTranslated">$locMsg</sch:assert>
+      <sch:assert test="string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $format)]) and
+                          string($formats-list//rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#',$formatTranslated)])">$locMsg</sch:assert>
 
       <sch:let name="locMsgLang" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionLanguage, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
 
