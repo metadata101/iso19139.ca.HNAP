@@ -222,7 +222,7 @@
 
       <!-- Copy existing locales and create an extra one for the default metadata language. -->
       <xsl:apply-templates select="gmd:locale[*/gmd:languageCode/*/@codeListValue != $mainLanguage]"/>
-       
+
  		  <xsl:apply-templates select="node()[name()!='gmd:fileIdentifier' and
                                             name()!='gmd:language' and
                                             name()!='gmd:parentIdentifier' and
@@ -781,17 +781,6 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-
-	<!-- Replace gmx:Anchor element by a simple gco:CharacterString.
-		gmx:Anchor is usually used for linking element using xlink.
-		TODO : Currently gmx:Anchor is not supported
-	-->
-	<xsl:template match="gmx:Anchor">
-		<gco:CharacterString>
-			<xsl:value-of select="."/>
-		</gco:CharacterString>
-	</xsl:template>
-
 
   <xsl:template match="gmd:MD_DataIdentification">
     <xsl:copy>

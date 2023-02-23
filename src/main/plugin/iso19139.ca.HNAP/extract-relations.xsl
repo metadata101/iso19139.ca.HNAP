@@ -42,7 +42,7 @@
 
   <!-- Convert an element gco:CharacterString
   to the GN localized string structure -->
-  <xsl:template mode="get-iso19139-localized-string" match="*">
+  <xsl:template mode="get-iso19139-localized-string" match="*" priority="10">
 
     <xsl:variable name="mainLanguage">
       <xsl:call-template name="langId_from_gmdlanguage19139">

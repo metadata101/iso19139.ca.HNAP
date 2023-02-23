@@ -84,13 +84,13 @@
 <!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
     <for name="gmd:country"
              use="data-gn-keyword-picker">
-          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false"/>
+          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false" data-number-of-suggestions="250"/>
 
     </for>
 
     <for name="gmd:administrativeArea"
          use="data-gn-keyword-picker">
-      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false"/>
+      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false" data-number-of-suggestions="75"/>
 
     </for>
 
@@ -453,6 +453,18 @@
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
+          <action type="add" name="spatialRepresentationType" or="spatialRepresentationType"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
+                  if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType) = 0">
+            <template>
+              <snippet>
+                <gmd:spatialRepresentationType>
+                  <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"/>
+                </gmd:spatialRepresentationType>
+              </snippet>
+            </template>
+          </action>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty "
                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation"
                  or="citedResponsibleParty"/>
@@ -501,6 +513,24 @@
                    in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
                    or="distributionFormat"/>
           </section>
+
+          <action type="add" name="distributionFormat" or="distributionFormat"
+                  in="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution">
+            <template>
+              <snippet>
+                <gmd:distributionFormat>
+                  <gmd:MD_Format>
+                    <gmd:name>
+                      <gco:CharacterString/>
+                    </gmd:name>
+                    <gmd:version gco:nilReason="missing">
+                      <gco:CharacterString/>
+                    </gmd:version>
+                  </gmd:MD_Format>
+                </gmd:distributionFormat>
+              </snippet>
+            </template>
+          </action>
 
 
           <field xpath="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact"

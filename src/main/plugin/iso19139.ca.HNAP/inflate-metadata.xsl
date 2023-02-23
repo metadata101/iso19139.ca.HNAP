@@ -373,11 +373,6 @@
 
       <xsl:apply-templates select="gmd:aggregationInfo" />
       <xsl:apply-templates select="gmd:spatialRepresentationType" />
-      <xsl:if test="not(gmd:spatialRepresentationType)">
-        <gmd:spatialRepresentationType>
-          <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"/>
-        </gmd:spatialRepresentationType>
-      </xsl:if>
 
       <xsl:apply-templates select="gmd:spatialResolution" />
       <xsl:apply-templates select="gmd:language" />

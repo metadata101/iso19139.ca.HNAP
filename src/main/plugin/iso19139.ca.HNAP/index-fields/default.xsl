@@ -62,10 +62,6 @@
 
   <xsl:variable name="altLanguageId" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
 
-  <xsl:variable name="inspire-thesaurus"
-                select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
-  <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
-
   <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
 
   <!-- If identification creation, publication and revision date
@@ -139,12 +135,12 @@
 					gmd:identificationInfo/*[@gco:isoType='srv:SV_ServiceIdentification']">
 
       <xsl:for-each select="gmd:citation/gmd:CI_Citation">
-        <xsl:for-each select="gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString">
-          <Field name="identifier" string="{string(.)}" store="false" index="true"/>
+        <xsl:for-each select="gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString|gmd:identifier/gmd:MD_Identifier/gmd:code/gmx:Anchor">
+          <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
-        <xsl:for-each select="gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString">
-          <Field name="identifier" string="{string(.)}" store="false" index="true"/>
+        <xsl:for-each select="gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString|gmd:identifier/gmd:RS_Identifier/gmd:code/gmx:Anchor">
+          <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
 
@@ -158,27 +154,48 @@
           <Field name="altTitle" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
+        <!-- Revision -->
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date">
-          <Field name="revisionDate" string="{string(gco:Date|gco:DateTime)}" store="false" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date">
+          <Field name="revisionDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+
+          <Field name="createDateMonth"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 8)}" store="true"
+                 index="true"/>
+          <Field name="createDateYear"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 5)}" store="true"
+                 index="true"/>
+
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date|gco:DateTime)}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
+        <!-- Creation -->
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_366']/gmd:date">
-          <Field name="createDate" string="{string(gco:Date|gco:DateTime)}" store="true" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_366']/gmd:date">
+          <Field name="createDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+
+          <Field name="createDateMonth"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 8)}" store="true"
+                 index="true"/>
+          <Field name="createDateYear"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 5)}" store="true"
+                 index="true"/>
+
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date|gco:DateTime)}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
+
+        <!-- Publication -->
         <xsl:for-each
-                select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date">
-          <Field name="publicationDate" string="{string(gco:Date|gco:DateTime)}" store="false" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date">
+          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date|gco:DateTime)}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
@@ -223,7 +240,7 @@
         <xsl:apply-templates select="gmd:geographicElement/gmd:EX_GeographicBoundingBox" mode="latLon"/>
 
         <xsl:for-each
-                select="gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code/gco:CharacterString">
+          select="gmd:geographicElement/gmd:EX_GeographicDescription/gmd:geographicIdentifier/gmd:MD_Identifier/gmd:code/gco:CharacterString">
           <Field name="geoDescCode" string="{string(.)}" store="false" index="true"/>
         </xsl:for-each>
 
@@ -236,9 +253,9 @@
               </xsl:call-template>
             </xsl:variable>
 
-            <Field name="tempExtentBegin" string="{lower-case(substring-before($times,'|'))}" store="false"
+            <Field name="tempExtentBegin" string="{lower-case(substring-before($times,'|'))}" store="true"
                    index="true"/>
-            <Field name="tempExtentEnd" string="{lower-case(substring-after($times,'|'))}" store="false" index="true"/>
+            <Field name="tempExtentEnd" string="{lower-case(substring-after($times,'|'))}" store="true" index="true"/>
           </xsl:for-each>
 
         </xsl:for-each>
@@ -258,31 +275,6 @@
           <xsl:variable name="keyword" select="string(.)"/>
 
           <Field name="keyword" string="{$keyword}" store="true" index="true"/>
-
-          <!-- If INSPIRE is enabled, check if the keyword is one of the 34 themes
-               and index annex, theme and theme in english. -->
-          <xsl:if test="$inspire='true' and normalize-space(lower-case($thesaurusName)) = 'gemet - inspire themes, version 1.0'">
-
-            <xsl:if test="string-length(.) &gt; 0">
-
-              <xsl:variable name="inspireannex">
-                <xsl:call-template name="determineInspireAnnex">
-                  <xsl:with-param name="keyword" select="$keyword"/>
-                  <xsl:with-param name="inspireThemes" select="$inspire-theme"/>
-                </xsl:call-template>
-              </xsl:variable>
-
-              <!-- Add the inspire field if it's one of the 34 themes -->
-              <xsl:if test="normalize-space($inspireannex)!=''">
-                <!-- Maybe we should add the english version to the index to not take the language into account
-                or create one field in the metadata language and one in english ? -->
-                <Field name="inspiretheme" string="{string(.)}" store="false" index="true"/>
-                <Field name="inspireannex" string="{$inspireannex}" store="false" index="true"/>
-                <!-- FIXME : inspirecat field will be set multiple time if one record has many themes -->
-                <Field name="inspirecat" string="true" store="false" index="true"/>
-              </xsl:if>
-            </xsl:if>
-          </xsl:if>
         </xsl:for-each>
 
         <!-- Index thesaurus name to easily search for records
@@ -393,7 +385,7 @@
 
 
       <xsl:for-each
-              select="gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName">
+        select="gmd:citation/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:organisationName">
 
         <xsl:variable name="orgName" select="gco:CharacterString" />
 
@@ -409,7 +401,7 @@
 
         <xsl:if test="$government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='en'])), ';'))] or
                       $government-names//rdf:Description[starts-with(normalize-space(lower-case($orgNameAlt)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang='fr'])), ';'))]">
-        <Field name="orgNameCanada_{$altLang_ISO639_2B}"
+          <Field name="orgNameCanada_{$altLang_ISO639_2B}"
                  string="{string(normalize-space(tokenize(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)], ';')[2]))}"
                  store="true" index="true"/>
         </xsl:if>
@@ -476,7 +468,24 @@
         <xsl:for-each select="gmd:distance/gco:Distance/@uom">
           <Field name="distanceUom" string="{string(.)}" store="false" index="true"/>
         </xsl:for-each>
+
+        <xsl:for-each select="gmd:distance/gco:Distance">
+          <!-- Units may be encoded as
+          http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/ML_gmxUom.xml#m
+          in such case retrieve the unit acronym only. -->
+          <xsl:variable name="unit"
+                        select="if (contains(@uom, '#')) then substring-after(@uom, '#') else @uom"/>
+          <Field name="resolution" string="{concat(string(.), ' ', $unit)}" store="true"
+                 index="true"/>
+        </xsl:for-each>
       </xsl:for-each>
+
+      <xsl:for-each select="gmd:resourceMaintenance/
+                                gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency/
+                                gmd:MD_MaintenanceFrequencyCode/@codeListValue[. != '']">
+        <Field name="updateFrequency" string="{string(.)}" store="true" index="true"/>
+      </xsl:for-each>
+
 
       <xsl:for-each select="gmd:spatialRepresentationType">
         <Field name="spatialRepresentationType" string="{gmd:MD_SpatialRepresentationTypeCode/@codeListValue}"
@@ -558,7 +567,7 @@
       <!-- index online protocol -->
 
       <xsl:for-each
-              select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL!='']">
+        select="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL!='']">
         <xsl:variable name="download_check">
           <xsl:text>&amp;fname=&amp;access</xsl:text>
         </xsl:variable>
@@ -611,26 +620,6 @@
     </xsl:for-each>
 
     <xsl:for-each select="gmd:dataQualityInfo/*/gmd:report/*/gmd:result">
-      <xsl:if test="$inspire='true'">
-        <!--
-            INSPIRE related dataset could contains a conformity section with:
-            * COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services
-            * INSPIRE Data Specification on <Theme Name> - <version>
-            * INSPIRE Specification on <Theme Name> - <version> for CRS and GRID
-
-            Index those types of citation title to found dataset related to INSPIRE (which may be better than keyword
-            which are often used for other types of datasets).
-
-            "1089/2010" is maybe too fuzzy but could work for translated citation like "Règlement n°1089/2010, Annexe II-6" TODO improved
-        -->
-        <xsl:if test="(
-                                contains(gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmx:Anchor), '1089/2010') or
-                                contains(gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmx:Anchor), 'INSPIRE Data Specification') or
-                                contains(gmd:DQ_ConformanceResult/gmd:specification/gmd:CI_Citation/gmd:title/(gco:CharacterString|gmx:Anchor), 'INSPIRE Specification'))">
-          <Field name="inspirerelated" string="on" store="false" index="true"/>
-        </xsl:if>
-      </xsl:if>
-
       <xsl:for-each select="//gmd:pass/gco:Boolean">
         <Field name="degree" string="{string(.)}" store="false" index="true"/>
       </xsl:for-each>
@@ -816,84 +805,20 @@
       </xsl:attribute>
     </Field>
 
-    <!--<xsl:apply-templates select="." mode="codeList"/>-->
-
-  </xsl:template>
-
-  <!-- ========================================================================================= -->
-  <!-- codelist element, indexed, not stored nor tokenized -->
-
-  <xsl:template match="*[./*/@codeListValue]" mode="codeList">
-    <xsl:param name="name" select="name(.)"/>
-
-    <Field name="{$name}" string="{*/@codeListValue}" store="false" index="true"/>
-  </xsl:template>
-
-  <!-- ========================================================================================= -->
-
-  <xsl:template match="*" mode="codeList">
-    <xsl:apply-templates select="*" mode="codeList"/>
-  </xsl:template>
-
-
-  <!-- ========================================================================================= -->
-
-  <!-- inspireThemes is a nodeset consisting of skos:Concept elements -->
-  <!-- each containing a skos:definition and skos:prefLabel for each language -->
-  <!-- This template finds the provided keyword in the skos:prefLabel elements and returns the English one from the same skos:Concept -->
-  <xsl:template name="translateInspireThemeToEnglish">
-    <xsl:param name="keyword"/>
-    <xsl:param name="inspireThemes"/>
-    <xsl:for-each select="$inspireThemes/skos:prefLabel">
-      <!-- if this skos:Concept contains a kos:prefLabel with text value equal to keyword -->
-      <xsl:if test="text() = $keyword">
-        <xsl:value-of select="../skos:prefLabel[@xml:lang='en']/text()"/>
-      </xsl:if>
+    <!-- Index all codelist -->
+    <!-- Avoid gmd:fileType in gmd:MD_BrowseGraphic, not following the standard codelist structure in HNAP:
+          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115" codeListValue="RI_716">
+            <gco:CharacterString>png; png</gco:CharacterString>
+          </gmd:fileType>
+    -->
+    <xsl:for-each select=".//*[*/@codeListValue != '' and local-name() != 'MD_BrowseGraphic']">
+      <Field name="cl_{local-name()}"
+             string="{*/@codeListValue}"
+             store="true" index="true"/>
+      <Field name="cl_{concat(local-name(), '_text')}"
+             string="{util:getCodelistTranslation(name(*), string(*/@codeListValue), string($isoLangId))}"
+             store="true" index="true"/>
     </xsl:for-each>
   </xsl:template>
 
-  <xsl:template name="determineInspireAnnex">
-    <xsl:param name="keyword"/>
-    <xsl:param name="inspireThemes"/>
-    <xsl:variable name="englishKeywordMixedCase">
-      <xsl:call-template name="translateInspireThemeToEnglish">
-        <xsl:with-param name="keyword" select="$keyword"/>
-        <xsl:with-param name="inspireThemes" select="$inspireThemes"/>
-      </xsl:call-template>
-    </xsl:variable>
-    <xsl:variable name="englishKeyword" select="lower-case($englishKeywordMixedCase)"/>
-    <!-- Another option could be to add the annex info in the SKOS thesaurus using something
-    like a related concept. -->
-    <xsl:choose>
-      <!-- annex i -->
-      <xsl:when test="$englishKeyword='coordinate reference systems' or $englishKeyword='geographical grid systems'
-			            or $englishKeyword='geographical names' or $englishKeyword='administrative units'
-			            or $englishKeyword='addresses' or $englishKeyword='cadastral parcels'
-			            or $englishKeyword='transport networks' or $englishKeyword='hydrography'
-			            or $englishKeyword='protected sites'">
-        <xsl:text>i</xsl:text>
-      </xsl:when>
-      <!-- annex ii -->
-      <xsl:when test="$englishKeyword='elevation' or $englishKeyword='land cover'
-			            or $englishKeyword='orthoimagery' or $englishKeyword='geology'">
-        <xsl:text>ii</xsl:text>
-      </xsl:when>
-      <!-- annex iii -->
-      <xsl:when test="$englishKeyword='statistical units' or $englishKeyword='buildings'
-			            or $englishKeyword='soil' or $englishKeyword='land use'
-			            or $englishKeyword='human health and safety' or $englishKeyword='utility and government services'
-			            or $englishKeyword='environmental monitoring facilities' or $englishKeyword='production and industrial facilities'
-			            or $englishKeyword='agricultural and aquaculture facilities' or $englishKeyword='population distribution - demography'
-			            or $englishKeyword='area management/restriction/regulation zones and reporting units'
-			            or $englishKeyword='natural risk zones' or $englishKeyword='atmospheric conditions'
-			            or $englishKeyword='meteorological geographical features' or $englishKeyword='oceanographic geographical features'
-			            or $englishKeyword='sea regions' or $englishKeyword='bio-geographical regions'
-			            or $englishKeyword='habitats and biotopes' or $englishKeyword='species distribution'
-			            or $englishKeyword='energy resources' or $englishKeyword='mineral resources'">
-        <xsl:text>iii</xsl:text>
-      </xsl:when>
-      <!-- inspire annex cannot be established: leave empty -->
-    </xsl:choose>
-
-  </xsl:template>
 </xsl:stylesheet>

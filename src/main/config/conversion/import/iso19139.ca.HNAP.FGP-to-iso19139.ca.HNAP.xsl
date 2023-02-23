@@ -2,7 +2,8 @@
 <xsl:stylesheet version="2.0"
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <!-- There are some known discrepancies between FGP and HNAP due to misinterpretations of the standards
        This converter is to be used to fix these discrepancies until a resolution is made.
@@ -51,7 +52,33 @@
     match="gmd:country/gco:CharacterString[text()='Canada' and $mainLanguage='fra']/text()|
            gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()='Canada' and @locale=concat('#', $altLanguageId) and $altLanguage='fra']/text()"
     priority="10">
-    <xsl:text>Canada (le)</xsl:text>
+      <xsl:text>Canada (le)</xsl:text>
+  </xsl:template>
+
+  <xsl:template
+    match="gmd:CI_Address/gmd:country[gco:CharacterString[text()='Canada'] and not(gmd:PT_FreeText) and ($mainLanguage='fra' or $mainLanguage='eng')]"
+    priority="10">
+      <xsl:copy>
+        <xsl:attribute name="xsi:type">gmd:PT_FreeText_PropertyType</xsl:attribute>
+        <xsl:apply-templates select="node()|@*"/>
+        <gmd:PT_FreeText>
+            <gmd:textGroup>
+              <gmd:LocalisedCharacterString>
+                <xsl:attribute name="locale">
+                  <xsl:value-of select="concat('#', $altLanguageId)" />
+                </xsl:attribute>						
+                <xsl:choose>
+                  <xsl:when test="$mainLanguage='eng'">
+                    <xsl:text>Canada (le)</xsl:text>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:text>Canada</xsl:text>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </gmd:LocalisedCharacterString>
+            </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </xsl:copy>
   </xsl:template>
 
   <!-- FGP fix issue where some of the data does not have the correct gmd:metadataStandardName
@@ -116,6 +143,29 @@
         </gmd:resourceConstraints>
       </xsl:if>
       <xsl:apply-templates select="node()|@*"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <!--Add default LocalisedCharacterString to thumbnail -->
+  <xsl:template match="gmd:fileDescription[gco:CharacterString/text() != ''  and not(gmd:PT_FreeText)]">
+    <xsl:copy copy-namespaces="no">
+      <xsl:apply-templates select="node()|@*"/>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <xsl:choose>
+              <xsl:when test="$mainLanguage='eng'">
+                <gmd:LocalisedCharacterString locale="#fra">
+                  <xsl:value-of select="./gco:CharacterString/text()"/>
+                </gmd:LocalisedCharacterString>
+              </xsl:when>
+              <xsl:otherwise>
+                <gmd:LocalisedCharacterString locale="#eng">
+                  <xsl:value-of select="./gco:CharacterString/text()"/>
+                </gmd:LocalisedCharacterString>
+              </xsl:otherwise>
+            </xsl:choose>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
     </xsl:copy>
   </xsl:template>
 

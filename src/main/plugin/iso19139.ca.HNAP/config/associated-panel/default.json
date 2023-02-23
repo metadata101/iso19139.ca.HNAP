@@ -1,7 +1,7 @@
 {
   "config": {
     "display": "radio",
-    "loadMapCapabilities": "false",
+    "loadMapCapabilities": "true",
     "types": [{
       "label": "addOnlinesrc",
       "sources": {
@@ -21,7 +21,7 @@
           "required": true,
           "tooltip": "gmd:URL"
         },
-        "name": {"tooltip": "gmd:name"},
+        "name": {"tooltip": "gmd:name", "required": true},
         "desc": {
           "tooltip": "gmd:description",
           "required": true,
@@ -46,7 +46,8 @@
                   "eng": "Format",
                   "fra": "Format"
                 },
-                "thesaurus": "external.theme.GC_Resource_Formats"
+                "thesaurus": "external.theme.GC_Resource_Formats",
+                "numberOfSuggestions": "Infinity"
               },
               {
                 "type": "thesaurus",
@@ -86,6 +87,9 @@
         "name": {"param": "thumbnail_desc"}
       }
     }],
-    "multilingualFields": ["name", "desc"]
+    "multilingualFields": ["name", "desc"],
+    "wmsResources": {
+      "addLayerNamesMode": "url"
+    }
   }
 }

@@ -68,11 +68,9 @@
 
   <xsl:variable name="altLanguageId" select="/*[name(.)='gmd:MD_Metadata' or @gco:isoType='gmd:MD_Metadata']/gmd:locale/gmd:PT_Locale[gmd:languageCode/*/@codeListValue != $mainLanguage and (gmd:languageCode/*/@codeListValue = 'eng' or gmd:languageCode/*/@codeListValue = 'fra')]/@id"/>
 
-  <xsl:variable name="inspire-thesaurus"
-                select="if ($inspire!='false') then document(concat('file:///', $thesauriDir, '/external/thesauri/theme/inspire-theme.rdf')) else ''"/>
-  <xsl:variable name="inspire-theme" select="if ($inspire!='false') then $inspire-thesaurus//skos:Concept else ''"/>
-
   <xsl:variable name="government-names" select="document(concat('file:///', replace(concat($thesauriDir, '/local/thesauri/theme/GC_Government_Names.rdf'), '\\', '/')))"/>
+
+  <xsl:variable name="useDateAsTemporalExtent" select="false()"/>
 
   <xsl:template match="/">
 
@@ -152,8 +150,11 @@
 
       <xsl:for-each select="gmd:citation/gmd:CI_Citation">
 
-        <xsl:for-each
-          select="gmd:identifier/gmd:MD_Identifier/gmd:code//gmd:LocalisedCharacterString[@locale=$langId]">
+        <xsl:for-each select="gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString">
+          <Field name="identifier" string="{string(.)}" store="true" index="true"/>
+        </xsl:for-each>
+
+        <xsl:for-each select="gmd:identifier/gmd:RS_Identifier/gmd:code/gco:CharacterString">
           <Field name="identifier" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
 
@@ -174,18 +175,44 @@
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date/gco:Date">
-          <Field name="revisionDate" string="{string(.)}" store="true" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_368']/gmd:date">
+          <Field name="revisionDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+
+          <Field name="createDateMonth"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 8)}" store="true"
+                 index="true"/>
+          <Field name="createDateYear"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 5)}" store="true"
+                 index="true"/>
+
+          <xsl:if test="$useDateAsTemporalExtent">
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+          </xsl:if>
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_366']/gmd:date/gco:Date">
-          <Field name="createDate" string="{string(.)}" store="true" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_366']/gmd:date">
+          <Field name="createDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+
+          <Field name="createDateMonth"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 8)}" store="true"
+                 index="true"/>
+          <Field name="createDateYear"
+                 string="{substring(gco:Date[.!='']|gco:DateTime[.!=''], 0, 5)}" store="true"
+                 index="true"/>
+
+          <xsl:if test="$useDateAsTemporalExtent">
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+          </xsl:if>
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date/gco:Date">
-          <Field name="publicationDate" string="{string(.)}" store="true" index="true"/>
+          select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date">
+          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+
+          <xsl:if test="$useDateAsTemporalExtent">
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
+          </xsl:if>
         </xsl:for-each>
 
         <!-- fields used to search for metadata in paper or digital format -->
@@ -309,13 +336,18 @@
           <xsl:variable name="role"    select="../../../../gmd:role/*/@codeListValue"/>
           <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
           <xsl:variable name="logo"    select="../../../..//gmx:FileName/@src"/>
-          <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
-          <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+          <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress//gmd:LocalisedCharacterString[@locale=$langId]"/>
+          <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
           <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
-          <xsl:variable name="positionName"   select="../../../../gmd:positionName/gco:CharacterString/text()"/>
-          <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
-                                    gmd:deliveryPoint|gmd:postalCode|gmd:city|
-                                    gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+          <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
+
+          <xsl:variable name="deliveryPoint"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+          <xsl:variable name="postalCode"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:postalCode/gco:CharacterString/text()"/>
+          <xsl:variable name="city"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:city/gco:CharacterString/text()"/>
+          <xsl:variable name="administrativeArea"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+          <xsl:variable name="country"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:country//gmd:LocalisedCharacterString[@locale=$langId]/text()"/>
+
+          <xsl:variable name="address" select="string-join(($deliveryPoint, $postalCode, $city, $administrativeArea, $country), ', ')"/>
 
           <Field name="responsibleParty"
                  string="{concat($roleTranslation, '|resource|', ., '|', $logo, '|',  string-join($email, ','), '|', $individualName, '|', $positionName, '|', $address, '|', string-join($phone, ','))}"
@@ -421,6 +453,22 @@
         <xsl:for-each select="gmd:distance/gco:Distance/@uom">
           <Field name="distanceUom" string="{string(.)}" store="true" index="true"/>
         </xsl:for-each>
+
+        <xsl:for-each select="gmd:distance/gco:Distance">
+          <!-- Units may be encoded as
+          http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/ML_gmxUom.xml#m
+          in such case retrieve the unit acronym only. -->
+          <xsl:variable name="unit"
+                        select="if (contains(@uom, '#')) then substring-after(@uom, '#') else @uom"/>
+          <Field name="resolution" string="{concat(string(.), ' ', $unit)}" store="true"
+                 index="true"/>
+        </xsl:for-each>
+      </xsl:for-each>
+
+      <xsl:for-each select="gmd:resourceMaintenance/
+                                gmd:MD_MaintenanceInformation/gmd:maintenanceAndUpdateFrequency/
+                                gmd:MD_MaintenanceFrequencyCode/@codeListValue[. != '']">
+        <Field name="updateFrequency" string="{string(.)}" store="true" index="true"/>
       </xsl:for-each>
 
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -453,7 +501,7 @@
       <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
       <!--  Fields use to search on Service -->
 
-      <xsl:for-each select="srv:serviceType/gco:LocalName">
+      <xsl:for-each select="srv:serviceType/gco:LocalName[string(.)]">
         <Field name="serviceType" string="{string(.)}" store="true" index="true"/>
         <Field name="type" string="service-{string(.)}" store="true" index="true"/>
       </xsl:for-each>
@@ -505,13 +553,18 @@
       <xsl:variable name="role"    select="../../../../gmd:role/*/@codeListValue"/>
       <xsl:variable name="roleTranslation" select="util:getCodelistTranslation('gmd:CI_RoleCode', string($role), string($langCode_ISO639_2B))"/>
       <xsl:variable name="logo"    select="../../../..//gmx:FileName/@src"/>
-      <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
-      <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+      <xsl:variable name="email"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="phone"   select="../../../../gmd:contactInfo/*/gmd:phone/*/gmd:voice//gmd:LocalisedCharacterString[@locale=$langId]"/>
       <xsl:variable name="individualName" select="../../../../gmd:individualName/gco:CharacterString/text()"/>
-      <xsl:variable name="positionName"   select="../../../../gmd:positionName/gco:CharacterString/text()"/>
-      <xsl:variable name="address" select="string-join(../../../../gmd:contactInfo/*/gmd:address/*/(
-                                    gmd:deliveryPoint|gmd:postalCode|gmd:city|
-                                    gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+      <xsl:variable name="positionName"   select="../../../../gmd:positionName//gmd:LocalisedCharacterString[@locale=$langId]"/>
+
+      <xsl:variable name="deliveryPoint"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:deliveryPoint//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="postalCode"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:postalCode/gco:CharacterString/text()"/>
+      <xsl:variable name="city"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:city/gco:CharacterString/text()"/>
+      <xsl:variable name="administrativeArea"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:administrativeArea//gmd:LocalisedCharacterString[@locale=$langId]"/>
+      <xsl:variable name="country"   select="../../../../gmd:contactInfo/*/gmd:address/*/gmd:country//gmd:LocalisedCharacterString[@locale=$langId]"/>
+
+      <xsl:variable name="address" select="string-join(($deliveryPoint, $postalCode, $city, $administrativeArea, $country), ', ')"/>
 
       <Field name="responsibleParty"
              string="{concat($roleTranslation, '|metadata|', ., '|', $logo, '|',  string-join($email, ','), '|', $individualName, '|', $positionName, '|', $address, '|', string-join($phone, ','))}"
@@ -661,23 +714,20 @@
       </xsl:attribute>
     </Field>
 
-    <xsl:apply-templates select="." mode="codeList"/>
-
-  </xsl:template>
-
-  <!-- ========================================================================================= -->
-  <!-- codelist element, indexed, not stored nor tokenized -->
-
-  <xsl:template match="*[./*/@codeListValue]" mode="codeList">
-    <xsl:param name="name" select="name(.)"/>
-
-    <Field name="{$name}" string="{*/@codeListValue}" store="false" index="true"/>
-  </xsl:template>
-
-  <!-- ========================================================================================= -->
-
-  <xsl:template match="*" mode="codeList">
-    <xsl:apply-templates select="*" mode="codeList"/>
+    <!-- Index all codelist -->
+    <!-- Avoid gmd:fileType in gmd:MD_BrowseGraphic, not following the standard codelist structure in HNAP:
+          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115" codeListValue="RI_716">
+            <gco:CharacterString>png; png</gco:CharacterString>
+          </gmd:fileType>
+    -->
+    <xsl:for-each select=".//*[*/@codeListValue != '' and local-name() != 'MD_BrowseGraphic']">
+      <Field name="cl_{local-name()}"
+             string="{*/@codeListValue}"
+             store="true" index="true"/>
+      <Field name="cl_{concat(local-name(), '_text')}"
+             string="{util:getCodelistTranslation(name(*), string(*/@codeListValue), string($altLang_ISO639_2B))}"
+             store="true" index="true"/>
+    </xsl:for-each>
   </xsl:template>
 
 </xsl:stylesheet>
