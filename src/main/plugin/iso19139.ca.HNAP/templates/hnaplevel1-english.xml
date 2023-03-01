@@ -142,7 +142,7 @@
                   <gco:CharacterString>EPSG:4326</gco:CharacterString>
                </gmd:code>
                <gmd:codeSpace>
-                  <gco:CharacterString>http://www.epsg-registry.org</gco:CharacterString>
+                  <gco:CharacterString>https://epsg.io</gco:CharacterString>
                </gmd:codeSpace>
                <gmd:version>
                   <gco:CharacterString>8.2.6</gco:CharacterString>

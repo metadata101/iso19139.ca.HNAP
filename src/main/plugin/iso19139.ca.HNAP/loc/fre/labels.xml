@@ -947,14 +947,14 @@
     <description>Valeur alphanumérique pour l'identification d'une occurrence dans le domaine de valeurs</description>
     <condition>mandatory</condition>
     <helper rel="gmd:codeSpace">
-      <option title="http://www.epsg-registry.org" value="EPSG:3857">EPSG:3857 WGS 84 / Pseudo-Mercator</option>
-      <option title="http://www.epsg-registry.org" value="EPSG:3978">EPSG:3978 Lambert Conic Conformal (Nad83)</option>
-      <option title="http://www.epsg-registry.org" value="EPSG:3979">EPSG:3979 Lambert Conic Conformal (CSRS)</option>
-      <option title="http://www.epsg-registry.org" value="EPSG:4269">EPSG:4269 LL (Nad83)</option>
-      <option title="http://www.epsg-registry.org" value="EPSG:4326">EPSG:4326 WGS 84</option>
-      <option title="http://www.epsg-registry.org" value="EPSG:26917">EPSG:26917 NAD83 / UTM zone 17N</option>
-      <option title="http://www.spatialreference.org" value="SR-ORG:16">SR-ORG:16</option>
-      <option title="http://www.spatialreference.org" value="SR-ORG:29">SR-ORG:29</option>
+      <option title="https://epsg.io" value="EPSG:3857">EPSG:3857 WGS 84 / Pseudo-Mercator</option>
+      <option title="https://epsg.io" value="EPSG:3978">EPSG:3978 Lambert Conic Conformal (Nad83)</option>
+      <option title="https://epsg.io" value="EPSG:3979">EPSG:3979 Lambert Conic Conformal (CSRS)</option>
+      <option title="https://epsg.io" value="EPSG:4269">EPSG:4269 LL (Nad83)</option>
+      <option title="https://epsg.io" value="EPSG:4326">EPSG:4326 WGS 84</option>
+      <option title="https://epsg.io" value="EPSG:26917">EPSG:26917 NAD83 / UTM zone 17N</option>
+      <option title="https://www.spatialreference.org" value="SR-ORG:16">SR-ORG:16</option>
+      <option title="https://www.spatialreference.org" value="SR-ORG:29">SR-ORG:29</option>
     </helper>
   </element>
   <element name="gmd:code" id="207.0" context="gmd:MD_Identifier">
