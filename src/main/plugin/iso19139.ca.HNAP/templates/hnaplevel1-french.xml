@@ -424,16 +424,16 @@
                <gmd:geographicElement>
                   <gmd:EX_GeographicBoundingBox>
                      <gmd:westBoundLongitude>
-                        <gco:Decimal>-75.73595988</gco:Decimal>
+                        <gco:Decimal>-141.003</gco:Decimal>
                      </gmd:westBoundLongitude>
                      <gmd:eastBoundLongitude>
-                        <gco:Decimal>-75.67519175</gco:Decimal>
+                        <gco:Decimal>-52.6174</gco:Decimal>
                      </gmd:eastBoundLongitude>
                      <gmd:southBoundLatitude>
-                        <gco:Decimal>45.3964596</gco:Decimal>
+                        <gco:Decimal>41.6755</gco:Decimal>
                      </gmd:southBoundLatitude>
                      <gmd:northBoundLatitude>
-                        <gco:Decimal>45.42176735</gco:Decimal>
+                        <gco:Decimal>83.1139</gco:Decimal>
                      </gmd:northBoundLatitude>
                   </gmd:EX_GeographicBoundingBox>
                </gmd:geographicElement>
