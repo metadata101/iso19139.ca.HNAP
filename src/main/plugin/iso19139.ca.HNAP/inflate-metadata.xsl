@@ -116,7 +116,11 @@
       <xsl:apply-templates select="gmd:fileIdentifier" />
       <xsl:apply-templates select="gmd:language" />
       <xsl:apply-templates select="gmd:characterSet" />
-
+      <xsl:if test="not(gmd:MD_Metadata/gmd:characterSet)">
+        <gmd:characterSet>
+          <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+        </gmd:characterSet>
+      </xsl:if>
 
       <xsl:apply-templates select="gmd:parentIdentifier" />
       <xsl:apply-templates select="gmd:hierarchyLevel" />
