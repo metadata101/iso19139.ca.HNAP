@@ -167,7 +167,7 @@
                  index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
@@ -184,7 +184,7 @@
                  index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
@@ -192,10 +192,10 @@
         <!-- Publication -->
         <xsl:for-each
           select="gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue='RI_367']/gmd:date">
-          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+          <Field name="publicationDate" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
 
           <xsl:if test="$useDateAsTemporalExtent">
-            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="false" index="true"/>
+            <Field name="tempExtentBegin" string="{string(gco:Date[.!='']|gco:DateTime[.!=''])}" store="true" index="true"/>
           </xsl:if>
         </xsl:for-each>
 
@@ -253,9 +253,9 @@
               </xsl:call-template>
             </xsl:variable>
 
-            <Field name="tempExtentBegin" string="{lower-case(substring-before($times,'|'))}" store="false"
+            <Field name="tempExtentBegin" string="{lower-case(substring-before($times,'|'))}" store="true"
                    index="true"/>
-            <Field name="tempExtentEnd" string="{lower-case(substring-after($times,'|'))}" store="false" index="true"/>
+            <Field name="tempExtentEnd" string="{lower-case(substring-after($times,'|'))}" store="true" index="true"/>
           </xsl:for-each>
 
         </xsl:for-each>
