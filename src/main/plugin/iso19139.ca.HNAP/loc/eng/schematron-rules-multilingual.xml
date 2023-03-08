@@ -83,4 +83,6 @@
   <ECThesaurusOrg>Thesaurus cited responsible party organisation is required</ECThesaurusOrg>
   <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
   <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
+
+  <ElectronicMailFormat>Electronic mail address format is invalid (for example abc@abc.com)</ElectronicMailFormat>
 </strings>
