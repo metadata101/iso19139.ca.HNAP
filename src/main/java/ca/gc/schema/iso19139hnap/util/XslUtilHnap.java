@@ -44,6 +44,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class XslUtilHnap {
@@ -253,5 +255,17 @@ public class XslUtilHnap {
         }
 
         return result;
+    }
+
+    /**
+     * Validate if email format.
+     * See more info: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
+     * @param emailAddress
+     * @return boolean
+     */
+    public static boolean isEmailFormat(String emailAddress) {
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
+        Matcher matcher = pattern.matcher(emailAddress);
+        return matcher.matches();
     }
 }

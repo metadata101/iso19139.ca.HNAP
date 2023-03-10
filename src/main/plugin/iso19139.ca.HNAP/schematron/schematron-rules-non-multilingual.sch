@@ -160,18 +160,6 @@
     />
   </xsl:function>
 
-  <!--Check email format-->
-  <xsl:function name="geonet:isEmailAddressFormat" as="xs:boolean">
-    <xsl:param name="inputEmailAdress"/>
-        <xsl:choose>
-            <xsl:when test="matches($inputEmailAdress, '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9]+$')">
-                <xsl:value-of select="true()"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="false()"/>
-            </xsl:otherwise>
-        </xsl:choose>
-  </xsl:function>
 
   <!-- =============================================================
   EC schematron rules for multilingual validation in metadata editor:
@@ -238,7 +226,7 @@
       <sch:let name="missing" value="not($emailAddress)
                 or (@gco:nilReason)" />
 
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
 
       <sch:assert
         test="not($missing)"
@@ -338,7 +326,7 @@
 
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
       <sch:let name="missing" value="not($emailAddress) or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
 
       <sch:assert
         test="not($missing)"
@@ -417,7 +405,7 @@
       <sch:let name="emailAddress" value="string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString)" />
       <sch:let name="missingEmail" value="not($emailAddress)
               or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
 
       <sch:assert
         test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail))))"
@@ -583,7 +571,7 @@
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
       <sch:let name="missing" value="not($emailAddress)
                   or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
 
       <sch:assert
         test="not($missing)"

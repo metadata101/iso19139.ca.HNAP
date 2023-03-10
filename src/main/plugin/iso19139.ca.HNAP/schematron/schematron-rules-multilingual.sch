@@ -164,18 +164,6 @@
     />
   </xsl:function>
 
-  <!--Check email format-->
-    <xsl:function name="geonet:isEmailAddressFormat" as="xs:boolean">
-      <xsl:param name="inputEmailAdress"/>
-          <xsl:choose>
-              <xsl:when test="matches($inputEmailAdress, '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\.[a-zA-Z0-9]+$')">
-                  <xsl:value-of select="true()"/>
-              </xsl:when>
-              <xsl:otherwise>
-                  <xsl:value-of select="false()"/>
-              </xsl:otherwise>
-          </xsl:choose>
-    </xsl:function>
 
   <!-- =============================================================
   EC schematron rules for multilingual validation in metadata editor:
@@ -369,8 +357,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
@@ -597,8 +585,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
@@ -707,8 +695,8 @@
 
       <sch:let name="missingEmailOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
 
       <sch:assert
         test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
@@ -1015,8 +1003,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddress)"/>
-   	  <sch:let name="isOtherLangEmailAddressFormat" value="geonet:isEmailAddressFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+   	  <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"

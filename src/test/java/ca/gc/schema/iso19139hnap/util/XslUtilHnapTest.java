@@ -31,6 +31,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Tests for {@link XslUtilHnap} class.
@@ -130,6 +132,18 @@ public class XslUtilHnapTest {
         actualResult = XslUtilHnap.removeFromUrl(paramsToRemove, "invalid url");
         assertEquals("invalid url", "invalid url", actualResult);
 
+
+    }
+
+    @Test
+    public void testIsEmailAddress() {
+        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost"));
+        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com"));
+
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com."));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost."));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@"));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test"));
 
     }
 
