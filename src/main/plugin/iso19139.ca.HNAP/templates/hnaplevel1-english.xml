@@ -389,7 +389,7 @@
          </gmd:language>
          <gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
-                                     codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+                                     codeListValue=""/>
          </gmd:characterSet>
          <gmd:topicCategory gco:nilReason="missing">
             <gmd:MD_TopicCategoryCode/>
