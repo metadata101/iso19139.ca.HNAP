@@ -99,6 +99,59 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- FGP fix issue in gmd:administrativeArea where gco:CharacterString has no text but gmd:PT_FreeText has.  -->
+  <xsl:template
+    match="gmd:administrativeArea[not(gco:CharacterString/text()) and gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/text()]/gco:CharacterString"
+    priority="10">
+    <xsl:copy>
+        <xsl:value-of select="../gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/text()"/>
+    </xsl:copy>
+  </xsl:template> 
+
+  <!-- FGP fix issue in gmd:administrativeArea where gmd:PT_FreeText has incorrect provincial name of Québec in English.  -->
+  <xsl:template
+    match="gmd:administrativeArea/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()='Québec' and @locale='#eng']/text()"
+    priority="10">
+        <xsl:text>Quebec</xsl:text>
+  </xsl:template>
+  
+  <!--Add gmd:administrativeArea LocalisedCharacterString if not exists. Special case for Québec in French and Quebec in English -->
+  <xsl:template match="gmd:administrativeArea[gco:CharacterString/text()  and not(gmd:PT_FreeText)]"
+    priority="10">
+    <xsl:copy copy-namespaces="no">
+      <xsl:apply-templates select="node()|@*"/>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <xsl:choose>
+              <xsl:when test="$mainLanguage='eng'">
+                <gmd:LocalisedCharacterString locale="#fra">
+                   <xsl:choose>
+                      <xsl:when test="./gco:CharacterString/text() = 'Quebec'">
+                         <xsl:value-of select="'Québec'"/>
+                      </xsl:when>
+                      <xsl:otherwise>
+                         <xsl:value-of select="./gco:CharacterString/text()"/>
+                      </xsl:otherwise>
+                   </xsl:choose>
+                </gmd:LocalisedCharacterString>
+              </xsl:when>
+              <xsl:otherwise>
+                <gmd:LocalisedCharacterString locale="#eng">
+                   <xsl:choose>
+                      <xsl:when test="./gco:CharacterString/text() = 'Québec'">
+                         <xsl:value-of select="'Quebec'"/>
+                      </xsl:when>
+                      <xsl:otherwise>
+                         <xsl:value-of select="./gco:CharacterString/text()"/>
+                      </xsl:otherwise>
+                   </xsl:choose>
+                </gmd:LocalisedCharacterString>
+              </xsl:otherwise>
+            </xsl:choose>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+    </xsl:copy>
+  </xsl:template>
 
   <!-- ISO19139 are compatible with HNAP however for to import to process then records as HNAP we need to ensure that the metadataStandardName is set correctly -->
 
