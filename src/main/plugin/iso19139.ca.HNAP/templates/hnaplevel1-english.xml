@@ -36,34 +36,49 @@
                </gmd:textGroup>
             </gmd:PT_FreeText>
          </gmd:organisationName>
+         <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString />
+         </gmd:positionName>
          <gmd:contactInfo>
             <gmd:CI_Contact>
                <gmd:phone>
-                  <gmd:CI_Telephone/>
+                  <gmd:CI_Telephone>
+                     <gmd:voice gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
+                        <gmd:PT_FreeText>
+                           <gmd:textGroup>
+                              <gmd:LocalisedCharacterString locale="#fra" />
+                           </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                     </gmd:voice>
+                     <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString />
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
                </gmd:phone>
                <gmd:address>
                   <gmd:CI_Address>
-                     <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>200 Kent Street</gco:CharacterString>
+                     <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">200 rue Kent</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#fra"/>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:deliveryPoint>
-                     <gmd:city>
-                        <gco:CharacterString>Ottawa</gco:CharacterString>
+                     <gmd:city gco:nilReason="missing">
+                        <gco:CharacterString />
                      </gmd:city>
-                     <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Ontario</gco:CharacterString>
+                        <gmd:administrativeArea gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">Ontario</gmd:LocalisedCharacterString>
+                             <gmd:LocalisedCharacterString locale="#fra" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:administrativeArea>
-                     <gmd:postalCode>
-                        <gco:CharacterString>K1A 0E6</gco:CharacterString>
+                     <gmd:postalCode gco:nilReason="missing">
+                       <gco:CharacterString />
                      </gmd:postalCode>
                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
                         <gco:CharacterString>Canada</gco:CharacterString>
@@ -73,11 +88,11 @@
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:country>
-                     <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>min@dfo-mpo.gc.ca</gco:CharacterString>
+                     <gmd:electronicMailAddress gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#fra">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                             <gmd:LocalisedCharacterString locale="#fra" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:electronicMailAddress>
@@ -85,19 +100,27 @@
                </gmd:address>
                <gmd:onlineResource>
                   <gmd:CI_OnlineResource>
-                     <gmd:linkage>
-                        <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
+                     <gmd:linkage gco:nilReason="missing">
+                        <gmd:URL />
                      </gmd:linkage>
                      <gmd:protocol>
                         <gco:CharacterString>https</gco:CharacterString>
                      </gmd:protocol>
                   </gmd:CI_OnlineResource>
                </gmd:onlineResource>
+               <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                  <gco:CharacterString />
+                  <gmd:PT_FreeText>
+                     <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#fra" />
+                     </gmd:textGroup>
+                  </gmd:PT_FreeText>
+               </gmd:hoursOfService>
             </gmd:CI_Contact>
          </gmd:contactInfo>
          <gmd:role>
             <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
-                             codeListValue="RI_418">author; auteur</gmd:CI_RoleCode>
+                             codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
          </gmd:role>
       </gmd:CI_ResponsibleParty>
   </gmd:contact>
@@ -138,14 +161,14 @@
       <gmd:MD_ReferenceSystem>
          <gmd:referenceSystemIdentifier>
             <gmd:RS_Identifier>
-               <gmd:code>
-                  <gco:CharacterString>EPSG:4326</gco:CharacterString>
+               <gmd:code gco:nilReason="missing">
+                  <gco:CharacterString />
                </gmd:code>
-               <gmd:codeSpace>
-                  <gco:CharacterString>https://epsg.io</gco:CharacterString>
+               <gmd:codeSpace gco:nilReason="missing">
+                  <gco:CharacterString />
                </gmd:codeSpace>
-               <gmd:version>
-                  <gco:CharacterString>8.2.6</gco:CharacterString>
+               <gmd:version gco:nilReason="missing">
+                  <gco:CharacterString />
                </gmd:version>
             </gmd:RS_Identifier>
          </gmd:referenceSystemIdentifier>
@@ -198,18 +221,33 @@
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
+                     <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
+                     </gmd:positionName>
                      <gmd:contactInfo>
                         <gmd:CI_Contact>
                            <gmd:phone>
-                              <gmd:CI_Telephone/>
+                              <gmd:CI_Telephone>
+                                 <gmd:voice gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString />
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                           <gmd:LocalisedCharacterString locale="#fra" />
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:voice>
+                                 <gmd:facsimile gco:nilReason="missing">
+                                    <gco:CharacterString />
+                                 </gmd:facsimile>
+                              </gmd:CI_Telephone>
                            </gmd:phone>
                            <gmd:address>
                               <gmd:CI_Address>
-                                 <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>200 Kent Street</gco:CharacterString>
+                                 <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">200 rue Kent</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
@@ -218,18 +256,28 @@
                                  </gmd:city>
                                  <gmd:administrativeArea gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
                                     <gco:CharacterString/>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                         <gmd:LocalisedCharacterString locale="#fra" />
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
                                  </gmd:administrativeArea>
                                  <gmd:postalCode gco:nilReason="missing">
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
-                                 <gmd:country gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString/>
-                                 </gmd:country>
-                                 <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>min@dfo-mpo.gc.ca</gco:CharacterString>
+                                 <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>Canada</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">min@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:country>
+                                 <gmd:electronicMailAddress gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString/>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -237,19 +285,27 @@
                            </gmd:address>
                            <gmd:onlineResource>
                               <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
+                                 <gmd:linkage gco:nilReason="missing">
+                                    <gmd:URL />
                                  </gmd:linkage>
                                  <gmd:protocol>
                                     <gco:CharacterString>https</gco:CharacterString>
                                  </gmd:protocol>
                               </gmd:CI_OnlineResource>
                            </gmd:onlineResource>
+                           <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString />
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#fra" />
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:hoursOfService>
                         </gmd:CI_Contact>
                      </gmd:contactInfo>
                      <gmd:role>
                         <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
-                                         codeListValue="RI_418">author; auteur</gmd:CI_RoleCode>
+                                         codeListValue="RI_415">principalInvestigator; chercheurPrincipal</gmd:CI_RoleCode>
                      </gmd:role>
                   </gmd:CI_ResponsibleParty>
                </gmd:citedResponsibleParty>
@@ -287,7 +343,7 @@
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101"
-                                          codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+                                           codeListValue="theme" />
                </gmd:type>
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
@@ -306,7 +362,7 @@
                            </gmd:date>
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
-							                       codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
+                                                   codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                            </gmd:dateType>
                         </gmd:CI_Date>
                      </gmd:date>
@@ -317,7 +373,7 @@
                            </gmd:date>
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
-                                                   codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                                                   codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
                            </gmd:dateType>
                         </gmd:CI_Date>
                      </gmd:date>
@@ -357,7 +413,7 @@
                </gmd:accessConstraints>
                <gmd:useConstraints>
                   <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107"
-                                          codeListValue=""/>
+                                          codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
                </gmd:useConstraints>
                <gmd:otherConstraints gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
                   <gco:CharacterString/>
@@ -381,15 +437,15 @@
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
          <gmd:spatialRepresentationType>
-            <gmd:MD_SpatialRepresentationTypeCode codeListValue="RI_635"
-                                                  codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109">vector; vecteur</gmd:MD_SpatialRepresentationTypeCode>
+            <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
+                                                  codeListValue=""/>
          </gmd:spatialRepresentationType>
          <gmd:language>
             <gco:CharacterString>eng; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
-                                     codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+                                     codeListValue=""/>
          </gmd:characterSet>
          <gmd:topicCategory gco:nilReason="missing">
             <gmd:MD_TopicCategoryCode/>
@@ -448,8 +504,8 @@
       <gmd:MD_Distribution>
          <gmd:distributionFormat>
             <gmd:MD_Format>
-               <gmd:name>
-                  <gco:CharacterString>DOC</gco:CharacterString>
+               <gmd:name gco:nilReason="missing">
+                  <gco:CharacterString />
                </gmd:name>
                <gmd:version gco:nilReason="missing">
                   <gco:CharacterString/>
@@ -471,18 +527,33 @@
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
+                     <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
+                     </gmd:positionName>
                      <gmd:contactInfo>
                         <gmd:CI_Contact>
                            <gmd:phone>
-                              <gmd:CI_Telephone/>
+                              <gmd:CI_Telephone>
+                                 <gmd:voice gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString />
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:voice>
+                                 <gmd:facsimile gco:nilReason="missing">
+                                    <gco:CharacterString />
+                                 </gmd:facsimile>
+                              </gmd:CI_Telephone>
                            </gmd:phone>
                            <gmd:address>
                               <gmd:CI_Address>
-                                 <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>200 Kent Street</gco:CharacterString>
+                                 <gmd:deliveryPoint gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">200 rue Kent</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
@@ -491,18 +562,28 @@
                                  </gmd:city>
                                  <gmd:administrativeArea gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
                                     <gco:CharacterString/>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
                                  </gmd:administrativeArea>
                                  <gmd:postalCode gco:nilReason="missing">
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
-                                 <gmd:country gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString/>
-                                 </gmd:country>
-                                 <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>chsinfo@dfo-mpo.gc.ca</gco:CharacterString>
+                                 <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString>Canada</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#fra">chsinfo@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
+                                       </gmd:textGroup>
+                                    </gmd:PT_FreeText>
+                                 </gmd:country>
+                                 <gmd:electronicMailAddress gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                                    <gco:CharacterString/>
+                                    <gmd:PT_FreeText>
+                                       <gmd:textGroup>
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -510,14 +591,22 @@
                            </gmd:address>
                            <gmd:onlineResource>
                               <gmd:CI_OnlineResource>
-                                 <gmd:linkage>
-                                    <gmd:URL>https://www.dfo-mpo.gc.ca/</gmd:URL>
+                                 <gmd:linkage gco:nilReason="missing">
+                                    <gmd:URL />
                                  </gmd:linkage>
                                  <gmd:protocol>
                                     <gco:CharacterString>https</gco:CharacterString>
                                  </gmd:protocol>
                               </gmd:CI_OnlineResource>
                            </gmd:onlineResource>
+                           <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                              <gco:CharacterString />
+                              <gmd:PT_FreeText>
+                                 <gmd:textGroup>
+                                    <gmd:LocalisedCharacterString locale="#fra" />
+                                 </gmd:textGroup>
+                              </gmd:PT_FreeText>
+                           </gmd:hoursOfService>
                         </gmd:CI_Contact>
                      </gmd:contactInfo>
                      <gmd:role>
