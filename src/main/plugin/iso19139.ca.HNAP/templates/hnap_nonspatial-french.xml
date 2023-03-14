@@ -21,7 +21,7 @@
   </gmd:characterSet>
    <gmd:hierarchyLevel>
       <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
-                        codeListValue="RI_622">dataset; jeuDonnées</gmd:MD_ScopeCode>
+                        codeListValue="RI_624">nonGeographicDataset; JeuDonnéesNonGéographique</gmd:MD_ScopeCode>
    </gmd:hierarchyLevel>
    <gmd:contact>
       <gmd:CI_ResponsibleParty>
@@ -62,26 +62,26 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng"/>
+                              <gmd:LocalisedCharacterString locale="#eng" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:deliveryPoint>
-                     <gmd:city gco:nilReason="missing">
-                        <gco:CharacterString />
+                     <gmd:city>
+                        <gco:CharacterString>Ottawa</gco:CharacterString>
                      </gmd:city>
-                        <gmd:administrativeArea gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString />
+                     <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Ontario</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                             <gmd:LocalisedCharacterString locale="#eng" />
+                              <gmd:LocalisedCharacterString locale="#eng" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:administrativeArea>
                      <gmd:postalCode gco:nilReason="missing">
-                       <gco:CharacterString />
+                        <gco:CharacterString />
                      </gmd:postalCode>
                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Canada (le)</gco:CharacterString>
+                        <gco:CharacterString>Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
                               <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
@@ -92,7 +92,7 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                             <gmd:LocalisedCharacterString locale="#eng" />
+                              <gmd:LocalisedCharacterString locale="#eng" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:electronicMailAddress>
@@ -157,32 +157,15 @@
          </gmd:characterEncoding>
       </gmd:PT_Locale>
    </gmd:locale>
-   <gmd:referenceSystemInfo>
-      <gmd:MD_ReferenceSystem>
-         <gmd:referenceSystemIdentifier>
-            <gmd:RS_Identifier>
-               <gmd:code gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:code>
-               <gmd:codeSpace gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:codeSpace>
-               <gmd:version gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:version>
-            </gmd:RS_Identifier>
-         </gmd:referenceSystemIdentifier>
-      </gmd:MD_ReferenceSystem>
-  </gmd:referenceSystemInfo>
    <gmd:identificationInfo>
       <gmd:MD_DataIdentification>
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Profile - PNAH niveau 1 (langue de métadonnées: français)</gco:CharacterString>
+                  <gco:CharacterString>Profil - PNAH Ensemble de données non géographiques (langue de métadonnées: français)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Level 1 (metadata language: French)</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Non Geographic Dataset (metadata language: French)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:title>
@@ -266,15 +249,15 @@
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
                                  <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>Canada (Le)</gco:CharacterString>
-                                    <gmd:PT_FreeText>
+                                    <gco:CharacterString>Canada</gco:CharacterString>
+				    <gmd:PT_FreeText>
                                        <gmd:textGroup>
                                           <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:country>
                                  <gmd:electronicMailAddress gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString/>
+                                    <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
                                           <gmd:LocalisedCharacterString locale="#eng" />
@@ -343,7 +326,7 @@
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101"
-                                           codeListValue="theme" />
+                                          codeListValue="theme" />
                </gmd:type>
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
@@ -362,7 +345,7 @@
                            </gmd:date>
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
-                                                   codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+							                       codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                            </gmd:dateType>
                         </gmd:CI_Date>
                      </gmd:date>
@@ -436,10 +419,6 @@
                </gmd:userNote>
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
-         <gmd:spatialRepresentationType>
-            <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
-                                                  codeListValue=""/>
-         </gmd:spatialRepresentationType>
          <gmd:language>
             <gco:CharacterString>fra; CAN</gco:CharacterString>
          </gmd:language>
@@ -465,34 +444,6 @@
                      </gmd:extent>
                   </gmd:EX_TemporalExtent>
                </gmd:temporalElement>
-            </gmd:EX_Extent>
-         </gmd:extent>
-         <gmd:extent>
-            <gmd:EX_Extent>
-               <gmd:description gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString/>
-                  <gmd:PT_FreeText>
-                     <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng"/>
-                     </gmd:textGroup>
-                  </gmd:PT_FreeText>
-               </gmd:description>
-               <gmd:geographicElement>
-                  <gmd:EX_GeographicBoundingBox>
-                     <gmd:westBoundLongitude>
-                        <gco:Decimal>-141.003</gco:Decimal>
-                     </gmd:westBoundLongitude>
-                     <gmd:eastBoundLongitude>
-                        <gco:Decimal>-52.6174</gco:Decimal>
-                     </gmd:eastBoundLongitude>
-                     <gmd:southBoundLatitude>
-                        <gco:Decimal>41.6755</gco:Decimal>
-                     </gmd:southBoundLatitude>
-                     <gmd:northBoundLatitude>
-                        <gco:Decimal>83.1139</gco:Decimal>
-                     </gmd:northBoundLatitude>
-                  </gmd:EX_GeographicBoundingBox>
-               </gmd:geographicElement>
             </gmd:EX_Extent>
          </gmd:extent>
          <gmd:supplementalInformation gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
@@ -572,7 +523,7 @@
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
                                  <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>Canada (le)</gco:CharacterString>
+                                    <gco:CharacterString>Canada</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
                                           <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>

@@ -13,7 +13,7 @@
       <gco:CharacterString></gco:CharacterString>
    </gmd:fileIdentifier>
    <gmd:language>
-      <gco:CharacterString>fra; CAN</gco:CharacterString>
+      <gco:CharacterString>eng; CAN</gco:CharacterString>
    </gmd:language>
    <gmd:characterSet>
       <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
@@ -21,7 +21,7 @@
   </gmd:characterSet>
    <gmd:hierarchyLevel>
       <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
-                        codeListValue="RI_622">dataset; jeuDonnées</gmd:MD_ScopeCode>
+                        codeListValue="RI_624">nonGeographicDataset; JeuDonnéesNonGéographique</gmd:MD_ScopeCode>
    </gmd:hierarchyLevel>
    <gmd:contact>
       <gmd:CI_ResponsibleParty>
@@ -29,10 +29,10 @@
             <gco:CharacterString/>
          </gmd:individualName>
          <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-            <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+            <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
             <gmd:PT_FreeText>
                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+                  <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
                </gmd:textGroup>
             </gmd:PT_FreeText>
          </gmd:organisationName>
@@ -47,7 +47,7 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng" />
+                              <gmd:LocalisedCharacterString locale="#fra" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:voice>
@@ -62,7 +62,7 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng"/>
+                              <gmd:LocalisedCharacterString locale="#fra"/>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:deliveryPoint>
@@ -73,7 +73,7 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                             <gmd:LocalisedCharacterString locale="#eng" />
+                             <gmd:LocalisedCharacterString locale="#fra" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:administrativeArea>
@@ -81,10 +81,10 @@
                        <gco:CharacterString />
                      </gmd:postalCode>
                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Canada (le)</gco:CharacterString>
+                        <gco:CharacterString>Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:country>
@@ -92,7 +92,7 @@
                         <gco:CharacterString />
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                             <gmd:LocalisedCharacterString locale="#eng" />
+                             <gmd:LocalisedCharacterString locale="#fra" />
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:electronicMailAddress>
@@ -112,7 +112,7 @@
                   <gco:CharacterString />
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng" />
+                        <gmd:LocalisedCharacterString locale="#fra" />
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:hoursOfService>
@@ -128,10 +128,10 @@
       <gco:DateTime>2020-11-13T22:04:11</gco:DateTime>
    </gmd:dateStamp>
    <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
-      <gco:CharacterString>Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gco:CharacterString>
+      <gco:CharacterString>North American Profile of ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
       <gmd:PT_FreeText>
          <gmd:textGroup>
-            <gmd:LocalisedCharacterString locale="#eng">North American Profile of ISO 19115:2003 - Geographic information - Metadata</gmd:LocalisedCharacterString>
+            <gmd:LocalisedCharacterString locale="#fra">Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gmd:LocalisedCharacterString>
          </gmd:textGroup>
       </gmd:PT_FreeText>
    </gmd:metadataStandardName>
@@ -142,10 +142,10 @@
       <gco:CharacterString/>
    </gmd:dataSetURI>
    <gmd:locale>
-      <gmd:PT_Locale id="eng">
+      <gmd:PT_Locale id="fra">
          <gmd:languageCode>
             <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
-                              codeListValue="eng">English; Anglais</gmd:LanguageCode>
+                              codeListValue="fra">French; Français</gmd:LanguageCode>
          </gmd:languageCode>
          <gmd:country>
             <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
@@ -156,33 +156,16 @@
                                      codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
          </gmd:characterEncoding>
       </gmd:PT_Locale>
-   </gmd:locale>
-   <gmd:referenceSystemInfo>
-      <gmd:MD_ReferenceSystem>
-         <gmd:referenceSystemIdentifier>
-            <gmd:RS_Identifier>
-               <gmd:code gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:code>
-               <gmd:codeSpace gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:codeSpace>
-               <gmd:version gco:nilReason="missing">
-                  <gco:CharacterString />
-               </gmd:version>
-            </gmd:RS_Identifier>
-         </gmd:referenceSystemIdentifier>
-      </gmd:MD_ReferenceSystem>
-  </gmd:referenceSystemInfo>
+  </gmd:locale>
    <gmd:identificationInfo>
       <gmd:MD_DataIdentification>
          <gmd:citation>
             <gmd:CI_Citation>
                <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Profile - PNAH niveau 1 (langue de métadonnées: français)</gco:CharacterString>
+                  <gco:CharacterString>Profile - HNAP Non Geographic Dataset (metadata language: English)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng">Profile - HNAP Level 1 (metadata language: French)</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#fra">Profile - PNAH Jeu Données Non Géographique (langue de métadonnées: anglais)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:title>
@@ -214,10 +197,10 @@
                         <gco:CharacterString/>
                      </gmd:individualName>
                      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+                        <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
@@ -232,7 +215,7 @@
                                     <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                           <gmd:LocalisedCharacterString locale="#eng" />
+                                           <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:voice>
@@ -247,7 +230,7 @@
                                     <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
@@ -258,7 +241,7 @@
                                     <gco:CharacterString/>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                         <gmd:LocalisedCharacterString locale="#eng" />
+                                         <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:administrativeArea>
@@ -266,10 +249,10 @@
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
                                  <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>Canada (Le)</gco:CharacterString>
+                                    <gco:CharacterString>Canada</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:country>
@@ -277,7 +260,7 @@
                                     <gco:CharacterString/>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -297,7 +280,7 @@
                               <gco:CharacterString />
                               <gmd:PT_FreeText>
                                  <gmd:textGroup>
-                                    <gmd:LocalisedCharacterString locale="#eng" />
+                                    <gmd:LocalisedCharacterString locale="#fra" />
                                  </gmd:textGroup>
                               </gmd:PT_FreeText>
                            </gmd:hoursOfService>
@@ -315,7 +298,7 @@
             <gco:CharacterString/>
             <gmd:PT_FreeText>
                <gmd:textGroup>
-                  <gmd:LocalisedCharacterString locale="#eng"/>
+                  <gmd:LocalisedCharacterString locale="#fra"/>
                </gmd:textGroup>
             </gmd:PT_FreeText>
          </gmd:abstract>
@@ -337,7 +320,7 @@
                   <gco:CharacterString/>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng"/>
+                        <gmd:LocalisedCharacterString locale="#fra"/>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:keyword>
@@ -348,10 +331,10 @@
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
                      <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Thésaurus des sujets de base du gouvernement du Canada</gco:CharacterString>
+                        <gco:CharacterString>Government of Canada Core Subject Thesaurus</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada Core Subject Thesaurus</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#fra">Thésaurus des sujets de base du gouvernement du Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:title>
@@ -380,10 +363,10 @@
                      <gmd:citedResponsibleParty>
                         <gmd:CI_ResponsibleParty>
                            <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                              <gco:CharacterString>Gouvernement du Canada; Bibliothèque et Archives Canada</gco:CharacterString>
+                              <gco:CharacterString>Government of Canada; Library and Archives Canada</gco:CharacterString>
                               <gmd:PT_FreeText>
                                  <gmd:textGroup>
-                                    <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Library and Archives Canada</gmd:LocalisedCharacterString>
+                                    <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Bibliothèque et Archives Canada</gmd:LocalisedCharacterString>
                                  </gmd:textGroup>
                               </gmd:PT_FreeText>
                            </gmd:organisationName>
@@ -400,10 +383,10 @@
          <gmd:resourceConstraints>
             <gmd:MD_LegalConstraints>
                <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString>Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gco:CharacterString>
+                  <gco:CharacterString>Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gco:CharacterString>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gmd:LocalisedCharacterString>
+                        <gmd:LocalisedCharacterString locale="#fra">Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gmd:LocalisedCharacterString>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:useLimitation>
@@ -419,7 +402,7 @@
                   <gco:CharacterString/>
                   <gmd:PT_FreeText>
                      <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng"/>
+                        <gmd:LocalisedCharacterString locale="#fra"/>
                      </gmd:textGroup>
                   </gmd:PT_FreeText>
                </gmd:otherConstraints>
@@ -436,12 +419,8 @@
                </gmd:userNote>
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
-         <gmd:spatialRepresentationType>
-            <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
-                                                  codeListValue=""/>
-         </gmd:spatialRepresentationType>
          <gmd:language>
-            <gco:CharacterString>fra; CAN</gco:CharacterString>
+            <gco:CharacterString>eng; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
@@ -465,34 +444,6 @@
                      </gmd:extent>
                   </gmd:EX_TemporalExtent>
                </gmd:temporalElement>
-            </gmd:EX_Extent>
-         </gmd:extent>
-         <gmd:extent>
-            <gmd:EX_Extent>
-               <gmd:description gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
-                  <gco:CharacterString/>
-                  <gmd:PT_FreeText>
-                     <gmd:textGroup>
-                        <gmd:LocalisedCharacterString locale="#eng"/>
-                     </gmd:textGroup>
-                  </gmd:PT_FreeText>
-               </gmd:description>
-               <gmd:geographicElement>
-                  <gmd:EX_GeographicBoundingBox>
-                     <gmd:westBoundLongitude>
-                        <gco:Decimal>-141.003</gco:Decimal>
-                     </gmd:westBoundLongitude>
-                     <gmd:eastBoundLongitude>
-                        <gco:Decimal>-52.6174</gco:Decimal>
-                     </gmd:eastBoundLongitude>
-                     <gmd:southBoundLatitude>
-                        <gco:Decimal>41.6755</gco:Decimal>
-                     </gmd:southBoundLatitude>
-                     <gmd:northBoundLatitude>
-                        <gco:Decimal>83.1139</gco:Decimal>
-                     </gmd:northBoundLatitude>
-                  </gmd:EX_GeographicBoundingBox>
-               </gmd:geographicElement>
             </gmd:EX_Extent>
          </gmd:extent>
          <gmd:supplementalInformation gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
@@ -520,10 +471,10 @@
                         <gco:CharacterString/>
                      </gmd:individualName>
                      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
-                        <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+                        <gco:CharacterString>Government of Canada; Fisheries and Oceans Canada</gco:CharacterString>
                         <gmd:PT_FreeText>
                            <gmd:textGroup>
-                              <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+                              <gmd:LocalisedCharacterString locale="#fra">Gouvernement du Canada; Pêches et Océans Canada</gmd:LocalisedCharacterString>
                            </gmd:textGroup>
                         </gmd:PT_FreeText>
                      </gmd:organisationName>
@@ -538,7 +489,7 @@
                                     <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:voice>
@@ -553,7 +504,7 @@
                                     <gco:CharacterString />
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:deliveryPoint>
@@ -564,7 +515,7 @@
                                     <gco:CharacterString/>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:administrativeArea>
@@ -572,10 +523,10 @@
                                     <gco:CharacterString/>
                                  </gmd:postalCode>
                                  <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
-                                    <gco:CharacterString>Canada (le)</gco:CharacterString>
+                                    <gco:CharacterString>Canada</gco:CharacterString>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                                          <gmd:LocalisedCharacterString locale="#fra">Canada (le)</gmd:LocalisedCharacterString>
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:country>
@@ -583,7 +534,7 @@
                                     <gco:CharacterString/>
                                     <gmd:PT_FreeText>
                                        <gmd:textGroup>
-                                          <gmd:LocalisedCharacterString locale="#eng" />
+                                          <gmd:LocalisedCharacterString locale="#fra" />
                                        </gmd:textGroup>
                                     </gmd:PT_FreeText>
                                  </gmd:electronicMailAddress>
@@ -603,7 +554,7 @@
                               <gco:CharacterString />
                               <gmd:PT_FreeText>
                                  <gmd:textGroup>
-                                    <gmd:LocalisedCharacterString locale="#eng" />
+                                    <gmd:LocalisedCharacterString locale="#fra" />
                                  </gmd:textGroup>
                               </gmd:PT_FreeText>
                            </gmd:hoursOfService>
