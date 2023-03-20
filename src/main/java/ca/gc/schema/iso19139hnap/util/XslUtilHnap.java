@@ -258,12 +258,17 @@ public class XslUtilHnap {
     }
 
     /**
-     * Validate if email format.
+     * Validate if email format. Empty email is allowed based on parameter of allowEmptyEmail.
      * See more info: https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address
-     * @param emailAddress
+     * @param emailAddress email address to validate the pattern
+     * @param allowEmptyEmail allow empty email input. The empty email was handled within the schematron already. This flag allows to ignore repeat checking.
      * @return boolean
      */
-    public static boolean isEmailFormat(String emailAddress) {
+    public static boolean isEmailFormat(String emailAddress, boolean allowEmptyEmail) {
+        if (allowEmptyEmail && org.apache.commons.lang3.StringUtils.isEmpty(emailAddress)) {
+            return true;
+        }
+
         Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
         Matcher matcher = pattern.matcher(emailAddress);
         return matcher.matches();

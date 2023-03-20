@@ -226,7 +226,7 @@
       <sch:let name="missing" value="not($emailAddress)
                 or (@gco:nilReason)" />
 
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
 
       <sch:assert
         test="not($missing)"
@@ -326,7 +326,7 @@
 
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
       <sch:let name="missing" value="not($emailAddress) or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
 
       <sch:assert
         test="not($missing)"
@@ -405,7 +405,7 @@
       <sch:let name="emailAddress" value="string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString)" />
       <sch:let name="missingEmail" value="not($emailAddress)
               or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
 
       <sch:assert
         test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail))))"
@@ -571,7 +571,7 @@
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
       <sch:let name="missing" value="not($emailAddress)
                   or (@gco:nilReason)" />
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
 
       <sch:assert
         test="not($missing)"

@@ -137,13 +137,17 @@ public class XslUtilHnapTest {
 
     @Test
     public void testIsEmailAddress() {
-        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost"));
-        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com"));
+        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost", false));
+        assertTrue(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com", false));
 
-        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com."));
-        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost."));
-        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@"));
-        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test"));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost.com.", false));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@localhost.", false));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test@", false));
+        assertFalse(XslUtilHnap.isEmailFormat("o'brian.test", false));
+
+        assertFalse(XslUtilHnap.isEmailFormat("",false));
+        assertTrue(XslUtilHnap.isEmailFormat("",true));
+        assertTrue(XslUtilHnap.isEmailFormat(null,true));
 
     }
 

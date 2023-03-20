@@ -357,8 +357,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
@@ -585,8 +585,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
@@ -695,8 +695,8 @@
 
       <sch:let name="missingEmailOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
-      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
@@ -1003,8 +1003,8 @@
 
       <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
 
-      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress)"/>
-   	  <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang)"/>
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+   	  <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
