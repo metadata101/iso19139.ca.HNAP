@@ -6,7 +6,8 @@ The administrator has access to manage record privileges, user permissions, and 
 
 .. toctree::
    :maxdepth: 1
-   
+
    privileges
    users
    settings
+   upgrade
