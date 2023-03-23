@@ -182,6 +182,15 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- FGP fix issue where Reference System Code is a number but should have the format EPSG:NUMBER. Example: EPSG:4326.  -->
+  <xsl:template
+    match="gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString[string(number(text()))!='NaN' and contains(upper-case(../../gmd:codeSpace/gco:CharacterString/text()), 'EPSG')]"
+    priority="10">
+		<xsl:copy>
+			<xsl:value-of select="concat('EPSG:', text())"/>
+		</xsl:copy>
+  </xsl:template>
+
   <!--Add default unclassified as security constraint if missing from metadata xml-->
   <xsl:template match="gmd:MD_DataIdentification">
     <xsl:copy copy-namespaces="no">
