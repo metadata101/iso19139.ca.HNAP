@@ -341,7 +341,7 @@
                     </gmd:date>
                     <gmd:dateType>
                       <gmd:CI_DateTypeCode
-                              codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                              codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                               codeListValue=""/>
                     </gmd:dateType>
                   </gmd:CI_Date>
@@ -387,7 +387,7 @@
                         <gco:CharacterString/>
                       </gmd:keyword>
                       <gmd:type>
-                        <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue=""></gmd:MD_KeywordTypeCode>
+                        <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue=""></gmd:MD_KeywordTypeCode>
                       </gmd:type>
                     </gmd:MD_Keywords>
                   </gmd:descriptiveKeywords>
@@ -578,7 +578,7 @@
                           </gmd:CI_Contact>
                         </gmd:contactInfo>
                         <gmd:role>
-                          <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                          <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                                            codeListValue="RI_412">distributor; distributeur</gmd:CI_RoleCode>
                         </gmd:role>
                       </gmd:CI_ResponsibleParty>

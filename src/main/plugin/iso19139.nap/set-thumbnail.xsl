@@ -152,21 +152,21 @@
         <xsl:choose>
           <xsl:when test="/root/env/ext = 'png'">
             <gmd:fileType xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm" xsi:type="napm:napMD_FileFormatCode_PropertyType"
-													codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115"
+													codeList="https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html#IC_115"
                           codeListValue="RI_716">
               <gco:CharacterString>png; png</gco:CharacterString>
             </gmd:fileType>
           </xsl:when>
           <xsl:when test="/root/env/ext = 'gif'">
             <gmd:fileType xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm" xsi:type="napm:napMD_FileFormatCode_PropertyType"
-													codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115"
+													codeList="https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html#IC_115"
                           codeListValue="RI_706">
               <gco:CharacterString>gif; gif</gco:CharacterString>
             </gmd:fileType>
           </xsl:when>
           <xsl:when test="/root/env/ext = 'jpg'">
             <gmd:fileType xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm" xsi:type="napm:napMD_FileFormatCode_PropertyType"
-													codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115"
+													codeList="https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html#IC_115"
                           codeListValue="RI_711">
               <gco:CharacterString>jpg; jpg</gco:CharacterString>
             </gmd:fileType>

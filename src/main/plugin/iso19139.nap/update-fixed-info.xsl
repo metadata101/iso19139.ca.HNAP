@@ -54,7 +54,7 @@
 
 			<!-- fixed to uft8 -->
 			<gmd:characterSet>
-				<gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+				<gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
 			</gmd:characterSet>
 
 			<xsl:choose>
@@ -299,7 +299,7 @@
           <xsl:copy-of select="@*" />
 
           <gmd:languageCode>
-            <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116">
+            <gmd:LanguageCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_116">
               <xsl:attribute name="codeListValue">
                 <xsl:value-of select="$id"/>
               </xsl:attribute>
@@ -320,7 +320,7 @@
 					</xsl:attribute>
 
           <gmd:languageCode>
-            <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116">
+            <gmd:LanguageCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_116">
               <xsl:attribute name="codeListValue">
                 <xsl:value-of select="$id"/>
               </xsl:attribute>
@@ -384,7 +384,7 @@
               </gmd:PT_FreeText>
             </gmd:organisationName>
             <gmd:role>
-              <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+              <gmd:CI_RoleCode codeListValue="RI_409" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
             </gmd:role>
           </gmd:CI_ResponsibleParty>
         </gmd:citedResponsibleParty>
@@ -511,7 +511,7 @@
                           </gmd:date>
                           <gmd:dateType>
                             <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                                 codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
+                                                 codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
                           </gmd:dateType>
                         </gmd:CI_Date>
                       </gmd:date>
@@ -521,7 +521,7 @@
                             <gco:Date>2015-04-21</gco:Date>
                           </gmd:date>
                           <gmd:dateType>
-                            <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                            <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                           </gmd:dateType>
                         </gmd:CI_Date>
                       </gmd:date>
@@ -546,7 +546,7 @@
                             </gmd:PT_FreeText>
                           </gmd:organisationName>
                           <gmd:role>
-                            <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                            <gmd:CI_RoleCode codeListValue="RI_409" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
                           </gmd:role>
                         </gmd:CI_ResponsibleParty>
                       </gmd:citedResponsibleParty>
@@ -692,7 +692,7 @@
                         </gmd:date>
                         <gmd:dateType>
                           <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                               codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
+                                               codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation; création</gmd:CI_DateTypeCode>
                         </gmd:dateType>
                       </gmd:CI_Date>
                     </gmd:date>
@@ -702,7 +702,7 @@
                           <gco:Date>2015-04-21</gco:Date>
                         </gmd:date>
                         <gmd:dateType>
-                          <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                          <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                         </gmd:dateType>
                       </gmd:CI_Date>
                     </gmd:date>
@@ -727,7 +727,7 @@
                           </gmd:PT_FreeText>
                         </gmd:organisationName>
                         <gmd:role>
-                          <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                          <gmd:CI_RoleCode codeListValue="RI_409" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
                         </gmd:role>
                       </gmd:CI_ResponsibleParty>
                     </gmd:citedResponsibleParty>
@@ -743,7 +743,7 @@
   <xsl:template match="gmd:MD_ScopeCode">
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ScopeCode']/entry[code = $currentCodeValue]/value" />
-      <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
+      <gmd:MD_ScopeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_108"
                         codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_ScopeCode>
@@ -755,7 +755,7 @@
 
 
     <gmd:status>
-      <gmd:MD_ProgressCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_106"
+      <gmd:MD_ProgressCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_106"
                            codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_ProgressCode>
@@ -771,7 +771,7 @@
     <xsl:message>gmd:spatialRepresentationType (value): <xsl:value-of select="$value" /></xsl:message>-->
 
     <gmd:spatialRepresentationType>
-      <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
+      <gmd:MD_SpatialRepresentationTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_109"
                         codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_SpatialRepresentationTypeCode>
@@ -783,7 +783,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MaintenanceFrequencyCode']/entry[code = $currentCodeValue]/value" />
 
     <gmd:maintenanceAndUpdateFrequency>
-      <gmd:MD_MaintenanceFrequencyCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_102"
+      <gmd:MD_MaintenanceFrequencyCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_102"
                                             codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_MaintenanceFrequencyCode>
@@ -795,7 +795,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_RoleCode']/entry[code = $currentCodeValue]/value" />
 
     <gmd:role>
-      <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+      <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                                        codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:CI_RoleCode>
@@ -807,7 +807,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_DateTypeCode']/entry[code = $currentCodeValue]/value" />
 
     <gmd:dateType>
-      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+      <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                             codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:CI_DateTypeCode>
@@ -818,7 +818,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_RestrictionCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107"
+    <gmd:MD_RestrictionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_107"
                            codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_RestrictionCode>
@@ -829,7 +829,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:CI_PresentationFormCode']/entry[code = $currentCodeValue]/value" />
 
     <gmd:presentationForm>
-      <gmd:CI_PresentationFormCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_89"
+      <gmd:CI_PresentationFormCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_89"
                               codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:CI_PresentationFormCode>
@@ -840,7 +840,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_GeometricObjectTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_GeometricObjectTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_99"
+    <gmd:MD_GeometricObjectTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_99"
                             codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_GeometricObjectTypeCode>
@@ -850,7 +850,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CellGeometryCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_CellGeometryCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_94"
+    <gmd:MD_CellGeometryCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_94"
                                     codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_CellGeometryCode>
@@ -860,7 +860,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_PixelOrientationCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_PixelOrientationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_105"
+    <gmd:MD_PixelOrientationCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_105"
                              codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_PixelOrientationCode>
@@ -870,7 +870,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DQ_EvaluationMethodTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:DQ_EvaluationMethodTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_91"
+    <gmd:DQ_EvaluationMethodTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_91"
                                  codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:DQ_EvaluationMethodTypeCode>
@@ -880,7 +880,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DS_AssociationTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:DS_AssociationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_92"
+    <gmd:DS_AssociationTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_92"
                                      codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:DS_AssociationTypeCode>
@@ -890,7 +890,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:DS_InitiativeTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:DS_InitiativeTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_93"
+    <gmd:DS_InitiativeTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_93"
                                 codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:DS_InitiativeTypeCode>
@@ -900,7 +900,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ClassificationCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_ClassificationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96"
+    <gmd:MD_ClassificationCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_96"
                                codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_ClassificationCode>
@@ -910,7 +910,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CoverageContentTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_CoverageContentTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_97"
+    <gmd:MD_CoverageContentTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_97"
                                codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_CoverageContentTypeCode>
@@ -920,7 +920,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_DimensionNameTypeCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_DimensionNameTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_98"
+    <gmd:MD_DimensionNameTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_98"
                                     codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_DimensionNameTypeCode>
@@ -930,7 +930,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_ImagingConditionCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_ImagingConditionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_100"
+    <gmd:MD_ImagingConditionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_100"
                                   codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_ImagingConditionCode>
@@ -940,7 +940,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MediumFormatCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_MediumFormatCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_103"
+    <gmd:MD_MediumFormatCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_103"
                                  codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_MediumFormatCode>
@@ -950,7 +950,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_TopologyLevelCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_TopologyLevelCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_111"
+    <gmd:MD_TopologyLevelCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_111"
                              codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_TopologyLevelCode>
@@ -960,7 +960,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_MediumNameCode']/entry[code = $currentCodeValue]/value" />
 
-    <gmd:MD_MediumNameCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_104"
+    <gmd:MD_MediumNameCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_104"
                               codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </gmd:MD_MediumNameCode>
@@ -973,7 +973,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_CharacterSetCode']/entry[code = $currentCodeValue]/value" />
 
    <gmd:characterSet>
-     <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+     <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95"
                                codeListValue="{$currentCodeValue}">
        <xsl:value-of select="$value" />
      </gmd:MD_CharacterSetCode>
@@ -986,7 +986,7 @@
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value" />
 
     <gmd:type>
-      <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101"
+      <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101"
                               codeListValue="{$currentCodeValue}">
         <xsl:value-of select="$value" />
       </gmd:MD_KeywordTypeCode>
@@ -998,7 +998,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='srv:SV_CouplingType']/entry[code = $currentCodeValue]/value" />
 
-    <srv:SV_CouplingType codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_114"
+    <srv:SV_CouplingType codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_114"
                            codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </srv:SV_CouplingType>
@@ -1009,7 +1009,7 @@
     <xsl:variable name="currentCodeValue" select="@codeListValue" />
     <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='srv:DCPList']/entry[code = $currentCodeValue]/value" />
 
-    <srv:DCPList codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_112"
+    <srv:DCPList codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_112"
                          codeListValue="{$currentCodeValue}">
       <xsl:value-of select="$value" />
     </srv:DCPList>
@@ -1024,7 +1024,7 @@
     <xsl:message>gmd:topicCategory (codeValue): <xsl:value-of select="$codeValue" /></xsl:message>
     <xsl:message>gmd:topicCategory (values): <xsl:value-of select="$codelistFile/codelists/codelist[@name='gmd:MD_TopicCategoryCode']" /></xsl:message>
     <gmd:topicCategory>
-      <gmd:MD_TopicCategoryCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_110"
+      <gmd:MD_TopicCategoryCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_110"
                                           codeListValue="{$codeValue}">
       <xsl:value-of select="gmd:MD_TopicCategoryCode" />
     </gmd:MD_TopicCategoryCode>
@@ -1167,7 +1167,7 @@
             <gmd:type>
               <xsl:variable name="value" select="$codelistFile/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value" />
 
-              <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}"><xsl:value-of select="$value" /></gmd:MD_KeywordTypeCode>
+              <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}"><xsl:value-of select="$value" /></gmd:MD_KeywordTypeCode>
             </gmd:type>
 
             <xsl:apply-templates select="keyword[1]/gmd:thesaurusName" />
