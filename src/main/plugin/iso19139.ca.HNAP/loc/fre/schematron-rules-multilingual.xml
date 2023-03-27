@@ -84,4 +84,6 @@
   <ECThesaurusOrg>Le nom de l’organisation responsable du thésaurus est requis</ECThesaurusOrg>
   <ECThesaurusRole>Le rôle du responsable du thesaurus est requis</ECThesaurusRole>
   <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
+
+  <ElectronicMailFormat>Le format de l'adresse électronique n'est pas valide (par exemple abc@abc.com)</ElectronicMailFormat>
 </strings>
