@@ -357,7 +357,7 @@ Insert is made in first transferOptions found.
 
                 <gmd:function>
                   <gmd:CI_OnLineFunctionCode
-                    codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_88"
+                    codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_88"
                     codeListValue="{$function}"><xsl:value-of select="$functionValue" /></gmd:CI_OnLineFunctionCode>
                 </gmd:function>
               </xsl:if>
@@ -546,7 +546,7 @@ Insert is made in first transferOptions found.
 
                 <gmd:function>
                   <gmd:CI_OnLineFunctionCode
-                    codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_88"
+                    codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_88"
                     codeListValue="{$function}"><xsl:value-of select="$functionValue" /></gmd:CI_OnLineFunctionCode>
                 </gmd:function>
               </xsl:if>
