@@ -486,7 +486,7 @@
 
       <sch:let name="distributionFormat" value="gco:CharacterString" />
 
-      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[normalize-space(ns2:prefLabel[@xml:lang=$mainLanguage2char]) = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
+      <sch:assert test="($missing) or (string($distribution-formats//rdf:Description[replace(@rdf:about, 'http://geonetwork-opensource.org/EC/resourceformat#', '') = $distributionFormat]))">$loc/strings/DistributionFormatInvalid</sch:assert>
 
     </sch:rule>
 
