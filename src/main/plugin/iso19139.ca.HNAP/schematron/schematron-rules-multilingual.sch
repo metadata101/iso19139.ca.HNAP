@@ -164,6 +164,7 @@
     />
   </xsl:function>
 
+
   <!-- =============================================================
   EC schematron rules for multilingual validation in metadata editor:
   ============================================================= -->
@@ -348,17 +349,23 @@
 
     <!-- Contact - Electronic Mail -->
     <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
+      <sch:let name="emailAddress" value="string(gco:CharacterString)" />
+      <sch:let name="emailAddressOtherLang" value="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-      <sch:let name="missing" value="not(string(gco:CharacterString))
+      <sch:let name="missing" value="not($emailAddress)
                 or (@gco:nilReason)" />
 
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+      <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
+
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
       >$loc/strings/ContactElectronicMail</sch:assert>
 
+      <sch:assert test="string($isEmailAddressFormat) ='true' and string($isOtherLangEmailAddressFormat) ='true'">$loc/strings/ElectronicMailFormat</sch:assert>
     </sch:rule>
 
 
@@ -570,16 +577,23 @@
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress
                       |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress
                       |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
+      <sch:let name="emailAddress" value="string(gco:CharacterString)" />
+      <sch:let name="emailAddressOtherLang" value="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-      <sch:let name="missing" value="not(string(gco:CharacterString))
+      <sch:let name="missing" value="not($emailAddress)
                 or (@gco:nilReason)" />
 
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+      <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
+
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
       >$loc/strings/CitedResponsiblePartyElectronicMail</sch:assert>
+
+      <sch:assert test="string($isEmailAddressFormat) ='true' and string($isOtherLangEmailAddressFormat) ='true'">$loc/strings/ElectronicMailFormat</sch:assert>
 
     </sch:rule>
 
@@ -673,14 +687,22 @@
 
       <sch:let name="emailPresent" value="count(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress) > 0" />
 
-      <sch:let name="missingEmail" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString))
+      <sch:let name="emailAddress" value="string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gco:CharacterString)" />
+      <sch:let name="emailAddressOtherLang" value="string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
+
+      <sch:let name="missingEmail" value="not($emailAddress)
               or (@gco:nilReason)" />
 
-      <sch:let name="missingEmailOtherLang" value="not(string(gmd:MD_Keywords/gmd:thesaurusName/gmd:CI_Citation/gmd:citedResponsibleParty/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+      <sch:let name="missingEmailOtherLang" value="not($emailAddressOtherLang)" />
+
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+      <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($thesaurusNamePresent) or ($thesaurusNamePresent and (not($emailPresent) or ($emailPresent and not($missingEmail) and not($missingEmailOtherLang))))"
       >$loc/strings/ECThesaurusEmail</sch:assert>
+
+      <sch:assert test="string($isEmailAddressFormat) ='true' and string($isOtherLangEmailAddressFormat) ='true'">$loc/strings/ElectronicMailFormat</sch:assert>
     </sch:rule>
 
     <!-- Supplemental information -->
@@ -973,16 +995,23 @@
 
     <!-- Distributor - Electronic Mail -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
+      <sch:let name="emailAddress" value="string(gco:CharacterString)" />
+      <sch:let name="emailAddressOtherLang" value="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
-      <sch:let name="missing" value="not(string(gco:CharacterString))
+      <sch:let name="missing" value="not($emailAddress)
                 or (@gco:nilReason)" />
 
-      <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+      <sch:let name="missingOtherLang" value="not($emailAddressOtherLang)" />
+
+      <sch:let name="isEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddress, true())"/>
+   	  <sch:let name="isOtherLangEmailAddressFormat" value="XslUtilHnap:isEmailFormat($emailAddressOtherLang, true())"/>
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
 
       >$loc/strings/DistributorElectronicMail</sch:assert>
+
+      <sch:assert test="string($isEmailAddressFormat) ='true' and string($isOtherLangEmailAddressFormat) ='true'">$loc/strings/ElectronicMailFormat</sch:assert>
 
     </sch:rule>
 

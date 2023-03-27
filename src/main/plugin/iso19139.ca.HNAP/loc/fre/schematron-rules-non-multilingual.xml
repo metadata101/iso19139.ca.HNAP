@@ -56,4 +56,6 @@
   <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
   <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
+
+  <ElectronicMailFormat>Le format de l'adresse électronique n'est pas valide (par exemple abc@abc.com)</ElectronicMailFormat>
 </strings>
