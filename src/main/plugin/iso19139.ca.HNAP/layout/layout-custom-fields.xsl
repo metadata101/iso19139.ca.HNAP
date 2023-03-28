@@ -235,8 +235,8 @@
           {
             "type": "freeText",
             "heading": {
-              "eng": "Division/Sector/Branch",
-              "fra": "Division/Secteur/Branche"
+              "eng": "Branch, Section, Division, etc...",
+              "fra": "Branche, Secteur, Division, etc..."
             }
           }
       ]
