@@ -235,8 +235,8 @@
           {
             "type": "freeText",
             "heading": {
-              "eng": "Branch, Section, Division, etc...",
-              "fra": "Branche, Secteur, Division, etc..."
+              "eng": "Sub-organizations (sectors, branches, etc.)",
+              "fra": "Sous-organisations (secteurs, branches, etc.)"
             }
           }
       ]
