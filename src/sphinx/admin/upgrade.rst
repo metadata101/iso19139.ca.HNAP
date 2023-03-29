@@ -57,5 +57,5 @@ The database content can also be updated directly using the following SQL:
      replace(
        data,
        'http://nap.geogratis.gc.ca/metadata/register/',
-       'https://schemas.metadata.geo.ca/register/
+       'https://schemas.metadata.geo.ca/register/'
      );
