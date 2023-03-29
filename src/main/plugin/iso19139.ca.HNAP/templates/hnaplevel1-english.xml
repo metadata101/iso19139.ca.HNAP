@@ -121,6 +121,7 @@
          <gmd:role>
             <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                              codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
+         </gmd:role>                    
       </gmd:CI_ResponsibleParty>
   </gmd:contact>
    <gmd:dateStamp>
@@ -362,6 +363,7 @@
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                                    codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                           </gmd:dateType>                        
                         </gmd:CI_Date>
                      </gmd:date>
 					 <gmd:date>
@@ -372,6 +374,7 @@
                            <gmd:dateType>
                               <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                                    codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
+                           </gmd:dateType>                        
                         </gmd:CI_Date>
                      </gmd:date>
                      <gmd:citedResponsibleParty>
