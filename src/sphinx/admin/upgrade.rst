@@ -20,30 +20,7 @@ Individual records can be upgraded by saving and loading in the editor:
 1. Open the record in the editor.
 2. Select :command:`Save and Close`.
 
-To update all records:
-
-1. Navigate to :menuselection:`Admin console > Tools > Batch process`.
-2. Select records to process, or choose ``All``.
-3. Use :guilabel:`Configure a process` to select the process ``URL replacer``
-4. Fill in process parameters:
-
-   .. list-table::
-       :widths: 30 70
-       :width: 100%
-       :stub-columns: 1
-
-       * - URL prefix to search:
-         - :kbd:`http://nap.geogratis.gc.ca/metadata/register/`
-       * - Replace prefix by:
-         - :kbd:`https://schemas.metadata.geo.ca/register/`
-
-   And press :guilabel:`Run`
-
-  .. figure:: img/upgrade_schemas_metadata_geo_ca.png
-
-     URL Replacer process parameters
-
-The database content can also be updated directly using the following SQL:
+To update all records in the database use the following SQL:
 
 .. code-block:: text
 
