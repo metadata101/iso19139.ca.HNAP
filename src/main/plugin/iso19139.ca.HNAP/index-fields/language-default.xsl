@@ -716,7 +716,7 @@
 
     <!-- Index all codelist -->
     <!-- Avoid gmd:fileType in gmd:MD_BrowseGraphic, not following the standard codelist structure in HNAP:
-          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html#IC_115" codeListValue="RI_716">
+          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html##IC_115" codeListValue="RI_716">
             <gco:CharacterString>png; png</gco:CharacterString>
           </gmd:fileType>
     -->
