@@ -57,5 +57,5 @@ GeoNetwork 3 content can be updated using the following SQL:
      replace(
        data,
        'http://nap.geogratis.gc.ca/metadata/register/',
-       'https://schemas.metadata.geo.ca/register/
+       'https://schemas.metadata.geo.ca/register/'
      );
