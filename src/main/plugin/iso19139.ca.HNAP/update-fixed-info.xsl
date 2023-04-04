@@ -881,7 +881,7 @@
               </gmd:MD_KeywordTypeCode>
             </gmd:type>
 
-            <xsl:copy-of select="keyword[1]/gmd:thesaurusName" />
+            <xsl:apply-templates select="keyword[1]/gmd:thesaurusName" />
           </gmd:MD_Keywords>
         </gmd:descriptiveKeywords>
       </xsl:for-each>
@@ -952,6 +952,51 @@
       <xsl:if test="not(gml:endPosition)">
         <gml:endPosition />
       </xsl:if>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Fix the dates for the Core Subject Thesaurus -->
+  <xsl:template match="gmd:thesaurusName/gmd:CI_Citation[gmd:title/gco:CharacterString='Government of Canada Core Subject Thesaurus' or
+                                        gmd:title/gco:CharacterString='Thésaurus des sujets de base du gouvernement du Canada']">
+
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+
+      <xsl:apply-templates select="gmd:title" />
+      <xsl:apply-templates select="gmd:alternateTitle" />
+
+      <gmd:date>
+        <gmd:CI_Date>
+          <gmd:date>
+            <gco:Date>2004</gco:Date>
+          </gmd:date>
+          <gmd:dateType>
+            <gmd:CI_DateTypeCode codeListValue="RI_366" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+          </gmd:dateType>
+        </gmd:CI_Date>
+      </gmd:date>
+
+      <gmd:date>
+        <gmd:CI_Date>
+          <gmd:date>
+            <gco:Date>2015-04-21</gco:Date>
+          </gmd:date>
+          <gmd:dateType>
+            <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+          </gmd:dateType>
+        </gmd:CI_Date>
+      </gmd:date>
+
+      <xsl:apply-templates select="gmd:edition" />
+      <xsl:apply-templates select="gmd:editionDate" />
+      <xsl:apply-templates select="gmd:identifier" />
+      <xsl:apply-templates select="gmd:citedResponsibleParty" />
+      <xsl:apply-templates select="gmd:presentationForm" />
+      <xsl:apply-templates select="gmd:series" />
+      <xsl:apply-templates select="gmd:otherCitationDetails" />
+      <xsl:apply-templates select="gmd:collectiveTitle" />
+      <xsl:apply-templates select="gmd:ISBN" />
+      <xsl:apply-templates select="gmd:ISSN" />
     </xsl:copy>
   </xsl:template>
 
