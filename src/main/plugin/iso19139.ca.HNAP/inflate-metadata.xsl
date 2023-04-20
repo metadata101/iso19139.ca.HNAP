@@ -233,11 +233,39 @@
       <xsl:apply-templates select="gmd:identificationInfo" />
       <xsl:apply-templates select="gmd:contentInfo" />
       <xsl:apply-templates select="gmd:distributionInfo" />
-      <xsl:apply-templates select="gmd:dataQualityInfo" />
       <xsl:apply-templates select="gmd:portrayalCatalogueInfo" />
       <xsl:apply-templates select="gmd:metadataConstraints" />
       <xsl:apply-templates select="gmd:applicationSchemaInfo" />
       <xsl:apply-templates select="gmd:metadataMaintenance" />
+
+      <!-- Inflate gmd:dataQualityInfo and add required gmd:scope -->
+      <xsl:if test="(gmd:dataQualityInfo)">
+        <xsl:apply-templates select="gmd:dataQualityInfo" />
+      </xsl:if>
+
+      <!-- Previouls metadata template has no such gmd:dataQualityInfo, add it for now -->
+      <xsl:if test="not(gmd:dataQualityInfo)">
+        <gmd:dataQualityInfo>
+          <gmd:DQ_DataQuality>
+            <gmd:scope>
+              <gmd:DQ_Scope>
+                <gmd:level>
+                  <gmd:MD_ScopeCode codeListValue="dataset"
+                                    codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_ScopeCode"/>
+                </gmd:level>
+              </gmd:DQ_Scope>
+            </gmd:scope>
+            <gmd:lineage>
+              <gmd:LI_Lineage>
+                <gmd:statement gco:nilReason="missing">
+                  <gco:CharacterString/>
+                </gmd:statement>
+              </gmd:LI_Lineage>
+            </gmd:lineage>
+          </gmd:DQ_DataQuality>
+        </gmd:dataQualityInfo>
+      </xsl:if>
+
     </xsl:copy>
   </xsl:template>
 
@@ -522,6 +550,44 @@
       <xsl:apply-templates select="gmd:specification" />
       <xsl:apply-templates select="gmd:fileDecompressionTechnique" />
       <xsl:apply-templates select="gmd:formatDistributor" />
+    </xsl:copy>
+  </xsl:template>
+
+  <!--Inflating gmd:dataQualityInfo -->
+  <xsl:template match="gmd:dataQualityInfo">
+    <xsl:copy>
+      <xsl:copy-of select="@*" />
+      <xsl:choose>
+        <xsl:when test="gmd:DQ_DataQuality/gmd:scope">
+          <xsl:for-each select="gmd:DQ_DataQuality">
+            <xsl:copy>
+              <xsl:copy-of select="node()"/>
+            </xsl:copy>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="gmd:DQ_DataQuality" />
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:copy>
+  </xsl:template>
+
+  <!--Inflating gmd:DQ_DataQuality. Added the required gmd:scope -->
+  <xsl:template match="gmd:DQ_DataQuality">
+    <xsl:copy>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeListValue="dataset"
+                              codeList="http://www.isotc211.org/2005/resources/codeList.xml#MD_ScopeCode"/>
+          </gmd:level>
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <xsl:for-each select="gmd:lineage">
+        <xsl:copy>
+          <xsl:copy-of select="node()"/>
+        </xsl:copy>
+      </xsl:for-each>
     </xsl:copy>
   </xsl:template>
 
