@@ -32,10 +32,10 @@
 
   <!-- ISO19139 uses the protocol with value 'DOI' to match the online resource, but
        HNAP uses for DOI resources the protocol value 'HTTP' that is used for other type
-       of online resources. 
-       
-       Changed in HNAP to use the online resource name.   
-  -->     
+       of online resources.
+
+       Changed in HNAP to use the online resource name.
+  -->
   <xsl:variable name="doiName"
                 select="'Digital Object Identifier (DOI)'"/>
 
@@ -48,6 +48,7 @@
   <xsl:template match="gmd:identifier[
                                 contains(*/gmd:code/*/text(), 'datacite.org/doi/')
                                 or contains(*/gmd:code/*/text(), 'doi.org')
+                                or contains(*/gmd:code/*/@xlink:href, 'datacite.org/doi/')
                                 or contains(*/gmd:code/*/@xlink:href, 'doi.org')]" />
 
   <!-- Remove DOI links -->
