@@ -15,6 +15,8 @@
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
     <dc:description></dc:description>
+    <dcterms:issued>2004</dcterms:issued>
+    <dcterms:created>2016-07-04</dcterms:created>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="http://www.thesaurus.gc.ca/concept/#Abbreviations">
