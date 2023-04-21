@@ -38,7 +38,23 @@
 
   <xsl:import href="../../iso19139/convert/functions.xsl"/>
 
-
+  <xsl:function name="geonet:parseDateString" >
+    <xsl:param name="dateString"/>
+    <gmd:date>
+      <xsl:choose>
+        <xsl:when test="contains($dateString, 'T')">
+          <gco:DateTime>
+            <xsl:value-of select="$dateString"/>
+          </gco:DateTime>
+        </xsl:when>
+        <xsl:otherwise>
+          <gco:Date>
+            <xsl:value-of select="$dateString"/>
+          </gco:Date>
+        </xsl:otherwise>
+      </xsl:choose>
+    </gmd:date>
+  </xsl:function>
 
 
   <!-- Override template -->
@@ -363,20 +379,7 @@
             <xsl:when test="$thesaurusIssuedDate != ''">
               <gmd:date>
                 <gmd:CI_Date>
-                  <gmd:date>
-                    <xsl:choose>
-                      <xsl:when test="contains($thesaurusIssuedDate, 'T')">
-                        <gco:DateTime>
-                          <xsl:value-of select="$thesaurusIssuedDate"/>
-                        </gco:DateTime>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <gco:Date>
-                          <xsl:value-of select="$thesaurusIssuedDate"/>
-                        </gco:Date>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </gmd:date>
+                  <xsl:sequence select="geonet:parseDateString($thesaurusIssuedDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                   </gmd:dateType>
@@ -386,20 +389,7 @@
             <xsl:otherwise>
               <gmd:date>
                 <gmd:CI_Date>
-                  <gmd:date>
-                    <xsl:choose>
-                      <xsl:when test="contains($thesaurusDate, 'T')">
-                        <gco:DateTime>
-                          <xsl:value-of select="$thesaurusDate"/>
-                        </gco:DateTime>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <gco:Date>
-                          <xsl:value-of select="$thesaurusDate"/>
-                        </gco:Date>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </gmd:date>
+                  <xsl:sequence select="geonet:parseDateString($thesaurusDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                   </gmd:dateType>
@@ -413,20 +403,7 @@
             <xsl:when test="$thesaurusCreatedDate != ''">
               <gmd:date>
                 <gmd:CI_Date>
-                  <gmd:date>
-                    <xsl:choose>
-                      <xsl:when test="contains($thesaurusCreatedDate, 'T')">
-                        <gco:DateTime>
-                          <xsl:value-of select="$thesaurusCreatedDate"/>
-                        </gco:DateTime>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <gco:Date>
-                          <xsl:value-of select="$thesaurusCreatedDate"/>
-                        </gco:Date>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </gmd:date>
+                  <xsl:sequence select="geonet:parseDateString($thesaurusCreatedDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeListValue="RI_366"
                                          codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
@@ -438,20 +415,7 @@
             <xsl:otherwise>
               <gmd:date>
                 <gmd:CI_Date>
-                  <gmd:date>
-                    <xsl:choose>
-                      <xsl:when test="contains($thesaurusDate, 'T')">
-                        <gco:DateTime>
-                          <xsl:value-of select="$thesaurusDate"/>
-                        </gco:DateTime>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <gco:Date>
-                          <xsl:value-of select="$thesaurusDate"/>
-                        </gco:Date>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </gmd:date>
+                  <xsl:sequence select="geonet:parseDateString($thesaurusDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeListValue="RI_366"
                                          codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
