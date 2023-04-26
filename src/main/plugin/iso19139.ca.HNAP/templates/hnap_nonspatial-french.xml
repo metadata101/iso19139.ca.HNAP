@@ -419,7 +419,10 @@
                </gmd:userNote>
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
-         <gmd:language>
+        <gmd:language>
+          <gco:CharacterString>eng; CAN</gco:CharacterString>
+        </gmd:language>
+        <gmd:language>
             <gco:CharacterString>fra; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
