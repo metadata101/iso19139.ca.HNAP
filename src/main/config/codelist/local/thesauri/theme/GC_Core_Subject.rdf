@@ -6,6 +6,7 @@
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
         xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:dcterms="http://purl.org/dc/terms/"
 >
   <skos:ConceptScheme rdf:about="http://www.thesaurus.gc.ca/#CoreSubjectThesaurus">
       <dc:title>Government of Canada Core Subject Thesaurus</dc:title>
@@ -15,6 +16,8 @@
       <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
       <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
     <dc:description></dc:description>
+    <dcterms:issued>2004</dcterms:issued>
+    <dcterms:created>2016-07-04</dcterms:created>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="http://www.thesaurus.gc.ca/concept/#Abbreviations">
