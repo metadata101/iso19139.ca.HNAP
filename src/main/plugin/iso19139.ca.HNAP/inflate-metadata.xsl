@@ -233,10 +233,6 @@
       <xsl:apply-templates select="gmd:identificationInfo" />
       <xsl:apply-templates select="gmd:contentInfo" />
       <xsl:apply-templates select="gmd:distributionInfo" />
-      <xsl:apply-templates select="gmd:portrayalCatalogueInfo" />
-      <xsl:apply-templates select="gmd:metadataConstraints" />
-      <xsl:apply-templates select="gmd:applicationSchemaInfo" />
-      <xsl:apply-templates select="gmd:metadataMaintenance" />
 
       <!-- Inflate gmd:dataQualityInfo and add required gmd:scope -->
       <xsl:if test="(gmd:dataQualityInfo)">
@@ -265,6 +261,11 @@
           </gmd:DQ_DataQuality>
         </gmd:dataQualityInfo>
       </xsl:if>
+
+      <xsl:apply-templates select="gmd:portrayalCatalogueInfo" />
+      <xsl:apply-templates select="gmd:metadataConstraints" />
+      <xsl:apply-templates select="gmd:applicationSchemaInfo" />
+      <xsl:apply-templates select="gmd:metadataMaintenance" />
 
     </xsl:copy>
   </xsl:template>
