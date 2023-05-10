@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edit &mdash; User Manual (HNAP) 3.12.9 documentation</title>
+  <title>Edit &mdash; User Manual (HNAP) 3.12.10 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -27,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: gray" >
-            <a href="../../index.html" class="icon icon-home"> User Manual (HNAP)
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            User Manual (HNAP)
           </a>
               <div class="version">
                 3.12
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,9 +78,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Editor</a> &raquo;</li>
-      <li>Edit</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editor</a></li>
+      <li class="breadcrumb-item active">Edit</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -352,10 +356,10 @@ to narrow down valid suggestions.</p>
 </li>
 <li><p>Append the parameter <code class="docutils literal notranslate"><span class="pre">&amp;layers=name</span></code> to indicate the layer to display.</p>
 <p>Review the raw GetCapabilities document to see all the layers available in the service, layers are indicated using:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span> <span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
-   <span class="nt">&lt;Title&gt;</span>National Tornado Events<span class="nt">&lt;/Title&gt;</span>
-   ...
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Title&gt;</span>National<span class="w"> </span>Tornado<span class="w"> </span>Events<span class="nt">&lt;/Title&gt;</span>
+<span class="w">   </span>...
 </pre></div>
 </div>
 <p>To visually explore the GetCapabilities use a Desktop GIS application, or the included Map Viewer.</p>
@@ -367,10 +371,10 @@ to narrow down valid suggestions.</p>
 </li>
 <li><p>Use <span class="guilabel">Resource name</span> to provide the title of the layer in English and French.</p>
 <p>The raw GetCapabilities document included the title of the layer:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span> <span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
-   <span class="nt">&lt;Title&gt;</span>National Tornado Events<span class="nt">&lt;/Title&gt;</span>
-   ...
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Title&gt;</span>National<span class="w"> </span>Tornado<span class="w"> </span>Events<span class="nt">&lt;/Title&gt;</span>
+<span class="w">   </span>...
 </pre></div>
 </div>
 </li>
