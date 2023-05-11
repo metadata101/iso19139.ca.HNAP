@@ -443,9 +443,6 @@
          <gmd:language>
             <gco:CharacterString>eng; CAN</gco:CharacterString>
          </gmd:language>
-        <gmd:language>
-          <gco:CharacterString>fra; CAN</gco:CharacterString>
-        </gmd:language>
          <gmd:characterSet>
             <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
                                      codeListValue=""/>

@@ -441,9 +441,6 @@
                                                   codeListValue=""/>
          </gmd:spatialRepresentationType>
          <gmd:language>
-            <gco:CharacterString>eng; CAN</gco:CharacterString>
-         </gmd:language>
-         <gmd:language>
             <gco:CharacterString>fra; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
