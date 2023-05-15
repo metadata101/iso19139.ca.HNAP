@@ -208,7 +208,7 @@
 
 
     <!-- Contact - Organisation Name -->
-    <sch:rule context="//gmd:contact/*/gmd:organisationName">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:organisationName">
 
       <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
 
@@ -274,7 +274,7 @@
 
 
     <!-- Contact - Position name -->
-    <sch:rule context="//gmd:contact/*/gmd:positionName">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:positionName">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
                 or (@gco:nilReason)" />
@@ -289,7 +289,7 @@
 
 
     <!-- Contact - Country -->
-    <sch:rule context="//gmd:contact//gmd:country">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact//gmd:country">
       <sch:let name="country-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/ISO_Countries.rdf'), '\\', '/')))"/>
 
       <sch:let name="countryName" value="lower-case(gco:CharacterString)" />
@@ -304,7 +304,7 @@
     </sch:rule>
 
     <!-- Contact - Administrative area -->
-    <sch:rule context="//gmd:contact//gmd:administrativeArea">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact//gmd:administrativeArea">
       <sch:let name="province-values" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_State_Province.rdf'), '\\', '/')))"/>
 
       <sch:let name="administrativeArea" value="lower-case(gco:CharacterString)" />
@@ -320,7 +320,7 @@
 
 
     <!-- Contact - Delivery point -->
-    <sch:rule context="//gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo//gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:deliveryPoint">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
                 " />
@@ -334,7 +334,7 @@
 
 
     <!-- Contact - Phone -->
-    <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:phone/gmd:CI_Telephone/gmd:voice">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
               " />
@@ -348,7 +348,7 @@
 
 
     <!-- Contact - Electronic Mail -->
-    <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
       <sch:let name="emailAddressOtherLang" value="string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)])" />
 
@@ -370,7 +370,7 @@
 
 
     <!-- Contact - Hours of service -->
-    <sch:rule context="//gmd:contact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/gmd:CI_Contact/gmd:hoursOfService">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
                 " />

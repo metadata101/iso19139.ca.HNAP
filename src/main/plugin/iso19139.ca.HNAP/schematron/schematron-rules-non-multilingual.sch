@@ -182,7 +182,7 @@
     </sch:rule>
 
     <!-- Contact - Organisation Name -->
-    <sch:rule context="//gmd:contact/*/gmd:organisationName">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:organisationName">
 
       <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
 
@@ -220,7 +220,7 @@
 
 
     <!-- Contact - Electronic Mail -->
-    <sch:rule context="//gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
+    <sch:rule context="/gmd:MD_Metadata/gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
       <sch:let name="emailAddress" value="string(gco:CharacterString)" />
 
       <sch:let name="missing" value="not($emailAddress)
