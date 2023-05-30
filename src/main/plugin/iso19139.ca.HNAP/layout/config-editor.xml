@@ -444,6 +444,18 @@
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                  or="language"/>
+          <action type="add" name="language" or="language"
+                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification">
+            <template>
+              <snippet>
+                <gmd:language>
+                  <gco:CharacterString>
+                  </gco:CharacterString>
+                </gmd:language>
+              </snippet>
+            </template>
+          </action>
+
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:characterSet"/>
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:topicCategory" />
 
