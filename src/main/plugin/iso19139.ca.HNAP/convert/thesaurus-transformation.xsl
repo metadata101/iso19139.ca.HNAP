@@ -370,7 +370,7 @@
                       </xsl:choose>
                     </gmd:date>
                     <gmd:dateType>
-                      <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                      <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                     </gmd:dateType>
                   </gmd:CI_Date>
                 </gmd:date>
@@ -393,7 +393,7 @@
                     </gmd:date>
                     <gmd:dateType>
                       <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                           codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                                           codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
                     </gmd:dateType>
                   </gmd:CI_Date>
                 </gmd:date>
@@ -435,7 +435,7 @@
               </xsl:choose>
 
               <gmd:role>
-                <gmd:CI_RoleCode codeListValue="RI_409" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                <gmd:CI_RoleCode codeListValue="RI_409" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
               </gmd:role>
             </gmd:CI_ResponsibleParty>
           </gmd:citedResponsibleParty>
