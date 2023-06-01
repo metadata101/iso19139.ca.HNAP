@@ -16,11 +16,11 @@
       <gco:CharacterString>fra; CAN</gco:CharacterString>
    </gmd:language>
    <gmd:characterSet>
-      <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+      <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95"
                                codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
   </gmd:characterSet>
    <gmd:hierarchyLevel>
-      <gmd:MD_ScopeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"
+      <gmd:MD_ScopeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_108"
                         codeListValue="RI_622">dataset; jeuDonnées</gmd:MD_ScopeCode>
    </gmd:hierarchyLevel>
    <gmd:contact>
@@ -119,7 +119,7 @@
             </gmd:CI_Contact>
          </gmd:contactInfo>
          <gmd:role>
-            <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+            <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                              codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
          </gmd:role>
       </gmd:CI_ResponsibleParty>
@@ -144,15 +144,15 @@
    <gmd:locale>
       <gmd:PT_Locale id="eng">
          <gmd:languageCode>
-            <gmd:LanguageCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_116"
+            <gmd:LanguageCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_116"
                               codeListValue="eng">English; Anglais</gmd:LanguageCode>
          </gmd:languageCode>
          <gmd:country>
-            <gmd:Country codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_117"
+            <gmd:Country codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_117"
                          codeListValue="CAN">Canada; Canada</gmd:Country>
          </gmd:country>
          <gmd:characterEncoding>
-            <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+            <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95"
                                      codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
          </gmd:characterEncoding>
       </gmd:PT_Locale>
@@ -192,7 +192,7 @@
                         <gco:Date/>
                      </gmd:date>
                      <gmd:dateType>
-                        <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                        <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                              codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
@@ -203,7 +203,7 @@
                         <gco:Date/>
                      </gmd:date>
                      <gmd:dateType>
-                        <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                        <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                              codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
                      </gmd:dateType>
                   </gmd:CI_Date>
@@ -304,7 +304,7 @@
                         </gmd:CI_Contact>
                      </gmd:contactInfo>
                      <gmd:role>
-                        <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                        <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                                          codeListValue="RI_415">principalInvestigator; chercheurPrincipal</gmd:CI_RoleCode>
                      </gmd:role>
                   </gmd:CI_ResponsibleParty>
@@ -320,13 +320,13 @@
             </gmd:PT_FreeText>
          </gmd:abstract>
          <gmd:status>
-            <gmd:MD_ProgressCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_106"
+            <gmd:MD_ProgressCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_106"
                                  codeListValue=""/>
          </gmd:status>
          <gmd:resourceMaintenance>
             <gmd:MD_MaintenanceInformation>
                <gmd:maintenanceAndUpdateFrequency>
-                  <gmd:MD_MaintenanceFrequencyCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_102"
+                  <gmd:MD_MaintenanceFrequencyCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_102"
                                                    codeListValue=""/>
                </gmd:maintenanceAndUpdateFrequency>
             </gmd:MD_MaintenanceInformation>
@@ -342,8 +342,8 @@
                   </gmd:PT_FreeText>
                </gmd:keyword>
                <gmd:type>
-                  <gmd:MD_KeywordTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_101"
-                                           codeListValue="theme" />
+                  <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101"
+                                          codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
                </gmd:type>
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
@@ -361,8 +361,9 @@
                               <gco:Date>2004</gco:Date>
                            </gmd:date>
                            <gmd:dateType>
-                              <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                              <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                                    codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+
                            </gmd:dateType>
                         </gmd:CI_Date>
                      </gmd:date>
@@ -372,7 +373,7 @@
                               <gco:Date>2016-07-04</gco:Date>
                            </gmd:date>
                            <gmd:dateType>
-                              <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                              <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                                                    codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
                            </gmd:dateType>
                         </gmd:CI_Date>
@@ -388,7 +389,7 @@
                               </gmd:PT_FreeText>
                            </gmd:organisationName>
                            <gmd:role>
-                              <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                              <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                                                codeListValue="RI_409">custodian; conservateur</gmd:CI_RoleCode>
                            </gmd:role>
                         </gmd:CI_ResponsibleParty>
@@ -408,11 +409,11 @@
                   </gmd:PT_FreeText>
                </gmd:useLimitation>
                <gmd:accessConstraints>
-                  <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107"
+                  <gmd:MD_RestrictionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_107"
                                           codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
                </gmd:accessConstraints>
                <gmd:useConstraints>
-                  <gmd:MD_RestrictionCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_107"
+                  <gmd:MD_RestrictionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_107"
                                           codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
                </gmd:useConstraints>
                <gmd:otherConstraints gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
@@ -428,7 +429,7 @@
          <gmd:resourceConstraints>
             <gmd:MD_SecurityConstraints>
                <gmd:classification>
-                  <gmd:MD_ClassificationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96"
+                  <gmd:MD_ClassificationCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_96"
                                              codeListValue="RI_484">unclassified; nonClassifié</gmd:MD_ClassificationCode>
                </gmd:classification>
                <gmd:userNote gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
@@ -437,14 +438,14 @@
             </gmd:MD_SecurityConstraints>
          </gmd:resourceConstraints>
          <gmd:spatialRepresentationType>
-            <gmd:MD_SpatialRepresentationTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"
+            <gmd:MD_SpatialRepresentationTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_109"
                                                   codeListValue=""/>
          </gmd:spatialRepresentationType>
          <gmd:language>
             <gco:CharacterString>fra; CAN</gco:CharacterString>
          </gmd:language>
          <gmd:characterSet>
-            <gmd:MD_CharacterSetCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_95"
+            <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95"
                                      codeListValue=""/>
          </gmd:characterSet>
          <gmd:topicCategory gco:nilReason="missing">
@@ -610,7 +611,7 @@
                         </gmd:CI_Contact>
                      </gmd:contactInfo>
                      <gmd:role>
-                        <gmd:CI_RoleCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_90"
+                        <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90"
                                          codeListValue="RI_412">distributor; distributeur</gmd:CI_RoleCode>
                      </gmd:role>
                   </gmd:CI_ResponsibleParty>

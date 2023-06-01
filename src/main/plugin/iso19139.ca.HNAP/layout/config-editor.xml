@@ -359,7 +359,7 @@
                     </gmd:date>
                     <gmd:dateType>
                       <gmd:CI_DateTypeCode
-                        codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                        codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                         codeListValue=""/>
                     </gmd:dateType>
                   </gmd:CI_Date>
@@ -428,7 +428,7 @@
                     </gmd:date>
                     <gmd:dateType>
                       <gmd:CI_DateTypeCode
-                              codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87"
+                              codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87"
                               codeListValue=""/>
                     </gmd:dateType>
                   </gmd:CI_Date>
@@ -459,7 +459,7 @@
             <template>
               <snippet>
                 <gmd:spatialRepresentationType>
-                  <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_109"/>
+                  <gmd:MD_SpatialRepresentationTypeCode codeListValue="" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_109"/>
                 </gmd:spatialRepresentationType>
               </snippet>
             </template>

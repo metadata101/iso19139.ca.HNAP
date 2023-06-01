@@ -189,7 +189,7 @@
         <gmd:resourceConstraints>
           <gmd:MD_SecurityConstraints>
             <gmd:classification>
-              <gmd:MD_ClassificationCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_96"
+              <gmd:MD_ClassificationCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_96"
                                          codeListValue="RI_484">unclassified; nonClassifié</gmd:MD_ClassificationCode>
             </gmd:classification>
           </gmd:MD_SecurityConstraints>
