@@ -30,7 +30,7 @@
 	<version>1.0</version>
   <appMinorVersionSupported>3.4.0</appMinorVersionSupported>
 	<depends>iso19139</depends>
-	<schemaLocation>http://www.isotc211.org/2005/gmd https://schemas.metadata.geo.ca/2009/gmd/gmd.xsd http://www.isotc211.org/2005/srv https://schemas.metadata.geo.ca/2009/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm https://schemas.metadata.geo.ca/2009/napm/napm.xsd</schemaLocation>
+	<schemaLocation>http://www.isotc211.org/2005/gmx https://schemas.metadata.geo.ca/2009/gmx/gmx.xsd http://www.isotc211.org/2005/gmd https://schemas.metadata.geo.ca/2009/gmd/gmd.xsd http://www.isotc211.org/2005/srv https://schemas.metadata.geo.ca/2009/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm https://schemas.metadata.geo.ca/2009/napm/napm.xsd</schemaLocation>
 
 	<autodetect xmlns:gmd="http://www.isotc211.org/2005/gmd"
               xmlns:gco="http://www.isotc211.org/2005/gco">
