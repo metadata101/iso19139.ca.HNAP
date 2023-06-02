@@ -823,42 +823,42 @@
   </xsl:template>
 
   <!-- Readonly hierarchyLevel in flat mode - changing the hierarchyLevel may cause issues with the xsd schema validation. -->
-  <xsl:template mode="mode-iso19139" priority="2100" match="//gmd:MD_Metadata/gmd:hierarchyLevel[$isFlatMode and $schema = 'iso19139.ca.HNAP']">
-    <xsl:param name="schema" select="$schema" required="no"/>
-    <xsl:param name="labels" select="$labels" required="no"/>
-    <xsl:param name="overrideLabel" select="''" required="no"/>
+<!--  <xsl:template mode="mode-iso19139" priority="2100" match="//gmd:MD_Metadata/gmd:hierarchyLevel[$isFlatMode and $schema = 'iso19139.ca.HNAP']">-->
+<!--    <xsl:param name="schema" select="$schema" required="no"/>-->
+<!--    <xsl:param name="labels" select="$labels" required="no"/>-->
+<!--    <xsl:param name="overrideLabel" select="''" required="no"/>-->
 
-    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
-    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="fieldLabelConfig"
-                  select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+<!--    <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>-->
+<!--    <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>-->
+<!--    <xsl:variable name="fieldLabelConfig"-->
+<!--                  select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>-->
 
-    <xsl:variable name="labelConfig">
-      <xsl:choose>
-        <xsl:when test="$overrideLabel != ''">
-          <element>
-            <label><xsl:value-of select="$overrideLabel"/></label>
-          </element>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:copy-of select="$fieldLabelConfig"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
+<!--    <xsl:variable name="labelConfig">-->
+<!--      <xsl:choose>-->
+<!--        <xsl:when test="$overrideLabel != ''">-->
+<!--          <element>-->
+<!--            <label><xsl:value-of select="$overrideLabel"/></label>-->
+<!--          </element>-->
+<!--        </xsl:when>-->
+<!--        <xsl:otherwise>-->
+<!--          <xsl:copy-of select="$fieldLabelConfig"/>-->
+<!--        </xsl:otherwise>-->
+<!--      </xsl:choose>-->
+<!--    </xsl:variable>-->
 
-    <xsl:call-template name="render-element">
-      <xsl:with-param name="label"
-                      select="$labelConfig/*"/>
-      <xsl:with-param name="value" select="*"/>
-      <xsl:with-param name="cls" select="local-name()"/>
-      <xsl:with-param name="xpath" select="$xpath"/>
-      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '', $xpath)"/>
-      <xsl:with-param name="name" select="''"/>
-      <xsl:with-param name="editInfo" select="*/gn:element"/>
-      <xsl:with-param name="parentEditInfo" select="gn:element"/>
-      <xsl:with-param name="isDisabled" select="true()"/>
-    </xsl:call-template>
+<!--    <xsl:call-template name="render-element">-->
+<!--      <xsl:with-param name="label"-->
+<!--                      select="$labelConfig/*"/>-->
+<!--      <xsl:with-param name="value" select="*"/>-->
+<!--      <xsl:with-param name="cls" select="local-name()"/>-->
+<!--      <xsl:with-param name="xpath" select="$xpath"/>-->
+<!--      <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '', $xpath)"/>-->
+<!--      <xsl:with-param name="name" select="''"/>-->
+<!--      <xsl:with-param name="editInfo" select="*/gn:element"/>-->
+<!--      <xsl:with-param name="parentEditInfo" select="gn:element"/>-->
+<!--      <xsl:with-param name="isDisabled" select="true()"/>-->
+<!--    </xsl:call-template>-->
 
-  </xsl:template>
+<!--  </xsl:template>-->
 
 </xsl:stylesheet>
