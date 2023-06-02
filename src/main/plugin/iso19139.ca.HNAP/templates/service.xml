@@ -11,7 +11,7 @@
                  xmlns:gss="http://www.isotc211.org/2005/gss"
                  xmlns:gts="http://www.isotc211.org/2005/gts"
                  xmlns:srv="http://www.isotc211.org/2005/srv"
-                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd https://schemas.metadata.geo.ca/2009/gmd/gmd.xsd http://www.isotc211.org/2005/srv https://schemas.metadata.geo.ca/2009/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm https://schemas.metadata.geo.ca/2009/napm/napm.xsd"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmx https://schemas.metadata.geo.ca/2009/gmx/gmx.xsdhttp://www.isotc211.org/2005/gmd https://schemas.metadata.geo.ca/2009/gmd/gmd.xsd http://www.isotc211.org/2005/srv https://schemas.metadata.geo.ca/2009/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm https://schemas.metadata.geo.ca/2009/napm/napm.xsd"
   >
     <gmd:fileIdentifier>
         <gco:CharacterString/>
