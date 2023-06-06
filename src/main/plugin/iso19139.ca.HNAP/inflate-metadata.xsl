@@ -206,29 +206,6 @@
 
       <xsl:apply-templates select="gmd:spatialRepresentationInfo" />
       <xsl:apply-templates select="gmd:referenceSystemInfo" />
-      <xsl:if test="not(gmd:referenceSystemInfo)">
-        <xsl:variable name="spatialRepresentationType" select="gmd:identificationInfo/*/gmd:spatialRepresentationType/gmd:MD_SpatialRepresentationTypeCode/@codeListValue" />
-
-        <xsl:if test="$spatialRepresentationType = 'RI_635' or $spatialRepresentationType = 'RI_636' or $spatialRepresentationType = 'RI_638'">
-          <gmd:referenceSystemInfo>
-            <gmd:MD_ReferenceSystem>
-              <gmd:referenceSystemIdentifier>
-                <gmd:RS_Identifier>
-                  <gmd:code>
-                    <gco:CharacterString/>
-                  </gmd:code>
-                  <gmd:codeSpace>
-                    <gco:CharacterString/>
-                  </gmd:codeSpace>
-                  <gmd:version>
-                    <gco:CharacterString/>
-                  </gmd:version>
-                </gmd:RS_Identifier>
-              </gmd:referenceSystemIdentifier>
-            </gmd:MD_ReferenceSystem>
-          </gmd:referenceSystemInfo>
-        </xsl:if>
-      </xsl:if>
 
       <xsl:apply-templates select="gmd:identificationInfo" />
       <xsl:apply-templates select="gmd:contentInfo" />

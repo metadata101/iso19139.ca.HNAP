@@ -509,11 +509,31 @@
 
         </section>
 
-
-        <section name="referenceSystemInfo">
-          <field xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
-                 in="/gmd:MD_Metadata"
-                 or="referenceSystemInfo"/>
+        <section name="referenceSystemInfo" displayIfRecord="count(gmd:MD_Metadata/gmd:referenceSystemInfo) > 0">
+          <field
+            xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
+            if="count(gmd:MD_Metadata/gmd:referenceSystemInfo) > 0"
+            del="../../../..">
+          </field>
+          <action type="add" name="referenceSystemInfo" or="referenceSystemInfo"
+                  in="/gmd:MD_Metadata"
+                  if="count(/gmd:MD_Metadata/gmd:referenceSystemInfo) = 0">
+            <template>
+              <snippet>
+                <gmd:referenceSystemInfo>
+                  <gmd:MD_ReferenceSystem>
+                    <gmd:referenceSystemIdentifier>
+                      <RS_Identifier>
+                        <code>
+                          <gco:CharacterString></gco:CharacterString>
+                        </code>
+                      </RS_Identifier>
+                    </gmd:referenceSystemIdentifier>
+                  </gmd:MD_ReferenceSystem>
+                </gmd:referenceSystemInfo>
+              </snippet>
+            </template>
+          </action>
         </section>
 
         <section xpath="/gmd:MD_Metadata/gmd:spatialRepresentationInfo"
