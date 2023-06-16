@@ -381,7 +381,7 @@
                 <gmd:CI_Date>
                   <xsl:sequence select="geonet:parseDateString($thesaurusIssuedDate)"/>
                   <gmd:dateType>
-                    <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                    <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                   </gmd:dateType>
                 </gmd:CI_Date>
               </gmd:date>
@@ -391,7 +391,7 @@
                 <gmd:CI_Date>
                   <xsl:sequence select="geonet:parseDateString($thesaurusDate)"/>
                   <gmd:dateType>
-                    <gmd:CI_DateTypeCode codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                    <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
                   </gmd:dateType>
                 </gmd:CI_Date>
               </gmd:date>
@@ -406,7 +406,7 @@
                   <xsl:sequence select="geonet:parseDateString($thesaurusCreatedDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                         codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                                         codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
                   </gmd:dateType>
                 </gmd:CI_Date>
               </gmd:date>
@@ -418,7 +418,7 @@
                   <xsl:sequence select="geonet:parseDateString($thesaurusDate)"/>
                   <gmd:dateType>
                     <gmd:CI_DateTypeCode codeListValue="RI_366"
-                                         codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                                         codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
                   </gmd:dateType>
                 </gmd:CI_Date>
               </gmd:date>
