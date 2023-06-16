@@ -307,7 +307,7 @@
 
   <!-- View configuration -->
   <views>
-    <view name="default" displayTooltips="true" displayTooltipsMode="icon">
+    <view name="default" default="true" displayTooltips="true" displayTooltipsMode="icon">
       <sidePanel>
         <directive data-gn-validation-report="" data-initial-show-errors="true" data-initial-show-successes="true" data-initial-section-states="closed"/>
         <directive data-gn-onlinesrc-list=""/>
