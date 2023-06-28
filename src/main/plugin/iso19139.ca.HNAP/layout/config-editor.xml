@@ -221,6 +221,7 @@
       <name>gmd:metadataStandardName</name>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
+      <name>gmd:credit</name>
       <name>gmd:country</name>
       <name>gmd:name</name>
       <name>gmd:administrativeArea</name>
@@ -369,6 +370,7 @@
           </action>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:abstract"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:credit"/>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:status"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
@@ -438,6 +440,7 @@
           </action>
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:credit"/>
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:status"
                  in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                  or="status"/>
