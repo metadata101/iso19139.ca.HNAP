@@ -509,7 +509,7 @@
 
         </section>
 
-        <section name="referenceSystemInfo" displayIfRecord="count(gmd:MD_Metadata/gmd:referenceSystemInfo) > 0">
+        <section name="referenceSystemInfo">
           <field
             xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
             if="count(gmd:MD_Metadata/gmd:referenceSystemInfo) > 0">
