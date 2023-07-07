@@ -876,9 +876,18 @@
 
 
             <gmd:type>
-              <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}">
-                  <xsl:value-of select="$codelistDocument/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value"/>
-              </gmd:MD_KeywordTypeCode>
+              <xsl:choose>
+                <xsl:when test="$currentCodeValue='theme'">
+                  <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">
+                    <xsl:value-of select="$codelistDocument/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = 'RI_528']/value"/>
+                  </gmd:MD_KeywordTypeCode>
+                </xsl:when>
+                <xsl:otherwise>
+                  <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="{@type}">
+                    <xsl:value-of select="$codelistDocument/codelists/codelist[@name='gmd:MD_KeywordTypeCode']/entry[code = $currentCodeValue]/value"/>
+                  </gmd:MD_KeywordTypeCode>
+                </xsl:otherwise>
+              </xsl:choose>
             </gmd:type>
 
             <xsl:copy-of select="keyword[1]/gmd:thesaurusName" />
