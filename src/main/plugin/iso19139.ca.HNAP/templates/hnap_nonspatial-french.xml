@@ -326,7 +326,7 @@
                </gmd:keyword>
                <gmd:type>
                   <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101"
-                                          codeListValue="theme" />
+                                          codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
                </gmd:type>
                <gmd:thesaurusName>
                   <gmd:CI_Citation>
