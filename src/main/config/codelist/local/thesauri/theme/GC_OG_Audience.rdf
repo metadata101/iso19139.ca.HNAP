@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/">
+
+    <!-- Source of the values: canada_audience from https://github.com/open-data/ckanext-canada/blob/master/ckanext/canada/schemas/presets.yaml -->
+
+    <skos:ConceptScheme>
+      <dc:title>Government of Canada - Open government - Audience</dc:title>
+      <dc:title xml:lang="en">Government of Canada - Open government - Audience</dc:title>
+      <dc:title xml:lang="fr">Audience - gouvernement ouvert - gouvernement du Canada</dc:title>
+      <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+      <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+      <dc:description></dc:description>
+      <dcterms:issued>2016</dcterms:issued>
+      <dcterms:created>2016-04-05</dcterms:created>
+    </skos:ConceptScheme>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#aboriginal_peoples">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Indigenous peoples</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Peuples autochtones</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#business">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Business</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Entreprises</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#children">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Children</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Enfants</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#educators">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Educators</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Éducateurs</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#employers">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Employers</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Employeurs</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#funding_applicants">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Funding applicants</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Demandeurs de financement</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#general_public">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">General public</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Grand public</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#government">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Government</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Gouvernement</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#immigrants">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Immigrants</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Immigrants</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#job_seekers">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Job seekers</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Chercheurs d’emploi</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#media">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Media</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Médias</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#noncanadians">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Non-Canadians</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Non-Canadiens</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#nongovernmental_organizations">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Non-governmental organizations</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Organisations non governementales</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#parents">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Parents</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Parents</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#persons_with_disabilities">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Persons with disabilities</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Personnes handicapées</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#rural_community">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Rural community</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Communauté rurale</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#seniors">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Seniors</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Aînés</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#scientists">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Scientists</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Scientifiques</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#students">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Students</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Étudiants</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#travellers">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Travellers</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Voyageurs</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#veterans">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Veterans</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Anciens combattants</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#visitors_to_canada">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Visitors to Canada</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Visiteurs au Canada</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#women">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Women</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Femmes</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/audience#youth">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Youth</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Jeunesse</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+</rdf:RDF>

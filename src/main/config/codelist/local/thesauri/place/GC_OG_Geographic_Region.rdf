@@ -1,0 +1,2192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/">
+
+   <!-- Source of the values: canada_geographic_region from https://github.com/open-data/ckanext-canada/blob/master/ckanext/canada/schemas/presets.yaml -->
+
+   <skos:ConceptScheme>
+      <dc:title>Government of Canada - Open government - Geographic Region Name</dc:title>
+      <dc:title xml:lang="en">Government of Canada - Open government - Geographic Region Name</dc:title>
+      <dc:title xml:lang="fr">Nom de la région géographique - gouvernement ouvert - gouvernement du Canada</dc:title>
+      <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+      <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+      <dc:description></dc:description>
+      <dcterms:issued>2015</dcterms:issued>
+      <dcterms:created>2015-09-28</dcterms:created>
+   </skos:ConceptScheme>
+
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#0">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Canada</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Canada</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Atlantique</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Atlantic</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Prairies</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Prairies</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Territories</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#10">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#11">
+      <ns2:prefLabel xml:lang="fr">Île-du-Prince-Édouard</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Prince Edward Island</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#12">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#13">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#46">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#47">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#48">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#60">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Yukon</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Yukon</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#61">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#62">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nunavut</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nunavut</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1001">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 1</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 1</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1002">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 2</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 2</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1003">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 3</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 3</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1004">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 4</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 4</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1005">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 5</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 5</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1006">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 6</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 6</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1007">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 7</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 7</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1008">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 8</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 8</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1009">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 9</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 9</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1010">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 10</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 10 </ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1011">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Terre-Neuve-et-Labrador - Division No. 11</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Newfoundland and Labrador - Division No. 11 </ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1101">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Île-du-Prince-Édouard - Kings</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Prince Edward Island - Kings</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1102">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Île-du-Prince-Édouard - Queens</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Prince Edward Island - Queens</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1103">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Île-du-Prince-Édouard - Prince</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Prince Edward Island - Prince</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1201">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Shelburne</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Shelburne</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1202">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Yarmouth</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Yarmouth</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1203">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Digby</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Digby</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1204">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Queens</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Queens</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1205">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Annapolis</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Annapolis</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1206">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Lunenburg</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Lunenburg</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1207">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Kings</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Kings</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1208">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Hants</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Hants</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1209">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Halifax</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Halifax</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1210">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Colchester</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Colchester</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1211">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Cumberland</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Cumberland</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1212">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Pictou</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Pictou</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1213">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Guysborough</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Guysborough</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1214">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Antigonish</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Antigonish</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1215">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Inverness</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Inverness</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1216">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Richmond</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Richmond</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1217">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Cape Breton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Cape Breton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1218">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouvelle-Écosse - Victoria</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nova Scotia - Victoria</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1301">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Saint John</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Saint John</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1302">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Charlotte</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Charlotte</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1303">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Sunbury</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Sunbury</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1304">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Queens</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Queens</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1305">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Kings</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Kings</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1306">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Albert</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Albert</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1307">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Westmorland</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Westmorland</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1308">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Kent</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Kent</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1309">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Northumberland</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Northumberland</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1310">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - York</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - York</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1311">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Carleton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Carleton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1312">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Victoria</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Victoria</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1313">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Madawaska</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Madawaska</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1314">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Restigouche</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Restigouche</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#1315">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nouveau-Brunswick - Gloucester</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">New Brunswick - Gloucester</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2401">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Îles-de-la-Madeleine</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Îles-de-la-Madeleine</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2402">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Rocher-Percé</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Rocher-Percé</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2403">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Côte-de-Gaspé</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Côte-de-Gaspé</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2404">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Haute-Gaspésie</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Haute-Gaspésie</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2405">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Bonaventure</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Bonaventure</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2406">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Avignon</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Avignon</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2407">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Matapédia</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Matapédia</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2408">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Matane</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Matane</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2409">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Mitis</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Mitis</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2410">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Rimouski-Neigette</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Rimouski-Neigette</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2411">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Basques</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Basques</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2412">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Rivière-du-Loup</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Rivière-du-Loup</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2413">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Témiscouata</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Témiscouata</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2414">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Kamouraska</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Kamouraska</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2415">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Charlevoix-Est</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Charlevoix-Est</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2416">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Charlevoix</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Charlevoix</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2417">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - LIslet</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - LIslet</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2418">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Montmagny</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Montmagny</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2419">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Bellechasse</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Bellechasse</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2420">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - LÎle-dOrléans</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - LÎle-dOrléans</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2421">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Côte-de-Beaupré</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Côte-de-Beaupré</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2422">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Jacques-Cartier</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Jacques-Cartier</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2423">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Québec</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Québec</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2425">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Lévis</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Lévis</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2426">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Nouvelle-Beauce</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Nouvelle-Beauce</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2427">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Robert-Cliche</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Robert-Cliche</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2428">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Etchemins</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Etchemins</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2429">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Beauce-Sartigan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Beauce-Sartigan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2430">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Granit</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Granit</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2431">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Appalaches</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Appalaches</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2432">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - LÉrable</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - LÉrable</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2433">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Lotbinière</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Lotbinière</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2434">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Portneuf</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Portneuf</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2435">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Mékinac</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Mékinac</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2436">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Shawinigan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Shawinigan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2437">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Francheville</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Francheville</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2438">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Bécancour</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Bécancour</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2439">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Arthabaska</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Arthabaska</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2440">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Sources</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Sources</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2441">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Haut-Saint-François</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Haut-Saint-François</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2442">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Val-Saint-François</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Val-Saint-François</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2443">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Sherbrooke</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Sherbrooke</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2444">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Coaticook</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Coaticook</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2445">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Memphrémagog</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Memphrémagog</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2446">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Brome-Missisquoi</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Brome-Missisquoi</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2447">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Haute-Yamaska</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Haute-Yamaska</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2448">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Acton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Acton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2449">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Drummond</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Drummond</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2450">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Nicolet-Yamaska</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Nicolet-Yamaska</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2451">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Maskinongé</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Maskinongé</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2452">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - DAutray</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - DAutray</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2453">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Pierre-De Saurel</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Pierre-De Saurel</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2454">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Maskoutains</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Maskoutains</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2455">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Rouville</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Rouville</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2456">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Haut-Richelieu</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Haut-Richelieu</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2457">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Vallée-du-Richelieu</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Vallée-du-Richelieu</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2458">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Longueuil</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Longueuil</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2459">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Lajemmerais</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Lajemmerais</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2460">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - LAssomption</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - LAssomption</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2461">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Joliette</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Joliette</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2462">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Matawinie</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Matawinie</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2463">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Montcalm</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Montcalm</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2464">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Moulins</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Moulins</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2465">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Laval</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Laval</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2466">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Montréal</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Montréal</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2467">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Roussillon</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Roussillon</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2468">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Jardins-de-Napierville</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Jardins-de-Napierville</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2469">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Haut-Saint-Laurent</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Haut-Saint-Laurent</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2470">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Beauharnois-Salaberry</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Beauharnois-Salaberry</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2471">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Vaudreuil-Soulanges</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Vaudreuil-Soulanges</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2472">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Deux-Montagnes</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Deux-Montagnes</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2473">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Thérèse-De Blainville</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Thérèse-De Blainville</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2474">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Mirabel</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Mirabel</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2475">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Rivière-du-Nord</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Rivière-du-Nord</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2476">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Argenteuil</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Argenteuil</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2477">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Pays-den-Haut</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Pays-den-Haut</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2478">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Laurentides</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Laurentides</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2479">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Antoine-Labelle</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Antoine-Labelle</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2480">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Papineau</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Papineau</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2481">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Gatineau</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Gatineau</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2482">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Les Collines-de-lOutaouais</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Les Collines-de-lOutaouais</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2483">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Vallée-de-la-Gatineau</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Vallée-de-la-Gatineau</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2484">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Pontiac</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Pontiac</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2485">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Témiscamingue</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Témiscamingue</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2486">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Rouyn-Noranda</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Rouyn-Noranda</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2487">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Abitibi-Ouest</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Abitibi-Ouest</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2488">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Abitibi</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Abitibi</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2489">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Vallée-de-lOr</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Vallée-de-lOr</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2490">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Tuque</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Tuque</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2491">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Domaine-du-Roy</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Domaine-du-Roy</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2492">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Maria-Chapdelaine</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Maria-Chapdelaine</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2493">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Lac-Saint-Jean-Est</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Lac-Saint-Jean-Est</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2494">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Le Saguenay-et-son-Fjord</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Le Saguenay-et-son-Fjord</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2495">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - La Haute-Côte-Nord</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - La Haute-Côte-Nord</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2496">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Manicouagan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Manicouagan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2497">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Sept-Rivières--Caniapiscau</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Sept-Rivières--Caniapiscau</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2498">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Minganie--Le Golfe-du-Saint-Laurent</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Minganie--Le Golfe-du-Saint-Laurent</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#2499">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Québec - Nord-du-Québec</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Quebec - Nord-du-Québec</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3501">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Stormont Dundas and Glengarry</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Stormont Dundas and Glengarry</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3502">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Prescott and Russell</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Prescott and Russell</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3506">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Ottawa</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Ottawa</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3507">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Leeds and Grenville</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Leeds and Grenville</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3509">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Lanark</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Lanark</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3510">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Frontenac</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Frontenac</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3511">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Lennox and Addington</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Lennox and Addington</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3512">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Hastings</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Hastings</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3513">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Prince Edward</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Prince Edward</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3514">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Northumberland</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Northumberland</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3515">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Peterborough</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Peterborough</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3516">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Kawartha Lakes</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Kawartha Lakes</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3518">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Durham</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Durham</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3519">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - York</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - York</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3520">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Toronto</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Toronto</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3521">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Peel</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Peel</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3522">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Dufferin</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Dufferin</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3523">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Wellington</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Wellington</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3524">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Halton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Halton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3525">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Hamilton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Hamilton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3526">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Niagara</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Niagara</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3528">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Haldimand-Norfolk</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Haldimand-Norfolk</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3529">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Brant</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Brant</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3530">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Waterloo</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Waterloo</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3531">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Perth</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Perth</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3532">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Oxford</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Oxford</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3534">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Elgin</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Elgin</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3536">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Chatham-Kent</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Chatham-Kent</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3537">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Essex</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Essex</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3538">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Lambton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Lambton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3539">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Middlesex</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Middlesex</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3540">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Huron</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Huron</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3541">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Bruce</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Bruce</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3542">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Grey</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Grey</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3543">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Simcoe</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Simcoe</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3544">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Muskoka</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Muskoka</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3546">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Haliburton</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Haliburton</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3547">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Renfrew</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Renfrew</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3548">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Nipissing</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Nipissing</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3549">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Parry Sound</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Parry Sound</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3551">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Manitoulin</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Manitoulin</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3552">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Sudbury</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Sudbury</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3553">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Greater Sudbury</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Greater Sudbury</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3554">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Timiskaming</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Timiskaming</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3556">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Cochrane</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Cochrane</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3557">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Algoma</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Algoma</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3558">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Thunder Bay</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Thunder Bay</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3559">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Rainy River</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Rainy River</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#3560">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Ontario - Kenora</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Ontario - Kenora</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4601">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 1</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 1</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4602">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 2</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 2</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4603">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 3</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 3</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4604">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 4</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 4</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4605">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 5</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 5</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4606">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 6</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 6</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4607">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 7</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 7</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4608">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 8</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 8</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4609">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 9</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 9</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4610">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 10</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 10</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4611">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 11</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 11</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4612">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 12</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 12</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4613">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 13</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 13</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4614">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 14</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 14</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4615">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 15</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 15</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4616">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 16</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 16</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4617">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 17</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 17</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4618">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 18</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 18</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4619">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 19</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 19</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4620">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 20</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 20</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4621">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 21</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 21</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4622">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 22</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 22</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4623">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Manitoba - Division No. 23</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Manitoba - Division No. 23</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4701">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 1</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 1</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4702">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 2</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 2</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4703">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 3</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 3</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4704">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 4</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 4</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4705">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 5</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 5</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4706">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 6</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 6</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4707">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 7</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 7</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4708">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 8</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 8</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4709">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 9</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 9</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4710">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 10</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 10</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4711">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 11</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 11</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4712">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 12</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 12</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4713">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 13</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 13</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4714">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 14</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 14</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4715">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 15</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 15</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4716">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 16</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 16</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4717">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 17</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 17</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4718">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Saskatchewan - Division No. 18</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Saskatchewan - Division No. 18</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4801">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 1</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 1</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4802">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 2</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 2</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4803">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 3</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 3</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4804">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 4</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 4</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4805">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 5</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 5</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4806">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 6</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 6</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4807">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 7</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 7</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4808">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 8</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 8</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4809">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 9</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 9</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4810">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 10</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 10</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4811">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 11</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 11</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4812">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 12</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 12</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4813">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 13</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 13</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4814">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 14</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 14</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4815">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 15</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 15</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4816">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 16</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 16</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4817">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 17</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 17</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4818">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 18</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 18</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#4819">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Alberta - Division No. 19</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Alberta - Division No. 19</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5901">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - East Kootenay</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - East Kootenay</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5903">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Central Kootenay</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Central Kootenay</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5905">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Kootenay Boundary</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Kootenay Boundary</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5907">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Okanagan-Similkameen </ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Okanagan-Similkameen</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5909">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Fraser Valley</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Fraser Valley</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5915">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Greater Vancouver</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Greater Vancouver</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5917">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Capital</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Capital</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5919">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Cowichan Valley</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Cowichan Valley</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5921">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Nanaimo</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Nanaimo</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5923">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Alberni-Clayoquot</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Alberni-Clayoquot</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5924">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Strathcona</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Strathcona</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5926">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Comox Valley</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Comox Valley</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5927">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Powell River</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Powell River</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5929">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Sunshine Coast</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Sunshine Coast</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5931">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Squamish-Lillooet</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Squamish-Lillooet</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5933">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Thompson-Nicola</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Thompson-Nicola</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5935">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Central Okanagan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Central Okanagan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5937">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - North Okanagan</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - North Okanagan</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5939">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Columbia-Shuswap</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Columbia-Shuswap</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5941">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Cariboo</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Cariboo</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5943">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Mount Waddington</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Mount Waddington</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5945">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Central Coast</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Central Coast</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5947">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Skeena-Queen Charlotte</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Skeena-Queen Charlotte</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5949">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Kitimat-Stikine</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Kitimat-Stikine</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5951">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Bulkley-Nechako</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Bulkley-Nechako</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5953">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Fraser-Fort George</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Fraser-Fort George</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5955">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Peace River</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Peace River</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5957">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Stikine</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Stikine</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#5959">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Colombie-Britannique - Northern Rockies</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">British Columbia - Northern Rockies</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6001">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Yukon - Yukon</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Yukon - Yukon</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6101">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 1</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 1</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6102">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 2</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 2</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6103">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 3</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 3</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6104">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 4</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 4</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6105">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 5</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 5</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6106">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Territoires du Nord-Ouest - Region 6</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Northwest Territories - Region 6</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6204">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nunavut - Baffin</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nunavut - Baffin</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6205">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nunavut - Keewatin</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nunavut - Keewatin</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/geographic_region#6208">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <ns2:prefLabel xml:lang="fr">Nunavut - Kitikmeot</ns2:prefLabel>
+      <ns2:prefLabel xml:lang="en">Nunavut - Kitikmeot</ns2:prefLabel>
+      <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+      <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+   </rdf:Description>
+</rdf:RDF>
