@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:dcterms="http://purl.org/dc/terms/">
+
+    <!-- Source of the values: canada_subject from https://github.com/open-data/ckanext-canada/blob/master/ckanext/canada/schemas/presets.yaml -->
+
+    <skos:ConceptScheme>
+      <dc:title>Government of Canada - Open government - Subject</dc:title>
+      <dc:title xml:lang="en">Government of Canada - Open government - Subject</dc:title>
+      <dc:title xml:lang="fr">Sujet - gouvernement ouvert - gouvernement du Canada</dc:title>
+      <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+      <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+
+      <dc:description></dc:description>
+      <dcterms:issued>2016</dcterms:issued>
+      <dcterms:created>2016-03-21</dcterms:created>
+    </skos:ConceptScheme>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#arts_music_literature">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Arts, Music, Literature</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Arts, musique, littérature</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#agriculture">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Agriculture</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Agriculture</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#economics_and_industry">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Economics and Industry</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Économie et industrie</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#education_and_training">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Education and Training</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Éducation et formation</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#form_descriptors">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Form Descriptors</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Format</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#government_and_politics">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Government and Politics</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Gouvernement et vie politique</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#health_and_safety">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Health and Safety</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Santé et sécurité</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#history_and_archaeology">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">History and Archaeology</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Histoire et archéologie</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#information_and_communications">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Information and Communications</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Information et communication</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#labour">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Labour</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Travail et emploi</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#language_and_linguistics">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Language and Linguistics</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Langue et linguistique</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#law">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Law</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Droit</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#military">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Military</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Histoire et science militaire</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#nature_and_environment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Nature and Environment</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Nature et environnement</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#persons">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Persons</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Personnes</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#processes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Processes</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Liens et fonctions</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#society_and_culture">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Society and Culture</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Société et culture</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#science_and_technology">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Science and Technology</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Sciences et technologie</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC_OG/subject#transport">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Transport</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Transport</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+      </rdf:Description>
+</rdf:RDF>
