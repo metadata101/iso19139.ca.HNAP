@@ -63,8 +63,8 @@ Stylesheet used to update metadata adding a reference to a source record.
               <gmd:scope>
                 <gmd:DQ_Scope>
                   <gmd:level>
-                    <gmd:MD_ScopeCode codeListValue="dataset"
-                                      codeList="http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml#IC_108"/>
+                    <gmd:MD_ScopeCode codeListValue="RI_622"                     
+                    codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_108">dataset; jeuDonnées</gmd:MD_ScopeCode>
                   </gmd:level>
                 </gmd:DQ_Scope>
               </gmd:scope>
