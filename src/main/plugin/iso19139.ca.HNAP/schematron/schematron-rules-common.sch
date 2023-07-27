@@ -284,6 +284,47 @@
       <sch:assert test="$missingBeginPosition or $missingEndPosition or (XslUtilHnap:compareDates($endPosition, $beginPosition) &gt;= 0)">$loc/strings/EndPosition</sch:assert>
     </sch:rule>
 
+    <!-- Geographical extent - mandatory if spatialRepresentationType exists -->
+    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification[gmd:spatialRepresentationType]/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox
+                      |//gmd:identificationInfo/srv:SV_ServiceIdentification[gmd:spatialRepresentationType]/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox
+                      |//*[@gco:isoType='gmd:MD_DataIdentification' and gmd:spatialRepresentationType]/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox
+                      |//*[@gco:isoType='srv:SV_ServiceIdentification' and gmd:spatialRepresentationType]/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox">
+      <sch:let name="missing" value="(not(string(gmd:westBoundLongitude/gco:Decimal))
+                                  or not(string(gmd:eastBoundLongitude/gco:Decimal))
+                                  or not(string(gmd:southBoundLatitude/gco:Decimal))
+                                  or not(string(gmd:northBoundLatitude/gco:Decimal)))
+                                  or (@gco:nilReason)" />
+      <sch:assert
+        test="not($missing)"
+      >$loc/strings/GeographicExtentRequired</sch:assert>
+    </sch:rule>
+
+    <!-- Geographic extent - east-west check -->
+    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude
+                |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:westBoundLongitude">
+
+      <sch:let name="westBoundLongitude" value="gco:Decimal" />
+      <sch:let name="eastBoundLongitude" value="../gmd:eastBoundLongitude/gco:Decimal" />
+
+      <sch:assert
+        test="not(string($westBoundLongitude))  or not(string($eastBoundLongitude)) or (number($westBoundLongitude) &lt; number($eastBoundLongitude))">$loc/strings/GeographicExtentWestEast</sch:assert>
+    </sch:rule>
+
+    <!-- Geographic extent - north-south check -->
+    <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude
+          |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox/gmd:southBoundLatitude">
+
+      <sch:let name="southBoundLatitude" value="gco:Decimal" />
+      <sch:let name="northBoundLatitude" value="../gmd:northBoundLatitude/gco:Decimal" />
+
+      <sch:assert
+        test="not(string($northBoundLatitude))  or not(string($southBoundLatitude)) or (number($southBoundLatitude) &lt; number($northBoundLatitude))">$loc/strings/GeographicExtentNorthSouth</sch:assert>
+    </sch:rule>
+
     <!-- Dataset language -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:language
                    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:language
@@ -361,6 +402,14 @@
               */gmd:thesaurusName/*/gmd:title/*/text() = 'Thésaurus des sujets de base du gouvernement du Canada']) > 0" />
 
       <sch:assert test="$coreSubjectThesaurusExists">$loc/strings/CoreSubjectThesaurusMissing</sch:assert>
+
+      <!-- Temporal extent - mandatory if spatialRepresentationType exists -->
+      <sch:let name="hasTemporalExtent" value="count(gmd:extent/*/gmd:temporalElement/*/gmd:extent/gml:TimePeriod) > 0" />
+      <sch:assert test="not(gmd:spatialRepresentationType) or  $hasTemporalExtent">$loc/strings/TemporalExtentRequired</sch:assert>
+
+      <!-- Geographic extent - mandatory if spatialRepresentationType exists -->
+      <sch:let name="hasGeographicExtent" value="count(gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox) > 0" />
+      <sch:assert test="not(gmd:spatialRepresentationType) or $hasGeographicExtent">$loc/strings/GeographicExtentRequired</sch:assert>
     </sch:rule>
 
     <!-- Access constraints -->

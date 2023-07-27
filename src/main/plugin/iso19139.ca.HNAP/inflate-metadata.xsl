@@ -386,6 +386,50 @@
 
       <xsl:apply-templates select="gmd:environmentDescription" />
       <xsl:apply-templates select="gmd:extent" />
+
+      <!-- Add mandatory temporal extent if gmd:spatialRepresentationType exists -->
+      <xsl:if test="(gmd:spatialRepresentationType) and (count(gmd:extent/gmd:EX_Extent/gmd:temporalElement[gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod]) = 0)">
+        <gmd:extent>
+          <gmd:EX_Extent>
+            <gmd:temporalElement>
+              <gmd:EX_TemporalExtent>
+                <gmd:extent>
+                  <gml:TimePeriod gml:id="{generate-id(.)}">
+                    <gml:beginPosition></gml:beginPosition>
+                    <gml:endPosition></gml:endPosition>
+                  </gml:TimePeriod>
+                </gmd:extent>
+              </gmd:EX_TemporalExtent>
+            </gmd:temporalElement>
+          </gmd:EX_Extent>
+        </gmd:extent>
+      </xsl:if>
+
+      <!-- Add mandatory geographic extent if gmd:spatialRepresentationType exists -->
+      <xsl:if test="(gmd:spatialRepresentationType) and (count(gmd:extent/gmd:EX_Extent/gmd:geographicElement[gmd:EX_GeographicBoundingBox]) = 0)">
+        <gmd:extent>
+          <gmd:EX_Extent>
+            <gmd:geographicElement>
+              <gmd:EX_GeographicBoundingBox>
+                <gmd:westBoundLongitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:westBoundLongitude>
+                <gmd:eastBoundLongitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:eastBoundLongitude>
+                <gmd:southBoundLatitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:southBoundLatitude>
+                <gmd:northBoundLatitude>
+                  <gco:Decimal></gco:Decimal>
+                </gmd:northBoundLatitude>
+              </gmd:EX_GeographicBoundingBox>
+            </gmd:geographicElement>
+          </gmd:EX_Extent>
+        </gmd:extent>
+
+      </xsl:if>
+
       <xsl:apply-templates select="gmd:supplementalInformation" />
     </xsl:copy>
   </xsl:template>
