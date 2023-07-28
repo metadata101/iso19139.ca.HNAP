@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Users and Groups &mdash; Documentation User Manual (HNAP) 3.12-SNAPSHOT</title>
+  <title>Upgrade &mdash; Documentation User Manual (HNAP) 3.12-SNAPSHOT</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,8 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Settings" href="settings.html" />
-    <link rel="prev" title="Record Privileges" href="privileges.html" /> 
+    <link rel="prev" title="Settings" href="settings.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,16 +49,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../editor/index.html">Editor</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Administrator</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="privileges.html">Record Privileges</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Users and Groups</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#groups">Groups</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#users">Users</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ldap">LDAP</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">Users and Groups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="settings.html">Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="upgrade.html">Upgrade</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Upgrade</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#migration-to-schemas-metadata-geo-ca">Migration to schemas.metadata.geo.ca</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -79,7 +74,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">Administrator</a></li>
-      <li class="breadcrumb-item active">Users and Groups</li>
+      <li class="breadcrumb-item active">Upgrade</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -88,32 +83,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="users-and-groups">
-<h1>Users and Groups<a class="headerlink" href="#users-and-groups" title="Lien permanent vers cette rubrique"></a></h1>
-<p>The <span class="menuselection">Admin Console &gt; Users and Groups</span> is managed during application startup based on active directory services.</p>
-<section id="groups">
-<h2>Groups<a class="headerlink" href="#groups" title="Lien permanent vers cette rubrique"></a></h2>
-<p>A single group is created on startup:</p>
-<ul>
-<li><p><cite>Sample Group</cite></p>
-<p>This group is configured with label <cite>Sample Group</cite> and the geonetwork logo.</p>
-</li>
-</ul>
-<p>Additional groups can be manually added using the administration console.</p>
-</section>
-<section id="users">
-<h2>Users<a class="headerlink" href="#users" title="Lien permanent vers cette rubrique"></a></h2>
-<p>User can be manually managed using the administration console.</p>
-<section id="ldap">
-<h3>LDAP<a class="headerlink" href="#ldap" title="Lien permanent vers cette rubrique"></a></h3>
-<p>When using LDAP users are created during login based on active directory services:</p>
+  <section id="upgrade">
+<h1>Upgrade<a class="headerlink" href="#upgrade" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="migration-to-schemas-metadata-geo-ca">
+<h2>Migration to schemas.metadata.geo.ca<a class="headerlink" href="#migration-to-schemas-metadata-geo-ca" title="Lien permanent vers cette rubrique"></a></h2>
+<p>The published location of the HNAP schema has changed from
+<a class="reference external" href="http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-cgsb-171.100-2009-a/">nap.geogratis.gc.ca</a> to
+<a class="reference external" href="https://schemas.metadata.geo.ca/2009/">schemas.metadata.geo.ca</a>.</p>
+<p>The location of the HNAP registry used for code list definitions has also changed:</p>
 <ul class="simple">
-<li><p><cite>GeoNetwork_Admin</cite> users added to <cite>Sample Group</cite> with Administrator role</p></li>
-<li><p><cite>GeoNetwork_Editor</cite> users added to <cite>Sample Group</cite> with Editor role</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml</span></code>
+| <code class="docutils literal notranslate"><span class="pre">https://schemas.metadata.geo.ca/register/napMetadataRegister.xml</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html</span></code>
+| <code class="docutils literal notranslate"><span class="pre">https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html</span></code></p></li>
 </ul>
-<p>The <cite>Administrator</cite> role provides access to the <span class="guilabel">Admin console</span> and is not related to group access.</p>
-<p>See configuration file <cite>WEB-INF/config-security/config-security-ldap.xml</cite> for details.</p>
-</section>
+<p>Individual records can be upgraded by saving and loading in the editor:</p>
+<ol class="arabic simple">
+<li><p>Open the record in the editor.</p></li>
+<li><p>Select <strong class="command">Save and Close</strong>.</p></li>
+</ol>
+<p>To update all records in the database use the following SQL:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>UPDATE Metadata SET data =
+  replace(
+     data,
+    &#39;http://nap.geogratis.gc.ca/metadata/register/&#39;,
+    &#39;https://schemas.metadata.geo.ca/register/&#39;
+  );
+UPDATE MetadataDraft SET data =
+  replace(
+    data,
+    &#39;http://nap.geogratis.gc.ca/metadata/register/&#39;,
+    &#39;https://schemas.metadata.geo.ca/register/&#39;
+  );
+</pre></div>
+</div>
 </section>
 </section>
 
