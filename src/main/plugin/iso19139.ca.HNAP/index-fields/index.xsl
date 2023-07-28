@@ -273,7 +273,7 @@
           <xsl:copy-of select="gn-fn-index:add-multilingual-field('resourceAltTitle', gmd:alternateTitle, $allLanguages)"/>
 
           <xsl:for-each select="gmd:date/gmd:CI_Date[gn-fn-index:is-isoDate(gmd:date/*/text())]">
-            <xsl:variable name="dateType"
+            <xsl:variable name="dateTypeHNAP"
                           select="gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue"
                           as="xs:string?"/>
             <xsl:variable name="date"
@@ -284,6 +284,11 @@
                 <xsl:value-of select="date-util:convertToISOZuluDateTime(normalize-space($date))"/>
               </xsl:if>
             </xsl:variable>
+
+            <xsl:variable name="dateType" select="if ($dateTypeHNAP = 'RI_366') then 'creation'
+                                                  else if ($dateTypeHNAP = 'RI_367') then 'publication'
+                                                  else if ($dateTypeHNAP = 'RI_368') then 'revision'
+                                                  else ''" />
 
             <xsl:choose>
               <xsl:when test="$zuluDateTime != ''">
@@ -305,11 +310,16 @@
 
 
           <xsl:for-each select="gmd:date/gmd:CI_Date[gn-fn-index:is-isoDate(gmd:date/*/text())]">
-            <xsl:variable name="dateType"
+            <xsl:variable name="dateTypeHNAP"
                           select="gmd:dateType[1]/gmd:CI_DateTypeCode/@codeListValue"
                           as="xs:string?"/>
             <xsl:variable name="date"
                           select="string(gmd:date[1]/gco:Date|gmd:date[1]/gco:DateTime)"/>
+
+            <xsl:variable name="dateType" select="if ($dateTypeHNAP = 'RI_366') then 'creation'
+                                                  else if ($dateTypeHNAP = 'RI_367') then 'publication'
+                                                  else if ($dateTypeHNAP = 'RI_368') then 'revision'
+                                                  else ''" />
 
             <xsl:variable name="zuluDate"
                           select="date-util:convertToISOZuluDateTime($date)"/>
