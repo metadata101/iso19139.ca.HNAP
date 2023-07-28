@@ -9,121 +9,144 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manual (HNAP) 3.10-SNAPSHOT\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 20:57-0800\n"
+"POT-Creation-Date: 2023-07-27 20:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.12.1\n"
 
-#: ../../src/sphinx/admin/settings.rst:2 03200042974f48e5bce386a7f012ce6e
+#: ../../src/sphinx/admin/settings.rst:2 018ccf5e59ae46518881c039a8ee32e4
 msgid "Settings"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:5 f66a9d95179044d29a6b10a8c8dfddde
+#: ../../src/sphinx/admin/settings.rst:5 0eb4d989f6194796ae1b57146a46f175
 msgid "Settings: System"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:7 f509485a966c429b962b85bb9bd51ede
+#: ../../src/sphinx/admin/settings.rst:7 62b1ca93db8f408e8ef0b5951ef6cddf
 msgid ""
 "Common :menuselection:`Admin Console > Settings` to review from the "
 ":guilabel:`Settings` page:"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:9 905a0579f17e4937aebd2595c03914b7
+#: ../../src/sphinx/admin/settings.rst:9 55ee1af448b740c9acf77195a6d8fd3b
 msgid "Catalog server:"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:11 7dacab670e39466582bf7ed5e942ce64
+#: ../../src/sphinx/admin/settings.rst:11 286f2cb612824d80a2d5c5b07f589cfc
 msgid "Network details: Update to accurately identify this web service."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:13 28dce3cc59754b5994c0a30b8b199d65
+#: ../../src/sphinx/admin/settings.rst:13 e933c2b3131049e78bdc2af977f8833e
 msgid ""
 "Log level: Change level of detail reported for troubleshooting, return to"
 " `PROD` for general use."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:17 f3bb9d19e4d84636aa7c7a61add83b44
+#: ../../src/sphinx/admin/settings.rst:17 8bcc6a4ca3b04fa5b9ac6630cca44f36
 msgid "Catalog server"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:19 08799978c3144765b4a52d888135d5ef
+#: ../../src/sphinx/admin/settings.rst:19 de6b2f66ee3d406f9dfea13f61de058d
 msgid "Feedback: mail configuration"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:23 de822213b89d4584b391080e91a3cb5b
+#: ../../src/sphinx/admin/settings.rst:23 f5faa1b800b345c9942f2df4361769fa
 msgid "Feedback settings."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:25 3790c23364e545b88950cdd80b436a57
+#: ../../src/sphinx/admin/settings.rst:25 8729c05db3a74fad9a1a583de6ea9b28
 msgid ""
 "Proxy server: optional proxy used to allow geonetwork to access external "
 "web services."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:29 1a14f203fd8b490f83b952c9650b1ebb
+#: ../../src/sphinx/admin/settings.rst:29 835300ea5a34493a8a7b28eabcf1a5c4
 msgid "Proxy service"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:31 1e46abf034ef49d89d2fdc1f778ccc52
+#: ../../src/sphinx/admin/settings.rst:31 571e4b00d78a4203af7c358e00c919de
 msgid ""
 "A subset of settings for :menuselection:`Admin Console > Settings` are "
 "required for validation and managed during application startup."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:33 17aaf42ff36d451082d1eb0e5e85b1f3
+#: ../../src/sphinx/admin/settings.rst:33 88b8297d43974261aff9383d713c420e
 msgid "Site:"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:35 2ae5c076702a42c29068729d5be0aaea
+#: ../../src/sphinx/admin/settings.rst:35 35ec112ba22a4705b59e7f4019da783f
 msgid "system/site/name"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:36 2bfa3db975d2459eb6c1be49fda32869
+#: ../../src/sphinx/admin/settings.rst:36 109c3ee501fa4b7b9c4462c5e1d749fc
 msgid "system/site/organization"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:38 fb3971df336c44e698868d8e1e96fed0
+#: ../../src/sphinx/admin/settings.rst:38 011758dc95804252a7d7da1ab64563c4
 msgid "Schema settings:"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:40 0e3d97e3d97b4ceca893b3b6e11160cf
+#: ../../src/sphinx/admin/settings.rst:40 0757e08c40ba4a4eb9cde1038a91e567
 msgid "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_en"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:41 5ac226ad220d44ac8222a3e83a398c70
+#: ../../src/sphinx/admin/settings.rst:41 06ee3f393bc44f71a750a83e693c7d3c
 msgid "schema/iso19139.ca.HNAP/UseGovernmentOfCanadaOrganisationName"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:42 d778838073554f148ef6b7df4365210a
+#: ../../src/sphinx/admin/settings.rst:42 83400c1daf6442f4a152e579711ced7f
 msgid "schema/iso19139.ca.HNAP/DefaultMainOrganizationName_fr"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:43 8722f3dd96e642ec8219e3b5e79e93b6
+#: ../../src/sphinx/admin/settings.rst:43 b8051594b60346878872a971d6f8bf88
 msgid "system/metadata/validation/removeSchemaLocation"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:45 669a701bd82d412e963e79046a8aec99
+#: ../../src/sphinx/admin/settings.rst:45 37bd35b7c7ea4f12af3a9cc507480632
 msgid ""
 "See initialization file :file:`initialization/settings/settings.json` for"
 " details."
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:48 b0f7d91feae245e9b31afc0a374c11a6
+#: ../../src/sphinx/admin/settings.rst:48 797c77c0383e4c26a2f8cc71a6512ee8
 msgid "Settings: User Interface"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:50 a6e8bd8289f84ab8924a60204337f015
+#: ../../src/sphinx/admin/settings.rst:50 4022cbbb53c84e909e227e4f77ad98c4
 msgid ""
 "Settings for :menuselection:`Admin Console > Settings` :guilabel:`UI "
-"Settings` page are replaced during application startup. These settings "
-"are used to configure the custom theme."
+"Settings` page;"
 msgstr ""
 
-#: ../../src/sphinx/admin/settings.rst:52 b5f62466a5594b06809c81ca0a89301f
-msgid "See :file:`initialization/settings/uisettings.json` for details."
+#: ../../src/sphinx/admin/settings.rst:52 fc6d482b31064db7b8f350b9ccc54990
+msgid ""
+"HNAP adds a `layers=<name>` parameter to the GetCapabilities URL used to "
+"document a WMS Service"
 msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:54 6e0e91583e7f41418c68304008aa0997
+msgid ""
+"To support this functionality locate :guilabel:`Add WMS layers from "
+"metadata to the map viewer` heading, and change the :guilabel:`URL "
+"parameter with the layer name` to :kbd:`layers`."
+msgstr ""
+
+#: ../../src/sphinx/admin/settings.rst:58 41e6ede183fc45ed9d435c284ee93576
+msgid "HNAP setting for URL parameter"
+msgstr ""
+
+#~ msgid ""
+#~ "Settings for :menuselection:`Admin Console >"
+#~ " Settings` :guilabel:`UI Settings` page are"
+#~ " replaced during application startup. These"
+#~ " settings are used to configure the"
+#~ " custom theme."
+#~ msgstr ""
+
+#~ msgid "See :file:`initialization/settings/uisettings.json` for details."
+#~ msgstr ""
 
