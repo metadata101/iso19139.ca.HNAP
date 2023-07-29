@@ -1,0 +1,36 @@
+site_name: HNAP User Manual
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+nav:
+  - 'index.md'
+  - 'Search':
+    - 'search/index.md'
+    - 'search/records.md'
+    - 'search/details.md'
+    - 'search/download.md'
+  - 'map/index.md'
+  - 'Editor':
+    - 'editor/index.md'
+    - 'editor/edit/index.md'
+    - 'editor/validation/index.md'
+    - 'editor/publish/index.md'
+    - 'editor/create/index.md'
+  - 'Administration':
+    - 'admin/index.md'
+    - 'admin/privileges.md'
+    - 'admin/settings.md'
+    - 'admin/upgrade.md'
+    - 'admin/users.md'

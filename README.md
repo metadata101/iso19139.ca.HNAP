@@ -81,46 +81,67 @@ The best approach is to add the plugin as a submodule:
 
 ## Documentation
 
-Documentation is [sphinx-build](https://www.sphinx-doc.org/) with [sphinx-rtd-theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/). GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) on the use of ``rst`` directives and formatting.
+Documentation is [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) which is a Markdown documentation framework written on top of [MkDocs](https://www.mkdocs.org/).
 
-Generated docs:
+If you are familiar with python you can install using ``pip3`` and build:
 
-```
-mvn clean compile -Pdocs
-```
-
-Docs generated into `target/html/index.html`:
-
-```
-open target/html/index.html
+```bash
+pip3 install -r requirements.txt
+mkdocs serve
+open http://localhost:8000
 ```
 
-Package docs into `zip`:
-
+If you use a python virtual environment:
 ```
-mvn package -Pdocs
-```
-
-### sphinx-build environment
-
-windows:
-
-```
-pip install -U sphinx
-pip install hieroglyph recommonmark sphinx-copybutton
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+mkdocs serve
+open http://localhost:8000
 ```
 
-macOS:
-
+If you are not familiar with python the mkdocs-material website has instructions for docker:
 ```
-brew install python
-brew install sphinx-doc
-pip install hieroglyph recommonmark sphinx-copybutton
+docker pull squidfunk/mkdocs-material
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+open http://localhost:8000 
 ```
 
-jenkins:
+## Writing Guide
 
-* [Dockerfile](https://github.com/GeoCat/jenkins-docker-agent-docs/blob/master/Dockerfile)
+GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) for sphinx documentation. While the writing conventions should be followed, adapting sphinx direcives to markdown formatting requires some work.
+
+Use **bold** to name user interface components for interaction (press for buttons, click for link).
+
+> Press **Add**.
+> ```
+> Navigate to :menuselection:`Data > Layers` page, and press :guilabel:`Add`` to create a new layer.
+> Navigate to **Data > Layers** page, and press **Add** to create a new layer.
+> ```
+
+
+Use `code` name items that can be selected in a list or tree:
+
+> Select `Basemap` layer.
+> ```
+> Select ``Basemap`` layer.
+> Select `Basemap` layer.
+> ```
+
+
+
+## Document Conversion
+
+Pandoc used for initial conversion to Markdown:
+```
+cp -r src/sphinx docs
+cd docs
+find . -name \*.rst -type f -exec pandoc -o {}.md {} \;
+```
+
+Searches used to clean up content:
+```
+```
 
 ## Project Procedures
 
