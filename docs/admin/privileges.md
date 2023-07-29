@@ -6,33 +6,29 @@ Selecting one or more records provides an opportunity to adjust the
 privileges controlling what activities are available. Privileges are
 provided to each group for fine grain control of record access.
 
-References:
+!!! note
 
--   `Managing privileges <community/user-guide/publishing/managing-privileges.html>`{.interpreted-text
-    role="manual"}
+    [Managing privileges](https://geonetwork-opensource.org/manuals/3.12.x/en/user-guide/publishing/managing-privileges.html)
 
 Manage group records editing access:
 
-1.  Navigate to the `Contribute --> Editor board`{.interpreted-text
-    role="menuselection"}.
+1.  Navigate to the *Contribute --> Editor board*.
 
-2.  Select checkbox `GROUPS`{.interpreted-text role="guilabel"} and
-    `Sample Group`{.interpreted-text role="guilabel"} to list all the
+2.  Select checkbox *GROUPS* and *Sample Group* to list all the
     records in group.
 
 3.  At the start of the listed records locate the checkbox dropdown, and
-    select `All`{.interpreted-text role="guilabel"}. This fills in the
+    select *All*. This fills in the
     checkbox box next to each record on all of the records listed.
 
     ![](img/group_select.png)
     *Select all listed records*
 
-4.  Use the `selected`{.interpreted-text role="guilabel"} drop-down to
-    select `Update privileges`{.interpreted-text role="guilabel"} for
+4.  Use the *selected* drop-down to
+    select *Update privileges* for
     the selected records.
 
     ![](img/group_selected_update_privileges.png)
-    alt="img/group_selected_update_privileges.png" />
     *Update privileges*
 
 5.  Fill in privileges for the following groups:
@@ -62,7 +58,7 @@ Manage group records editing access:
     *Record privileges*
 
 6.  Update record permissions using
-    `Replace by selected`{.interpreted-text role="guilabel"}.
+    *Replace by selected*.
 
     This may take some moments to complete.
 
@@ -70,10 +66,8 @@ Manage group records editing access:
 
 Example of interaction between record group and record privileges:
 
--   For a record with [publish]{.title-ref} privilege in [Sample
-    Group]{.title-ref}, any user assigned to the SampleGroup will be
-    able to view the record.
--   For a record with [editing]{.title-ref} privilege in [Sample
-    Group]{.title-ref}, any user assigned to the SampleGroup with
-    [Editor]{.title-ref} or [Reviewer]{.title-ref} profile with be able
+-   For a record with *publish* privilege in `Sample Group`,
+    any user assigned to the SampleGroup will be able to view the record.
+-   For a record with *editing* privilege in `Sample Group`,
+    any user assigned to the SampleGroup with `Editor` or `Reviewer` profile with be able
     to edit.

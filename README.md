@@ -111,16 +111,27 @@ open http://localhost:8000
 
 GeoCat has provided a [writing guide](https://geocat.github.io/geocat-themes/) for sphinx documentation. While the writing conventions should be followed, adapting sphinx direcives to markdown formatting requires some work.
 
-Use **bold** to name user interface components for interaction (press for buttons, click for link).
+When converting to markdown we can only focus on the visual appearance, converting many sphinx directives to their closest visual counterpart: 
 
-> Press **Add**.
+| Markdown          | Sphinx directive                  |
+| ----------------- | --------------------------------- |
+| `*emphais*`       | gui-label, menuselection          |
+| `` `monospace` `` | file, text input, item selection  |
+| `*bold*`          | command                           |
+
+### User interface components
+
+Use ``*emphais*`` to name user interface components for interaction (press for buttons, click for link).
+
+> Navigate to *Data > Layers* page, and press *Add* to create a new layer.
 > ```
 > Navigate to :menuselection:`Data > Layers` page, and press :guilabel:`Add`` to create a new layer.
-> Navigate to **Data > Layers** page, and press **Add** to create a new layer.
+> Navigate to *Data > Layers* page, and press *Add* to create a new layer.
 > ```
 
+### User input
 
-Use `code` name items that can be selected in a list or tree:
+Use `` `item` `` for user supplied input, or item in a list or tree::
 
 > Select `Basemap` layer.
 > ```
@@ -128,7 +139,144 @@ Use `code` name items that can be selected in a list or tree:
 > Select `Basemap` layer.
 > ```
 
+Use `` `text` `` for user supplied text input:
 
+> Use the *Search* field enter `Ocean*`.
+> ```
+> Use the :guilabel:`Serach` field to enter :kbd:`Ocean*`.
+> Use the *Search* field enter `Ocean*`.
+> ```
+
+Use ``++key++`` for keyboard keys.
+
+> Press ++Control-s++ to search.
+> ```
+> Press :key:``Control-s`` to search.
+> Press ++control+s++ to search.
+> ```
+
+Use definition list to document for entry. The field names use emphasis as they name a user interface element. Field values to input uses monspace as user input to type in.
+
+Preview:
+
+> #. Log in as the GeoServer administrator.
+>    
+>    *User*
+> 
+>    : `admin`
+>
+>    *Password*
+>
+>    : `geoserver`
+>    
+>    *Remeber me*
+> 
+>    : Unchecked
+
+Previously sphinx-build used list-table:
+
+> ```
+> #. Log in as the GeoServer administrator.
+> 
+>    .. list-table::
+>       :widths: 30 70
+>       :width: 100%
+>       :stub-columns: 1
+> 
+>       * - User:
+>         - :kbd:`admin`
+>       * - Password:
+>         - :kbd:`geoserver`
+>       * - Remember me
+>         - Unchecked
+> ```
+
+Markdown uses definition lists:
+
+> ```
+> #. Log in as the GeoServer administrator.
+>    
+>    *User*
+> 
+>    : `admin`
+>
+>    *Password*
+>
+>    : `geoserver`
+>    
+>    *Remeber me*
+> 
+>    : Unchecked
+> ```
+
+### Applications, commands and tools
+
+Use **bold** for proper names of applications, commands, tools, and products.
+
+> Launch **pgAdmin** and connect to the databsae `tutorial`.
+> ```
+> Launch :command:`pgAdmin` and connect to the ``tutorial`` database.
+> Launch **pgAdmin** and connect to the `tutorial` database.
+> ```
+
+### Files
+
+Use **bold** **monospace** for files and folders:
+
+> See configuration file **``WEB-INF/config-security/config-security-ldap.xml``** for details
+> ```
+> See configuration file :file:`WEB-INF/config-security/config-security-ldap.xml` for details
+> See configuration file **``WEB-INF/config-security/config-security-ldap.xml``** for details
+> ```
+
+
+### Links and references
+
+Specific kinds of links:
+
+Reference to other section of the document (some care is required to reference a specific heading):
+
+> Editors have option to [manage](../editor/publish/index.md#publish-records) records.
+> ```
+> Editors have option to :ref:`manage <Publish records>` records.
+> Editors have option to [manage](../editor/publish/index.md#publish-records) records.
+> ```
+
+Download of sample files:
+
+Example:
+
+> Download schema [**`example.xsd`**](files/example.xsd).
+> ```
+> Download schema :download:`example.xsd <files/example.xsd>`.
+> Download schema [**`example.xsd`**](files/example.xsd).
+> ```
+
+### Icons, Images and Figures
+
+Material for markdown has extensive icon support, for most user interface elements we can directly make use of the appropriate icon in markdown:
+
+```
+1.  Press the *Validate :fontawesome-solid-check:* button at the top of the page.
+```
+
+Add cusotm icons to `overrides/.icons/geocat`:
+```
+Thank you from the GeoCat team!
+:geocat-logo:
+```
+
+Figures are handled by convention, adding emphasized text after each image, and trust CSS rules to provide a consistent presentation:
+
+```
+![](img/begin_date.png)
+*Value is required for Begin Date*
+```
+
+Raw images are not used very often:
+```
+![](img/geocat-logo.png)
+```
 
 ## Document Conversion
 
@@ -141,6 +289,8 @@ find . -name \*.rst -type f -exec pandoc -o {}.md {} \;
 
 Searches used to clean up content:
 ```
+``{.interpreted-text role="guilabel"} **Cancel**
+`waterways`{.interpreted-text role="kbd"} `waterways`
 ```
 
 ## Project Procedures

@@ -6,8 +6,7 @@ Multiple metadata records can be exported for download.
 
 To select records from multiple search results:
 
-1.  Use the `Search`{.interpreted-text role="guilabel"} field at to
-    enter: `Accommodations`{.interpreted-text role="kbd"}
+1.  Use the *Search* field to enter: `Accommodations`
 
     ![](img/search_results.png)
     *Search results for Accommodations*
@@ -22,34 +21,33 @@ To select records from multiple search results:
 3.  At the top of the page the number of selected records is shown.
 
 4.  Next to the number of selected records is a
-    `selected`{.interpreted-text role="guilabel"} drop-down, offering a
+    *selected* drop-down, offering a
     number of export options for download.
 
-5.  `Export (ZIP)`{.interpreted-text role="guilabel"} archive including
-    `xml`{.interpreted-text role="file"} records along with any
+5.  *Export (ZIP)* archive including `xml` records along with any
     attachments and thumbnails.
 
     The resulting file includes:
 
     -   A folder for each metadata record exported
 
-    -   `index.html`{.interpreted-text role="file"} summary of contents
+    -   **`index.html`** summary of contents
 
         ![](img/export_index_summary.png)
         *Export ZIP index summary*
 
-    -   `index.csv`{.interpreted-text role="file"} summary of contents
+    -   **`index.csv`** summary of contents
 
         ![](img/export_index_csv.png)
         *Export ZIP csv summary*
 
-6.  `Export (PDF)`{.interpreted-text role="guilabel"} document of
+6.  *Export (PDF)* document of
     exported records.
 
     ![](img/export_pdf.png)
     *Export PDF in Firefox*
 
-7.  `Export (CSV)`{.interpreted-text role="guilabel"} download providing
+7.  *Export (CSV)* download providing
     a tabular summary of exported records.
 
     
@@ -60,31 +58,27 @@ To select records from multiple search results:
 
 Download the contents of a single record.
 
-1.  Open the [Accommodations]{.title-ref} record, showing a number of
-    download options:
+1.  Open the *Accommodations* record, showing a number of download options:
 
     ![](img/record_download.png)
     *Record download options*
 
-2.  `Permalink`{.interpreted-text role="guilabel"} provides a URL that
+2.  *Permalink* provides a URL that
     can be shared via email or message.
 
     ![](img/permalink.png)
     *Permalink to GEODBA.ACCOMMODATIONS record*
 
-    Use `Control-C`{.interpreted-text role="kbd"} to copy text to
-    clipboard:
+    Use ++control+c++ (or ++command+c++ on macOS) to copy text to clipboard:
 
     ![](img/permalink_copied.png)
     *Permalink copied*
 
-3.  `Export (ZIP)`{.interpreted-text role="guilabel"} archive including:
+3.  *Export (ZIP)* archive including:
 
-    -   A folder containing complete `metadata.xml`{.interpreted-text
-        role="file"} record, and simplified
-        `metadata-iso19139.xml`{.interpreted-text role="file"} record.
-    -   `index.html`{.interpreted-text role="file"} and
-        `index.csv`{.interpreted-text role="file"} summary described in
+    -   A folder containing complete **`metadata.xml`** record, and simplified
+        **`metadata-iso19139.xml`** record.
+    -   **`index.html`** and **`index.csv`** summary described in
         the previous section.
 
     ![](img/export_record_zip.png)
@@ -94,18 +88,18 @@ Download the contents of a single record.
     archive contents follows the Metadata Exchange Format convention
     used to share records between catalogs.
 
-4.  `Export (PDF)`{.interpreted-text role="guilabel"} document.
+4.  *Export (PDF)* document.
 
     ![](img/export_record_pdf.png)
     *Export (PDF) document*
 
-5.  `Export (XML)`{.interpreted-text role="guilabel"} machine readable
+5.  *Export (XML)* machine readable
     document.
 
     ![](img/record-xml.png)
     *XML download shown in FireFox*
 
-6.  `Export (RDF)`{.interpreted-text role="guilabel"} machine readable
+6.  *Export (RDF)* machine readable
     definition of vocabulary used.
 
     This file is useful for exchanging information between systems.

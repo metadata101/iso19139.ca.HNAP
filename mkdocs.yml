@@ -1,14 +1,24 @@
 site_name: HNAP User Manual
 theme:
   name: material
+  custom_dir: overrides
 markdown_extensions:
   - admonition
+  - attr_list
+  - def_list
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.keys
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:

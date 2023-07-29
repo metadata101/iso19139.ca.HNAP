@@ -6,8 +6,7 @@ different groups to view the record.
 ## Publish records
 
 1.  To adjust privileges navigate to
-    `Contribute --> Editor board`{.interpreted-text
-    role="menuselection"}
+    *Contribute > Editor board*.
 
     ![](img/editor_board.png)
     *Editor board*
@@ -18,7 +17,7 @@ different groups to view the record.
         administrator if you require increased access.
 
 2.  Use the checkboxes to select more than one record, and choose
-    `Update privileges`{.interpreted-text role="guilabel"}.
+    *Update privileges*.
 
     ![](img/publish_records.png)
     *Update privileges for selected records*
@@ -35,10 +34,10 @@ different groups to view the record.
 
 4.  Apply the new privileges:
 
-    -   `Add selected`{.interpreted-text role="guilabel"} to add
+    -   *Add selected* to add
         additional privileges
 
-    -   `Replace by selected`{.interpreted-text role="guilabel"} to
+    -   *Replace by selected* to
         redefine set of privileges.
 
         !!! warning
@@ -50,13 +49,10 @@ different groups to view the record.
 ## Publish record
 
 1.  To update privileges when viewing a record select
-    `Mange record --> Privileges`{.interpreted-text
-    role="menuselection"} from the toolbar at the top of the page.
+    *Mange record > Privileges* from the toolbar at the top of the page.
 
-    > <figure>
-    > ![](img/manage_record.png)
-    > *Manage record*
-    > </figure>
+    ![](img/manage_record.png)
+    *Manage record*
 
 2.  Adjust the privileges for viewing and downloading record content.
 
@@ -68,7 +64,7 @@ different groups to view the record.
         You may only be able to adjust privileges for a limited set of
         groups you have access to.
 
-3.  Use `Replace by selected`{.interpreted-text role="guilabel"} to
+3.  Use *Replace by selected* to
     redefine set of privileges.
 
     !!! warning
@@ -79,9 +75,7 @@ different groups to view the record.
 
 4.  Tips and tricks for publishing a record:
 
-    -   From the `Contribute --> Editor board`{.interpreted-text
-        role="menuselection"} use the `Publish`{.interpreted-text
-        role="guilabel"} button on an individual record.
+    -   From the *Contribute > Editor board* locate an individual record and press the *Publish* button.
 
         ![](img/publish_record.png)
         *Record privileges*

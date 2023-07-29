@@ -9,17 +9,15 @@ to [schemas.metadata.geo.ca](https://schemas.metadata.geo.ca/2009/).
 The location of the HNAP registry used for code list definitions has
 also changed:
 
--   `http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml`
-    \|
-    `https://schemas.metadata.geo.ca/register/napMetadataRegister.xml`
--   `http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html`
-    \|
+-   `http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml` <br/>
+    `https://schemas.metadata.geo.ca/register/napMetadataRegister.xml` <br/>
+-   `http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-eng.html` <br/>
     `https://schemas.metadata.geo.ca/register/registerItemClasses-eng.html`
 
 Individual records can be upgraded by saving and loading in the editor:
 
 1.  Open the record in the editor.
-2.  Select `Save and Close`{.interpreted-text role="command"}.
+2.  Press `Save and Close`.
 
 To update all records in the database use the following SQL:
 
