@@ -344,7 +344,7 @@
             </xsl:for-each-group>
           </xsl:if>
 
-          <xsl:for-each select="gmd:identifier/*">
+          <xsl:for-each select="gmd:identifier/*[string(gmd:code/*)]">
             <resourceIdentifier type="object">{
               "code": "<xsl:value-of select="gmd:code/(gco:CharacterString|gmx:Anchor)"/>",
               "codeSpace": "<xsl:value-of select="gmd:codeSpace/(gco:CharacterString|gmx:Anchor)"/>",
