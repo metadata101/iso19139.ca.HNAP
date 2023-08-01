@@ -232,7 +232,7 @@
 
 
       <!-- Indexing metadata contact -->
-      <xsl:apply-templates mode="index-contact" select="gmd:contact">
+      <xsl:apply-templates mode="index-contact-hnap" select="gmd:contact">
         <xsl:with-param name="fieldSuffix" select="''"/>
         <xsl:with-param name="languages" select="$allLanguages"/>
       </xsl:apply-templates>
@@ -365,7 +365,7 @@
         </xsl:for-each>
 
         <!-- Indexing resource contact -->
-        <xsl:apply-templates mode="index-contact"
+        <xsl:apply-templates mode="index-contact-hnap"
                              select="gmd:pointOfContact">
           <xsl:with-param name="fieldSuffix" select="'ForResource'"/>
           <xsl:with-param name="languages" select="$allLanguages"/>
@@ -914,7 +914,7 @@
 
         <!-- Indexing distributor contact -->
         <xsl:for-each select="gmd:distributor/*[gmd:distributorContact]">
-          <xsl:apply-templates mode="index-contact"
+          <xsl:apply-templates mode="index-contact-hnap"
                                select="gmd:distributorContact">
             <xsl:with-param name="fieldSuffix" select="'ForDistribution'"/>
             <xsl:with-param name="languages" select="$allLanguages"/>
@@ -1056,6 +1056,88 @@
     <xsl:apply-templates mode="index-extra-documents" select="."/>
   </xsl:template>
 
+  <xsl:template mode="index-contact-hnap" match="*[gmd:CI_ResponsibleParty]">
+    <xsl:param name="fieldSuffix" select="''" as="xs:string"/>
+    <xsl:param name="languages" as="node()?"/>
+
+    <!-- Select the first child which should be a CI_ResponsibleParty.
+    Some records contains more than one CI_ResponsibleParty which is
+    not valid and they will be ignored.
+     Same for organisationName eg. de:b86a8604-bf78-480f-a5a8-8edff5586679 -->
+    <xsl:variable name="organisationName"
+                  select="*[1]/gmd:organisationName[1]"
+                  as="node()?"/>
+    <xsl:variable name="uuid" select="@uuid"/>
+
+    <xsl:variable name="role"
+                  select="replace(*[1]/gmd:role/*/@codeListValue, ' ', '')"
+                  as="xs:string?"/>
+
+    <xsl:variable name="roleHNAP">
+      <xsl:choose>
+        <xsl:when test="$role = 'RI_408'">resourceProvider</xsl:when>
+        <xsl:when test="$role = 'RI_409'">custodian</xsl:when>
+        <xsl:when test="$role = 'RI_410'">owner</xsl:when>
+        <xsl:when test="$role = 'RI_411'">user</xsl:when>
+        <xsl:when test="$role = 'RI_412'">distributor</xsl:when>
+        <xsl:when test="$role = 'RI_413'">originator</xsl:when>
+        <xsl:when test="$role = 'RI_414'">pointOfContact</xsl:when>
+        <xsl:when test="$role = 'RI_415'">principalInvestigator</xsl:when>
+        <xsl:when test="$role = 'RI_416'">processor</xsl:when>
+        <xsl:when test="$role = 'RI_417'">publisher</xsl:when>
+        <xsl:when test="$role = 'RI_418'">author</xsl:when>
+        <xsl:when test="$role = 'RI_419'">collaborator</xsl:when>
+        <xsl:when test="$role = 'RI_420'">editor</xsl:when>
+        <xsl:when test="$role = 'RI_421'">mediator</xsl:when>
+        <xsl:when test="$role = 'RI_422'">rightsHolder</xsl:when>
+        <xsl:otherwise><xsl:value-of select="$role" /></xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <xsl:variable name="logo" select=".//gmx:FileName/@src"/>
+    <xsl:variable name="website" select=".//gmd:onlineResource/*/gmd:linkage/gmd:URL"/>
+    <xsl:variable name="email"
+                  select="*[1]/gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
+    <xsl:variable name="phone"
+                  select="*[1]/gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+    <xsl:variable name="individualName"
+                  select="*[1]/gmd:individualName/gco:CharacterString/text()"/>
+    <xsl:variable name="positionName"
+                  select="*[1]/gmd:positionName/gco:CharacterString/text()"/>
+    <xsl:variable name="address" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/(
+                                        gmd:deliveryPoint|gmd:postalCode|gmd:city|
+                                        gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+
+    <xsl:variable name="roleField"
+                  select="concat(replace($roleHNAP, '[^a-zA-Z0-9-]', ''),
+                                 'Org', $fieldSuffix)"/>
+    <xsl:variable name="orgField"
+                  select="concat('Org', $fieldSuffix)"/>
+
+
+    <xsl:if test="normalize-space($organisationName) != ''">
+      <xsl:copy-of select="gn-fn-index:add-multilingual-field(
+                            $orgField, $organisationName, $languages)"/>
+      <xsl:copy-of select="gn-fn-index:add-multilingual-field(
+                            $roleField, $organisationName, $languages)"/>
+    </xsl:if>
+    <xsl:element name="contact{$fieldSuffix}">
+      <xsl:attribute name="type" select="'object'"/>{
+      <xsl:if test="$organisationName">
+        "organisationObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
+                              'organisation', $organisationName, $languages)"/>,
+      </xsl:if>
+      "role":"<xsl:value-of select="$roleHNAP"/>",
+      "email":"<xsl:value-of select="gn-fn-index:json-escape($email[1])"/>",
+      "website":"<xsl:value-of select="$website"/>",
+      "logo":"<xsl:value-of select="$logo"/>",
+      "individual":"<xsl:value-of select="gn-fn-index:json-escape($individualName)"/>",
+      "position":"<xsl:value-of select="gn-fn-index:json-escape($positionName)"/>",
+      "phone":"<xsl:value-of select="gn-fn-index:json-escape($phone[1])"/>",
+      "address":"<xsl:value-of select="gn-fn-index:json-escape($address)"/>"
+      }
+    </xsl:element>
+  </xsl:template>
 
 
 </xsl:stylesheet>
