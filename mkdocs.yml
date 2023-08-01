@@ -2,6 +2,14 @@ site_name: HNAP User Manual
 theme:
   name: material
   custom_dir: overrides
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.tracking
+    - navigation.prune
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
 markdown_extensions:
   - admonition
   - attr_list
