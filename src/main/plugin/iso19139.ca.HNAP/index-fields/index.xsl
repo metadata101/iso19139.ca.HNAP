@@ -580,7 +580,7 @@
           </xsl:for-each>
         </xsl:for-each>
 
-        <xsl:for-each select="gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints">
+        <xsl:for-each select="gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:otherConstraints[normalize-space(string(.))]">
           <xsl:copy-of select="gn-fn-index:add-multilingual-field('license', ., $allLanguages)"/>
         </xsl:for-each>
 
