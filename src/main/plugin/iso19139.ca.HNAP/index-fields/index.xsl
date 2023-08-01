@@ -413,9 +413,24 @@
             <xsl:variable name="thesaurusType"
                           select="gmd:type/*/@codeListValue[. != '']"/>
 
+            <xsl:variable name="thesaurusTypeHNAP">
+              <xsl:choose>
+                <xsl:when test="$thesaurusType = 'RI_528'">theme</xsl:when>
+                <xsl:when test="$thesaurusType = 'RI_525'">place</xsl:when>
+                <xsl:when test="$thesaurusType = 'RI_526'">stratum</xsl:when>
+                <xsl:when test="$thesaurusType = 'RI_527'">temporal</xsl:when>
+                <xsl:when test="$thesaurusType = 'RI_529'">product</xsl:when>
+                <xsl:when test="$thesaurusType = 'RI_530'">subTopicCategory</xsl:when>
+                <xsl:otherwise><xsl:value-of select="$thesaurusType" /></xsl:otherwise>
+              </xsl:choose>
+            </xsl:variable>
+
+            <xsl:variable name="groupingKeyHNAP"
+                          select="concat(gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text(), '-', $thesaurusTypeHNAP)"/>
+
             <xsl:variable name="thesaurusTitle"
-                          select="if (starts-with(current-grouping-key(), '-'))
-                                  then concat('otherKeywords', current-grouping-key())
+                          select="if (starts-with($groupingKeyHNAP, '-'))
+                                  then concat('otherKeywords', $groupingKeyHNAP)
                                   else gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text()"/>
 
             <xsl:variable name="thesaurusRef"
@@ -436,7 +451,7 @@
                           select="gmd:keyword[*/normalize-space() != '']"/>
 
             <thesaurus>
-              <info type="{$thesaurusType}"
+              <info type="{$thesaurusTypeHNAP}"
                     field="{$thesaurusFieldName}"
                     id="{$thesaurusId}"
                     uri="{$thesaurusUri}"
