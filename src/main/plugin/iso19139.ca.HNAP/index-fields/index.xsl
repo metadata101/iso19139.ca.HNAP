@@ -399,9 +399,16 @@
         </xsl:for-each>
 
         <xsl:for-each
-          select="gmd:language/(gco:CharacterString|gmd:LanguageCode/@codeListValue)">
+          select="gmd:language">
+
+          <xsl:variable name="resourceLanguage" as="xs:string?">
+            <xsl:call-template name="langId_from_gmdlanguage19139">
+              <xsl:with-param name="gmdlanguage" select="."/>
+            </xsl:call-template>
+          </xsl:variable>
+
           <resourceLanguage>
-            <xsl:value-of select="."/>
+            <xsl:value-of select="$resourceLanguage"/>
           </resourceLanguage>
         </xsl:for-each>
 
