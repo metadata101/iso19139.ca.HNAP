@@ -2,6 +2,10 @@
 
 ## Migration to schemas.metadata.geo.ca
 
+!!! note
+
+    [iso19139.ca.HNAP 3.12.10 Release](https://github.com/metadata101/iso19139.ca.HNAP/releases/tag/3.12.10)
+
 The published location of the HNAP schema has changed from
 [nap.geogratis.gc.ca](http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-cgsb-171.100-2009-a/)
 to [schemas.metadata.geo.ca](https://schemas.metadata.geo.ca/2009/).

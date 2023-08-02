@@ -306,53 +306,13 @@ When working on a fork you can manually update your own github pages using:
 mkdocs gh-deploy --force
 ```
 
-Translation workflow:
+### User Guide Internationalization
 
-1. Generate `pot` files, and generate messages for translation:
-   
-   ```
-   mvn compile -Ptranslate
-   ```
-   
-   This performs:
-   ```
-   sphinx-build -b gettext src/sphinx target/gettext
-   sphinx-intl -c src/sphinx/conf.py update -p target/gettext -l fr
-   ```
+Reviewing the use of https://www.deepl.com/translator
 
-2. Each ``rst`` file has a matching messages ``po`` file in ``src/local/fr/LC_MESSAGES``.
+Presently copy and paste page by page to translate.
 
-   Message files follow the ``gettext`` portable object ``po`` format:
-   
-   ```
-   #: ../../src/sphinx/index.rst:3 338fd9f388f64839963b54e20898e403
-   msgid "User Manual"
-   msgstr "Manuel d'Utilisateur"
-   ```
-   
-   Messages are described using:
-   
-   * ``#`` a comment documenting the line number, and a uuid used to help as content is updated over time
-   * ``msgid`` origional
-   * ``msgstr`` translation, please take care not to break sphinx directives
-   
-   Plenty of tools are available to work with ``po` files.
-   
-   * https://poedit.net
-   * http://transifex.com
-
-3. Optional: translates images, figures and screen snaps:
-
-   * ``img/sample.png`` origional, `img/sample_fr.png`` translation.
-   * ``figure/example.svg`` origional, ``figure/example_fr.svg`` translation.
-
-5. For more information:
-  
-   * https://www.sphinx-doc.org/en/master/usage/advanced/intl.html
-   * https://www.gnu.org/software/gettext/
-   * https://sphinx-intl.readthedocs.io/en/master/quickstart.html
-   * https://docs.readthedocs.io/en/stable/guides/manage-translations.html
-   * https://docs.transifex.com/integrations/sphinx-doc
+The use of the API warns that text markup causes problems and may not be reserved. It suggests breaking translation down into sentences; or generating html and using the option to ignore tags (which in effect breaks everything down to sentences).
 
 ### Release Process
 

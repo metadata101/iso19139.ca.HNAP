@@ -1,6 +1,9 @@
 site_name: HNAP User Manual
+extra_css:
+  - stylesheets/extra.css
 theme:
   name: material
+  language: en
   custom_dir: overrides
   features:
     - navigation.instant
@@ -49,6 +52,7 @@ nav:
   - 'Administration':
     - 'admin/index.md'
     - 'admin/privileges.md'
-    - 'admin/settings.md'
-    - 'admin/upgrade.md'
     - 'admin/users.md'
+    - 'admin/settings.md'
+    - 'admin/install/install.md'
+    - 'admin/upgrade.md'

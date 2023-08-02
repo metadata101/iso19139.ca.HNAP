@@ -6,4 +6,5 @@ permissions, and application settings.
 * [privileges](privileges.md)
 * [users](users.md)
 * [settings](settings.md)
+* [install](install/install.md)
 * [upgrade](upgrade.md)
