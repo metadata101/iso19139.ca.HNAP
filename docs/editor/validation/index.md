@@ -23,7 +23,7 @@ content.
 
 To validate a document from the editor:
 
-1.  Press the *Validate :fontawesome-solid-check:* button at the top of the page.
+1.  Press the **Validate :fontawesome-solid-check:** button at the top of the page.
 
     ![](img/validation.png)
     *Running validation from the editor*
@@ -106,7 +106,7 @@ To validate a document from the editor:
     describing the record subject using a list provided by the Canadian
     government.
 
-    Locate the *Choose keywords from thesaurus* actions, and
+    Locate the **Choose keywords from thesaurus** actions, and
     choose `Government of Canada Core Subject Thesaurus`
     from the list.
 
@@ -137,8 +137,8 @@ To validate a document from the editor:
     ![](img/begin_date.png)
     *Value is required for Begin Date*
 
-    Use the *Begin Date* and
-    *End Date* fields to define the
+    Use the **Begin Date** and
+    **End Date** fields to define the
     temporal extent. These values can be provided numerically for
     "year" and  "year and month", or using a calendar to
     define "date" and "date and time".
@@ -153,7 +153,7 @@ To validate a document from the editor:
 
     ![](img/format.png)
 
-    Locate *Distribution > Distribution Formats* heading. Each dataset may be available in
+    Locate **Distribution > Distribution Formats** heading. Each dataset may be available in
     several different formats, this message requires us to be very
     specific about the file format used providing both the format name
     and verison number.
@@ -175,7 +175,7 @@ To validate a document from the editor:
     Examples:
 
     -   `pdf` version `1.4` as reported using operating system properties
-    -   `zip` version `2.0` using **zipinfo** command line.
+    -   `zip` version `2.0` using ***zipinfo*** command line.
         The zip format is still being developed with
         6.3.9 being the latest 2020 release.
 

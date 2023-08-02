@@ -2,7 +2,7 @@
 
 ## Settings: System
 
-Common *Admin Console > Settings* to review from the *Settings* page:
+Common **Admin Console > Settings** to review from the **Settings** page:
 
 1.  Catalog server:
 
@@ -24,7 +24,7 @@ Common *Admin Console > Settings* to review from the *Settings* page:
     ![](img/proxy.png)
     *Proxy service*
 
-4.  A subset of settings for *Admin Console > Settings*
+4.  A subset of settings for **Admin Console > Settings**
     are required for validation and managed during application startup.
 
     Site:
@@ -43,13 +43,12 @@ Common *Admin Console > Settings* to review from the *Settings* page:
 
 ## Settings: User Interface
 
-Settings for  *Admin Console > Settings* page *UI Settings*:
+Settings for  **Admin Console > Settings** page **UI Settings**:
 
 -   HNAP adds a `layers=\<name\>` parameter to the GetCapabilities URL used to document a WMS Service
 
-    To support this functionality locate
-    *Add WMS layers from metadata to the map viewer* heading, and change the
-    *URL parameter with the layer name* to `layers`.
+    To support this functionality locate **Add WMS layers from metadata to the map viewer** heading, and change the
+    **URL parameter with the layer name** to `layers`.
 
     ![](img/wms-url-param-setting.png)
     *HNAP setting for URL parameter*

@@ -21,7 +21,7 @@ Individual records can be upgraded by saving and loading in the editor:
 
 To update all records in the database use the following SQL:
 
-``` text
+``` sql
 UPDATE Metadata SET data =
   replace(
      data,

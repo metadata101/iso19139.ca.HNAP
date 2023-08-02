@@ -16,27 +16,27 @@ Locate record to view:
     *Search Ocean*
 
 3.  The record contents are displayed, using the initial
-    *Default View* display mode.
+    **Default View** display mode.
 
     ![](img/record_default_view.png)
     *Accomidations default view*
 
 4.  Record actions for viewing and download:
 
-    -   *Next* and *Previous* buttons used to review search results.
-    -   *Download* used to [export record](download.md#download-from-record-view)
+    -   **Next** and **Previous** buttons used to review search results.
+    -   **Download** used to [export record](download.md#download-from-record-view)
         as `ZIP`, `XML` or `PDF`.
-    -   The *Display mode* drop-down to change between *Default View*
-        and *Full View* covered in the next section.
+    -   The **Display mode** drop-down to change between **Default View**
+        and **Full View** covered in the next section.
 
     ![](img/record_navigation.png)
     *Record actions*
 
 ## Default View
 
-The *Default view*, provides a quick summary of record contents:
+The **Default view**, provides a quick summary of record contents:
 
-1.  Use *Display mode* drop-down menu to select *Default view*.
+1.  Use **Display mode** drop-down menu to select **Default view**.
 
     ![](img/default_view.png)
     *Change display mode to default view*
@@ -46,17 +46,17 @@ The *Default view*, provides a quick summary of record contents:
     ![](img/description.png)
     *Record description*
 
-3.  *About this resource* provides information on the contents, such as topic category.
+3.  **About this resource** provides information on the contents, such as topic category.
 
     ![](img/about.png)
     *About this resource*
 
-4.  *Technical information* provides details such data format.
+4.  **Technical information** provides details such data format.
 
     ![](img/technical.png)
     *Technical information*
 
-5.  *Metadata information* provides a button to download the XML record, contact information, and the
+5.  **Metadata information** provides a button to download the XML record, contact information, and the
     unique identifier.
 
     ![](img/default_metadata.png)
@@ -64,7 +64,7 @@ The *Default view*, provides a quick summary of record contents:
 
 6.  On the right hand side:
 
-    -   *Spatial extent* is shown visually on a map
+    -   **Spatial extent** is shown visually on a map
     -   Information on updates and feedback.
 
     ![](img/record_default_view.png)
@@ -72,9 +72,9 @@ The *Default view*, provides a quick summary of record contents:
 
 ## Full View
 
-The *Full view* is used to show complete record contents.
+The **Full view** is used to show complete record contents.
 
-1.  Use *Display mode* drop-down menu to select *Full view*.
+1.  Use **Display mode** drop-down menu to select **Full view**.
 
 2.  The advanced view divides the record up into a number of tabs:
 
@@ -85,7 +85,7 @@ The *Full view* is used to show complete record contents.
     -   Reference Systems
     -   Metadata
 
-3.  The *Identification* tab provides:
+3.  The **Identification** tab provides:
 
     -   Citation information:
         
@@ -103,29 +103,29 @@ The *Full view* is used to show complete record contents.
         ![](img/additional.png)
         *Additional identification information*
     
-4.  The *Distribution* tab has details on how the content can be accessed.
+4.  The **Distribution** tab has details on how the content can be accessed.
 
     ![](img/data_distribution.png)
     *Data distribution details*
 
-5.  The *Quality* tab lists data quality information.
+5.  The **Quality** tab lists data quality information.
 
     ![](img/quality.png)
     *Data quality details*
 
-6.  The *Spatial rep.* tab provides a summary of the spatial representation.
+6.  The **Spatial rep.** tab provides a summary of the spatial representation.
 
     ![](img/spatial_representation.png)
     *Spatial representation details*
 
-7.  The *Reference System* tab covers information on the spatial reference system used.
+7.  The **Reference System** tab covers information on the spatial reference system used.
 
     This is provided as a machine readable code to the reference system.
     
     The example uses the code  `http://www.opengis.net/def/crs/EPSG/0/26917` for the 
     `NAD83 / UTM zone 17N]` reference system.
 
-8.  The *Metadata* tab covers the unique File Identifier, providing a link to view the XML document,
+8.  The **Metadata** tab covers the unique File Identifier, providing a link to view the XML document,
     along with point of contact information for the record.
 
     ![](img/metadata.png)
@@ -135,12 +135,12 @@ The *Full view* is used to show complete record contents.
 
 1.  The XML record can be shown from either:
 
-    -   *Default View* metadata heading provides a *Download metadata* button.
+    -   **Default View** metadata heading provides a **Download metadata** button.
         
         ![](img/default_download_metadata.png)
         *Default view download metadata*
     
-    - *Full View* metadata tab provides a link to *XML*.
+    - **Full View** metadata tab provides a link to **XML**.
 
        ![](img/full_download_metadata.png)
        *Full view download metadata*

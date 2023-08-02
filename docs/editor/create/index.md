@@ -2,10 +2,9 @@
 
 ## Create Record
 
-1.  To create a new record navigate to
-    *Contribute > Editor board*.
+1.  To create a new record navigate to **Contribute > Editor board**.
 
-    Click the *Add new record* button.
+    Click the **Add new record** button.
 
     ![](img/editor_board.png)
     *Editor board*
@@ -15,17 +14,14 @@
         The contribute menu requires editor permission, talk to your
         administrator if you require increased access.
 
-2.  Using the *Add a new record*
-    screen to select a template for your new record, and use
-    *Create*.
+2.  Using the **Add a new record** screen to select a template for your new record, and use **Create**.
 
     ![](img/add_record_create.png)
     *Add a new record*
 
 ## Duplicate record
 
-1.  To create a new record navigate to
-    *Contribute > Editor board*.
+1.  To create a new record navigate to **Contribute > Editor board**.
 
     ![](img/editor_board.png)
     *Editor board*
@@ -35,14 +31,13 @@
         The contribute menu requires editor permission, talk to your
         administrator if you require increased access.
 
-2.  Locate a record to duplicate, and use the
-    *Duplicate* button (at the far
+2.  Locate a record to duplicate, and use the **Duplicate** button (at the far
     right of the record actions row).
 
     ![](img/editor_board_duplicate.png)
     *Record duplicate*
 
-3.  Double check the *Add a new record* options and use *Create* to duplicate the record.
+3.  Double check the **Add a new record** options and use **Create** to duplicate the record.
 
     ![](img/add_record_duplicate.png)
     *Add a new record*
@@ -67,16 +62,14 @@ To create a template:
 
 2.  Update the title to be clear this is a template.
 
-3.  When saving a record you use the drop down arrow to select
-    *Save as template*
+3.  When saving a record you use the drop down arrow to select **Save as template**
 
     ![](img/save_template.png)
     *Save as template*
 
 ## Delete Record
 
-1.  To delete a new record navigate to
-    Contribute > Editor board.
+1.  To delete a new record navigate to **Contribute > Editor board**.
 
     ![](img/editor_board.png)
     *Editor board*
@@ -86,7 +79,7 @@ To create a template:
         The contribute menu requires editor permission, talk to your
         administrator if you require increased access.
 
-2.  Locate record to delete, and use the *Delete* button in the record actions.
+2.  Locate record to delete, and use the **Delete** button in the record actions.
 
     ![](img/record_delete.png)
     *Record delete*

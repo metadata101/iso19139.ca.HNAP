@@ -46,7 +46,7 @@ Catalogue homepage and select a search type.
 ## View Data
 
 3.  To view a single dataset on the map viewer, press the
-    *View on map** button for that dataset. The map viewer will open
+    **View on map*** button for that dataset. The map viewer will open
     and display the data.
 
     \[screenshot of search result, arrow points to view on map button\]
@@ -59,22 +59,22 @@ Catalogue homepage and select a search type.
 
     \[screenshot of example displayed in map viewer\]
 
-    Add datasets to the preview list by pressing *Add to map list* 
+    Add datasets to the preview list by pressing **Add to map list** 
     button (see pushpin icon) on each dataset from the search results
     page or metadata details.
 
     \[screenshot of search result and arrow to add to map preview
     button\]
 
-5.  The *Add to map list* with your selected datasets will display on
+5.  The **Add to map list** with your selected datasets will display on
     the left-hand side of the search results page. At any time you can:
 
     \[screenshot of map preview list\]
 
-    -   remove data you have added to the preview by clicking the *X*
+    -   remove data you have added to the preview by clicking the **X**
         beside the title
-    -   combine and visualize the datasets by clicking *Add to map*.
-        Select the *Map* tab in the administration menu to view the
+    -   combine and visualize the datasets by clicking **Add to map**.
+        Select the **Map** tab in the administration menu to view the
         results.
 
 ## Visualize

@@ -121,12 +121,12 @@ When converting to markdown we can only focus on the visual appearance, converti
 
 ### User interface components
 
-Use ``*emphais*`` to name user interface components for interaction (press for buttons, click for link).
+Use ``**strong**`` to name user interface components for interaction (press for buttons, click for link).
 
-> Navigate to *Data > Layers* page, and press *Add* to create a new layer.
+> Navigate to **Data > Layers** page, and press **Add** to create a new layer.
 > ```
 > Navigate to :menuselection:`Data > Layers` page, and press :guilabel:`Add`` to create a new layer.
-> Navigate to *Data > Layers* page, and press *Add* to create a new layer.
+> Navigate to **Data > Layers** page, and press **Add** to create a new layer.
 > ```
 
 ### User input
@@ -211,12 +211,12 @@ Markdown uses definition lists:
 
 ### Applications, commands and tools
 
-Use **bold** for proper names of applications, commands, tools, and products.
+Use **bold** and **italics** for proper names of applications, commands, tools, and products.
 
-> Launch **pgAdmin** and connect to the databsae `tutorial`.
+> Launch ***pgAdmin*** and connect to the databsae `tutorial`.
 > ```
 > Launch :command:`pgAdmin` and connect to the ``tutorial`` database.
-> Launch **pgAdmin** and connect to the `tutorial` database.
+> Launch ***pgAdmin*** and connect to the databsae `tutorial`.
 > ```
 
 ### Files
@@ -297,19 +297,13 @@ Searches used to clean up content:
 
 ### Publish User Guide Process
 
-### update github pages
+A github page automation is used to update https://metadata101.github.io/iso19139.ca.HNAP/ each time the active branch is updated:
 
-```
-mvn clean install -Pdocs
-git add docs
-git commit -m "update docs"
-git push
-```
-### User Guide Internationalization
+* ``.github/workflows/ci.yml``
 
-Before you start:
+When working on a fork you can manually update your own github pages using:
 ```
-pip install sphinx-intl
+mkdocs gh-deploy --force
 ```
 
 Translation workflow:
