@@ -42,7 +42,10 @@ nav:
     - 'search/records.md'
     - 'search/details.md'
     - 'search/download.md'
-  - 'map/index.md'
+  - 'Map':
+    - 'map/index.md'
+    - 'map/mapping/mapping.md'
+    - 'map/visualize/visualize.md'
   - 'Editor':
     - 'editor/index.md'
     - 'editor/edit/index.md'

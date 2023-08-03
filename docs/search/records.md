@@ -118,7 +118,7 @@ To further explore listed records:
 
 4.  Open the **:fontawesome-solid-ellipsis-vertical: Advanced** search options panel.
     
-    Use the drop down menu for **Resource created in the last** to select `this week`.
+    Use the drop down menu for **Records created in the last** to select `this week`.
     This acts as a short cut to fill in the **From** and **To** calendar fields.
     
     Press the **:fontawesome-solid-magnifying-glass:  Search** button to filter using this date range.
@@ -126,8 +126,8 @@ To further explore listed records:
     ![](img/search_record_creation.png)
     *Record updated in the last week*
 
-5.  To search for records in the year `2012` use the advanced search
-    options to fill in:
+5.  To search for data in the year `2016` use the advanced search
+    options to fill **Resources created in the last** in:
 
       --------------------- -------------------------------------------------
       From                  `2016-01-01`
@@ -135,7 +135,7 @@ To further explore listed records:
       To                    `2016-12-31`
       --------------------- -------------------------------------------------
 
-    Press **Search** button to show records from `2016`.
+    Press **Search** button to show data from `2016`.
 
     ![](img/search_resource_2016.png)
     *Resource updated in 2016*
@@ -145,7 +145,6 @@ To further explore listed records:
         The **Resource** date filter shows records with data identification
         (creation, publication, revision) dates included within the
         calendar date range.
-
 
 6.  A slide out map is provided at the bottom of the page, providing
     visual feedback on the extent of each record.
