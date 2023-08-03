@@ -2,10 +2,22 @@
 
 ## Edit record
 
-1.  There are several ways to open the record editor when viewing a record:
+1.  Use search to locate `Harbour Porpoise Presence, Maritimes Region ` record.
+    
+    When viewing a record with edit privileges additional actions are available.
+    
+    * **Edit**
+    * **Delete**
+    * **Managae record**
+
+    ![](img/record_edit_toolbar.png)
+    *Record view with edit privileges*
+
+2.  Use the **Edit** button to open the record editor.
 
     ![](img/record_view_edit.png)
     *Record view edit*
+    
 
 2.  The record editor is started using the **Basic view**, showing the document title,
     current editor status, and a toolbar of editor actions.
