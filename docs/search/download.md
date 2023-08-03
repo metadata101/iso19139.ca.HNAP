@@ -6,25 +6,26 @@ Multiple metadata records can be exported for download.
 
 To select records from multiple search results:
 
-1.  Use the **Search** field to enter: `Accommodations`
+1.  Use the **Search** field to enter: `Ocean`
 
     ![](img/search_results.png)
-    *Search results for Accommodations*
+    *Search results for Ocean*
 
 2.  Use the checkboxes next to each record to select the contents for
     download.
 
     ![](img/download_select_records.png)
-    alt="img/download_select_records.png" />
     **Select records for download**
 
 3.  At the top of the page the number of selected records is shown.
 
-4.  Next to the number of selected records is a
-    **selected** drop-down, offering a
-    number of export options for download.
+    Next to the number of selected records is a **selected** drop-down,
+    offering a number of export options for download.
+    
+    ![](img/selected-actions.png)
+    *Export options for download*
 
-5.  **Export (ZIP)** archive including `xml` records along with any
+4.  **Export (ZIP)** archive including `xml` records along with any
     attachments and thumbnails.
 
     The resulting file includes:
@@ -41,13 +42,13 @@ To select records from multiple search results:
         ![](img/export_index_csv.png)
         *Export ZIP csv summary*
 
-6.  **Export (PDF)** document of
+5.  **Export (PDF)** document of
     exported records.
 
     ![](img/export_pdf.png)
     *Export PDF in Firefox*
 
-7.  **Export (CSV)** download providing
+6.  **Export (CSV)** download providing
     a tabular summary of exported records.
 
     
@@ -58,7 +59,7 @@ To select records from multiple search results:
 
 Download the contents of a single record.
 
-1.  Open the **Accommodations** record, showing a number of download options:
+1.  View the `Harbour Porpoise Presence, Maritimes Region` record, showing a number of **:fontawesome-solid-download: Download** options:
 
     ![](img/record_download.png)
     *Record download options*
@@ -76,16 +77,16 @@ Download the contents of a single record.
 
 3.  **Export (ZIP)** archive including:
 
-    -   A folder containing complete ***`metadata.xml`*** record, and simplified
+    -   A folder containing complete **`metadata.xml`** record, and simplified
         ***`metadata-iso19139.xml`*** record.
-    -   ***`index.html`** and **`index.csv`*** summary described in
-        the previous section.
+    -   ***`index.html`** and **`index.csv`** summary described in
+        the [previous section](#download-from-search-results).
 
     ![](img/export_record_zip.png)
     *Export (ZIP) index.html summary*
 
     This file is useful for exchanging information between systems. The
-    archive contents follows the Metadata Exchange Format convention
+    archive contents follows the "Metadata Exchange Format" convention
     used to share records between catalogs.
 
 4.  **Export (PDF)** document.

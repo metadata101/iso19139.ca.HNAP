@@ -155,11 +155,17 @@ To further explore listed records:
 
     The map can be controlled by by toggling beween two modes:
 
-    -   Bounding Box: Click and drag to define an extent used to filter
-        records. The drop down controls if the extent is used to list
-        only records that are withing, or all records that intersect.
     -   Pan: Click and drag the map location, using the mouse wheel to
         adjust zoom level.
+
+    -   Bounding Box: Hold ++shift++ and click and drag to define an extent used to filter
+        records.
+        
+        The drop down controls if the extent is used to list
+        only records that are withing, or all records that intersect.
+        
+        ![](img/search_map_bbox.png)
+        *Search bounding box intersects*
 
 7.  Records are selected (using the checkbox located next to each one)
     to quickly download or generate a PDF of one or more records.

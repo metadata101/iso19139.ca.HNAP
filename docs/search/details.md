@@ -5,12 +5,14 @@ and the dataset described.
 
 Locate record to view:
 
-1.  Use search field `Ocean`.
+1.  Use **Search** field: `Ocean`
 
-2.  Locate the record with title `Ocean`, and click on the record to view.
+2.  Locate the record with title `Ocean`.
 
     The background of the record will change to gray when your mouse is
-    over the `Accommodations` record.
+    over the `Harbour Porpoise Presence, Maritimes Region` record.
+    
+    Click on the record to view.
 
     ![](img/search_ocean.png)
     *Search Ocean*
@@ -19,7 +21,7 @@ Locate record to view:
     **Default View** display mode.
 
     ![](img/record_default_view.png)
-    *Accomidations default view*
+    *Default view*
 
 4.  Record actions for viewing and download:
 
@@ -68,7 +70,7 @@ The **Default view**, provides a quick summary of record contents:
     -   Information on updates and feedback.
 
     ![](img/record_default_view.png)
-    *Accomidations default view*
+    *Default view*
 
 ## Full View
 
