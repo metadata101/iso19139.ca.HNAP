@@ -68,6 +68,22 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+  <xsl:function name="geonet:securityLevelListWithLang" as="xs:string">
+    <xsl:param name="thesaurusDir" as="xs:string"/>
+    <xsl:param name="securityLevelLang" as="xs:string"/>
+
+    <xsl:variable name="security-level-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Security_Level.rdf'), '\\', '/')))"/>
+      <xsl:variable name="v">
+        <xsl:for-each select="$security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$securityLevelLang]">
+          <xsl:sort select="lower-case(.)" order="ascending"/>
+          <xsl:value-of select="."/>
+          <xsl:if test="position() != last()">, </xsl:if>
+        </xsl:for-each>
+      </xsl:variable>
+
+    <xsl:value-of select="$v" />
+  </xsl:function>
+
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 name="geonet:checkUserNoteSecurityClassificationCode"
                 as="xs:string">
@@ -763,8 +779,12 @@
       <sch:let name="securityLevel" value="gco:CharacterString" />
       <sch:let name="securityLevelTranslated" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
       <sch:let name="securityLevelList" value="geonet:securityLevelList($thesaurusDir)" />
+      <sch:let name="securityLevelListEn" value="geonet:securityLevelListWithLang($thesaurusDir, 'en')" />
+      <sch:let name="securityLevelListFr" value="geonet:securityLevelListWithLang($thesaurusDir, 'fr')" />
 
-      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityLevel, $securityLevelList)" />
+      <sch:let name="locMsgEn" value="geonet:appendLocaleMessage($loc/strings/SecurityLevelEn, $securityLevelListEn)" />
+      <sch:let name="locMsgFr" value="geonet:appendLocaleMessage($loc/strings/SecurityLevelFr, $securityLevelListFr)" />
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($locMsgEn, $locMsgFr)" />
 
       <sch:let name="validSecurityLevel" value="($missingTitle and $missingTitleOtherLang) or
                         ($security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel and

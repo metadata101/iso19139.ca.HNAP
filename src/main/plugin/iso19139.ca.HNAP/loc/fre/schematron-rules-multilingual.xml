@@ -41,6 +41,8 @@
   <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
+  <SecurityLevelEn>La note d'utilisateur de sécurité n'est pas valide et requise par les deux langues. Les valeurs anglaises valides sont : </SecurityLevelEn>
+  <SecurityLevelFr> Les valeurs françaises valides sont : </SecurityLevelFr>
   <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont :</SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Explications sur les restrictions devrait être vide pour la restriction de manipulation</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>Si vous indiquez «Autres restrictions» dans les champs «Contraintes d'accès» ou «Utiliser les contraintes», les autres contraintes d'accès ou d'utilisation de la ressource doivent être expliquées ici.</OtherConstraintsNote>
