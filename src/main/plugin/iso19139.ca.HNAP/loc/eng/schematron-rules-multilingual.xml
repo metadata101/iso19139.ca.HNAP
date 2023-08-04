@@ -41,6 +41,8 @@
   <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
   <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>
+  <SecurityNoteBothLangRequired>Value is required for Security User Note in both languages</SecurityNoteBothLangRequired>
+  <SecurityNoteMismatchedBothLang>Value mismatched for Security User Note in both languages</SecurityNoteMismatchedBothLang>
   <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are:</SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Security User Note should be empty for the classification code selected</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>

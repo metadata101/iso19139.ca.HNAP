@@ -766,21 +766,29 @@
 
       <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityLevel, $securityLevelList)" />
 
-      <sch:let name="validSecurityLevel" value="($missingTitle and $missingTitleOtherLang) or
+      <sch:let name="missingOneTitleExclusively" value="($missingTitle and not($missingTitleOtherLang)) or (not($missingTitle) and $missingTitleOtherLang)" />
+      <sch:let name="missingBothTitle" value="($missingTitle and $missingTitleOtherLang)" />
+
+      <sch:let name="validSecurityLevel" value="(missingBothTitle) or
                         ($security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel and
                          $security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]=$securityLevelTranslated)"/>
 
-      <sch:assert test="$validSecurityLevel">$locMsg</sch:assert>
+      <sch:assert test="not($missingOneTitleExclusively)">$loc/strings/SecurityNoteBothLangRequired</sch:assert>
+
+      <sch:assert test="$missingOneTitleExclusively or $validSecurityLevel">$locMsg</sch:assert>
 
       <sch:let name="securityLevelCode" value="replace($security-level-list//rdf:Description[lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])=lower-case($securityLevel)]/@rdf:about, 'http://geonetwork-opensource.org/GC/GC_Security_Classification#', '')"/>
+      <sch:let name="securityLevelCodeTranslated" value="replace($security-level-list//rdf:Description[lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])=lower-case($securityLevelTranslated)]/@rdf:about, 'http://geonetwork-opensource.org/GC/GC_Security_Classification#', '')"/>
+      <sch:let name="securityLevelCodeMismatched" value="$securityLevelCode != $securityLevelCodeTranslated"/>
 
       <sch:let name="checkUserNoteSecurityClassificationCode" value="geonet:checkUserNoteSecurityClassificationCode($securityLevelCode, ../gmd:classification/gmd:MD_ClassificationCode)" />
 
       <sch:let name="locSecurityClassificationUserNoteMsg" value="geonet:appendLocaleMessage($loc/strings/SecurityClassificationUserNote, $checkUserNoteSecurityClassificationCode)" />
 
-      <sch:assert test="($missingTitle and $missingTitleOtherLang) or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode='NULL' or $checkUserNoteSecurityClassificationCode = ''">$locSecurityClassificationUserNoteMsg</sch:assert>
+      <sch:assert test="not($validSecurityLevel) or not($securityLevelCodeMismatched)">$loc/strings/SecurityNoteMismatchedBothLang</sch:assert>
+      <sch:assert test="($missingBothTitle) or not($validSecurityLevel) or not($securityLevelCodeMismatched) or $checkUserNoteSecurityClassificationCode='NULL' or $checkUserNoteSecurityClassificationCode = ''">$locSecurityClassificationUserNoteMsg</sch:assert>
 
-      <sch:assert test="($missingTitle and $missingTitleOtherLang) or not($validSecurityLevel) or $checkUserNoteSecurityClassificationCode!='NULL' or $checkUserNoteSecurityClassificationCode = ''">$loc/strings/SecurityClassificationUserNoteEmpty</sch:assert>
+      <sch:assert test="($missingBothTitle) or not($validSecurityLevel) or not($securityLevelCodeMismatched) or $checkUserNoteSecurityClassificationCode!='NULL' or $checkUserNoteSecurityClassificationCode = ''">$loc/strings/SecurityClassificationUserNoteEmpty</sch:assert>
 
     </sch:rule>
 
