@@ -1534,7 +1534,6 @@
   </element>
   <element name="gmd:extent" id="140.0" context="gmd:DQ_Scope">
     <label>Étendue</label>
-    <btnLabel>Ajouter Extent</btnLabel>
     <description>Information sur les domaines horizontaux, verticaux et temporels des données spécifiées par l'attribut scope (79) du domaine d'applicabilité</description>
     <help>Informations relatives à l'extension horizontale, verticale et temporelle des données conformément au domaine de validité défini. Ces informations sont du type EX_Extent et sont gérées dans la classe du même nom.</help>
     <condition>Condition</condition>

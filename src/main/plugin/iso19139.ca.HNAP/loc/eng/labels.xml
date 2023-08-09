@@ -1045,7 +1045,6 @@
     </element>
     <element name="gmd:extent" id="45.0" context="gmd:MD_DataIdentification">
         <label>Extent</label>
-        <btnLabel>Add Extent</btnLabel>
         <description>Extent information including the bounding polygon, vertical, and temporal
             extent of the dataset</description>
         <_condition>Conditional / if hierarchyLevel equals "dataset"? Either

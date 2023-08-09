@@ -493,19 +493,21 @@
                    or="resourceConstraints"/>
 
           <field name="temporalRangeSection"
+                 xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
+                 if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification) > 0">
+          </field>
+
+          <field name="temporalRangeSection"
                  xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement"
-                 del="../../../.."
                  if="count(gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification) > 0">
           </field>
 
           <field name="gmd:extent"
                  xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent"
-                 del="../../../.."
                  if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent) > 0">
           </field>
         </section>
-
-
+        
         <section name="referenceSystemInfo">
           <field xpath="/gmd:MD_Metadata/gmd:referenceSystemInfo"
                  in="/gmd:MD_Metadata"
