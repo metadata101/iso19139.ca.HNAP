@@ -2,6 +2,7 @@
 
 <xsl:stylesheet   xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
                   xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                  xmlns:gml="http://www.opengis.net/gml/3.2"
                   xmlns:xlink='http://www.w3.org/1999/xlink'
                   xmlns:gco="http://www.isotc211.org/2005/gco"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
