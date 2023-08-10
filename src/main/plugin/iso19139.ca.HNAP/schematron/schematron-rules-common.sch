@@ -230,7 +230,7 @@
       <sch:let name="creationDate" value="gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:CI_Date/gmd:date/gco:Date" />
       <sch:let name="publicationDate" value="gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:CI_Date/gmd:date/gco:Date" />
 
-      <sch:assert test="XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
+      <sch:assert test="not($missingPublication) and not($missingCreation) and XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
 
     </sch:rule>
 

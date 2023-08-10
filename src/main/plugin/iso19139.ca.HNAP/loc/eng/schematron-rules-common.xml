@@ -17,7 +17,7 @@
   <InvalidSpatialRepresentationType>Spatial representation code is not valid</InvalidSpatialRepresentationType>
   <PublicationDate>Value is required for Metadata publication date</PublicationDate>
   <CreationDate>Value is required for Metadata creation date</CreationDate>
-  <PublicationDateBeforeCreationDate>Publication Date date should be after Creation Date</PublicationDateBeforeCreationDate>
+  <PublicationDateBeforeCreationDate>Publication Date should be after Creation Date</PublicationDateBeforeCreationDate>
   <MissingDate>Value is required for Date</MissingDate>
   <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
   <BeginDate>Value is required for Begin Date</BeginDate>
