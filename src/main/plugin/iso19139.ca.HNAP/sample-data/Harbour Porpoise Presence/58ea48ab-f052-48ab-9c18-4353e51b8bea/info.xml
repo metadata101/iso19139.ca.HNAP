@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info version="1.1">
+  <general>
+    <createDate>2018-06-28T11:41:17</createDate>
+    <changeDate>2023-08-10T16:00:16</changeDate>
+    <schema>iso19139.ca.HNAP</schema>
+    <isTemplate>n</isTemplate>
+    <localId>135</localId>
+    <format>full</format>
+    <rating>0</rating>
+    <popularity>196</popularity>
+    <uuid>58ea48ab-f052-48ab-9c18-4353e51b8bea</uuid>
+    <siteId>9cd25186-d2d1-4103-afd5-ec559f5a31cb</siteId>
+    <siteName>My GeoNetwork catalogue</siteName>
+  </general>
+  <categories />
+  <privileges />
+  <public>
+    <file name="getmap.png" changeDate="2019-10-29T13:19:53" />
+  </public>
+  <private />
+</info>
+

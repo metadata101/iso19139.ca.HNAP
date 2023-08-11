@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gfc="http://www.isotc211.org/2005/gfc" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:napm="http://www.geconnections.org/nap/napMetadataTools/napXsd/napm" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:geonet="http://www.fao.org/geonetwork" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmx https://schemas.metadata.geo.ca/2009/gmx/gmx.xsd http://www.isotc211.org/2005/gmd https://schemas.metadata.geo.ca/2009/gmd/gmd.xsd http://www.isotc211.org/2005/srv https://schemas.metadata.geo.ca/2009/srv/srv.xsd http://www.geconnections.org/nap/napMetadataTools/napXsd/napm https://schemas.metadata.geo.ca/2009/napm/napm.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>3b0ccbbe-e0f7-4e6f-a6aa-8b327c69a169</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gco:CharacterString>fra; CAN</gco:CharacterString>
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+  </gmd:characterSet>
+  <gmd:parentIdentifier>
+    <gco:CharacterString>4c7880ac-cb01-4e12-8305-2ae8eb675390</gco:CharacterString>
+  </gmd:parentIdentifier>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_108" codeListValue="RI_622">dataset; jeuDonnées</gmd:MD_ScopeCode>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:individualName>
+        <gco:CharacterString>Section Gestion de données - Direction des avis, information et soutien scientifiques</gco:CharacterString>
+      </gmd:individualName>
+      <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:organisationName>
+      <gmd:positionName gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString />
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#eng" />
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:positionName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone>
+            <gmd:CI_Telephone>
+              <gmd:voice gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString />
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng" />
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:voice>
+              <gmd:facsimile gco:nilReason="missing">
+                <gco:CharacterString />
+              </gmd:facsimile>
+            </gmd:CI_Telephone>
+          </gmd:phone>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>850, route de la Mer, C. P. 1000</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">850, route de la Mer, P.O. Box 1000</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:deliveryPoint>
+              <gmd:city>
+                <gco:CharacterString>Mont-Joli</gco:CharacterString>
+              </gmd:city>
+              <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Québec</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Quebec</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:administrativeArea>
+              <gmd:postalCode>
+                <gco:CharacterString>G5H 3Z4</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Canada (le)</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:country>
+              <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>gddaiss-dmsaisb.XLAU@dfo-mpo.gc.ca</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">gddaiss-dmsaisb.XLAU@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+          <gmd:onlineResource>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage gco:nilReason="missing">
+                <gmd:URL />
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>http</gco:CharacterString>
+              </gmd:protocol>
+            </gmd:CI_OnlineResource>
+          </gmd:onlineResource>
+          <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString />
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng" />
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:hoursOfService>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90" codeListValue="RI_420">editor; réviseur</gmd:CI_RoleCode>
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime>2023-08-10T16:00:29</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName xsi:type="gmd:PT_FreeText_PropertyType">
+    <gco:CharacterString>Profil nord-américain de la norme ISO 19115:2003 - Information géographique - Métadonnées</gco:CharacterString>
+    <gmd:PT_FreeText>
+      <gmd:textGroup>
+        <gmd:LocalisedCharacterString locale="#eng">North American Profile of ISO 19115:2003 - Geographic information - Metadata</gmd:LocalisedCharacterString>
+      </gmd:textGroup>
+    </gmd:PT_FreeText>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString>CAN/CGSB-171.100-2009</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:dataSetURI gco:nilReason="missing">
+    <gco:CharacterString />
+  </gmd:dataSetURI>
+  <gmd:locale>
+    <gmd:PT_Locale id="eng">
+      <gmd:languageCode>
+        <gmd:LanguageCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_116" codeListValue="eng">English; Anglais</gmd:LanguageCode>
+      </gmd:languageCode>
+      <gmd:country>
+        <gmd:Country codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_117" codeListValue="CAN">Canada; Canada</gmd:Country>
+      </gmd:country>
+      <gmd:characterEncoding>
+        <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+      </gmd:characterEncoding>
+    </gmd:PT_Locale>
+  </gmd:locale>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:code>
+            <gco:CharacterString>4617</gco:CharacterString>
+          </gmd:code>
+          <gmd:codeSpace>
+            <gco:CharacterString>EPSG</gco:CharacterString>
+          </gmd:codeSpace>
+          <gmd:version>
+            <gco:CharacterString>7.4.1</gco:CharacterString>
+          </gmd:version>
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Sites d'échouerie potentiels pour le phoque commun et le phoque gris dans l'estuaire et le golfe du Saint-Laurent</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Potential haul-out sites for the harbor seal and gray seal in the Estuary and Gulf of St. Lawrence</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2001</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_366">creation; création</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:Date>2018</gco:Date>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:MD_Identifier>
+              <gmd:code />
+            </gmd:MD_Identifier>
+          </gmd:identifier>
+          <gmd:citedResponsibleParty>
+            <gmd:CI_ResponsibleParty>
+              <gmd:individualName>
+                <gco:CharacterString>Olivier Parent</gco:CharacterString>
+              </gmd:individualName>
+              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:organisationName>
+              <gmd:positionName xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Analyste en géomatique</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Geomatics analyst</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:positionName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:phone>
+                    <gmd:CI_Telephone>
+                      <gmd:voice gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString />
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng" />
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:voice>
+                      <gmd:facsimile gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </gmd:facsimile>
+                    </gmd:CI_Telephone>
+                  </gmd:phone>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>850, route de la Mer, C. P. 1000</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">850, route de la Mer, P.O. Box 1000</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:deliveryPoint>
+                      <gmd:city>
+                        <gco:CharacterString>Mont-Joli</gco:CharacterString>
+                      </gmd:city>
+                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Québec</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Quebec</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode>
+                        <gco:CharacterString>G5H 3Z4</gco:CharacterString>
+                      </gmd:postalCode>
+                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Canada (le)</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:country>
+                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Oceans-QC@dfo-mpo.gc.ca</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Oceans-QC@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                  <gmd:onlineResource>
+                    <gmd:CI_OnlineResource>
+                      <gmd:linkage gco:nilReason="missing">
+                        <gmd:URL />
+                      </gmd:linkage>
+                      <gmd:protocol>
+                        <gco:CharacterString>http</gco:CharacterString>
+                      </gmd:protocol>
+                    </gmd:CI_OnlineResource>
+                  </gmd:onlineResource>
+                  <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString />
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#eng" />
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:hoursOfService>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90" codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:citedResponsibleParty>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract xsi:type="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString>Couche regroupant l’information connue des sites d'échouerie potentiels pour le phoque commun et le phoque gris dans l'estuaire et le golfe du Saint-Laurent selon une revue de littérature de documents réalisés entre 1978 et 2000.
+
+Information additionnelle
+
+Les sites d'échouerie potentiels pour le phoque commun et le phoque gris ont été colligés à partir d'une revue de littérature des documents suivants:
+
+Andersen, A. et M. Gagnon. 1980. Les ressources halieutiques de l'estuaire du Saint-Laurent. Rapp. can. ind. sci. halieut. aquat., 119: iv + 56 p.
+
+Argus Groupe-Conseil inc. 1992. Synthèse et analyse des connaissances relatives aux ressources naturelles du Saguenay et de l'estuaire maritime du Saint-Laurent. Parc marin du Saguenay. Service canadien des parcs, région du Québec.
+
+Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes. 
+
+Biorex. 1996. Base de données géoréférencées sur les ressources halieutiques et leurs habitats : estuaire maritime du Saint-Laurent et fjord du Saguenay. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. Volume 1 : 38 p. + annexes et Volume 2 : 34 p. + annexes.
+
+Chevrier, V. 1994. Cartographie des habitats du poisson aux Îles-de-la-Madeleine. Rapport technique no. 1. Réalisé en collaboration avec le M.P.O., Attention Frag'Îles et la M.R.C. des Îles-de-la-Madeleine. 24 p. + 1 ann. + 36 cartes.
+
+Comité de la zone d'intervention prioritaire (ZIP) de la Côte-Nord du golfe. 1999. Inventaire des habitats côtiers et marins sensibles de la Basse-Cote-Nord : Rapport final, présenté à Pêches et Océans Canada par le Comité ZIP Côte-Nord du Golfe. 126 p.
+
+Comité de protection de la santé et de l'environnement de Gaspé inc. (C.P.S.E.G.). 1996.
+
+Communication personnelle par Carol Fournier, MPO. 1999. 
+
+Communications personnelles par Gosselin, J-F-. 1996. 
+
+Desaulniers, J. 1989. Étude des populations de pinnipèdes de l'Archipel-de-Mingan et relation entre l'activité de chasse au phoque et la sécurité publique 1987 à 1989. Parcs Canada. Région du Québec. Service de la conservation des ressources naturelles.
+
+Enquêtes auprès des pêcheurs. 1995.
+
+Lavigne, P.-J. 1978. La chasse estivale du phoque dans le Saint-Laurent. Rapport non publié. 65 p. Pêches et Océans Canada, Région du Québec.
+
+Lesage, Véronique.  2000. Communication personnelle.
+
+Lesage, V., M. O. Hammill, and K.M. Kovacs.  1995. Harbour seal (Phoca vitulina) and Grey seal (Halichoerus grypus) abundance in the St. Lawrence estuary. Can. Manuscr. Rep. Fish. Aquat. Sci. 2307: iii + 19 p.
+
+Naturam Environnement inc. 1996. Caractérisation physique et biologique de l'habitat du poisson du secteur de Pointe-aux-Outardes. Realisé pour le compte de la Corporation du Parc régional de Pointe-aux-Outardes. 196 p.</gco:CharacterString>
+        <gmd:PT_FreeText>
+          <gmd:textGroup>
+            <gmd:LocalisedCharacterString locale="#eng">Layer that includes the known information on potential haul-out sites for the harbour seal and gray seal in the Estuary and Gulf of St. Lawrence according to a literature review of documents produced between 1978 and 2000.
+
+Additional Information
+
+Potential haul-out sites for the harbor seal and gray seal were produced according to a literature review of the following documents:
+
+Andersen, A. et M. Gagnon. 1980. Les ressources halieutiques de l'estuaire du Saint-Laurent. Rapp. can. ind. sci. halieut. aquat., 119: iv + 56 p.
+
+Argus Groupe-Conseil inc. 1992. Synthèse et analyse des connaissances relatives aux ressources naturelles du Saguenay et de l'estuaire maritime du Saint-Laurent. Parc marin du Saguenay. Service canadien des parcs, région du Québec.
+
+Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes. 
+
+Biorex. 1996. Base de données géoréférencées sur les ressources halieutiques et leurs habitats : estuaire maritime du Saint-Laurent et fjord du Saguenay. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. Volume 1 : 38 p. + annexes et Volume 2 : 34 p. + annexes.
+
+Chevrier, V. 1994. Cartographie des habitats du poisson aux Îles-de-la-Madeleine. Rapport technique no. 1. Réalisé en collaboration avec le M.P.O., Attention Frag'Îles et la M.R.C. des Îles-de-la-Madeleine. 24 p. + 1 ann. + 36 cartes.
+
+Comité de la zone d'intervention prioritaire (ZIP) de la Côte-Nord du golfe. 1999. Inventaire des habitats côtiers et marins sensibles de la Basse-Cote-Nord : Rapport final, présenté à Pêches et Océans Canada par le Comité ZIP Côte-Nord du Golfe. 126 p.
+
+Comité de protection de la santé et de l'environnement de Gaspé inc. (C.P.S.E.G.). 1996.
+
+Communication personnelle par Carol Fournier, MPO. 1999. 
+
+Communications personnelles par Gosselin, J-F-. 1996. 
+
+Desaulniers, J. 1989. Étude des populations de pinnipèdes de l'Archipel-de-Mingan et relation entre l'activité de chasse au phoque et la sécurité publique 1987 à 1989. Parcs Canada. Région du Québec. Service de la conservation des ressources naturelles.
+
+Enquêtes auprès des pêcheurs. 1995.
+
+Lavigne, P.-J. 1978. La chasse estivale du phoque dans le Saint-Laurent. Rapport non publié. 65 p. Pêches et Océans Canada, Région du Québec.
+
+Lesage, Véronique.  2000. Communication personnel.
+
+Lesage, V., M. O. Hammill, and K.M. Kovacs.  1995. Harbour seal (Phoca vitulina) and Grey seal (Halichoerus grypus) abundance in the St. Lawrence estuary. Can. Manuscr. Rep. Fish. Aquat. Sci. 2307: iii + 19 p.
+
+Naturam Environnement inc. 1996. Caractérisation physique et biologique de l'habitat du poisson du secteur de Pointe-aux-Outardes. Realisé pour le compte de la Corporation du Parc régional de Pointe-aux-Outardes. 196 p.</gmd:LocalisedCharacterString>
+          </gmd:textGroup>
+        </gmd:PT_FreeText>
+      </gmd:abstract>
+      <gmd:status>
+        <gmd:MD_ProgressCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_106" codeListValue="RI_594">historicalArchive; archiveHistorique</gmd:MD_ProgressCode>
+      </gmd:status>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_102" codeListValue="RI_542">notPlanned; nonPlanifié</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:graphicOverview>
+        <gmd:MD_BrowseGraphic>
+          <gmd:fileName>
+            <gco:CharacterString>http://localhost:8080/geonetwork/srv/api/records/3b0ccbbe-e0f7-4e6f-a6aa-8b327c69a169/attachments/Vignette_Seal_Phoque_Haulout.png</gco:CharacterString>
+          </gmd:fileName>
+          <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>large_thumbnail</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">large_thumbnail</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:fileDescription>
+          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_115" codeListValue="RI_716">
+            <gco:CharacterString>png; png</gco:CharacterString>
+          </gmd:fileType>
+        </gmd:MD_BrowseGraphic>
+      </gmd:graphicOverview>
+      <gmd:graphicOverview>
+        <gmd:MD_BrowseGraphic>
+          <gmd:fileName>
+            <gco:CharacterString>Vignette_Seal_Phoque_Haulout.png</gco:CharacterString>
+          </gmd:fileName>
+          <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>large_thumbnail_fre</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">large_thumbnail_fre</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:fileDescription>
+          <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_115" codeListValue="RI_716">
+            <gco:CharacterString>png; png</gco:CharacterString>
+          </gmd:fileType>
+        </gmd:MD_BrowseGraphic>
+      </gmd:graphicOverview>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>échouerie</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Haulout</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>phoque</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Seal</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>phoque commun</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Harbour seal</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>phoque gris</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Grey Seal</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Phoca vitulina</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Phoca vitulina</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Halichoerus grypus</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Halichoerus grypus</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="RI_530">subTopicCategory; catégorieSousSujet</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Golfe du Saint-Laurent</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Gulf of St. Lawrence</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Estuaire du Saint-Laurent</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">St. Lawrence Estuary</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="RI_525">place; endroit</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Sciences de la terre</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Earth sciences</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_101" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Thésaurus des sujets de base du gouvernement du Canada</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Government of Canada Core Subject Thesaurus</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:title>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2004</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87" codeListValue="RI_367">publication; publication</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:date>
+                <gmd:CI_Date>
+                  <gmd:date>
+                    <gco:Date>2016-07-04</gco:Date>
+                  </gmd:date>
+                  <gmd:dateType>
+                    <gmd:CI_DateTypeCode codeListValue="RI_366" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_87">creation;création</gmd:CI_DateTypeCode>
+                  </gmd:dateType>
+                </gmd:CI_Date>
+              </gmd:date>
+              <gmd:identifier>
+                <gmd:MD_Identifier>
+                  <gmd:code>
+                    <gmx:Anchor xlink:href="http://localhost:8080/geonetwork/srv/api/registries/vocabularies/external.theme.GC_Core_Subject">geonetwork.thesaurus.external.theme.GC_Core_Subject</gmx:Anchor>
+                  </gmd:code>
+                </gmd:MD_Identifier>
+              </gmd:identifier>
+              <gmd:citedResponsibleParty>
+                <gmd:CI_ResponsibleParty>
+                  <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString>Gouvernement du Canada; Bibliothèque et Archives Canada</gco:CharacterString>
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Library and Archives Canada</gmd:LocalisedCharacterString>
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:organisationName>
+                  <gmd:role>
+                    <gmd:CI_RoleCode codeListValue="RI_409" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90">custodian; conservateur</gmd:CI_RoleCode>
+                  </gmd:role>
+                </gmd:CI_ResponsibleParty>
+              </gmd:citedResponsibleParty>
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString>Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:useLimitation>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_107" codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
+          </gmd:accessConstraints>
+          <gmd:useConstraints>
+            <gmd:MD_RestrictionCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_107" codeListValue="RI_606">license; licence</gmd:MD_RestrictionCode>
+          </gmd:useConstraints>
+          <gmd:otherConstraints gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+            <gco:CharacterString />
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#eng" />
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:spatialRepresentationType>
+        <gmd:MD_SpatialRepresentationTypeCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_109" codeListValue="RI_635">vector; vecteur</gmd:MD_SpatialRepresentationTypeCode>
+      </gmd:spatialRepresentationType>
+      <gmd:language>
+        <gco:CharacterString>fra; CAN</gco:CharacterString>
+      </gmd:language>
+      <gmd:characterSet>
+        <gmd:MD_CharacterSetCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_95" codeListValue="RI_458">utf8; utf8</gmd:MD_CharacterSetCode>
+      </gmd:characterSet>
+      <gmd:topicCategory>
+        <gmd:MD_TopicCategoryCode>biota</gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:topicCategory>
+        <gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:environmentDescription gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString />
+      </gmd:environmentDescription>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:temporalElement>
+            <gmd:EX_TemporalExtent>
+              <gmd:extent>
+                <gml:TimePeriod gml:id="timeperiod1">
+                  <gml:beginPosition>1978</gml:beginPosition>
+                  <gml:endPosition>2000</gml:endPosition>
+                </gml:TimePeriod>
+              </gmd:extent>
+            </gmd:EX_TemporalExtent>
+          </gmd:temporalElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal>-70.495</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal>-57.161</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal>47.236</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal>51.491</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </gmd:extent>
+      <gmd:supplementalInformation gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+        <gco:CharacterString />
+      </gmd:supplementalInformation>
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>ESRI REST</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>10.3.1</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:distributor>
+        <gmd:MD_Distributor>
+          <gmd:distributorContact>
+            <gmd:CI_ResponsibleParty>
+              <gmd:individualName>
+                <gco:CharacterString>Olivier Parent</gco:CharacterString>
+              </gmd:individualName>
+              <gmd:organisationName xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Gouvernement du Canada; Pêches et Océans Canada</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Government of Canada; Fisheries and Oceans Canada</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:organisationName>
+              <gmd:positionName xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Analyste en géomatique</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Geomatics analyst</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:positionName>
+              <gmd:contactInfo>
+                <gmd:CI_Contact>
+                  <gmd:address>
+                    <gmd:CI_Address>
+                      <gmd:deliveryPoint xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>850, route de la Mer, C. P. 1000</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">850, route de la Mer, P.O. Box 1000</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:deliveryPoint>
+                      <gmd:city>
+                        <gco:CharacterString>Mont-Joli</gco:CharacterString>
+                      </gmd:city>
+                      <gmd:administrativeArea xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Québec</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Quebec</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:administrativeArea>
+                      <gmd:postalCode>
+                        <gco:CharacterString>G5H 3Z4</gco:CharacterString>
+                      </gmd:postalCode>
+                      <gmd:country xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Canada (le)</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Canada</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:country>
+                      <gmd:electronicMailAddress xsi:type="gmd:PT_FreeText_PropertyType">
+                        <gco:CharacterString>Oceans-QC@dfo-mpo.gc.ca</gco:CharacterString>
+                        <gmd:PT_FreeText>
+                          <gmd:textGroup>
+                            <gmd:LocalisedCharacterString locale="#eng">Oceans-QC@dfo-mpo.gc.ca</gmd:LocalisedCharacterString>
+                          </gmd:textGroup>
+                        </gmd:PT_FreeText>
+                      </gmd:electronicMailAddress>
+                    </gmd:CI_Address>
+                  </gmd:address>
+                  <gmd:onlineResource>
+                    <gmd:CI_OnlineResource>
+                      <gmd:linkage gco:nilReason="missing">
+                        <gmd:URL />
+                      </gmd:linkage>
+                      <gmd:protocol>
+                        <gco:CharacterString>http</gco:CharacterString>
+                      </gmd:protocol>
+                    </gmd:CI_OnlineResource>
+                  </gmd:onlineResource>
+                  <gmd:hoursOfService gco:nilReason="missing" xsi:type="gmd:PT_FreeText_PropertyType">
+                    <gco:CharacterString />
+                    <gmd:PT_FreeText>
+                      <gmd:textGroup>
+                        <gmd:LocalisedCharacterString locale="#eng" />
+                      </gmd:textGroup>
+                    </gmd:PT_FreeText>
+                  </gmd:hoursOfService>
+                </gmd:CI_Contact>
+              </gmd:contactInfo>
+              <gmd:role>
+                <gmd:CI_RoleCode codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_90" codeListValue="RI_414">pointOfContact; contact</gmd:CI_RoleCode>
+              </gmd:role>
+            </gmd:CI_ResponsibleParty>
+          </gmd:distributorContact>
+        </gmd:MD_Distributor>
+      </gmd:distributor>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://pacgis01.dfo-mpo.gc.ca/FGPPublic/Seal_Phoque_Haulout/DataDictionary_DictionnaireDonnees.csv</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>HTTPS</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Dictionnaire de données</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Data Dictionary</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+              <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Document de soutien;CSV;eng,fra</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Supporting Document;CSV;eng,fra</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://pacgis01.dfo-mpo.gc.ca/FGPPublic/Seal_Phoque_Haulout/Seal_Phoque_Haulout.zip</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>HTTPS</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Échourie de phoques</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Seal haulout</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+              <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Données;SHP;fra</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Dataset;SHP;fra</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine xlink:role="urn:xml:lang:eng-CAN">
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://gisp.dfo-mpo.gc.ca/arcgis/rest/services/FGP/Seal_Phoque_Haulout/MapServer/0</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>ESRI REST: Map Service</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Échourie de phoques</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Seal haulout</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+              <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Service Web;ESRI REST;eng</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Web Service;ESRI REST;eng</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine xlink:role="urn:xml:lang:fra-CAN">
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://gisp.dfo-mpo.gc.ca/arcgis/rest/services/FGP/Seal_Phoque_Haulout/MapServer/0</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString>ESRI REST: Map Service</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:name xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Échourie de phoques</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Seal haulout</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:name>
+              <gmd:description xsi:type="gmd:PT_FreeText_PropertyType">
+                <gco:CharacterString>Service Web;ESRI REST;fra</gco:CharacterString>
+                <gmd:PT_FreeText>
+                  <gmd:textGroup>
+                    <gmd:LocalisedCharacterString locale="#eng">Web Service;ESRI REST;fra</gmd:LocalisedCharacterString>
+                  </gmd:textGroup>
+                </gmd:PT_FreeText>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+</gmd:MD_Metadata>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info version="1.1">
+  <general>
+    <createDate>2018-12-10T19:42:32</createDate>
+    <changeDate>2023-08-10T16:00:29</changeDate>
+    <schema>iso19139.ca.HNAP</schema>
+    <isTemplate>n</isTemplate>
+    <localId>137</localId>
+    <format>full</format>
+    <rating>0</rating>
+    <popularity>104</popularity>
+    <uuid>3b0ccbbe-e0f7-4e6f-a6aa-8b327c69a169</uuid>
+    <siteId>9cd25186-d2d1-4103-afd5-ec559f5a31cb</siteId>
+    <siteName>My GeoNetwork catalogue</siteName>
+  </general>
+  <categories />
+  <privileges />
+  <public>
+    <file name="Vignette_Seal_Phoque_Haulout.png" changeDate="2019-01-28T21:39:07" />
+  </public>
+  <private />
+</info>
+
