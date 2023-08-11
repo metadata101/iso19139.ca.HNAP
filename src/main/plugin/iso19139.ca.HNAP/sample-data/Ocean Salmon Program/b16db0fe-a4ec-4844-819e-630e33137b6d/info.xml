@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info version="1.1">
+  <general>
+    <createDate>2018-01-02T23:19:20</createDate>
+    <changeDate>2023-08-10T16:00:41</changeDate>
+    <schema>iso19139.ca.HNAP</schema>
+    <isTemplate>n</isTemplate>
+    <localId>139</localId>
+    <format>full</format>
+    <rating>0</rating>
+    <popularity>284</popularity>
+    <uuid>b16db0fe-a4ec-4844-819e-630e33137b6d</uuid>
+    <siteId>9cd25186-d2d1-4103-afd5-ec559f5a31cb</siteId>
+    <siteName>My GeoNetwork catalogue</siteName>
+  </general>
+  <categories />
+  <privileges />
+  <public>
+    <file name="Ricker_Beam_Trawl_Transects_Map.JPG" changeDate="2018-12-05T19:31:44" />
+  </public>
+  <private />
+</info>
+
