@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info version="1.1">
+  <general>
+    <createDate>2022-11-03T17:32:14</createDate>
+    <changeDate>2023-08-10T16:39:06</changeDate>
+    <schema>iso19139.ca.HNAP</schema>
+    <isTemplate>n</isTemplate>
+    <localId>154</localId>
+    <format>full</format>
+    <rating>0</rating>
+    <popularity>212</popularity>
+    <uuid>6b02c778-8eaa-46f5-8786-ae80b0ea0f72</uuid>
+    <siteId>9cd25186-d2d1-4103-afd5-ec559f5a31cb</siteId>
+    <siteName>My GeoNetwork catalogue</siteName>
+  </general>
+  <categories>
+    <category name="datasets" />
+  </categories>
+  <privileges>
+    <group name="sample" groupOwner="true">
+      <operation name="view" />
+      <operation name="notify" />
+    </group>
+  </privileges>
+  <public>
+    <file name="ecdc_thumbnail_radar-composite-coverage.jpg" changeDate="2023-01-06T18:44:13" />
+  </public>
+  <private />
+</info>
+

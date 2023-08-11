@@ -1,0 +1,2 @@
+"schema";"uuid";"id";"type";"isHarvested";"title";"abstract"
+"iso19139.ca.HNAP";"6b02c778-8eaa-46f5-8786-ae80b0ea0f72";"154";"METADATA";"n";"Dynamic Radar Composite Coverage";"Radar coverage is provided to dynamically display the zones covered by the radars every 6 minutes, and to provide information on the availability (or not) of the contributing radars as well as on the areas of overlap."
