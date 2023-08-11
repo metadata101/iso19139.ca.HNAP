@@ -278,7 +278,7 @@ Raw images are not used very often:
 ![](img/geocat-logo.png)
 ```
 
-## Document Conversion
+## Document Conversion Notes
 
 Pandoc used for initial conversion to Markdown:
 ```
@@ -328,10 +328,10 @@ The use of the API warns that text markup causes problems and may not be reserve
    sed -i '' 's/3.12-SNAPSHOT/3.12.7/g' src/main/plugin/iso19139.ca.HNAP/schema-ident.xml
    ```
    
-4. Build everything, including docs, deploying to osgeo repository:
+4. Build everything, deploying to osgeo repository:
    
    ```
-   mvn clean install deploy -Pdocs
+   mvn clean install deploy
    ```
 
 3. Commit and tag

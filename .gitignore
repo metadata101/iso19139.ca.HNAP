@@ -30,7 +30,6 @@ out/
 
 # Python stuff
 venv
-site
 
 # Sphinx-build
 *.mo

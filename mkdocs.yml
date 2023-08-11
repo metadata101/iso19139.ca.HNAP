@@ -1,4 +1,5 @@
 site_name: HNAP User Manual
+site_dir: target/html
 extra_css:
   - stylesheets/extra.css
 theme:

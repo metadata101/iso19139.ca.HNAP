@@ -110,28 +110,63 @@
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
-          <execution>
-            <id>sample-data</id>
-            <phase>compile</phase>
-            <configuration>
-<target>
-   <mkdir dir="target/sample-data"/>
-   <defaultexcludes add="**/.DS_Store"/>
-   <zip destfile="target/sample-data/Dynamic Radar Coverage.mef"
-     basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Dynamic Radar Coverage"/>
-   <zip destfile="target/sample-data/Harbour Porpoise Presence.mef"
-     basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Harbour Porpoise Presence"/>
-   <zip destfile="target/sample-data/North American Radar.mef"
-     basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/North American Radar"/>
-   <zip destfile="target/sample-data/Ocean Salmon Program.mef"
-     basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Ocean Salmon Program"/>
-   <zip destfile="target/sample-data/Potential Haul Out Sites.mef"
-     basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Potential Haul Out Sites"
-     includes="**"/>
+            <execution>
+                <id>sample-data</id>
+                <phase>compile</phase>
+                <configuration>
+                    <target>
+                        <mkdir dir="target/sample-data"/>
+                        <defaultexcludes add="**/.DS_Store"/>
+                        <zip destfile="target/sample-data/Dynamic Radar Coverage.mef"
+                        basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Dynamic Radar Coverage"/>
+                        <zip destfile="target/sample-data/Harbour Porpoise Presence.mef"
+                        basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Harbour Porpoise Presence"/>
+                        <zip destfile="target/sample-data/North American Radar.mef"
+                        basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/North American Radar"/>
+                        <zip destfile="target/sample-data/Ocean Salmon Program.mef"
+                        basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Ocean Salmon Program"/>
+                        <zip destfile="target/sample-data/Potential Haul Out Sites.mef"
+                        basedir="src/main/plugin/iso19139.ca.HNAP/sample-data/Potential Haul Out Sites"
+                        includes="**"/>
+                    </target>
+                </configuration>
+                <goals><goal>run</goal></goals>
+            </execution>
+<!-- mkdocs build to target/html -->
+            <execution>
+                <id>sphinx</id>
+                <phase>compile</phase>
+                <configuration>
+<target xmlns:if="ant:if"
+        xmlns:unless="ant:unless">
+
+   <property name="en"
+             value="target/html"/>
+
+   <property environment="env"/>
+
+   <condition property="available" else="false">
+     <or>
+       <available file="mkdocs" filepath="${env.PATH}"/>
+       <available file="mkdocs.exe" filepath="${env.Path}"/>
+       <available file="mkdocs.exe" filepath="${env.PATH}"/>
+     </or>
+   </condition>
+
+   <echo unless:true="${available}" level="warning">
+     mkdocs required for documentation build, see README.md for installation instructions
+   </echo>
+
+   <mkdir if:true="${available}"
+     dir="${en}"/>
+   <exec if:true="${available}"
+     executable="mkdocs" failonerror="true">
+     <arg line="build"/>
+   </exec>
 </target>
-            </configuration>
-            <goals><goal>run</goal></goals>
-          </execution>
+                </configuration>
+                <goals><goal>run</goal></goals>
+            </execution>
         </executions>
       </plugin>
       <plugin>
@@ -146,6 +181,18 @@
              <appendAssemblyId>false</appendAssemblyId>
              <descriptors>
               <descriptor>src/assembly/schema-plugin.xml</descriptor>
+             </descriptors>
+            </configuration>
+          </execution>
+          <execution>
+            <id>docs-assembly</id>
+            <phase>package</phase>
+            <goals><goal>single</goal></goals>
+            <inherited>false</inherited>
+            <configuration>
+             <appendAssemblyId>true</appendAssemblyId>
+             <descriptors>
+              <descriptor>src/assembly/docs.xml</descriptor>
              </descriptors>
             </configuration>
           </execution>
@@ -167,144 +214,6 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>findbugs-maven-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>docs</id>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sphinx</id>
-                <phase>compile</phase>
-                <configuration>
-<target>
-   <property name="sphinx_build_options"
-             value="-N -W --keep-going -n -j auto"/>
-   <property name="theme"
-             value="sphinx_rtd_theme"/>
-   <property name="doctrees"
-             value="target/doctrees"/>
-   <property name="srcdir"
-             value="src/sphinx"/>
-
-   <property name="en"
-             value="target/html"/>
-
-   <mkdir dir="${en}"/>
-   <exec executable="sphinx-build" failonerror="true">
-     <arg line="${sphinx_build_options}"/>
-     <arg line="-b html"/>
-     <arg line="-Dhtml_theme=${theme}"/>
-     <arg line="-d"/>
-     <arg path="${doctrees}"/>
-     <arg path="${srcdir}"/>
-     <arg path="${en}"/>
-   </exec>
-
-   <property name="fr"
-             value="target/html/fr"/>
-   <mkdir dir="${fr}"/>
-   <exec executable="sphinx-build" failonerror="true">
-     <arg line="${sphinx_build_options}"/>
-     <arg line="-b html"/>
-     <arg line="-Dhtml_theme=${theme}"/>
-     <arg line="-Dlanguage=fr"/>
-     <arg line="-d"/>
-     <arg path="${doctrees}"/>
-     <arg path="${srcdir}"/>
-     <arg path="${fr}"/>
-   </exec>
-</target>
-                </configuration>
-                <goals><goal>run</goal></goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>docs-assembly</id>
-                <phase>package</phase>
-                <goals><goal>single</goal></goals>
-                <inherited>false</inherited>
-                <configuration>
-                 <appendAssemblyId>true</appendAssemblyId>
-                 <descriptors>
-                  <descriptor>src/assembly/docs.xml</descriptor>
-                 </descriptors>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <!--
-          <plugin>
-            <artifactId>maven-resources-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>publish</id>
-                <phase>install</phase>
-                <goals><goal>copy-resources</goal></goals>
-                <configuration>
-                  <outputDirectory>docs</outputDirectory>
-                  <resources>
-                    <resource>
-                      <directory>${project.build.directory}/html</directory>
-                    </resource>
-                  </resources>
-                  <addDefaultExcludes/>
-                  <encoding>UTF-8</encoding>
-                  <overwrite>true</overwrite>
-                </configuration>
-               </execution>
-             </executions>
-           </plugin>
-           -->
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>translate</id>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>gettext</id>
-                <phase>compile</phase>
-                <configuration>
-<target>
-   <property name="srcdir"
-             value="src/sphinx"/>
-   <property name="gettext"
-             value="target/gettext"/>
-   <mkdir dir="${outputdir}"/>
-   <exec executable="sphinx-build" failonerror="true">
-     <arg line="-b gettext"/>
-     <arg path="${srcdir}"/>
-     <arg path="${gettext}"/>
-   </exec>
-
-   <exec executable="sphinx-intl" failonerror="true">
-     <arg line="-c"/>
-     <arg path="${srcdir}/conf.py"/>
-     <arg line="update -p"/>
-     <arg path="${gettext}"/>
-     <arg line="-l fr"/>
-   </exec>
-</target>
-                </configuration>
-                <goals><goal>run</goal></goals>
-              </execution>
-            </executions>
           </plugin>
         </plugins>
       </build>
