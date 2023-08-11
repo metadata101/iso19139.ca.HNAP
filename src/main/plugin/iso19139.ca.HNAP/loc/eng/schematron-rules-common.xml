@@ -42,6 +42,10 @@
   <DistributionFormatInvalid>Value for distribution format is not valid</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
   <OnlineResourceProtocol>Protocol of Online Resource is not valid. Valid values are: </OnlineResourceProtocol>
+  <TemporalExtentRequired>Temporal extent is required</TemporalExtentRequired>
+  <GeographicExtentRequired>Geographic extent is required</GeographicExtentRequired>
+  <GeographicExtentWestEast>Geographic extent - westbound longitude should be lower than eastbound longitude</GeographicExtentWestEast>
+  <GeographicExtentNorthSouth>Geographic extent - southbound latitude should be lower than northbound latitude</GeographicExtentNorthSouth>
 
   <MapResourcesREST>REST Map Resources should be available in english and french</MapResourcesREST>
   <MapResourcesRESTNumber>The number of ESRI REST Map Resources should be at most 2 (one for english and one for french)</MapResourcesRESTNumber>
