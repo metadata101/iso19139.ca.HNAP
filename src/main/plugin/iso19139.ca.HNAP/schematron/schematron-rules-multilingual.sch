@@ -769,7 +769,7 @@
       <sch:let name="missingOneTitleExclusively" value="($missingTitle and not($missingTitleOtherLang)) or (not($missingTitle) and $missingTitleOtherLang)" />
       <sch:let name="missingBothTitle" value="($missingTitle and $missingTitleOtherLang)" />
 
-      <sch:let name="validSecurityLevel" value="(missingBothTitle) or
+      <sch:let name="validSecurityLevel" value="($missingBothTitle) or
                         ($security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]=$securityLevel and
                          $security-level-list//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]=$securityLevelTranslated)"/>
 
