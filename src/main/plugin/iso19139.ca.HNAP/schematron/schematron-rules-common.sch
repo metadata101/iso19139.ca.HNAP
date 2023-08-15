@@ -227,11 +227,19 @@
         test="not($missingCreation)"
       >$loc/strings/CreationDate</sch:assert>
 
-      <sch:let name="creationDate" value="gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:CI_Date/gmd:date/gco:Date" />
-      <sch:let name="publicationDate" value="gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:CI_Date/gmd:date/gco:Date" />
+    </sch:rule>
 
-      <sch:assert test="not($missingPublication) and not($missingCreation) and XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
+    <!-- Publication dates -->
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date
+            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date
+            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date">
 
+      <sch:let name="creationDate" value="../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:Date" />
+      <sch:let name="missingCreation" value="not(string($creationDate))" />
+      <sch:let name="publicationDate" value="gco:Date" />
+      <sch:let name="missingPublication" value="not(string($publicationDate))" />
+
+      <sch:assert test="$missingPublication or $missingCreation or XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date
