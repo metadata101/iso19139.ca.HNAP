@@ -419,6 +419,11 @@ Une version de cet ensemble de données a été créée pour le Centre national 
           </gmd:fileName>
           <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
             <gco:CharacterString>large_thumbnail</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">large_thumbnail</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
           </gmd:fileDescription>
           <gmd:fileType xsi:type="napm:napMD_FileFormatCode_PropertyType" codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_115" codeListValue="RI_716">
             <gco:CharacterString>png; png</gco:CharacterString>
