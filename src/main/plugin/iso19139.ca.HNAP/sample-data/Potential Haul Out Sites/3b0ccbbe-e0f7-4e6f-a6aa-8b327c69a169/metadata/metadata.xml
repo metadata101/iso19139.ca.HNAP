@@ -155,10 +155,10 @@
       <gmd:referenceSystemIdentifier>
         <gmd:RS_Identifier>
           <gmd:code>
-            <gco:CharacterString>4617</gco:CharacterString>
+            <gco:CharacterString>EPSG:4617</gco:CharacterString>
           </gmd:code>
           <gmd:codeSpace>
-            <gco:CharacterString>EPSG</gco:CharacterString>
+            <gco:CharacterString>https://epsg.io</gco:CharacterString>
           </gmd:codeSpace>
           <gmd:version>
             <gco:CharacterString>7.4.1</gco:CharacterString>

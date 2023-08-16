@@ -339,6 +339,11 @@
           </gmd:fileName>
           <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
             <gco:CharacterString>large_thumbnail</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">large_thumbnail</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
           </gmd:fileDescription>
         </gmd:MD_BrowseGraphic>
       </gmd:graphicOverview>
@@ -349,6 +354,11 @@
           </gmd:fileName>
           <gmd:fileDescription xsi:type="gmd:PT_FreeText_PropertyType">
             <gco:CharacterString>large_thumbnail_fre</gco:CharacterString>
+            <gmd:PT_FreeText>
+              <gmd:textGroup>
+                <gmd:LocalisedCharacterString locale="#fra">large_thumbnail_fre</gmd:LocalisedCharacterString>
+              </gmd:textGroup>
+            </gmd:PT_FreeText>
           </gmd:fileDescription>
         </gmd:MD_BrowseGraphic>
       </gmd:graphicOverview>
