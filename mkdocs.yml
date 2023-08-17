@@ -7,13 +7,31 @@ theme:
   language: en
   custom_dir: overrides
   features:
-    - navigation.instant
-    - navigation.instant.prefetch
     - navigation.tracking
     - navigation.prune
     - navigation.indexes
     - toc.follow
     - navigation.top
+plugins:
+  - search
+  - i18n:
+      default_language: en
+      docs_structure: suffix
+      search_reconfigure: true
+      material_alternate: true
+      languages:
+        en:
+          name: English
+          build: true
+        fr:
+          name: Français
+          build: true
+      nav_translations:
+        fr:
+          Search: Search
+          Map: Map
+          Editor: Editor
+          Administration: Administration
 markdown_extensions:
   - admonition
   - attr_list

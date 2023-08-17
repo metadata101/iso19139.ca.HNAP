@@ -280,7 +280,12 @@ Raw images are not used very often:
 
 ## Document Conversion Notes
 
-Pandoc used for initial conversion to Markdown:
+Translation makes use of document conversion between markdown and html. As a result some markdown extensions cannot be used:
+
+* simple_tables cannot be used by github-flavored-markdown, use pipe_tables instead
+
+
+Pandoc used for initial conversion from rich-structured-text to markdown:
 ```
 cp -r src/sphinx docs
 cd docs
@@ -308,11 +313,76 @@ mkdocs gh-deploy --force
 
 ### User Guide Internationalization
 
+Plugins are available for content translation:
+
+* https://github.com/mondeja/mkdocs-mdpo-plugin using https://github.com/mondeja/mdpo
+* https://github.com/ultrabug/mkdocs-static-i18n
+
 Reviewing the use of https://www.deepl.com/translator
 
-Presently copy and paste page by page to translate.
+The API warns that text markup causes problems and may not be reserved. It suggests breaking translation down into sentences; or generating html and using the option to ignore tags (which in effect breaks everything down to sentences).
 
-The use of the API warns that text markup causes problems and may not be reserved. It suggests breaking translation down into sentences; or generating html and using the option to ignore tags (which in effect breaks everything down to sentences).
+1. Convert page to html using pandoc:
+   
+   ```
+   cd docs
+   pandoc --from gfm -o index.docx index.md
+   ```
+
+2. Review `docx` output first, simply any comlicated markdown until you get simple result:
+   
+   * Admonitions: Notes, Warnings, ...
+   
+   You may also consider letting these sections fail and converting them sentence by sentence.
+   
+3. Use https://www.deepl.com/translator to convert the `docx` file.
+
+4. Convert back to markdown using pandoc:
+   
+   ```
+   pandoc --from docx --to gfm -o index.fr.docx index-fr.docx
+   ```
+
+5. Restore markdown:
+   
+   * Admonitions: Notes, Warnings, ...
+   
+6. Carefully review:
+
+   * Use live preview to compare both pages
+   * Compare against original markdown formatting
+   * During PR file review check for differences in formatting
+   
+   Pandoc markdown conversion will not fully support MkDocs ``pymdownx`` extensions, with ``gfm`` github-flavored-markdown being the closest equivalent.
+
+While I have been successful in converting to `html` and using Deepl REST API, it is also labour intensive and offers no advantage over manual process above.
+
+```
+pip3 install -r translate/requirements.txt
+python3 -m translate
+```
+
+Provide environmental variable with Deepl authentication key:
+```
+export DEEPL_AUTH="xxxxxxxx-xxx-...-xxxxx:fx"
+```
+
+Using pandoc html:
+```
+python3 -m translate html docs/index.md
+python3 -m translate document docs/index.en.html docs/index.fr.html
+```
+
+Use mkdocs html file:
+```
+mkdocs build
+python3 -m translate document target/html/index.html docs/index.fr.html
+```
+
+Convert back to markdown:
+```
+python3 -m translate markdown docs/index.fr.html
+```
 
 ### Release Process
 
