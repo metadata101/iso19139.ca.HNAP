@@ -9,6 +9,12 @@ import yaml
 
 from translate import __app_name__, __version__
 
+# "gfm+definition_lists+fenced_divs+pipe_tables-fenced_code_attributes",
+md_extensions_to = 'markdown+definition_lists+fenced_divs+backtick_code_blocks+fenced_code_attributes+pipe_tables-simple_tables'
+
+# "gfm+definition_lists+fenced_divs+pipe_tables",
+md_extensions_from = 'markdown+definition_lists+fenced_divs+backtick_code_blocks+fenced_code_attributes+pipe_tables'
+
 def load_auth() -> str:
     """
     Look up DEEPL_AUTH environmental variable for authentication.
@@ -45,8 +51,8 @@ def convert_markdown(md_file: str) -> str:
     upload_folder = config['upload_folder']
 
     path = re.sub("^docs/",upload_folder+'/', md_file)
-    path = re.sub(r"\.en.md$",r".en.html", path)
-    path = re.sub(r"\.md$",r".html", path)
+    path = path.replace(".en.md",".en.html")
+    path = path.replace(".md",".html")
     html_file = path
 
     html_dir = os.path.dirname(path)
@@ -62,7 +68,7 @@ def convert_markdown(md_file: str) -> str:
     print("Converting ",md_prep," to ",html_file)
     # pandoc --from gfm --to html -o index.en.html index.md
     completed = subprocess.run(["pandoc",
-       "--from","gfm+definition_lists+fenced_divs+pipe_tables"
+       "--from", md_extensions_from,
        "--to","html",
        "--wrap=none",
        "--eol=lf",
@@ -82,10 +88,37 @@ def preprocess_markdown(md_file:str, md_prep: str) -> str:
         text = file.read()
 
     clean = ''
+    code = ''
     admonition = None
 
     # handle notes as pandoc fenced_divs
     for line in text.splitlines():
+        # phase 1: code-block pre-processing
+        #
+        # cause pandoc #markdown or #text to force to fenced codeblocks (rather than indent)
+        if re.match("^```", line):
+          if len(code) > 0:
+            # print("code-end: '"+line+"'")
+            # end code block (so no processing)
+            code = ''
+
+          else:
+            # print("code-block: '" + line +"'")
+            line = re.sub(
+                 r"^```(\S+)$",
+                 r"```#\1",
+                 line,
+                 flags=re.MULTILINE
+            )
+            line = re.sub(
+                 r"^```$",
+                 r"```#text",
+                 line,
+                 flags=re.MULTILINE
+            )
+            code = line[4:]
+
+        # phase 2: process blocks
         if not admonition:
            if '!!! ' in line:
                # print('admonition start  : "'+line+'"')
@@ -148,16 +181,18 @@ def convert_html(html_file: str) -> str:
     if not os.path.exists(html_tmp_file):
        raise FileNotFoundError(errno.ENOENT, f"Did not create preprocessed html file:", html_tmp_file)
 
-    if not html_file[-5:] == '.en.html':
+    if html_file[:-8] == '.fr.html':
        md_file = html_file[0:-8] + '.fr.md'
+    if html_file[:-5] == '.html':
+       md_file = html_file[0:-8] + '.md'
     else:
        md_file = html_file[0:-5] + '.md'
 
-    md_tmp_file = md_file+".tmp"
+    md_tmp_file = md_file[0:-3]+".tmp.md"
 
     completed = subprocess.run(["pandoc",
        "--from","html",
-       "--to","gfm+definition_lists+fenced_divs+pipe_tables",
+       "--to", md_extensions_to,
        "--wrap=none",
        "--eol=lf",
        "-o", md_tmp_file,
@@ -215,20 +250,35 @@ def postprocess_markdown(md_file: str, md_clean: str):
     #    ![Search field](img/search.png)
     #    *Champ de recherche*
     #
-    clean = re.sub(
-        r"^(\s*)\!\[(.*)\]\((.*)\)\s\*(.*)\*$",
-        r"\1![\2](\3)\1*\4*",
+#     data = re.sub(
+#         r"^(\s*)\!\[(.*)\]\((.*)\)\s\*(.*)\*$",
+#         r"\1![\2](\3)\1*\4*",
+#         data,
+#         flags=re.MULTILINE
+#     )
+    # fix icons
+    data = re.sub(
+        r":(fontawesome-\S*)\s:",
+        r":\1:",
         data,
         flags=re.MULTILINE
     )
-    clean = re.sub(
-        r":(fontawesome-\S*)\s:",
-        r":\1:",
-        clean,
+    # fix fence text blocks
+    data = re.sub(
+        r'^``` #text$',
+        r'```',
+        data,
+        flags=re.MULTILINE
+    )
+    # fix fenced code blocks
+    data = re.sub(
+        r'^``` #(.+)$',
+        r'```\1',
+        data,
         flags=re.MULTILINE
     )
     with open(md_clean,'w') as markdown:
-        markdown.write(clean)
+        markdown.write(data)
 
 def deepl_document(en_html:str, fr_html:str):
     """

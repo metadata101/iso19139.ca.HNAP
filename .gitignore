@@ -30,7 +30,7 @@ out/
 
 # Python stuff
 venv
-
+**/__pycache__
 # Sphinx-build
 *.mo
 
