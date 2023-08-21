@@ -32,6 +32,7 @@ plugins:
           Map: Map
           Editor: Editor
           Administration: Administration
+          Development : Development
 markdown_extensions:
   - admonition
   - attr_list
@@ -78,3 +79,6 @@ nav:
     - 'admin/settings.md'
     - 'admin/install/install.md'
     - 'admin/upgrade.md'
+  - 'Development':
+    - 'devel/index.md'
+    - 'devel/docs/docs.md'

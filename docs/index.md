@@ -7,6 +7,7 @@ use with ISO19139/119 Harmonized North American Profile (HNAP) content.
 * [Visualizing Data](map/index.md)
 * [Editor](editor/index.md)
 * [Administration](admin/index.md)
+* [Development](devel/index.md)
 
 !!! info "Reference"
 

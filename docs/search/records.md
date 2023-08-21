@@ -128,13 +128,13 @@ To further explore listed records:
 
 5.  To search for data in the year `2016` use the advanced search
     options to fill **Resources created in the last** in:
-
-      --------------------- -------------------------------------------------
-      From                  `2016-01-01`
-
-      To                    `2016-12-31`
-      --------------------- -------------------------------------------------
-
+    
+    **From**
+    :   `2016-01-01`
+    
+    **To**
+    :   `2016-12-31`
+    
     Press **Search** button to show data from `2016`.
 
     ![](img/search_resource_2016.png)
