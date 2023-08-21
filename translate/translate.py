@@ -234,6 +234,19 @@ def preprocess_html(html_file: str, html_clean: str):
         clean,
         flags=re.MULTILINE
     )
+    # Fix deepl not respecting <pre><code> blogs using CDATA
+    clean = re.sub(
+        r'<code><!\[CDATA\[',
+        r'<code>',
+        clean,
+        flags=re.MULTILINE
+    )
+    clean = re.sub(
+        r'\]\]></code>',
+        r'</code>',
+        clean,
+        flags=re.MULTILINE
+    )
     with open(html_clean,'w') as html:
         html.write(clean)
 
@@ -294,12 +307,18 @@ def deepl_document(en_html:str, fr_html:str):
     config = load_config()
     AUTH = load_auth()
 
+    # prep html file for conversion
+    translate_tmp_file = en_html[0:-5] + '.tmp.html'
+    print("Preprocssing",en_html,"to",translate_tmp_file)
+
+    preprocess_translate(en_html, translate_tmp_file)
+
     translator = deepl.Translator(AUTH)
 
     try:
         # Using translate_document_from_filepath() with file paths
         translator.translate_document_from_filepath(
-            en_html,
+            translate_tmp_file,
             fr_html,
             source_lang='EN',
             target_lang="FR",
@@ -323,6 +342,26 @@ def deepl_document(en_html:str, fr_html:str):
        raise FileNotFoundError(errno.ENOENT, f"Deepl did not create md file:", fr_html)
 
     return
+
+def preprocess_translate(html_file: str, html_clean: str):
+    with open(html_file, 'r') as html:
+        data = html.read()
+
+    # Fix deepl not respecting <pre><code> blogs using CDATA
+    data = re.sub(
+        r'<code>',
+        r'<code><![CDATA[',
+        data,
+        flags=re.MULTILINE
+    )
+    data = re.sub(
+        r'</code>',
+        r']]></code>',
+        data,
+        flags=re.MULTILINE
+    )
+    with open(html_clean,'w') as html:
+        html.write(data)
 
 # def deepl_translate(html_file: str) -> dict:
 #     """

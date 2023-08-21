@@ -8,7 +8,7 @@ When converting to markdown we can only focus on the visual appearance, converti
 
 | Markdown                 | Sphinx directive           |
 |--------------------------|----------------------------|
-| `**strong **`            | gui-label, menuselection   |
+| `**strong**`            | gui-label, menuselection   |
 | `` `monospace` ``        | text input, item selection |
 | `*emphasis*`             | figure (caption)           |
 | `***strong-emphasis***`  | command                    |
@@ -116,7 +116,7 @@ Preview:
 
 Markdown: definition lists
 
-```
+```markdown
 1.  To login as the GeoServer administrator using the default password:
 
     **User**
