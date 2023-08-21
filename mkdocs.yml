@@ -31,7 +31,7 @@ plugins:
           Search: Search
           Map: Map
           Editor: Editor
-          Administration: Administration
+          Administration: Administrateur
           Development : Development
 markdown_extensions:
   - admonition

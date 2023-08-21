@@ -4,6 +4,8 @@
 from typing import Optional
 
 import json
+import os
+import shutil
 import typer
 from typing_extensions import Annotated
 
@@ -19,6 +21,28 @@ def _version_callback(value: bool) -> None:
     if value:
         typer.echo(f"{__app_name__} v{__version__}")
         raise typer.Exit()
+
+@app.command()
+def french(
+        md_file: Annotated[str, typer.Argument(help="Markdown file path")]
+    ):
+    """
+    Translate markdown file to french using convert, document and markdown steps.
+    """
+    html_en = convert_markdown(md_file)
+
+    html_fr = html_en[0:-5]+'.fr.html'
+    deepl_document(html_en,html_fr)
+
+    translated = convert_html(html_fr)
+
+    folder = os.path.dirname(md_file)
+
+    md_fr = os.path.join(folder,os.path.basename(translated))
+
+    shutil.copy2(translated, md_fr)
+
+    print(md_fr,"\n")
 
 
 @app.command()
@@ -48,6 +72,7 @@ def document(
     ):
     """
     Upload en_file for translation to deepl services, the translation is downloaded to fr_file.
+    Some preprocess applied to preserve code blocks.
     Requires DEEPL_AUTH environment variable to access translation services.
     """
     deepl_document(en_file,fr_file)
