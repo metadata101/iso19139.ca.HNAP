@@ -1,6 +1,6 @@
 # Search records
 
-The GeoNetwork catalog provides a data portal listing datasets and resource records.
+GeoNetwork is catalog lists records of available datasets.
 
 ## Search Catalogue
 

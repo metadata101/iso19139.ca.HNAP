@@ -1,6 +1,6 @@
 # Administrateur {#administrator}
 
-L\'administrateur a accès à la gestion des privilèges d\'enregistrement, des autorisations d\'utilisation et des paramètres de l\'application.
+L'administrateur a accès à la gestion des privilèges d'enregistrement, des autorisations d'utilisation et des paramètres de l'application.
 
 -   [privilèges](privileges.md)
 -   [utilisateurs](users.md)
