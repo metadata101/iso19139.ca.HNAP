@@ -173,11 +173,6 @@
   <sch:pattern>
     <sch:title>$loc/strings/Metadata</sch:title>
 
-    <sch:rule context="/gmd:MD_Metadata">
-      <sch:let name="missingContactMail" value="not(gmd:contact/*/gmd:contactInfo/*/gmd:address/gmd:CI_Address/gmd:electronicMailAddress)" />
-      <sch:assert test="not($missingContactMail)">$loc/strings/MissingContactMail</sch:assert>
-    </sch:rule>
-
     <!-- Metadata Standard Name -->
     <sch:rule context="//gmd:metadataStandardName">
 

@@ -86,6 +86,4 @@
   <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
 
   <ElectronicMailFormat>Le format de l'adresse électronique n'est pas valide (par exemple abc@abc.com)</ElectronicMailFormat>
-
-  <MissingContactMail>Contact - Adresse de courrier électronique obligatoire</MissingContactMail>
 </strings>

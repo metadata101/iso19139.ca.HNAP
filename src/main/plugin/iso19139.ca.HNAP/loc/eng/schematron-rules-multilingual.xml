@@ -85,6 +85,4 @@
   <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
 
   <ElectronicMailFormat>Electronic mail address format is invalid (for example abc@abc.com)</ElectronicMailFormat>
-
-  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
 </strings>
