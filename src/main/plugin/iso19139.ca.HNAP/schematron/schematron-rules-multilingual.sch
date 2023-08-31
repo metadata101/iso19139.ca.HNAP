@@ -741,9 +741,8 @@
                 and (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609'
                 or ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609')) or
 
-                (not(string(gco:CharacterString)) and not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))
-                and (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
-                and ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609')
+                (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
+                and ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
                 )" />
       <sch:assert
         test="$filledFine"

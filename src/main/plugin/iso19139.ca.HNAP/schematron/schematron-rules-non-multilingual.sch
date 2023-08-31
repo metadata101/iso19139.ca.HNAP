@@ -422,9 +422,8 @@
                 and (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609'
                 or ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609')) or
 
-                (not(string(gco:CharacterString))
-                and (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
-                and ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609')
+                (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
+                and ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
                 ))" />
       <sch:assert
         test="$filledFine"
