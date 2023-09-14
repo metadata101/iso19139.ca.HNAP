@@ -56,49 +56,6 @@ public class XslUtilHnap {
 
     /**
      * Compares dates (used for temporal extent dates comparison),
-     * managing the different formats allowed: yyyy-mm-ddThh:mm:ss, yyyy-mm-dd, yyyy-mm, yyyy.
-     * <br/>
-     * endDate and endDateTime are mutually exclusive; same as startDate and startDate
-     *
-     * @param endDate
-     * @param endDateTime
-     * @param startDate
-     * @param startDateTime
-     * @return
-     */
-    public static int compareDateTimes(String endDate, String endDateTime, String startDate, String startDateTime) {
-        Log.debug(Geonet.SCHEMA_MANAGER, "compareDates extension is called to compare : " + endDate + ", " + startDate);
-        if ((StringUtils.isEmpty(endDate) && StringUtils.isEmpty(endDateTime)) || (StringUtils.isEmpty(startDate) && StringUtils.isEmpty(startDateTime))
-            || (StringUtils.isNotEmpty(endDate) && StringUtils.isNotEmpty(endDateTime)) || (StringUtils.isNotEmpty(startDate) && StringUtils.isNotEmpty(startDateTime))) {
-            return 1;
-        } else {
-            try {
-                Date date1Value = null;
-                Date date2Value = null;
-                if (StringUtils.isNotEmpty(endDate)) {
-                    endDate = calculateDate(endDate, false);
-                    date1Value = DateUtils.parseIso8601DateTimeOrDate(endDate);
-                } else if (StringUtils.isNotEmpty(endDateTime)) {
-                    date1Value = DateUtils.parseIso8601DateTimeOrDate(endDateTime);
-                }
-
-                if (StringUtils.isNotEmpty(startDate)) {
-                    startDate = calculateDate(startDate, true);
-                    date2Value = DateUtils.parseIso8601DateTimeOrDate(startDate);
-                } else if (StringUtils.isNotEmpty(startDateTime)) {
-                    date2Value = DateUtils.parseIso8601DateTimeOrDate(startDateTime);
-                }
-
-                return date1Value.compareTo(date2Value);
-
-            } catch (Exception ex) {
-                return 1;
-            }
-        }
-    }
-
-    /**
-     * Compares dates (used for temporal extent dates comparison),
      * managing the different formats allowed: yyyy-mm-dd, yyyy-mm, yyyy.
      * ported from utils-fn.xsl in ec
      *
