@@ -42,6 +42,10 @@
   <DistributionFormatInvalid>Valeur du format de distribution n'est pas valide</DistributionFormatInvalid>
   <OnlineResourceUrl>Value is required for Online Resource URL</OnlineResourceUrl>
   <OnlineResourceProtocol>Protocole de ressource en ligne n'est pas valide. Les valeurs valides sont </OnlineResourceProtocol>
+  <TemporalExtentRequired>Une valeur est nécessaire pour: Etendue temporelle</TemporalExtentRequired>
+  <GeographicExtentRequired>Une valeur est nécessaire pour: Étendue géographique</GeographicExtentRequired>
+  <GeographicExtentWestEast>Étendue géographique - la longitude ouest doit être inférieure à la longitude est</GeographicExtentWestEast>
+  <GeographicExtentNorthSouth>Étendue géographique - la latitude sud devrait être inférieure à la latitude nord</GeographicExtentNorthSouth>
 
   <MapResourcesREST>Les sources de la carte REST devraient être disponibles en anglais et en français</MapResourcesREST>
   <MapResourcesRESTNumber>Le nombre de sources de la carte ESRI REST devrait être au plus 2 (une pour l'anglais et une pour le français)</MapResourcesRESTNumber>

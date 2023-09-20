@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, GeoCat BV and others
+# This file is distributed under the same license as the User Manual (HNAP)
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: User Manual (HNAP) 3.12-SNAPSHOT\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-27 20:04-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../src/sphinx/admin/upgrade.rst:2 383cc124e9194cdfabd2f24d164459d7
+msgid "Upgrade"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:5 35e9a173a7f0421885dbfd1a84f85a52
+msgid "Migration to schemas.metadata.geo.ca"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:7 b2bd5b265cda4f8fb75143857a1e71eb
+msgid ""
+"The published location of the HNAP schema has changed from "
+"`nap.geogratis.gc.ca "
+"<http://nap.geogratis.gc.ca/metadata/tools/schemas/metadata/can-"
+"cgsb-171.100-2009-a/>`__ to `schemas.metadata.geo.ca "
+"<https://schemas.metadata.geo.ca/2009/>`__."
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:11 ace9a9434d3942b3ba804613fa3c9b71
+msgid ""
+"The location of the HNAP registry used for code list definitions has also"
+" changed:"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:13 3e5fd76c9ad149538c874e01bd9c31d9
+msgid ""
+"``http://nap.geogratis.gc.ca/metadata/register/napMetadataRegister.xml`` "
+"| ``https://schemas.metadata.geo.ca/register/napMetadataRegister.xml``"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:15 3deffccdaa4d41339610f273da1daa2e
+msgid ""
+"``http://nap.geogratis.gc.ca/metadata/register/registerItemClasses-"
+"eng.html`` | ``https://schemas.metadata.geo.ca/register"
+"/registerItemClasses-eng.html``"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:18 3e62656692ea4c43b5ca79209f7e4833
+msgid "Individual records can be upgraded by saving and loading in the editor:"
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:20 ed3abba1d04e4e47bc00c6fc8c9df521
+msgid "Open the record in the editor."
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:21 d5168dfa04f94e61bbbaaf64445b3a37
+msgid "Select :command:`Save and Close`."
+msgstr ""
+
+#: ../../src/sphinx/admin/upgrade.rst:23 b5916bd8d6f84f6f85ca07496010b14f
+msgid "To update all records in the database use the following SQL:"
+msgstr ""
+

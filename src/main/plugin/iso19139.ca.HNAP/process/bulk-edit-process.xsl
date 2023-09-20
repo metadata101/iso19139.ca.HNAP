@@ -713,7 +713,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Information_Category">
@@ -789,7 +789,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.place.EC_Geographic_Scope">
@@ -867,7 +867,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Data_Usage_Scope">
@@ -944,7 +944,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Content_Scope">
@@ -1198,7 +1198,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Information_Category">
@@ -1274,7 +1274,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.place.EC_Geographic_Scope">
@@ -1352,7 +1352,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Data_Usage_Scope">
@@ -1429,7 +1429,7 @@
                 </gmd:PT_FreeText>
               </gmd:keyword>
               <gmd:type>
-                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme"/>
+                <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="RI_528">theme; thème</gmd:MD_KeywordTypeCode>
               </gmd:type>
               <gmd:thesaurusName>
                 <gmd:CI_Citation id="local.theme.EC_Content_Scope">
