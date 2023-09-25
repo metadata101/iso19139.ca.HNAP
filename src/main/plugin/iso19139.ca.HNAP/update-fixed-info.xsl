@@ -964,6 +964,11 @@
     </xsl:copy>
   </xsl:template>
 
+
+  <!-- Remove empty extent sections -->
+  <xsl:template match="gmd:MD_DataIdentification/gmd:extent[count(gmd:EX_Extent/*) = 0]" />
+
+
   <xsl:template match="@xsi:schemaLocation">
     <xsl:if test="XslUtil:getSettingValue('system/metadata/validation/removeSchemaLocation') = 'false'">
       <xsl:copy-of select="."/>
