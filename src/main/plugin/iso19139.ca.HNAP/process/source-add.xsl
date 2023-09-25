@@ -22,6 +22,105 @@
   ~ Rome - Italy. email: geonetwork@osgeo.org
   -->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-  <xsl:import href="../../iso19139/process/source-add.xsl"/>
+<!--
+Stylesheet used to update metadata adding a reference to a source record.
+-->
+<xsl:stylesheet xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                xmlns:gco="http://www.isotc211.org/2005/gco"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:geonet="http://www.fao.org/geonetwork"
+                version="2.0"
+                exclude-result-prefixes="#all">
+
+  <xsl:param name="siteUrl"/>
+  <xsl:param name="sourceUuid"/>
+  <xsl:param name="sourceUrl" select="''"/>
+  <xsl:param name="sourceTitle" select="''"/>
+
+  <!-- Do a copy of every nodes and attributes -->
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="gmd:MD_Metadata | *[contains(@gco:isoType, 'MD_Metadata')]" priority="2">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates select="
+        gmd:fileIdentifier | gmd:language | gmd:characterSet | gmd:parentIdentifier | gmd:hierarchyLevel |
+        gmd:hierarchyLevelName | gmd:contact | gmd:dateStamp | gmd:metadataStandardName | gmd:metadataStandardVersion |
+        gmd:dataSetURI | gmd:locale | gmd:spatialRepresentationInfo | gmd:referenceSystemInfo | gmd:metadataExtensionInfo |
+        gmd:identificationInfo | gmd:contentInfo | gmd:distributionInfo"/>
+      <xsl:choose>
+        <xsl:when test="gmd:dataQualityInfo">
+          <xsl:apply-templates select="gmd:dataQualityInfo"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <gmd:dataQualityInfo>
+            <gmd:DQ_DataQuality>
+              <gmd:scope>
+                <gmd:DQ_Scope>
+                  <gmd:level>
+                    <gmd:MD_ScopeCode codeListValue="RI_622"                     
+                    codeList="https://schemas.metadata.geo.ca/register/napMetadataRegister.xml#IC_108">dataset; jeuDonnées</gmd:MD_ScopeCode>
+                  </gmd:level>
+                </gmd:DQ_Scope>
+              </gmd:scope>
+              <gmd:lineage>
+                <gmd:LI_Lineage>
+                  <xsl:call-template name="make-source-link"/>
+                </gmd:LI_Lineage>
+              </gmd:lineage>
+            </gmd:DQ_DataQuality>
+          </gmd:dataQualityInfo>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="
+        gmd:portrayalCatalogueInfo | gmd:metadataConstraints | gmd:applicationSchemaInfo | gmd:metadataMaintenance |
+        gmd:series | gmd:describes | gmd:propertyType | gmd:featureType | gmd:featureAttribute"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="gmd:dataQualityInfo/*[not(gmd:lineage)]" priority="2">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates select="*[name() != 'gmd:lineage']"/>
+      <gmd:lineage>
+        <gmd:LI_Lineage>
+          <xsl:call-template name="make-source-link"/>
+        </gmd:LI_Lineage>
+      </gmd:lineage>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template match="gmd:LI_Lineage|*[contains(@gco:isoType, 'LI_Lineage')]" priority="2">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:copy-of select="gmd:statement|gmd:processStep|gmd:source"/>
+
+      <xsl:call-template name="make-source-link"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <xsl:template name="make-source-link">
+    <gmd:source uuidref="{$sourceUuid}">
+      <xsl:if test="$sourceTitle != ''">
+        <xsl:attribute name="xlink:title" select="$sourceTitle"/>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="$sourceUrl != ''">
+          <xsl:attribute name="xlink:href" select="$sourceUrl"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="xlink:href"
+                         select="concat($siteUrl, 'csw?service=CSW&amp;request=GetRecordById&amp;version=2.0.2&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementSetName=full&amp;id=', $sourceUuid)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </gmd:source>
+  </xsl:template>
+
+  <!-- Remove geonet:* elements. -->
+  <xsl:template match="geonet:*" priority="2"/>
 </xsl:stylesheet>
