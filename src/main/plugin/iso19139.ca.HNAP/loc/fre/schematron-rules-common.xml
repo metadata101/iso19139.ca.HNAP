@@ -17,6 +17,7 @@
   <InvalidSpatialRepresentationType>Le code de fréquence de mise à jour n'est pas valide</InvalidSpatialRepresentationType>
   <PublicationDate>Une valeur est nécessaire pour: Métadonnées date de publication</PublicationDate>
   <CreationDate>>Une valeur est nécessaire pour: Métadonnées date de création</CreationDate>
+  <PublicationDateBeforeCreationDate>La date de publication doit être postérieure à la date de création</PublicationDateBeforeCreationDate>
   <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
   <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>

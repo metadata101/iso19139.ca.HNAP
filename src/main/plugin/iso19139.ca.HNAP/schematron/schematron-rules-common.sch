@@ -211,22 +211,17 @@
 
 
     <!-- Creation/revision dates -->
-    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation
-            |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation
-            |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation">
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date
+    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date
+    |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date">
 
-      <sch:let name="missingPublication" value="count(gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']) = 0" />
+      <sch:let name="creationDate" value="../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:Date[1]
+                                         |../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:DateTime[1]" />
+      <sch:let name="missingCreation" value="not(string($creationDate))" />
+      <sch:let name="publicationDate" value="gco:Date|gco:DateTime" />
+      <sch:let name="missingPublication" value="not(string($publicationDate))" />
 
-      <sch:assert
-        test="not($missingPublication)"
-      >$loc/strings/PublicationDate</sch:assert>
-
-      <sch:let name="missingCreation" value="count(gmd:date[gmd:CI_Date/gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']) = 0" />
-
-      <sch:assert
-        test="not($missingCreation)"
-      >$loc/strings/CreationDate</sch:assert>
-
+      <sch:assert test="$missingPublication or $missingCreation or XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date
