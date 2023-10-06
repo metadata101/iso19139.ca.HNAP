@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edit &mdash; User Manual (HNAP) 3.12.4 documentation</title>
+  <title>Edit &mdash; User Manual (HNAP) 4.2.6 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -12,9 +12,8 @@
   <![endif]-->
   
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -27,14 +26,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search"  style="background: gray" >
-            <a href="../../index.html" class="icon icon-home"> User Manual (HNAP)
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            User Manual (HNAP)
           </a>
               <div class="version">
-                3.12
+                4.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,9 +77,9 @@
         <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Editor</a> &raquo;</li>
-      <li>Edit</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Editor</a></li>
+      <li class="breadcrumb-item active">Edit</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -86,9 +89,9 @@
            <div itemprop="articleBody">
              
   <section id="edit">
-<h1>Edit<a class="headerlink" href="#edit" title="Permalink to this headline"></a></h1>
+<h1>Edit<a class="headerlink" href="#edit" title="Permalink to this heading"></a></h1>
 <section id="edit-record">
-<h2>Edit record<a class="headerlink" href="#edit-record" title="Permalink to this headline"></a></h2>
+<h2>Edit record<a class="headerlink" href="#edit-record" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>There are several ways to open the record editor when viewing a record:</p>
 <figure class="align-default" id="id1">
@@ -202,7 +205,7 @@
 </ol>
 </section>
 <section id="editor-navigation">
-<h2>Editor navigation<a class="headerlink" href="#editor-navigation" title="Permalink to this headline"></a></h2>
+<h2>Editor navigation<a class="headerlink" href="#editor-navigation" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Records are divided into a series of nested sections covering different subjects.</p>
 <p>Each section has a heading, use the <kbd class="kbd docutils literal notranslate">v</kbd> toggle next to each heading to hide and show the section contents.</p>
@@ -229,7 +232,7 @@
 </ol>
 </section>
 <section id="editor-fields">
-<h2>Editor fields<a class="headerlink" href="#editor-fields" title="Permalink to this headline"></a></h2>
+<h2>Editor fields<a class="headerlink" href="#editor-fields" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Record editing make use of data entry fields consisting of:</p>
 <ul class="simple">
@@ -311,7 +314,7 @@ to narrow down valid suggestions.</p>
 </ol>
 </section>
 <section id="optional-vs-nil">
-<h2>Optional vs Nil<a class="headerlink" href="#optional-vs-nil" title="Permalink to this headline"></a></h2>
+<h2>Optional vs Nil<a class="headerlink" href="#optional-vs-nil" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Optional values, can be removed using <span class="guilabel">Delete this field</span>.</p>
 <p>This button can be used to remove the <span class="guilabel">Country</span> field from and address.</p>
@@ -339,7 +342,7 @@ to narrow down valid suggestions.</p>
 </ol>
 </section>
 <section id="wms-service-links">
-<h2>WMS Service Links<a class="headerlink" href="#wms-service-links" title="Permalink to this headline"></a></h2>
+<h2>WMS Service Links<a class="headerlink" href="#wms-service-links" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Edit record locate the <span class="guilabel">Associated resources</span> box on the right hand side of the editor.</p>
 <p>Navigate to the <span class="guilabel">Online resources</span> heading, and press <span class="guilabel">Add</span> button to open <span class="guilabel">Link an online resource</span> dialog.</p>
@@ -352,10 +355,10 @@ to narrow down valid suggestions.</p>
 </li>
 <li><p>Append the parameter <code class="docutils literal notranslate"><span class="pre">&amp;layers=name</span></code> to indicate the layer to display.</p>
 <p>Review the raw GetCapabilities document to see all the layers available in the service, layers are indicated using:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span> <span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
-   <span class="nt">&lt;Title&gt;</span>National Tornado Events<span class="nt">&lt;/Title&gt;</span>
-   ...
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Title&gt;</span>National<span class="w"> </span>Tornado<span class="w"> </span>Events<span class="nt">&lt;/Title&gt;</span>
+<span class="w">   </span>...
 </pre></div>
 </div>
 <p>To visually explore the GetCapabilities use a Desktop GIS application, or the included Map Viewer.</p>
@@ -367,10 +370,10 @@ to narrow down valid suggestions.</p>
 </li>
 <li><p>Use <span class="guilabel">Resource name</span> to provide the title of the layer in English and French.</p>
 <p>The raw GetCapabilities document included the title of the layer:</p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span> <span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
-   <span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
-   <span class="nt">&lt;Title&gt;</span>National Tornado Events<span class="nt">&lt;/Title&gt;</span>
-   ...
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Layer</span><span class="w"> </span><span class="na">queryable=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Name&gt;</span>0<span class="nt">&lt;/Name&gt;</span>
+<span class="w">   </span><span class="nt">&lt;Title&gt;</span>National<span class="w"> </span>Tornado<span class="w"> </span>Events<span class="nt">&lt;/Title&gt;</span>
+<span class="w">   </span>...
 </pre></div>
 </div>
 </li>
@@ -393,7 +396,7 @@ to narrow down valid suggestions.</p>
 </ol>
 </section>
 <section id="thumbnail-generation">
-<h2>Thumbnail generation<a class="headerlink" href="#thumbnail-generation" title="Permalink to this headline"></a></h2>
+<h2>Thumbnail generation<a class="headerlink" href="#thumbnail-generation" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
 <li><p>Navigate to the <span class="guilabel">Online resources</span> heading, and press <span class="guilabel">Add</span> button to open <span class="guilabel">Link an online resource</span> dialog.</p></li>
 <li><p>At the top of the dialog, select <span class="guilabel">Add a thumbnail</span>.</p>
@@ -432,7 +435,7 @@ to narrow down valid suggestions.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, GeoCat BV and others.</p>
+    <p>&#169; Copyright 2023, GeoCat BV and others.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
