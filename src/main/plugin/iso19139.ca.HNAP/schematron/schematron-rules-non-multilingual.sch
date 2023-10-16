@@ -425,9 +425,20 @@
                 (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
                 and ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
                 ))" />
+      <sch:let name="emptyFine" value="(
+                (not(string(gco:CharacterString))
+                and (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609'
+                or ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue != 'RI_609')
+                ) or
+                (../gmd:accessConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609'
+                or ../gmd:useConstraints/gmd:MD_RestrictionCode/@codeListValue = 'RI_609')
+                )" />
       <sch:assert
         test="$filledFine"
       >$loc/strings/OtherConstraintsNote</sch:assert>
+      <sch:assert
+        test="$emptyFine"
+      >$loc/strings/OtherConstraintsNoteEmpty</sch:assert>
     </sch:rule>
 
     <sch:rule context="//gmd:identificationInfo/*/gmd:resourceConstraints/gmd:MD_SecurityConstraints/gmd:userNote">
