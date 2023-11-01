@@ -1128,9 +1128,33 @@
     <xsl:variable name="positionName"
                   select="*[1]/gmd:positionName[1]"
                   as="node()?"/>
-    <xsl:variable name="address" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/(
+
+    <!-- Create a list of address for each language. Some fields of the address are multilingual
+        <address xml:lang="eng">...</address>
+        <address xml:lang="fre">...</address>
+    -->
+    <xsl:variable name="address">
+      <xsl:for-each select="*[1]/gmd:contactInfo/*/gmd:address">
+        <address xml:lang="{$languages/lang[@id='default']/@value}"><xsl:value-of select="string-join(*/(
                                         gmd:deliveryPoint|gmd:postalCode|gmd:city|
-                                        gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
+                                        gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')" /></address>
+
+
+        <xsl:variable name="addressVal" select="." />
+
+        <xsl:for-each select="$languages/lang[@id != 'default']">
+          <xsl:variable name="langId" select="@id" />
+          <xsl:variable name="langValue" select="@value" />
+          <xsl:variable name="langId2" select="concat('#', $langId)" />
+
+          <address xml:lang="{$langValue}"><xsl:value-of select="string-join(
+                              ($addressVal//gmd:deliveryPoint//gmd:LocalisedCharacterString[@locale='#fra']/text())|
+                              $addressVal//(gmd:postalCode|gmd:city)/gco:CharacterString/text()|
+                              $addressVal//(gmd:administrativeArea|gmd:country)//gmd:LocalisedCharacterString[@locale= $langId2]/text(), ', ')" /></address>
+        </xsl:for-each>
+      </xsl:for-each>
+    </xsl:variable>
+
 
     <xsl:variable name="roleField"
                   select="concat(replace($roleHNAP, '[^a-zA-Z0-9-]', ''),
@@ -1151,11 +1175,6 @@
         "organisationObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
                               'organisation', $organisationName, $languages, true())"/>,
       </xsl:if>
-      "role":"<xsl:value-of select="$roleHNAP"/>",
-      "email":"<xsl:value-of select="gn-fn-index:json-escape($email[1])"/>",
-      "website":"<xsl:value-of select="$website"/>",
-      "logo":"<xsl:value-of select="$logo"/>",
-      "individual":"<xsl:value-of select="gn-fn-index:json-escape($individualName)"/>",
       <xsl:if test="$positionName">
         "positionObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
                               'position', $positionName, $languages, true())"/>,
@@ -1164,10 +1183,40 @@
         "phoneObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
                               'phone', $phone, $languages, true())"/>,
       </xsl:if>
-      "address":"<xsl:value-of select="gn-fn-index:json-escape($address)"/>"
+      <xsl:if test="$address">
+        "addressObject": <xsl:value-of select="gn-fn-index:add-multilingual-field-address-as-json(
+                              'address', $address, $languages)"/>,
+      </xsl:if>
+      "role":"<xsl:value-of select="$roleHNAP"/>",
+      "email":"<xsl:value-of select="gn-fn-index:json-escape($email[1])"/>",
+      "website":"<xsl:value-of select="$website"/>",
+      "logo":"<xsl:value-of select="$logo"/>",
+      "individual":"<xsl:value-of select="gn-fn-index:json-escape($individualName)"/>"
       }
     </xsl:element>
   </xsl:template>
 
 
+  <xsl:function name="gn-fn-index:add-multilingual-field-address-as-json" as="node()*">
+    <xsl:param name="fieldName" as="xs:string"/>
+    <xsl:param name="elements" as="node()*"/>
+    <xsl:param name="languages" as="node()?"/>
+
+    <xsl:variable name="mainLanguage"
+                  select="$languages/lang[@id='default']/@value"/>
+
+    <xsl:variable name="doubleQuote">"</xsl:variable>
+    <xsl:variable name="textObject" as="node()*">
+      <xsl:for-each select="$elements/*">
+        <xsl:variable name="element" select="."/>
+        <xsl:if test="position() = 1">
+          <value><xsl:value-of select="concat($doubleQuote, 'default', $doubleQuote, ':',
+                                               $doubleQuote, gn-fn-index:json-escape(.), $doubleQuote)"/></value>
+        </xsl:if>
+        <value><xsl:value-of select="concat($doubleQuote, 'lang', @xml:lang, $doubleQuote, ':',
+                                           $doubleQuote, gn-fn-index:json-escape(.), $doubleQuote)"/></value>
+      </xsl:for-each>
+    </xsl:variable>
+    {<xsl:value-of select="string-join($textObject/text(), ', ')"/>}
+  </xsl:function>
 </xsl:stylesheet>
