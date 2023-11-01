@@ -1121,11 +1121,13 @@
     <xsl:variable name="email"
                   select="*[1]/gmd:contactInfo/*/gmd:address/*/gmd:electronicMailAddress/gco:CharacterString"/>
     <xsl:variable name="phone"
-                  select="*[1]/gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != '']/*/text()"/>
+                  select="*[1]/gmd:contactInfo/*/gmd:phone/*/gmd:voice[normalize-space(.) != ''][1]"
+                  as="node()?"/>
     <xsl:variable name="individualName"
                   select="*[1]/gmd:individualName/gco:CharacterString/text()"/>
     <xsl:variable name="positionName"
-                  select="*[1]/gmd:positionName/gco:CharacterString/text()"/>
+                  select="*[1]/gmd:positionName[1]"
+                  as="node()?"/>
     <xsl:variable name="address" select="string-join(*[1]/gmd:contactInfo/*/gmd:address/*/(
                                         gmd:deliveryPoint|gmd:postalCode|gmd:city|
                                         gmd:administrativeArea|gmd:country)/gco:CharacterString/text(), ', ')"/>
@@ -1154,8 +1156,14 @@
       "website":"<xsl:value-of select="$website"/>",
       "logo":"<xsl:value-of select="$logo"/>",
       "individual":"<xsl:value-of select="gn-fn-index:json-escape($individualName)"/>",
-      "position":"<xsl:value-of select="gn-fn-index:json-escape($positionName)"/>",
-      "phone":"<xsl:value-of select="gn-fn-index:json-escape($phone[1])"/>",
+      <xsl:if test="$positionName">
+        "positionObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
+                              'position', $positionName, $languages, true())"/>,
+      </xsl:if>
+      <xsl:if test="$phone">
+        "phoneObject": <xsl:value-of select="gn-fn-index:add-multilingual-field(
+                              'phone', $phone, $languages, true())"/>,
+      </xsl:if>
       "address":"<xsl:value-of select="gn-fn-index:json-escape($address)"/>"
       }
     </xsl:element>
