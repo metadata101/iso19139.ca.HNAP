@@ -54,5 +54,6 @@
   <MapResourcesWMSNumber>The number of WMS Map Resources should be at most 2 (one for english and one for french)</MapResourcesWMSNumber>
 
   <ServiceNamespace>srv:SV_ServiceIdentification is misplaced for gmd:MD_ScopeCode: </ServiceNamespace>
+  <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
 
 </strings>
