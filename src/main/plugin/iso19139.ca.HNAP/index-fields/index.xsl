@@ -1189,7 +1189,7 @@
       </xsl:if>
       "role":"<xsl:value-of select="$roleHNAP"/>",
       "email":"<xsl:value-of select="gn-fn-index:json-escape($email[1])"/>",
-      "website":"<xsl:value-of select="$website"/>",
+      "website":"<xsl:value-of select="gn-fn-index:json-escape($website)"/>",
       "logo":"<xsl:value-of select="$logo"/>",
       "individual":"<xsl:value-of select="gn-fn-index:json-escape($individualName)"/>"
       }
