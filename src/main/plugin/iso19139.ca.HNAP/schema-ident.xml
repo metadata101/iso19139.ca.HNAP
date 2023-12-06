@@ -59,7 +59,7 @@
     <filter
       xpath=".//gmd:onLine[*/gmd:protocol/gco:CharacterString = 'WWW:DOWNLOAD-1.0-http--download']"
       ifNotOperation="download"/>
-    <filter xpath="*//gmd:onLine[starts-with(*/gmd:protocol/gco:CharacterString, 'OGC:WMS')]"
+    <filter xpath="*//gmd:onLine[starts-with(*/gmd:protocol/gco:CharacterString, 'OGC:WMS') or starts-with(*/gmd:protocol/gco:CharacterString, 'OGC:WFS') or starts-with(*/gmd:protocol/gco:CharacterString, 'ESRI REST')]"
             ifNotOperation="dynamic"/>
   </filters>
 </schema>
