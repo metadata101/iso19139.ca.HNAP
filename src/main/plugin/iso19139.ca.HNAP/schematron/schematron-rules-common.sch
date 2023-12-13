@@ -153,7 +153,7 @@
   <sch:pattern>
       <sch:title>$loc/strings/requireCitation</sch:title>
       <sch:rule context="//gmd:identificationInfo/*/gmd:citation">
-          <sch:assert test="gmd:CI_Citation | @gco:nilReason">
+          <sch:assert test="gmd:CI_Citation">
               <sch:value-of select="$loc/strings/alert.requiredCitation"/>
           </sch:assert>
       </sch:rule>
