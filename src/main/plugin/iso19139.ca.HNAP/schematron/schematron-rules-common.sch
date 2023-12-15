@@ -149,6 +149,15 @@
     </sch:rule>
   </sch:pattern>
 
+  <!--Citation -->
+  <sch:pattern>
+      <sch:title>$loc/strings/requireCitation</sch:title>
+      <sch:rule context="//gmd:identificationInfo/*/gmd:citation">
+          <sch:assert test="gmd:CI_Citation">
+              <sch:value-of select="$loc/strings/alert.requiredCitation"/>
+          </sch:assert>
+      </sch:rule>
+  </sch:pattern>
 
   <!--- Data Identification pattern -->
   <sch:pattern>
