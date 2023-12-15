@@ -56,4 +56,7 @@
   <ServiceNamespace>srv:SV_ServiceIdentification est mal placé pour gmd:MD_ScopeCode: </ServiceNamespace>
   <MissingContactMail>Contact - Adresse de courrier électronique obligatoire</MissingContactMail>
 
+  <requireCitation>Citation</requireCitation>
+  <alert.requiredCitation>La citation d’identification des données est un élément obligatoire</alert.requiredCitation>
+
 </strings>
