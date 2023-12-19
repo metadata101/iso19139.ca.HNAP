@@ -45,7 +45,8 @@
   <SecurityNoteMismatchedBothLang>Value mismatched for Security User Note in both languages</SecurityNoteMismatchedBothLang>
   <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are:</SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Security User Note should be empty for the classification code selected</SecurityClassificationUserNoteEmpty>
-  <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
+  <OtherConstraintsNote>If you have indicated 'Other Restrictions' in either the 'Access Constraints' or 'Use Constraints' fields, the ‘Other constraints' text box must be completed.</OtherConstraintsNote>
+  <OtherConstraintsNoteEmpty>If you did not indicate 'Other Restrictions' in either the 'Access Constraints' or 'Use Constraints' fields, the ‘Other constraints’ text box must be empty.</OtherConstraintsNoteEmpty>
   <UseLimitation>Value is required for Use Limitation in both languages</UseLimitation>
 
   <ContactOrganisationName>Contact - Organization name is required in both languages</ContactOrganisationName>
