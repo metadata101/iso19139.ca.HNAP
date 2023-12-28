@@ -56,4 +56,6 @@
   <ServiceNamespace>srv:SV_ServiceIdentification est mal placé pour gmd:MD_ScopeCode: </ServiceNamespace>
   <MissingContactMail>Contact - Adresse de courrier électronique obligatoire</MissingContactMail>
 
+  <hasDuplicatedOnlineResource>L’URL et le nom de la ressource en ligne dupliqués ne sont pas autorisés pour les métadonnées sans type spatial.</hasDuplicatedOnlineResource>
+
 </strings>
