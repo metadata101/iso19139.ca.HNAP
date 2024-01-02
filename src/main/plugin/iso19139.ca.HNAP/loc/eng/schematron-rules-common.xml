@@ -56,6 +56,9 @@
   <ServiceNamespace>srv:SV_ServiceIdentification is misplaced for gmd:MD_ScopeCode: </ServiceNamespace>
   <MissingContactMail>Contact - Electronic mail address is required</MissingContactMail>
 
+  <requireCitation>Citation</requireCitation>
+  <alert.requiredCitation>Data Identification Citation is a required element</alert.requiredCitation>
+
   <hasDuplicatedOnlineResource>Duplicated online resource url and name is not allowed for none spatial type metadata.</hasDuplicatedOnlineResource>
 
 </strings>

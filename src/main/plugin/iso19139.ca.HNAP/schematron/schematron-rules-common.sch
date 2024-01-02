@@ -149,6 +149,15 @@
     </sch:rule>
   </sch:pattern>
 
+  <!--Citation -->
+  <sch:pattern>
+      <sch:title>$loc/strings/requireCitation</sch:title>
+      <sch:rule context="//gmd:identificationInfo/*/gmd:citation">
+          <sch:assert test="gmd:CI_Citation">
+              <sch:value-of select="$loc/strings/alert.requiredCitation"/>
+          </sch:assert>
+      </sch:rule>
+  </sch:pattern>
 
   <!--- Data Identification pattern -->
   <sch:pattern>
@@ -220,8 +229,8 @@
     |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date
     |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_367']/gmd:date">
 
-      <sch:let name="creationDate" value="../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:Date[1]
-                                         |../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:DateTime[1]" />
+      <sch:let name="creationDate" value="(../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:Date
+                                         | ../../../gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date/gco:DateTime)[1]" />
       <sch:let name="missingCreation" value="not(string($creationDate))" />
       <sch:let name="publicationDate" value="gco:Date|gco:DateTime" />
       <sch:let name="missingPublication" value="not(string($publicationDate))" />
