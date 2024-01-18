@@ -29,11 +29,7 @@
 package ca.gc.schema.iso19139hnap.util;
 
 
-import net.sf.saxon.om.Item;
 import net.sf.saxon.om.NodeInfo;
-import net.sf.saxon.om.SequenceIterator;
-import net.sf.saxon.trans.XPathException;
-import net.sf.saxon.value.SequenceExtent;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URIBuilder;
@@ -47,9 +43,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -278,39 +272,5 @@ public class XslUtilHnap {
         Pattern pattern = Pattern.compile("^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$");
         Matcher matcher = pattern.matcher(emailAddress);
         return matcher.matches();
-    }
-
-    /**
-     * Check if there is duplicated online resource with the same url+name combinations.
-     *
-     * @param onlineResources gmd:transferOptions/../gmd:onLine sequence
-     * @return boolean flag is no duplication found
-     * @throws XPathException
-     */
-    public static boolean hasNoDuplicatedOnlineResource (Object onlineResources) throws XPathException {
-        boolean hasNoDuplication = true;
-        if (onlineResources instanceof SequenceExtent) {
-            SequenceExtent sequence = (SequenceExtent) onlineResources;
-            SequenceIterator iterator = sequence.iterate();
-            List<String> onlineResoucesNameUrlList = new ArrayList<>();
-            Set<String> onlineResoucesNameUrlSet = new HashSet<>();
-            while (true) {
-                Item item = iterator.next();
-
-                if (item == null) {
-                    break;
-                }
-                String[] info = item.getStringValue().trim().replace(" ","").split("\n");
-                String url = info[0];
-                String name = info[2];
-                onlineResoucesNameUrlList.add(name+url);
-                onlineResoucesNameUrlSet.add(name+url);
-            }
-
-            // Compare the list and set. The set does not allow duplications.
-            hasNoDuplication = onlineResoucesNameUrlList.size() == onlineResoucesNameUrlSet.size();
-        }
-
-        return hasNoDuplication;
     }
 }

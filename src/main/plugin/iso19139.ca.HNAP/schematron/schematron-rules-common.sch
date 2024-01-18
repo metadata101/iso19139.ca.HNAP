@@ -520,8 +520,6 @@
       <sch:let name="mapRESTCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service']) +
                 count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
 
-      <sch:let name="onlineResources" value="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource" />
-
       <sch:assert test="$mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
       <sch:assert test="$mapRESTCount = 0 or $mapRESTCount = 2 or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
 
@@ -530,11 +528,6 @@
 
       <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
       <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
-
-      <sch:let name="noneSpatialType" value="not(string(../../gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType))"/>
-
-      <sch:assert test="not($noneSpatialType) or XslUtilHnap:hasNoDuplicatedOnlineResource($onlineResources)">$loc/strings/hasDuplicatedOnlineResource</sch:assert>
-
     </sch:rule>
 
     <!-- Distribution - Format -->
