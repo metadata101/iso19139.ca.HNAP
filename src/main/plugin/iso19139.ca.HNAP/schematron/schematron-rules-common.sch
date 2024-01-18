@@ -62,32 +62,27 @@
     use="concat(gmd:linkage/gmd:URL/text(), '|', gmd:description/gco:CharacterString/text())"/>
 
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-    name="geonet:hasDuplicateResources"
-    as="xs:boolean">
-      <xsl:param name="elements" as="element()*"/>
+    name="geonet:getDuplicateResources"
+    as="xs:string">
+    <xsl:param name="elements" as="element()*"/>
 
-      <xsl:variable name="duplicateResources">
-        <xsl:for-each-group select="$elements"
-          group-by="concat(gmd:linkage/gmd:URL/text(), '|', gmd:description/gco:CharacterString/text())">
+    <xsl:variable name="duplicateResources">
+      <xsl:for-each-group select="$elements"
+        group-by="concat(gmd:linkage/gmd:URL/text(), '|', gmd:description/gco:CharacterString/text())">
 
-          <xsl:if test="count(current-group()) &gt; 1">
-            <xsl:if test="exists(tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
-              <xsl:value-of select="concat(tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3], ';')"/>
-            </xsl:if>
-            <xsl:value-of select="current-group()[1]/gmd:linkage/gmd:URL/text()"/>
+        <xsl:if test="count(current-group()) &gt; 1">
+          <xsl:if test="exists(tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
+            <xsl:value-of select="concat(' ',tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ',')[3], ';')"/>
           </xsl:if>
-        </xsl:for-each-group>
-      </xsl:variable>
+          <xsl:value-of select="current-group()[1]/gmd:linkage/gmd:URL/text()"/>
+        </xsl:if>
+      </xsl:for-each-group>
+    </xsl:variable>
 
-      <xsl:choose>
-        <xsl:when test="$duplicateResources !='' ">
-          <xsl:sequence select="true()"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:sequence select="false()"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:function>
+
+  	<xsl:value-of select="$duplicateResources"/>
+
+  </xsl:function>
 
   <!--- Metadata pattern -->
   <sch:pattern>
@@ -563,7 +558,10 @@
       <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
       <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
 
-      <sch:assert test="not(geonet:hasDuplicateResources($onlineResources))">$loc/strings/hasDuplicatedOnlineResource</sch:assert>
+      <sch:let name="duplicatedResource" value="geonet:getDuplicateResources($onlineResources)" />
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/hasDuplicatedOnlineResource, $duplicatedResource)" />
+
+      <sch:assert test="not(string($duplicatedResource))">$locMsg</sch:assert>
     </sch:rule>
 
     <!-- Distribution - Format -->
