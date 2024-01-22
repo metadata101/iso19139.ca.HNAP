@@ -56,6 +56,6 @@
   <ServiceNamespace>srv:SV_ServiceIdentification est mal placé pour gmd:MD_ScopeCode: </ServiceNamespace>
   <MissingContactMail>Contact - Adresse de courrier électronique obligatoire</MissingContactMail>
 
-  <hasDuplicatedOnlineResource>Ressource en ligne dupliquée non autorisée. La ressource en ligne dupliquée "langue, url" est :</hasDuplicatedOnlineResource>
+  <hasDuplicatedOnlineResource>Les URL de ressources en ligne dupliquées pour la même langue ne sont pas autorisées. Les doublons suivants (langue ; URL) ont été identifiés :</hasDuplicatedOnlineResource>
 
 </strings>

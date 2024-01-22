@@ -57,9 +57,6 @@
     </xsl:for-each>
   </xsl:function>
 
-  <xsl:key name="groupKey"
-    match="*//gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource[gmd:linkage/gmd:URL]"
-    use="concat(gmd:linkage/gmd:URL/text(), '|', gmd:description/gco:CharacterString/text())"/>
 
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
     name="geonet:getDuplicateResources"
@@ -68,11 +65,14 @@
 
     <xsl:variable name="duplicateResources">
       <xsl:for-each-group select="$elements"
-        group-by="concat(gmd:linkage/gmd:URL/text(), '|', gmd:description/gco:CharacterString/text())">
+        group-by="concat(gmd:linkage/gmd:URL/text(), '|', tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
 
         <xsl:if test="count(current-group()) &gt; 1">
+          <xsl:if test="position() &gt; 1">
+            <xsl:text>, </xsl:text>
+          </xsl:if>
           <xsl:if test="exists(tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
-            <xsl:value-of select="concat(' ',tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ',')[3], ';')"/>
+            <xsl:value-of select="concat(' ',tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3], ';')"/>
           </xsl:if>
           <xsl:value-of select="current-group()[1]/gmd:linkage/gmd:URL/text()"/>
         </xsl:if>
