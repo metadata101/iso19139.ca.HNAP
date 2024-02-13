@@ -2419,8 +2419,8 @@
     <label>Protocole</label>
     <description>Sélectionnez le protocole approprié dans la liste déroulante. Si vos données sont disponibles en ligne, entrez leur location Web dans la zone de texte URL.</description>
     <helper sort="true">
-      <option value="HTTP">HTTP</option>
       <option value="HTTPS">HTTPS</option>
+      <option value="HTTP">HTTP</option>
       <option value="FTP">FTP</option>
       <option value="ESRI REST: Map Service">ESRI REST: service de carte</option>
       <option value="ESRI REST: Map Server">ESRI REST: serveur de carte</option>
@@ -2430,6 +2430,7 @@
       <option value="OGC API – Features">API OGC – Entités</option>
       <option value="OGC API – Maps">API OGC – Cartes</option>
       <option value="AMQPS">Protocole avancé de file d'attente de messages</option>
+      <option value="WWW:DOWNLOAD-1.0-http--download">Fichier à télécharger</option>
     </helper>
     <condition/>
 

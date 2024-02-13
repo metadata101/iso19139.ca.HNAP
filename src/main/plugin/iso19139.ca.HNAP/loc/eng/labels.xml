@@ -1748,8 +1748,8 @@
         <label>Protocol</label>
         <description>Select the appropriate protocol from the drop down list. If your dataset is available online, then enter its web address in the URL text box.</description>
       <helper sort="true">
-        <option value="HTTP">HTTP</option>
         <option value="HTTPS">HTTPS</option>
+        <option value="HTTP">HTTP</option>
         <option value="FTP">FTP</option>
         <option value="ESRI REST: Map Service">ESRI REST: Map Service</option>
         <option value="ESRI REST: Map Server">ESRI REST: Map Server</option>
@@ -1759,6 +1759,7 @@
         <option value="OGC API – Features">OGC API – Features</option>
         <option value="OGC API – Maps">OGC API – Maps</option>
         <option value="AMQPS">Advanced Message Queuing Protocol</option>
+        <option value="WWW:DOWNLOAD-1.0-http--download">File for download</option>
       </helper>
     </element>
     <element name="gmd:purpose" id="26.0">
