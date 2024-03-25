@@ -178,12 +178,11 @@ Insert is made in first transferOptions found.
       <xsl:choose>
         <xsl:when test="starts-with($protocol, 'OGC:') and $name != ''">
 
-          <xsl:variable name="descMainLang" select="substring-before($desc, '|')" />
-          <xsl:variable name="descTranslatedLang" select="substring-after($desc, '|')" />
+          <xsl:variable name="descMainLang" select="tokenize(substring-before($desc, '|'), ';')[last()]" />
 
           <xsl:variable name="resourceLang">
             <xsl:choose>
-              <xsl:when test="ends-with($descMainLang, 'fra') and ends-with($descTranslatedLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+              <xsl:when test="ends-with($descMainLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
               <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
@@ -374,12 +373,11 @@ Insert is made in first transferOptions found.
           <gmd:onLine>
             <xsl:variable name="isMapProtocol" select="starts-with($protocol, 'ESRI REST:') or starts-with($protocol, 'OGC:')" />
 
-            <xsl:variable name="descMainLang" select="substring-before($desc, '|')" />
-            <xsl:variable name="descTranslatedLang" select="substring-after($desc, '|')" />
+            <xsl:variable name="descMainLang" select="tokenize(substring-before($desc, '|'), ';')[last()]" />
 
             <xsl:variable name="resourceLang">
               <xsl:choose>
-                <xsl:when test="ends-with($descMainLang, 'fra') and ends-with($descTranslatedLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+                <xsl:when test="ends-with($descMainLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
                 <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
               </xsl:choose>
             </xsl:variable>
