@@ -19,6 +19,7 @@
   <CreationDate>Value is required for Metadata creation date</CreationDate>
   <PublicationDateBeforeCreationDate>Publication Date should be after Creation Date</PublicationDateBeforeCreationDate>
   <MissingDate>Value is required for Date</MissingDate>
+  <InvalidDate>Date format is not valid. Should be: YYYY-MM-DD</InvalidDate>
   <InvalidDateTypeCode>Date type is not valid</InvalidDateTypeCode>
   <BeginDate>Value is required for Begin Date</BeginDate>
   <BeginPositionFormat>Begin position format is not valid value</BeginPositionFormat>

@@ -751,7 +751,8 @@
              data-label=""
              data-element-name="{name(gco:Date|gco:DateTime)}"
              data-element-ref="{concat('_X', gn:element/@ref)}"
-             data-hide-time="{if ($viewConfig/@hideTimeInCalendar = 'true') then 'true' else 'false'}">
+             data-hide-date-mode="true"
+             data-hide-time="{not(gco:DateTime)}">
         </div>
 
 
