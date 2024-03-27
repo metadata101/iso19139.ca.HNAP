@@ -65,6 +65,9 @@
       <metadatacreationdate>
         <xsl:value-of select="gmd:dateStamp/*"/>
       </metadatacreationdate>
+      <referencesystem>
+        <xsl:value-of select="gmd:referenceSystemInfo/gmd:MD_ReferenceSystem/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString"/>
+      </referencesystem>
 
       <xsl:for-each select="gmd:identificationInfo/*/gmd:citation/*/gmd:date">
         <xsl:element name="date-{*/gmd:dateType/*/@codeListValue}">
