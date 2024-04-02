@@ -42,6 +42,7 @@
     <xsl:variable name="langId" select="gn-fn-iso19139:getLangId(., $lang)"/>
     <xsl:variable name="info" select="gn:info"/>
     <xsl:variable name="codelists" select="/root/gui/schemas/iso19139.ca.HNAP/codelists"/>
+    <xsl:variable name="locales" select="gmd:locale/gmd:PT_Locale"/>
 
     <metadata>
       <title>
@@ -116,16 +117,14 @@
 
       <!-- All keywords with a valid thesaurus name -->
       <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text() != '']">
+
+        <!-- Get the localeId matching the english LanguageCode (eng) -->
+        <xsl:variable name="localeIdEng" select="concat('#', $locales[gmd:languageCode/gmd:LanguageCode/@codeListValue = 'eng']/@id)"/>
+
         <xsl:variable name="thesaurusName">
-          <xsl:variable name="translationLanguage" select="gmd:thesaurusName/*/gmd:title/*/*/gmd:LocalisedCharacterString/@locale"/>
-          <xsl:choose>
-            <xsl:when test="$translationLanguage = '#eng'">
-              <xsl:value-of select="gmd:thesaurusName/*/gmd:title/*/*/gmd:LocalisedCharacterString/text()"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="gmd:thesaurusName/*/gmd:title/gco:CharacterString/text()"/>
-            </xsl:otherwise>
-          </xsl:choose>
+          <xsl:apply-templates mode="localised" select="gmd:thesaurusName/*/gmd:title">
+            <xsl:with-param name="langId" select="$localeIdEng"/>
+          </xsl:apply-templates>
         </xsl:variable>
 
         <xsl:for-each select="gmd:keyword[not(@gco:nilReason) or */text() != '']">
