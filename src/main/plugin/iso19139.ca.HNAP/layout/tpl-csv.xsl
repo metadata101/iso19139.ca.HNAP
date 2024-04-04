@@ -42,7 +42,6 @@
     <xsl:variable name="langId" select="gn-fn-iso19139:getLangId(., $lang)"/>
     <xsl:variable name="info" select="gn:info"/>
     <xsl:variable name="codelists" select="/root/gui/schemas/iso19139.ca.HNAP/codelists"/>
-    <xsl:variable name="locales" select="gmd:locale/gmd:PT_Locale"/>
 
     <metadata>
       <title>
@@ -86,9 +85,8 @@
         </image>
       </xsl:for-each>
 
-
       <!-- All keywords not having thesaurus reference or an empty thesaurusName -->
-      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() != '']">
+      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() = '']">
         <xsl:variable name="keywordTypeCode" select="gmd:type/*/@codeListValue"/>
         <xsl:variable name="keywordTypeCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_KeywordTypeCode']/entry[code/text() = $keywordTypeCode]/value/text(), ';')[1]"/>
 
@@ -116,7 +114,7 @@
       </xsl:for-each>
 
       <!-- All keywords with a valid thesaurus name -->
-      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() != '']">
+      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/*[gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() != '']">
         <xsl:variable name="thesaurusId" select="normalize-space(gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text())"/>
         <xsl:variable name="thesaurusKey" select="replace($thesaurusId, '[^a-zA-Z0-9]', '')"/>
 
@@ -128,7 +126,6 @@
           </xsl:element>
         </xsl:for-each>
       </xsl:for-each>
-
 
       <!-- One column per role code -->
       <xsl:for-each select="gmd:identificationInfo/*/gmd:pointOfContact">
@@ -144,7 +141,6 @@
           </xsl:apply-templates>
         </xsl:element>
       </xsl:for-each>
-
 
       <xsl:for-each select="gmd:identificationInfo/*/gmd:extent/*/gmd:geographicElement/gmd:EX_GeographicBoundingBox">
         <geoBox>
