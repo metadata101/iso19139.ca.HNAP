@@ -88,7 +88,7 @@
 
 
       <!-- All keywords not having thesaurus reference or an empty thesaurusName -->
-      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text() = '']">
+      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[not(gmd:thesaurusName) or gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() != '']">
         <xsl:variable name="keywordTypeCode" select="gmd:type/*/@codeListValue"/>
         <xsl:variable name="keywordTypeCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_KeywordTypeCode']/entry[code/text() = $keywordTypeCode]/value/text(), ';')[1]"/>
 
@@ -116,19 +116,12 @@
       </xsl:for-each>
 
       <!-- All keywords with a valid thesaurus name -->
-      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/*/gmd:title/(gco:CharacterString|gmx:Anchor)/text() != '']">
+      <xsl:for-each select="gmd:identificationInfo/*/gmd:descriptiveKeywords/gmd:MD_Keywords[gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text() != '']">
+        <xsl:variable name="thesaurusId" select="normalize-space(gmd:thesaurusName/*/gmd:identifier/*/gmd:code/*/text())"/>
+        <xsl:variable name="thesaurusKey" select="replace($thesaurusId, '[^a-zA-Z0-9]', '')"/>
 
-        <!-- Get the localeId matching the english LanguageCode (eng) -->
-        <xsl:variable name="localeIdEng" select="concat('#', $locales[gmd:languageCode/gmd:LanguageCode/@codeListValue = 'eng']/@id)"/>
-
-        <xsl:variable name="thesaurusName">
-          <xsl:apply-templates mode="localised" select="gmd:thesaurusName/*/gmd:title">
-            <xsl:with-param name="langId" select="$localeIdEng"/>
-          </xsl:apply-templates>
-        </xsl:variable>
-
-        <xsl:for-each select="gmd:keyword[not(@gco:nilReason) or */text() != '']">
-          <xsl:element name="keyword-{replace($thesaurusName, ' ', '')}">
+        <xsl:for-each select="gmd:keyword[not(@gco:nilReason)]">
+          <xsl:element name="keyword-{$thesaurusKey}">
             <xsl:apply-templates mode="localised" select=".">
               <xsl:with-param name="langId" select="$langId"/>
             </xsl:apply-templates>
