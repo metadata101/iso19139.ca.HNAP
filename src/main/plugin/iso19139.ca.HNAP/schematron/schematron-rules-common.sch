@@ -59,29 +59,33 @@
 
 
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-    name="geonet:getDuplicateResources"
-    as="xs:string">
-    <xsl:param name="elements" as="element()*"/>
+                  name="geonet:getDuplicateResources"
+                  as="xs:string">
+        <xsl:param name="elements" as="element()*"/>
 
-    <xsl:variable name="duplicateResources">
-      <xsl:for-each-group select="$elements"
-        group-by="concat(gmd:linkage/gmd:URL/text(), '|', tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
+        <!-- Find groups of elements with duplicates -->
+        <xsl:variable name="duplicateResourcesElements">
+            <xsl:for-each-group select="$elements"
+                                group-by="concat(gmd:linkage/gmd:URL/text(), '|', tokenize(gmd:description/gco:CharacterString/text(), ';')[3])">
+                <xsl:if test="count(current-group()) &gt; 1">
+                    <xsl:sequence select="."/>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:variable>
 
-        <xsl:if test="count(current-group()) &gt; 1">
-          <xsl:if test="position() &gt; 1">
-            <xsl:text>, </xsl:text>
-          </xsl:if>
-          <xsl:if test="exists(tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3])">
-            <xsl:value-of select="concat(' ',tokenize(current-group()[1]/gmd:description/gco:CharacterString/text(), ';')[3], ';')"/>
-          </xsl:if>
-          <xsl:value-of select="current-group()[1]/gmd:linkage/gmd:URL/text()"/>
-        </xsl:if>
-      </xsl:for-each-group>
-    </xsl:variable>
+        <!-- Iterate over duplicate groups and generate the list of duplicates -->
+        <xsl:variable name="duplicateResources">
+            <xsl:for-each select="$duplicateResourcesElements/*">
+                    <xsl:if test="position() &gt; 1">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
+                    <xsl:value-of select="concat(' ', tokenize(gmd:description/gco:CharacterString/text(), ';')[3], ';')"/>
+                    <xsl:value-of select="gmd:linkage/gmd:URL/text()"/>
+            </xsl:for-each>
+        </xsl:variable>
 
-
-  	<xsl:value-of select="$duplicateResources"/>
-
+        <!-- Return the results -->
+        <xsl:value-of select="$duplicateResources"/>
   </xsl:function>
 
   <!--- Metadata pattern -->
