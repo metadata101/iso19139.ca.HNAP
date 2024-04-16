@@ -105,19 +105,23 @@
           </xsl:when>
           <!-- All keywords with a valid keywordTypeCode -->
           <xsl:when test="$keywordTypeCodeReadable != ''">
-            <xsl:element name="keyword-{$keywordTypeCodeReadable}">
-              <xsl:apply-templates mode="localised" select=".">
-                <xsl:with-param name="langId" select="$langId"/>
-              </xsl:apply-templates>
-            </xsl:element>
+            <xsl:for-each select="gmd:keyword[not(@gco:nilReason) or */text() != '']">
+              <xsl:element name="keyword-{$keywordTypeCodeReadable}">
+                <xsl:apply-templates mode="localised" select=".">
+                  <xsl:with-param name="langId" select="$langId"/>
+                </xsl:apply-templates>
+              </xsl:element>
+            </xsl:for-each>
           </xsl:when>
           <!-- All keywords without a valid thesaurusName or keywordTypeCode -->
           <xsl:otherwise>
-            <keyword-other>
-              <xsl:apply-templates mode="localised" select=".">
-                <xsl:with-param name="langId" select="$langId"/>
-              </xsl:apply-templates>
-            </keyword-other>
+            <xsl:for-each select="gmd:keyword[not(@gco:nilReason) or */text() != '']">
+              <keyword-other>
+                <xsl:apply-templates mode="localised" select=".">
+                  <xsl:with-param name="langId" select="$langId"/>
+                </xsl:apply-templates>
+              </keyword-other>
+            </xsl:for-each>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:for-each>
