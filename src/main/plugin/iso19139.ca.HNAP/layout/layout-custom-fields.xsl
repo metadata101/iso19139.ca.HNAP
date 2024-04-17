@@ -215,7 +215,7 @@
                 "eng": "",
                 "fra": ""
             },
-            "thesaurus": "external.theme.GC_Org_Names",
+            "thesaurus": "external.theme.GC_Government_Names",
             "defaultValues": {
                   "eng": "<xsl:value-of select="$DefaultMainOrganizationName_en"/>",
                   "fra": "<xsl:value-of select="$DefaultMainOrganizationName_fr"/>"
