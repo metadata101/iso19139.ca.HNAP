@@ -111,8 +111,6 @@
          [$resourceIdx = '' or position() = xs:integer($resourceIdx)]
          [    ($resourceHash != '' or ($updateKey != '' and normalize-space($updateKey) = concat(
                            */gmd:fileName/gco:CharacterString,
-                           */gmd:fileName/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = '#DE'],
-                           */gmd:fileDescription/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale = '#DE'],
                            */gmd:fileDescription/gco:CharacterString)))
           and ($resourceHash = '' or digestUtils:md5Hex(string(exslt:node-set(.))) = $resourceHash)]">
     <xsl:call-template name="fill"/>
