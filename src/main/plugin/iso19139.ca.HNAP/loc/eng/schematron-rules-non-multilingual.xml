@@ -15,18 +15,18 @@
 
   <ContactGovEnglish>English value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</ContactGovEnglish>
   <ContactGovFrench>French value for Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</ContactGovFrench>
-  <ContactGovAllowedEnglish>English value for Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</ContactGovAllowedEnglish>
-  <ContactGovAllowedFrench>French value for Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</ContactGovAllowedFrench>
+  <ContactGovAllowedEnglish>English value for Contact - Organisation name must be one of: </ContactGovAllowedEnglish>
+  <ContactGovAllowedFrench>French value for Contact - Organisation name must be one of: </ContactGovAllowedFrench>
 
   <CitedResponsibleContactGovEnglish>English value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</CitedResponsibleContactGovEnglish>
   <CitedResponsibleContactGovFrench>French value for Cited Responsible Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</CitedResponsibleContactGovFrench>
-  <CitedResponsibleContactGovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</CitedResponsibleContactGovAllowedEnglish>
-  <CitedResponsibleContactGovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</CitedResponsibleContactGovAllowedFrench>
+  <CitedResponsibleContactGovAllowedEnglish>English value for Cited Responsible Contact - Organisation name must be one of: </CitedResponsibleContactGovAllowedEnglish>
+  <CitedResponsibleContactGovAllowedFrench>French value for Cited Responsible Contact - Organisation name must be one of: </CitedResponsibleContactGovAllowedFrench>
 
   <DistributorGovEnglish>English value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</DistributorGovEnglish>
   <DistributorGovFrench>French value for Distributor Contact - Organisation name in 'Goverment of Canada' should have a valid title value. See http://www.tbs-sct.gc.ca/fip-pcim/reg-eng.asp.</DistributorGovFrench>
-  <DistributorGovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of 'Government of Canada', 'Government of Alberta', 'Government of British Columbia', 'Government of Ontario', 'Government of Nova Scotia', 'Government of Prince Edward Island' or 'Government of Newfoundland and Labrador'.</DistributorGovAllowedEnglish>
-  <DistributorGovAllowedFrench>French value for Distributor Contact - Organisation name must be one of 'Gouvernement du Canada', 'Gouvernement de l'Alberta', 'Gouvernement de la Colombie-Britannique', 'Gouvernement de l'Ontario', 'Gouvernement de la Nouvelle-Écosse', 'Gouvernement de l'Île-du-Prince-Édouard' or 'Gouvernement de Terre-Neuve-et-Labrador'.</DistributorGovAllowedFrench>
+  <DistributorGovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of: </DistributorGovAllowedEnglish>
+  <DistributorGovAllowedFrench>French value for Distributor Contact - Organisation name must be one of: </DistributorGovAllowedFrench>
 
   <OpenLicense>An Open Goverment Licence is required.</OpenLicense>
   <Keyword>Keyword is required</Keyword>
