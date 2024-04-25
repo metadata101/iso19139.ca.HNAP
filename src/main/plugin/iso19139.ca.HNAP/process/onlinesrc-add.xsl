@@ -230,11 +230,9 @@ Note: It assumes that it will be adding new items in
       <xsl:choose>
         <xsl:when test="starts-with($protocol, 'OGC:') and $name != ''">
 
-          <xsl:variable name="descMainLang" select="tokenize(substring-before($desc, '|'), ';')[last()]" />
-
           <xsl:variable name="resourceLang">
             <xsl:choose>
-              <xsl:when test="ends-with($descMainLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+              <xsl:when test="ends-with($desc, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
               <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
             </xsl:choose>
           </xsl:variable>
@@ -425,11 +423,9 @@ Note: It assumes that it will be adding new items in
           <gmd:onLine>
             <xsl:variable name="isMapProtocol" select="starts-with($protocol, 'ESRI REST:') or starts-with($protocol, 'OGC:')" />
 
-            <xsl:variable name="descMainLang" select="tokenize(substring-before($desc, '|'), ';')[last()]" />
-
             <xsl:variable name="resourceLang">
               <xsl:choose>
-                <xsl:when test="ends-with($descMainLang, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
+                <xsl:when test="ends-with($desc, 'fra')"><xsl:value-of select="'urn:xml:lang:fra-CAN'"/></xsl:when>
                 <xsl:otherwise><xsl:value-of select="'urn:xml:lang:eng-CAN'"/></xsl:otherwise>
               </xsl:choose>
             </xsl:variable>

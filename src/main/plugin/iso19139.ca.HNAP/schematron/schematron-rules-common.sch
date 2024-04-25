@@ -57,6 +57,37 @@
     </xsl:for-each>
   </xsl:function>
 
+
+  <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                  name="geonet:getDuplicateResources"
+                  as="xs:string">
+        <xsl:param name="elements" as="element()*"/>
+
+        <!-- Find groups of elements with duplicates -->
+        <xsl:variable name="duplicateResourcesElements">
+            <xsl:for-each-group select="$elements"
+                                group-by="concat(gmd:linkage/gmd:URL/text(), '|', tokenize(gmd:description/gco:CharacterString/text(), ';')[3])">
+                <xsl:if test="count(current-group()) &gt; 1">
+                    <xsl:sequence select="."/>
+                </xsl:if>
+            </xsl:for-each-group>
+        </xsl:variable>
+
+        <!-- Iterate over duplicate groups and generate the list of duplicates -->
+        <xsl:variable name="duplicateResources">
+            <xsl:for-each select="$duplicateResourcesElements/*">
+                    <xsl:if test="position() &gt; 1">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
+                    <xsl:value-of select="concat(' ', tokenize(gmd:description/gco:CharacterString/text(), ';')[3], ';')"/>
+                    <xsl:value-of select="gmd:linkage/gmd:URL/text()"/>
+            </xsl:for-each>
+        </xsl:variable>
+
+        <!-- Return the results -->
+        <xsl:value-of select="$duplicateResources"/>
+  </xsl:function>
+
   <!--- Metadata pattern -->
   <sch:pattern>
     <sch:title>$loc/strings/Metadata</sch:title>
@@ -517,20 +548,24 @@
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
       <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 
-      <sch:let name="mapRESTCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
-      <sch:let name="mapRESTCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
-      <sch:let name="mapRESTCount" value="$mapRESTCountE + $mapRESTCountF" />
+      <sch:let name="mapRESTCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service']) +
+                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
 
-      <sch:assert test="($mapRESTCountE = 0 and $mapRESTCountF = 0) or ($mapRESTCountE = 1 and $mapRESTCountF = 1) or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
-      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+      <sch:let name="onlineResources" value="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource" />
 
+      <sch:assert test="$mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount = 2 or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
 
-      <sch:let name="mapWMSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
-      <sch:let name="mapWMSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
-		  <sch:let name="mapWMSCount" value="$mapWMSCountE + $mapWMSCountF" />
+      <sch:let name="mapWMSCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms']) +
+                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
 
-      <sch:assert test="($mapWMSCountE = 0 and $mapWMSCountF = 0) or ($mapWMSCountE = 1 and $mapWMSCountF = 1) or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
-      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
+      <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
+      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
+
+      <sch:let name="duplicatedResource" value="geonet:getDuplicateResources($onlineResources)" />
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/hasDuplicatedOnlineResource, $duplicatedResource)" />
+
+      <sch:assert test="not(string($duplicatedResource))">$locMsg</sch:assert>
     </sch:rule>
 
     <!-- Distribution - Format -->
