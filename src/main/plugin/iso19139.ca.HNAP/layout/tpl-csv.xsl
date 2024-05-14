@@ -167,13 +167,31 @@
 
       <xsl:for-each select="gmd:identificationInfo/*/*/gmd:MD_SecurityConstraints/*">
         <SecurityConstraints>
-          <xsl:copy-of select="."/>
+          <xsl:choose>
+            <xsl:when test="*/@codeListValue">
+              <xsl:variable name="classificationCode" select="*/@codeListValue"/>
+              <xsl:variable name="classificationCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_ClassificationCode']/entry[code/text() = $classificationCode]/value/text(), ';')[1]"/>
+              <xsl:value-of select="$classificationCodeReadable"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="*/text()"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </SecurityConstraints>
       </xsl:for-each>
 
       <xsl:for-each select="gmd:identificationInfo/*/*/gmd:MD_LegalConstraints/*">
         <LegalConstraints>
-          <xsl:value-of select="*/text()|*/@codeListValue"/>
+          <xsl:choose>
+            <xsl:when test="*/@codeListValue">
+              <xsl:variable name="restrictionCode" select="*/@codeListValue"/>
+              <xsl:variable name="restrictionCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_RestrictionCode']/entry[code/text() = $restrictionCode]/value/text(), ';')[1]"/>
+              <xsl:value-of select="$restrictionCodeReadable"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="*/text()"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </LegalConstraints>
       </xsl:for-each>
 
