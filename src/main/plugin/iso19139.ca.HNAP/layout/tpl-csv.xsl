@@ -42,7 +42,7 @@
                 priority="2">
     <xsl:variable name="langId" select="gn-fn-iso19139:getLangIdHNAP(., $lang)"/>
     <xsl:variable name="info" select="gn:info"/>
-    <xsl:variable name="codelists" select="/root/gui/schemas/iso19139.ca.HNAP/codelists"/>
+    <xsl:variable name="codelists" select="document('../loc/eng/codelists.xml')/codelists"/>
 
     <metadata>
       <title>
