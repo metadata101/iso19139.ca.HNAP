@@ -2522,7 +2522,7 @@
   </element>
   <element name="gmd:role" id="379.0">
     <label>Rôle</label>
-    <description>Sélectionner le rôle approprié dans la liste fournie. Le rôle de coordonnateur de données indique la personne responsable de l'ensemble de données.</description>
+    <description>Sélectionner le rôle approprié dans la liste fournie. Le rôle indique la personne responsable de l'ensemble de données.</description>
     <condition>Obligatoire</condition>
 
   </element>

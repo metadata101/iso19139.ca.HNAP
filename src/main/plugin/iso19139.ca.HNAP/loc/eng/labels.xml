@@ -1833,7 +1833,7 @@
     </element>
     <element name="gmd:role" id="379.0">
         <label>Role</label>
-        <description>Select the appropriate role from the list provided. The role of Data Steward identifies the individual who is accountable for the dataset.</description>
+        <description>Select the appropriate role from the list provided. The role indicates the person responsible for the dataset.</description>
         <condition>mandatory</condition>
     </element>
     <element name="gmd:rule" id="317.0">
