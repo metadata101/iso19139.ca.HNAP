@@ -35,7 +35,6 @@
                 exclude-result-prefixes="#all"
                 version="2.0">
 
-  <xsl:import href="../../iso19139/layout/tpl-csv.xsl"/>
   <xsl:import href="utility-fn.xsl"/>
 
   <xsl:template mode="csv" match="gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"
