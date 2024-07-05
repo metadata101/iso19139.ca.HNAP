@@ -35,11 +35,10 @@
                 exclude-result-prefixes="#all"
                 version="2.0">
 
-  <xsl:import href="../../iso19139/layout/tpl-csv.xsl"/>
   <xsl:import href="utility-fn.xsl"/>
 
   <xsl:template mode="csv" match="gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"
-                priority="2">
+                priority="10">
     <xsl:variable name="langId" select="gn-fn-iso19139:getLangIdHNAP(., $lang)"/>
     <xsl:variable name="info" select="gn:info"/>
     <xsl:variable name="codelists" select="document('../loc/eng/codelists.xml')/codelists"/>
