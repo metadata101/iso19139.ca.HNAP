@@ -1261,7 +1261,7 @@
         <label>Metadata language</label>
         <btnLabel>Add language</btnLabel>
         <description>Select the language used to create the metadata</description>
-        <condition>conditional</condition>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:language" context="gmd:MD_DataIdentification" id="39.0">
         <label>Language</label>
@@ -2152,6 +2152,7 @@
     <element name="gmd:version" id="208.2" context="gmd:RS_Identifier">
         <label>Version</label>
         <description>Version identifier for the namespace</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:version" context="gmd:MD_Format" id="286.0">
         <label>File Format Version</label>

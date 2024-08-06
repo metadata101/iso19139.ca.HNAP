@@ -1809,7 +1809,7 @@
     <label>Langue</label>
     <btnLabel>Ajouter langue</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
-    <condition>Obligatoire</condition>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
     <label>Langue</label>
@@ -2952,7 +2952,7 @@
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
     <description>Indiquer la version du format de transfert de données. Pour une liste de versions possibles, consulter le menu « Suggestions ». Si la version est inconnue, indiquer « inconnue ».</description>
-    <condition>Obligatoire</condition>
+    <condition>mandatory</condition>
   </element>
 
   <element name="gmd:verticalElement" id="338.0">

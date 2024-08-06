@@ -310,6 +310,7 @@
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="listOfValues"
                       select="$listOfValues/entries"/>
+      <xsl:with-param name="forceXsdSchemaCheck" select="false()"/>
     </xsl:call-template>
   </xsl:template>
 
@@ -818,6 +819,7 @@
       <xsl:with-param name="editInfo" select="*/gn:element"/>
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="isDisabled" select="true()"/>
+      <xsl:with-param name="forceXsdSchemaCheck" select="false()"/>
     </xsl:call-template>
 
   </xsl:template>

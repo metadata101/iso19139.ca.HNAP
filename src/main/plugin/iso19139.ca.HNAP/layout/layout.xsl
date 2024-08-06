@@ -103,6 +103,8 @@
       called without context eg. render-table. -->
       <xsl:with-param name="isDisabled"
                       select="count($metadata//*[gn:element/@ref = $ref]/ancestor-or-self::node()[contains(@xlink:href, 'api/registries/entries')]) > 0"/>
+
+      <xsl:with-param name="forceXsdSchemaCheck" select="false()"/>
     </xsl:call-template>
 
   </xsl:template>
@@ -312,6 +314,8 @@
       called without context eg. render-table. -->
       <xsl:with-param name="isDisabled"
                       select="count($metadata//*[gn:element/@ref = $theElement/gn:element/@ref]/ancestor-or-self::node()[contains(@xlink:href, 'api/registries/entries')]) > 0"/>
+
+      <xsl:with-param name="forceXsdSchemaCheck" select="false()"/>
     </xsl:call-template>
 
   </xsl:template>
