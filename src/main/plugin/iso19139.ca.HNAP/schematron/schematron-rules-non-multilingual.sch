@@ -137,11 +137,19 @@
   <xsl:function name="geonet:prependLocaleMessage">
     <xsl:param name="localeStringNode"/>
     <xsl:param name="prependText" as="xs:string"/>
+    <xsl:param name="insertText" as="xs:string"/>
 
     <xsl:for-each select="$localeStringNode">
       <xsl:copy>
         <xsl:copy-of select="@*"/>
-        <xsl:value-of select="concat($prependText, $localeStringNode)"/>
+        <xsl:choose>
+          <xsl:when test="$lang = 'fre'">
+            <xsl:value-of select="concat(substring-before($localeStringNode, 'n''est pas valide'), ' ',  concat('&quot;', $insertText, '&quot;'), ' n''est pas valide', substring-after($localeStringNode, 'n''est pas valide'))"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="concat(substring-before($localeStringNode, 'is not valid'), ' ',  concat('&quot;', $insertText, '&quot;'), ' is not valid', substring-after($localeStringNode, 'is not valid'))"/>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:copy>
     </xsl:for-each>
   </xsl:function>
@@ -504,7 +512,7 @@
       <sch:let name="language_present" value="geonet:values-in($language,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
-      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionContentType, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionContentType, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '), if (normalize-space($contentType) = '') then '' else $contentType)" />
 
       <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
               $contentType = 'Dataset' or $contentType = 'Données' or
@@ -513,11 +521,11 @@
 
 
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
-      <sch:let name="locMsg" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="locMsg" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '), if (normalize-space($format) = '') then '' else $format)" />
 
       <sch:assert test="$formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($mainLanguage2char)]/text() = $format">$locMsg</sch:assert>
 
-      <sch:let name="locMsgLang" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionLanguage, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="locMsgLang" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionLanguage, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '), if (normalize-space($language) = '') then '' else $language)" />
 
       <sch:assert test="normalize-space($language) != ''">$locMsgLang</sch:assert>
 

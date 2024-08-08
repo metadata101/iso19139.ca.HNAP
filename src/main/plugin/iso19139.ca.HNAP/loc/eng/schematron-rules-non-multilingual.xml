@@ -53,9 +53,9 @@
   <ECThesaurusRole>Thesaurus cited responsible party role is required</ECThesaurusRole>
   <ECThesaurusEmail>Thesaurus cited responsible party email is required</ECThesaurusEmail>
 
-  <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
-  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
-  <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
+  <ResourceDescriptionContentType>English online resource description content type is not valid. Valid values are: Web Service,Dataset,API,Application,Supporting Document</ResourceDescriptionContentType>
+  <ResourceDescriptionFormat>English online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
+  <ResourceDescriptionLanguage>English online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
 
   <ElectronicMailFormat>Electronic mail address format is invalid (for example abc@abc.com)</ElectronicMailFormat>
 </strings>
