@@ -47,6 +47,24 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+   <xsl:function name="geonet:resourceContentTypesList" as="xs:string">
+      <xsl:param name="thesaurusDir" as="xs:string"/>
+      <xsl:param name="lang" as="xs:string"/>
+
+      <xsl:variable name="contentTypes-list"
+                    select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))"/>
+
+      <xsl:variable name="v">
+        <xsl:for-each select="$contentTypes-list//rdf:Description">
+          <xsl:sort select="lower-case(@rdf:about)" order="ascending"/>
+          <xsl:value-of select="ns2:prefLabel[@xml:lang=$lang]"/>
+          <xsl:if test="position() != last()">, </xsl:if>
+        </xsl:for-each>
+      </xsl:variable>
+
+      <xsl:value-of select="$v"/>
+    </xsl:function>
+
   <xsl:function name="geonet:securityLevelList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
 
@@ -504,7 +522,9 @@
       <sch:let name="language_present" value="geonet:values-in($language,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
-      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionContentType, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="resourceContentTypesList" select="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
+            <sch:let name="locMsgCt"
+                            select="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
       <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
               $contentType = 'Dataset' or $contentType = 'Données' or
