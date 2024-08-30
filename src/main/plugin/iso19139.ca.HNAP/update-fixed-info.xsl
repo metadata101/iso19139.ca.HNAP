@@ -912,11 +912,18 @@
   </xsl:template>
 
 
-
   <xsl:template  match="gco:Distance">
     <xsl:element name="gco:{local-name()}">
       <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="@uom"/></xsl:attribute>
+      <xsl:choose>
+        <!--Avoid append the url recursively. Only append the url once. -->
+        <xsl:when test="not(starts-with(@uom, 'http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#'))">
+          <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="@uom"/></xsl:attribute>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="uom"><xsl:value-of select="@uom"/></xsl:attribute>
+        </xsl:otherwise>
+      </xsl:choose>
       <xsl:apply-templates select="node()"/>
     </xsl:element>
   </xsl:template>
