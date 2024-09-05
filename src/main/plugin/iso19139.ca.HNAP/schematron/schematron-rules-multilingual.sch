@@ -68,6 +68,23 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+  <xsl:function name="geonet:openLicenseList" as="xs:string">
+    <xsl:param name="thesaurusDir" as="xs:string"/>
+
+    <xsl:variable name="locLang2char" select="if ($lang = 'fre') then 'fr' else 'en'"/>
+    <xsl:variable name="open-license-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
+
+    <xsl:variable name="v">
+      <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$locLang2char]">
+        <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
+        <xsl:value-of select="."/>
+        <xsl:if test="position() != last()"> or </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:value-of select="$v" />
+  </xsl:function>
+
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 name="geonet:checkUserNoteSecurityClassificationCode"
                 as="xs:string">
@@ -393,10 +410,12 @@
     <sch:title>$loc/strings/DataIdentification</sch:title>
 
     <!-- Use Limitation -->
-    <!-- Use Limitation -->
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
         |//*[@gco:isoType='gmd:MD_DataIdentification']
         |//*[@gco:isoType='srv:SV_ServiceIdentification']">
+
+      <sch:let name="openLicenseList" value="geonet:openLicenseList($thesaurusDir)"/>
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/OpenLicense, $openLicenseList)"/>
 
       <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
@@ -407,7 +426,7 @@
 
       <sch:assert
         test="$openLicense > 0"
-      >$loc/strings/OpenLicense</sch:assert>
+      >$locMsg</sch:assert>
 
     </sch:rule>
 
