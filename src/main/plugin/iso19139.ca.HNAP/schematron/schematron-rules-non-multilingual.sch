@@ -522,8 +522,8 @@
       <sch:let name="language_present" value="geonet:values-in($language,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
-      <sch:let name="resourceContentTypesList" select="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
-      <sch:let name="locMsgCt" select="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="resourceContentTypesList" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
+      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
       <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
               $contentType = 'Dataset' or $contentType = 'Données' or
