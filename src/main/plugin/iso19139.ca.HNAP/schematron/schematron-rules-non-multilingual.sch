@@ -64,24 +64,6 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
-  <xsl:function name="geonet:openLicenseList" as="xs:string">
-      <xsl:param name="thesaurusDir" as="xs:string"/>
-
-      <xsl:variable name="licenseSeparator" select="if ($lang = 'fre') then ' ou ' else ' or '"/>
-
-      <xsl:variable name="open-license-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
-
-      <xsl:variable name="v">
-        <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">
-          <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
-          <xsl:value-of select="."/>
-          <xsl:if test="position() != last()"><xsl:value-of select="$licenseSeparator"/></xsl:if>
-        </xsl:for-each>
-      </xsl:variable>
-
-      <xsl:value-of select="$v" />
-    </xsl:function>
-
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 name="geonet:checkUserNoteSecurityClassificationCode"
                 as="xs:string">
@@ -268,17 +250,15 @@
             |//*[@gco:isoType='gmd:MD_DataIdentification']
             |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
-      <sch:let name="openLicenseList" value="geonet:openLicenseList($thesaurusDir)"/>
-      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $mainLanguageText)], $openLicenseList)"/>
-
       <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
       <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
                (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char])])" />
 
+
       <sch:assert
         test="$openLicense > 0"
-      >$locMsg</sch:assert>
+      >$loc/strings/OpenLicense</sch:assert>
 
     </sch:rule>
 
