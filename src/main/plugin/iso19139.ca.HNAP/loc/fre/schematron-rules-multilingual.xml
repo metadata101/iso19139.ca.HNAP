@@ -28,7 +28,8 @@
   <DistributorGovAllowedEnglish>Valeur en anglais pour la personne-ressource du distributeur - Le nom de l'organisation doit être l'un des suivants: 'Gouvernement of Canada', 'Gouvernement of Alberta', 'la Colombie-Britannique', 'Gouvernement of Ontario', 'Gouvernement of Nova Scotia', 'Gouvernement of Prince Edward Island »ou« Gouvernement de Terre-Neuve-et-Labrador ».</DistributorGovAllowedEnglish>
   <DistributorGovAllowedFrench>Valeur en français pour le distributeur Contact - Le nom de l’organisation doit être celui du gouvernement du Canada, du gouvernement de l’Alberta, du gouvernement de la Colombie-Britannique, du gouvernement de l’Ontario, du gouvernement de la Nouvelle-Écosse, du gouvernement de l’Île-du-Prince-Édouard ou du gouvernement de Terre-Neuve-et-Labrador..</DistributorGovAllowedFrench>
 
-  <OpenLicense>Une licence prise en charge est nécessaire. Valeurs en anglais acceptées sont : </OpenLicense>
+  <OpenLicenseEnglish>Une licence en anglais prise en charge est nécessaire. Valeurs acceptées sont : </OpenLicenseEnglish>
+  <OpenLicenseFrench>Une licence en français prise en charge est nécessaire. Valeurs acceptées sont : </OpenLicenseFrench>
   <SupplementalInfo>Informations supplémentaires devrait être vide ou rempli en anglais et en français</SupplementalInfo>
   <Keyword>Mot Clé est requise dans les deux langues</Keyword>
 

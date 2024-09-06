@@ -28,7 +28,8 @@
   <DistributorGovAllowedEnglish>English value for Distributor Contact - Organisation name must be one of: </DistributorGovAllowedEnglish>
   <DistributorGovAllowedFrench>French value for Distributor Contact - Organisation name must be one of: </DistributorGovAllowedFrench>
 
-  <OpenLicense>A supported license is required.</OpenLicense>
+  <OpenLicenseEnglish>An English supported license is required. Accepted values: </OpenLicenseEnglish>
+  <OpenLicenseFrench>A French supported license is required. Accepted values: </OpenLicenseFrench>
   <Keyword>Keyword is required</Keyword>
 
   <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>

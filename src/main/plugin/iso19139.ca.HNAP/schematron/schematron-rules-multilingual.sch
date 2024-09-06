@@ -71,14 +71,15 @@
   <xsl:function name="geonet:openLicenseList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
 
-    <xsl:variable name="locLang2char" select="if ($lang = 'fre') then 'fr' else 'en'"/>
+    <xsl:variable name="licenseSeparator" select="if ($lang = 'fre') then ' ou ' else ' or '"/>
+
     <xsl:variable name="open-license-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
     <xsl:variable name="v">
-      <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$locLang2char]">
+      <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]">
         <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
         <xsl:value-of select="."/>
-        <xsl:if test="position() != last()"> or </xsl:if>
+        <xsl:if test="position() != last()"><xsl:value-of select="$licenseSeparator"/></xsl:if>
       </xsl:for-each>
     </xsl:variable>
 
@@ -415,12 +416,11 @@
         |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
       <sch:let name="openLicenseList" value="geonet:openLicenseList($thesaurusDir)"/>
-      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/OpenLicense, $openLicenseList)"/>
+      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $altLanguageText)], $openLicenseList)"/>
 
       <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
       <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-            (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) and
             (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
             ])" />
 
