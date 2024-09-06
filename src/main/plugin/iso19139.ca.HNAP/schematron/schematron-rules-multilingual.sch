@@ -416,17 +416,26 @@
         |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
       <sch:let name="openLicenseList" value="geonet:openLicenseList($thesaurusDir)"/>
-      <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $altLanguageText)], $openLicenseList)"/>
+      <sch:let name="locMsgMain" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $mainLanguageText)], $openLicenseList)"/>
+      <sch:let name="locMsgAlt" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $altLanguageText)], $openLicenseList)"/>
 
       <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
-      <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-            (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
+      <sch:let name="openLicenseMain" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
+            (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char])
             ])" />
 
+      <sch:let name="openLicenseAlt" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
+                  (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
+                  ])" />
+
       <sch:assert
-        test="$openLicense > 0"
-      >$locMsg</sch:assert>
+        test="$openLicenseMain > 0"
+      >$locMsgMain</sch:assert>
+
+      <sch:assert
+        test="$openLicenseAlt > 0"
+      >$locMsgAlt</sch:assert>
 
     </sch:rule>
 
