@@ -525,7 +525,7 @@
       <sch:let name="resourceContentTypesList" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
       <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:assert test="contains($resourceContentTypesList,$contentType) and normalize-space($contentType) != '' ">$locMsgCt</sch:assert>
+      <sch:assert test="$contentType = tokenize($resourceContentTypesListMain, ', ')">$locMsgCt</sch:assert>
 
 
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />

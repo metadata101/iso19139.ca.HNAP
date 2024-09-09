@@ -881,8 +881,8 @@
       <sch:let name="locMsgCtMain" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
       <sch:let name="locMsgCtAlt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListAlt),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:assert test="contains($resourceContentTypesListMain,$contentType) and normalize-space($contentType) != '' ">$locMsgCtMain </sch:assert>
-      <sch:assert test="contains($resourceContentTypesListAlt,$contentTypeTranslated) and normalize-space($contentTypeTranslated) != ''">$locMsgCtAlt</sch:assert>
+      <sch:assert test="$contentType = tokenize($resourceContentTypesListMain, ', ')">$locMsgCtMain </sch:assert>
+      <sch:assert test="$contentTypeTranslated = tokenize($resourceContentTypesListAlt, ', ')">$locMsgCtAlt</sch:assert>
 
       <sch:let name="formatTranslated" value="subsequence(tokenize($descriptionTranslated, ';'), 2, 1)" />
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
