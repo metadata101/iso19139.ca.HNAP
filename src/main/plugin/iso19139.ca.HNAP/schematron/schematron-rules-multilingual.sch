@@ -876,18 +876,13 @@
       <sch:let name="languageTranslated_present" value="geonet:values-in($languageTranslated,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
-      <sch:let name="resourceContentTypesList" value="geonet:resourceContentTypesList($thesaurusDir,$altLanguage2char)"/>
-      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesList),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="resourceContentTypesListMain" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
+      <sch:let name="resourceContentTypesListAlt" value="geonet:resourceContentTypesList($thesaurusDir,$altLanguage2char)"/>
+      <sch:let name="locMsgCtMain" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgCtAlt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListAlt),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
-              $contentType = 'Dataset' or $contentType = 'Données' or
-              $contentType = 'API' or $contentType = 'Application' or
-              $contentType='Supporting Document' or $contentType = 'Document de soutien') and
-              ($contentTypeTranslated = 'Web Service' or $contentTypeTranslated = 'Service Web' or
-              $contentTypeTranslated = 'Dataset' or $contentTypeTranslated = 'Données' or
-              $contentTypeTranslated = 'API' or $contentTypeTranslated = 'Application' or
-              $contentTypeTranslated='Supporting Document' or $contentTypeTranslated = 'Document de soutien')">$locMsgCt</sch:assert>
-
+      <sch:assert test="contains($resourceContentTypesListMain,$contentType) and normalize-space($contentType) != '' ">$locMsgCtMain </sch:assert>
+      <sch:assert test="contains($resourceContentTypesListAlt,$contentTypeTranslated) and normalize-space($contentTypeTranslated) != ''">$locMsgCtAlt</sch:assert>
 
       <sch:let name="formatTranslated" value="subsequence(tokenize($descriptionTranslated, ';'), 2, 1)" />
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
