@@ -523,7 +523,7 @@
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
       <sch:let name="resourceContentTypesListMain" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
-      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $mainLanguageText)], $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
       <sch:assert test="$contentType = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">$locMsgCt</sch:assert>
 

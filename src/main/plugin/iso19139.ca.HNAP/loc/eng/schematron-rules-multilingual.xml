@@ -37,7 +37,8 @@
 
   <ResourceName>Online resource name is required in both language</ResourceName>
   <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
-  <ResourceDescriptionContentType>Online resource description content type is not valid. Valid values are: </ResourceDescriptionContentType>
+  <ResourceDescriptionContentTypeEnglish>English online resource description content type is not valid. Valid English values are: </ResourceDescriptionContentTypeEnglish>
+  <ResourceDescriptionContentTypeFrench>French online resource description content type is not valid. Valid French values are: </ResourceDescriptionContentTypeFrench>
   <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
   <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>

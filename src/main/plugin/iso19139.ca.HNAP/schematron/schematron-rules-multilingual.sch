@@ -878,8 +878,8 @@
 
       <sch:let name="resourceContentTypesListMain" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
       <sch:let name="resourceContentTypesListAlt" value="geonet:resourceContentTypesList($thesaurusDir,$altLanguage2char)"/>
-      <sch:let name="locMsgCtMain" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
-      <sch:let name="locMsgCtAlt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionContentType, $resourceContentTypesListAlt),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgCtMain" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $mainLanguageText)], $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgCtAlt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $altLanguageText)], $resourceContentTypesListAlt),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
       <sch:assert test="$contentType = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">$locMsgCtMain</sch:assert>
       <sch:assert test="$contentTypeTranslated = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]">$locMsgCtAlt</sch:assert>
