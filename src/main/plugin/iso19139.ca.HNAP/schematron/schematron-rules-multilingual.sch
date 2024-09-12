@@ -85,6 +85,25 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+  <xsl:function name="geonet:openLicenseList" as="xs:string">
+    <xsl:param name="thesaurusDir" as="xs:string"/>
+    <xsl:param name="valueLang" as="xs:string"/>
+
+    <xsl:variable name="licenseSeparator" select="if ($lang = 'fre') then ' ou ' else ' or '"/>
+
+    <xsl:variable name="open-license-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
+
+    <xsl:variable name="v">
+      <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$valueLang]">
+        <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
+        <xsl:value-of select="."/>
+        <xsl:if test="position() != last()"><xsl:value-of select="$licenseSeparator"/></xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:value-of select="$v" />
+  </xsl:function>
+
   <xsl:function xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 name="geonet:checkUserNoteSecurityClassificationCode"
                 as="xs:string">
@@ -410,21 +429,30 @@
     <sch:title>$loc/strings/DataIdentification</sch:title>
 
     <!-- Use Limitation -->
-    <!-- Use Limitation -->
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
         |//*[@gco:isoType='gmd:MD_DataIdentification']
         |//*[@gco:isoType='srv:SV_ServiceIdentification']">
 
+      <sch:let name="locMsgMain" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $mainLanguageText)], geonet:openLicenseList($thesaurusDir, $mainLanguage2char))"/>
+      <sch:let name="locMsgAlt" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $altLanguageText)], geonet:openLicenseList($thesaurusDir, $altLanguage2char))"/>
+
       <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
 
-      <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-            (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) and
-            (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
-            ])" />
+      <sch:let name="openLicenseMain" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
+          (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char])
+      ])" />
+
+      <sch:let name="openLicenseAlt" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
+          (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
+      ])" />
 
       <sch:assert
-        test="$openLicense > 0"
-      >$loc/strings/OpenLicense</sch:assert>
+        test="$openLicenseMain > 0"
+      >$locMsgMain</sch:assert>
+
+      <sch:assert
+        test="$openLicenseAlt > 0"
+      >$locMsgAlt</sch:assert>
 
     </sch:rule>
 
