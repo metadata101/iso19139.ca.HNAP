@@ -53,7 +53,8 @@
   <ECThesaurusRole>Le rôle du responsable du thésaurus est requis</ECThesaurusRole>
   <ECThesaurusEmail>Le courriel du responsable du thésaurus est requis</ECThesaurusEmail>
 
-  <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+  <ResourceDescriptionContentTypeEnglish>Le type de contenu dans la description de la ressource en ligne en anglais n'est pas valide. Les valeurs valides en anglais sont : </ResourceDescriptionContentTypeEnglish>
+  <ResourceDescriptionContentTypeFrench>Le type de contenu dans la description de la ressource en ligne en français n'est pas valide. Les valeurs valides en français sont : </ResourceDescriptionContentTypeFrench>
   <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
 

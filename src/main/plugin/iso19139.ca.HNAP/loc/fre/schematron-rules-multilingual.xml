@@ -37,7 +37,8 @@
 
   <ResourceName>Le nom des ressources en ligne est obligatoire dans les deux langues</ResourceName>
   <ResourceDescription>La description des ressources en ligne n'est pas valide. Le format devrait être : TypeContenu;Format;Lang</ResourceDescription>
-  <ResourceDescriptionContentType>Le type de contenu dans la description de la ressource en ligne n'est pas valide. Les valeurs valides sont : Web Service,Service Web,Dataset,Données,API,Application,Supporting Document,Document de soutien</ResourceDescriptionContentType>
+  <ResourceDescriptionContentTypeEnglish>Le type de contenu dans la description de la ressource en ligne en anglais n'est pas valide. Les valeurs valides en anglais sont : </ResourceDescriptionContentTypeEnglish>
+  <ResourceDescriptionContentTypeFrench>Le type de contenu dans la description de la ressource en ligne en français n'est pas valide. Les valeurs valides en français sont : </ResourceDescriptionContentTypeFrench>
   <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
