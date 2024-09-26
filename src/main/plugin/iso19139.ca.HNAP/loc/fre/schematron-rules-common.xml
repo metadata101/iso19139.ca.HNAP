@@ -19,6 +19,7 @@
   <CreationDate>>Une valeur est nécessaire pour: Métadonnées date de création</CreationDate>
   <PublicationDateBeforeCreationDate>La date de publication doit être postérieure à la date de création</PublicationDateBeforeCreationDate>
   <MissingDate>Une valeur est nécessaire pour la Date</MissingDate>
+  <InvalidDate>Le format de date n'est pas valide. Devrait être: YYYY-MM-DD</InvalidDate>
   <InvalidDateTypeCode>Le code de type de date n'est pas valide</InvalidDateTypeCode>
   <BeginDate>Une valeur est nécessaire pour la Date de début</BeginDate>
   <BeginPositionFormat>Le format de la date de début n’est pas valide</BeginPositionFormat>
