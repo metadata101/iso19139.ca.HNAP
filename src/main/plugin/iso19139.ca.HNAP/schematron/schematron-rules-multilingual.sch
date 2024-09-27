@@ -623,10 +623,10 @@
 
     <!-- Keywords -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:descriptiveKeywords">
-      <sch:let name="missing" value="not(string(gmd:MD_Keywords/gmd:keyword[1]/gco:CharacterString))
+      <sch:let name="missing" value="gmd:MD_Keywords/gmd:keyword[gco:CharacterString = '']
             or (@gco:nilReason)" />
 
-      <sch:let name="missingOtherLang" value="not(string(gmd:MD_Keywords/gmd:keyword[1]/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
+      <sch:let name="missingOtherLang" value="gmd:MD_Keywords/gmd:keyword[gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString = '']" />
 
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
