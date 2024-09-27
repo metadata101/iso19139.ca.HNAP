@@ -31,7 +31,7 @@
   <OpenLicenseEnglish>An English supported license is required. Accepted values: </OpenLicenseEnglish>
   <OpenLicenseFrench>A French supported license is required. Accepted values: </OpenLicenseFrench>
   <SupplementalInfo>Supplemental Information should be empty or filled in both languages</SupplementalInfo>
-  <Keyword>Keyword is required in both languages</Keyword>
+  <Keyword>One of the Keyword(s) is(are) missing. Keyword is required in both languages</Keyword>
 
   <OtherConstraintsNote2>Note (Other Constraints) is required in both languages</OtherConstraintsNote2>
 
