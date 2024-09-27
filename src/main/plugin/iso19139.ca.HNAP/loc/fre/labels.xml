@@ -2873,7 +2873,7 @@
   </element>
   <element name="gmd:useLimitation" id="68.0">
     <label>Limitation d'utilisation</label>
-    <description>Limitation d'utilisation de la ressource où de métadonnées. Exemple: "ne pas utiliser pour la navigation"</description>
+    <description>Ce champ permet de saisir la licence qui s'applique à votre enregistrement de métadonnées et/ou à la (aux) ressource(s) attachée(s). Ce champ a été implémenté sous la forme d'une liste dynamique, de sorte que les utilisateurs doivent commencer à taper le nom d'une licence pour voir les options de licence disponibles. L'implémentation de ce champ a été modifiée par rapport à l'original afin de tenir compte des exigences des partenaires de publication externes.</description>
     <condition>mandatory</condition>
 
     <!--<helper>
