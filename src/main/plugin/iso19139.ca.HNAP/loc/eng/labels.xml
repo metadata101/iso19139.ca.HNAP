@@ -2094,8 +2094,7 @@
     </element>
     <element name="gmd:useLimitation" id="68.0">
         <label>Use Limitation</label>
-        <description>Limitation affecting the fitness for use of the resource. Example, _not to be
-            used for navigation_</description>
+      <description>This field captures the license that is applicable to your metadata record and/or attached resource(s). This field has been implemented as a dynamic list, so users should begin typing the name of a license to see available license options. Implementation of this field has been modified from the standard to capture the requirements of external publication partners.</description>
       <condition>mandatory</condition>
     </element>
     <element name="gmd:userContactInfo" id="66.0">
