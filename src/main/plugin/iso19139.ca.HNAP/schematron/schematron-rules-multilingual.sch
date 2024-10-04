@@ -628,8 +628,13 @@
 
       <sch:let name="missingOtherLang" value="gmd:MD_Keywords/gmd:keyword[gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString = '']" />
 
+      <sch:let name="missingEntireKeyword" value="$missing and $missingOtherLang"/>
+
+      <sch:assert test="not($missingEntireKeyword)"
+            >$loc/strings/KeywordMissing</sch:assert>
+
       <sch:assert
-        test="not($missing) and not($missingOtherLang)"
+        test="($missingEntireKeyword) or (not($missing) and not($missingOtherLang))"
       >$loc/strings/Keyword</sch:assert>
 
     </sch:rule>
