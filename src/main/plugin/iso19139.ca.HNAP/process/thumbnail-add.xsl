@@ -103,17 +103,27 @@
 
 
   <!-- Updating the gmd:graphicOverview based on update parameters -->
-  <!-- Note: first part of the match needs to match the xsl:for-each select from extract-relations.xsl in order to get the position() to match -->
-  <!-- The unique identifier is marked with resourceIdx which is the position index and resourceHash which is hash code of the current node (combination of url, resource name, and description) -->
-  <xsl:template
-    priority="2"
-    match="*//gmd:graphicOverview
-         [$resourceIdx = '' or position() = xs:integer($resourceIdx)]
-         [    ($resourceHash != '' or ($updateKey != '' and normalize-space($updateKey) = concat(
-                           */gmd:fileName/gco:CharacterString,
-                           */gmd:fileDescription/gco:CharacterString)))
-          and ($resourceHash = '' or digestUtils:md5Hex(string(exslt:node-set(.))) = $resourceHash)]">
-    <xsl:call-template name="fill"/>
+  <!-- Template to match all gmd:graphicOverview elements -->
+  <xsl:template match="//gmd:MD_DataIdentification/gmd:graphicOverview" priority="2">
+    <!-- Calculate the global position of the current gmd:graphicOverview element -->
+    <xsl:variable name="position" select="count(//gmd:MD_DataIdentification/gmd:graphicOverview[current() >> .]) + 1" />
+
+    <xsl:choose>
+      <!-- Note: first part of the match needs to match the xsl:for-each select from extract-relations.xsl in order to get the position() to match -->
+      <!-- The unique identifier is marked with resourceIdx which is the position index and resourceHash which is hash code of the current node (combination of url, resource name, and description) -->
+      <xsl:when test="($resourceIdx = '' or $position = xs:integer($resourceIdx)) and
+                        ($resourceHash != '' or ($updateKey != '' and normalize-space($updateKey) = concat(
+                            */gmd:fileName/gco:CharacterString,
+                            */gmd:fileDescription/gco:CharacterString)))
+                        and ($resourceHash = '' or digestUtils:md5Hex(normalize-space(.)) = $resourceHash)">
+        <xsl:call-template name="fill"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:copy>
+          <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- TMP TO REMOVE when gco:characterString is added in multilingual elements
