@@ -104,9 +104,9 @@
 
   <!-- Updating the gmd:graphicOverview based on update parameters -->
   <!-- Template to match all gmd:graphicOverview elements -->
-  <xsl:template match="//gmd:MD_DataIdentification/gmd:graphicOverview" priority="2">
+  <xsl:template match="//gmd:graphicOverview" priority="2">
     <!-- Calculate the global position of the current gmd:graphicOverview element -->
-    <xsl:variable name="position" select="count(//gmd:MD_DataIdentification/gmd:graphicOverview[current() >> .]) + 1" />
+    <xsl:variable name="position" select="count(//gmd:graphicOverview[current() >> .]) + 1" />
 
     <xsl:choose>
       <!-- Note: first part of the match needs to match the xsl:for-each select from extract-relations.xsl in order to get the position() to match -->
