@@ -58,4 +58,6 @@
 
   <hasDuplicatedOnlineResource>Duplicated Online Resource URLs for the same language are not allowed. The following duplicate(s) (language; URL) were identified:</hasDuplicatedOnlineResource>
 
+  <SpatialRepresentationTypeMissing>Value is required for Spatial representation</SpatialRepresentationTypeMissing>
+
 </strings>

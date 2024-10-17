@@ -250,6 +250,9 @@
       <sch:let name="isValid" value="($spatialRepresentationTypeCodelistLabel = '') or ($spatialRepresentationTypeCodelistLabel != gmd:MD_SpatialRepresentationTypeCode/@codeListValue)"/>
 
       <sch:assert
+        test="$spatialRepresentationTypeCodelistLabel != '' "
+      >$loc/strings/SpatialRepresentationTypeMissing</sch:assert>
+      <sch:assert
         test="$isValid"
       >$loc/strings/InvalidSpatialRepresentationType</sch:assert>
     </sch:rule>

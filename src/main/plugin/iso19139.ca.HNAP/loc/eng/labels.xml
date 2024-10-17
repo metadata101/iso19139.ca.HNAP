@@ -1936,6 +1936,7 @@
         <label>Spatial representation type</label>
         <btnLabel>Add spatial representation type</btnLabel>
         <description>Method used to spatially represent geographic information</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:spatialResolution" id="38.0">
         <label>Spatial resolution</label>
