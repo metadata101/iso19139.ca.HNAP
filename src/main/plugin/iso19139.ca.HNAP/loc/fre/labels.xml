@@ -1809,7 +1809,7 @@
     <label>Langue</label>
     <btnLabel>Ajouter langue</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
-    <condition>Obligatoire</condition>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
     <label>Langue</label>
@@ -1877,8 +1877,7 @@
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
     <description>URL ou indication semblable d'une adresse Internet pour un accès en ligne , par exemple http://www.isotc211.org</description>
-    <condition/>
-
+    <condition>conditional</condition>
   </element>
   <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
     <label>Fréquence de mise à jour</label>
@@ -2946,8 +2945,7 @@
   <element name="gmd:version" id="208.2" context="gmd:RS_Identifier">
     <label>Version</label>
     <description>Identification de la version pour la domaine de valeurs</description>
-    <condition/>
-
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
