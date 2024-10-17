@@ -58,4 +58,6 @@
 
   <hasDuplicatedOnlineResource>Les URL de ressources en ligne dupliquées pour la même langue ne sont pas autorisées. Les doublons suivants (langue ; URL) ont été identifiés :</hasDuplicatedOnlineResource>
 
+  <SpatialRepresentationTypeMissing>Le type de représentation spatiale est requis</SpatialRepresentationTypeMissing>
+
 </strings>
