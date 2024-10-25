@@ -468,7 +468,7 @@
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
-          <action type="add" name="spatialRepresentationType" or="spatialRepresentationType"
+          <action type="add" or="spatialRepresentationType"
                   in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                   if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType) = 0">
             <template>
