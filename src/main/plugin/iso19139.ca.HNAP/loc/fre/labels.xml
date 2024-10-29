@@ -2665,6 +2665,7 @@
     <label>Type de représentation spatiale</label>
     <btnLabel>Ajouter type de représentation spatiale</btnLabel>
     <description>Méthode utilisée pour représenter spatialement l'information géographique</description>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:spatialResolution" id="38.0">
     <label>Résolution spatiale</label>
