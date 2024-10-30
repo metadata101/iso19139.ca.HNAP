@@ -339,16 +339,16 @@
             <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType" gco:nilReason="missing">
               <gco:CharacterString>
                 <xsl:choose>
-                  <xsl:when test="$altLang = 'fra'">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</xsl:when>
-                  <xsl:otherwise>Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</xsl:otherwise>
+                  <xsl:when test="$altLang = 'fra'">Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)</xsl:when>
+                  <xsl:otherwise>Licence du gouvernement ouvert - Canada (https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</xsl:otherwise>
                 </xsl:choose>
               </gco:CharacterString>
               <gmd:PT_FreeText>
                 <gmd:textGroup>
                   <gmd:LocalisedCharacterString locale="#{$altLang}">
                     <xsl:choose>
-                      <xsl:when test="$altLang = 'fra'">Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</xsl:when>
-                      <xsl:otherwise>Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</xsl:otherwise>
+                      <xsl:when test="$altLang = 'fra'">Licence du gouvernement ouvert - Canada (https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</xsl:when>
+                      <xsl:otherwise>Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)</xsl:otherwise>
                     </xsl:choose>
                   </gmd:LocalisedCharacterString>
                 </gmd:textGroup>

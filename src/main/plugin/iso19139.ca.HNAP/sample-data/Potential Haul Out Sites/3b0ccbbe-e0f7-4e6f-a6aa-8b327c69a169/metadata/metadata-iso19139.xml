@@ -323,7 +323,7 @@ Andersen, A. et M. Gagnon. 1980. Les ressources halieutiques de l'estuaire du Sa
 
 Argus Groupe-Conseil inc. 1992. Synthèse et analyse des connaissances relatives aux ressources naturelles du Saguenay et de l'estuaire maritime du Saint-Laurent. Parc marin du Saguenay. Service canadien des parcs, région du Québec.
 
-Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes. 
+Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes.
 
 Biorex. 1996. Base de données géoréférencées sur les ressources halieutiques et leurs habitats : estuaire maritime du Saint-Laurent et fjord du Saguenay. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. Volume 1 : 38 p. + annexes et Volume 2 : 34 p. + annexes.
 
@@ -333,9 +333,9 @@ Comité de la zone d'intervention prioritaire (ZIP) de la Côte-Nord du golfe. 1
 
 Comité de protection de la santé et de l'environnement de Gaspé inc. (C.P.S.E.G.). 1996.
 
-Communication personnelle par Carol Fournier, MPO. 1999. 
+Communication personnelle par Carol Fournier, MPO. 1999.
 
-Communications personnelles par Gosselin, J-F-. 1996. 
+Communications personnelles par Gosselin, J-F-. 1996.
 
 Desaulniers, J. 1989. Étude des populations de pinnipèdes de l'Archipel-de-Mingan et relation entre l'activité de chasse au phoque et la sécurité publique 1987 à 1989. Parcs Canada. Région du Québec. Service de la conservation des ressources naturelles.
 
@@ -360,7 +360,7 @@ Andersen, A. et M. Gagnon. 1980. Les ressources halieutiques de l'estuaire du Sa
 
 Argus Groupe-Conseil inc. 1992. Synthèse et analyse des connaissances relatives aux ressources naturelles du Saguenay et de l'estuaire maritime du Saint-Laurent. Parc marin du Saguenay. Service canadien des parcs, région du Québec.
 
-Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes. 
+Biorex. 1995. Cartographie des ressources halieutiques et de leurs habitats dans l'estuaire moyen du Saint-Laurent. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. 36 p. + annexes.
 
 Biorex. 1996. Base de données géoréférencées sur les ressources halieutiques et leurs habitats : estuaire maritime du Saint-Laurent et fjord du Saguenay. Rapport au ministère des Pêches et des Océans, Région du Québec, Division de la gestion de l'habitat du poisson. Volume 1 : 38 p. + annexes et Volume 2 : 34 p. + annexes.
 
@@ -370,9 +370,9 @@ Comité de la zone d'intervention prioritaire (ZIP) de la Côte-Nord du golfe. 1
 
 Comité de protection de la santé et de l'environnement de Gaspé inc. (C.P.S.E.G.). 1996.
 
-Communication personnelle par Carol Fournier, MPO. 1999. 
+Communication personnelle par Carol Fournier, MPO. 1999.
 
-Communications personnelles par Gosselin, J-F-. 1996. 
+Communications personnelles par Gosselin, J-F-. 1996.
 
 Desaulniers, J. 1989. Étude des populations de pinnipèdes de l'Archipel-de-Mingan et relation entre l'activité de chasse au phoque et la sécurité publique 1987 à 1989. Parcs Canada. Région du Québec. Service de la conservation des ressources naturelles.
 
@@ -584,10 +584,10 @@ Naturam Environnement inc. 1996. Caractérisation physique et biologique de l'ha
       <gmd:resourceConstraints>
         <gmd:MD_LegalConstraints>
           <gmd:useLimitation xsi:type="gmd:PT_FreeText_PropertyType">
-            <gco:CharacterString>Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gco:CharacterString>
+            <gco:CharacterString>Licence du gouvernement ouvert - Canada (https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)</gco:CharacterString>
             <gmd:PT_FreeText>
               <gmd:textGroup>
-                <gmd:LocalisedCharacterString locale="#eng">Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)</gmd:LocalisedCharacterString>
+                <gmd:LocalisedCharacterString locale="#eng">Open Government Licence - Canada (https://open.canada.ca/en/open-government-licence-canada)</gmd:LocalisedCharacterString>
               </gmd:textGroup>
             </gmd:PT_FreeText>
           </gmd:useLimitation>
