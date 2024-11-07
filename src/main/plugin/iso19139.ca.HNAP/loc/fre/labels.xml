@@ -1877,7 +1877,7 @@
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
     <description>URL ou indication semblable d'une adresse Internet pour un accès en ligne , par exemple http://www.isotc211.org</description>
-    <condition>conditional</condition>
+    <condition>optional</condition>
   </element>
   <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
     <label>Fréquence de mise à jour</label>
