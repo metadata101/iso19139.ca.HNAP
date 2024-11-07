@@ -219,7 +219,8 @@
             "defaultValues": {
                   "eng": "<xsl:value-of select="$DefaultMainOrganizationName_en"/>",
                   "fra": "<xsl:value-of select="$DefaultMainOrganizationName_fr"/>"
-            }
+            },
+            "showHintsOnFocus": "true"
           },
 
           {
@@ -229,7 +230,8 @@
               "fra": "Département/agence"
             },
             "thesaurus": "external.theme.GC_Departments",
-            "numberOfSuggestions": 200
+            "numberOfSuggestions": 200,
+            "showHintsOnFocus": true
           },
 
           {
