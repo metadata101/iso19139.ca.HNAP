@@ -1809,7 +1809,7 @@
     <label>Langue</label>
     <btnLabel>Ajouter langue</btnLabel>
     <description>Sélectionner la langue d'usage pour la création de métadonnées.</description>
-    <condition>mandatory</condition>
+    <condition>Obligatoire</condition>
   </element>
   <element name="gmd:language" id="39.0" context="gmd:MD_DataIdentification">
     <label>Langue</label>
@@ -2946,7 +2946,7 @@
   <element name="gmd:version" id="208.2" context="gmd:RS_Identifier">
     <label>Version</label>
     <description>Identification de la version pour la domaine de valeurs</description>
-    <condition>mandatory</condition>
+    <condition/>
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
