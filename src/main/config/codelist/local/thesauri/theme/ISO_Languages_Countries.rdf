@@ -28,7 +28,7 @@
             xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">eng; CAN
         </ns2:prefLabel>
     </rdf:Description>
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/languages#FRA">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/languages#FRA">
             <ns2:scopeNote
                 xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
             </ns2:scopeNote>
