@@ -13,7 +13,7 @@
         <dc:description></dc:description>
       </skos:ConceptScheme>
 
-    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/languages#ENG">
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/languages#ENG">
         <ns2:scopeNote
             xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
         </ns2:scopeNote>
