@@ -2950,7 +2950,7 @@
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
-    <description>Indiquer la version du format de transfert de données. Pour une liste de versions possibles, consulter le menu « Suggestions ». Si la version est inconnue, indiquer « inconnue ».</description>
+    <description>Entrez la version du ou des formats de transfert de données (texte libre). Si la version est inconnue, entrez « inconnu »</description>
     <condition>Obligatoire</condition>
   </element>
 

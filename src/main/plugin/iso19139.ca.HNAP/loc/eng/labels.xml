@@ -2155,7 +2155,7 @@
     </element>
     <element name="gmd:version" context="gmd:MD_Format" id="286.0">
         <label>File Format Version</label>
-        <description>Enter the version of the data transfer format(s). For a list of possible versions, see the 'suggestions' menu. If the version is unknown, enter "unknown"</description>
+        <description>Enter the version of the data transfer format(s) (free text). If the version is unknown, enter "unknown"</description>
     </element>
     <element name="gmd:verticalElement" id="338.0">
         <label>Vertical element</label>
