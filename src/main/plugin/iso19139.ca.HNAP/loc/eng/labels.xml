@@ -1486,7 +1486,7 @@
     </element>
     <element name="gmd:name">
         <label>Name</label>
-        <description/>
+        <description>The name of the data resource</description>
     </element>
     <element name="gmd:nameOfMeasure" id="100.0">
         <label>Name of measure</label>

@@ -2095,7 +2095,7 @@
   </element>
   <element name="gmd:name">
     <label>Nom</label>
-    <description>Name of the series, or aggregate dataset, of which the dataset is a part</description>
+    <description>Nom de la ressource en ligne</description>
     <help/>
     <condition>Obligatoire</condition>
 
