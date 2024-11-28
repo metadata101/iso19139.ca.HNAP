@@ -917,8 +917,8 @@
       <xsl:apply-templates select="@*"/>
       <xsl:choose>
         <!--Avoid append the url recursively. Only append the url once. -->
-        <xsl:when test="not(starts-with(@uom, 'http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#'))">
-          <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="@uom"/></xsl:attribute>
+        <xsl:when test="starts-with(@uom, 'http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#')">
+          <xsl:attribute name="uom"><xsl:value-of select="concat(., ' ', tokenize(@uom, '#')[2])"/></xsl:attribute>
         </xsl:when>
         <xsl:otherwise>
           <xsl:attribute name="uom"><xsl:value-of select="@uom"/></xsl:attribute>
