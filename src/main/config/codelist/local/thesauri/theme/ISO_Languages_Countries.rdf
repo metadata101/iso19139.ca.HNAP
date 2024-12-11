@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+      xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+      <skos:ConceptScheme>
+        <dc:title>Languages</dc:title>
+        <dc:title xml:lang="en">Languages</dc:title>
+        <dc:title xml:lang="fr">Langues</dc:title>
+        <dc:publisher xml:lang="en">Government of Canada; Library and Archives Canada</dc:publisher>
+        <dc:publisher xml:lang="fr">Gouvernement du Canada; Bibliothèque et Archives Canada</dc:publisher>
+        <dc:description></dc:description>
+      </skos:ConceptScheme>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/languages#ENG">
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+        </ns2:scopeNote>
+        <ns2:scopeNote
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+        </ns2:scopeNote>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">eng; CAN
+        </ns2:prefLabel>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel
+            xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">eng; CAN
+        </ns2:prefLabel>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/GC/languages#FRA">
+            <ns2:scopeNote
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">Definition
+            </ns2:scopeNote>
+            <ns2:scopeNote
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">Definition
+            </ns2:scopeNote>
+            <ns2:prefLabel
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="fr">fra; CAN
+            </ns2:prefLabel>
+            <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+            <ns2:prefLabel
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#" xml:lang="en">fra; CAN
+            </ns2:prefLabel>
+    </rdf:Description>
+</rdf:RDF>

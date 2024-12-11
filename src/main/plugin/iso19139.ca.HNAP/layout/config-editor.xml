@@ -78,11 +78,13 @@
 
     <for name="gmd:electronicMailAddress" use="email"/>
 
-    <for name="gmd:language" use="data-gn-language-picker">
-      <directiveAttributes data-show-hints-on-focus="true"/>
+    <for name="gmd:language"
+         use="data-gn-keyword-picker">
+      <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
     </for>
-    <for name="gmd:languageCode" use="data-gn-language-picker">
-      <directiveAttributes data-show-hints-on-focus="true"/>
+    <for name="gmd:languageCode"
+         use="data-gn-keyword-picker">
+      <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
     </for>
 
 <!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
