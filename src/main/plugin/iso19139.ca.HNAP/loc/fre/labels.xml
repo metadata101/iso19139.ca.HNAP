@@ -1323,7 +1323,7 @@
   </element>
   <element name="gmd:description" id="401.0">
     <label>Description</label>
-    <description></description>
+    <description>La description de la ressource comprend trois sous-champs : le type de contenu, le format et la langue. Le type de contenu décrit le type de ressource, par exemple, un document de support, tandis que le format spécifie le format dans lequel la ressource est disponible et la langue identifie la ou les langues dans lesquelles elle est disponible. Les trois champs contiennent une option déroulante qui affiche les listes de codes disponibles.</description>
     <help></help>
     <condition/>
   </element>
@@ -2095,7 +2095,7 @@
   </element>
   <element name="gmd:name">
     <label>Nom</label>
-    <description>Name of the series, or aggregate dataset, of which the dataset is a part</description>
+    <description>Nom de la ressource en ligne</description>
     <help/>
     <condition>Obligatoire</condition>
 
@@ -2950,7 +2950,7 @@
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
-    <description>Indiquer la version du format de transfert de données. Pour une liste de versions possibles, consulter le menu « Suggestions ». Si la version est inconnue, indiquer « inconnue ».</description>
+    <description>Entrez la version du ou des formats de transfert de données (texte libre). Si la version est inconnue, entrez « inconnu »</description>
     <condition>Obligatoire</condition>
   </element>
 

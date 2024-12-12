@@ -849,8 +849,7 @@
     </element>
     <element name="gmd:description" id="561.0">
         <label>Description</label>
-        <description>Description of the event, including related parameters or
-            tolerances</description>
+        <description>Description of the resource includes three sub-fields - Content type, format and language. Content type describes the type of resource, for example, supporting document, while format specifies the format that the resource is available in, and language identifies which language(s) it is available in. All three fields contain drop-down option that show the available code lists.</description>
     </element>
     <element name="gmd:description" id="561.0" context="gmd:MD_AbstractClass">
         <label>Description</label>
@@ -1486,7 +1485,7 @@
     </element>
     <element name="gmd:name">
         <label>Name</label>
-        <description/>
+        <description>The name of the data resource</description>
     </element>
     <element name="gmd:nameOfMeasure" id="100.0">
         <label>Name of measure</label>
@@ -2155,7 +2154,7 @@
     </element>
     <element name="gmd:version" context="gmd:MD_Format" id="286.0">
         <label>File Format Version</label>
-        <description>Enter the version of the data transfer format(s). For a list of possible versions, see the 'suggestions' menu. If the version is unknown, enter "unknown"</description>
+        <description>Enter the version of the data transfer format(s) (free text). If the version is unknown, enter "unknown"</description>
     </element>
     <element name="gmd:verticalElement" id="338.0">
         <label>Vertical element</label>
