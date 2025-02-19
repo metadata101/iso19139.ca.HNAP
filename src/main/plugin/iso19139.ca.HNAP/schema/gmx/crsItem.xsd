@@ -113,7 +113,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_CompoundCRS" type="gmx:ML_CompoundCRS_Type" substitutionGroup="gml:CompoundCRS"/>
+	<xs:element name="ML_CompoundCRS" type="gmx:ML_CompoundCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_CompoundCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -175,7 +175,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_GeodeticCRS" type="gmx:ML_GeodeticCRS_Type" substitutionGroup="gml:GeodeticCRS"/>
+	<xs:element name="ML_GeodeticCRS" type="gmx:ML_GeodeticCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_GeodeticCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -195,7 +195,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_EngineeringCRS" type="gmx:ML_EngineeringCRS_Type" substitutionGroup="gml:EngineeringCRS"/>
+	<xs:element name="ML_EngineeringCRS" type="gmx:ML_EngineeringCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_EngineeringCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -215,7 +215,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_VerticalCRS" type="gmx:ML_VerticalCRS_Type" substitutionGroup="gml:VerticalCRS"/>
+	<xs:element name="ML_VerticalCRS" type="gmx:ML_VerticalCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_VerticalCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -235,7 +235,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_TemporalCRS" type="gmx:ML_TemporalCRS_Type" substitutionGroup="gml:TemporalCRS"/>
+	<xs:element name="ML_TemporalCRS" type="gmx:ML_TemporalCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_TemporalCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -255,7 +255,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_ImageCRS" type="gmx:ML_ImageCRS_Type" substitutionGroup="gml:ImageCRS"/>
+	<xs:element name="ML_ImageCRS" type="gmx:ML_ImageCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_ImageCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -275,7 +275,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_ProjectedCRS" type="gmx:ML_ProjectedCRS_Type" substitutionGroup="gml:ProjectedCRS"/>
+	<xs:element name="ML_ProjectedCRS" type="gmx:ML_ProjectedCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_ProjectedCRS_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -295,7 +295,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_DerivedCRS" type="gmx:ML_DerivedCRS_Type" substitutionGroup="gml:DerivedCRS"/>
+	<xs:element name="ML_DerivedCRS" type="gmx:ML_DerivedCRS_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_DerivedCRS_PropertyType">
 		<xs:sequence minOccurs="0">

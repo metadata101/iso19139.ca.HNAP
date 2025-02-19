@@ -2300,6 +2300,54 @@
         <label>Projected CRS</label>
         <description/>
     </element>
+  <element name="gml:CompoundCRS">
+    <label>Compound CRS</label>
+    <description/>
+  </element>
+  <element name="gml:DerivedCRS">
+    <label>Derived CRS</label>
+    <description/>
+  </element>
+  <element name="gml:EngineeringCRS">
+    <label>Engineering CRS</label>
+    <description/>
+  </element>
+  <element name="gml:GeocentricCRS">
+    <label>Geocentric CRS</label>
+    <description/>
+  </element>
+  <element name="gml:GeodeticCRS">
+    <label>Geodetic CRS</label>
+    <description/>
+  </element>
+  <element name="gml:GeographicCRS">
+    <label>Geographic CRS</label>
+    <description/>
+  </element>
+  <element name="gml:ImageCRS">
+    <label>Image CRS</label>
+    <description/>
+  </element>
+  <element name="gml:TemporalCRS">
+    <label>Temporal CRS</label>
+    <description/>
+  </element>
+  <element name="gml:BaseUnit">
+    <label>Base Unit</label>
+    <description/>
+  </element>
+  <element name="gml:ConventionalUnit">
+    <label>Conventional Unit</label>
+    <description/>
+  </element>
+  <element name="gml:DerivedUnit">
+    <label>Derived Unit</label>
+    <description/>
+  </element>
+  <element name="gml:UnitDefinition">
+    <label>Unit Definition</label>
+    <description/>
+  </element>
 
     <element name="gml:id">
         <label>Identifier</label>
