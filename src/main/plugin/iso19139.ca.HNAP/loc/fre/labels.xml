@@ -3658,6 +3658,58 @@
     <label>CRS vertical</label>
     <description>Information sur l'origine depuis laquelle les altitudes maximale et minimale ont été mesurées</description>
   </element>
+  <element name="gml:ProjectedCRS">
+    <label>SRC Projeté</label>
+    <description/>
+  </element>
+  <element name="gml:CompoundCRS">
+    <label>SRC Composé</label>
+    <description/>
+  </element>
+  <element name="gml:DerivedCRS">
+    <label>SRC Dérivé</label>
+    <description/>
+  </element>
+  <element name="gml:EngineeringCRS">
+    <label>SRC Ingénierie</label>
+    <description/>
+  </element>
+  <element name="gml:GeocentricCRS">
+    <label>SRC Géocentrique</label>
+    <description/>
+  </element>
+  <element name="gml:GeodeticCRS">
+    <label>SRC Géodésique</label>
+    <description/>
+  </element>
+  <element name="gml:GeographicCRS">
+    <label>SRC Géographique</label>
+    <description/>
+  </element>
+  <element name="gml:ImageCRS">
+    <label>SRC Image</label>
+    <description/>
+  </element>
+  <element name="gml:TemporalCRS">
+    <label>SRC Temporel</label>
+    <description/>
+  </element>
+  <element name="gml:BaseUnit">
+    <label>Unité de base</label>
+    <description/>
+  </element>
+  <element name="gml:ConventionalUnit">
+    <label>Unité conventionnelle</label>
+    <description/>
+  </element>
+  <element name="gml:DerivedUnit">
+    <label>Unité dérivée</label>
+    <description/>
+  </element>
+  <element name="gml:UnitDefinition">
+    <label>Définition de l'unité</label>
+    <description/>
+  </element>
   <element name="gmx:FileName">
     <label>Nom du fichier</label>
     <description>Nom du fichier et URL.</description>
