@@ -551,20 +551,31 @@
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
       <sch:let name="uppercase" value="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
 
-      <sch:let name="mapRESTCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map service'])" />
+      <sch:let name="mapRESTCount" value="$mapRESTCountE + $mapRESTCountF" />
+
+      <!--  mapRESTTiledCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+      <sch:assert test="($mapRESTCountE = 0 and $mapRESTCountF = 0) or ($mapRESTCountE = 1 and $mapRESTCountF = 1) or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
+      <sch:let name="mapRESTServerCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map server'])" />
+      <sch:let name="mapRESTServerCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'esri rest: map server'])" />
+      <sch:let name="mapRESTServerCount" value="$mapRESTServerCountE + $mapRESTServerCountF" />
+
+      <!--  mapRESTServerCount &gt; 2 to fail in the 2on rule only and avoid 2 messages -->
+      <sch:assert test="($mapRESTServerCountE = 0 and $mapRESTServerCountF = 0) or ($mapRESTServerCountE = 1 and $mapRESTServerCountF = 1) or $mapRESTServerCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
+      <sch:assert test="$mapRESTServerCount = 0 or $mapRESTServerCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
+
+      <sch:let name="mapWMSCountE" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
+      <sch:let name="mapWMSCountF" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
+      <sch:let name="mapWMSCount" value="$mapWMSCountE + $mapWMSCountF" />
+
+      <!--  $mapWMSCount &gt; 2 to fail in the 2on check only and avoid 2 messages -->
+      <sch:assert test="($mapWMSCountE = 0 and $mapWMSCountF = 0) or ($mapWMSCountE = 1 and $mapWMSCountF = 1) or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
+      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
 
       <sch:let name="onlineResources" value="gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource" />
-
-      <sch:assert test="$mapRESTCount &lt;= 2">$loc/strings/MapResourcesRESTNumber</sch:assert>
-      <sch:assert test="$mapRESTCount = 0 or $mapRESTCount = 2 or $mapRESTCount &gt; 2">$loc/strings/MapResourcesREST</sch:assert>
-
-      <sch:let name="mapWMSCount" value="count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:eng-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms']) +
-                count(gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine[@xlink:role='urn:xml:lang:fra-CAN' and translate(gmd:CI_OnlineResource/gmd:protocol/gco:CharacterString, $uppercase, $smallcase) = 'ogc:wms'])" />
-
-      <sch:assert test="$mapWMSCount &lt;= 2">$loc/strings/MapResourcesWMSNumber</sch:assert>
-      <sch:assert test="$mapWMSCount = 0 or $mapWMSCount = 2 or $mapWMSCount &gt; 2">$loc/strings/MapResourcesWMS</sch:assert>
-
       <sch:let name="duplicatedResource" value="geonet:getDuplicateResources($onlineResources)" />
       <sch:let name="locMsg" value="geonet:appendLocaleMessage($loc/strings/hasDuplicatedOnlineResource, $duplicatedResource)" />
 
