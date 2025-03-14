@@ -864,8 +864,8 @@
 		<entry>
       <code>RI_490</code>
       <value>forOfficialUseOnly; réservéÀOrganisation</value>
-			<label>Réservé À Organisation</label>
-			<description>For Official Use Only</description>
+			<label>Réservé à un usage officiel uniquement</label>
+			<description>Pour usage officiel seulement</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
