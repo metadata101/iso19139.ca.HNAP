@@ -53,13 +53,13 @@
     <!-- for name="gmd:userNote" use="textarea"/ -->
     <for name="gmd:userNote"
          use="data-gn-keyword-picker">
-      <directiveAttributes data-thesaurus-key="external.theme.GC_Security_Level" data-focus-to-input="false"/>
+      <directiveAttributes data-thesaurus-key="external.theme.GC_Security_Level" data-focus-to-input="false" data-show-hints-on-focus="true"/>
     </for>
 
     <!--for name="gmd:useLimitation" use="textarea"/-->
     <for name="gmd:useLimitation"
              use="data-gn-keyword-picker">
-          <directiveAttributes data-thesaurus-key="external.theme.GC_Open_Licenses" data-focus-to-input="false"/>
+          <directiveAttributes data-thesaurus-key="external.theme.GC_Open_Licenses" data-focus-to-input="false" data-show-hints-on-focus="true"/>
     </for>
 
     <for name="gco:Distance" use="number"/>
@@ -78,19 +78,25 @@
 
     <for name="gmd:electronicMailAddress" use="email"/>
 
-    <for name="gmd:language" use="data-gn-language-picker"/>
-    <for name="gmd:languageCode" use="data-gn-language-picker"/>
+    <for name="gmd:language"
+         use="data-gn-keyword-picker">
+      <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
+    </for>
+    <for name="gmd:languageCode"
+         use="data-gn-keyword-picker">
+      <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
+    </for>
 
 <!--    <for name="gmd:country" use="data-gn-country-selector-ec"/>-->
     <for name="gmd:country"
              use="data-gn-keyword-picker">
-          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false" data-number-of-suggestions="250"/>
+          <directiveAttributes data-thesaurus-key="external.theme.ISO_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
 
     </for>
 
     <for name="gmd:administrativeArea"
          use="data-gn-keyword-picker">
-      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false" data-number-of-suggestions="75"/>
+      <directiveAttributes data-thesaurus-key="external.theme.GC_State_Province" data-focus-to-input="false" data-number-of-suggestions="75" data-show-hints-on-focus="true"/>
 
     </for>
 
@@ -468,7 +474,7 @@
 
           <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType"/>
 
-          <action type="add" name="spatialRepresentationType" or="spatialRepresentationType"
+          <action type="add" or="spatialRepresentationType"
                   in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
                   if="count(gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:spatialRepresentationType) = 0">
             <template>

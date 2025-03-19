@@ -1323,7 +1323,7 @@
   </element>
   <element name="gmd:description" id="401.0">
     <label>Description</label>
-    <description></description>
+    <description>La description de la ressource comprend trois sous-champs : le type de contenu, le format et la langue. Le type de contenu décrit le type de ressource, par exemple, un document de support, tandis que le format spécifie le format dans lequel la ressource est disponible et la langue identifie la ou les langues dans lesquelles elle est disponible. Les trois champs contiennent une option déroulante qui affiche les listes de codes disponibles.</description>
     <help></help>
     <condition/>
   </element>
@@ -1877,8 +1877,7 @@
   <element name="gmd:linkage" id="397.0">
     <label>Adresse Internet</label>
     <description>URL ou indication semblable d'une adresse Internet pour un accès en ligne , par exemple http://www.isotc211.org</description>
-    <condition/>
-
+    <condition>optional</condition>
   </element>
   <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
     <label>Fréquence de mise à jour</label>
@@ -2096,7 +2095,7 @@
   </element>
   <element name="gmd:name">
     <label>Nom</label>
-    <description>Name of the series, or aggregate dataset, of which the dataset is a part</description>
+    <description>Nom de la ressource en ligne</description>
     <help/>
     <condition>Obligatoire</condition>
 
@@ -2665,6 +2664,7 @@
     <label>Type de représentation spatiale</label>
     <btnLabel>Ajouter type de représentation spatiale</btnLabel>
     <description>Méthode utilisée pour représenter spatialement l'information géographique</description>
+    <condition>mandatory</condition>
   </element>
   <element name="gmd:spatialResolution" id="38.0">
     <label>Résolution spatiale</label>
@@ -2873,7 +2873,7 @@
   </element>
   <element name="gmd:useLimitation" id="68.0">
     <label>Limitation d'utilisation</label>
-    <description>Limitation d'utilisation de la ressource où de métadonnées. Exemple: "ne pas utiliser pour la navigation"</description>
+    <description>Ce champ permet de saisir la licence qui s'applique à votre enregistrement de métadonnées et/ou à la (aux) ressource(s) attachée(s). Ce champ a été implémenté sous la forme d'une liste dynamique, de sorte que les utilisateurs doivent commencer à taper le nom d'une licence pour voir les options de licence disponibles. L'implémentation de ce champ a été modifiée par rapport à l'original afin de tenir compte des exigences des partenaires de publication externes.</description>
     <condition>mandatory</condition>
 
     <!--<helper>
@@ -2947,11 +2947,10 @@
     <label>Version</label>
     <description>Identification de la version pour la domaine de valeurs</description>
     <condition/>
-
   </element>
   <element name="gmd:version" context="gmd:MD_Format" id="286.0">
     <label>Version</label>
-    <description>Indiquer la version du format de transfert de données. Pour une liste de versions possibles, consulter le menu « Suggestions ». Si la version est inconnue, indiquer « inconnue ».</description>
+    <description>Entrez la version du ou des formats de transfert de données (texte libre). Si la version est inconnue, entrez « inconnu »</description>
     <condition>Obligatoire</condition>
   </element>
 
