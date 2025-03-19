@@ -391,6 +391,11 @@
             <xsl:if test="normalize-space(../../gmd:fileDescription) != ''">,
               "nameObject": <xsl:value-of select="gn-fn-index:add-multilingual-field('name', ../../gmd:fileDescription, $allLanguages, true())"/>
             </xsl:if>
+            <xsl:variable name="data"
+                          select="util:buildDataUrl(., 140)"/>
+            <xsl:if test="$data != ''">,
+              "data": "<xsl:value-of select="$data"/>"
+            </xsl:if>
             }</overview>
         </xsl:for-each>
 
