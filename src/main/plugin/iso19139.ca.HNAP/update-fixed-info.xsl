@@ -912,17 +912,6 @@
   </xsl:template>
 
 
-
-  <xsl:template  match="gco:Distance">
-    <xsl:element name="gco:{local-name()}">
-      <xsl:apply-templates select="@*"/>
-      <xsl:attribute name="uom">http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/uom/gmxUom.xml#<xsl:value-of select="@uom"/></xsl:attribute>
-      <xsl:apply-templates select="node()"/>
-    </xsl:element>
-  </xsl:template>
-
-
-
   <xsl:template match="gmd:onLine[@xlink:title]" priority="100">
     <xsl:copy>
       <xsl:apply-templates select="@*[name()!='xlink:title']" />
@@ -968,6 +957,8 @@
   <!-- Remove empty extent sections -->
   <xsl:template match="gmd:MD_DataIdentification/gmd:extent[count(gmd:EX_Extent/*) = 0]" />
 
+  <!-- Remove geonet:* elements. -->
+  <xsl:template match="geonet:*" priority="2" />
 
   <xsl:template match="@xsi:schemaLocation">
     <xsl:if test="XslUtil:getSettingValue('system/metadata/validation/removeSchemaLocation') = 'false'">

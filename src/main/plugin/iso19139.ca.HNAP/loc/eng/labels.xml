@@ -849,8 +849,7 @@
     </element>
     <element name="gmd:description" id="561.0">
         <label>Description</label>
-        <description>Description of the event, including related parameters or
-            tolerances</description>
+        <description>Description of the resource includes three sub-fields - Content type, format and language. Content type describes the type of resource, for example, supporting document, while format specifies the format that the resource is available in, and language identifies which language(s) it is available in. All three fields contain drop-down option that show the available code lists.</description>
     </element>
     <element name="gmd:description" id="561.0" context="gmd:MD_AbstractClass">
         <label>Description</label>
@@ -1299,7 +1298,7 @@
         <label>Linkage</label>
         <description>Location (address) for on-line access using a Uniform Resource Locator address
             or similar addressing scheme such as http://www.statkart.no/isotc211</description>
-        <!--<condition>mandatory</condition>-->
+        <condition>optional</condition>
     </element>
     <element name="gmd:maintenanceAndUpdateFrequency" id="143.0">
         <label>Maintenance and Update Frequency</label>
@@ -1486,7 +1485,7 @@
     </element>
     <element name="gmd:name">
         <label>Name</label>
-        <description/>
+        <description>The name of the data resource</description>
     </element>
     <element name="gmd:nameOfMeasure" id="100.0">
         <label>Name of measure</label>
@@ -1833,7 +1832,7 @@
     </element>
     <element name="gmd:role" id="379.0">
         <label>Role</label>
-        <description>Select the appropriate role from the list provided. The role of Data Steward identifies the individual who is accountable for the dataset.</description>
+        <description>Select the appropriate role from the list provided. The role indicates the person responsible for the dataset.</description>
         <condition>mandatory</condition>
     </element>
     <element name="gmd:rule" id="317.0">
@@ -1936,6 +1935,7 @@
         <label>Spatial representation type</label>
         <btnLabel>Add spatial representation type</btnLabel>
         <description>Method used to spatially represent geographic information</description>
+        <condition>mandatory</condition>
     </element>
     <element name="gmd:spatialResolution" id="38.0">
         <label>Spatial resolution</label>
@@ -2094,8 +2094,7 @@
     </element>
     <element name="gmd:useLimitation" id="68.0">
         <label>Use Limitation</label>
-        <description>Limitation affecting the fitness for use of the resource. Example, _not to be
-            used for navigation_</description>
+      <description>This field captures the license that is applicable to your metadata record and/or attached resource(s). This field has been implemented as a dynamic list, so users should begin typing the name of a license to see available license options. Implementation of this field has been modified from the standard to capture the requirements of external publication partners.</description>
       <condition>mandatory</condition>
     </element>
     <element name="gmd:userContactInfo" id="66.0">
@@ -2155,7 +2154,7 @@
     </element>
     <element name="gmd:version" context="gmd:MD_Format" id="286.0">
         <label>File Format Version</label>
-        <description>Enter the version of the data transfer format(s). For a list of possible versions, see the 'suggestions' menu. If the version is unknown, enter "unknown"</description>
+        <description>Enter the version of the data transfer format(s) (free text). If the version is unknown, enter "unknown"</description>
     </element>
     <element name="gmd:verticalElement" id="338.0">
         <label>Vertical element</label>

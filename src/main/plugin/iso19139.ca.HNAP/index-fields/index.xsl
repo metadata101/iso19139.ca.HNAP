@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
-  ~ Copyright (C) 2001-2022 Food and Agriculture Organization of the
+  ~ Copyright (C) 2001-2025 Food and Agriculture Organization of the
   ~ United Nations (FAO-UN), United Nations World Food Programme (WFP)
   ~ and United Nations Environment Programme (UNEP)
   ~
@@ -33,6 +33,7 @@
                 xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:gn-fn-index="http://geonetwork-opensource.org/xsl/functions/index"
                 xmlns:index="java:org.fao.geonet.kernel.search.EsSearchManager"
+                xmlns:digestUtils="java:org.apache.commons.codec.digest.DigestUtils"
                 xmlns:util="java:org.fao.geonet.util.XslUtil"
                 xmlns:date-util="java:org.fao.geonet.utils.DateUtil"
                 xmlns:daobs="http://daobs.org"
@@ -222,10 +223,10 @@
           <resourceType>map</resourceType>
           <xsl:choose>
             <xsl:when test="$isStatic">
-              <resourceType>map/static</resourceType>
+              <resourceType>map-static</resourceType>
             </xsl:when>
             <xsl:when test="$isInteractive or $isPublishedWithWMCProtocol">
-              <resourceType>map/interactive</resourceType>
+              <resourceType>map-interactive</resourceType>
             </xsl:when>
           </xsl:choose>
         </xsl:when>
@@ -305,7 +306,16 @@
                 </xsl:element>
               </xsl:when>
               <xsl:otherwise>
-                <indexingErrorMsg>Warning / Date <xsl:value-of select="$dateType"/> with value '<xsl:value-of select="$date"/>' was not a valid date format.</indexingErrorMsg>
+                <indexingErrorMsg type="object">
+                  {
+                    "string": "indexingErrorMsg-invalidDateFormat",
+                    "type": "warning",
+                    "values": {
+                      "dateType": "<xsl:value-of select="util:escapeForJson($dateType)"/>",
+                      "date": "<xsl:value-of select="util:escapeForJson($date)"/>"
+                    }
+                  }
+                </indexingErrorMsg>
               </xsl:otherwise>
             </xsl:choose>
           </xsl:for-each>
@@ -325,11 +335,16 @@
 
             <xsl:variable name="zuluDate"
                           select="date-util:convertToISOZuluDateTime($date)"/>
-            <xsl:if test="$zuluDate != ''">
-              <resourceDate type="object">
-                {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$zuluDate"/>"}
-              </resourceDate>
-            </xsl:if>
+            <resourceDate type="object">
+              <xsl:choose>
+                <xsl:when test="$zuluDate != '' and gn-fn-index:is-dateTime($date)">
+                  {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$zuluDate"/>"}
+                </xsl:when>
+                <xsl:otherwise>
+                  {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$date"/>"}
+                </xsl:otherwise>
+              </xsl:choose>
+            </resourceDate>
           </xsl:for-each>
 
           <xsl:if test="$useDateAsTemporalExtent">
@@ -389,6 +404,11 @@
             "url": "<xsl:value-of select="normalize-space(.)"/>"
             <xsl:if test="normalize-space(../../gmd:fileDescription) != ''">,
               "nameObject": <xsl:value-of select="gn-fn-index:add-multilingual-field('name', ../../gmd:fileDescription, $allLanguages, true())"/>
+            </xsl:if>
+            <xsl:variable name="data"
+                          select="util:buildDataUrl(., 140)"/>
+            <xsl:if test="$data != ''">,
+              "data": "<xsl:value-of select="$data"/>"
             </xsl:if>
             }</overview>
         </xsl:for-each>
@@ -458,6 +478,12 @@
                     id="{$thesaurusId}"
                     uri="{$thesaurusUri}"
                     title="{$thesaurusTitle}">
+                <xsl:if test="not(starts-with($thesaurusTitle, 'otherKeywords'))">
+                  <multilingualTitle>
+                    <xsl:copy-of select="gn-fn-index:add-multilingual-field('multilingualTitle',
+                            gmd:thesaurusName/*/gmd:title, $allLanguages, false(), true())"/>
+                  </multilingualTitle>
+                </xsl:if>
               </info>
               <keywords>
                 <xsl:for-each select="$keywords">
@@ -485,7 +511,16 @@
                      records in the admin. -->
                     <xsl:if test="$thesaurusId != '' and $keywordUri = ''">
                       <errors>
-                        <indexingErrorMsg>Warning / Keyword <xsl:value-of select="(*/text())[1]"/> not found in <xsl:value-of select="$thesaurusId"/>.</indexingErrorMsg>
+                        <indexingErrorMsg type="object">
+                          {
+                            "string": "indexingErrorMsg-keywordNotFoundInThesaurus",
+                            "type": "warning",
+                            "values": {
+                              "keyword": "<xsl:value-of select="util:escapeForJson((*/text())[1])"/>",
+                              "thesaurus": "<xsl:value-of select="util:escapeForJson($thesaurusId)"/>"
+                            }
+                          }
+                        </indexingErrorMsg>
                       </errors>
                     </xsl:if>
 
@@ -566,7 +601,9 @@
 
           <xsl:for-each select="gmd:distance/gco:Distance[. != '']">
             <resolutionDistance>
-              <xsl:value-of select="concat(., ' ', @uom)"/>
+              <xsl:value-of select="if (contains(@uom, '#'))
+                                    then concat(., ' ', tokenize(@uom, '#')[2])
+                                    else  concat(., ' ', @uom)"/>
             </resolutionDistance>
           </xsl:for-each>
         </xsl:for-each>
@@ -727,14 +764,29 @@
                   }</resourceTemporalExtentDateRange>
               </xsl:when>
               <xsl:otherwise>
-                <indexingErrorMsg>Warning / Field resourceTemporalDateRange / Lower and upper bounds empty or not valid dates. Date range not indexed.</indexingErrorMsg>
+                <indexingErrorMsg type="object">
+                  {
+                    "string": "indexingErrorMsg-invalidBounds",
+                    "type": "warning",
+                    "values": { }
+                  }
+                </indexingErrorMsg>
               </xsl:otherwise>
             </xsl:choose>
 
             <xsl:if test="$zuluStartDate castable as xs:dateTime
                           and $zuluEndDate  castable as xs:dateTime
                           and $start &gt; $end">
-              <indexingErrorMsg>Warning / Field resourceTemporalDateRange / Lower range bound '<xsl:value-of select="$start"/>' can not be greater than upper bound '<xsl:value-of select="$end"/>'.</indexingErrorMsg>
+              <indexingErrorMsg type="object">
+                {
+                  "string": "indexingErrorMsg-temporalRangeLowerGreaterThanUpper",
+                  "type": "warning",
+                  "values": {
+                    "lowerBound": "<xsl:value-of select="util:escapeForJson($start)"/>",
+                    "upperBound": "<xsl:value-of select="util:escapeForJson($end)"/>"
+                  }
+                }
+              </indexingErrorMsg>
             </xsl:if>
 
             <xsl:call-template name="build-range-details">
@@ -938,8 +990,7 @@
           <xsl:copy-of select="gn-fn-index:add-multilingual-field('orderingInstructions', ., $allLanguages)"/>
         </xsl:for-each>
 
-        <xsl:for-each select="gmd:transferOptions/*/
-                                gmd:onLine/*[gmd:linkage/gmd:URL != '']">
+        <xsl:for-each select=".//gmd:onLine/*[gmd:linkage/gmd:URL != '']">
 
           <xsl:variable name="transferGroup"
                         select="count(ancestor::gmd:transferOptions/preceding-sibling::gmd:transferOptions)"/>
@@ -963,6 +1014,8 @@
             <atomfeed><xsl:value-of select="gmd:linkage/gmd:URL"/></atomfeed>
           </xsl:if>
           <link type="object">{
+            "hash": "<xsl:value-of select="digestUtils:md5Hex(normalize-space(.))"/>",
+            "idx": <xsl:value-of select="position()"/>,
             "protocol":"<xsl:value-of select="gn-fn-index:json-escape((gmd:protocol/*/text())[1])"/>",
             "mimeType":"<xsl:value-of select="if (*/gmx:MimeFileType)
                                               then gn-fn-index:json-escape(*/gmx:MimeFileType/@type)
@@ -1061,17 +1114,6 @@
           <xsl:element name="{concat('agg_associated_', $associationType)}"><xsl:value-of select="$code"/></xsl:element>
         </xsl:if>
       </xsl:for-each>
-
-
-      <xsl:variable name="indexingTimeRecordLink"
-                    select="util:getSettingValue('system/index/indexingTimeRecordLink')" />
-      <xsl:if test="$indexingTimeRecordLink = 'true'">
-        <xsl:variable name="recordsLinks"
-                      select="util:getTargetAssociatedResourcesAsNode(
-                                        $identifier,
-                                        gmd:parentIdentifier/*[text() != '']/text())"/>
-        <xsl:copy-of select="$recordsLinks//recordLink"/>
-      </xsl:if>
 
       <!-- Index more fields in this element -->
       <xsl:apply-templates mode="index-extra-fields" select="."/>

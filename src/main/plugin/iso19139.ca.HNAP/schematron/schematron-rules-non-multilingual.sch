@@ -47,6 +47,24 @@
     <xsl:value-of select="$v" />
   </xsl:function>
 
+   <xsl:function name="geonet:resourceContentTypesList" as="xs:string">
+      <xsl:param name="thesaurusDir" as="xs:string"/>
+      <xsl:param name="lang" as="xs:string"/>
+
+      <xsl:variable name="contentTypes-list"
+                    select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))"/>
+
+      <xsl:variable name="v">
+        <xsl:for-each select="$contentTypes-list//rdf:Description">
+          <xsl:sort select="lower-case(@rdf:about)" order="ascending"/>
+          <xsl:value-of select="ns2:prefLabel[@xml:lang=$lang]"/>
+          <xsl:if test="position() != last()">, </xsl:if>
+        </xsl:for-each>
+      </xsl:variable>
+
+      <xsl:value-of select="$v"/>
+    </xsl:function>
+
   <xsl:function name="geonet:securityLevelList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
 
@@ -195,6 +213,7 @@
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
@@ -215,7 +234,8 @@
 
       <sch:assert test="not($isErrorContactGovMain)">$loc/strings/*[name() = concat('ContactGov', $mainLanguageText)]</sch:assert>
 
-      <sch:assert test="not($isErrorContactGovMainAllowed)">$loc/strings/*[name() = concat('ContactGovAllowed', $mainLanguageText)]</sch:assert>
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('ContactGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
+      <sch:assert test="not($isErrorContactGovMainAllowed)">$locMsgMainLang</sch:assert>
     </sch:rule>
 
 
@@ -302,6 +322,7 @@
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
@@ -314,9 +335,10 @@
       <sch:assert test="($missing) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]))
               )">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $mainLanguageText)]</sch:assert>
 
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
       <sch:assert test="($missing) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $mainLanguageText)]</sch:assert>
+                ">$locMsgMainLang</sch:assert>
     </sch:rule>
 
     <!-- Cited Responsible Party - Electronic Mail -->
@@ -500,12 +522,10 @@
       <sch:let name="language_present" value="geonet:values-in($language,
               ('eng', 'fra', 'spa', 'zxx'))"/>
 
-      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionContentType, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="resourceContentTypesListMain" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
+      <sch:let name="locMsgCt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $mainLanguageText)], $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:assert test="($contentType = 'Web Service' or $contentType = 'Service Web' or
-              $contentType = 'Dataset' or $contentType = 'Données' or
-              $contentType = 'API' or $contentType = 'Application' or
-              $contentType='Supporting Document' or $contentType = 'Document de soutien')">$locMsgCt</sch:assert>
+      <sch:assert test="$contentType = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">$locMsgCt</sch:assert>
 
 
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
@@ -537,6 +557,7 @@
 
       <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
       <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
+      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
 
       <sch:let name="organisationName" value="gco:CharacterString" />
       <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
@@ -549,9 +570,10 @@
       <sch:assert test="($missing) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]))
               )">$loc/strings/*[name() = concat('DistributorGov', $mainLanguageText)]</sch:assert>
 
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('DistributorGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
       <sch:assert test="($missing) or
                 $isGovernmentNameAllowed
-                ">$loc/strings/*[name() = concat('DistributorGovAllowed', $mainLanguageText)]</sch:assert>
+                ">$locMsgMainLang</sch:assert>
     </sch:rule>
 
     <!-- Distributor contact - Country -->

@@ -35,14 +35,13 @@
                 exclude-result-prefixes="#all"
                 version="2.0">
 
-  <xsl:import href="../../iso19139/layout/tpl-csv.xsl"/>
   <xsl:import href="utility-fn.xsl"/>
 
   <xsl:template mode="csv" match="gmd:MD_Metadata|*[@gco:isoType='gmd:MD_Metadata']"
-                priority="2">
+                priority="10">
     <xsl:variable name="langId" select="gn-fn-iso19139:getLangIdHNAP(., $lang)"/>
     <xsl:variable name="info" select="gn:info"/>
-    <xsl:variable name="codelists" select="/root/gui/schemas/iso19139.ca.HNAP/codelists"/>
+    <xsl:variable name="codelists" select="document('../loc/eng/codelists.xml')/codelists"/>
 
     <metadata>
       <title>
@@ -167,13 +166,31 @@
 
       <xsl:for-each select="gmd:identificationInfo/*/*/gmd:MD_SecurityConstraints/*">
         <SecurityConstraints>
-          <xsl:copy-of select="."/>
+          <xsl:choose>
+            <xsl:when test="*/@codeListValue">
+              <xsl:variable name="classificationCode" select="*/@codeListValue"/>
+              <xsl:variable name="classificationCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_ClassificationCode']/entry[code/text() = $classificationCode]/value/text(), ';')[1]"/>
+              <xsl:value-of select="$classificationCodeReadable"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="*/text()"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </SecurityConstraints>
       </xsl:for-each>
 
       <xsl:for-each select="gmd:identificationInfo/*/*/gmd:MD_LegalConstraints/*">
         <LegalConstraints>
-          <xsl:value-of select="*/text()|*/@codeListValue"/>
+          <xsl:choose>
+            <xsl:when test="*/@codeListValue">
+              <xsl:variable name="restrictionCode" select="*/@codeListValue"/>
+              <xsl:variable name="restrictionCodeReadable" select="tokenize($codelists/codelist[@name = 'gmd:MD_RestrictionCode']/entry[code/text() = $restrictionCode]/value/text(), ';')[1]"/>
+              <xsl:value-of select="$restrictionCodeReadable"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="*/text()"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </LegalConstraints>
       </xsl:for-each>
 

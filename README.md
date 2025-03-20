@@ -2,7 +2,7 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the [*North American Profile of ISO 19115:2003 - Geographic information - Metadata*](https://schemas.metadata.geo.ca/) used nationally.
 
-For details on this release see [4.2.10 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/25?closed=1) release notes for details.
+For details on this release see [4.4.7 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/29?closed=1) release notes for details.
 
 ## User Manual
 
@@ -18,7 +18,7 @@ The [project issue tracker](https://github.com/metadata101/iso19139.ca.HNAP/issu
 
 ### GeoNetwork version to use with this plugin
 
-Use GeoNetwork ``4.2.x``, not tested with prior versions!
+Use GeoNetwork ``4.4.x``, not tested with prior versions!
 
 The schema plugin editor makes use of a number of controls for editing structured text fields requiring newer releases of core-geonetwork.
 
@@ -52,10 +52,10 @@ There is some custom initialization code run when GeoNetwork starts up:
 
 The best approach is to add the plugin as a submodule:
 
-1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/4.2.x/add-schema.sh) for automatic deployment:
+1. Use [add-schema.sh](https://github.com/geonetwork/core-geonetwork/blob/4.4.x/add-schema.sh) for automatic deployment:
 
    ```
-   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 4.2.x
+   ./add-schema.sh iso19139.ca.HNAP https://github.com/metadata101/iso19139.ca.HNAP 4.4.x
    ```
 
 2. Build the application:
@@ -194,7 +194,7 @@ Translation workflow:
 1. Update the ``pom.xml`` version information for release:
 
    ```
-   find . -name 'pom.xml' -exec sed -i '' 's/4.2.6-SNAPSHOT/4.2.6/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/4.4.7-SNAPSHOT/4.4.7/g' {} \;
    ```
    
 2. Build everything, including docs, deploying to osgeo repository:
@@ -207,37 +207,37 @@ Translation workflow:
    
    ```
    git add .
-   git commit -am "Version 4.2.6"
-   git tag -a 4.2.6 -m "Release 4.2.6"
-   git push origin 4.2.6
+   git commit -am "Version 4.4.7"
+   git tag -a 4.4.7 -m "Release 4.4.7"
+   git push origin 4.4.7
    ```
 
 4. Navigate to release page: https://github.com/metadata101/iso19139.ca.HNAP/releases
 
    Click ``Edit tag`` button:
    
-   * Title: ``iso19139.ca.HNAP 4.2.6 Release``
+   * Title: ``iso19139.ca.HNAP 4.4.7 Release``
    
-   * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/4.2.x/README.md)
+   * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/4.4.x/README.md)
 
    * Upload artifacts from ``target`` to the new github page.
 
 5. Restore the `pom.xml` version information.
 
    ```
-   find . -name 'pom.xml' -exec sed -i '' 's/4.2.6/4.2.7-SNAPSHOT/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/4.4.7/4.4.8-SNAPSHOT/g' {} \;
    ```
 
 6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
    
-   * Title: ``4.2.7``
+   * Title: ``4.4.8``
    * Date: leave empty
-   * Content: ``Released in conjunction with core-geonetwork 4.2.7.``
+   * Content: ``Released in conjunction with core-geonetwork 4.4.8.``
    
 7. Update ``README.md`` to link to new milestone:
     
    ```
-   For details on this release see [4.2.7 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/22?closed=1)
+   For details on this release see [4.4.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/22?closed=1)
    release notes for details.
    ```
    
@@ -245,6 +245,6 @@ Translation workflow:
    
    ```
    git add .
-   git commit -m "Start 4.2.7 development"
+   git commit -m "Start 4.4.8 development"
    git push
    ```
