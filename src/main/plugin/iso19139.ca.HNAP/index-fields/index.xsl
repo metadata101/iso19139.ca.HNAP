@@ -335,11 +335,16 @@
 
             <xsl:variable name="zuluDate"
                           select="date-util:convertToISOZuluDateTime($date)"/>
-            <xsl:if test="$zuluDate != ''">
-              <resourceDate type="object">
-                {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$zuluDate"/>"}
-              </resourceDate>
-            </xsl:if>
+            <resourceDate type="object">
+              <xsl:choose>
+                <xsl:when test="$zuluDate != '' and gn-fn-index:is-dateTime($date)">
+                  {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$zuluDate"/>"}
+                </xsl:when>
+                <xsl:otherwise>
+                  {"type": "<xsl:value-of select="$dateType"/>", "date": "<xsl:value-of select="$date"/>"}
+                </xsl:otherwise>
+              </xsl:choose>
+            </resourceDate>
           </xsl:for-each>
 
           <xsl:if test="$useDateAsTemporalExtent">
