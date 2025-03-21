@@ -31,6 +31,7 @@
   <OpenLicenseEnglish>Une licence en anglais prise en charge est nécessaire. Valeurs acceptées sont : </OpenLicenseEnglish>
   <OpenLicenseFrench>Une licence en français prise en charge est nécessaire. Valeurs acceptées sont : </OpenLicenseFrench>
   <SupplementalInfo>Informations supplémentaires devrait être vide ou rempli en anglais et en français</SupplementalInfo>
+  <KeywordMissing>Un des mots-clés est manquant.</KeywordMissing>
   <Keyword>Mot Clé est requise dans les deux langues</Keyword>
 
   <OtherConstraintsNote2>Autres contraintes devrait être vide ou rempli en anglais et en français</OtherConstraintsNote2>
