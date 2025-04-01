@@ -234,7 +234,8 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Change http to https for licence URLs -->
+  <!-- FGP fix issue where the "Open Government Licence - Canada" use limitation uses http instead of https.
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/304 -->
   <xsl:variable name="englishLicenseToTransform" select="'Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)'" />
   <xsl:variable name="frenchLicenseToTransform" select="'Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)'" />
   <xsl:template match="gmd:useLimitation/gco:CharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform] | gmd:useLimitation/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform]">
@@ -244,27 +245,18 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Two-character language codes for the main and alternate languages -->
-  <xsl:variable name="mainLanguageTwoChar">
-    <xsl:choose>
-      <xsl:when test="$mainLanguage = 'eng'">en</xsl:when>
-      <xsl:when test="$mainLanguage = 'fra'">fr</xsl:when>
-    </xsl:choose>
-  </xsl:variable>
-  <xsl:variable name="altLanguageTwoChar">
-    <xsl:choose>
-      <xsl:when test="$mainLanguage = 'eng'">fr</xsl:when>
-      <xsl:when test="$mainLanguage = 'fra'">en</xsl:when>
-    </xsl:choose>
-  </xsl:variable>
-
-  <xsl:variable name="resourceFormatsThesaurusList" select="document(concat('file:///', replace(java:getThesaurusDir(), '\\', '/'), '/external/thesauri/theme/GC_Resource_Formats.rdf'))"/>
-
+  <!-- FGP fix issue where resourceFormat uses the wrong value.
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/314
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/319 -->
   <xsl:template match="
       gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gco:CharacterString |
       gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString
     ">
 
+    <!-- Get the resource format thesaurus -->
+    <xsl:variable name="resourceFormatsThesaurusList" select="document(concat('file:///', replace(java:getThesaurusDir(), '\\', '/'), '/external/thesauri/theme/GC_Resource_Formats.rdf'))"/>
+
+    <!-- Get the content type, format and language from the resource description -->
     <xsl:variable name="contentType" select="subsequence(tokenize(., ';'), 1, 1)" />
     <xsl:variable name="resourceFormatCode"      select="subsequence(tokenize(., ';'), 2, 1)" />
     <xsl:variable name="language"    select="subsequence(tokenize(., ';'), 3, 1)" />
@@ -274,10 +266,10 @@
     <xsl:variable name="langToUse">
       <xsl:choose>
         <xsl:when test="self::gco:CharacterString">
-          <xsl:value-of select="$mainLanguageTwoChar" />
+          <xsl:value-of select="substring($mainLanguage, 1, 2)" />
         </xsl:when>
         <xsl:otherwise>
-          <xsl:value-of select="$altLanguageTwoChar" />
+          <xsl:value-of select="substring($altLanguage, 1, 2)" />
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
