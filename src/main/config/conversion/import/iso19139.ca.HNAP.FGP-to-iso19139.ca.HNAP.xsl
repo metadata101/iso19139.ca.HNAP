@@ -231,6 +231,16 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Change http to https for licence URLs -->
+  <xsl:variable name="englishLicenseToTransform" select="'Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)'" />
+  <xsl:variable name="frenchLicenseToTransform" select="'Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)'" />
+  <xsl:template match="gmd:useLimitation/gco:CharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform] | gmd:useLimitation/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform]">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:value-of select="replace(., 'http://', 'https://')"/>
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="node()|@*">
     <xsl:copy>
       <xsl:apply-templates select="node()|@*"/>
