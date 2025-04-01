@@ -101,7 +101,7 @@
                         gmd:languageCode/gmd:LanguageCode/
                           @codeListValue[normalize-space(.) != '']"/>
     <xsl:variable name="allLanguages">
-      <lang id="default" value="{$mainLanguage}"/>
+      <lang id="default" value="{translate($mainLanguage, 'fra', 'fre')}"/>
       <xsl:for-each select="$otherLanguages">
         <lang id="{../../../@id}" value="{translate(., 'fra', 'fre')}"/>
       </xsl:for-each>
