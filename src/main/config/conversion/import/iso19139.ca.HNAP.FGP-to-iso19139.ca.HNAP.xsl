@@ -3,7 +3,10 @@
                 xmlns:gmd="http://www.isotc211.org/2005/gmd"
                 xmlns:gco="http://www.isotc211.org/2005/gco"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+                xmlns:java="java:org.fao.geonet.util.XslUtil">
 
   <!-- There are some known discrepancies between FGP and HNAP due to misinterpretations of the standards
        This converter is to be used to fix these discrepancies until a resolution is made.
@@ -66,7 +69,7 @@
               <gmd:LocalisedCharacterString>
                 <xsl:attribute name="locale">
                   <xsl:value-of select="concat('#', $altLanguageId)" />
-                </xsl:attribute>						
+                </xsl:attribute>
                 <xsl:choose>
                   <xsl:when test="$mainLanguage='eng'">
                     <xsl:text>Canada (le)</xsl:text>
@@ -106,7 +109,7 @@
     <xsl:copy>
         <xsl:value-of select="../gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString/text()"/>
     </xsl:copy>
-  </xsl:template> 
+  </xsl:template>
 
   <!-- FGP fix issue in gmd:administrativeArea where gmd:PT_FreeText has incorrect provincial name of Québec in English.  -->
   <xsl:template
@@ -114,7 +117,7 @@
     priority="10">
         <xsl:text>Quebec</xsl:text>
   </xsl:template>
-  
+
   <!--Add gmd:administrativeArea LocalisedCharacterString if not exists. Special case for Québec in French and Quebec in English -->
   <xsl:template match="gmd:administrativeArea[gco:CharacterString/text()  and not(gmd:PT_FreeText)]"
     priority="10">
@@ -228,6 +231,66 @@
             </xsl:choose>
           </gmd:textGroup>
         </gmd:PT_FreeText>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- FGP fix issue where the "Open Government Licence - Canada" use limitation uses http instead of https.
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/304 -->
+  <xsl:variable name="englishLicenseToTransform" select="'Open Government Licence - Canada (http://open.canada.ca/en/open-government-licence-canada)'" />
+  <xsl:variable name="frenchLicenseToTransform" select="'Licence du gouvernement ouvert - Canada (http://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada)'" />
+  <xsl:template match="gmd:useLimitation/gco:CharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform] | gmd:useLimitation/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[text()=$englishLicenseToTransform or text()=$frenchLicenseToTransform]">
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:value-of select="replace(., 'http://', 'https://')"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- FGP fix issue where resourceFormat uses the wrong value.
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/314
+    https://github.com/metadata101/iso19139.ca.HNAP/issues/319 -->
+  <xsl:template match="
+      gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gco:CharacterString |
+      gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions/gmd:onLine/gmd:CI_OnlineResource/gmd:description/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString
+    ">
+
+    <!-- Get the resource format thesaurus -->
+    <xsl:variable name="resourceFormatsThesaurusList" select="document(concat('file:///', replace(java:getThesaurusDir(), '\\', '/'), '/external/thesauri/theme/GC_Resource_Formats.rdf'))"/>
+
+    <!-- Get the content type, format and language from the resource description -->
+    <xsl:variable name="contentType" select="subsequence(tokenize(., ';'), 1, 1)" />
+    <xsl:variable name="resourceFormatCode"      select="subsequence(tokenize(., ';'), 2, 1)" />
+    <xsl:variable name="language"    select="subsequence(tokenize(., ';'), 3, 1)" />
+
+    <!-- Decide which language variable to use (main vs. alt)
+         based on whether the context node is CharacterString or LocalisedCharacterString -->
+    <xsl:variable name="langToUse">
+      <xsl:choose>
+        <xsl:when test="self::gco:CharacterString">
+          <xsl:value-of select="substring($mainLanguage, 1, 2)" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="substring($altLanguage, 1, 2)" />
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- Lookup the RDF code -->
+    <xsl:variable name="format"
+                  select="$resourceFormatsThesaurusList
+                      //rdf:Description[@rdf:about = concat('http://geonetwork-opensource.org/EC/resourceformat#', $resourceFormatCode)]/ns2:prefLabel[@xml:lang=$langToUse]"/>
+
+    <!-- Copy the element (so we preserve its name), copy its attributes,
+             then either replace the content or leave it as-is. -->
+    <xsl:copy>
+      <xsl:apply-templates select="@*"/>
+      <xsl:choose>
+        <xsl:when test="string-length($format) > 0">
+          <xsl:value-of select="concat($contentType, ';', $format, ';', $language)"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:copy>
   </xsl:template>
 
