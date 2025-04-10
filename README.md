@@ -2,7 +2,7 @@
 
 The Canadian GeoNetwork community is pleased share the *ISO Harmonized North American Profile (HNAP)* schema plugin. This is a bilingual extension of the [*North American Profile of ISO 19115:2003 - Geographic information - Metadata*](https://schemas.metadata.geo.ca/) used nationally.
 
-For details on this release see [4.4.7 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/29?closed=1) release notes for details.
+For details on this release see [4.4.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/30?closed=1) release notes for details.
 
 ## User Manual
 
@@ -194,7 +194,7 @@ Translation workflow:
 1. Update the ``pom.xml`` version information for release:
 
    ```
-   find . -name 'pom.xml' -exec sed -i '' 's/4.4.7-SNAPSHOT/4.4.7/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/4.4.8-SNAPSHOT/4.4.8/g' {} \;
    ```
    
 2. Build everything, including docs, deploying to osgeo repository:
@@ -207,16 +207,16 @@ Translation workflow:
    
    ```
    git add .
-   git commit -am "Version 4.4.7"
-   git tag -a 4.4.7 -m "Release 4.4.7"
-   git push origin 4.4.7
+   git commit -am "Version 4.4.8"
+   git tag -a 4.4.8 -m "Release 4.4.8"
+   git push origin 4.4.8
    ```
 
 4. Navigate to release page: https://github.com/metadata101/iso19139.ca.HNAP/releases
 
    Click ``Edit tag`` button:
    
-   * Title: ``iso19139.ca.HNAP 4.4.7 Release``
+   * Title: ``iso19139.ca.HNAP 4.4.8 Release``
    
    * Content: Copy from [README.md](https://raw.githubusercontent.com/metadata101/iso19139.ca.HNAP/4.4.x/README.md)
 
@@ -225,19 +225,19 @@ Translation workflow:
 5. Restore the `pom.xml` version information.
 
    ```
-   find . -name 'pom.xml' -exec sed -i '' 's/4.4.7/4.4.8-SNAPSHOT/g' {} \;
+   find . -name 'pom.xml' -exec sed -i '' 's/4.4.8/4.4.9-SNAPSHOT/g' {} \;
    ```
 
 6. Create the next milestone: https://github.com/metadata101/iso19139.ca.HNAP/milestones
    
-   * Title: ``4.4.8``
+   * Title: ``4.4.9``
    * Date: leave empty
-   * Content: ``Released in conjunction with core-geonetwork 4.4.8.``
+   * Content: ``Released in conjunction with core-geonetwork 4.4.9.``
    
 7. Update ``README.md`` to link to new milestone:
     
    ```
-   For details on this release see [4.4.8 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/22?closed=1)
+   For details on this release see [4.4.9 Milestone](https://github.com/metadata101/iso19139.ca.HNAP/milestone/31?closed=1)
    release notes for details.
    ```
    
@@ -245,6 +245,6 @@ Translation workflow:
    
    ```
    git add .
-   git commit -m "Start 4.4.8 development"
+   git commit -m "Start 4.4.9 development"
    git push
    ```
