@@ -79,10 +79,12 @@
     <for name="gmd:electronicMailAddress" use="email"/>
 
     <for name="gmd:language"
+         xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language"
          use="data-gn-keyword-picker">
       <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
     </for>
     <for name="gmd:languageCode"
+         xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:language/gmd:languageCode"
          use="data-gn-keyword-picker">
       <directiveAttributes data-thesaurus-key="external.theme.ISO_Languages_Countries" data-focus-to-input="false" data-number-of-suggestions="250" data-show-hints-on-focus="true"/>
     </for>
