@@ -363,6 +363,13 @@
           <xsl:for-each select="gmd:edition/*">
             <xsl:copy-of select="gn-fn-index:add-field('resourceEdition', .)"/>
           </xsl:for-each>
+
+          <!-- Indexing resource contact -->
+          <xsl:apply-templates mode="index-contact-hnap"
+                               select="gmd:citedResponsibleParty">
+            <xsl:with-param name="fieldSuffix" select="'ForResource'"/>
+            <xsl:with-param name="languages" select="$allLanguages"/>
+          </xsl:apply-templates>
         </xsl:for-each>
 
         <xsl:copy-of select="gn-fn-index:add-multilingual-field('resourceAbstract', gmd:abstract, $allLanguages)"/>
@@ -371,13 +378,6 @@
           <xsl:copy-of select="gn-fn-index:add-codelist-field(
                                   'cl_resourceCharacterSet', ., $allLanguages)"/>
         </xsl:for-each>
-
-        <!-- Indexing resource contact -->
-        <xsl:apply-templates mode="index-contact-hnap"
-                             select="gmd:pointOfContact">
-          <xsl:with-param name="fieldSuffix" select="'ForResource'"/>
-          <xsl:with-param name="languages" select="$allLanguages"/>
-        </xsl:apply-templates>
 
         <xsl:copy-of select="gn-fn-index:add-multilingual-field('resourceCredit', gmd:credit, $allLanguages)"/>
         <xsl:copy-of select="gn-fn-index:add-multilingual-field('supplementalInformation', gmd:supplementalInformation, $allLanguages)"/>
