@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <fields>
-<!-- override all the schema substitutes for gco:CharacterString 
+<!-- override all the schema substitutes for gco:CharacterString
 	- we don't want any
 	<field name="gco:CharacterString">
-	</field> --> 
+	</field> -->
 
 <!-- offer just the service and data identification -->
 	<field name="gmd:AbstractMD_Identification">
@@ -23,4 +23,8 @@
 <!-- just CoordinateSystemAxis (exclude ML_CoordinateSystemAxis) -->
 	<field name="gml:CoordinateSystemAxis">
 	</field>
+
+  <!-- just MD_ScopeCode (exclude MX_ScopeCode) -->
+  <field name="gmd:MD_ScopeCode">
+  </field>
 </fields>
