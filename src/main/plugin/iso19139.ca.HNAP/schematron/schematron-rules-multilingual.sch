@@ -884,11 +884,11 @@
 
       <sch:let name="missingResourceNameOtherLang" value="not(string(gmd:CI_OnlineResource/gmd:name/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
 
-      <sch:let name="locMsgResourceName" value="geonet:prependLocaleMessage($loc/strings/ResourceName, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="locMsgResourceNameMainLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceName', $mainLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgResourceNameAltLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceName', $altLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:assert
-        test="not($missingResourceName) and not($missingResourceNameOtherLang)"
-      >$locMsgResourceName</sch:assert>
+      <sch:assert test="not($missingResourceName)">$locMsgResourceNameMainLang</sch:assert>
+      <sch:assert test="not($missingResourceNameOtherLang)">$locMsgResourceNameAltLang</sch:assert>
 
       <!-- ResourceDescription -->
       <sch:let name="smallcase" value="'abcdefghijklmnopqrstuvwxyz'" />
@@ -911,24 +911,46 @@
 
       <sch:let name="resourceContentTypesListMain" value="geonet:resourceContentTypesList($thesaurusDir,$mainLanguage2char)"/>
       <sch:let name="resourceContentTypesListAlt" value="geonet:resourceContentTypesList($thesaurusDir,$altLanguage2char)"/>
-      <sch:let name="locMsgCtMain" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $mainLanguageText)], $resourceContentTypesListMain),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
-      <sch:let name="locMsgCtAlt" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentType', $altLanguageText)], $resourceContentTypesListAlt),  concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="contentTypeMissing" value="normalize-space($contentType) = ''"/>
+      <sch:let name="contentTypeTranslatedMissing" value="normalize-space($contentTypeTranslated) = ''"/>
 
-      <sch:assert test="$contentType = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">$locMsgCtMain</sch:assert>
-      <sch:assert test="$contentTypeTranslated = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]">$locMsgCtAlt</sch:assert>
+      <sch:let name="locMsgContentTypeMissingMainLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentTypeMissing', $mainLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgContentTypeMissingAltLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentTypeMissing', $altLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgContentTypeInvalidMainLang" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentTypeInvalid', $mainLanguageText)], $resourceContentTypesListMain), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgContentTypeInvalidAltLang" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionContentTypeInvalid', $altLanguageText)], $resourceContentTypesListAlt), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+
+      <sch:assert test="not($contentTypeMissing)">$locMsgContentTypeMissingMainLang</sch:assert>
+      <sch:assert test="not($contentTypeTranslatedMissing)">$locMsgContentTypeMissingAltLang</sch:assert>
+      <sch:assert test="$contentTypeMissing or $contentType = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]">$locMsgContentTypeInvalidMainLang</sch:assert>
+      <sch:assert test="$contentTypeTranslatedMissing or $contentTypeTranslated = document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Resource_ContentTypes.rdf'), '\\', '/')))//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]">$locMsgContentTypeInvalidAltLang</sch:assert>
 
       <sch:let name="formatTranslated" value="subsequence(tokenize($descriptionTranslated, ';'), 2, 1)" />
       <sch:let name="resourceFormatsList" value="geonet:resourceFormatsList($thesaurusDir)" />
-      <sch:let name="locMsg" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/ResourceDescriptionFormat, $resourceFormatsList), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:let name="formatMissing" value="normalize-space($format) = ''"/>
+      <sch:let name="formatTranslatedMissing" value="normalize-space($formatTranslated) = ''"/>
 
-      <sch:assert test="$formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($mainLanguage2char)]/text() = $format and
-                          $formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($altLanguage2char)]/text() = $formatTranslated">$locMsg</sch:assert>
+      <sch:let name="locMsgFormatMissingMainLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionFormatMissing', $mainLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgFormatMissingAltLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionFormatMissing', $altLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgFormatInvalidMainLang" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionFormatInvalid', $mainLanguageText)], $resourceFormatsList), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgFormatInvalidAltLang" value="geonet:prependLocaleMessage(geonet:appendLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionFormatInvalid', $altLanguageText)], $resourceFormatsList), concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
 
-      <sch:let name="locMsgLang" value="geonet:prependLocaleMessage($loc/strings/ResourceDescriptionLanguage, concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))" />
+      <sch:assert test="not($formatMissing)">$locMsgFormatMissingMainLang</sch:assert>
+      <sch:assert test="not($formatTranslatedMissing)">$locMsgFormatMissingAltLang</sch:assert>
+      <sch:assert test="$formatMissing or $formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($mainLanguage2char)]/text() = $format">$locMsgFormatInvalidMainLang</sch:assert>
+      <sch:assert test="$formatTranslatedMissing or $formats-list//rdf:Description/ns2:prefLabel[@xml:lang = normalize-space($altLanguage2char)]/text() = $formatTranslated">$locMsgFormatInvalidAltLang</sch:assert>
 
-      <sch:assert test="normalize-space($language) != '' and normalize-space($languageTranslated) != ''">$locMsgLang</sch:assert>
+      <sch:let name="languageMissing" value="normalize-space($language) = ''"/>
+      <sch:let name="languageTranslatedMissing" value="normalize-space($languageTranslated) = ''"/>
 
-      <sch:assert test="$language_present and $languageTranslated_present">$locMsgLang</sch:assert>
+      <sch:let name="locMsgLanguageMissingMainLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionLanguageMissing', $mainLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgLanguageMissingAltLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionLanguageMissing', $altLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgLanguageInvalidMainLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionLanguageInvalid', $mainLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+      <sch:let name="locMsgLanguageInvalidAltLang" value="geonet:prependLocaleMessage($loc/strings/*[name() = concat('ResourceDescriptionLanguageInvalid', $altLanguageText)], concat(gmd:CI_OnlineResource/gmd:linkage/gmd:URL, ' : '))"/>
+
+      <sch:assert test="not($languageMissing)">$locMsgLanguageMissingMainLang</sch:assert>
+      <sch:assert test="not($languageTranslatedMissing)">$locMsgLanguageMissingAltLang</sch:assert>
+      <sch:assert test="$languageMissing or $language_present">$locMsgLanguageInvalidMainLang</sch:assert>
+      <sch:assert test="$languageMissing or $languageTranslated_present">$locMsgLanguageInvalidAltLang</sch:assert>
 
     </sch:rule>
 
@@ -1097,3 +1119,4 @@
   </sch:pattern>
 
 </sch:schema>
+
