@@ -45,7 +45,7 @@
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
   <SecurityNoteBothLangRequired>Une valeur est requise pour la note d'utilisateur de sécurité dans les deux langues</SecurityNoteBothLangRequired>
   <SecurityNoteMismatchedBothLang>Valeur non concordante pour la note d'utilisateur de sécurité dans les deux langues</SecurityNoteMismatchedBothLang>
-  <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont :</SecurityClassificationUserNote>
+  <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont : </SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Explications sur les restrictions devrait être vide pour la restriction de manipulation</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>Si vous indiquez «Autres restrictions» dans les champs «Contraintes d'accès» ou «Utiliser les contraintes», les autres contraintes d'accès ou d'utilisation de la ressource doivent être expliquées ici.</OtherConstraintsNote>
   <UseLimitation>Limitation d'utilisation est obligatoire dans les deux langues</UseLimitation>
