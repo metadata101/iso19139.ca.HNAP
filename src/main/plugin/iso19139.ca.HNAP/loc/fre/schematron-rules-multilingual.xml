@@ -36,16 +36,25 @@
 
   <OtherConstraintsNote2>Autres contraintes devrait être vide ou rempli en anglais et en français</OtherConstraintsNote2>
 
-  <ResourceName>Le nom des ressources en ligne est obligatoire dans les deux langues</ResourceName>
+  <ResourceNameEnglish>Le nom des ressources en ligne en anglais est obligatoire</ResourceNameEnglish>
+  <ResourceNameFrench>Le nom des ressources en ligne en français est obligatoire</ResourceNameFrench>
   <ResourceDescription>La description des ressources en ligne n'est pas valide. Le format devrait être : TypeContenu;Format;Lang</ResourceDescription>
-  <ResourceDescriptionContentTypeEnglish>Le type de contenu dans la description de la ressource en ligne en anglais n'est pas valide. Les valeurs valides en anglais sont : </ResourceDescriptionContentTypeEnglish>
-  <ResourceDescriptionContentTypeFrench>Le type de contenu dans la description de la ressource en ligne en français n'est pas valide. Les valeurs valides en français sont : </ResourceDescriptionContentTypeFrench>
-  <ResourceDescriptionFormat>Le format dans la description de la ressource en ligne n’est pas valide. Les valeurs valides sont : </ResourceDescriptionFormat>
-  <ResourceDescriptionLanguage>La langue dans la description de la ressource en ligne n’est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguage>
+  <ResourceDescriptionContentTypeMissingEnglish>Le type de contenu dans la description de la ressource en ligne en anglais est obligatoire</ResourceDescriptionContentTypeMissingEnglish>
+  <ResourceDescriptionContentTypeMissingFrench>Le type de contenu dans la description de la ressource en ligne en français est obligatoire</ResourceDescriptionContentTypeMissingFrench>
+  <ResourceDescriptionContentTypeInvalidEnglish>Le type de contenu dans la description de la ressource en ligne en anglais n'est pas valide. Les valeurs valides en anglais sont : </ResourceDescriptionContentTypeInvalidEnglish>
+  <ResourceDescriptionContentTypeInvalidFrench>Le type de contenu dans la description de la ressource en ligne en français n'est pas valide. Les valeurs valides en français sont : </ResourceDescriptionContentTypeInvalidFrench>
+  <ResourceDescriptionFormatMissingEnglish>Le format dans la description de la ressource en ligne en anglais est obligatoire</ResourceDescriptionFormatMissingEnglish>
+  <ResourceDescriptionFormatMissingFrench>Le format dans la description de la ressource en ligne en français est obligatoire</ResourceDescriptionFormatMissingFrench>
+  <ResourceDescriptionFormatInvalidEnglish>Le format dans la description de la ressource en ligne en anglais n'est pas valide. Les valeurs valides en anglais sont : </ResourceDescriptionFormatInvalidEnglish>
+  <ResourceDescriptionFormatInvalidFrench>Le format dans la description de la ressource en ligne en français n'est pas valide. Les valeurs valides en français sont : </ResourceDescriptionFormatInvalidFrench>
+  <ResourceDescriptionLanguageMissingEnglish>La langue dans la description de la ressource en ligne en anglais est obligatoire</ResourceDescriptionLanguageMissingEnglish>
+  <ResourceDescriptionLanguageMissingFrench>La langue dans la description de la ressource en ligne en français est obligatoire</ResourceDescriptionLanguageMissingFrench>
+  <ResourceDescriptionLanguageInvalidEnglish>La langue dans la description de la ressource en ligne en anglais n'est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguageInvalidEnglish>
+  <ResourceDescriptionLanguageInvalidFrench>La langue dans la description de la ressource en ligne en français n'est pas valide. Devrait être des valeurs de code ISO-LANG-3 séparées par des virgules</ResourceDescriptionLanguageInvalidFrench>
   <SecurityLevel>Explications sur les restrictions n’est pas valide. Les valeurs valides sont : </SecurityLevel>
   <SecurityNoteBothLangRequired>Une valeur est requise pour la note d'utilisateur de sécurité dans les deux langues</SecurityNoteBothLangRequired>
   <SecurityNoteMismatchedBothLang>Valeur non concordante pour la note d'utilisateur de sécurité dans les deux langues</SecurityNoteMismatchedBothLang>
-  <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont :</SecurityClassificationUserNote>
+  <SecurityClassificationUserNote>Explications sur les restrictions n’est pas valide pour la restriction de manipulation. Les valeurs valides sont : </SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Explications sur les restrictions devrait être vide pour la restriction de manipulation</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>Si vous indiquez «Autres restrictions» dans les champs «Contraintes d'accès» ou «Utiliser les contraintes», les autres contraintes d'accès ou d'utilisation de la ressource doivent être expliquées ici.</OtherConstraintsNote>
   <UseLimitation>Limitation d'utilisation est obligatoire dans les deux langues</UseLimitation>
