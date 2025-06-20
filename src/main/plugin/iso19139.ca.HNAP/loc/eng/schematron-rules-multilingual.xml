@@ -36,16 +36,25 @@
 
   <OtherConstraintsNote2>Note (Other Constraints) is required in both languages</OtherConstraintsNote2>
 
-  <ResourceName>Online resource name is required in both language</ResourceName>
+  <ResourceNameEnglish>English online resource name is required</ResourceNameEnglish>
+  <ResourceNameFrench>French online resource name is required</ResourceNameFrench>
   <ResourceDescription>Online resource description is not valid. The format should be: ContentType;Format;Lang</ResourceDescription>
-  <ResourceDescriptionContentTypeEnglish>English online resource description content type is not valid. Valid English values are: </ResourceDescriptionContentTypeEnglish>
-  <ResourceDescriptionContentTypeFrench>French online resource description content type is not valid. Valid French values are: </ResourceDescriptionContentTypeFrench>
-  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
-  <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
-  <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>
+  <ResourceDescriptionContentTypeMissingEnglish>English online resource description content type is required</ResourceDescriptionContentTypeMissingEnglish>
+  <ResourceDescriptionContentTypeMissingFrench>French online resource description content type is required</ResourceDescriptionContentTypeMissingFrench>
+  <ResourceDescriptionContentTypeInvalidEnglish>English online resource description content type is not valid. Valid English values are: </ResourceDescriptionContentTypeInvalidEnglish>
+  <ResourceDescriptionContentTypeInvalidFrench>French online resource description content type is not valid. Valid French values are: </ResourceDescriptionContentTypeInvalidFrench>
+  <ResourceDescriptionFormatMissingEnglish>English online resource description format is required</ResourceDescriptionFormatMissingEnglish>
+  <ResourceDescriptionFormatMissingFrench>French online resource description format is required</ResourceDescriptionFormatMissingFrench>
+  <ResourceDescriptionFormatInvalidEnglish>English online resource description format is not valid. Valid English values are: </ResourceDescriptionFormatInvalidEnglish>
+  <ResourceDescriptionFormatInvalidFrench>French online resource description format is not valid. Valid French values are: </ResourceDescriptionFormatInvalidFrench>
+  <ResourceDescriptionLanguageMissingEnglish>English online resource description language is required</ResourceDescriptionLanguageMissingEnglish>
+  <ResourceDescriptionLanguageMissingFrench>French online resource description language is required</ResourceDescriptionLanguageMissingFrench>
+  <ResourceDescriptionLanguageInvalidEnglish>English online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguageInvalidEnglish>
+  <ResourceDescriptionLanguageInvalidFrench>French online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguageInvalidFrench>
+  <SecurityLevel>Security User Note is not valid. Valid values are: </SecurityLevel>
   <SecurityNoteBothLangRequired>Value is required for Security User Note in both languages</SecurityNoteBothLangRequired>
   <SecurityNoteMismatchedBothLang>Value mismatched for Security User Note in both languages</SecurityNoteMismatchedBothLang>
-  <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are:</SecurityClassificationUserNote>
+  <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are: </SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Security User Note should be empty for the classification code selected</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
   <UseLimitation>Value is required for Use Limitation in both languages</UseLimitation>

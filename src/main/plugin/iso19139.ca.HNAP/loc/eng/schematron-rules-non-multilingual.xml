@@ -31,8 +31,8 @@
   <OpenLicense>A supported license is required.</OpenLicense>
   <Keyword>Keyword is required</Keyword>
 
-  <SecurityLevel>Security User Note is not valid. Valid values are:</SecurityLevel>
-  <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are:</SecurityClassificationUserNote>
+  <SecurityLevel>Security User Note is not valid. Valid values are: </SecurityLevel>
+  <SecurityClassificationUserNote>Security User Note is not valid for the classification code selected. Valid values are: </SecurityClassificationUserNote>
   <SecurityClassificationUserNoteEmpty>Security User Note should be empty for the classification code selected</SecurityClassificationUserNoteEmpty>
   <OtherConstraintsNote>If you indicate 'Other Restrictions' in the 'Access Constraints' or 'Use Constraints' fields, the other constraints for accessing or using the resource should be explained here.</OtherConstraintsNote>
   <UseLimitation>Value is required for Use Limitation</UseLimitation>
@@ -55,7 +55,7 @@
 
   <ResourceDescriptionContentTypeEnglish>English online resource description content type is not valid. Valid English values are: </ResourceDescriptionContentTypeEnglish>
   <ResourceDescriptionContentTypeFrench>French online resource description content type is not valid. Valid French values are: </ResourceDescriptionContentTypeFrench>
-  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are:</ResourceDescriptionFormat>
+  <ResourceDescriptionFormat>Online resource description format is not valid. Valid values are: </ResourceDescriptionFormat>
   <ResourceDescriptionLanguage>Online resource description language is not valid. Should be a comma separated values of ISO-LANG-3 codes</ResourceDescriptionLanguage>
 
   <ElectronicMailFormat>Electronic mail address format is invalid (for example abc@abc.com)</ElectronicMailFormat>
