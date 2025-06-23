@@ -61,7 +61,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_BaseUnit" type="gmx:ML_BaseUnit_Type" substitutionGroup="gml:BaseUnit"/>
+	<xs:element name="ML_BaseUnit" type="gmx:ML_BaseUnit_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_BaseUnit_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -81,7 +81,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_DerivedUnit" type="gmx:ML_DerivedUnit_Type" substitutionGroup="gml:DerivedUnit"/>
+	<xs:element name="ML_DerivedUnit" type="gmx:ML_DerivedUnit_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_DerivedUnit_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -101,7 +101,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_ConventionalUnit" type="gmx:ML_ConventionalUnit_Type" substitutionGroup="gml:ConventionalUnit"/>
+	<xs:element name="ML_ConventionalUnit" type="gmx:ML_ConventionalUnit_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_ConventionalUnit_PropertyType">
 		<xs:sequence minOccurs="0">
@@ -121,7 +121,7 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<!-- ........................................................................ -->
-	<xs:element name="ML_UnitDefinition" type="gmx:ML_UnitDefinition_Type" substitutionGroup="gml:UnitDefinition"/>
+	<xs:element name="ML_UnitDefinition" type="gmx:ML_UnitDefinition_Type"/>
 	<!-- ........................................................................ -->
 	<xs:complexType name="ML_UnitDefinition_PropertyType">
 		<xs:sequence minOccurs="0">
