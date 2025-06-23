@@ -319,7 +319,8 @@
         <directive data-gn-validation-report="" data-initial-show-errors="true" data-initial-show-successes="true" data-initial-section-states="closed"/>
 
         <directive data-gn-overview-manager=""
-                   data-file-types=".png,.gif,.jpeg,.jpg" />
+                   data-file-types=".png,.gif,.jpeg,.jpg"
+                   data-editable-thumbnail="true" />
 
         <directive data-gn-distribution-resources-panel="gnCurrentEdit.metadata"
                    data-mode="viewConfig.distributionConfig.layout || ''"
@@ -611,7 +612,8 @@
         <directive data-gn-validation-report="" data-initial-show-errors="true" data-initial-show-successes="true" data-initial-section-states="closed"/>
 
         <directive data-gn-overview-manager=""
-                   data-file-types=".png,.gif,.jpeg,.jpg" />
+                   data-file-types=".png,.gif,.jpeg,.jpg"
+                   data-editable-thumbnail="true" />
 
         <directive data-gn-distribution-resources-panel="gnCurrentEdit.metadata"
                    data-mode="viewConfig.distributionConfig.layout || ''"
