@@ -405,8 +405,8 @@
                  or="citedResponsibleParty"/>
 
           <section name="gmd:MD_Keywords">
-            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords"
-                   in="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification"
+            <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/gmd:descriptiveKeywords"
+                   in="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification"
                    or="descriptiveKeywords"/>
           </section>
 
