@@ -317,6 +317,7 @@
     <view name="default" default="true" displayTooltips="true" displayTooltipsMode="icon">
       <sidePanel>
         <directive data-gn-validation-report="" data-initial-show-errors="true" data-initial-show-successes="true" data-initial-section-states="closed"/>
+        <directive data-gn-index-report="" data-initial-section-states="closed"/>
         <directive data-gn-onlinesrc-list=""/>
       </sidePanel>
 
@@ -592,6 +593,7 @@
     <view name="advanced">
       <sidePanel>
         <directive data-gn-validation-report="" data-initial-show-errors="true" data-initial-show-successes="true" data-initial-section-states="closed"/>
+        <directive data-gn-index-report="" data-initial-section-states="closed"/>
         <directive data-gn-onlinesrc-list=""/>
       </sidePanel>
 
