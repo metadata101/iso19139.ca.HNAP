@@ -2266,7 +2266,7 @@
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
 			<code>nonGeographicDataset</code>
-			<label>Jeux de données non géographiques</label>
+			<label>Jeu de données non géographique</label>
 			<description>Informations appliquées aux caractéristiques de jeux de données non géographiques</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
