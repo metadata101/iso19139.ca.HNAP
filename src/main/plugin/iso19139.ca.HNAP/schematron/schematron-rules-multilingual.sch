@@ -91,10 +91,12 @@
 
     <xsl:variable name="licenseSeparator" select="if ($lang = 'fre') then ' ou ' else ' or '"/>
 
-    <xsl:variable name="open-license-list" select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
+    <xsl:variable name="open-license-list"
+             select="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))
+                //rdf:Description[starts-with(@rdf:about, 'http://geonetwork-opensource.org/GC/GC_OpenLicense#')]"/>
 
     <xsl:variable name="v">
-      <xsl:for-each select="$open-license-list//rdf:Description/ns2:prefLabel[@xml:lang=$valueLang]">
+      <xsl:for-each select="$open-license-list/ns2:prefLabel[@xml:lang=$valueLang]">
         <xsl:sort select="lower-case(@rdf:about)" order="ascending" />
         <xsl:value-of select="."/>
         <xsl:if test="position() != last()"><xsl:value-of select="$licenseSeparator"/></xsl:if>
@@ -436,14 +438,14 @@
       <sch:let name="locMsgMain" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $mainLanguageText)], geonet:openLicenseList($thesaurusDir, $mainLanguage2char))"/>
       <sch:let name="locMsgAlt" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('OpenLicense', $altLanguageText)], geonet:openLicenseList($thesaurusDir, $altLanguage2char))"/>
 
-      <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
+      <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))//rdf:Description[starts-with(@rdf:about, 'http://geonetwork-opensource.org/GC/GC_OpenLicense#')]"/>
 
       <sch:let name="openLicenseMain" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-          (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char])
+          (normalize-space(gco:CharacterString) = $open-licenses/ns2:prefLabel[@xml:lang=$mainLanguage2char])
       ])" />
 
       <sch:let name="openLicenseAlt" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-          (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char])
+          (normalize-space(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]) = $open-licenses/ns2:prefLabel[@xml:lang=$altLanguage2char])
       ])" />
 
       <sch:assert
