@@ -31,6 +31,11 @@
   <sch:let name="mainLanguageText" value="if ($mainLanguage = 'fra') then 'French' else 'English'"/>
   <sch:let name="mainLanguage2char" value="if ($mainLanguage = 'fra') then 'fr' else 'en'"/>
 
+  <sch:let name="required-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))
+    //rdf:Description[
+      starts-with(@rdf:about, 'http://geonetwork-opensource.org/GC/GC_OpenLicense#')
+    ]"/>
+
   <xsl:function name="geonet:resourceFormatsList" as="xs:string">
     <xsl:param name="thesaurusDir" as="xs:string"/>
 
@@ -267,11 +272,8 @@
     <sch:rule context="//gmd:identificationInfo/gmd:MD_DataIdentification
             |//*[@gco:isoType='gmd:MD_DataIdentification']
             |//*[@gco:isoType='srv:SV_ServiceIdentification']">
-
-      <sch:let name="open-licenses" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Open_Licenses.rdf'), '\\', '/')))"/>
-
       <sch:let name="openLicense" value="count(gmd:resourceConstraints/gmd:MD_LegalConstraints/gmd:useLimitation[
-               (normalize-space(gco:CharacterString) = $open-licenses//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char])])" />
+               (normalize-space(gco:CharacterString) = $required-licenses/ns2:prefLabel[@xml:lang=$mainLanguage2char])])" />
 
 
       <sch:assert
