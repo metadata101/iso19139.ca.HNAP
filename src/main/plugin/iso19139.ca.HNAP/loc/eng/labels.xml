@@ -436,11 +436,11 @@
         <description>Identifier used for reference systems</description>
         <label>Identifier</label>
     </element>
-    <element name="gmd:URL" context="gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
+    <element name="gmd:URL" context="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
         <label>Online resource</label>
         <description>On-line information that can be used to contact the responsible individual or organization</description>
     </element>
-    <element name="gmd:URL" context="gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
+    <element name="gmd:URL" context="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
       <label>Online resource</label>
       <description>On-line information that can be used to contact the responsible individual or organization</description>
     </element>
@@ -2644,7 +2644,7 @@
         <label>Name</label>
         <description/>
     </element>
-    <element name="gco:aName" context="gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:name/gco:attributeType/gco:TypeName/gco:aName">
+    <element name="gco:aName" context="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:name/gco:attributeType/gco:TypeName/gco:aName">
         <label>Type name</label>
         <description/>
         <helper>
@@ -2663,7 +2663,7 @@
 			<option value="TEXT">TEXT</option>
 		</helper>
   </element>
-  <element name="gco:aName" context="gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:valueType/gco:TypeName/gco:aName">
+  <element name="gco:aName" context="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:valueType/gco:TypeName/gco:aName">
     <label>Value type name</label>
     <description/>
     <helper>
