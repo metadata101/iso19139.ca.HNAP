@@ -680,11 +680,11 @@
 
   </element>
 
-  <element name="gmd:URL" context="gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
+  <element name="gmd:URL" context="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
     <label>Ressource en ligne</label>
     <description>Renseignements électroniques qui permettent de communiquer avec l'organisation ou la personne responsable.</description>
   </element>
-  <element name="gmd:URL" context="gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
+  <element name="gmd:URL" context="/gmd:MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:onlineResource/gmd:CI_OnlineResource/gmd:linkage/gmd:URL">
     <label>Ressource en ligne</label>
     <description>Renseignements électroniques qui permettent de communiquer avec l'organisation ou la personne responsable.</description>
   </element>
@@ -1161,7 +1161,7 @@
     <condition/>
 
   </element>
-  <!--<element name="gmd:date" id="362.0" context="gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date">
+  <!--<element name="gmd:date" id="362.0" context="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:date">
     <label>Date</label>
     <description>Date de référence pour la ressource en question</description>
     <help>Date de référence indiquée sous forme de date (jj.mm.aaaa) et de type de date (création, publication, traitement). Ces informations sont du type CI_Date et sont gérées dans la classe du même nom.</help>
@@ -3471,7 +3471,7 @@
     <condition/>
 
   </element>
-  <element name="gco:aName" context="gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:name/gco:attributeType/gco:TypeName/gco:aName">
+  <element name="gco:aName" context="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:name/gco:attributeType/gco:TypeName/gco:aName">
     <label>Nom du type</label>
     <description/>
     <helper>
@@ -3490,7 +3490,7 @@
       <option value="TEXT">TEXT</option>
     </helper>
   </element>
-  <element name="gco:aName" context="gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:valueType/gco:TypeName/gco:aName">
+  <element name="gco:aName" context="/gmd:MD_Metadata/gmd:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations/srv:SV_OperationMetadata/srv:parameters/srv:SV_Parameter/srv:valueType/gco:TypeName/gco:aName">
     <label>Nom de la valeur de type</label>
     <description/>
     <helper>
