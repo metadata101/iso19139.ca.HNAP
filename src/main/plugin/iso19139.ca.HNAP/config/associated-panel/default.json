@@ -12,7 +12,7 @@
       "process": "onlinesrc-add",
       "fields": {
         "protocol": {
-          "value": "HTTP",
+          "value": "HTTPS",
           "isMultilingual": false,
           "required": true,
           "tooltip": "gmd:protocol"
