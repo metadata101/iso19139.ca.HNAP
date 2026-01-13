@@ -283,11 +283,7 @@
           </xsl:call-template>
         </xsl:if>
       </xsl:variable>
-
-      <xsl:call-template name="display-error">
-        <xsl:with-param name="listOfErrors" select="$errors"/>
-      </xsl:call-template>
-
+    
     <!--
        This control is a bit different than the rest, so we have to insert
        our own error control.  We use flexbox to give it a similar look
