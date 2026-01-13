@@ -294,12 +294,11 @@
        to the "normal" validation output.
     -->
     <div style="display:flex;flex-direction:row">
-      <div style="width:17%"></div>
-      <div style="width:75%">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
         <xsl:copy-of select="$errors"/>
       </div>
-      <div style="width:10%"></div>
-
+      <div class="col-sm-2"></div>
     </div>
   </xsl:template>
 
