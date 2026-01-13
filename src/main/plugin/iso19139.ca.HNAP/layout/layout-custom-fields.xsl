@@ -122,6 +122,7 @@
     b) sets up the JSON configuration (see MultiEntryCombiner.js for example JSON).
 -->
   <xsl:template mode="mode-iso19139" match="gmd:organisationName[$UseGOCOrganisationName = 'true' and $schema = 'iso19139.ca.HNAP']" priority="3000"  >
+
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
     <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
@@ -271,8 +272,35 @@
            data-label="$labelConfig/label">
       </div>
       <div class="col-sm-1 gn-control"/>
-    </div>
 
+    </div>
+    <!-- start the validation reporting -->
+      <!-- compute errors -->
+      <xsl:variable name="errors">
+        <xsl:if test="$showValidationErrors">
+          <xsl:call-template name="get-errors">
+            <xsl:with-param name="theElement" select="$theElement"/>
+          </xsl:call-template>
+        </xsl:if>
+      </xsl:variable>
+
+      <xsl:call-template name="display-error">
+        <xsl:with-param name="listOfErrors" select="$errors"/>
+      </xsl:call-template>
+
+    <!--
+       This control is a bit different than the rest, so we have to insert
+       our own error control.  We use flexbox to give it a similar look
+       to the "normal" validation output.
+    -->
+    <div style="display:flex;flex-direction:row">
+      <div style="width:17%"></div>
+      <div style="width:75%">
+        <xsl:copy-of select="$errors"/>
+      </div>
+      <div style="width:10%"></div>
+
+    </div>
   </xsl:template>
 
 
