@@ -48,6 +48,13 @@
     		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     		<ns2:prefLabel xml:lang="en">CDR</ns2:prefLabel>
     	</rdf:Description>
+    	<rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#COG">
+    		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+    		<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    		<ns2:prefLabel xml:lang="fr">GeoTIFF optimisé pour le cloud</ns2:prefLabel>
+    		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    		<ns2:prefLabel xml:lang="en">Cloud Optimized GeoTIFF</ns2:prefLabel>
+    	</rdf:Description>
     	<rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#CSV">
     		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
     		<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
@@ -131,6 +138,13 @@
     		<ns2:prefLabel xml:lang="fr">Flat raster binary</ns2:prefLabel>
     		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     		<ns2:prefLabel xml:lang="en">Flat raster binary</ns2:prefLabel>
+    	</rdf:Description>
+    	<rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#GeoParquet">
+    		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+    		<ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    		<ns2:prefLabel xml:lang="fr">GeoParquet</ns2:prefLabel>
+    		<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    		<ns2:prefLabel xml:lang="en">GeoParquet</ns2:prefLabel>
     	</rdf:Description>
     	<rdf:Description rdf:about="http://geonetwork-opensource.org/EC/resourceformat#GeoPDF">
     		<ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
