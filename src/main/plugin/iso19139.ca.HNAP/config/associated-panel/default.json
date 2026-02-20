@@ -90,7 +90,8 @@
     }],
     "multilingualFields": ["name", "desc"],
     "wmsResources": {
-      "addLayerNamesMode": "url"
+      "addLayerNamesMode": "url",
+      "resourceName": "layerTitle"
     },
     "associatedResourcesTypes": [{
       "type": "parent",
