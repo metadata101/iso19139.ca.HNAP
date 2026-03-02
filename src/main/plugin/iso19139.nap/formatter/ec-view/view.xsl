@@ -288,13 +288,13 @@
       <licenses>
         <license gov="Government of British Columbia">Open Government Licence - British Columbia (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</license>
         <license gov="Government of Alberta">Open Government Licence - Alberta (https://open.alberta.ca/licence)</license>
-        <license gov="Government of Newfoundland and Labrador">Open Government Licence – Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
-        <license gov="Government of Nova Scotia">Open Government Licence – Nova Scotia (https://novascotia.ca/opendata/licence.asp)</license>
-        <license gov="Government of Ontario">Open Government Licence – Ontario (https://www.ontario.ca/page/open-government-licence-ontario)</license>
-        <license gov="Government of Prince Edward Island">Open Government Licence – Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
+        <license gov="Government of Newfoundland and Labrador">Open Government Licence - Newfoundland and Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
+        <license gov="Government of Nova Scotia">Open Government Licence - Nova Scotia (https://novascotia.ca/opendata/licence.asp)</license>
+        <license gov="Government of Ontario">Open Government Licence - Ontario (https://www.ontario.ca/page/open-government-licence-ontario)</license>
+        <license gov="Government of Prince Edward Island">Open Government Licence - Prince Edward Island (https://www.princeedwardisland.ca/en/information/finance/open-government-licence-prince-edward-island)</license>
         <license gov="Government of New Brunswick">Open Government Licence - New Brunswick (http://www.snb.ca/e/2000/data-E.html)</license>
         <license gov="Government of Yukon">Open Government Licence - Yukon (https://open.yukon.ca/open-government-licence-yukon)</license>
-        <license gov="Government and Municipalities of Québec">Creative Commons 4.0 Attribution (CC-BY) licence – Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
+        <license gov="Government and Municipalities of Québec">Creative Commons 4.0 Attribution (CC-BY) licence - Quebec (https://www.donneesquebec.ca/fr/licence/)</license>
         <license gov="Government of Manitoba">OpenMB Information and Data Use License - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.pdf)</license>
         <license gov="Government of Saskatchewan">Standard Unrestricted Use Data License (Version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)</license>
         <license gov="Government of Northwest Territories">Open Government Licence - Northwest Territories (https://www.gov.nt.ca/en/open-government-licence-northwest-territories)</license>
@@ -305,13 +305,13 @@
       <licenses>
         <license gov="Gouvernement de la Colombie-Britannique">Licence du gouvernement ouvert - Colombie-Britannique (https://www2.gov.bc.ca/gov/content/data/open-data/open-government-licence-bc)</license>
         <license gov="Gouvernement de l'Alberta">Licence du gouvernement ouvert - Alberta (https://open.alberta.ca/licence)</license>
-        <license gov="Gouvernement de Terre-Neuve-et-Labrador">Licence du gouvernement ouvert – Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
-        <license gov="Gouvernement de la  Nouvelle-Écosse">Licence du gouvernement ouvert – Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</license>
-        <license gov="Gouvernement de l'Ontario">Licence du gouvernement ouvert – Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</license>
-        <license gov="Gouvernement de l'Île-du-Prince-Édouard">Licence du gouvernement ouvert – Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)</license>
+        <license gov="Gouvernement de Terre-Neuve-et-Labrador">Licence du gouvernement ouvert - Terre-Neuve-et-Labrador (https://opendata.gov.nl.ca/public/opendata/page/?page-id=licence)</license>
+        <license gov="Gouvernement de la  Nouvelle-Écosse">Licence du gouvernement ouvert - Nouvelle-Écosse (https://novascotia.ca/opendata/licence.asp)</license>
+        <license gov="Gouvernement de l'Ontario">Licence du gouvernement ouvert - Ontario (https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario)</license>
+        <license gov="Gouvernement de l'Île-du-Prince-Édouard">Licence du gouvernement ouvert - Île-du-Prince-Édouard (https://www.princeedwardisland.ca/fr/information/finances/licence-du-gouvernement-ouvert-ile-du-prince-edouard)</license>
         <license gov="Gouvernement du Nouveau-Brunswick">Licence du gouvernement ouvert - Nouveau-Brunswick (http://www.snb.ca/f/2000/data-F.html)</license>
         <license gov="Gouvernement du Yukon">Licence du gouvernement ouvert - Yukon (https://open.yukon.ca/fr/gouvernement-ouvert-licence-du-yukon)</license>
-        <license gov="Gouvernement et municipalités du Québec">Licence Creative Commons 4.0 Attribution (CC-BY) – Québec (https://www.donneesquebec.ca/fr/licence/)</license>
+        <license gov="Gouvernement et municipalités du Québec">Licence Creative Commons 4.0 Attribution (CC-BY) - Québec (https://www.donneesquebec.ca/fr/licence/)</license>
         <license gov="Gouvernement du Manitoba">Licence d’utilisation de l’information et des données du site Ouverture MB - Manitoba (https://manitoba.ca/asset_library/en/legal/OpenMB-Information-Data-Use-Licence.fr.pdf)</license>
         <license gov="Gouvernement de la Saskatchewan">Licence standard de données à usage non restreint (version 2.0) - Saskatchewan (https://gisappl.saskatchewan.ca/Html5Ext/Resources/GOS_Standard_Unrestricted_Use_Data_Licence_v2.0.pdf)</license>
         <license gov="Gouvernement des Territoires du Nord-Ouest">Licence du gouvernement ouvert - Territoires du Nord-Ouest (https://www.gov.nt.ca/fr/open-government-licence-northwest-territories)</license>
