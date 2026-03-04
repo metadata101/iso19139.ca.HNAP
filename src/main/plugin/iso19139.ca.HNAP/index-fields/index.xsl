@@ -157,7 +157,17 @@
       eg. 2017-02-08T13:18:03.138+00:02
       -->
       <xsl:for-each select="(gmd:dateStamp/*[gn-fn-index:is-isoDate(.)])[1]">
-        <dateStamp><xsl:value-of select="date-util:convertToISOZuluDateTime(normalize-space(.))"/></dateStamp>
+        <dateStamp>
+          <xsl:variable name="rawDate" select="normalize-space(.)"/>
+          <xsl:choose>
+            <xsl:when test="contains($rawDate, 'Z') or contains($rawDate, '+') or (contains($rawDate, '-') and string-length(substring-after($rawDate, '-')) &lt; 5)">
+              <xsl:value-of select="date-util:convertToISOZuluDateTime($rawDate)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="$rawDate"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </dateStamp>
       </xsl:for-each>
 
 
