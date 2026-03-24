@@ -160,7 +160,11 @@
         <dateStamp>
           <xsl:variable name="rawDate" select="normalize-space(.)"/>
           <xsl:choose>
-            <xsl:when test="contains($rawDate, 'Z') or contains($rawDate, '+') or (contains($rawDate, '-') and string-length(substring-after($rawDate, '-')) &lt; 5)">
+            <xsl:when test="
+              contains($rawDate, 'Z') or 
+              contains($rawDate, '+') or 
+              (contains($rawDate, '-') and contains(substring-after($rawDate, ':'), '-'))
+            ">
               <xsl:value-of select="date-util:convertToISOZuluDateTime($rawDate)"/>
             </xsl:when>
             <xsl:otherwise>
@@ -343,8 +347,14 @@
                                                   else if ($dateTypeHNAP = 'RI_368') then 'revision'
                                                   else ''" />
 
-            <xsl:variable name="zuluDate"
-                          select="date-util:convertToISOZuluDateTime($date)"/>
+            <xsl:variable name="zuluDate">
+              <xsl:choose>
+                <xsl:when test="contains($date, 'Z') or contains($date, '+') or (contains($date, '-') and contains(substring-after($date, ':'), '-'))">
+                  <xsl:value-of select="date-util:convertToISOZuluDateTime($date)"/>
+                </xsl:when>
+              </xsl:choose>
+            </xsl:variable>
+
             <resourceDate type="object">
               <xsl:choose>
                 <xsl:when test="$zuluDate != '' and gn-fn-index:is-dateTime($date)">
