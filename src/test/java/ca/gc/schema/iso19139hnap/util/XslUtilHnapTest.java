@@ -151,6 +151,48 @@ public class XslUtilHnapTest {
 
     }
 
+    @Test
+    public void compareDates_shouldReturnZero_whenOffsetsRepresentSameInstant() {
+        int result = XslUtilHnap.compareDates("2026-04-10T14:30:00Z", "2026-04-10T10:30:00-04:00");
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareDates_shouldReturnPositive_whenEndInstantIsAfterStartInstantWithDifferentOffsets() {
+        int result = XslUtilHnap.compareDates("2026-04-10T14:30:00Z", "2026-04-10T14:30:00-04:00");
+        assertTrue(result > 0);
+    }
+
+    @Test
+    public void compareDates_shouldReturnPositive_whenEndIsAfterStart() {
+        int result = XslUtilHnap.compareDates("2026-04-10T10:30:00-04:00", "2026-04-10T11:32:00Z");
+        assertTrue(result > 0);
+    }
+
+    @Test
+    public void compareDates_shouldReturnNegative_whenEndIsBeforeStart() {
+        int result = XslUtilHnap.compareDates("2026-04-10T10:30:00-04:00", "2026-04-10T11:32:00-04:00");
+        assertTrue(result < 0);
+    }
+
+    @Test
+    public void compareDates_shouldReturnZero_whenTimezoneIsMissingAndUtcEquivalentIsUsed() {
+        int result = XslUtilHnap.compareDates("2026-04-10T10:30:00Z", "2026-04-10T10:30:00");
+        assertEquals(0, result);
+    }
+
+    @Test
+    public void compareDates_shouldReturnNegative_whenMonthPrecisionEndIsBeforeNextMonth() {
+        int result = XslUtilHnap.compareDates("2026-02", "2026-03-01T00:00:00Z");
+        assertTrue(result < 0);
+    }
+
+    @Test
+    public void compareDates_shouldReturnPositive_whenYearPrecisionEndIsAfterMidYearDate() {
+        int result = XslUtilHnap.compareDates("2026", "2026-06-01T00:00:00Z");
+        assertTrue(result > 0);
+    }
+
     class MyTinyNodeImpl extends TinyNodeImpl {
 
         private String value;
