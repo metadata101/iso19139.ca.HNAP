@@ -272,6 +272,17 @@
       <sch:assert test="$missingPublication or $missingCreation or XslUtilHnap:compareDates($publicationDate, $creationDate) &gt;= 0 ">$loc/strings/PublicationDateBeforeCreationDate</sch:assert>
     </sch:rule>
 
+    <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date
+    |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date
+    |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = 'RI_366']/gmd:date">
+
+      <sch:let name="creationDate" value="(gco:Date|gco:DateTime)[1]" />
+      <sch:let name="missingCreation" value="not(string($creationDate))" />
+      <sch:let name="now" value="format-dateTime(current-dateTime(), '[Y0001]-[M01]-[D01]T[H01]:[m01]:[s01][Z]')" />
+
+      <sch:assert test="not($missingCreation) and XslUtilHnap:compareDates($now, $creationDate) &gt;= 0">$loc/strings/CreationDateNotInFuture</sch:assert>
+    </sch:rule>
+
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date">
