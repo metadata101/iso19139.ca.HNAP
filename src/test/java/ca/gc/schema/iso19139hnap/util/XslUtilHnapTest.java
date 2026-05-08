@@ -159,7 +159,7 @@ public class XslUtilHnapTest {
 
     @Test
     public void compareDates_shouldReturnPositive_whenEndInstantIsAfterStartInstantWithDifferentOffsets() {
-        int result = XslUtilHnap.compareDates("2026-04-10T14:30:00Z", "2026-04-10T14:30:00-04:00");
+        int result = XslUtilHnap.compareDates("2026-04-10T14:30:00-04:00", "2026-04-10T14:30:00Z");
         assertTrue(result > 0);
     }
 
