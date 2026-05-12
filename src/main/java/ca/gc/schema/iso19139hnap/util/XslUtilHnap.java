@@ -40,8 +40,10 @@ import org.fao.geonet.utils.Log;
 
 import javax.annotation.Nonnull;
 import java.net.URISyntaxException;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.time.YearMonth;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -57,7 +59,7 @@ public class XslUtilHnap {
     /**
      * Compares dates (used for temporal extent dates comparison),
      * managing the different formats allowed: yyyy-mm-dd, yyyy-mm, yyyy.
-     * ported from utils-fn.xsl in ec
+     * ported from utils-fn.xsl in ec and modified to handle timezones
      *
      * @param endDate
      * @param startDate
@@ -69,13 +71,15 @@ public class XslUtilHnap {
             return 1;
         } else {
             try {
-
+                // Ensure all dates are in the same format (yyyy-mm-ddThh:mm:ssZ) for comparison
                 endDate = calculateDate(endDate, false);
                 startDate = calculateDate(startDate, true);
 
-                Date date1Value = DateUtils.parseIso8601DateTimeOrDate(endDate);
-                Date date2Value = DateUtils.parseIso8601DateTimeOrDate(startDate);
+                // Parse the dates
+                Instant date1Value = OffsetDateTime.parse(endDate).toInstant();
+                Instant date2Value = OffsetDateTime.parse(startDate).toInstant();
 
+                // Compare the dates
                 return date1Value.compareTo(date2Value);
 
             } catch (Exception ex) {
@@ -84,38 +88,45 @@ public class XslUtilHnap {
         }
     }
 
-    private static String calculateDate(String dateVal, boolean startDate) throws Exception {
-        if (dateVal.length() == 4) {
+    /**
+     * Calculate the date to the same format (yyyy-mm-ddThh:mm:ssZ) for comparison
+     *
+     * @param dateVal   the date value to calculate
+     * @param startDate true if the date is a start date, false if it's an end date. This is used to determine how to fill in missing values.
+     * @return the calculated date in the format of yyyy-mm-ddThh:mm:ssZ
+     */
+    private static String calculateDate(String dateVal, boolean startDate) {
+        if (dateVal.length() == 4) { // No month
             if (startDate) {
-                dateVal = dateVal + "-01-01T00:00:00Z";
+                dateVal += "-01";
             } else {
-                dateVal = dateVal + "-12-31T23:59:59Z";
-            }
-        } else if (dateVal.length() == 7) {
-            if (startDate) {
-                dateVal = dateVal + "-01T00:00:00Z";
-            } else {
-                dateVal = dateVal + "-01T23:59:59Z";
-
-                Date date1Value = DateUtils.parseIso8601DateTimeOrDate(dateVal);
-
-                // Last day of the month
-                Calendar c = Calendar.getInstance();
-                c.setTime(date1Value);
-                c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
-
-                dateVal = c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH) + 1) + "-" + c.get(Calendar.DAY_OF_MONTH) + "T23:59:59Z";
-            }
-        } else if (dateVal.length() == 10) {
-            if (startDate) {
-                dateVal = dateVal + "T00:00:0Z";
-            } else {
-                dateVal = dateVal + "T23:59:59Z";
+                dateVal += "-12";
             }
         }
 
-        return dateVal;
+        if (dateVal.length() == 7) { // No day
+            if (startDate) {
+                dateVal += "-01";
+            } else {
+                YearMonth yearMonth = YearMonth.parse(dateVal);
 
+                dateVal += ("-" + yearMonth.lengthOfMonth());
+            }
+        }
+
+        if (dateVal.length() == 10) { // No time
+            if (startDate) {
+                dateVal += "T00:00:00";
+            } else {
+                dateVal += "T23:59:59";
+            }
+        }
+
+        if (dateVal.length() == 19) { // No timezone
+            dateVal += "Z";
+        }
+
+        return dateVal;
     }
 
     /**
