@@ -220,8 +220,8 @@
 
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CEAA">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <ns2:prefLabel xml:lang="en">Canadian Environmental Assessment Agency</ns2:prefLabel>
-        <ns2:prefLabel xml:lang="fr">Agence canadienne d'évaluation environnementale</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="en">Impact Assessment Agency of Canada</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Agence d'évaluation d'impact du Canada</ns2:prefLabel>
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
@@ -450,6 +450,14 @@
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
 
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CIRNAC">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Crown-Indigenous Relations and Northern Affairs Canada</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Relations Couronne-Autochtones et Affaires du Nord Canada</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
     <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#DCC">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Defence Construction Canada</ns2:prefLabel>
@@ -663,6 +671,14 @@
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Infrastructure Canada</ns2:prefLabel>
         <ns2:prefLabel xml:lang="fr">Infrastructure Canada</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#ISC">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Indigenous Services Canada</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Services aux Autochtones Canada</ns2:prefLabel>
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
@@ -1271,6 +1287,14 @@
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <ns2:prefLabel xml:lang="en">Destination Canada</ns2:prefLabel>
         <ns2:prefLabel xml:lang="fr">Destination Canada</ns2:prefLabel>
+        <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
+        <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://geonetwork-opensource.org/EC/GovernmentTitle#CER">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <ns2:prefLabel xml:lang="en">Canada Energy Regulator</ns2:prefLabel>
+        <ns2:prefLabel xml:lang="fr">Régie de l’énergie du Canada</ns2:prefLabel>
         <ns2:scopeNote xml:lang="en">Definition</ns2:scopeNote>
         <ns2:scopeNote xml:lang="fr">Definition</ns2:scopeNote>
     </rdf:Description>
