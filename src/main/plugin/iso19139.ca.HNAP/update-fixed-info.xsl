@@ -953,9 +953,11 @@
     </xsl:copy>
   </xsl:template>
 
-
   <!-- Remove empty extent sections -->
   <xsl:template match="gmd:MD_DataIdentification/gmd:extent[count(gmd:EX_Extent/*) = 0]" />
+
+  <!-- Remove empty temporal elements -->
+  <xsl:template match="gmd:temporalElement[count(*) = 0]"/>
 
   <!-- Remove geonet:* elements. -->
   <xsl:template match="geonet:*" priority="2" />
