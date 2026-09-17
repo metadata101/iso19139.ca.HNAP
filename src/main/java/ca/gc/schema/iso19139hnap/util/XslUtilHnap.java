@@ -33,9 +33,9 @@ import net.sf.saxon.om.NodeInfo;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.tools.ant.util.DateUtils;
 import org.fao.geonet.constants.Geonet;
 import org.fao.geonet.util.XslUtil;
+import org.fao.geonet.utils.DateUtil;
 import org.fao.geonet.utils.Log;
 
 import javax.annotation.Nonnull;
@@ -141,31 +141,10 @@ public class XslUtilHnap {
 
         if (StringUtils.isEmpty(date)) return 1;
 
-        if (date.length() == 4) {
-            try {
-                Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date + "-01-01");
-
-                return 1;
-            } catch (Exception ex) {
-                return 0;
-            }
-        } else if (date.length() == 7) {
-            try {
-                Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date + "-01");
-
-                return 1;
-            } catch (Exception ex) {
-                return 0;
-            }
-        } else {
-            try {
-                Date dateValue = DateUtils.parseIso8601DateTimeOrDate(date);
-
-                return 1;
-            } catch (Exception ex) {
-                return 0;
-            }
-
+        try {
+            return DateUtil.parseBasicOrFullDateTime(date) != null ? 1 : 0;
+        } catch (Exception ex) {
+            return 0;
         }
     }
 
