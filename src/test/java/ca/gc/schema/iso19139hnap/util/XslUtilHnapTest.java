@@ -193,6 +193,30 @@ public class XslUtilHnapTest {
         assertTrue(result > 0);
     }
 
+    @Test
+    public void verifyDateFormat_shouldAcceptGmlTimePositionForms() {
+        // gYear, gYearMonth, date and dateTime, as allowed for gml:beginPosition
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02-17"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02-17T10:30:00"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02-17T10:30:00Z"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02-17T10:30:00+02:00"));
+        assertEquals(1, XslUtilHnap.verifyDateFormat("2026-02-17T10:30:00.123Z"));
+        // empty is handled by a separate schematron assert
+        assertEquals(1, XslUtilHnap.verifyDateFormat(""));
+    }
+
+    @Test
+    public void verifyDateFormat_shouldRejectMalformedDates() {
+        assertEquals(0, XslUtilHnap.verifyDateFormat("not a date"));
+        assertEquals(0, XslUtilHnap.verifyDateFormat("2026/02/17"));
+        assertEquals(0, XslUtilHnap.verifyDateFormat("2026-13-01"));
+        assertEquals(0, XslUtilHnap.verifyDateFormat("2026-2-7"));
+        assertEquals(0, XslUtilHnap.verifyDateFormat("2026-02-17T25:00:00"));
+        assertEquals(0, XslUtilHnap.verifyDateFormat("2026-02-17garbage"));
+    }
+
     class MyTinyNodeImpl extends TinyNodeImpl {
 
         private String value;
