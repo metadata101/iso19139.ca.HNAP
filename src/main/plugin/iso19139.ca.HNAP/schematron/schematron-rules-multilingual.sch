@@ -244,40 +244,46 @@
     </sch:rule>
 
 
-
-
     <!-- Contact - Organisation Name -->
+    <!-- Organisation format: Title;Department/Agency;Sub-organizations -->
     <sch:rule context="//gmd:contact/*/gmd:organisationName">
-
-      <sch:let name="mdLang" value="tokenize(/gmd:MD_Metadata/gmd:language/gco:CharacterString, ';')[1]" />
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
                 or (@gco:nilReason)" />
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
 
+      <!-- Checks the value is not missing in any of the languages -->
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
       >$loc/strings/ContactOrganisationName</sch:assert>
 
-      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
-      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
-      <sch:let name="governmentNamesStringAltLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
+      <sch:let name="government-departments" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
+      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
+      <sch:let name="governmentTitlesStringMainLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
+      <sch:let name="governmentTitlesStringAltLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
+
+      <!-- Main language checks -->
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
-      <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
+      <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[1]))" />
+      <sch:let name="departmentName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanada" value="starts-with($titleName, 'government of canada') or starts-with($titleName, 'gouvernement du canada')" />
 
-
+      <!-- The Title part is defined in the government-titles vocabulary -->
       <sch:let name="isGovernmentNameAllowed" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:let name="isErrorContactGovMain" value="not(($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
+      <sch:let name="isErrorContactGovMain" value="not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or
+                    (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or
+                    ($isGovernmentOfCanada and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentName]) or
+                     string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentName]))
                      ))"/>
 
       <sch:let name="isErrorContactGovMainAllowed" value="not($isErrorContactGovMain) and not(
@@ -285,34 +291,49 @@
                 $isGovernmentNameAllowed
                 )"/>
 
-      <sch:assert test="not($isErrorContactGovMain)">$loc/strings/*[name() = concat('ContactGov', $mainLanguageText)]</sch:assert>
+      <sch:assert test="not($isErrorContactGovMain)">
+        $loc/strings/*[name() = concat('ContactGov', $mainLanguageText)]</sch:assert>
 
-      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('ContactGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('ContactGovAllowed', $mainLanguageText)], $governmentTitlesStringMainLang)" />
+
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
       <sch:assert test="not($isErrorContactGovMainAllowed)">$locMsgMainLang</sch:assert>
 
+      <!-- Alternative language checks -->
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
-      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'gouvernement du canada')" />
-      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1]))" />
+      <sch:let name="departmentNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with($titleNameOtherLang, 'government of canada') or starts-with($titleNameOtherLang, 'gouvernement du canada')" />
+
+      <!-- The Department/Agency part is defined in the organisations vocabulary -->
       <sch:let name="isGovernmentNameAllowedOtherLang" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:let name="isErrorContactGovAlt" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed) and not(
-                ($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
+      <sch:let name="isErrorContactGovAlt" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed) and
+                  not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or
+                    (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or
+                    ($isGovernmentOfCanadaOtherLang and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentNameOtherLang]) or
+                    string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentNameOtherLang]))
                      )
                  )"/>
 
-      <sch:let name="isErrorContactGovAltAllowed" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed or $isErrorContactGovAlt)  and not(
-                ($missing and $missingOtherLang) or
-                $isGovernmentNameAllowed
+      <sch:let name="isErrorContactGovAltAllowed" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed or $isErrorContactGovAlt)  and
+                not(
+                  ($missing and $missingOtherLang) or
+                  $isGovernmentNameAllowedOtherLang
                 )"/>
 
       <sch:assert test="not($isErrorContactGovAlt)">$loc/strings/*[name() = concat('ContactGov', $altLanguageText)]</sch:assert>
-      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('ContactGovAllowed', $altLanguageText)], $governmentNamesStringAltLang)" />
-      <sch:assert test="not($isErrorContactGovAltAllowed)">$locMsgAltLang</sch:assert>
+      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('ContactGovAllowed', $altLanguageText)], $governmentTitlesStringAltLang)" />
 
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
+      <sch:assert test="not($isErrorContactGovAltAllowed)">$locMsgAltLang</sch:assert>
     </sch:rule>
 
 
@@ -491,6 +512,7 @@
 
 
     <!-- Cited responsible party  - Organisation Name -->
+    <!-- Organisation format: Title;Department/Agency;Sub-organizations -->
     <sch:rule context="//gmd:identificationInfo/*/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName
             |//*[@gco:isoType='gmd:MD_DataIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName
             |//*[@gco:isoType='srv:SV_ServiceIdentification']/gmd:citation/*/gmd:citedResponsibleParty/*/gmd:organisationName">
@@ -500,48 +522,88 @@
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
 
-
+      <!-- Checks the value is not missing in any of the languages -->
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
       >$loc/strings/CitedResponsiblePartyOrganisationName</sch:assert>
 
-      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
-      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
-      <sch:let name="governmentNamesStringAltLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
+      <sch:let name="government-departments" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
+      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
+      <sch:let name="governmentTitlesStringMainLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
+      <sch:let name="governmentTitlesStringAltLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
+
+      <!-- Main language checks -->
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
-      <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
+      <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[1]))" />
+      <sch:let name="departmentName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanada" value="starts-with($titleName, 'government of canada') or starts-with($titleName, 'gouvernement du canada')" />
+
+      <!-- The Department/Agency part is defined in the organisations vocabulary -->
       <sch:let name="isGovernmentNameAllowed" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
-              )">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $mainLanguageText)]</sch:assert>
+      <sch:let name="isErrorContactGovMain" value="not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or
+                    (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or
+                    ($isGovernmentOfCanada and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentName]) or
+                     string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentName]))
+                     ))"/>
 
-      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
-      <sch:assert test="($missing and $missingOtherLang) or
+      <sch:let name="isErrorContactGovMainAllowed" value="not($isErrorContactGovMain) and not(
+                ($missing and $missingOtherLang) or
                 $isGovernmentNameAllowed
+                )"/>
+
+      <sch:assert test="not($isErrorContactGovMain)">
+        $loc/strings/*[name() = concat('CitedResponsibleContactGov', $mainLanguageText)]</sch:assert>
+
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $mainLanguageText)], $governmentTitlesStringMainLang)" />
+
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
+      <sch:assert test="not($isErrorContactGovMainAllowed)
                 ">$locMsgMainLang</sch:assert>
 
+      <!-- Alternative language checks -->
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
-      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'gouvernement du canada')" />
-      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1]))" />
+      <sch:let name="departmentNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with($titleNameOtherLang, 'government of canada') or starts-with($titleNameOtherLang, 'gouvernement du canada')" />
+
+      <!-- The Department/Agency part is defined in the organisations vocabulary -->
       <sch:let name="isGovernmentNameAllowedOtherLang" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleNameOtherLang]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleNameOtherLang]))
-              )">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $altLanguageText)]</sch:assert>
-      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $altLanguageText)], $governmentNamesStringAltLang)" />
-      <sch:assert test="($missing and $missingOtherLang) or
-                $isGovernmentNameAllowedOtherLang
+      <sch:let name="isErrorContactGovAlt" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed) and
+                  not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or
+                    (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or
+                    ($isGovernmentOfCanadaOtherLang and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentNameOtherLang]) or
+                    string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentNameOtherLang]))
+                     )
+                 )"/>
+
+      <sch:let name="isErrorContactGovAltAllowed" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed or $isErrorContactGovAlt)  and
+                not(
+                  ($missing and $missingOtherLang) or
+                  $isGovernmentNameAllowedOtherLang
+                )"/>
+
+      <sch:assert test="not($isErrorContactGovAlt)">$loc/strings/*[name() = concat('CitedResponsibleContactGov', $altLanguageText)]</sch:assert>
+      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('CitedResponsibleContactGovAllowed', $altLanguageText)], $governmentTitlesStringAltLang)" />
+
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
+      <sch:assert test="not($isErrorContactGovAltAllowed)
                 ">$locMsgAltLang</sch:assert>
     </sch:rule>
 
@@ -957,6 +1019,7 @@
 
 
     <!-- Distributor contact - Organisation Name -->
+    <!-- Organisation format: Title;Department/Agency;Sub-organizations -->
     <sch:rule context="//gmd:distributionInfo/*/gmd:distributor/gmd:MD_Distributor/gmd:distributorContact/*/gmd:organisationName">
 
       <sch:let name="missing" value="not(string(gco:CharacterString))
@@ -964,48 +1027,88 @@
 
       <sch:let name="missingOtherLang" value="not(string(gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]))" />
 
+      <!-- Checks the value is not missing in any of the languages -->
       <sch:assert
         test="not($missing) and not($missingOtherLang)"
       >$loc/strings/DistributorOrganisationName</sch:assert>
 
+      <sch:let name="government-departments" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
+      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
 
-      <sch:let name="government-titles" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Departments.rdf'), '\\', '/')))"/>
-      <sch:let name="government-names" value="document(concat('file:///', replace(concat($thesaurusDir, '/external/thesauri/theme/GC_Org_Names.rdf'), '\\', '/')))"/>
-      <sch:let name="governmentNamesStringMainLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
-      <sch:let name="governmentNamesStringAltLang" value=" string($government-names//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
+      <sch:let name="governmentTitlesStringMainLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$mainLanguage2char]) "/>
+      <sch:let name="governmentTitlesStringAltLang" value=" string($government-titles//rdf:Description/ns2:prefLabel[@xml:lang=$altLanguage2char]) "/>
 
+      <!-- Main language checks -->
       <sch:let name="organisationName" value="gco:CharacterString" />
-      <sch:let name="isGovernmentOfCanada" value="starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationName, ';')[1])), 'gouvernement du canada')" />
       <sch:let name="titleName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
+      <sch:let name="departmentName" value="lower-case(normalize-space(tokenize($organisationName, ';')[2]))" />
 
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanada" value="starts-with($titleName, 'government of canada') or starts-with($titleName, 'gouvernement du canada')" />
+
+      <!-- The Department/Agency part is defined in the organisations vocabulary -->
       <sch:let name="isGovernmentNameAllowed" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationName)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or ($isGovernmentOfCanada and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleName]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleName]))
-              )">$loc/strings/*[name() = concat('DistributorGov', $mainLanguageText)]</sch:assert>
+      <sch:let name="isErrorContactGovMain" value="not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowed and not($isGovernmentOfCanada)) or
+                    (not($isGovernmentNameAllowed) and not($isGovernmentOfCanada)) or
+                    ($isGovernmentOfCanada and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentName]) or
+                     string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentName]))
+                     ))"/>
 
-      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('DistributorGovAllowed', $mainLanguageText)], $governmentNamesStringMainLang)" />
-      <sch:assert test="($missing and $missingOtherLang) or
+      <sch:let name="isErrorContactGovMainAllowed" value="not($isErrorContactGovMain) and not(
+                ($missing and $missingOtherLang) or
                 $isGovernmentNameAllowed
+                )"/>
+
+      <sch:assert test="not($isErrorContactGovMain)
+              ">$loc/strings/*[name() = concat('DistributorGov', $mainLanguageText)]</sch:assert>
+
+      <sch:let name="locMsgMainLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('DistributorGovAllowed', $mainLanguageText)], $governmentTitlesStringMainLang)" />
+
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
+      <sch:assert test="not($isErrorContactGovMainAllowed)
                 ">$locMsgMainLang</sch:assert>
 
+      <!-- Alternative language checks -->
       <sch:let name="organisationNameOtherLang" value="gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString[@locale=concat('#', $altLanguageId)]" />
-      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'government of canada') or starts-with(lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1])), 'gouvernement du canada')" />
-      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+      <sch:let name="titleNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[1]))" />
+      <sch:let name="departmentNameOtherLang" value="lower-case(normalize-space(tokenize($organisationNameOtherLang, ';')[2]))" />
+
+      <!-- The Title part is related to Government of Canada -->
+      <sch:let name="isGovernmentOfCanadaOtherLang" value="starts-with($titleNameOtherLang, 'government of canada') or starts-with($titleNameOtherLang, 'gouvernement du canada')" />
+
+      <!-- The Department/Agency part is defined in the organisations vocabulary -->
       <sch:let name="isGovernmentNameAllowedOtherLang" value="(
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
-          string($government-names//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])), ';'))]) or
+          string($government-titles//rdf:Description[starts-with(normalize-space(lower-case($organisationNameOtherLang)), concat(normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])), ';'))])
         )"/>
 
-      <sch:assert test="($missing and $missingOtherLang) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or ($isGovernmentOfCanadaOtherLang and (string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $titleNameOtherLang]) or
-                string($government-titles//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $titleNameOtherLang]))
-               )">$loc/strings/*[name() = concat('DistributorGov', $altLanguageText)]</sch:assert>
-      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('DistributorGovAllowed', $altLanguageText)], $governmentNamesStringAltLang)" />
-      <sch:assert test="($missing and $missingOtherLang) or
-                $isGovernmentNameAllowedOtherLang
+      <sch:let name="isErrorContactGovAlt" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed) and
+                  not(
+                    ($missing and $missingOtherLang) or
+                    ($isGovernmentNameAllowedOtherLang and not($isGovernmentOfCanadaOtherLang)) or
+                    (not($isGovernmentNameAllowedOtherLang) and not($isGovernmentOfCanadaOtherLang)) or
+                    ($isGovernmentOfCanadaOtherLang and (string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$mainLanguage2char])) = $departmentNameOtherLang]) or
+                    string($government-departments//rdf:Description[normalize-space(lower-case(ns2:prefLabel[@xml:lang=$altLanguage2char])) = $departmentNameOtherLang]))
+                     )
+                 )"/>
+
+      <sch:let name="isErrorContactGovAltAllowed" value="not($isErrorContactGovMain or $isErrorContactGovMainAllowed or $isErrorContactGovAlt)  and
+                not(
+                  ($missing and $missingOtherLang) or
+                  $isGovernmentNameAllowedOtherLang
+                )"/>
+
+      <sch:assert test="not($isErrorContactGovAlt)">$loc/strings/*[name() = concat('DistributorGov', $altLanguageText)]</sch:assert>
+      <sch:let name="locMsgAltLang" value="geonet:appendLocaleMessage($loc/strings/*[name() = concat('DistributorGovAllowed', $altLanguageText)], $governmentTitlesStringAltLang)" />
+
+      <!-- Checks that the organisation name is empty in both languages OR filled the department with a valid value -->
+      <sch:assert test="not($isErrorContactGovAltAllowed)
                 ">$locMsgAltLang</sch:assert>
 
     </sch:rule>
